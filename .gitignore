@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+
+# Gauge configurations (large binary files)
+tasks/*/dataset/*.npy
+tasks/*/dataset/*.bin
+tasks/*/dataset/*.lime
+tasks/*/dataset/*.ildg
+tasks/*/dataset/*.nersc
+tasks/*/dataset/*.milc
+!tasks/*/dataset/README.md
+
+# Benchmark results
+tasks/*/benchmark/results/*.json
+tasks/*/benchmark/results/*.npy
+
+# IDE / tools
+.vscode/
+.idea/
+.claude/
+
+# References (large PDFs)
+references/
+
+# OS
+.DS_Store
+Thumbs.db

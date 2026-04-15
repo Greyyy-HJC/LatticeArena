@@ -1,0 +1,26 @@
+[project]
+name = "latticearena"
+version = "0.1.0"
+description = "A multi-task benchmark for lattice QCD operator optimization"
+requires-python = ">=3.10"
+license = "MIT"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pyquda",
+    "pyquda-utils",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+viz = ["matplotlib"]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[tool.setuptools.packages.find]
+include = ["latticearena*", "tasks*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tasks/*/tests"]
