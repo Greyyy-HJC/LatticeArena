@@ -26,6 +26,7 @@ tasks/<name>/          Self-contained benchmark tasks
 ## Current Tasks
 
 - `wilson_loop` — Optimize spatial Wilson line operators for ground-state overlap in static quark-antiquark Wilson loops. Based on arXiv:2602.02436.
+- `pion_2pt` — Optimize boosted pion interpolating operators to improve SNR and reduce excited-state contamination for pion two-point correlators (focus: |p| ~ 1 GeV).
 
 ## Conventions
 

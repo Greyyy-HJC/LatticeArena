@@ -2,7 +2,8 @@
 
 import argparse
 
-from latticearena.task import list_tasks, get_task
+import tasks  # noqa: F401  # import for task registration side effects
+from latticearena.task import get_task, list_tasks
 from latticearena.leaderboard import print_leaderboard, load_results
 
 
