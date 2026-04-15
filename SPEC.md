@@ -177,6 +177,58 @@ Contributors implement `PionInterpolatingOperator` with:
 `build(...)` returns source/sink spatial profiles and a Dirac matrix to define
 the bilinear used in the 2pt contraction.
 
+## 3.8 Task: `two_pt_gsfit`
+
+### 3.8.1 Physics Background
+
+This task targets the **analysis stage** of pion two-point correlators rather
+than operator construction. Given bootstrap/jackknife-like correlator samples,
+the goal is to choose a robust fixed configuration for extracting the
+ground-state energy `E0`.
+
+The framework-owned fit model is
+
+```
+C(t) = sum_n A_n [exp(-E_n t) + exp(-E_n (Lt - t))]
+E_n = E0 + sum_{k <= n} DeltaE_k
+```
+
+with positivity constraints enforced internally:
+
+- `A_n > 0`
+- `E0 > 0`
+- `DeltaE_n > 0`
+
+### 3.8.2 Optimization Interface
+
+File: `tasks/two_pt_gsfit/interface.py`
+
+Contributors implement `Pion2PtGroundStateFit` and only submit one fixed
+configuration:
+
+- `t_min`, `t_max`
+- `n_states`
+- `e0_prior`
+- `delta_e_priors`
+- `amplitude_priors`
+
+They do **not** implement a custom fitter.
+
+### 3.8.3 Benchmark
+
+The v1 benchmark uses deterministic synthetic pion correlator samples with
+known truth instead of committed real datasets. The benchmark:
+
+1. generates several pion-like cases with different noise levels and
+   excited-state contamination
+2. fits the sample mean correlator with a correlated Bayesian fit
+3. refits resamples to estimate the uncertainty and failure rate
+4. scores submissions by prioritizing:
+   - low `E0` bias
+   - reasonable uncertainty
+   - acceptable `chi2/dof`
+   - robustness across resamples
+
 ---
 
 ## 4. Framework Library
