@@ -1,4 +1,4 @@
-"""Benchmark driver for the two_pt_gsfit task."""
+"""Benchmark driver for the gsfit_2pt task."""
 
 from __future__ import annotations
 
@@ -15,14 +15,14 @@ if str(REPO_ROOT) not in sys.path:
 from latticearena.leaderboard import save_result
 from latticearena.task import BenchmarkResult
 
-from tasks.two_pt_gsfit.benchmark.core import benchmark_submission, load_synthetic_cases
-from tasks.two_pt_gsfit.interface import Pion2PtGroundStateFit
+from tasks.gsfit_2pt.benchmark.core import benchmark_submission, load_synthetic_cases
+from tasks.gsfit_2pt.interface import Pion2PtGroundStateFit
 
 
 def load_submission(operator_name: str) -> Pion2PtGroundStateFit:
     """Import and instantiate a submission from operators/<name>.py."""
 
-    module = importlib.import_module(f"tasks.two_pt_gsfit.operators.{operator_name}")
+    module = importlib.import_module(f"tasks.gsfit_2pt.operators.{operator_name}")
     for value in module.__dict__.values():
         if (
             isinstance(value, type)
@@ -34,7 +34,7 @@ def load_submission(operator_name: str) -> Pion2PtGroundStateFit:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the two_pt_gsfit benchmark")
+    parser = argparse.ArgumentParser(description="Run the gsfit_2pt benchmark")
     parser.add_argument("--operator", type=str, required=True, help="Operator module name under operators/")
     parser.add_argument("--num-samples", type=int, default=24, help="Synthetic resamples per benchmark case")
     parser.add_argument(
@@ -58,7 +58,7 @@ def main() -> None:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("tasks/two_pt_gsfit/benchmark/results"),
+        default=Path("tasks/gsfit_2pt/benchmark/results"),
         help="Directory to save the benchmark JSON result",
     )
     args = parser.parse_args()
@@ -73,7 +73,7 @@ def main() -> None:
         max_resample_fits=args.max_resamples,
     )
     result = BenchmarkResult(
-        task_name="two_pt_gsfit",
+        task_name="gsfit_2pt",
         operator_name=submission.meta.name,
         score=summary["score"],
         metrics=summary,

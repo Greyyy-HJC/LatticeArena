@@ -1,4 +1,4 @@
-"""Validation and benchmark tests for two_pt_gsfit."""
+"""Validation and benchmark tests for gsfit_2pt."""
 
 from __future__ import annotations
 
@@ -8,19 +8,21 @@ from pathlib import Path
 
 import numpy as np
 
-from tasks.two_pt_gsfit.benchmark.core import (
+from tasks.gsfit_2pt.benchmark.core import (
+    benchmark_config,
     benchmark_submission,
     load_synthetic_cases,
     make_synthetic_cases,
     save_synthetic_cases,
 )
-from tasks.two_pt_gsfit.interface import (
+from tasks.gsfit_2pt.interface import (
     FitSubmissionMeta,
     GroundStateFitConfig,
     Pion2PtGroundStateFit,
     validate_config,
 )
-from tasks.two_pt_gsfit.operators.plain import PlainGroundStateFit
+from tasks.gsfit_2pt.operators.plain import PlainGroundStateFit
+from tasks.gsfit_2pt.operators.nn import NNTunedGroundStateFit
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -31,6 +33,12 @@ def test_plain_submission_is_valid() -> None:
     validate_config(submission.config)
     assert submission.meta.name == "plain"
     assert submission.config.n_states == 2
+
+
+def test_nn_submission_is_valid() -> None:
+    submission = NNTunedGroundStateFit()
+    validate_config(submission.config)
+    assert submission.meta.name == "nn"
 
 
 def test_invalid_prior_lengths_are_rejected() -> None:
@@ -91,7 +99,7 @@ def test_benchmark_smoke_cli() -> None:
     result = subprocess.run(
         [
             sys.executable,
-            "tasks/two_pt_gsfit/benchmark/run.py",
+            "tasks/gsfit_2pt/benchmark/run.py",
             "--operator",
             "plain",
             "--num-samples",
@@ -113,11 +121,11 @@ def test_gsfit_script_cli() -> None:
     result = subprocess.run(
         [
             sys.executable,
-            "tasks/two_pt_gsfit/scripts/gsfit.py",
+            "tasks/gsfit_2pt/scripts/gsfit.py",
             "--operator",
             "plain",
             "--dataset-file",
-            "tasks/two_pt_gsfit/dataset/fake_data.npz",
+            "tasks/gsfit_2pt/dataset/fake_data.npz",
             "--case",
             "boosted_clean",
         ],
@@ -130,6 +138,33 @@ def test_gsfit_script_cli() -> None:
     assert '"operator": "plain"' in result.stdout
     assert '"case": "boosted_clean"' in result.stdout
     assert '"energies":' in result.stdout
+
+
+def test_nn_optimizer_cli(tmp_path: Path) -> None:
+    config_path = tmp_path / "nn_config.json"
+    result = subprocess.run(
+        [
+            sys.executable,
+            "tasks/gsfit_2pt/scripts/optimize_nn.py",
+            "--train-evals",
+            "8",
+            "--proposal-samples",
+            "32",
+            "--top-k",
+            "6",
+            "--max-resamples",
+            "4",
+            "--output-config",
+            str(config_path),
+        ],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    assert config_path.exists()
+    assert '"best_score":' in result.stdout
 
 
 def test_fake_data_round_trip(tmp_path: Path) -> None:
@@ -189,3 +224,48 @@ def test_underfit_single_state_scores_worse_than_baseline() -> None:
     underfit_score = benchmark_submission(UnderfitOneState(), cases=cases, max_resample_fits=8)["score"]
 
     assert baseline_score > underfit_score
+
+
+def test_nn_submission_matches_or_beats_plain() -> None:
+    cases = make_synthetic_cases(num_samples=24, noise_multiplier=1.0)
+    baseline_score = benchmark_config(PlainGroundStateFit().config, cases=cases, max_resample_fits=8)["score"]
+    nn_score = benchmark_config(NNTunedGroundStateFit().config, cases=cases, max_resample_fits=8)["score"]
+
+    assert nn_score >= baseline_score
+
+
+def test_build_leaderboard_page_cli(tmp_path: Path) -> None:
+    subprocess.run(
+        [
+            sys.executable,
+            "tasks/gsfit_2pt/benchmark/run.py",
+            "--operator",
+            "plain",
+            "--dataset-file",
+            "tasks/gsfit_2pt/dataset/fake_data.npz",
+            "--max-resamples",
+            "4",
+        ],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    output_html = tmp_path / "leaderboard.html"
+    subprocess.run(
+        [
+            sys.executable,
+            "scripts/build_leaderboard_page.py",
+            "--output",
+            str(output_html),
+        ],
+        cwd=REPO_ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    html = output_html.read_text()
+    assert "LatticeArena Leaderboard" in html
+    assert "gsfit_2pt" in html

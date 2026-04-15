@@ -1,15 +1,15 @@
-# two_pt_gsfit Dataset
+# gsfit_2pt Dataset
 
-The v1 `two_pt_gsfit` benchmark uses deterministic synthetic pion 2pt samples.
+The v1 `gsfit_2pt` benchmark uses deterministic synthetic pion 2pt samples.
 You can generate a concrete fake dataset archive directly inside this folder:
 
 ```bash
-python tasks/two_pt_gsfit/scripts/generate_fake_data.py
+python tasks/gsfit_2pt/scripts/generate_fake_data.py
 ```
 
 By default this writes:
 
-- `tasks/two_pt_gsfit/dataset/fake_data.npz`
+- `tasks/gsfit_2pt/dataset/fake_data.npz`
 
 The archive contains multiple pion-like correlator cases, each with:
 
@@ -20,8 +20,8 @@ The archive contains multiple pion-like correlator cases, each with:
 You can also customize the generated fake data:
 
 ```bash
-python tasks/two_pt_gsfit/scripts/generate_fake_data.py \
-  --output tasks/two_pt_gsfit/dataset/fake_data_small.npz \
+python tasks/gsfit_2pt/scripts/generate_fake_data.py \
+  --output tasks/gsfit_2pt/dataset/fake_data_small.npz \
   --num-samples 12 \
   --noise-multiplier 0.5 \
   --lt 48
@@ -30,8 +30,8 @@ python tasks/two_pt_gsfit/scripts/generate_fake_data.py \
 To benchmark against a saved fake dataset instead of regenerating in memory:
 
 ```bash
-python tasks/two_pt_gsfit/benchmark/run.py --operator plain \
-  --dataset-file tasks/two_pt_gsfit/dataset/fake_data.npz
+python tasks/gsfit_2pt/benchmark/run.py --operator plain \
+  --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz
 ```
 
 Future extension:

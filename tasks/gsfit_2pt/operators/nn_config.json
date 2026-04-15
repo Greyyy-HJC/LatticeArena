@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "name": "nn",
+    "description": "Tiny-MLP surrogate tuned gsfit_2pt configuration",
+    "authors": [
+      "LatticeArena"
+    ]
+  },
+  "config": {
+    "t_min": 3,
+    "t_max": 13,
+    "n_states": 3,
+    "e0_prior": [
+      0.4760481618188881,
+      0.1904979919220482
+    ],
+    "delta_e_priors": [
+      [
+        0.7365391878919665,
+        0.19563825728889345
+      ],
+      [
+        0.5258141546988766,
+        0.09278285430803347
+      ]
+    ],
+    "amplitude_priors": [
+      [
+        0.8389725985330745,
+        0.6153324457741748
+      ],
+      [
+        0.8763622189115834,
+        0.5185513487841689
+      ],
+      [
+        0.9395910084573176,
+        0.5204922565365542
+      ]
+    ]
+  },
+  "search": {
+    "best_score": 43.43274443593371,
+    "plain_score": 39.56035312499497,
+    "train_evals": 48,
+    "proposal_samples": 384,
+    "top_k": 32,
+    "seed": 20260415,
+    "num_samples": 24,
+    "max_resamples": 10
+  }
+}

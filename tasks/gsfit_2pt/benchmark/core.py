@@ -1,4 +1,4 @@
-"""Synthetic benchmark and fitting utilities for two_pt_gsfit."""
+"""Synthetic benchmark and fitting utilities for gsfit_2pt."""
 
 from __future__ import annotations
 
@@ -10,7 +10,7 @@ from typing import Any
 import numpy as np
 from scipy.optimize import minimize
 
-from tasks.two_pt_gsfit.interface import GroundStateFitConfig, Pion2PtGroundStateFit, validate_config
+from tasks.gsfit_2pt.interface import GroundStateFitConfig, Pion2PtGroundStateFit, validate_config
 
 
 @dataclass(frozen=True)
@@ -373,12 +373,32 @@ def benchmark_submission(
     """Benchmark a submission across all synthetic cases."""
 
     validate_config(submission.config)
+    return benchmark_config(
+        submission.config,
+        cases=cases,
+        num_samples=num_samples,
+        noise_multiplier=noise_multiplier,
+        max_resample_fits=max_resample_fits,
+    )
+
+
+def benchmark_config(
+    config: GroundStateFitConfig,
+    *,
+    cases: list[SyntheticCorrelatorCase] | None = None,
+    num_samples: int = 24,
+    noise_multiplier: float = 1.0,
+    max_resample_fits: int | None = None,
+) -> dict[str, Any]:
+    """Benchmark a bare fit configuration across all synthetic cases."""
+
+    validate_config(config)
     benchmark_cases = cases if cases is not None else make_synthetic_cases(
         num_samples=num_samples,
         noise_multiplier=noise_multiplier,
     )
 
-    per_case = [benchmark_case(case, submission.config, max_resample_fits=max_resample_fits) for case in benchmark_cases]
+    per_case = [benchmark_case(case, config, max_resample_fits=max_resample_fits) for case in benchmark_cases]
 
     overall_score = float(np.mean([case["score"] for case in per_case])) if per_case else 0.0
     aggregate_bias = float(np.mean([case["relative_bias"] for case in per_case])) if per_case else float("inf")

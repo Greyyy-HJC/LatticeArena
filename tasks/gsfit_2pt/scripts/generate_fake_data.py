@@ -1,4 +1,4 @@
-"""Generate deterministic fake data for the two_pt_gsfit task."""
+"""Generate deterministic fake data for the gsfit_2pt task."""
 
 from __future__ import annotations
 
@@ -11,15 +11,15 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from tasks.two_pt_gsfit.benchmark.core import make_synthetic_cases, save_synthetic_cases
+from tasks.gsfit_2pt.benchmark.core import make_synthetic_cases, save_synthetic_cases
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate fake pion 2pt data for two_pt_gsfit")
+    parser = argparse.ArgumentParser(description="Generate fake pion 2pt data for gsfit_2pt")
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("tasks/two_pt_gsfit/dataset/fake_data.npz"),
+        default=Path("tasks/gsfit_2pt/dataset/fake_data.npz"),
         help="Output .npz archive path",
     )
     parser.add_argument("--num-samples", type=int, default=24, help="Number of bootstrap/jackknife-like samples")

@@ -1,8 +1,8 @@
-"""Baseline fit configuration for the two_pt_gsfit task."""
+"""Baseline fit configuration for the gsfit_2pt task."""
 
 from __future__ import annotations
 
-from tasks.two_pt_gsfit.interface import (
+from tasks.gsfit_2pt.interface import (
     FitSubmissionMeta,
     GroundStateFitConfig,
     Pion2PtGroundStateFit,

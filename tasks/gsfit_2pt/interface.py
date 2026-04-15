@@ -36,6 +36,32 @@ class GroundStateFitConfig:
     amplitude_priors: list[tuple[float, float]]
 
 
+def config_to_dict(config: GroundStateFitConfig) -> dict[str, object]:
+    """Serialize a fit configuration to a JSON-friendly dict."""
+
+    return {
+        "t_min": config.t_min,
+        "t_max": config.t_max,
+        "n_states": config.n_states,
+        "e0_prior": [float(config.e0_prior[0]), float(config.e0_prior[1])],
+        "delta_e_priors": [[float(mean), float(width)] for mean, width in config.delta_e_priors],
+        "amplitude_priors": [[float(mean), float(width)] for mean, width in config.amplitude_priors],
+    }
+
+
+def config_from_dict(payload: dict[str, object]) -> GroundStateFitConfig:
+    """Load a fit configuration from a JSON-friendly dict."""
+
+    return GroundStateFitConfig(
+        t_min=int(payload["t_min"]),
+        t_max=int(payload["t_max"]),
+        n_states=int(payload["n_states"]),
+        e0_prior=tuple(float(value) for value in payload["e0_prior"]),
+        delta_e_priors=[tuple(float(value) for value in prior) for prior in payload["delta_e_priors"]],
+        amplitude_priors=[tuple(float(value) for value in prior) for prior in payload["amplitude_priors"]],
+    )
+
+
 class Pion2PtGroundStateFit(ABC):
     """ABC for pion ground-state fit configuration submissions."""
 

@@ -1,4 +1,4 @@
-"""Task registration for the two_pt_gsfit benchmark."""
+"""Task registration for the gsfit_2pt benchmark."""
 
 from __future__ import annotations
 
@@ -12,12 +12,12 @@ from .interface import Pion2PtGroundStateFit, validate_config
 
 
 @register_task
-class TwoPtGsfitTask(TaskBase):
+class Gsfit2PtTask(TaskBase):
     """Benchmark task for pion 2pt ground-state fit configurations."""
 
     @property
     def name(self) -> str:
-        return "two_pt_gsfit"
+        return "gsfit_2pt"
 
     def validate(self, operator: Any) -> bool:
         if not isinstance(operator, Pion2PtGroundStateFit):

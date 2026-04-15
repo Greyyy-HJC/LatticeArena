@@ -1,4 +1,4 @@
-"""LaMETLat-style ground-state fit script for two_pt_gsfit."""
+"""Example ground-state fit script for gsfit_2pt."""
 
 from __future__ import annotations
 
@@ -17,14 +17,14 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from tasks.two_pt_gsfit.benchmark.core import load_synthetic_cases
-from tasks.two_pt_gsfit.interface import GroundStateFitConfig, Pion2PtGroundStateFit, validate_config
+from tasks.gsfit_2pt.benchmark.core import load_synthetic_cases
+from tasks.gsfit_2pt.interface import GroundStateFitConfig, Pion2PtGroundStateFit, validate_config
 
 
 def load_submission(operator_name: str) -> Pion2PtGroundStateFit:
     """Import and instantiate a submission from operators/<name>.py."""
 
-    module = importlib.import_module(f"tasks.two_pt_gsfit.operators.{operator_name}")
+    module = importlib.import_module(f"tasks.gsfit_2pt.operators.{operator_name}")
     for value in module.__dict__.values():
         if (
             isinstance(value, type)
@@ -90,7 +90,7 @@ def fit_case(
     normalize: bool = True,
     label: str | None = None,
 ) -> dict[str, Any]:
-    """Run a LaMETLat-style correlated fit on one correlator ensemble."""
+    """Run a correlated `gvar`/`lsqfit` fit on one correlator ensemble."""
 
     validate_config(config, lt)
     pt2_gv = samples_to_gvar(samples)
@@ -192,12 +192,12 @@ def maybe_make_plot(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run a LaMETLat-style 2pt gsfit on fake two_pt_gsfit data")
+    parser = argparse.ArgumentParser(description="Run an example 2pt gsfit on fake gsfit_2pt data")
     parser.add_argument("--operator", type=str, required=True, help="Operator module name under operators/")
     parser.add_argument(
         "--dataset-file",
         type=Path,
-        default=Path("tasks/two_pt_gsfit/dataset/fake_data.npz"),
+        default=Path("tasks/gsfit_2pt/dataset/fake_data.npz"),
         help="Saved synthetic dataset archive",
     )
     parser.add_argument("--case", type=str, default="boosted_clean", help="Case name inside the dataset archive")

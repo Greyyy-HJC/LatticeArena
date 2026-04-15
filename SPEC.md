@@ -177,7 +177,7 @@ Contributors implement `PionInterpolatingOperator` with:
 `build(...)` returns source/sink spatial profiles and a Dirac matrix to define
 the bilinear used in the 2pt contraction.
 
-## 3.8 Task: `two_pt_gsfit`
+## 3.8 Task: `gsfit_2pt`
 
 ### 3.8.1 Physics Background
 
@@ -201,7 +201,7 @@ with positivity constraints enforced internally:
 
 ### 3.8.2 Optimization Interface
 
-File: `tasks/two_pt_gsfit/interface.py`
+File: `tasks/gsfit_2pt/interface.py`
 
 Contributors implement `Pion2PtGroundStateFit` and only submit one fixed
 configuration:

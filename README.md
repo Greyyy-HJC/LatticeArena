@@ -31,7 +31,7 @@ You only need to write one file: your operator implementation.
 |---|---|---|---|
 | [`wilson_loop`](tasks/wilson_loop/) | Spatial Wilson line operator for static quark-antiquark potential | Pure gauge SU(3) | In progress |
 | [`pion_2pt`](tasks/pion_2pt/) | Boosted pion interpolating operator for pion two-point correlators (target \|p\| ~ 1 GeV) | Gauge + quark propagators | In progress |
-| [`two_pt_gsfit`](tasks/two_pt_gsfit/) | Ground-state fit configuration for pion two-point correlators (`fit range`, priors, `N_states`) | Synthetic bootstrap/jackknife-like pion 2pt samples with known truth | In progress |
+| [`gsfit_2pt`](tasks/gsfit_2pt/) | Ground-state fit configuration for pion two-point correlators (`fit range`, priors, `N_states`) | Synthetic bootstrap/jackknife-like pion 2pt samples with known truth | In progress |
 
 ## Quick Start
 
@@ -103,7 +103,17 @@ source .venv/bin/activate
 pip install -e ".[dev]"
 ```
 
-If QUDA is not installed yet, tasks that depend on `pyquda` will not run. The pure fitting task [`two_pt_gsfit`](tasks/two_pt_gsfit/) is structurally independent of QUDA, but the repository-wide dependency set still declares `pyquda` and `pyquda-utils` as standard runtime requirements.
+If QUDA is not installed yet, tasks that depend on `pyquda` will not run. The pure fitting task [`gsfit_2pt`](tasks/gsfit_2pt/) is structurally independent of QUDA, but the repository-wide dependency set still declares `pyquda` and `pyquda-utils` as standard runtime requirements.
+
+## Leaderboard Page
+
+You can generate a standalone leaderboard page that highlights the current best score for each task:
+
+```bash
+python scripts/build_leaderboard_page.py
+```
+
+This writes `site/leaderboard.html`.
 
 ## Contributing an Operator
 

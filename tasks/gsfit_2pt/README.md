@@ -16,13 +16,12 @@ synthetic pion 2pt samples.
 
 ## Fit Model
 
-The benchmark uses the periodic multi-state form
+The benchmark uses the periodic multi-state form:
 
-\[
-C(t) = \sum_n A_n \left[e^{-E_n t} + e^{-E_n (L_t - t)}\right],
-\quad
-E_n = E_0 + \sum_{k \le n} \Delta E_k.
-\]
+```text
+C(t) = sum_n A_n * [exp(-E_n t) + exp(-E_n (L_t - t))]
+E_n = E_0 + sum_{k=1..n} Delta E_k
+```
 
 The fitter enforces:
 
@@ -58,8 +57,8 @@ Secondary objectives:
 ## Quick Check
 
 ```bash
-pytest tasks/two_pt_gsfit/tests/
-python tasks/two_pt_gsfit/benchmark/run.py --operator plain
+pytest tasks/gsfit_2pt/tests/
+python tasks/gsfit_2pt/benchmark/run.py --operator plain
 ```
 
 ## Fake Data
@@ -68,34 +67,43 @@ You can materialize the built-in synthetic benchmark cases as a real dataset
 file:
 
 ```bash
-python tasks/two_pt_gsfit/scripts/generate_fake_data.py
+python tasks/gsfit_2pt/scripts/generate_fake_data.py
 ```
 
-This produces `tasks/two_pt_gsfit/dataset/fake_data.npz`, which can be used by
+This produces `tasks/gsfit_2pt/dataset/fake_data.npz`, which can be used by
 the benchmark directly:
 
 ```bash
-python tasks/two_pt_gsfit/benchmark/run.py --operator plain \
-  --dataset-file tasks/two_pt_gsfit/dataset/fake_data.npz
+python tasks/gsfit_2pt/benchmark/run.py --operator plain \
+  --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz
 ```
 
-## LaMETLat-Style Script
+## Example Fit Script
 
-The reference notebook at `LaMETLat/examples/gsfit.ipynb` is now mirrored by a
-local script that runs a correlated `gvar`/`lsqfit` 2pt fit on one fake-data
-case:
+An example local script is provided to run a correlated `gvar`/`lsqfit` 2pt
+fit on one fake-data case:
 
 ```bash
-python tasks/two_pt_gsfit/scripts/gsfit.py --operator plain \
-  --dataset-file tasks/two_pt_gsfit/dataset/fake_data.npz \
+python tasks/gsfit_2pt/scripts/gsfit.py --operator plain \
+  --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz \
   --case boosted_clean
 ```
 
 Optional meff plot output:
 
 ```bash
-python tasks/two_pt_gsfit/scripts/gsfit.py --operator plain \
-  --dataset-file tasks/two_pt_gsfit/dataset/fake_data.npz \
+python tasks/gsfit_2pt/scripts/gsfit.py --operator plain \
+  --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz \
   --case boosted_clean \
-  --plot-output tasks/two_pt_gsfit/benchmark/results/boosted_clean_meff.png
+  --plot-output tasks/gsfit_2pt/benchmark/results/boosted_clean_meff.png
+```
+
+## NN Optimization
+
+A tiny NumPy MLP surrogate is included to search for stronger fit settings:
+
+```bash
+python tasks/gsfit_2pt/scripts/optimize_nn.py
+python tasks/gsfit_2pt/benchmark/run.py --operator nn \
+  --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz
 ```

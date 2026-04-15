@@ -3,10 +3,29 @@
 from __future__ import annotations
 
 import json
+from dataclasses import dataclass
 from dataclasses import asdict
 from pathlib import Path
 
 from .task import BenchmarkResult
+
+
+@dataclass(frozen=True)
+class TaskLeaderboardSummary:
+    """Summary of one task's current leaderboard state."""
+
+    task_name: str
+    results_dir: Path
+    results: list[BenchmarkResult]
+
+    @property
+    def ranked_results(self) -> list[BenchmarkResult]:
+        return sorted(self.results, key=lambda result: result.score, reverse=True)
+
+    @property
+    def best_result(self) -> BenchmarkResult | None:
+        ranked = self.ranked_results
+        return ranked[0] if ranked else None
 
 
 def save_result(result: BenchmarkResult, output_dir: str | Path) -> Path:
@@ -35,3 +54,21 @@ def print_leaderboard(results: list[BenchmarkResult]) -> None:
     print("-" * 48)
     for i, r in enumerate(ranked, 1):
         print(f"{i:<6}{r.operator_name:<30}{r.score:<12.4f}")
+
+
+def collect_task_summaries(task_names: list[str] | None = None) -> list[TaskLeaderboardSummary]:
+    """Collect leaderboard summaries across registered tasks."""
+
+    import tasks  # noqa: F401  # task registration side effects
+    from .task import get_task, list_tasks
+
+    selected_tasks = task_names if task_names is not None else list_tasks()
+    summaries: list[TaskLeaderboardSummary] = []
+
+    for task_name in selected_tasks:
+        task = get_task(task_name)
+        results_dir = task.root / "benchmark" / "results"
+        results = load_results(results_dir) if results_dir.exists() else []
+        summaries.append(TaskLeaderboardSummary(task_name=task_name, results_dir=results_dir, results=results))
+
+    return summaries
