@@ -6,6 +6,8 @@ A public benchmark for optimizing lattice QCD operators. Submit your operator de
 
 LatticeArena is designed to be useful in two complementary ways.
 
+The underlying motivation is that a good ML task is often a relatively self-contained, result-oriented optimization problem, so this project breaks out that class of tasks from lattice QCD computation and analysis and turns them into a benchmark collection.
+
 Internally, once a benchmark is well-defined, it becomes much easier to automate research loops: an agent can generate candidate ideas, run the benchmark, compare results on the leaderboard, and keep iterating toward better designs with minimal manual bookkeeping.
 
 Externally, the same benchmark suite acts as an optimization testbed for the broader community. If someone has a new ansatz, fitting strategy, architecture, or other unconventional idea, they can plug it into a controlled task and immediately see how it performs against a shared baseline.
