@@ -141,6 +141,42 @@ The **composite score** combines these metrics (weighting TBD) into a single num
    - Take trace, average over spatial sites `x`, directions, and source times `t0`
 5. Output `C(r, t)` correlator array
 
+## 3.7 Task: `pion_2pt`
+
+### 3.7.1 Physics Background
+
+The pion two-point correlator at nonzero momentum is
+
+```
+C_pi(p, t) = < O_pi(p, t0+t) O_pi^dag(p, t0) >
+```
+
+with
+
+```
+O_pi(p, t) = sum_x exp(i p.x) dbar(x,t) Gamma u(x,t).
+```
+
+The optimization target is the interpolating operator design (smearing profile,
+Dirac structure, momentum injection strategy) for boosted pions, especially
+for momentum scales around |p| ~ 1 GeV.
+
+Desired outcomes:
+- Higher signal-to-noise at moderate/large Euclidean time
+- Earlier and flatter effective-mass plateau
+- Reduced excited-state contamination in multi-state fits
+
+### 3.7.2 Optimization Interface
+
+File: `tasks/pion_2pt/interface.py`
+
+Contributors implement `PionInterpolatingOperator` with:
+- `setup(gauge_field, latt_size, lattice_spacing_fm)`
+- `build(gauge_field, momentum_gev, t_source)`
+
+`build(...)` returns source/sink spatial profiles and a Dirac matrix to define
+the bilinear used in the 2pt contraction.
+
 ---
 
 ## 4. Framework Library

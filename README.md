@@ -20,6 +20,7 @@ You only need to write one file: your operator implementation.
 | Task | What you optimize | Dataset | Status |
 |---|---|---|---|
 | [`wilson_loop`](tasks/wilson_loop/) | Spatial Wilson line operator for static quark-antiquark potential | Pure gauge SU(3) | In progress |
+| [`pion_2pt`](tasks/pion_2pt/) | Boosted pion interpolating operator for pion two-point correlators (target \|p\| ~ 1 GeV) | Gauge + quark propagators | In progress |
 
 ## Quick Start
 
