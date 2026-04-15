@@ -26,11 +26,32 @@ You implement `SpatialOperator` from `interface.py`. Your operator replaces the 
 4. Test: `pytest tests/ -k your_operator`
 5. Benchmark: `python benchmark/run.py --operator your_name`
 
+You can also inspect raw correlators before scoring:
+
+```bash
+.venv/bin/python tasks/wilson_loop/scripts/measure.py \
+  --operator plain \
+  --dataset-path tasks/wilson_loop/dataset/test_small \
+  --r-values 1,2,3 \
+  --t-values 0,1,2,3,4 \
+  --max-configs 4
+```
+
+For expensive datasets, both `measure.py` and `benchmark/run.py` support
+`--max-configs` so you can iterate on a small real subset before running the
+full ensemble.
+
 ## Baselines
 
 | Operator | Description | Score |
 |---|---|---|
 | `plain` | Straight Wilson line (product of links) | TBD |
+
+The official full-ensemble baseline is still pending. Small locally generated
+`8^3 x 16` development subsets were enough to verify that the measurement and
+benchmark stack runs end-to-end, but the resulting `plain` scores still move a
+lot with ensemble quality and post-warmup acceptance. Treat any current dev-only
+number as a smoke-test result, not a leaderboard reference.
 
 ## Hints
 

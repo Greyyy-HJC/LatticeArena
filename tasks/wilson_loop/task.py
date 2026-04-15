@@ -6,6 +6,9 @@ from pathlib import Path
 from typing import Any
 
 from latticearena.task import BenchmarkResult, TaskBase, register_task
+from tasks.wilson_loop.benchmark.metrics import benchmark_submission
+from tasks.wilson_loop.interface import SpatialOperator
+from tasks.wilson_loop.validation import validate_operator
 
 
 @register_task
@@ -17,9 +20,24 @@ class WilsonLoopTask(TaskBase):
         return "wilson_loop"
 
     def validate(self, operator: Any) -> bool:
-        return hasattr(operator, "compute") and hasattr(operator, "setup")
+        if not isinstance(operator, SpatialOperator):
+            return False
+        return not validate_operator(operator)
 
     def benchmark(self, operator: Any, dataset_path: str | Path | None = None) -> BenchmarkResult:
-        raise NotImplementedError(
-            "Use the wilson_loop benchmark scripts once the measurement pipeline is implemented."
+        if not isinstance(operator, SpatialOperator):
+            raise TypeError("wilson_loop benchmark expects a SpatialOperator instance.")
+
+        summary = benchmark_submission(
+            operator,
+            dataset_path=str(dataset_path or self.dataset_path / "test_small"),
+            r_values=[1, 2, 3],
+            t_values=[0, 1, 2, 3, 4],
+            max_configs=None,
+        )
+        return BenchmarkResult(
+            task_name=self.name,
+            operator_name=operator.meta.name,
+            score=summary["score"],
+            metrics=summary,
         )

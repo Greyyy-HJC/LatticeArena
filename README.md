@@ -57,9 +57,10 @@ All Python dependencies are declared in [pyproject.toml](/home/genie/git/Lattice
 
 ### Python Dependencies
 
-- Runtime deps: `numpy`, `scipy`, `pyquda`, `pyquda-utils`
+- Runtime deps: `numpy`, `scipy`, `gvar`, `lsqfit`, `gmpy2`, `pyquda`, `pyquda-utils`
 - Dev deps: `pytest`, `pytest-cov`
 - Optional viz deps: `matplotlib`
+- Optional GPU deps: `cupy-cuda12x` on CUDA 12 systems via the `gpu-cuda12` extra
 
 Install commands:
 
@@ -68,6 +69,12 @@ python -m venv .venv
 source .venv/bin/activate
 pip install -U pip setuptools wheel
 pip install -e ".[dev]"
+```
+
+On CUDA 12 machines that run PyQUDA scripts locally, install the GPU extra too:
+
+```bash
+pip install -e ".[dev,gpu-cuda12]"
 ```
 
 If your system Python does not provide `venv`, you can create the same `.venv` with `uv`:
@@ -81,6 +88,14 @@ uv pip install -e ".[dev]"
 ### QUDA / PyQUDA Prerequisites
 
 `pyquda` is a Python wrapper around a local QUDA installation. That means `pip install -e ".[dev]"` will only succeed after QUDA itself is installed on the machine and visible to the build.
+
+`pyquda-utils` also imports `gmpy2` at runtime for some HMC parameter helpers, so
+`gmpy2` is treated as a repository runtime dependency even though older PyQUDA
+package metadata may not install it automatically.
+
+PyQUDA's default GPU backend also expects a matching CuPy wheel. On CUDA 12
+systems in this repository, use the `gpu-cuda12` extra, which installs
+`cupy-cuda12x`.
 
 Before installing `pyquda`, make sure you have:
 
@@ -100,7 +115,7 @@ Then install the project inside `.venv`:
 
 ```bash
 source .venv/bin/activate
-pip install -e ".[dev]"
+pip install -e ".[dev,gpu-cuda12]"
 ```
 
 If QUDA is not installed yet, tasks that depend on `pyquda` will not run. The pure fitting task [`gsfit_2pt`](tasks/gsfit_2pt/) is structurally independent of QUDA, but the repository-wide dependency set still declares `pyquda` and `pyquda-utils` as standard runtime requirements.

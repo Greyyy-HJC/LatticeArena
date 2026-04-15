@@ -9,6 +9,7 @@ dependencies = [
     "scipy",
     "gvar",
     "lsqfit",
+    "gmpy2",
     "pyquda",
     "pyquda-utils",
 ]
@@ -16,6 +17,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov"]
 viz = ["matplotlib"]
+gpu-cuda12 = ["cupy-cuda12x"]
 
 [build-system]
 requires = ["setuptools>=64", "wheel"]
