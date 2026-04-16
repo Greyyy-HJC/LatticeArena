@@ -108,6 +108,7 @@ def test_benchmark_smoke_cli() -> None:
             "tasks/gsfit_2pt/benchmark/run.py",
             "--submission",
             "plain",
+            "--skip-tests",
             "--num-samples",
             "8",
             "--max-resamples",
@@ -121,6 +122,97 @@ def test_benchmark_smoke_cli() -> None:
 
     assert '"submission": "plain"' in result.stdout
     assert '"score":' in result.stdout
+
+
+def test_benchmark_cli_runs_pytest_gate_by_default(monkeypatch) -> None:
+    from tasks.gsfit_2pt.benchmark import run as benchmark_run
+
+    class DummyTask:
+        tests_path = Path("tasks/gsfit_2pt/tests")
+
+        @staticmethod
+        def validate(_submission: object) -> bool:
+            return True
+
+    calls: list[list[str]] = []
+
+    def fake_subprocess_run(
+        command: list[str], cwd: Path, check: bool
+    ):  # pragma: no cover - executed in test body
+        calls.append(command)
+
+        class _Result:
+            returncode = 0
+
+        return _Result()
+
+    monkeypatch.setattr(benchmark_run, "Gsfit2PtTask", DummyTask)
+    monkeypatch.setattr(
+        benchmark_run, "load_submission", lambda _submission_name: PlainGroundStateFit()
+    )
+    monkeypatch.setattr(
+        benchmark_run,
+        "benchmark_submission",
+        lambda *_args, **_kwargs: {"score": 1.0},
+    )
+    monkeypatch.setattr(
+        benchmark_run, "save_result", lambda *_args, **_kwargs: Path("result.json")
+    )
+    monkeypatch.setattr(benchmark_run.subprocess, "run", fake_subprocess_run)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["run.py", "--submission", "plain", "--num-samples", "2", "--max-resamples", "1"],
+    )
+
+    benchmark_run.main()
+
+    assert calls
+    assert calls[0][:4] == [sys.executable, "-m", "pytest", "tasks/gsfit_2pt/tests/test_validation.py"]
+
+
+def test_benchmark_cli_skip_tests_bypasses_pytest_gate(monkeypatch) -> None:
+    from tasks.gsfit_2pt.benchmark import run as benchmark_run
+
+    class DummyTask:
+        tests_path = Path("tasks/gsfit_2pt/tests")
+
+        @staticmethod
+        def validate(_submission: object) -> bool:
+            return True
+
+    def fail_if_called(*_args, **_kwargs):
+        raise AssertionError("pytest validation gate should be skipped")
+
+    monkeypatch.setattr(benchmark_run, "Gsfit2PtTask", DummyTask)
+    monkeypatch.setattr(
+        benchmark_run, "load_submission", lambda _submission_name: PlainGroundStateFit()
+    )
+    monkeypatch.setattr(
+        benchmark_run,
+        "benchmark_submission",
+        lambda *_args, **_kwargs: {"score": 1.0},
+    )
+    monkeypatch.setattr(
+        benchmark_run, "save_result", lambda *_args, **_kwargs: Path("result.json")
+    )
+    monkeypatch.setattr(benchmark_run.subprocess, "run", fail_if_called)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "run.py",
+            "--submission",
+            "plain",
+            "--skip-tests",
+            "--num-samples",
+            "2",
+            "--max-resamples",
+            "1",
+        ],
+    )
+
+    benchmark_run.main()
 
 
 def test_gsfit_script_cli() -> None:
@@ -307,6 +399,7 @@ def test_build_leaderboard_page_cli(tmp_path: Path) -> None:
             "tasks/gsfit_2pt/benchmark/run.py",
             "--submission",
             "plain",
+            "--skip-tests",
             "--dataset-file",
             "tasks/gsfit_2pt/dataset/fake_data.npz",
             "--max-resamples",

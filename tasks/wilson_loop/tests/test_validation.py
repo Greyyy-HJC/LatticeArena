@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import numpy as np
+from pathlib import Path
+import sys
 
 from core.testing import (
     apply_gauge_transform,
@@ -68,3 +70,91 @@ def test_plain_operator_requires_setup() -> None:
     raise AssertionError(
         "Expected RuntimeError when compute() is called before setup()."
     )
+
+
+def test_benchmark_cli_runs_pytest_gate_by_default(monkeypatch) -> None:
+    from tasks.wilson_loop.benchmark import run as benchmark_run
+
+    class DummyTask:
+        tests_path = Path("tasks/wilson_loop/tests")
+
+        @staticmethod
+        def validate(_submission: object) -> bool:
+            return True
+
+    calls: list[list[str]] = []
+
+    def fake_subprocess_run(command: list[str], cwd: Path, check: bool):
+        calls.append(command)
+
+        class _Result:
+            returncode = 0
+
+        return _Result()
+
+    monkeypatch.setattr(benchmark_run, "WilsonLoopTask", DummyTask)
+    monkeypatch.setattr(
+        benchmark_run, "load_submission", lambda _submission_name: PlainWilsonLine()
+    )
+    monkeypatch.setattr(
+        benchmark_run, "benchmark_submission", lambda *_args, **_kwargs: {"score": 1.0}
+    )
+    monkeypatch.setattr(
+        benchmark_run, "save_result", lambda *_args, **_kwargs: Path("result.json")
+    )
+    monkeypatch.setattr(benchmark_run.subprocess, "run", fake_subprocess_run)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        ["run.py", "--submission", "plain", "--dataset-path", "tasks/wilson_loop/dataset/test_small"],
+    )
+
+    benchmark_run.main()
+
+    assert calls
+    assert calls[0][:4] == [
+        sys.executable,
+        "-m",
+        "pytest",
+        "tasks/wilson_loop/tests/test_validation.py",
+    ]
+
+
+def test_benchmark_cli_skip_tests_bypasses_pytest_gate(monkeypatch) -> None:
+    from tasks.wilson_loop.benchmark import run as benchmark_run
+
+    class DummyTask:
+        tests_path = Path("tasks/wilson_loop/tests")
+
+        @staticmethod
+        def validate(_submission: object) -> bool:
+            return True
+
+    def fail_if_called(*_args, **_kwargs):
+        raise AssertionError("pytest validation gate should be skipped")
+
+    monkeypatch.setattr(benchmark_run, "WilsonLoopTask", DummyTask)
+    monkeypatch.setattr(
+        benchmark_run, "load_submission", lambda _submission_name: PlainWilsonLine()
+    )
+    monkeypatch.setattr(
+        benchmark_run, "benchmark_submission", lambda *_args, **_kwargs: {"score": 1.0}
+    )
+    monkeypatch.setattr(
+        benchmark_run, "save_result", lambda *_args, **_kwargs: Path("result.json")
+    )
+    monkeypatch.setattr(benchmark_run.subprocess, "run", fail_if_called)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "run.py",
+            "--submission",
+            "plain",
+            "--dataset-path",
+            "tasks/wilson_loop/dataset/test_small",
+            "--skip-tests",
+        ],
+    )
+
+    benchmark_run.main()

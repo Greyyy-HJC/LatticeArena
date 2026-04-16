@@ -8,6 +8,7 @@ import argparse
 import importlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -37,6 +38,36 @@ def load_submission(submission_name: str) -> Pion2PtGroundStateFit:
     raise ValueError(
         f"No Pion2PtGroundStateFit submission found in module '{submission_name}'."
     )
+
+
+def run_validation_tests(*, skip_tests: bool) -> None:
+    """Run gsfit validation tests before benchmarking unless explicitly skipped."""
+
+    if skip_tests:
+        print(
+            "WARNING: Skipping pytest validation gate via --skip-tests. "
+            "Benchmark results may be invalid."
+        )
+        return
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "tasks/gsfit_2pt/tests/test_validation.py",
+            "-q",
+        ],
+        cwd=REPO_ROOT,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise SystemExit(
+            "gsfit_2pt benchmark refused to run because pre-benchmark "
+            "validation tests failed "
+            f"(exit code {result.returncode}). "
+            "Fix tests first or rerun with --skip-tests."
+        )
 
 
 def main() -> None:
@@ -77,8 +108,17 @@ def main() -> None:
         default=Path("tasks/gsfit_2pt/benchmark/results"),
         help="Directory to save the benchmark JSON result",
     )
+    parser.add_argument(
+        "--skip-tests",
+        action="store_true",
+        help=(
+            "Skip pre-benchmark pytest validation "
+            "(tasks/gsfit_2pt/tests/test_validation.py)"
+        ),
+    )
     args = parser.parse_args()
 
+    run_validation_tests(skip_tests=args.skip_tests)
     submission = load_submission(args.submission)
     task = Gsfit2PtTask()
     if not task.validate(submission):

@@ -204,3 +204,52 @@ averaging are standard in the dataset metadata.
   active local dataset convention, and users should pass `--dataset-path` when
   using any alternate local dataset.
 
+### 2026-04-16 — `gsfit_2pt` benchmark pre-test gate
+
+- **Area**: `gsfit_2pt`
+- **Type**: change / bugfix
+- **Context**: benchmark submission previously relied on `task.validate(...)`,
+  which only checked interface/config legality and did not actually run task
+  tests before scoring.
+- **Decision**:
+  - add a pre-benchmark pytest gate in `tasks/gsfit_2pt/benchmark/run.py` that
+    runs `tasks/gsfit_2pt/tests/test_validation.py` by default
+  - add `--skip-tests` as an explicit override for local experimentation
+  - fail early with a clear message when the pre-test gate fails
+- **Impact**:
+  - default benchmark runs now execute real tests before score generation
+  - invalid or regressing submissions are blocked earlier in the benchmark CLI
+  - test coverage includes both default gate behavior and `--skip-tests` bypass
+
+### 2026-04-16 — `pion_2pt` benchmark pre-test gate
+
+- **Area**: `pion_2pt`
+- **Type**: change / bugfix
+- **Context**: benchmark submission only used `task.validate(...)` contract checks
+  before scoring, so task tests were not executed by default in the benchmark CLI.
+- **Decision**:
+  - add a pre-benchmark pytest gate in `tasks/pion_2pt/benchmark/run.py` that runs
+    `tasks/pion_2pt/tests/test_validation.py` by default
+  - add `--skip-tests` as an explicit override for local experimentation
+  - fail fast with a clear error when the pre-test gate fails
+- **Impact**:
+  - default `pion_2pt` benchmark runs now execute real tests before scoring
+  - regressions are blocked earlier in the benchmark path
+  - test coverage now validates both default gate behavior and the skip path
+
+### 2026-04-16 — `wilson_loop` benchmark pre-test gate
+
+- **Area**: `wilson_loop`
+- **Type**: change / bugfix
+- **Context**: benchmark CLI previously only checked submission validation helper
+  and did not execute task tests before scoring.
+- **Decision**:
+  - add a pre-benchmark pytest gate in `tasks/wilson_loop/benchmark/run.py` that
+    runs `tasks/wilson_loop/tests/test_validation.py` by default
+  - add `--skip-tests` for explicit local override
+  - fail fast with a clear error if the pre-test gate fails
+- **Impact**:
+  - default benchmark path now executes validation tests before score generation
+  - behavior is aligned with `gsfit_2pt` and `pion_2pt`
+  - tests cover both default gate execution and skip path
+

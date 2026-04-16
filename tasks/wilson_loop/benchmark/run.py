@@ -8,6 +8,7 @@ import argparse
 import importlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -37,6 +38,36 @@ def load_submission(submission_name: str) -> SpatialOperator:
     raise ValueError(
         f"No SpatialOperator submission found in module '{submission_name}'."
     )
+
+
+def run_validation_tests(*, skip_tests: bool) -> None:
+    """Run wilson_loop validation tests before benchmarking unless skipped."""
+
+    if skip_tests:
+        print(
+            "WARNING: Skipping pytest validation gate via --skip-tests. "
+            "Benchmark results may be invalid."
+        )
+        return
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "tasks/wilson_loop/tests/test_validation.py",
+            "-q",
+        ],
+        cwd=REPO_ROOT,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise SystemExit(
+            "wilson_loop benchmark refused to run because pre-benchmark "
+            "validation tests failed "
+            f"(exit code {result.returncode}). "
+            "Fix tests first or rerun with --skip-tests."
+        )
 
 
 def main() -> None:
@@ -77,8 +108,17 @@ def main() -> None:
         default=Path("tasks/wilson_loop/benchmark/results"),
         help="Directory to save the benchmark JSON result",
     )
+    parser.add_argument(
+        "--skip-tests",
+        action="store_true",
+        help=(
+            "Skip pre-benchmark pytest validation "
+            "(tasks/wilson_loop/tests/test_validation.py)"
+        ),
+    )
     args = parser.parse_args()
 
+    run_validation_tests(skip_tests=args.skip_tests)
     submission = load_submission(args.submission)
     task = WilsonLoopTask()
     if not task.validate(submission):

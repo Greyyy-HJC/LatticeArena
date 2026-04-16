@@ -7,6 +7,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -34,6 +35,36 @@ def _default_dataset_path() -> Path:
         "dataset directory (containing ensemble.json) or an ensemble.json file. "
         "Expected: tasks/pion_2pt/dataset/quenched_wilson_b6_16x16."
     )
+
+
+def run_validation_tests(*, skip_tests: bool) -> None:
+    """Run pion_2pt validation tests before benchmarking unless skipped."""
+
+    if skip_tests:
+        print(
+            "WARNING: Skipping pytest validation gate via --skip-tests. "
+            "Benchmark results may be invalid."
+        )
+        return
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "pytest",
+            "tasks/pion_2pt/tests/test_validation.py",
+            "-q",
+        ],
+        cwd=REPO_ROOT,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise SystemExit(
+            "pion_2pt benchmark refused to run because pre-benchmark "
+            "validation tests failed "
+            f"(exit code {result.returncode}). "
+            "Fix tests first or rerun with --skip-tests."
+        )
 
 
 def main() -> None:
@@ -80,8 +111,17 @@ def main() -> None:
         default=Path("tasks/pion_2pt/benchmark/results"),
         help="Directory to save the benchmark JSON result.",
     )
+    parser.add_argument(
+        "--skip-tests",
+        action="store_true",
+        help=(
+            "Skip pre-benchmark pytest validation "
+            "(tasks/pion_2pt/tests/test_validation.py)"
+        ),
+    )
     args = parser.parse_args()
 
+    run_validation_tests(skip_tests=args.skip_tests)
     submission = load_submission(args.submission)
     task = Pion2PtTask()
     if not task.validate(submission):
