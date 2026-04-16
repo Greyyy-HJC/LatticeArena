@@ -8,7 +8,10 @@ import sys
 import numpy as np
 
 from core.testing import identity_gauge_field
-from tasks.pion_2pt.benchmark.metrics import effective_mass_periodic
+from tasks.pion_2pt.benchmark.metrics import (
+    detect_plateau_window,
+    effective_mass_periodic,
+)
 from tasks.pion_2pt.dirac import gamma5_matrix, gamma_t_gamma5_matrix
 from tasks.pion_2pt.interface import PlaneWaveSinkSpec, PointSourceSpec
 from tasks.pion_2pt.scripts.measure import (
@@ -127,6 +130,52 @@ def test_effective_mass_periodic_marks_invalid_domain_as_nan() -> None:
 
     assert meff.shape == (3,)
     assert np.all(np.isnan(meff))
+
+
+def test_detect_plateau_window_prefers_earliest_stable_region() -> None:
+    times = np.arange(1, 11, dtype=np.int64)
+    effective_mass = np.asarray(
+        [3.5, 2.74, 2.73, 2.75, 2.72, 2.74, 1.4, 1.2, np.nan, np.nan],
+        dtype=np.float64,
+    )
+    effective_mass_stderr = np.asarray(
+        [0.01, 0.05, 0.05, 0.06, 0.08, 0.10, 0.12, 0.15, 0.20, 0.20],
+        dtype=np.float64,
+    )
+
+    start_idx, stop_idx, plateau_level, chi2_dof = detect_plateau_window(
+        effective_mass,
+        effective_mass_stderr,
+        times,
+    )
+
+    assert times[start_idx] == 2
+    assert times[stop_idx - 1] == 6
+    assert np.isclose(plateau_level, 2.73674128058303)
+    assert chi2_dof < 2.5
+
+
+def test_detect_plateau_window_avoids_late_no_signal_region() -> None:
+    times = np.arange(1, 13, dtype=np.int64)
+    effective_mass = np.asarray(
+        [3.3, 2.77, 2.74, 2.73, 2.72, 2.75, 2.71, 1.1, 2.1, 0.6, 3.4, np.nan],
+        dtype=np.float64,
+    )
+    effective_mass_stderr = np.asarray(
+        [0.01, 0.03, 0.04, 0.05, 0.07, 0.09, 0.12, 0.10, 0.23, 0.14, 0.12, 0.20],
+        dtype=np.float64,
+    )
+
+    start_idx, stop_idx, plateau_level, chi2_dof = detect_plateau_window(
+        effective_mass,
+        effective_mass_stderr,
+        times,
+    )
+
+    assert times[start_idx] == 2
+    assert times[stop_idx - 1] == 7
+    assert 2.6 < plateau_level < 2.8
+    assert chi2_dof < 2.5
 
 
 def test_benchmark_cli_runs_pytest_gate_by_default(monkeypatch, tmp_path: Path) -> None:

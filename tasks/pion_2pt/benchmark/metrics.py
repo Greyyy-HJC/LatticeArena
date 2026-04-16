@@ -42,6 +42,82 @@ def effective_mass_stderr(per_config_effective_mass: np.ndarray) -> np.ndarray:
     return np.nanstd(per_config_effective_mass, axis=0, ddof=1) / np.sqrt(n_configs)
 
 
+def _plateau_window_stats(
+    values: np.ndarray, errors: np.ndarray
+) -> tuple[float, float]:
+    """Return the weighted plateau level and chi^2/dof for one candidate window."""
+
+    safe_errors = np.where(errors > 1e-12, errors, 1e-12)
+    weights = 1.0 / np.square(safe_errors)
+    plateau_level = float(np.sum(weights * values) / np.sum(weights))
+    chi2 = float(np.sum(np.square((values - plateau_level) / safe_errors)))
+    dof = max(values.size - 1, 1)
+    return plateau_level, chi2 / dof
+
+
+def detect_plateau_window(
+    effective_mass: np.ndarray,
+    effective_mass_stderr: np.ndarray,
+    effective_mass_times: np.ndarray,
+    *,
+    min_window_points: int = 3,
+    max_plateau_chi2_dof: float = 2.5,
+) -> tuple[int, int, float, float]:
+    """Detect the earliest stable effective-mass plateau window.
+
+    The search scans forward from small `t_sep` and selects the earliest
+    contiguous finite window whose weighted constant fit satisfies the chi^2/dof
+    threshold. If no such stable window exists, it falls back to the valid
+    window with the smallest chi^2/dof.
+    """
+
+    values = np.asarray(effective_mass, dtype=np.float64)
+    errors = np.asarray(effective_mass_stderr, dtype=np.float64)
+    times = np.asarray(effective_mass_times, dtype=np.int64)
+
+    valid = np.isfinite(values) & np.isfinite(errors) & (errors > 0)
+    candidates: list[tuple[int, int, float, float]] = []
+
+    for start in range(values.shape[0]):
+        if not valid[start]:
+            continue
+        for stop in range(start + min_window_points, values.shape[0] + 1):
+            window = slice(start, stop)
+            if not np.all(valid[window]):
+                break
+            plateau_level, chi2_dof = _plateau_window_stats(
+                values[window], errors[window]
+            )
+            candidates.append((start, stop, plateau_level, chi2_dof))
+
+    if not candidates:
+        return 0, 0, float("nan"), float("inf")
+
+    stable_candidates = [
+        candidate
+        for candidate in candidates
+        if np.isfinite(candidate[3]) and candidate[3] <= max_plateau_chi2_dof
+    ]
+    if stable_candidates:
+        stable_candidates.sort(
+            key=lambda item: (
+                int(times[item[0]]),
+                -(item[1] - item[0]),
+                item[3],
+            )
+        )
+        return stable_candidates[0]
+
+    candidates.sort(
+        key=lambda item: (
+            item[3],
+            int(times[item[0]]),
+            -(item[1] - item[0]),
+        )
+    )
+    return candidates[0]
+
+
 def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
     """Compute signal/noise and excited-state proxies from measured correlators."""
 
@@ -69,35 +145,51 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
     eff_err_safe = np.where(np.isfinite(eff_err) & (eff_err > 1e-12), eff_err, 1.0)
     eff_times = np.arange(1, lt - 1, dtype=np.int64)
 
-    plateau_start = max(2, lt // 3)
-    plateau_stop = max(plateau_start + 2, lt // 2)
     plateau_chi2 = 0.0
     plateau_dof = 0
     excited_state_proxy_terms = []
+    plateau_windows: list[dict[str, float | int]] = []
 
     for momentum_idx in range(n_momenta):
-        plateau_mask = (eff_times >= plateau_start) & (eff_times < plateau_stop)
-        early_mask = eff_times < plateau_start
-
-        values = mean_eff[momentum_idx, plateau_mask]
-        errors = eff_err_safe[momentum_idx, plateau_mask]
-        valid = np.isfinite(values)
-        if np.count_nonzero(valid) < 2:
+        start_idx, stop_idx, plateau_level, chi2_dof = detect_plateau_window(
+            mean_eff[momentum_idx],
+            eff_err_safe[momentum_idx],
+            eff_times,
+        )
+        if stop_idx - start_idx < 2 or not np.isfinite(plateau_level):
+            plateau_windows.append(
+                {
+                    "start_t": -1,
+                    "stop_t": -1,
+                    "n_points": 0,
+                    "plateau_level": float("nan"),
+                    "chi2_dof": float("inf"),
+                }
+            )
             excited_state_proxy_terms.append(float("inf"))
             continue
 
-        plateau_level = float(np.nanmean(values[valid]))
-        plateau_chi2 += float(
-            np.sum(((values[valid] - plateau_level) / errors[valid]) ** 2)
+        window_length = stop_idx - start_idx
+        plateau_windows.append(
+            {
+                "start_t": int(eff_times[start_idx]),
+                "stop_t": int(eff_times[stop_idx - 1]),
+                "n_points": int(window_length),
+                "plateau_level": plateau_level,
+                "chi2_dof": chi2_dof,
+            }
         )
-        plateau_dof += max(np.count_nonzero(valid) - 1, 1)
+        plateau_chi2 += chi2_dof * max(window_length - 1, 1)
+        plateau_dof += max(window_length - 1, 1)
 
-        early_values = mean_eff[momentum_idx, early_mask]
+        early_values = mean_eff[momentum_idx, :start_idx]
         early_valid = np.isfinite(early_values)
         if np.any(early_valid):
             excited_state_proxy_terms.append(
                 float(abs(np.nanmean(early_values[early_valid]) - plateau_level))
             )
+        else:
+            excited_state_proxy_terms.append(0.0)
 
     plateau_chi2_dof = plateau_chi2 / plateau_dof if plateau_dof else float("inf")
     excited_state_proxy = float(np.nanmean(excited_state_proxy_terms))
@@ -123,6 +215,7 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
         "mean_correlator_imag": mean_corr.imag.tolist(),
         "effective_mass": mean_eff.tolist(),
         "effective_mass_stderr": eff_err.tolist(),
+        "plateau_windows": plateau_windows,
         "signal_to_noise": signal_to_noise,
         "plateau_chi2_dof": plateau_chi2_dof,
         "excited_state_proxy": excited_state_proxy,

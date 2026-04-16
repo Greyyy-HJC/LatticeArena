@@ -328,6 +328,31 @@ averaging are standard in the dataset metadata.
   - regressions are blocked earlier in the benchmark path
   - test coverage now validates both default gate behavior and the skip path
 
+### 2026-04-16 — `pion_2pt` plateau scoring now detects the earliest stable window
+
+- **Area**: `pion_2pt`
+- **Type**: change / metric / bugfix
+- **Context**: the benchmark score used a fixed late-time plateau window derived
+  from `Lt`, which over-penalized submissions once the correlator had already
+  lost signal. On the local `8^3 x 32` ensemble this made `plain` score higher
+  than `temporal_axial` even though the temporal-axial effective-mass curve was
+  visibly cleaner in the useful `t_sep` range.
+- **Decision**:
+  - replace the fixed `Lt // 3` to `Lt // 2` plateau window in
+    `tasks/pion_2pt/benchmark/metrics.py` with an automatic scan over
+    contiguous effective-mass windows
+  - detect the earliest statistically stable plateau by a weighted constant fit
+    with a configurable chi^2/dof threshold
+  - expose the chosen plateau window in benchmark JSON so score decisions are
+    inspectable
+- **Impact**:
+  - plateau scoring now reflects the earliest region where the effective mass
+    actually flattens before signal loss
+  - the local `plain` benchmark now identifies a plateau at `t_sep = 2..7`
+  - the local `temporal_axial` benchmark now identifies a plateau at
+    `t_sep = 3..8`, giving it the higher score that better matches the plotted
+    signal quality
+
 ### 2026-04-16 — `wilson_loop` benchmark pre-test gate
 
 - **Area**: `wilson_loop`
