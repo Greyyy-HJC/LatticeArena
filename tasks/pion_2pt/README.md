@@ -1,20 +1,17 @@
 # Task: Pion 2pt
 
-`pion_2pt` is a measurement-task skeleton for boosted pion two-point
-correlators. The optimization target is the interpolating submission used by a
-fixed measurement pipeline.
-
-This task is intentionally incomplete, but its structure is already standardized
-to match the rest of the repository.
+`pion_2pt` is a measurement task for boosted pion two-point correlators. The
+optimization target is the interpolating submission used by a fixed PyQUDA
+measurement pipeline.
 
 ## Task Components
 
-- `dataset/`: placeholder dataset contract for gauge fields and propagator data
-- `scripts/measure.py`: fixed measurement-pipeline placeholder
+- `dataset/`: task-local dataset contract plus local-only quenched smoke tests
+- `scripts/measure.py`: fixed PyQUDA measurement workflow
 - `interface.py`: `PionInterpolatingOperator`
 - `submissions/`: baseline interpolating submissions
 - `tests/`: validation of shapes and normalization
-- `benchmark/`: explicit WIP benchmark skeleton
+- `benchmark/`: benchmark scoring and CLI entrypoint
 
 ## Optimization Target
 
@@ -24,23 +21,33 @@ Submissions define how the pion source and sink are built for boosted pions:
 - spatial sink profile
 - Dirac structure
 
-The current baseline is `submissions/plain.py`, which provides a normalized
-Gaussian profile multiplied by a plane-wave phase and uses `gamma_5`.
+The current reference submissions are:
+
+- `submissions/plain.py`: pseudoscalar (`gamma_5`) with a point source and
+  plane-wave sink projection
+- `submissions/axial_smeared.py`: Gaussian momentum-smeared profile with a
+  boost-aligned axial-style Dirac structure
+
+Measurement scripts in this task are written against
+[PyQUDA](https://github.com/CLQCD/PyQUDA).
 
 ## Current Status
 
 - Interface: ready
-- Baseline submission: ready
+- Reference submissions: ready
 - Validation tests: ready
-- Measurement pipeline: WIP
-- Benchmark scoring: WIP
+- Measurement pipeline: ready for local PyQUDA datasets
+- Benchmark scoring: ready for local smoke tests
 
 ## Quick Start
 
 ```bash
 pytest tasks/pion_2pt/tests/
+python tasks/pion_2pt/scripts/measure.py --submission plain
 python tasks/pion_2pt/benchmark/run.py --submission plain
 ```
 
-The benchmark CLI currently returns a clear WIP message because the fixed
-PyQUDA measurement workflow is not implemented yet.
+Useful references:
+
+- PyQUDA upstream: [CLQCD/PyQUDA](https://github.com/CLQCD/PyQUDA)
+- PyQUDA notes (repo-wide): [`PYQUDA_NOTES.md`](../../PYQUDA_NOTES.md)

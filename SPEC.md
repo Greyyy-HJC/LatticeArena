@@ -5,6 +5,17 @@
 LatticeArena is a multi-task benchmark where each task isolates one lattice QCD
 optimization target behind a fixed workflow and a stable scoring contract.
 
+## 1.1 Document map (where to find things)
+
+- **This file (`SPEC.md`)**: the stable, cross-task contract (structure + rules).
+- **Project log (`PROJECT_LOG.md`)**: see [`PROJECT_LOG.md`](PROJECT_LOG.md) for long-form, living notes:
+  - detailed per-task explanations/contracts
+  - important design decisions
+  - important changes / migration notes
+- **PyQUDA integration notes**: see [`PYQUDA_NOTES.md`](PYQUDA_NOTES.md) for shared PyQUDA / `pyquda-utils` constraints and reminders.
+- **Task-local docs**: `tasks/<task>/dataset/README.md` is the canonical place for
+  dataset acquisition/generation details and any large-file handling notes.
+
 ## 2. Standard Task Structure
 
 Every task lives under `tasks/<task_name>/` and must contain:
@@ -55,104 +66,16 @@ benchmark = scripts + submission + metrics
 6. Task-specific dependencies beyond the repository standard stack must be
    documented explicitly.
 
-## 4. Task Contracts
+## 4. Task contracts (where they live)
 
-### 4.1 `wilson_loop`
+Task-specific detailed descriptions (interfaces, validation expectations, WIP
+status, scoring notes) live in:
 
-Optimization target: a spatial Wilson-line submission that improves overlap
-with the ground state in static quark-antiquark Wilson loops.
+- [`PROJECT_LOG.md`](PROJECT_LOG.md) → **Task contracts (migrated from `SPEC.md`)**
 
-- `dataset/`: pure-gauge SU(3) configurations
-- `scripts/measure.py`: fixed Wilson-loop measurement workflow
-- `interface.py`: `SpatialOperator`
-- `submissions/`: spatial path constructions
-- `tests/validation.py`: gauge covariance and cold-config checks
-- `benchmark/metrics.py`: effective-mass and overlap-oriented scoring
+Task-specific dataset contracts and data acquisition/generation live in:
 
-The submission interface remains:
-
-```python
-class SpatialOperator(ABC):
-    @property
-    def meta(self) -> SubmissionMeta: ...
-
-    def setup(self, gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]) -> None: ...
-
-    def compute(
-        self,
-        gauge_field: np.ndarray,
-        r: int,
-        direction: int,
-        t: int,
-    ) -> np.ndarray: ...
-```
-
-Key validation expectations:
-
-- correct output shape and dtype
-- identity on a cold gauge field
-- correct gauge-covariant transformation behavior
-
-### 4.2 `pion_2pt`
-
-Optimization target: a boosted pion interpolating submission for pion two-point
-correlators.
-
-- `dataset/`: gauge fields and propagator inputs, documented as a placeholder
-  contract for now
-- `scripts/measure.py`: fixed measurement pipeline placeholder
-- `interface.py`: `PionInterpolatingOperator`
-- `submissions/`: source/sink profile and Dirac-structure baselines
-- `tests/validation.py`: shape and normalization checks
-- `benchmark/metrics.py`: explicit WIP placeholder until the live measurement
-  workflow is complete
-
-The submission interface remains:
-
-```python
-class PionInterpolatingOperator(ABC):
-    @property
-    def meta(self) -> SubmissionMeta: ...
-
-    def setup(
-        self,
-        gauge_field: np.ndarray,
-        latt_size: tuple[int, int, int, int],
-        lattice_spacing_fm: float,
-    ) -> None: ...
-
-    def build(
-        self,
-        gauge_field: np.ndarray,
-        momentum_gev: tuple[float, float, float],
-        t_source: int,
-    ) -> OperatorComponents: ...
-```
-
-### 4.3 `gsfit_2pt`
-
-Optimization target: a fixed ground-state fit configuration for pion two-point
-correlators.
-
-- `dataset/synthetic.py`: synthetic correlator-case definitions and I/O
-- `scripts/fit.py`: fixed `gvar`/`lsqfit` analysis pipeline
-- `interface.py`: `Pion2PtGroundStateFit`
-- `submissions/`: fit-configuration submissions
-- `tests/validation.py`: configuration legality checks
-- `benchmark/metrics.py`: scoring by bias, uncertainty, fit quality, and
-  resampling robustness
-
-The fixed fit configuration contains:
-
-- `t_min`
-- `t_max`
-- `n_states`
-- `e0_prior`
-- `delta_e_priors`
-- `amplitude_priors`
-
-The submission does not implement a custom fitter. The fitter is entirely owned
-by `scripts/fit.py`.
+- `tasks/<task_name>/dataset/README.md`
 
 ## 5. Shared Framework
 

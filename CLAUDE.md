@@ -63,6 +63,16 @@ belongs under the relevant task in `tasks/<name>/`.
 - Tasks that are still under construction should keep the full skeleton and use
   explicit `NotImplementedError` placeholders where behavior is pending.
 
+## Documentation hygiene (required)
+
+- After completing any coding task, **always check whether `PROJECT_LOG.md`
+  should be updated** (design decisions, task contract/interface changes,
+  migrations, or any important behavioral change).
+
+## Language policy (required)
+
+- All repository documentation must be written in **English** (no Chinese).
+
 ## Current Tasks
 
 - `wilson_loop`: reference measurement-task layout

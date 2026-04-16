@@ -6,6 +6,8 @@ Primary references:
 
 - [`CLAUDE.md`](CLAUDE.md) for repository workflow and naming conventions
 - [`SPEC.md`](SPEC.md) for the formal task contract
+- [`PROJECT_LOG.md`](PROJECT_LOG.md) for long-form task notes, design decisions, and change history
+- [`PYQUDA_NOTES.md`](PYQUDA_NOTES.md) for repo-wide PyQUDA / `pyquda-utils` integration notes
 
 When these differ in specificity, follow `SPEC.md` for task structure and
 benchmark behavior, then keep repository-level docs aligned.
@@ -53,3 +55,17 @@ python tasks/gsfit_2pt/scripts/fit.py --submission plain
 - Put score computation in `benchmark/metrics.py`
 - Treat `benchmark/run.py` as a validation gate: live benchmark runners should
   refuse to score submissions that fail task validation
+
+## Documentation hygiene (required)
+
+- After completing any coding task (feature / refactor / bugfix / docs), **always
+  do a quick check**: should `PROJECT_LOG.md` be updated?
+  - Update it when you made a **design decision**, changed a **task contract /
+    interface / validation expectation**, performed a **migration**, or made any
+    **important behavioral change** that future agents should not have to
+    rediscover.
+
+## Language policy (required)
+
+- All repository documentation must be written in **English** (no Chinese), so it
+  is searchable and consistent across contributors and agents.
