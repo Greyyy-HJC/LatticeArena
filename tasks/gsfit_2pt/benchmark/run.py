@@ -20,6 +20,7 @@ from core.task import BenchmarkResult
 from tasks.gsfit_2pt.benchmark.metrics import benchmark_submission
 from tasks.gsfit_2pt.dataset.synthetic import load_synthetic_cases
 from tasks.gsfit_2pt.interface import Pion2PtGroundStateFit
+from tasks.gsfit_2pt.task import Gsfit2PtTask
 
 
 def load_submission(submission_name: str) -> Pion2PtGroundStateFit:
@@ -79,6 +80,12 @@ def main() -> None:
     args = parser.parse_args()
 
     submission = load_submission(args.submission)
+    task = Gsfit2PtTask()
+    if not task.validate(submission):
+        raise SystemExit(
+            "gsfit_2pt benchmark refused to run because the submission failed "
+            f"validation. Run `pytest {task.tests_path}` before benchmarking."
+        )
     cases = (
         load_synthetic_cases(args.dataset_file)
         if args.dataset_file is not None

@@ -96,7 +96,8 @@ python tasks/gsfit_2pt/benchmark/run.py --submission plain
 4. Add a new submission under `tasks/<task>/submissions/`.
 5. Run `pytest tasks/<task>/tests/`.
 6. Run `python tasks/<task>/benchmark/run.py --submission <name>` when that
-   task has a live benchmark.
+   task has a live benchmark. The benchmark runner re-checks task validation
+   and exits early if the submission fails.
 
 ## Environment Notes
 

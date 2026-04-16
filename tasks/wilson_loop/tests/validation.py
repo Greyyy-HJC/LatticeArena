@@ -84,8 +84,10 @@ def validate_submission(
 
     if cold_output.shape != (latt_size[0], latt_size[1], latt_size[2], 3, 3):
         errors.append(f"output shape mismatch: got {cold_output.shape}")
+        return errors
     if cold_output.dtype != np.complex128:
         errors.append(f"output dtype mismatch: got {cold_output.dtype}")
+        return errors
     if not np.allclose(cold_output, expected_identity, atol=atol):
         errors.append("cold-config identity check failed")
 
@@ -102,6 +104,16 @@ def validate_submission(
         )
     except Exception as exc:
         errors.append(f"submission raised during gauge-equivariance check: {exc}")
+        return errors
+
+    if output.shape != expected_identity.shape:
+        errors.append(f"output shape mismatch: got {output.shape}")
+        return errors
+    if transformed_output.shape != expected_identity.shape:
+        errors.append(
+            "transformed output shape mismatch: "
+            f"got {transformed_output.shape}"
+        )
         return errors
 
     gt_start = transform[:, :, :, t]

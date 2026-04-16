@@ -10,12 +10,40 @@ from pathlib import Path
 import numpy as np
 
 from tasks.wilson_loop.benchmark.metrics import benchmark_submission
+from tasks.wilson_loop.interface import SpatialOperator, SubmissionMeta
 from tasks.wilson_loop.submissions.plain import PlainWilsonLine
 from tasks.wilson_loop.scripts.gauge_io import save_task_gauge_npy
+from tasks.wilson_loop.task import WilsonLoopTask
 from tasks.wilson_loop.tests.validation import identity_gauge_field
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
+
+
+class BadWilsonLine(SpatialOperator):
+    """Submission that violates the required Wilson-line output contract."""
+
+    @property
+    def meta(self) -> SubmissionMeta:
+        return SubmissionMeta(
+            name="bad_wilson_line",
+            description="Invalid Wilson-line submission used in tests.",
+            authors=["LatticeArena"],
+        )
+
+    def setup(
+        self, gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]
+    ) -> None:
+        self._latt_size = latt_size
+
+    def compute(
+        self,
+        gauge_field: np.ndarray,
+        r: int,
+        direction: int,
+        t: int,
+    ) -> np.ndarray:
+        return np.zeros((*self._latt_size[:3], 3), dtype=np.complex128)
 
 
 def _write_identity_dataset(dataset_dir: Path) -> Path:
@@ -56,6 +84,18 @@ def test_benchmark_submission_respects_max_configs(tmp_path: Path) -> None:
 
     assert summary["n_configs"] == 1
     assert len(summary["files"]) == 1
+
+
+def test_task_benchmark_rejects_invalid_submission() -> None:
+    task = WilsonLoopTask()
+
+    try:
+        task.benchmark(BadWilsonLine())
+    except ValueError as exc:
+        assert "failed validation" in str(exc)
+        assert "pytest" in str(exc)
+        return
+    raise AssertionError("Expected invalid Wilson-loop submission to be rejected.")
 
 
 def test_benchmark_cli_smoke(tmp_path: Path) -> None:

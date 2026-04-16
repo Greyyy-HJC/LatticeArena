@@ -44,6 +44,9 @@ python tasks/gsfit_2pt/scripts/fit.py --submission plain
 python tasks/gsfit_2pt/benchmark/run.py --submission plain
 ```
 
+The benchmark runner validates the submission before scoring. If validation
+fails, it exits and tells you to run `pytest tasks/gsfit_2pt/tests/`.
+
 Generate a saved synthetic dataset archive:
 
 ```bash

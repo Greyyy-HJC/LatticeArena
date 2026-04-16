@@ -58,6 +58,8 @@ belongs under the relevant task in `tasks/<name>/`.
 - Contributors should only need to modify files under `tasks/<name>/submissions/`
   for ordinary benchmark participation.
 - Every submission must pass `tasks/<name>/tests/` before it is benchmarked.
+- Live benchmark runners must re-check validation before scoring and exit
+  early on invalid submissions.
 - Tasks that are still under construction should keep the full skeleton and use
   explicit `NotImplementedError` placeholders where behavior is pending.
 

@@ -36,6 +36,7 @@ benchmark = scripts + submission + metrics
 3. Use the `submissions/` directory for all contributed implementations.
 4. Use the `--submission` CLI flag consistently.
 5. `benchmark/run.py` should remain a thin driver:
+   - validate the submission
    - load the submission
    - load or generate task input data
    - invoke the fixed workflow
@@ -48,6 +49,8 @@ benchmark = scripts + submission + metrics
 2. The submission must implement the task interface in `interface.py`.
 3. The submission must pass all tests in `tasks/<task_name>/tests/`.
 4. The benchmark is run through `tasks/<task_name>/benchmark/run.py`.
+   `benchmark/run.py` must validate the submission before scoring and exit
+   early if validation fails.
 5. Higher score ranks higher unless a task documents otherwise.
 6. Task-specific dependencies beyond the repository standard stack must be
    documented explicitly.

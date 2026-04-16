@@ -16,6 +16,11 @@ class WilsonLoopTask(TaskBase):
     """Benchmark task for Wilson loop spatial operators."""
 
     @property
+    def tests_path(self) -> Path:
+        """Return the task test directory used for validation guidance."""
+        return self.root / "tests"
+
+    @property
     def name(self) -> str:
         return "wilson_loop"
 
@@ -29,6 +34,12 @@ class WilsonLoopTask(TaskBase):
     ) -> BenchmarkResult:
         if not isinstance(operator, SpatialOperator):
             raise TypeError("wilson_loop benchmark expects a SpatialOperator instance.")
+        if not self.validate(operator):
+            raise ValueError(
+                "wilson_loop benchmark refused to run because the submission "
+                f"failed validation. Run `pytest {self.tests_path}` before "
+                "benchmarking."
+            )
 
         summary = benchmark_submission(
             operator,

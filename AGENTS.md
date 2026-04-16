@@ -51,3 +51,5 @@ python tasks/gsfit_2pt/scripts/fit.py --submission plain
 - Use the `--submission` CLI flag everywhere
 - Put reusable validation helpers in `tests/validation.py`
 - Put score computation in `benchmark/metrics.py`
+- Treat `benchmark/run.py` as a validation gate: live benchmark runners should
+  refuse to score submissions that fail task validation

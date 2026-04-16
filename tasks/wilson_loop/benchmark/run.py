@@ -20,6 +20,7 @@ from core.task import BenchmarkResult
 from tasks.wilson_loop.benchmark.metrics import benchmark_submission
 from tasks.wilson_loop.interface import SpatialOperator
 from tasks.wilson_loop.scripts.measure import parse_value_list
+from tasks.wilson_loop.task import WilsonLoopTask
 
 
 def load_submission(submission_name: str) -> SpatialOperator:
@@ -79,6 +80,12 @@ def main() -> None:
     args = parser.parse_args()
 
     submission = load_submission(args.submission)
+    task = WilsonLoopTask()
+    if not task.validate(submission):
+        raise SystemExit(
+            "wilson_loop benchmark refused to run because the submission failed "
+            f"validation. Run `pytest {task.tests_path}` before benchmarking."
+        )
     summary = benchmark_submission(
         submission,
         dataset_path=str(args.dataset_path),

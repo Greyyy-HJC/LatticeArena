@@ -34,6 +34,9 @@ python tasks/wilson_loop/scripts/measure.py --submission plain
 python tasks/wilson_loop/benchmark/run.py --submission plain
 ```
 
+The benchmark runner validates the submission before scoring. If validation
+fails, it exits and tells you to run `pytest tasks/wilson_loop/tests/`.
+
 To benchmark a specific dataset subset:
 
 ```bash

@@ -53,6 +53,9 @@ class TaskBase(ABC):
     ) -> BenchmarkResult:
         """Run the benchmark and return a scored result.
 
+        Implementations should validate the submission before running the
+        benchmark and raise an error when validation fails.
+
         Args:
             operator: An instance of the task's submission interface.
             dataset_path: Override path to gauge configs. Uses default if None.

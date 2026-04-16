@@ -25,6 +25,7 @@ from tasks.gsfit_2pt.interface import (
 )
 from tasks.gsfit_2pt.submissions.plain import PlainGroundStateFit
 from tasks.gsfit_2pt.submissions.nn import NNTunedGroundStateFit
+from tasks.gsfit_2pt.task import Gsfit2PtTask
 from tasks.gsfit_2pt.tests.validation import validate_submission
 
 
@@ -225,6 +226,29 @@ class UnderfitOneState(Pion2PtGroundStateFit):
         )
 
 
+class InvalidFitWindow(Pion2PtGroundStateFit):
+    """Submission with an invalid fit window for validation-gate tests."""
+
+    @property
+    def meta(self) -> SubmissionMeta:
+        return SubmissionMeta(
+            name="invalid_fit_window",
+            description="Invalid fit-window submission used in tests.",
+            authors=["LatticeArena"],
+        )
+
+    @property
+    def config(self) -> GroundStateFitConfig:
+        return GroundStateFitConfig(
+            t_min=18,
+            t_max=18,
+            n_states=1,
+            e0_prior=(0.3, 0.1),
+            delta_e_priors=[],
+            amplitude_priors=[(0.8, 0.2)],
+        )
+
+
 def test_underfit_single_state_scores_worse_than_baseline() -> None:
     cases = make_synthetic_cases(num_samples=18, noise_multiplier=1.0)
     baseline_score = benchmark_submission(
@@ -235,6 +259,18 @@ def test_underfit_single_state_scores_worse_than_baseline() -> None:
     )["score"]
 
     assert baseline_score > underfit_score
+
+
+def test_task_benchmark_rejects_invalid_submission() -> None:
+    task = Gsfit2PtTask()
+
+    try:
+        task.benchmark(InvalidFitWindow())
+    except ValueError as exc:
+        assert "failed validation" in str(exc)
+        assert "pytest" in str(exc)
+        return
+    raise AssertionError("Expected invalid gsfit submission to be rejected.")
 
 
 def test_nn_submission_matches_or_beats_plain() -> None:
