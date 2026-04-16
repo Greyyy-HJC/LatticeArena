@@ -20,13 +20,13 @@ def main():
     parser.add_argument("--task", type=str, default=None, help="Run a specific task (default: all)")
     args = parser.parse_args()
 
-    tasks = [args.task] if args.task else list_tasks()
+    selected_tasks = [args.task] if args.task else list_tasks()
 
-    if not tasks:
+    if not selected_tasks:
         print("No tasks registered. Available tasks will appear as they are implemented.")
         return
 
-    for task_name in tasks:
+    for task_name in selected_tasks:
         task = get_task(task_name)
         results_dir = task.root / "benchmark" / "results"
         if results_dir.exists():

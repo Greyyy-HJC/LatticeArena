@@ -1,5 +1,7 @@
 """Measure Wilson-loop correlators for a spatial-operator submission."""
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
 import argparse
@@ -7,7 +9,6 @@ import importlib
 import json
 from pathlib import Path
 import sys
-from typing import Iterable
 
 import numpy as np
 

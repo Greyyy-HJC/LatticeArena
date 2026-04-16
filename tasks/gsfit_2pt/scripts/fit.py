@@ -9,6 +9,8 @@ Key functions:
   covariance from an ensemble of samples before fitting.
 """
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
 import argparse

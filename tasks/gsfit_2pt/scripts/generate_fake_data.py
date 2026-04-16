@@ -1,5 +1,7 @@
 """Generate deterministic fake data for the gsfit_2pt task."""
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
 import argparse

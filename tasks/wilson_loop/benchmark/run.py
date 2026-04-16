@@ -1,5 +1,7 @@
 """Benchmark driver for the wilson_loop task."""
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
 import argparse

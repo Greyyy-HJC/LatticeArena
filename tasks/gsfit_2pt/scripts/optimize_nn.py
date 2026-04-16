@@ -1,5 +1,7 @@
 """Optimize gsfit_2pt configurations with a tiny NumPy MLP surrogate."""
 
+# ruff: noqa: E402
+
 from __future__ import annotations
 
 import argparse
