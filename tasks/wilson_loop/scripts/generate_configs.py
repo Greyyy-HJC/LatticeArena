@@ -39,15 +39,37 @@ class GenerationConfig:
 
 def parse_args(argv: list[str] | None = None) -> GenerationConfig:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--latt", default="8,8,8,16", help="Lattice size as Lx,Ly,Lz,Lt.")
-    parser.add_argument("--beta", type=float, default=5.8, help="Wilson gauge coupling beta.")
-    parser.add_argument("--n-configs", type=int, default=100, help="Number of saved configurations.")
-    parser.add_argument("--warmup", type=int, default=500, help="Number of warmup trajectories.")
-    parser.add_argument("--save-every", type=int, default=5, help="Save one config every N post-warmup trajectories.")
-    parser.add_argument("--traj-length", type=float, default=1.0, help="Molecular dynamics trajectory length.")
-    parser.add_argument("--n-steps", type=int, default=100, help="Integrator steps per trajectory.")
+    parser.add_argument(
+        "--latt", default="8,8,8,16", help="Lattice size as Lx,Ly,Lz,Lt."
+    )
+    parser.add_argument(
+        "--beta", type=float, default=5.8, help="Wilson gauge coupling beta."
+    )
+    parser.add_argument(
+        "--n-configs", type=int, default=100, help="Number of saved configurations."
+    )
+    parser.add_argument(
+        "--warmup", type=int, default=500, help="Number of warmup trajectories."
+    )
+    parser.add_argument(
+        "--save-every",
+        type=int,
+        default=5,
+        help="Save one config every N post-warmup trajectories.",
+    )
+    parser.add_argument(
+        "--traj-length",
+        type=float,
+        default=1.0,
+        help="Molecular dynamics trajectory length.",
+    )
+    parser.add_argument(
+        "--n-steps", type=int, default=100, help="Integrator steps per trajectory."
+    )
     parser.add_argument("--seed", type=int, default=10086, help="Random seed for HMC.")
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Output dataset directory.")
+    parser.add_argument(
+        "--output", type=Path, default=DEFAULT_OUTPUT, help="Output dataset directory."
+    )
     parser.add_argument(
         "--resource-path",
         type=Path,
@@ -59,7 +81,9 @@ def parse_args(argv: list[str] | None = None) -> GenerationConfig:
     try:
         latt = tuple(int(part) for part in args.latt.split(","))
     except ValueError as exc:
-        raise SystemExit("--latt must be a comma-separated list of integers like 8,8,8,16.") from exc
+        raise SystemExit(
+            "--latt must be a comma-separated list of integers like 8,8,8,16."
+        ) from exc
 
     if len(latt) != 4:
         raise SystemExit("--latt must contain exactly four integers: Lx,Ly,Lz,Lt.")
@@ -191,7 +215,9 @@ def _write_metadata(config: GenerationConfig, output_dir: Path) -> None:
         "pyquda_version": _package_version("pyquda"),
         "pyquda_utils_version": _package_version("pyquda-utils"),
     }
-    (output_dir / "metadata.json").write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
+    (output_dir / "metadata.json").write_text(
+        json.dumps(metadata, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 def _update_metadata(output_dir: Path, updates: dict[str, Any]) -> None:
@@ -329,7 +355,9 @@ def generate(config: GenerationConfig) -> None:
                 max_link_deviation = _max_link_deviation_from_identity(gauge_lexico)
                 max_saved_deviation = max(max_saved_deviation, max_link_deviation)
                 save_task_gauge_npy(config.output / filename, gauge_lexico)
-                plaquette_key = f"{plaq_total:.16e}|{plaq_spatial:.16e}|{plaq_temporal:.16e}"
+                plaquette_key = (
+                    f"{plaq_total:.16e}|{plaq_spatial:.16e}|{plaq_temporal:.16e}"
+                )
                 saved_plaquette_keys.add(plaquette_key)
                 manifest_writer.writerow(
                     {
@@ -346,7 +374,9 @@ def generate(config: GenerationConfig) -> None:
                 manifest_fp.flush()
                 print(f"Saved {saved}/{config.n_configs}: {filename}")
 
-        evolution_detected = (abs(last_total_plaquette - initial_total) > 1e-12) or (max_saved_deviation > 1e-12)
+        evolution_detected = (abs(last_total_plaquette - initial_total) > 1e-12) or (
+            max_saved_deviation > 1e-12
+        )
         _update_metadata(
             config.output,
             {
@@ -357,7 +387,9 @@ def generate(config: GenerationConfig) -> None:
                 "total_trajectories": trajectory,
                 "warmup_accepted_trajectories": warmup_accepted,
                 "post_warmup_accepted_trajectories": post_warmup_accepted,
-                "post_warmup_attempted_trajectories": max(trajectory - config.warmup, 0),
+                "post_warmup_attempted_trajectories": max(
+                    trajectory - config.warmup, 0
+                ),
                 "post_warmup_acceptance_rate": (
                     post_warmup_accepted / max(trajectory - config.warmup, 1)
                     if trajectory > config.warmup

@@ -18,7 +18,9 @@ def test_plain_measurement_on_cold_config_is_constant() -> None:
     gauge = _identity_gauge_field((4, 4, 4, 8))
     operator = PlainWilsonLine()
 
-    correlator = measure_single_config(gauge, operator, r_values=[1, 2], t_values=[0, 1, 3])
+    correlator = measure_single_config(
+        gauge, operator, r_values=[1, 2], t_values=[0, 1, 3]
+    )
 
     assert correlator.shape == (2, 3)
     assert np.allclose(correlator.imag, 0.0)

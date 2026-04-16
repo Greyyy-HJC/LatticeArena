@@ -37,19 +37,25 @@ def random_gauge_field(latt_size: tuple[int, int, int, int], seed: int) -> np.nd
     return _random_su3_matrices((4, *latt_size), seed)
 
 
-def random_gauge_transform(latt_size: tuple[int, int, int, int], seed: int) -> np.ndarray:
+def random_gauge_transform(
+    latt_size: tuple[int, int, int, int], seed: int
+) -> np.ndarray:
     """Return a random local SU(3) gauge transformation field."""
 
     return _random_su3_matrices(latt_size, seed)
 
 
-def apply_gauge_transform(gauge_field: np.ndarray, gauge_transform: np.ndarray) -> np.ndarray:
+def apply_gauge_transform(
+    gauge_field: np.ndarray, gauge_transform: np.ndarray
+) -> np.ndarray:
     """Apply a local gauge transformation to a task-order gauge field."""
 
     transformed = np.empty_like(gauge_field)
     for mu in range(4):
         shifted = np.roll(gauge_transform, shift=-1, axis=mu)
-        transformed[mu] = gauge_transform @ gauge_field[mu] @ np.swapaxes(shifted.conj(), -1, -2)
+        transformed[mu] = (
+            gauge_transform @ gauge_field[mu] @ np.swapaxes(shifted.conj(), -1, -2)
+        )
     return transformed
 
 
@@ -66,7 +72,9 @@ def validate_submission(
 
     errors: list[str] = []
     cold = identity_gauge_field(latt_size)
-    expected_identity = np.broadcast_to(np.eye(3, dtype=np.complex128), (latt_size[0], latt_size[1], latt_size[2], 3, 3))
+    expected_identity = np.broadcast_to(
+        np.eye(3, dtype=np.complex128), (latt_size[0], latt_size[1], latt_size[2], 3, 3)
+    )
 
     try:
         submission.setup(cold, latt_size)
@@ -89,7 +97,9 @@ def validate_submission(
         submission.setup(gauge, latt_size)
         output = submission.compute(gauge, r=r, direction=direction, t=t)
         submission.setup(transformed_gauge, latt_size)
-        transformed_output = submission.compute(transformed_gauge, r=r, direction=direction, t=t)
+        transformed_output = submission.compute(
+            transformed_gauge, r=r, direction=direction, t=t
+        )
     except Exception as exc:
         errors.append(f"submission raised during gauge-equivariance check: {exc}")
         return errors

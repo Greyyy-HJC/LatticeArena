@@ -24,7 +24,9 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
     )
 
 
-def benchmark_submission(submission: Any, measured: dict[str, Any] | None = None) -> dict[str, Any]:
+def benchmark_submission(
+    submission: Any, measured: dict[str, Any] | None = None
+) -> dict[str, Any]:
     """Benchmark a pion_2pt submission once measured correlators are available."""
 
     raise NotImplementedError(

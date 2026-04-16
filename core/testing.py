@@ -55,7 +55,9 @@ def random_gauge_field(latt_size: tuple[int, int, int, int], seed: int) -> np.nd
     return random_su3_matrices((4, *latt_size), seed)
 
 
-def random_gauge_transform(latt_size: tuple[int, int, int, int], seed: int) -> np.ndarray:
+def random_gauge_transform(
+    latt_size: tuple[int, int, int, int], seed: int
+) -> np.ndarray:
     """Generate a random SU(3) gauge transformation.
 
     Returns:
@@ -64,7 +66,9 @@ def random_gauge_transform(latt_size: tuple[int, int, int, int], seed: int) -> n
     return random_su3_matrices(latt_size, seed)
 
 
-def apply_gauge_transform(gauge_field: np.ndarray, gauge_transform: np.ndarray) -> np.ndarray:
+def apply_gauge_transform(
+    gauge_field: np.ndarray, gauge_transform: np.ndarray
+) -> np.ndarray:
     """Apply a gauge transformation to a gauge field.
 
     Computes G(x) U_mu(x) G^dag(x + mu) for each link.
@@ -79,5 +83,7 @@ def apply_gauge_transform(gauge_field: np.ndarray, gauge_transform: np.ndarray) 
     transformed = np.empty_like(gauge_field)
     for mu in range(4):
         shifted = np.roll(gauge_transform, shift=-1, axis=mu)
-        transformed[mu] = gauge_transform @ gauge_field[mu] @ np.swapaxes(shifted.conj(), -1, -2)
+        transformed[mu] = (
+            gauge_transform @ gauge_field[mu] @ np.swapaxes(shifted.conj(), -1, -2)
+        )
     return transformed

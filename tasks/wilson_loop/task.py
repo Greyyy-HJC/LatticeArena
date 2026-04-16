@@ -24,7 +24,9 @@ class WilsonLoopTask(TaskBase):
             return False
         return not validate_submission(operator)
 
-    def benchmark(self, operator: Any, dataset_path: str | Path | None = None) -> BenchmarkResult:
+    def benchmark(
+        self, operator: Any, dataset_path: str | Path | None = None
+    ) -> BenchmarkResult:
         if not isinstance(operator, SpatialOperator):
             raise TypeError("wilson_loop benchmark expects a SpatialOperator instance.")
 

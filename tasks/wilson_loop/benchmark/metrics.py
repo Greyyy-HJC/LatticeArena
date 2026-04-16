@@ -14,7 +14,9 @@ from tasks.wilson_loop.scripts.measure import measure_dataset
 def _effective_mass(correlator: np.ndarray) -> np.ndarray:
     """Compute log-ratio effective masses from a real correlator array."""
 
-    masses = np.full((correlator.shape[0], max(correlator.shape[1] - 1, 0)), np.nan, dtype=np.float64)
+    masses = np.full(
+        (correlator.shape[0], max(correlator.shape[1] - 1, 0)), np.nan, dtype=np.float64
+    )
     if correlator.shape[1] < 2:
         return masses
 
@@ -45,12 +47,20 @@ def compute_metrics(
     snr_points = np.clip(np.abs(mean_real) / corr_std_safe, 0.0, 1e3)
 
     mean_eff = _effective_mass(mean_real)
-    per_config_eff = np.asarray([_effective_mass(cfg) for cfg in real_per_config], dtype=np.float64)
-    eff_err = np.nanstd(per_config_eff, axis=0, ddof=1) / np.sqrt(max(n_configs, 1)) if n_configs > 1 else np.ones_like(mean_eff)
+    per_config_eff = np.asarray(
+        [_effective_mass(cfg) for cfg in real_per_config], dtype=np.float64
+    )
+    eff_err = (
+        np.nanstd(per_config_eff, axis=0, ddof=1) / np.sqrt(max(n_configs, 1))
+        if n_configs > 1
+        else np.ones_like(mean_eff)
+    )
     eff_err = np.where(np.isfinite(eff_err) & (eff_err > 1e-12), eff_err, 1.0)
 
     plateau_values = mean_eff[np.isfinite(mean_eff)]
-    plateau_level = float(np.nanmean(plateau_values)) if plateau_values.size else float("nan")
+    plateau_level = (
+        float(np.nanmean(plateau_values)) if plateau_values.size else float("nan")
+    )
 
     plateau_chi2 = 0.0
     plateau_dof = 0
@@ -65,8 +75,16 @@ def compute_metrics(
         plateau_dof += max(len(values) - 1, 1)
     plateau_chi2_dof = plateau_chi2 / plateau_dof if plateau_dof else float("inf")
 
-    roughness = float(np.nanmean(np.abs(np.diff(mean_eff, axis=1)))) if mean_eff.shape[1] > 1 else 0.0
-    signal_to_noise = float(np.nanmean(snr_points[:, 1:])) if snr_points.shape[1] > 1 else float(np.nanmean(snr_points))
+    roughness = (
+        float(np.nanmean(np.abs(np.diff(mean_eff, axis=1))))
+        if mean_eff.shape[1] > 1
+        else 0.0
+    )
+    signal_to_noise = (
+        float(np.nanmean(snr_points[:, 1:]))
+        if snr_points.shape[1] > 1
+        else float(np.nanmean(snr_points))
+    )
 
     overlap_proxy_values = []
     t_values = np.asarray(measured["t_values"], dtype=np.int64)
@@ -78,7 +96,9 @@ def compute_metrics(
         ratios = mean_real[ridx, 1:] / mean_real[ridx, [0]]
         proxy = ratios * np.exp(m_ref * t_values[1:])
         overlap_proxy_values.extend(proxy[np.isfinite(proxy)].tolist())
-    ground_state_overlap_proxy = float(np.mean(overlap_proxy_values)) if overlap_proxy_values else 0.0
+    ground_state_overlap_proxy = (
+        float(np.mean(overlap_proxy_values)) if overlap_proxy_values else 0.0
+    )
 
     score_terms = {
         "signal_to_noise_term": float(np.log1p(max(signal_to_noise, 0.0))),
@@ -95,8 +115,12 @@ def compute_metrics(
 
     return {
         "n_configs": int(n_configs),
-        "r_values": [int(value) for value in np.asarray(measured["r_values"], dtype=np.int64)],
-        "t_values": [int(value) for value in np.asarray(measured["t_values"], dtype=np.int64)],
+        "r_values": [
+            int(value) for value in np.asarray(measured["r_values"], dtype=np.int64)
+        ],
+        "t_values": [
+            int(value) for value in np.asarray(measured["t_values"], dtype=np.int64)
+        ],
         "mean_correlator_real": mean_real.tolist(),
         "mean_correlator_imag": mean_corr.imag.tolist(),
         "effective_mass": mean_eff.tolist(),

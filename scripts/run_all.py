@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 import sys
 
+
 def _bootstrap_repo_root() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     if str(repo_root) not in sys.path:
@@ -17,13 +18,17 @@ def main():
     from core.task import get_task, list_tasks
 
     parser = argparse.ArgumentParser(description="Run LatticeArena benchmarks")
-    parser.add_argument("--task", type=str, default=None, help="Run a specific task (default: all)")
+    parser.add_argument(
+        "--task", type=str, default=None, help="Run a specific task (default: all)"
+    )
     args = parser.parse_args()
 
     selected_tasks = [args.task] if args.task else list_tasks()
 
     if not selected_tasks:
-        print("No tasks registered. Available tasks will appear as they are implemented.")
+        print(
+            "No tasks registered. Available tasks will appear as they are implemented."
+        )
         return
 
     for task_name in selected_tasks:

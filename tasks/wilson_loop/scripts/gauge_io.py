@@ -19,11 +19,15 @@ TASK_GAUGE_SHAPE_LEN = 7
 
 def _validate_gauge_array(name: str, gauge: np.ndarray) -> None:
     if gauge.ndim != TASK_GAUGE_SHAPE_LEN:
-        raise ValueError(f"{name} must have {TASK_GAUGE_SHAPE_LEN} dimensions, got shape {gauge.shape}.")
+        raise ValueError(
+            f"{name} must have {TASK_GAUGE_SHAPE_LEN} dimensions, got shape {gauge.shape}."
+        )
     if gauge.shape[0] != 4:
         raise ValueError(f"{name} must have Nd=4 in axis 0, got shape {gauge.shape}.")
     if gauge.shape[-2:] != (3, 3):
-        raise ValueError(f"{name} must end with (Nc, Nc) = (3, 3), got shape {gauge.shape}.")
+        raise ValueError(
+            f"{name} must end with (Nc, Nc) = (3, 3), got shape {gauge.shape}."
+        )
 
 
 def pyquda_lexico_to_task_order(gauge: np.ndarray) -> np.ndarray:

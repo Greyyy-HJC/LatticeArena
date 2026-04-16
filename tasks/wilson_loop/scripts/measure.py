@@ -25,9 +25,15 @@ def load_submission(submission_name: str) -> SpatialOperator:
 
     module = importlib.import_module(f"tasks.wilson_loop.submissions.{submission_name}")
     for value in module.__dict__.values():
-        if isinstance(value, type) and issubclass(value, SpatialOperator) and value is not SpatialOperator:
+        if (
+            isinstance(value, type)
+            and issubclass(value, SpatialOperator)
+            and value is not SpatialOperator
+        ):
             return value()
-    raise ValueError(f"No SpatialOperator submission found in module '{submission_name}'.")
+    raise ValueError(
+        f"No SpatialOperator submission found in module '{submission_name}'."
+    )
 
 
 def dagger(field: np.ndarray) -> np.ndarray:
@@ -78,14 +84,20 @@ def measure_single_config(
             for tau_idx, tau in enumerate(t_values):
                 source_values = []
                 for t_source in range(lt):
-                    spatial_line_source = operator.compute(gauge_field, r, direction, t_source)
+                    spatial_line_source = operator.compute(
+                        gauge_field, r, direction, t_source
+                    )
                     temporal_forward_shifted = np.roll(
                         temporal_line(gauge_field, t_source, tau),
                         shift=-r,
                         axis=direction,
                     )
-                    spatial_line_sink = operator.compute(gauge_field, r, direction, (t_source + tau) % lt)
-                    temporal_backward = dagger(temporal_line(gauge_field, t_source, tau))
+                    spatial_line_sink = operator.compute(
+                        gauge_field, r, direction, (t_source + tau) % lt
+                    )
+                    temporal_backward = dagger(
+                        temporal_line(gauge_field, t_source, tau)
+                    )
 
                     wilson_loop = (
                         spatial_line_source
@@ -134,7 +146,9 @@ def measure_dataset(
     per_config = []
     for gauge_file in gauge_files:
         gauge_field = load_task_gauge_npy(gauge_file)
-        per_config.append(measure_single_config(gauge_field, operator, r_values, t_values))
+        per_config.append(
+            measure_single_config(gauge_field, operator, r_values, t_values)
+        )
 
     per_config_array = np.asarray(per_config, dtype=np.complex128)
     return {
@@ -164,16 +178,33 @@ def _json_default(value: object) -> object:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Measure Wilson-loop correlators for one submission.")
-    parser.add_argument("--submission", type=str, required=True, help="Submission module name under submissions/")
+    parser = argparse.ArgumentParser(
+        description="Measure Wilson-loop correlators for one submission."
+    )
+    parser.add_argument(
+        "--submission",
+        type=str,
+        required=True,
+        help="Submission module name under submissions/",
+    )
     parser.add_argument(
         "--dataset-path",
         type=Path,
         default=Path("tasks/wilson_loop/dataset/test_small"),
         help="Gauge config directory or one cfg_XXXX.npy file in task ordering.",
     )
-    parser.add_argument("--r-values", type=str, default="1,2,3", help="Comma-separated spatial separations.")
-    parser.add_argument("--t-values", type=str, default="0,1,2,3,4", help="Comma-separated temporal extents.")
+    parser.add_argument(
+        "--r-values",
+        type=str,
+        default="1,2,3",
+        help="Comma-separated spatial separations.",
+    )
+    parser.add_argument(
+        "--t-values",
+        type=str,
+        default="0,1,2,3,4",
+        help="Comma-separated temporal extents.",
+    )
     parser.add_argument(
         "--output",
         type=Path,
@@ -191,7 +222,9 @@ def main() -> None:
     submission = load_submission(args.submission)
     r_values = parse_value_list(args.r_values)
     t_values = parse_value_list(args.t_values)
-    result = measure_dataset(args.dataset_path, submission, r_values, t_values, max_configs=args.max_configs)
+    result = measure_dataset(
+        args.dataset_path, submission, r_values, t_values, max_configs=args.max_configs
+    )
 
     if args.output is not None:
         args.output.parent.mkdir(parents=True, exist_ok=True)

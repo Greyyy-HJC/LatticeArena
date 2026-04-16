@@ -65,4 +65,6 @@ def test_plain_operator_requires_setup() -> None:
         op.compute(gauge, r=1, direction=0, t=0)
     except RuntimeError:
         return
-    raise AssertionError("Expected RuntimeError when compute() is called before setup().")
+    raise AssertionError(
+        "Expected RuntimeError when compute() is called before setup()."
+    )

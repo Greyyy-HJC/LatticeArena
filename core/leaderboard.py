@@ -56,7 +56,9 @@ def print_leaderboard(results: list[BenchmarkResult]) -> None:
         print(f"{i:<6}{r.submission_name:<30}{r.score:<12.4f}")
 
 
-def collect_task_summaries(task_names: list[str] | None = None) -> list[TaskLeaderboardSummary]:
+def collect_task_summaries(
+    task_names: list[str] | None = None,
+) -> list[TaskLeaderboardSummary]:
     """Collect leaderboard summaries across registered tasks."""
 
     import tasks  # noqa: F401  # task registration side effects
@@ -69,6 +71,10 @@ def collect_task_summaries(task_names: list[str] | None = None) -> list[TaskLead
         task = get_task(task_name)
         results_dir = task.root / "benchmark" / "results"
         results = load_results(results_dir) if results_dir.exists() else []
-        summaries.append(TaskLeaderboardSummary(task_name=task_name, results_dir=results_dir, results=results))
+        summaries.append(
+            TaskLeaderboardSummary(
+                task_name=task_name, results_dir=results_dir, results=results
+            )
+        )
 
     return summaries

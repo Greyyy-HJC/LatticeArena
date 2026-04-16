@@ -17,7 +17,9 @@ import argparse
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run pion_2pt benchmark (WIP)")
-    parser.add_argument("--submission", type=str, required=True, help="Submission module name")
+    parser.add_argument(
+        "--submission", type=str, required=True, help="Submission module name"
+    )
     parser.parse_args()
 
     print(

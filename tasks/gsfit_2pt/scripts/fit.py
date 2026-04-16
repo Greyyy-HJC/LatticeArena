@@ -29,7 +29,11 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 from tasks.gsfit_2pt.dataset.synthetic import load_synthetic_cases
-from tasks.gsfit_2pt.interface import GroundStateFitConfig, Pion2PtGroundStateFit, validate_config
+from tasks.gsfit_2pt.interface import (
+    GroundStateFitConfig,
+    Pion2PtGroundStateFit,
+    validate_config,
+)
 
 
 def load_submission(submission_name: str) -> Pion2PtGroundStateFit:
@@ -43,7 +47,9 @@ def load_submission(submission_name: str) -> Pion2PtGroundStateFit:
             and value is not Pion2PtGroundStateFit
         ):
             return value()
-    raise ValueError(f"No Pion2PtGroundStateFit submission found in module '{submission_name}'.")
+    raise ValueError(
+        f"No Pion2PtGroundStateFit submission found in module '{submission_name}'."
+    )
 
 
 def samples_to_gvar(samples: np.ndarray) -> gv.GVar:
@@ -60,7 +66,9 @@ def effective_mass(correlator: gv.GVar) -> gv.GVar:
     return gv.log(correlator[:-1] / correlator[1:])
 
 
-def build_prior(config: GroundStateFitConfig, normalize_factor: float = 1.0) -> gv.BufferDict:
+def build_prior(
+    config: GroundStateFitConfig, normalize_factor: float = 1.0
+) -> gv.BufferDict:
     """Build lsqfit priors from the task configuration."""
 
     validate_config(config)
@@ -75,12 +83,16 @@ def build_prior(config: GroundStateFitConfig, normalize_factor: float = 1.0) -> 
         priors[f"log(dE{idx})"] = gv.gvar(log_mean, log_width)
 
     for idx, prior in enumerate(config.amplitude_priors):
-        priors[f"A{idx}"] = gv.gvar(prior[0] / normalize_factor, prior[1] / normalize_factor)
+        priors[f"A{idx}"] = gv.gvar(
+            prior[0] / normalize_factor, prior[1] / normalize_factor
+        )
 
     return priors
 
 
-def pt2_multi_state_fcn(times: np.ndarray, params: gv.BufferDict, lt: int, n_states: int) -> gv.GVar:
+def pt2_multi_state_fcn(
+    times: np.ndarray, params: gv.BufferDict, lt: int, n_states: int
+) -> gv.GVar:
     """Periodic multi-state 2pt function in a notebook-friendly lsqfit form."""
 
     values = 0
@@ -89,7 +101,9 @@ def pt2_multi_state_fcn(times: np.ndarray, params: gv.BufferDict, lt: int, n_sta
         if idx > 0:
             energy = energy + gv.exp(params[f"log(dE{idx})"])
         amplitude = params[f"A{idx}"]
-        values = values + amplitude * (gv.exp(-energy * times) + gv.exp(-energy * (lt - times)))
+        values = values + amplitude * (
+            gv.exp(-energy * times) + gv.exp(-energy * (lt - times))
+        )
     return values
 
 
@@ -106,7 +120,9 @@ def _do_fit(
         normalization_factor = 1.0
 
     fit_data = correlator_gv / normalization_factor if normalize else correlator_gv
-    priors = build_prior(config, normalize_factor=normalization_factor if normalize else 1.0)
+    priors = build_prior(
+        config, normalize_factor=normalization_factor if normalize else 1.0
+    )
     t_range = np.arange(config.t_min, config.t_max + 1)
 
     def fcn(t: np.ndarray, p: gv.BufferDict) -> gv.GVar:
@@ -206,7 +222,10 @@ def fit_case(
     # Add meff preview for interactive use / plotting
     meff = effective_mass(pt2_gv)
     fit_curve = pt2_multi_state_fcn(
-        np.arange(lt), fit_res.p, lt=lt, n_states=config.n_states,
+        np.arange(lt),
+        fit_res.p,
+        lt=lt,
+        n_states=config.n_states,
     )
     if normalize:
         fit_curve = fit_curve * norm
@@ -242,12 +261,22 @@ def maybe_make_plot(
 
     fig, ax = plt.subplots(figsize=(6.5, 4.5))
     t_vals = np.arange(len(meff))
-    ax.errorbar(t_vals, gv.mean(meff), yerr=gv.sdev(meff), fmt="o", ms=4, capsize=3, label="data")
+    ax.errorbar(
+        t_vals,
+        gv.mean(meff),
+        yerr=gv.sdev(meff),
+        fmt="o",
+        ms=4,
+        capsize=3,
+        label="data",
+    )
 
     fit_t = np.asarray(fit_summary["meff_preview"]["t"], dtype=int)
     fit_mean = np.asarray(fit_summary["meff_preview"]["fit_mean"], dtype=float)
     fit_sdev = np.asarray(fit_summary["meff_preview"]["fit_sdev"], dtype=float)
-    ax.fill_between(fit_t, fit_mean - fit_sdev, fit_mean + fit_sdev, alpha=0.3, label="fit")
+    ax.fill_between(
+        fit_t, fit_mean - fit_sdev, fit_mean + fit_sdev, alpha=0.3, label="fit"
+    )
 
     ax.set_xlabel("t")
     ax.set_ylabel("m_eff")
@@ -260,17 +289,38 @@ def maybe_make_plot(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run the fixed gsfit_2pt analysis pipeline on synthetic data")
-    parser.add_argument("--submission", type=str, required=True, help="Submission module name under submissions/")
+    parser = argparse.ArgumentParser(
+        description="Run the fixed gsfit_2pt analysis pipeline on synthetic data"
+    )
+    parser.add_argument(
+        "--submission",
+        type=str,
+        required=True,
+        help="Submission module name under submissions/",
+    )
     parser.add_argument(
         "--dataset-file",
         type=Path,
         default=Path("tasks/gsfit_2pt/dataset/fake_data.npz"),
         help="Saved synthetic dataset archive",
     )
-    parser.add_argument("--case", type=str, default="boosted_clean", help="Case name inside the dataset archive")
-    parser.add_argument("--no-normalize", action="store_true", help="Disable the notebook-style 2pt normalization")
-    parser.add_argument("--plot-output", type=Path, default=None, help="Optional path to save a meff plot")
+    parser.add_argument(
+        "--case",
+        type=str,
+        default="boosted_clean",
+        help="Case name inside the dataset archive",
+    )
+    parser.add_argument(
+        "--no-normalize",
+        action="store_true",
+        help="Disable the notebook-style 2pt normalization",
+    )
+    parser.add_argument(
+        "--plot-output",
+        type=Path,
+        default=None,
+        help="Optional path to save a meff plot",
+    )
     args = parser.parse_args()
 
     submission = load_submission(args.submission)

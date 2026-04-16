@@ -28,7 +28,12 @@ def _write_identity_dataset(dataset_dir: Path) -> Path:
 
 def test_benchmark_submission_on_identity_dataset(tmp_path: Path) -> None:
     dataset_dir = _write_identity_dataset(tmp_path / "dataset")
-    summary = benchmark_submission(PlainWilsonLine(), dataset_path=str(dataset_dir), r_values=[1, 2], t_values=[0, 1, 2])
+    summary = benchmark_submission(
+        PlainWilsonLine(),
+        dataset_path=str(dataset_dir),
+        r_values=[1, 2],
+        t_values=[0, 1, 2],
+    )
 
     assert summary["n_configs"] == 1
     assert summary["score"] > 0.0

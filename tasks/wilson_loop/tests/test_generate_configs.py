@@ -20,7 +20,16 @@ SCRIPT = REPO_ROOT / "tasks" / "wilson_loop" / "scripts" / "generate_configs.py"
 def test_generate_configs_reports_missing_pyquda_cleanly() -> None:
     env = dict(**os.environ, LATTICEARENA_FORCE_MISSING_PYQUDA="1")
     result = subprocess.run(
-        [sys.executable, str(SCRIPT), "--n-configs", "1", "--warmup", "0", "--save-every", "1"],
+        [
+            sys.executable,
+            str(SCRIPT),
+            "--n-configs",
+            "1",
+            "--warmup",
+            "0",
+            "--save-every",
+            "1",
+        ],
         cwd=REPO_ROOT,
         capture_output=True,
         text=True,
@@ -80,8 +89,12 @@ def test_generate_configs_small_smoke(tmp_path: Path) -> None:
         ]
         stderr = result.stderr or result.stdout
         if any(marker in stderr for marker in dependency_markers):
-            pytest.skip(f"PyQUDA runtime is not fully available for integration smoke test:\n{stderr}")
-        raise AssertionError(f"generate_configs.py failed unexpectedly:\nSTDOUT:\n{result.stdout}\nSTDERR:\n{stderr}")
+            pytest.skip(
+                f"PyQUDA runtime is not fully available for integration smoke test:\n{stderr}"
+            )
+        raise AssertionError(
+            f"generate_configs.py failed unexpectedly:\nSTDOUT:\n{result.stdout}\nSTDERR:\n{stderr}"
+        )
 
     assert "Saved 1/1" in result.stdout
 

@@ -17,15 +17,24 @@ from tasks.gsfit_2pt.dataset.synthetic import make_synthetic_cases, save_synthet
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate fake pion 2pt data for gsfit_2pt")
+    parser = argparse.ArgumentParser(
+        description="Generate fake pion 2pt data for gsfit_2pt"
+    )
     parser.add_argument(
         "--output",
         type=Path,
         default=Path("tasks/gsfit_2pt/dataset/fake_data.npz"),
         help="Output .npz archive path",
     )
-    parser.add_argument("--num-samples", type=int, default=24, help="Number of bootstrap/jackknife-like samples")
-    parser.add_argument("--lt", type=int, default=48, help="Temporal extent of the fake correlators")
+    parser.add_argument(
+        "--num-samples",
+        type=int,
+        default=24,
+        help="Number of bootstrap/jackknife-like samples",
+    )
+    parser.add_argument(
+        "--lt", type=int, default=48, help="Temporal extent of the fake correlators"
+    )
     parser.add_argument(
         "--noise-multiplier",
         type=float,

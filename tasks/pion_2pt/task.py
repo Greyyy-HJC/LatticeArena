@@ -24,7 +24,9 @@ class Pion2PtTask(TaskBase):
             return False
         return validate_submission(operator)
 
-    def benchmark(self, operator: Any, dataset_path: str | Path | None = None) -> BenchmarkResult:
+    def benchmark(
+        self, operator: Any, dataset_path: str | Path | None = None
+    ) -> BenchmarkResult:
         """Benchmark is not yet implemented and requires a PyQUDA measurement pipeline."""
         raise NotImplementedError(
             "pion_2pt benchmark is not yet implemented. "

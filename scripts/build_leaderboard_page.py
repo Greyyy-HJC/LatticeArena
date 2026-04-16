@@ -7,6 +7,7 @@ from html import escape
 from pathlib import Path
 import sys
 
+
 def _bootstrap_repo_root() -> None:
     repo_root = Path(__file__).resolve().parents[1]
     if str(repo_root) not in sys.path:
@@ -35,7 +36,11 @@ def build_html() -> str:
     populated_tasks = sum(1 for summary in summaries if summary.best_result is not None)
     total_submissions = sum(len(summary.results) for summary in summaries)
     best_overall = max(
-        (summary.best_result for summary in summaries if summary.best_result is not None),
+        (
+            summary.best_result
+            for summary in summaries
+            if summary.best_result is not None
+        ),
         key=lambda result: result.score,
         default=None,
     )
@@ -298,7 +303,9 @@ def build_html() -> str:
 
 def main() -> None:
     _bootstrap_repo_root()
-    parser = argparse.ArgumentParser(description="Build the standalone LatticeArena leaderboard page")
+    parser = argparse.ArgumentParser(
+        description="Build the standalone LatticeArena leaderboard page"
+    )
     parser.add_argument(
         "--output",
         type=Path,

@@ -21,8 +21,12 @@ def validate_submission(
 
     gauge = identity_gauge_field(latt_size)
     try:
-        submission.setup(gauge, latt_size=latt_size, lattice_spacing_fm=lattice_spacing_fm)
-        components = submission.build(gauge, momentum_gev=momentum_gev, t_source=t_source)
+        submission.setup(
+            gauge, latt_size=latt_size, lattice_spacing_fm=lattice_spacing_fm
+        )
+        components = submission.build(
+            gauge, momentum_gev=momentum_gev, t_source=t_source
+        )
     except Exception:
         return False
 

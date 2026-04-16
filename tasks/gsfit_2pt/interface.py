@@ -44,8 +44,12 @@ def config_to_dict(config: GroundStateFitConfig) -> dict[str, object]:
         "t_max": config.t_max,
         "n_states": config.n_states,
         "e0_prior": [float(config.e0_prior[0]), float(config.e0_prior[1])],
-        "delta_e_priors": [[float(mean), float(width)] for mean, width in config.delta_e_priors],
-        "amplitude_priors": [[float(mean), float(width)] for mean, width in config.amplitude_priors],
+        "delta_e_priors": [
+            [float(mean), float(width)] for mean, width in config.delta_e_priors
+        ],
+        "amplitude_priors": [
+            [float(mean), float(width)] for mean, width in config.amplitude_priors
+        ],
     }
 
 
@@ -57,8 +61,14 @@ def config_from_dict(payload: dict[str, object]) -> GroundStateFitConfig:
         t_max=int(payload["t_max"]),
         n_states=int(payload["n_states"]),
         e0_prior=tuple(float(value) for value in payload["e0_prior"]),
-        delta_e_priors=[tuple(float(value) for value in prior) for prior in payload["delta_e_priors"]],
-        amplitude_priors=[tuple(float(value) for value in prior) for prior in payload["amplitude_priors"]],
+        delta_e_priors=[
+            tuple(float(value) for value in prior)
+            for prior in payload["delta_e_priors"]
+        ],
+        amplitude_priors=[
+            tuple(float(value) for value in prior)
+            for prior in payload["amplitude_priors"]
+        ],
     )
 
 
@@ -89,7 +99,9 @@ def _validate_prior(name: str, prior: tuple[float, float]) -> None:
         raise ValueError(f"{name} width must be strictly positive.")
 
 
-def validate_config(config: GroundStateFitConfig, lt: int = DEFAULT_TEMPORAL_EXTENT) -> None:
+def validate_config(
+    config: GroundStateFitConfig, lt: int = DEFAULT_TEMPORAL_EXTENT
+) -> None:
     """Raise ``ValueError`` if a fit configuration is invalid."""
 
     if config.n_states < 1:

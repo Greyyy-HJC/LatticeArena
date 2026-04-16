@@ -51,7 +51,9 @@ class SpatialOperator(ABC):
         ...
 
     @abstractmethod
-    def setup(self, gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]) -> None:
+    def setup(
+        self, gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]
+    ) -> None:
         """One-time setup for a gauge configuration.
 
         Called once before any compute() calls on this configuration.

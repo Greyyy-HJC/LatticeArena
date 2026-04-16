@@ -33,13 +33,25 @@ def load_submission(submission_name: str) -> Pion2PtGroundStateFit:
             and value is not Pion2PtGroundStateFit
         ):
             return value()
-    raise ValueError(f"No Pion2PtGroundStateFit submission found in module '{submission_name}'.")
+    raise ValueError(
+        f"No Pion2PtGroundStateFit submission found in module '{submission_name}'."
+    )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the gsfit_2pt benchmark")
-    parser.add_argument("--submission", type=str, required=True, help="Submission module name under submissions/")
-    parser.add_argument("--num-samples", type=int, default=24, help="Synthetic resamples per benchmark case")
+    parser.add_argument(
+        "--submission",
+        type=str,
+        required=True,
+        help="Submission module name under submissions/",
+    )
+    parser.add_argument(
+        "--num-samples",
+        type=int,
+        default=24,
+        help="Synthetic resamples per benchmark case",
+    )
     parser.add_argument(
         "--max-resamples",
         type=int,
@@ -67,7 +79,11 @@ def main() -> None:
     args = parser.parse_args()
 
     submission = load_submission(args.submission)
-    cases = load_synthetic_cases(args.dataset_file) if args.dataset_file is not None else None
+    cases = (
+        load_synthetic_cases(args.dataset_file)
+        if args.dataset_file is not None
+        else None
+    )
     summary = benchmark_submission(
         submission,
         cases=cases,

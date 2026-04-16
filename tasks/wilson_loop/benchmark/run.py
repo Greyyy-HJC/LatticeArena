@@ -27,22 +27,43 @@ def load_submission(submission_name: str) -> SpatialOperator:
 
     module = importlib.import_module(f"tasks.wilson_loop.submissions.{submission_name}")
     for value in module.__dict__.values():
-        if isinstance(value, type) and issubclass(value, SpatialOperator) and value is not SpatialOperator:
+        if (
+            isinstance(value, type)
+            and issubclass(value, SpatialOperator)
+            and value is not SpatialOperator
+        ):
             return value()
-    raise ValueError(f"No SpatialOperator submission found in module '{submission_name}'.")
+    raise ValueError(
+        f"No SpatialOperator submission found in module '{submission_name}'."
+    )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the wilson_loop benchmark")
-    parser.add_argument("--submission", type=str, required=True, help="Submission module name under submissions/")
+    parser.add_argument(
+        "--submission",
+        type=str,
+        required=True,
+        help="Submission module name under submissions/",
+    )
     parser.add_argument(
         "--dataset-path",
         type=Path,
         default=Path("tasks/wilson_loop/dataset/test_small"),
         help="Gauge config directory or one cfg_XXXX.npy file in task ordering.",
     )
-    parser.add_argument("--r-values", type=str, default="1,2,3", help="Comma-separated spatial separations.")
-    parser.add_argument("--t-values", type=str, default="0,1,2,3,4", help="Comma-separated temporal extents.")
+    parser.add_argument(
+        "--r-values",
+        type=str,
+        default="1,2,3",
+        help="Comma-separated spatial separations.",
+    )
+    parser.add_argument(
+        "--t-values",
+        type=str,
+        default="0,1,2,3,4",
+        help="Comma-separated temporal extents.",
+    )
     parser.add_argument(
         "--max-configs",
         type=int,

@@ -195,7 +195,9 @@ def test_plain_recovers_e0_on_low_noise_data() -> None:
         max_resample_fits=8,
     )
 
-    clean_case = next(case for case in summary["cases"] if case["case_name"] == "boosted_clean")
+    clean_case = next(
+        case for case in summary["cases"] if case["case_name"] == "boosted_clean"
+    )
     assert clean_case["fit_success"]
     assert clean_case["relative_bias"] < 0.08
 
@@ -225,16 +227,24 @@ class UnderfitOneState(Pion2PtGroundStateFit):
 
 def test_underfit_single_state_scores_worse_than_baseline() -> None:
     cases = make_synthetic_cases(num_samples=18, noise_multiplier=1.0)
-    baseline_score = benchmark_submission(PlainGroundStateFit(), cases=cases, max_resample_fits=8)["score"]
-    underfit_score = benchmark_submission(UnderfitOneState(), cases=cases, max_resample_fits=8)["score"]
+    baseline_score = benchmark_submission(
+        PlainGroundStateFit(), cases=cases, max_resample_fits=8
+    )["score"]
+    underfit_score = benchmark_submission(
+        UnderfitOneState(), cases=cases, max_resample_fits=8
+    )["score"]
 
     assert baseline_score > underfit_score
 
 
 def test_nn_submission_matches_or_beats_plain() -> None:
     cases = make_synthetic_cases(num_samples=24, noise_multiplier=1.0)
-    baseline_score = benchmark_config(PlainGroundStateFit().config, cases=cases, max_resample_fits=8)["score"]
-    nn_score = benchmark_config(NNTunedGroundStateFit().config, cases=cases, max_resample_fits=8)["score"]
+    baseline_score = benchmark_config(
+        PlainGroundStateFit().config, cases=cases, max_resample_fits=8
+    )["score"]
+    nn_score = benchmark_config(
+        NNTunedGroundStateFit().config, cases=cases, max_resample_fits=8
+    )["score"]
 
     assert nn_score >= baseline_score
 

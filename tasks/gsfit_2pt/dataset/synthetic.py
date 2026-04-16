@@ -26,7 +26,9 @@ class SyntheticCorrelatorCase:
         return float(self.true_energies[0])
 
 
-def save_synthetic_cases(cases: list[SyntheticCorrelatorCase], output_path: str | Path) -> Path:
+def save_synthetic_cases(
+    cases: list[SyntheticCorrelatorCase], output_path: str | Path
+) -> Path:
     """Save synthetic benchmark cases to a compressed ``.npz`` archive."""
 
     output = Path(output_path)
@@ -70,8 +72,16 @@ def load_synthetic_cases(dataset_path: str | Path) -> list[SyntheticCorrelatorCa
                 description=entry["description"],
                 lt=int(entry["lt"]),
                 samples=np.asarray(payload[entry["samples_key"]], dtype=np.float64),
-                true_energies=tuple(np.asarray(payload[entry["true_energies_key"]], dtype=np.float64).tolist()),
-                amplitudes=tuple(np.asarray(payload[entry["amplitudes_key"]], dtype=np.float64).tolist()),
+                true_energies=tuple(
+                    np.asarray(
+                        payload[entry["true_energies_key"]], dtype=np.float64
+                    ).tolist()
+                ),
+                amplitudes=tuple(
+                    np.asarray(
+                        payload[entry["amplitudes_key"]], dtype=np.float64
+                    ).tolist()
+                ),
             )
             for entry in manifest
         ]
@@ -113,7 +123,9 @@ def _build_case(
     cov += np.eye(lt) * max(np.mean(std**2), 1e-12) * 1e-5
 
     rng = np.random.default_rng(seed)
-    raw = rng.multivariate_normal(mean=truth, cov=cov, size=num_samples, check_valid="warn")
+    raw = rng.multivariate_normal(
+        mean=truth, cov=cov, size=num_samples, check_valid="warn"
+    )
     samples = raw.astype(np.float64)
 
     return SyntheticCorrelatorCase(

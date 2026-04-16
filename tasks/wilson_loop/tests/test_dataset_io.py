@@ -13,8 +13,10 @@ from tasks.wilson_loop.scripts.gauge_io import (
 
 
 def test_pyquda_lexico_to_task_order_shape() -> None:
-    gauge = np.arange(4 * 8 * 6 * 5 * 4 * 3 * 3, dtype=np.float64).reshape(4, 8, 6, 5, 4, 3, 3).astype(
-        np.complex128
+    gauge = (
+        np.arange(4 * 8 * 6 * 5 * 4 * 3 * 3, dtype=np.float64)
+        .reshape(4, 8, 6, 5, 4, 3, 3)
+        .astype(np.complex128)
     )
 
     converted = pyquda_lexico_to_task_order(gauge)
@@ -25,7 +27,9 @@ def test_pyquda_lexico_to_task_order_shape() -> None:
 
 def test_task_gauge_round_trip(tmp_path) -> None:
     gauge = (
-        np.arange(4 * 7 * 6 * 5 * 4 * 3 * 3, dtype=np.float64).reshape(4, 7, 6, 5, 4, 3, 3).astype(np.complex128)
+        np.arange(4 * 7 * 6 * 5 * 4 * 3 * 3, dtype=np.float64)
+        .reshape(4, 7, 6, 5, 4, 3, 3)
+        .astype(np.complex128)
         + 1j
     )
 

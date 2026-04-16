@@ -28,7 +28,9 @@ class TinyMLPRegressor:
 
     def __init__(self, input_dim: int, hidden_dim: int = 32, seed: int = 0) -> None:
         rng = np.random.default_rng(seed)
-        self.w1 = rng.normal(scale=np.sqrt(2.0 / input_dim), size=(input_dim, hidden_dim))
+        self.w1 = rng.normal(
+            scale=np.sqrt(2.0 / input_dim), size=(input_dim, hidden_dim)
+        )
         self.b1 = np.zeros(hidden_dim, dtype=np.float64)
         self.w2 = rng.normal(scale=np.sqrt(2.0 / hidden_dim), size=(hidden_dim, 1))
         self.b2 = np.zeros(1, dtype=np.float64)
@@ -37,7 +39,9 @@ class TinyMLPRegressor:
         self.y_mean = 0.0
         self.y_std = 1.0
 
-    def fit(self, x: np.ndarray, y: np.ndarray, *, epochs: int = 2500, lr: float = 0.02) -> None:
+    def fit(
+        self, x: np.ndarray, y: np.ndarray, *, epochs: int = 2500, lr: float = 0.02
+    ) -> None:
         self.x_mean = x.mean(axis=0)
         self.x_std = np.maximum(x.std(axis=0), 1e-6)
         x_norm = (x - self.x_mean) / self.x_std
@@ -73,7 +77,9 @@ class TinyMLPRegressor:
         return pred[:, 0] * self.y_std + self.y_mean
 
 
-def sample_random_config(rng: np.random.Generator, *, lt: int = 48) -> GroundStateFitConfig:
+def sample_random_config(
+    rng: np.random.Generator, *, lt: int = 48
+) -> GroundStateFitConfig:
     """Sample a valid fit configuration from a simple search space."""
 
     n_states = int(rng.integers(1, MAX_STATES + 1))
@@ -127,10 +133,14 @@ def featurize_config(config: GroundStateFitConfig, *, lt: int = 48) -> np.ndarra
     return np.asarray(features, dtype=np.float64)
 
 
-def evaluate_config(config: GroundStateFitConfig, *, num_samples: int, max_resamples: int) -> dict[str, object]:
+def evaluate_config(
+    config: GroundStateFitConfig, *, num_samples: int, max_resamples: int
+) -> dict[str, object]:
     """Evaluate a config on the deterministic synthetic benchmark."""
 
-    summary = benchmark_config(config, num_samples=num_samples, max_resample_fits=max_resamples)
+    summary = benchmark_config(
+        config, num_samples=num_samples, max_resample_fits=max_resamples
+    )
     return {
         "config": config,
         "score": float(summary["score"]),
@@ -153,11 +163,19 @@ def optimize_with_nn(
     evaluations: list[dict[str, object]] = []
 
     plain_config = PlainGroundStateFit().config
-    evaluations.append(evaluate_config(plain_config, num_samples=num_samples, max_resamples=max_resamples))
+    evaluations.append(
+        evaluate_config(
+            plain_config, num_samples=num_samples, max_resamples=max_resamples
+        )
+    )
 
     for _ in range(max(train_evals - 1, 0)):
         config = sample_random_config(rng)
-        evaluations.append(evaluate_config(config, num_samples=num_samples, max_resamples=max_resamples))
+        evaluations.append(
+            evaluate_config(
+                config, num_samples=num_samples, max_resamples=max_resamples
+            )
+        )
 
     x_train = np.stack([featurize_config(item["config"]) for item in evaluations])
     y_train = np.asarray([item["score"] for item in evaluations], dtype=np.float64)
@@ -171,7 +189,11 @@ def optimize_with_nn(
 
     for idx in top_indices:
         evaluations.append(
-            evaluate_config(proposals[int(idx)], num_samples=num_samples, max_resamples=max_resamples)
+            evaluate_config(
+                proposals[int(idx)],
+                num_samples=num_samples,
+                max_resamples=max_resamples,
+            )
         )
 
     best = max(evaluations, key=lambda item: item["score"])
@@ -190,13 +212,42 @@ def optimize_with_nn(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Optimize gsfit_2pt configs with a tiny NN surrogate")
-    parser.add_argument("--train-evals", type=int, default=40, help="Number of true benchmark evaluations for training")
-    parser.add_argument("--proposal-samples", type=int, default=256, help="Random proposal configs scored by the NN")
-    parser.add_argument("--top-k", type=int, default=24, help="Top predicted configs to evaluate with the true benchmark")
-    parser.add_argument("--num-samples", type=int, default=24, help="Synthetic samples per benchmark case")
-    parser.add_argument("--max-resamples", type=int, default=12, help="Resample refits per case during search")
-    parser.add_argument("--seed", type=int, default=20260415, help="Random seed for config search")
+    parser = argparse.ArgumentParser(
+        description="Optimize gsfit_2pt configs with a tiny NN surrogate"
+    )
+    parser.add_argument(
+        "--train-evals",
+        type=int,
+        default=40,
+        help="Number of true benchmark evaluations for training",
+    )
+    parser.add_argument(
+        "--proposal-samples",
+        type=int,
+        default=256,
+        help="Random proposal configs scored by the NN",
+    )
+    parser.add_argument(
+        "--top-k",
+        type=int,
+        default=24,
+        help="Top predicted configs to evaluate with the true benchmark",
+    )
+    parser.add_argument(
+        "--num-samples",
+        type=int,
+        default=24,
+        help="Synthetic samples per benchmark case",
+    )
+    parser.add_argument(
+        "--max-resamples",
+        type=int,
+        default=12,
+        help="Resample refits per case during search",
+    )
+    parser.add_argument(
+        "--seed", type=int, default=20260415, help="Random seed for config search"
+    )
     parser.add_argument(
         "--output-config",
         type=Path,
@@ -235,7 +286,11 @@ def main() -> None:
 
     args.output_config.parent.mkdir(parents=True, exist_ok=True)
     args.output_config.write_text(json.dumps(payload, indent=2))
-    print(json.dumps({"output_config": str(args.output_config), **payload["search"]}, indent=2))
+    print(
+        json.dumps(
+            {"output_config": str(args.output_config), **payload["search"]}, indent=2
+        )
+    )
 
 
 if __name__ == "__main__":

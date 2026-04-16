@@ -48,7 +48,9 @@ class TaskBase(ABC):
         ...
 
     @abstractmethod
-    def benchmark(self, operator: Any, dataset_path: str | Path | None = None) -> BenchmarkResult:
+    def benchmark(
+        self, operator: Any, dataset_path: str | Path | None = None
+    ) -> BenchmarkResult:
         """Run the benchmark and return a scored result.
 
         Args:

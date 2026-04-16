@@ -8,7 +8,11 @@ from __future__ import annotations
 
 import numpy as np
 
-from tasks.pion_2pt.interface import OperatorComponents, PionInterpolatingOperator, SubmissionMeta
+from tasks.pion_2pt.interface import (
+    OperatorComponents,
+    PionInterpolatingOperator,
+    SubmissionMeta,
+)
 
 
 class PlainBoostedPion(PionInterpolatingOperator):

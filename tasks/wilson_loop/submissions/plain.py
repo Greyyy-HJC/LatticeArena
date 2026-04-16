@@ -29,7 +29,9 @@ class PlainWilsonLine(SpatialOperator):
             authors=["LatticeArena"],
         )
 
-    def setup(self, gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]) -> None:
+    def setup(
+        self, gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]
+    ) -> None:
         self._validate_gauge_field(gauge_field, latt_size)
         self._latt_size = latt_size
 
@@ -60,9 +62,15 @@ class PlainWilsonLine(SpatialOperator):
         return out
 
     @staticmethod
-    def _validate_gauge_field(gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]) -> None:
+    def _validate_gauge_field(
+        gauge_field: np.ndarray, latt_size: tuple[int, int, int, int]
+    ) -> None:
         expected_shape = (4, *latt_size, 3, 3)
         if gauge_field.shape != expected_shape:
-            raise ValueError(f"Expected gauge_field shape {expected_shape}, got {gauge_field.shape}.")
+            raise ValueError(
+                f"Expected gauge_field shape {expected_shape}, got {gauge_field.shape}."
+            )
         if gauge_field.dtype != np.complex128:
-            raise ValueError(f"Expected gauge_field dtype complex128, got {gauge_field.dtype}.")
+            raise ValueError(
+                f"Expected gauge_field dtype complex128, got {gauge_field.dtype}."
+            )
