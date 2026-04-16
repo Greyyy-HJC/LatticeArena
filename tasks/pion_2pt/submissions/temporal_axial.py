@@ -1,4 +1,4 @@
-"""Baseline boosted-pion interpolating operator."""
+"""Temporal-axial boosted-pion interpolating operator."""
 
 from __future__ import annotations
 
@@ -6,7 +6,7 @@ from typing import Any
 
 import numpy as np
 
-from tasks.pion_2pt.dirac import gamma5_matrix
+from tasks.pion_2pt.dirac import gamma_t_gamma5_matrix
 from tasks.pion_2pt.interface import (
     PlaneWaveSinkSpec,
     PionInterpolatingOperator,
@@ -17,7 +17,7 @@ from tasks.pion_2pt.interface import (
 )
 
 
-class PlainBoostedPion(PionInterpolatingOperator):
+class TemporalAxialBoostedPion(PionInterpolatingOperator):
     """Point-source, pseudoscalar pion interpolating operator."""
 
     def __init__(self) -> None:
@@ -26,8 +26,8 @@ class PlainBoostedPion(PionInterpolatingOperator):
     @property
     def meta(self) -> SubmissionMeta:
         return SubmissionMeta(
-            name="plain",
-            description="Point source with plane-wave sink and gamma_5 bilinear",
+            name="temporal_axial",
+            description="Point source with plane-wave sink and gamma_t gamma_5 bilinear",
             authors=["LatticeArena"],
         )
 
@@ -71,4 +71,4 @@ class PlainBoostedPion(PionInterpolatingOperator):
         del gauge_field, momentum_mode, t_source
         if not self._is_setup:
             raise RuntimeError("setup() must be called before gamma_matrix().")
-        return gamma5_matrix()
+        return gamma_t_gamma5_matrix()

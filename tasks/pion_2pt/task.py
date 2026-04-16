@@ -46,7 +46,10 @@ class Pion2PtTask(TaskBase):
 
         summary = benchmark_submission(
             operator,
-            dataset_path=str(dataset_path or self.dataset_path / "test_small"),
+            dataset_path=str(
+                dataset_path or self.dataset_path / "quenched_wilson_b6_8x32"
+            ),
+            artifact_dir=self.root / "benchmark" / "results",
         )
         return BenchmarkResult(
             task_name=self.name,

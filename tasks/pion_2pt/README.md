@@ -15,29 +15,36 @@ measurement pipeline.
 
 ## Optimization Target
 
-Submissions define how the pion source and sink are built for boosted pions:
+Submissions define how the pion source and sink are built for boosted pions
+while the fixed workflow owns the PyQUDA solve and contraction:
 
-- spatial source profile
-- spatial sink profile
+- source design
+- sink design
 - Dirac structure
 
 The current reference submissions are:
 
 - `submissions/plain.py`: pseudoscalar (`gamma_5`) with a point source and
   plane-wave sink projection
-- `submissions/axial_smeared.py`: Gaussian momentum-smeared profile with a
-  boost-aligned axial-style Dirac structure
+- `submissions/temporal_axial.py`: the same point-source / plane-wave profile
+  as `plain`, but with a temporal-axial (`gamma_t gamma_5`) Dirac structure
 
 Measurement scripts in this task are written against
-[PyQUDA](https://github.com/CLQCD/PyQUDA).
+[PyQUDA](https://github.com/CLQCD/PyQUDA), with Dirac matrices sourced from
+`pyquda_utils.gamma`. The fixed workflow is intentionally close to
+`pion_disp.py`: `getClover(...)`, `dirac.loadGauge(...)`,
+`core.invert(..., "point", ...)` for point-source baselines, then fixed
+contraction and benchmark scoring.
 
 ## Current Status
 
-- Interface: ready
+- Interface: complete (`meta`, `setup`, `design_source`, `design_sink`, `gamma_matrix`)
 - Reference submissions: ready
 - Validation tests: ready
 - Measurement pipeline: ready for local PyQUDA datasets
-- Benchmark scoring: ready for local smoke tests
+- Benchmark scoring: ready for local smoke tests, including saved meff plots in
+  `benchmark/results/`
+- Default local dataset: `dataset/quenched_wilson_b6_8x32`
 
 ## Quick Start
 

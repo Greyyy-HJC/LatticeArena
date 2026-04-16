@@ -1,0 +1,21 @@
+{
+  "name": "quenched_wilson_b6_8x32",
+  "latt_size": [8, 8, 8, 32],
+  "anisotropy": {
+    "xi_0": 1.0,
+    "nu": 1.0
+  },
+  "clover": {
+    "mass": -0.038888,
+    "csw_r": 1.02868,
+    "csw_t": 1.02868,
+    "t_boundary": -1
+  },
+  "source_times": [0, 16],
+  "benchmark_momentum": [3, 3, 3],
+  "gauge_glob": "wilson_b6.[0-9]*",
+  "format": "nersc",
+  "resource_path": ".cache",
+  "invert_tolerance": 1e-8,
+  "invert_maxiter": 10000
+}

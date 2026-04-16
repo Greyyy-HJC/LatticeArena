@@ -5,19 +5,24 @@ fixed PyQUDA measurement workflow how to interpret the ensemble.
 
 ## Local-only quenched test ensemble
 
-The current regression target is a local quenched `16^3 x 16` ensemble used for
-development and smoke tests. It is intentionally not tracked by git.
+The current default regression target is a local quenched `8^3 x 32` ensemble
+used for development and smoke tests. It is intentionally not tracked by git.
 
 Recommended layout:
 
+- `quenched_wilson_b6_8x32/`
+  - default local quenched `8^3 x 32` smoke-test ensemble
+  - `ensemble.json`
+  - one or more gauge configurations in NERSC / PyQUDA-readable format
 - `quenched_wilson_b6_16x16/`
-  - local quenched `16^3 x 16` smoke-test ensemble
+  - optional legacy local quenched `16^3 x 16` smoke-test ensemble
   - `ensemble.json`
   - one or more gauge configurations in NERSC / PyQUDA-readable format
 - `benchmark/`
   - reserved for future leaderboard datasets
 
 The repository `.gitignore` excludes concrete files under
+`tasks/pion_2pt/dataset/quenched_wilson_b6_8x32/`,
 `tasks/pion_2pt/dataset/quenched_wilson_b6_16x16/`,
 `tasks/pion_2pt/dataset/local_test/`, and `tasks/pion_2pt/dataset/benchmark/`
 so large local data stays untracked.
@@ -28,8 +33,8 @@ The fixed workflow expects `ensemble.json` with fields of this shape:
 
 ```json
 {
-  "name": "quenched_16x16_local",
-  "latt_size": [16, 16, 16, 16],
+  "name": "quenched_wilson_b6_8x32",
+  "latt_size": [8, 8, 8, 32],
   "anisotropy": {
     "xi_0": 1.0,
     "nu": 1.0
@@ -40,9 +45,9 @@ The fixed workflow expects `ensemble.json` with fields of this shape:
     "csw_t": 1.02868,
     "t_boundary": -1
   },
-  "source_times": [0, 8],
+  "source_times": [0, 16],
   "benchmark_momentum": [3, 3, 3],
-  "gauge_glob": "wilson_b6.*",
+  "gauge_glob": "wilson_b6.[0-9]*",
   "format": "nersc"
 }
 ```
