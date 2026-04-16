@@ -27,13 +27,13 @@ from tasks.pion_2pt.task import Pion2PtTask
 
 
 def _default_dataset_path() -> Path:
-    candidate = Path("tasks/pion_2pt/dataset/quenched_wilson_b6_16x16")
+    candidate = Path("tasks/pion_2pt/dataset/quenched_wilson_b6_8x32")
     if candidate.exists():
         return candidate
     raise FileNotFoundError(
         "No default pion_2pt dataset found. Provide --dataset-path pointing to a "
         "dataset directory (containing ensemble.json) or an ensemble.json file. "
-        "Expected: tasks/pion_2pt/dataset/quenched_wilson_b6_16x16."
+        "Expected: tasks/pion_2pt/dataset/quenched_wilson_b6_8x32."
     )
 
 
@@ -136,6 +136,7 @@ def main() -> None:
         source_times=parse_time_list(args.source_times) if args.source_times else None,
         max_configs=args.max_configs,
         resource_path=args.resource_path,
+        artifact_dir=args.output_dir,
     )
     result = BenchmarkResult(
         task_name="pion_2pt",

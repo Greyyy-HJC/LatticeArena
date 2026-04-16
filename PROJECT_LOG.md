@@ -94,15 +94,15 @@ correlators.
   quenched smoke tests are gitignored)
 - **`scripts/measure.py`**: fixed PyQUDA measurement workflow (submission-aware)
 - **`interface.py`**: `PionInterpolatingOperator`
-- **`submissions/`**: source/sink profile and Dirac-structure submissions
-- **`tests/validation.py`**: shape and normalization checks
+- **`submissions/`**: source/sink design and Dirac-structure submissions
+- **`tests/validation.py`**: spec legality plus profile normalization checks
 - **`benchmark/metrics.py`**: scoring by signal-to-noise and excited-state proxies
 
 Current reference submissions:
 
 - `plain`: `gamma_5` with point source + plane-wave sink projection
-- `axial_smeared`: Gaussian momentum-smeared profile with a boost-aligned
-axial-style Dirac structure
+- `temporal_axial`: the same point-source / plane-wave profile as `plain`,
+  but with a temporal-axial `gamma_t gamma_5` bilinear
 
 Current benchmark target:
 
@@ -110,7 +110,7 @@ Current benchmark target:
 integer mode `(npx, npy, npz)`.
 - The default local target is `(3, 3, 3)` (see `tasks/pion_2pt/dataset/README.md`).
 
-The submission interface remains:
+The submission interface is:
 
 ```python
 class PionInterpolatingOperator(ABC):
@@ -124,12 +124,26 @@ class PionInterpolatingOperator(ABC):
         lattice_spacing_fm: float | None,
     ) -> None: ...
 
-    def build(
+    def design_source(
         self,
         gauge_field: Any,
         momentum_mode: tuple[int, int, int],
         t_source: int,
-    ) -> OperatorComponents: ...
+    ) -> SourceSpec: ...
+
+    def design_sink(
+        self,
+        gauge_field: Any,
+        momentum_mode: tuple[int, int, int],
+        t_source: int,
+    ) -> SinkSpec: ...
+
+    def gamma_matrix(
+        self,
+        gauge_field: Any,
+        momentum_mode: tuple[int, int, int],
+        t_source: int,
+    ) -> np.ndarray: ...
 ```
 
 ### `gsfit_2pt`
@@ -161,6 +175,63 @@ by `scripts/fit.py`.
 
 ## Change log
 
+### 2026-04-16 — `pion_2pt` measure follows `pion_disp.py`
+
+- **Area**: `pion_2pt`
+- **Type**: change / bugfix / interface change
+- **Context**: the first task integration already used PyQUDA, but the
+  submission contract still returned raw source/sink profiles through `build()`
+  and the measurement flow drifted away from the simpler `pion_disp.py`
+  reference shape. In addition, the temporal-axial baseline could produce all
+  `nan` effective masses because the source-side gamma ordering in the fixed
+  contraction was wrong for non-pseudoscalar bilinears.
+- **Decision**:
+  - replace `build()` with explicit `design_source()`, `design_sink()`, and
+    `gamma_matrix()` hooks
+  - add source/sink spec types so point sources and plane-wave sinks are
+    represented directly instead of being encoded as raw arrays
+  - make the reference workflow follow `pion_disp.py` more closely:
+    `getClover(...)`, `dirac.loadGauge(...)`, `core.invert(..., "point", ...)`,
+    fixed contraction, source-time rolling, and config averaging
+  - keep a `colorvector` fallback only for arbitrary profile sources
+  - fix the source-side contraction factor to use `Gamma^dagger @ gamma_5`
+    instead of `gamma_5 @ Gamma^dagger`
+- **Impact**:
+  - `plain` now matches the point-source / plane-wave / `gamma_5` reference
+    setup from `pion_disp.py`
+  - `temporal_axial` differs from `plain` only by using `gamma_t gamma_5`
+  - task tests now lock the new submission API and the contraction-order
+    regression
+  - this is a breaking submission-API change for `pion_2pt`
+
+### 2026-04-16 — `pion_2pt` benchmark polish and temporal-axial rename
+
+- **Area**: `pion_2pt`
+- **Type**: change / docs / interface cleanup
+- **Context**: the task still mixed hand-written gamma matrices, a misleading
+  `axial_smeared` reference submission, and benchmark output that only saved
+  JSON metrics without a quick-look meff artifact.
+- **Decision**:
+  - use `pyquda_utils.gamma.gamma(...)` as the single source of truth for task
+    Dirac matrices
+  - replace the old `axial_smeared` submission with `temporal_axial`, keeping
+    the same point-source / plane-wave profiles as `plain` but changing the
+    bilinear to `gamma_t gamma_5`
+  - switch effective-mass analysis to the periodic/cosh definition and save a
+    benchmark-side meff PDF artifact alongside the JSON result
+  - keep the submission interface complete at the task level rather than moving
+    solve logic into submissions
+- **Impact**:
+  - `tasks/pion_2pt/benchmark/results/` now has room for discoverable meff plot
+    artifacts
+  - the task no longer maintains any local handwritten gamma matrices
+  - benchmark plotting now uses the shared repository plot style from
+    `core/plot_settings.py`
+  - submission loading now instantiates only classes defined in the target
+    submission module, avoiding imported baseline classes shadowing renamed
+    submissions such as `temporal_axial`
+  - docs and tests now describe the completed interface and renamed submission
+
 ### 2026-04-16 — Docs re-organization
 
 - **Area**: repo-level docs
@@ -178,8 +249,8 @@ submission loop), and benchmark scoring was WIP.
 - **Decision**:
   - refactor the fixed workflow into a submission-aware PyQUDA pipeline
   - treat quenched ensembles without scale setting in lattice momentum modes
-  - keep the submission interface centered on `(source_profile, sink_profile, gamma_matrix)`
-  while realizing arbitrary profiles via PyQUDA `colorvector` sources
+  - realize arbitrary source profiles via PyQUDA `colorvector` sources while
+    keeping the solve and contraction in the framework
 - **Impact**:
   - `tasks/pion_2pt/scripts/measure.py` provides a reusable API + CLI
   - `tasks/pion_2pt/benchmark/run.py` now validates, scores, and writes results
@@ -203,6 +274,26 @@ averaging are standard in the dataset metadata.
 - **Impact**: default runs are less ambiguous, docs and ignore rules now match the
   active local dataset convention, and users should pass `--dataset-path` when
   using any alternate local dataset.
+
+### 2026-04-16 — `pion_2pt` default ensemble switched to local `8^3 x 32`
+
+- **Area**: `pion_2pt`
+- **Type**: change / dataset / docs
+- **Context**: a new local quenched Wilson ensemble was provided under `/tmp/S8T32`,
+  and the task default still pointed at the older `16^3 x 16` smoke-test set.
+- **Decision**:
+  - copy the local gauge files into
+    `tasks/pion_2pt/dataset/quenched_wilson_b6_8x32`
+  - add task-local metadata and README for the new ensemble
+  - switch default dataset resolution in `scripts/measure.py`,
+    `benchmark/run.py`, and `task.py` to `quenched_wilson_b6_8x32`
+  - keep the older `quenched_wilson_b6_16x16` directory available as an alternate
+    local dataset rather than the default
+- **Impact**:
+  - default local pion measurements now run on the `8^3 x 32` ensemble
+  - docs and tests reflect the new default dataset naming
+  - the new local gauge directory is ignored by git like the previous local-only
+    smoke-test ensemble
 
 ### 2026-04-16 — `gsfit_2pt` benchmark pre-test gate
 
@@ -252,4 +343,3 @@ averaging are standard in the dataset metadata.
   - default benchmark path now executes validation tests before score generation
   - behavior is aligned with `gsfit_2pt` and `pion_2pt`
   - tests cover both default gate execution and skip path
-

@@ -1,15 +1,15 @@
 """Optimization interface for boosted pion two-point operators.
 
-Contributors implement :class:`PionInterpolatingOperator` to design source/sink
-interpolating operators for pion two-point correlators at finite momentum.
-The flagship benchmark target is a pion with |p| ~= 1 GeV.
+This task's submission contract keeps the PyQUDA solve and contraction inside
+the framework while letting submissions design source, sink, and Dirac
+structure explicitly.
 """
 
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, TypeAlias
 
 import numpy as np
 
@@ -23,26 +23,36 @@ class SubmissionMeta:
     authors: list[str]
 
 
-@dataclass
-class OperatorComponents:
-    """Building blocks used by the pion 2pt measurement pipeline.
+@dataclass(frozen=True)
+class PointSourceSpec:
+    """A point source at one spatial site on the source timeslice."""
 
-    Attributes:
-        source_profile:
-            Complex profile on the source timeslice, shape (Lx, Ly, Lz).
-            Includes spatial smearing and momentum phase factors.
-        sink_profile:
-            Complex profile on the sink timeslice, shape (Lx, Ly, Lz).
-            Can differ from source_profile for variational/distillation-inspired
-            designs.
-        gamma_matrix:
-            Dirac matrix defining the bilinear, shape (Ns, Ns) complex.
-            Ns=4 in standard relativistic formulations.
-    """
+    position: tuple[int, int, int] = (0, 0, 0)
 
-    source_profile: np.ndarray
-    sink_profile: np.ndarray
-    gamma_matrix: np.ndarray
+
+@dataclass(frozen=True)
+class ProfileSourceSpec:
+    """An arbitrary normalized spatial source profile."""
+
+    profile: np.ndarray
+
+
+@dataclass(frozen=True)
+class PlaneWaveSinkSpec:
+    """A plane-wave sink projection in lattice momentum units."""
+
+    momentum_mode: tuple[int, int, int]
+
+
+@dataclass(frozen=True)
+class ProfileSinkSpec:
+    """An arbitrary normalized spatial sink profile."""
+
+    profile: np.ndarray
+
+
+SourceSpec: TypeAlias = PointSourceSpec | ProfileSourceSpec
+SinkSpec: TypeAlias = PlaneWaveSinkSpec | ProfileSinkSpec
 
 
 class PionInterpolatingOperator(ABC):
@@ -58,6 +68,8 @@ class PionInterpolatingOperator(ABC):
 
     The optimization goal is to improve signal/noise and suppress excited-state
     contamination for boosted pions, with benchmark focus around |p| ~ 1 GeV.
+    Submissions provide metadata plus one-time setup and explicit source, sink,
+    and Dirac-structure design hooks.
     """
 
     @property
@@ -73,35 +85,35 @@ class PionInterpolatingOperator(ABC):
         latt_size: tuple[int, int, int, int],
         lattice_spacing_fm: float | None,
     ) -> None:
-        """One-time setup per gauge configuration.
-
-        Args:
-            gauge_field:
-                Gauge links or a backend-specific gauge handle for the active
-                configuration.
-            latt_size: (Lx, Ly, Lz, Lt).
-            lattice_spacing_fm:
-                Lattice spacing in femtometers when available. May be ``None``
-                for exploratory ensembles without scale setting.
-        """
+        """One-time setup per gauge configuration."""
         ...
 
     @abstractmethod
-    def build(
+    def design_source(
         self,
         gauge_field: Any,
         momentum_mode: tuple[int, int, int],
         t_source: int,
-    ) -> OperatorComponents:
-        """Build source/sink operator components for a given momentum.
+    ) -> SourceSpec:
+        """Describe the source to solve from for one momentum/timeslice."""
+        ...
 
-        Args:
-            gauge_field: Gauge links in natural ordering.
-            momentum_mode:
-                Target pion momentum mode ``(npx, npy, npz)`` in lattice units.
-            t_source: Source timeslice.
+    @abstractmethod
+    def design_sink(
+        self,
+        gauge_field: Any,
+        momentum_mode: tuple[int, int, int],
+        t_source: int,
+    ) -> SinkSpec:
+        """Describe the sink projection for one momentum/timeslice."""
+        ...
 
-        Returns:
-            OperatorComponents with source/sink profiles and gamma matrix.
-        """
+    @abstractmethod
+    def gamma_matrix(
+        self,
+        gauge_field: Any,
+        momentum_mode: tuple[int, int, int],
+        t_source: int,
+    ) -> np.ndarray:
+        """Return the bilinear Dirac matrix for one momentum/timeslice."""
         ...

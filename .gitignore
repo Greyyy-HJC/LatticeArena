@@ -19,8 +19,10 @@ tasks/*/dataset/*.lime
 tasks/*/dataset/*.ildg
 tasks/*/dataset/*.nersc
 tasks/*/dataset/*.milc
+tasks/pion_2pt/dataset/quenched_wilson_b6_8x32/**
 tasks/pion_2pt/dataset/quenched_wilson_b6_16x16/**
 !tasks/pion_2pt/dataset/**/README.md
+!tasks/pion_2pt/dataset/**/ensemble.json
 tasks/pion_2pt/dataset/local_test/**
 !tasks/pion_2pt/dataset/local_test/README.md
 tasks/pion_2pt/dataset/benchmark/**

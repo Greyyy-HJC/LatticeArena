@@ -10,13 +10,13 @@ dependencies = [
     "gvar",
     "lsqfit",
     "gmpy2",
+    "matplotlib",
     "pyquda",
     "pyquda-utils",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov"]
-viz = ["matplotlib"]
 gpu-cuda12 = ["cupy-cuda12x"]
 
 [build-system]

@@ -18,20 +18,29 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from tasks.pion_2pt.interface import PionInterpolatingOperator
+from tasks.pion_2pt.dirac import gamma5_matrix
+from tasks.pion_2pt.interface import (
+    PionInterpolatingOperator,
+    PlaneWaveSinkSpec,
+    PointSourceSpec,
+    ProfileSinkSpec,
+    ProfileSourceSpec,
+    SinkSpec,
+    SourceSpec,
+)
 
 
 _PYQUDA_INITIALIZED = False
 
 
 def _default_dataset_path() -> Path:
-    candidate = Path("tasks/pion_2pt/dataset/quenched_wilson_b6_16x16")
+    candidate = Path("tasks/pion_2pt/dataset/quenched_wilson_b6_8x32")
     if candidate.exists():
         return candidate
     raise FileNotFoundError(
         "No default pion_2pt dataset found. Provide --dataset-path pointing to a "
         "dataset directory (containing ensemble.json) or an ensemble.json file. "
-        "Expected: tasks/pion_2pt/dataset/quenched_wilson_b6_16x16."
+        "Expected: tasks/pion_2pt/dataset/quenched_wilson_b6_8x32."
     )
 
 
@@ -66,6 +75,7 @@ def load_submission(submission_name: str) -> PionInterpolatingOperator:
             isinstance(value, type)
             and issubclass(value, PionInterpolatingOperator)
             and value is not PionInterpolatingOperator
+            and value.__module__ == module.__name__
         ):
             return value()
     raise ValueError(
@@ -186,15 +196,34 @@ def _ensure_pyquda_runtime(core: Any, resource_path: Path) -> None:
     _PYQUDA_INITIALIZED = True
 
 
-def _gamma5() -> np.ndarray:
-    return np.diag([1.0, 1.0, -1.0, -1.0]).astype(np.complex128)
-
-
 def _profile_to_tzyx(profile: np.ndarray) -> np.ndarray:
     return np.transpose(np.asarray(profile, dtype=np.complex128), (2, 1, 0))
 
 
-def _build_source_propagator(
+def _plane_wave_profile(
+    latt_size: tuple[int, int, int, int],
+    momentum_mode: tuple[int, int, int],
+) -> np.ndarray:
+    lx, ly, lz, _ = latt_size
+    x = np.arange(lx)
+    y = np.arange(ly)
+    z = np.arange(lz)
+    xx, yy, zz = np.meshgrid(x, y, z, indexing="ij")
+    profile = np.exp(
+        2j
+        * np.pi
+        * (
+            momentum_mode[0] * xx / lx
+            + momentum_mode[1] * yy / ly
+            + momentum_mode[2] * zz / lz
+        )
+    )
+    profile = profile.astype(np.complex128)
+    profile /= np.linalg.norm(profile)
+    return profile
+
+
+def _build_profile_source_propagator(
     cp: Any,
     core: Any,
     source_utils: Any,
@@ -227,7 +256,42 @@ def _build_source_propagator(
     return propagator
 
 
-def _build_sink_weights(cp: Any, latt_info: Any, sink_profile: np.ndarray) -> Any:
+def _solve_source_propagator(
+    cp: Any,
+    core: Any,
+    source_utils: Any,
+    dirac: Any,
+    latt_info: Any,
+    source_spec: SourceSpec,
+    t_source: int,
+) -> Any:
+    if isinstance(source_spec, PointSourceSpec):
+        x, y, z = source_spec.position
+        return core.invert(dirac, "point", [x, y, z, t_source])
+    if isinstance(source_spec, ProfileSourceSpec):
+        propagator = _build_profile_source_propagator(
+            cp, core, source_utils, latt_info, source_spec.profile, t_source
+        )
+        return core.invertPropagator(dirac, propagator)
+    raise TypeError(f"Unsupported source spec: {type(source_spec).__name__}")
+
+
+def _build_sink_profile(
+    latt_size: tuple[int, int, int, int],
+    sink_spec: SinkSpec,
+) -> np.ndarray:
+    if isinstance(sink_spec, PlaneWaveSinkSpec):
+        return _plane_wave_profile(latt_size, sink_spec.momentum_mode)
+    if isinstance(sink_spec, ProfileSinkSpec):
+        return np.asarray(sink_spec.profile, dtype=np.complex128)
+    raise TypeError(f"Unsupported sink spec: {type(sink_spec).__name__}")
+
+
+def _build_sink_weights(
+    cp: Any,
+    latt_info: Any,
+    sink_profile: np.ndarray,
+) -> Any:
     lx, ly, lz, lt = latt_info.global_size
     if sink_profile.shape != (lx, ly, lz):
         raise ValueError(
@@ -241,17 +305,28 @@ def _build_sink_weights(cp: Any, latt_info: Any, sink_profile: np.ndarray) -> An
     return cp.asarray(sink_weights)
 
 
+def sink_contraction_gamma(gamma_matrix: np.ndarray) -> np.ndarray:
+    """Return the sink-side spin matrix used in the fixed contraction."""
+
+    gamma = np.asarray(gamma_matrix, dtype=np.complex128)
+    return gamma5_matrix() @ gamma
+
+
+def source_contraction_gamma(gamma_matrix: np.ndarray) -> np.ndarray:
+    """Return the source-side spin matrix used in the fixed contraction."""
+
+    gamma = np.asarray(gamma_matrix, dtype=np.complex128)
+    return gamma.conj().T @ gamma5_matrix()
+
+
 def _contract_correlator(
     cp: Any,
     propagator: Any,
     sink_weights: Any,
     gamma_matrix: np.ndarray,
 ) -> np.ndarray:
-    gamma5 = cp.asarray(_gamma5())
-    gamma_sink = gamma5 @ cp.asarray(np.asarray(gamma_matrix, dtype=np.complex128))
-    gamma_source = gamma5 @ cp.asarray(
-        np.asarray(gamma_matrix, dtype=np.complex128).conj().T
-    )
+    gamma_sink = cp.asarray(sink_contraction_gamma(gamma_matrix))
+    gamma_source = cp.asarray(source_contraction_gamma(gamma_matrix))
     correlator = cp.einsum(
         "wtzyx,wtzyxjiba,jk,wtzyxklba,li->t",
         sink_weights.conj(),
@@ -309,17 +384,21 @@ def measure_single_config(
     )
     for t_index, t_source in enumerate(source_times):
         for p_index, momentum_mode in enumerate(momentum_modes):
-            components = operator.build(
+            source_spec = operator.design_source(
                 gauge, momentum_mode=momentum_mode, t_source=t_source
             )
-            source_propagator = _build_source_propagator(
-                cp, core, source_utils, latt_info, components.source_profile, t_source
+            sink_spec = operator.design_sink(
+                gauge, momentum_mode=momentum_mode, t_source=t_source
             )
-            solved = core.invertPropagator(dirac, source_propagator)
-            sink_weights = _build_sink_weights(cp, latt_info, components.sink_profile)
-            correlator = _contract_correlator(
-                cp, solved, sink_weights, components.gamma_matrix
+            gamma_matrix = operator.gamma_matrix(
+                gauge, momentum_mode=momentum_mode, t_source=t_source
             )
+            solved = _solve_source_propagator(
+                cp, core, source_utils, dirac, latt_info, source_spec, t_source
+            )
+            sink_profile = _build_sink_profile(ensemble.latt_size, sink_spec)
+            sink_weights = _build_sink_weights(cp, latt_info, sink_profile)
+            correlator = _contract_correlator(cp, solved, sink_weights, gamma_matrix)
             per_source[t_index, p_index] = np.roll(correlator, -t_source)
 
     return np.mean(per_source, axis=0)

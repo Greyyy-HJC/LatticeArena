@@ -20,10 +20,13 @@ following PyQUDA / `pyquda-utils` pieces:
   - builds the Clover Dirac operator used for inversions
 - `pyquda_utils.io.readNERSCGauge(path)`
   - loads quenched gauge configurations in NERSC format
+- `pyquda_utils.core.invert(...)`
+  - the direct point-source solve path used by the `plain`-style baseline
 - `pyquda_utils.source.source(...)`
   - builds fermion sources, including `colorvector`
 - `pyquda_utils.core.invertPropagator(...)`
-  - solves the Dirac equation for a prebuilt propagator source
+  - solves the Dirac equation for a prebuilt propagator source when a
+    submission requests a non-point profile source
 
 ## Source types worth remembering
 
@@ -40,9 +43,13 @@ From the installed `pyquda-utils` helpers:
 - `colorvector`
   - arbitrary spatial profile supplied as a color-vector field
 
-For `pion_2pt`, `colorvector` is the key entrypoint because it lets a
-submission provide an arbitrary normalized 3D source profile while the fixed
-workflow keeps control of the inversion and contraction.
+For `pion_2pt`, the important split is:
+
+- `point`
+  - mirrors `pion_disp.py` for the reference point-source workflow
+- `colorvector`
+  - lets a submission provide an arbitrary normalized 3D source profile while
+    the fixed workflow keeps control of the inversion and contraction
 
 ## Momentum phases
 
@@ -60,8 +67,9 @@ setting yet. For the present benchmark target we use `(3, 3, 3)`.
 PyQUDA itself supports gauge and fermion smearing operations, but for the
 current task integration the simplest robust interface is:
 
-- let submissions encode source/sink profiles directly
-- realize those profiles through `colorvector` sources
+- let submissions describe source and sink designs explicitly
+- map point sources onto `core.invert(..., "point", ...)`
+- realize arbitrary source profiles through `colorvector` sources
 - keep the fixed benchmark workflow in control of the solve and contraction
 
 This gives us a clean path for:
@@ -87,8 +95,8 @@ contraction path used by `pion_2pt`.
 
 For this task, think of the stack as:
 
-1. submission chooses `source_profile`, `sink_profile`, `gamma_matrix`
-2. fixed workflow converts `source_profile` into a PyQUDA `colorvector` source
+1. submission chooses source design, sink design, and `gamma_matrix`
+2. fixed workflow dispatches the source to either `point` or `colorvector`
 3. PyQUDA performs the inversion
-4. fixed workflow contracts the solved propagator with `sink_profile`
+4. fixed workflow constructs the sink projection and contracts the solved propagator
 5. benchmark metrics score signal-to-noise and excited-state suppression

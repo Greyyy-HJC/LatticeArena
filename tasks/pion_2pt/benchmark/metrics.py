@@ -7,20 +7,39 @@ from typing import Any
 
 import numpy as np
 
+from tasks.pion_2pt.benchmark.plots import save_effective_mass_plot
 from tasks.pion_2pt.interface import PionInterpolatingOperator
 from tasks.pion_2pt.scripts.measure import measure_dataset
 
 
-def _effective_mass(correlator: np.ndarray) -> np.ndarray:
-    masses = np.full(max(correlator.shape[-1] - 1, 0), np.nan, dtype=np.float64)
-    if correlator.shape[-1] < 2:
+def effective_mass_periodic(correlator: np.ndarray) -> np.ndarray:
+    """Return periodic/cosh effective masses along the last axis."""
+
+    correlator = np.asarray(correlator, dtype=np.float64)
+    masses = np.full(
+        (*correlator.shape[:-1], max(correlator.shape[-1] - 2, 0)),
+        np.nan,
+        dtype=np.float64,
+    )
+    if correlator.shape[-1] < 3:
         return masses
 
-    numerator = correlator[:-1]
-    denominator = correlator[1:]
-    valid = (numerator > 0) & (denominator > 0)
-    masses[valid] = -np.log(denominator[valid] / numerator[valid])
+    center = correlator[..., 1:-1]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        ratio = (correlator[..., 2:] + correlator[..., :-2]) / (2.0 * center)
+    valid = np.isfinite(ratio) & np.isfinite(center) & (center > 0) & (ratio >= 1.0)
+    masses[valid] = np.arccosh(ratio[valid])
     return masses
+
+
+def effective_mass_stderr(per_config_effective_mass: np.ndarray) -> np.ndarray:
+    """Return config-to-config standard errors for effective masses."""
+
+    per_config_effective_mass = np.asarray(per_config_effective_mass, dtype=np.float64)
+    n_configs = per_config_effective_mass.shape[0]
+    if n_configs <= 1:
+        return np.zeros_like(per_config_effective_mass[0], dtype=np.float64)
+    return np.nanstd(per_config_effective_mass, axis=0, ddof=1) / np.sqrt(n_configs)
 
 
 def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
@@ -44,29 +63,24 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
     snr_curve = np.abs(mean_real) / corr_std_safe
     signal_to_noise = float(np.nanmean(snr_curve[:, t_min:t_max]))
 
-    mean_eff = np.asarray(
-        [_effective_mass(corr) for corr in mean_real], dtype=np.float64
-    )
-    per_config_eff = np.asarray(
-        [[_effective_mass(corr) for corr in cfg] for cfg in real_per_config],
-        dtype=np.float64,
-    )
-    eff_err = (
-        np.nanstd(per_config_eff, axis=0, ddof=1) / np.sqrt(n_configs)
-        if n_configs > 1
-        else np.ones_like(mean_eff)
-    )
-    eff_err = np.where(np.isfinite(eff_err) & (eff_err > 1e-12), eff_err, 1.0)
+    mean_eff = effective_mass_periodic(mean_real)
+    per_config_eff = effective_mass_periodic(real_per_config)
+    eff_err = effective_mass_stderr(per_config_eff)
+    eff_err_safe = np.where(np.isfinite(eff_err) & (eff_err > 1e-12), eff_err, 1.0)
+    eff_times = np.arange(1, lt - 1, dtype=np.int64)
 
-    plateau_start = max(2, (lt - 1) // 3)
+    plateau_start = max(2, lt // 3)
     plateau_stop = max(plateau_start + 2, lt // 2)
     plateau_chi2 = 0.0
     plateau_dof = 0
     excited_state_proxy_terms = []
 
     for momentum_idx in range(n_momenta):
-        values = mean_eff[momentum_idx, plateau_start:plateau_stop]
-        errors = eff_err[momentum_idx, plateau_start:plateau_stop]
+        plateau_mask = (eff_times >= plateau_start) & (eff_times < plateau_stop)
+        early_mask = eff_times < plateau_start
+
+        values = mean_eff[momentum_idx, plateau_mask]
+        errors = eff_err_safe[momentum_idx, plateau_mask]
         valid = np.isfinite(values)
         if np.count_nonzero(valid) < 2:
             excited_state_proxy_terms.append(float("inf"))
@@ -78,7 +92,7 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
         )
         plateau_dof += max(np.count_nonzero(valid) - 1, 1)
 
-        early_values = mean_eff[momentum_idx, 1 : 1 + np.count_nonzero(valid)]
+        early_values = mean_eff[momentum_idx, early_mask]
         early_valid = np.isfinite(early_values)
         if np.any(early_valid):
             excited_state_proxy_terms.append(
@@ -104,9 +118,11 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
             [int(component) for component in mode]
             for mode in np.asarray(measured["momentum_modes"], dtype=np.int64)
         ],
+        "effective_mass_times": [int(value) for value in eff_times],
         "mean_correlator_real": mean_real.tolist(),
         "mean_correlator_imag": mean_corr.imag.tolist(),
         "effective_mass": mean_eff.tolist(),
+        "effective_mass_stderr": eff_err.tolist(),
         "signal_to_noise": signal_to_noise,
         "plateau_chi2_dof": plateau_chi2_dof,
         "excited_state_proxy": excited_state_proxy,
@@ -127,6 +143,7 @@ def benchmark_submission(
     source_times: list[int] | None = None,
     max_configs: int | None = None,
     resource_path: Path | None = None,
+    artifact_dir: Path | None = None,
 ) -> dict[str, Any]:
     """Measure one submission and compute benchmark metrics."""
 
@@ -141,4 +158,11 @@ def benchmark_submission(
     metrics = compute_metrics(measured)
     metrics["ensemble_name"] = measured["ensemble_name"]
     metrics["files"] = list(measured["files"])
+    artifacts: dict[str, str] = {}
+    if artifact_dir is not None:
+        plot_path = save_effective_mass_plot(
+            metrics, Path(artifact_dir) / f"{submission.meta.name}_meff.pdf"
+        )
+        artifacts["effective_mass_plot"] = str(plot_path)
+    metrics["artifacts"] = artifacts
     return metrics
