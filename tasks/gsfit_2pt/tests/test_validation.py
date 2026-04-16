@@ -8,21 +8,24 @@ from pathlib import Path
 
 import numpy as np
 
-from tasks.gsfit_2pt.benchmark.core import (
+from tasks.gsfit_2pt.benchmark.metrics import (
     benchmark_config,
     benchmark_submission,
+)
+from tasks.gsfit_2pt.dataset.synthetic import (
     load_synthetic_cases,
     make_synthetic_cases,
     save_synthetic_cases,
 )
 from tasks.gsfit_2pt.interface import (
-    FitSubmissionMeta,
     GroundStateFitConfig,
     Pion2PtGroundStateFit,
+    SubmissionMeta,
     validate_config,
 )
-from tasks.gsfit_2pt.operators.plain import PlainGroundStateFit
-from tasks.gsfit_2pt.operators.nn import NNTunedGroundStateFit
+from tasks.gsfit_2pt.submissions.plain import PlainGroundStateFit
+from tasks.gsfit_2pt.submissions.nn import NNTunedGroundStateFit
+from tasks.gsfit_2pt.tests.validation import validate_submission
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -30,6 +33,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 
 def test_plain_submission_is_valid() -> None:
     submission = PlainGroundStateFit()
+    assert validate_submission(submission)
     validate_config(submission.config)
     assert submission.meta.name == "plain"
     assert submission.config.n_states == 2
@@ -37,6 +41,7 @@ def test_plain_submission_is_valid() -> None:
 
 def test_nn_submission_is_valid() -> None:
     submission = NNTunedGroundStateFit()
+    assert validate_submission(submission)
     validate_config(submission.config)
     assert submission.meta.name == "nn"
 
@@ -100,7 +105,7 @@ def test_benchmark_smoke_cli() -> None:
         [
             sys.executable,
             "tasks/gsfit_2pt/benchmark/run.py",
-            "--operator",
+            "--submission",
             "plain",
             "--num-samples",
             "8",
@@ -113,7 +118,7 @@ def test_benchmark_smoke_cli() -> None:
         text=True,
     )
 
-    assert '"operator": "plain"' in result.stdout
+    assert '"submission": "plain"' in result.stdout
     assert '"score":' in result.stdout
 
 
@@ -121,8 +126,8 @@ def test_gsfit_script_cli() -> None:
     result = subprocess.run(
         [
             sys.executable,
-            "tasks/gsfit_2pt/scripts/gsfit.py",
-            "--operator",
+            "tasks/gsfit_2pt/scripts/fit.py",
+            "--submission",
             "plain",
             "--dataset-file",
             "tasks/gsfit_2pt/dataset/fake_data.npz",
@@ -135,7 +140,7 @@ def test_gsfit_script_cli() -> None:
         text=True,
     )
 
-    assert '"operator": "plain"' in result.stdout
+    assert '"submission": "plain"' in result.stdout
     assert '"case": "boosted_clean"' in result.stdout
     assert '"energies":' in result.stdout
 
@@ -199,8 +204,8 @@ class UnderfitOneState(Pion2PtGroundStateFit):
     """Intentionally underfit one-state submission for regression testing."""
 
     @property
-    def meta(self) -> FitSubmissionMeta:
-        return FitSubmissionMeta(
+    def meta(self) -> SubmissionMeta:
+        return SubmissionMeta(
             name="underfit_one_state",
             description="Intentionally underfit 1-state submission for tests",
             authors=["LatticeArena"],
@@ -239,7 +244,7 @@ def test_build_leaderboard_page_cli(tmp_path: Path) -> None:
         [
             sys.executable,
             "tasks/gsfit_2pt/benchmark/run.py",
-            "--operator",
+            "--submission",
             "plain",
             "--dataset-file",
             "tasks/gsfit_2pt/dataset/fake_data.npz",

@@ -8,10 +8,10 @@ from typing import Any
 
 @dataclass
 class BenchmarkResult:
-    """Result of running a benchmark on an operator submission."""
+    """Result of running a benchmark on one submission."""
 
     task_name: str
-    operator_name: str
+    submission_name: str
     score: float
     metrics: dict[str, Any] = field(default_factory=dict)
 
@@ -20,7 +20,7 @@ class TaskBase(ABC):
     """Abstract base class for all benchmark tasks.
 
     Each task lives in tasks/<name>/ and must implement validation
-    and benchmarking for its optimization interface.
+    and benchmarking for its optimization target.
     """
 
     @property
@@ -40,9 +40,9 @@ class TaskBase(ABC):
 
     @abstractmethod
     def validate(self, operator: Any) -> bool:
-        """Run validation tests on an operator.
+        """Run validation tests on a submission.
 
-        Returns True if the operator passes all physics constraints
+        Returns True if the submission passes all task constraints
         (gauge equivariance, correct output shape, etc.).
         """
         ...
@@ -52,7 +52,7 @@ class TaskBase(ABC):
         """Run the benchmark and return a scored result.
 
         Args:
-            operator: An instance of the task's operator interface.
+            operator: An instance of the task's submission interface.
             dataset_path: Override path to gauge configs. Uses default if None.
 
         Returns:

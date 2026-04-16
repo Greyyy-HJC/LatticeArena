@@ -1,47 +1,46 @@
-# Task: Pion 2pt (boosted)
+# Task: Pion 2pt
 
-Optimization goal: design a better **pion interpolating operator** that achieves the following for **boosted pions** (flagship example `|p| ~ 1 GeV`):
+`pion_2pt` is a measurement-task skeleton for boosted pion two-point
+correlators. The optimization target is the interpolating submission used by a
+fixed measurement pipeline.
 
-- Higher signal-to-noise ratio (SNR)
-- Reduced excited-state contamination (earlier, flatter effective-mass plateau)
+This task is intentionally incomplete, but its structure is already standardized
+to match the rest of the repository.
 
-## Physics target
+## Task Components
 
-The measured correlator is:
+- `dataset/`: placeholder dataset contract for gauge fields and propagator data
+- `scripts/measure.py`: fixed measurement-pipeline placeholder
+- `interface.py`: `PionInterpolatingOperator`
+- `submissions/`: baseline interpolating submissions
+- `tests/`: validation of shapes and normalization
+- `benchmark/`: explicit WIP benchmark skeleton
 
-$$
-C_\pi(\mathbf{p}, t) = \langle O_\pi(\mathbf{p}, t_0+t)\, O_\pi^\dagger(\mathbf{p}, t_0) \rangle,
-\quad
-O_\pi(\mathbf{p}, t) = \sum_{\mathbf{x}} e^{i\mathbf{p}\cdot\mathbf{x}}\, \bar{d}(\mathbf{x},t)\,\Gamma\,u(\mathbf{x},t).
-$$
+## Optimization Target
 
-You optimize the construction of $O_\pi$ (e.g. smearing profile, momentum injection strategy, Dirac structure, derivative operators) to improve the effective-mass plateau and statistical precision for boosted pions.
+Submissions define how the pion source and sink are built for boosted pions:
 
-## What you implement
+- spatial source profile
+- spatial sink profile
+- Dirac structure
 
-Implement `PionInterpolatingOperator` from `tasks/pion_2pt/interface.py`:
+The current baseline is `submissions/plain.py`, which provides a normalized
+Gaussian profile multiplied by a plane-wave phase and uses `gamma_5`.
 
-- `setup(...)`: one-time preprocessing per gauge configuration
-- `build(...)`: for a given momentum (GeV) and source timeslice, return source/sink profiles and Dirac structure
+## Current Status
 
-## Baseline
+- Interface: ready
+- Baseline submission: ready
+- Validation tests: ready
+- Measurement pipeline: WIP
+- Benchmark scoring: WIP
 
-`operators/plain.py` provides a simple baseline:
-
-- Gaussian spatial profile
-- Plane-wave momentum phase injection
-- `Gamma = gamma_5`
-
-## Suggested benchmark metrics
-
-- **SNR at fixed t**: `mean(C) / std(C)`
-- **Plateau onset**: earliest `t_min` at which the effective mass enters the plateau
-- **Excited-state contamination**: excited-state amplitude from a 2-state fit
-- **Dispersion consistency**: agreement of `E(p)` with the continuum dispersion relation
-
-## Quick check
+## Quick Start
 
 ```bash
 pytest tasks/pion_2pt/tests/
-python tasks/pion_2pt/benchmark/run.py --operator plain
+python tasks/pion_2pt/benchmark/run.py --submission plain
 ```
+
+The benchmark CLI currently returns a clear WIP message because the fixed
+PyQUDA measurement workflow is not implemented yet.

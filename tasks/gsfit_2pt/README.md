@@ -1,109 +1,71 @@
-# Task: Pion 2pt Ground-State Fit
+# Task: gsfit_2pt
 
-Optimize the **ground-state fit configuration** for pion two-point correlators.
+`gsfit_2pt` is an analysis task rather than a measurement task. The submission
+is a fixed ground-state fit configuration, while the fitting pipeline itself is
+framework-owned.
 
-This task is about analysis choices after the correlator is measured. You do
-not implement a fitter or an operator. Instead, you submit one fixed set of
-fit settings:
+## Task Components
 
-- fit range: `t_min`, `t_max`
-- number of states: `N_states`
-- priors for `E0`, excited-state gaps, and amplitudes
+- `dataset/`: synthetic pion two-point benchmark cases
+- `scripts/fit.py`: fixed `gvar`/`lsqfit` analysis workflow
+- `interface.py`: `Pion2PtGroundStateFit`
+- `submissions/`: baseline and optimized fit configurations
+- `tests/`: configuration legality and benchmark regression checks
+- `benchmark/`: score computation and benchmark CLI
 
-The framework then runs the same correlated Bayesian fit for every submission
-and scores how robustly it extracts the true ground-state energy `E0` from
-synthetic pion 2pt samples.
+## Optimization Target
 
-## Fit Model
+Submissions choose one fixed fit configuration:
 
-The benchmark uses the periodic multi-state form:
+- fit window: `t_min`, `t_max`
+- number of states: `n_states`
+- priors for `E0`
+- priors for energy gaps
+- priors for amplitudes
 
-```text
-C(t) = sum_n A_n * [exp(-E_n t) + exp(-E_n (L_t - t))]
-E_n = E_0 + sum_{k=1..n} Delta E_k
-```
+The submission does not implement a custom fitter. `scripts/fit.py` is the
+single source of truth for the fixed fit pipeline.
 
-The fitter enforces:
+## Benchmark
 
-- `A_n > 0`
-- `E0 > 0`
-- `DeltaE_n > 0`
+The benchmark uses deterministic synthetic correlator cases with known truth and
+scores each submission by combining:
 
-## What You Implement
+- ground-state bias
+- uncertainty size
+- `chi2/dof`
+- failure rate across resample refits
 
-Implement `Pion2PtGroundStateFit` from `interface.py` by providing:
-
-- `meta`
-- `config`
-
-The baseline in `operators/plain.py` shows the expected structure.
-
-## Benchmark Target
-
-The v1 benchmark uses **synthetic bootstrap/jackknife-like samples** with known
-truth. Each case contains a pion-like correlator with different noise levels
-and excited-state contamination.
-
-Primary objective:
-
-- extract `E0` with low bias
-
-Secondary objectives:
-
-- keep the uncertainty reasonable
-- maintain acceptable `chi2/dof`
-- avoid unstable fits across resamples
-
-## Quick Check
+## Quick Start
 
 ```bash
 pytest tasks/gsfit_2pt/tests/
-python tasks/gsfit_2pt/benchmark/run.py --operator plain
+python tasks/gsfit_2pt/scripts/fit.py --submission plain
+python tasks/gsfit_2pt/benchmark/run.py --submission plain
 ```
 
-## Fake Data
-
-You can materialize the built-in synthetic benchmark cases as a real dataset
-file:
+Generate a saved synthetic dataset archive:
 
 ```bash
 python tasks/gsfit_2pt/scripts/generate_fake_data.py
 ```
 
-This produces `tasks/gsfit_2pt/dataset/fake_data.npz`, which can be used by
-the benchmark directly:
+Run the benchmark against the saved archive:
 
 ```bash
-python tasks/gsfit_2pt/benchmark/run.py --operator plain \
+python tasks/gsfit_2pt/benchmark/run.py \
+  --submission plain \
   --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz
 ```
 
-## Example Fit Script
-
-An example local script is provided to run a correlated `gvar`/`lsqfit` 2pt
-fit on one fake-data case:
+Run the fixed analysis workflow on one case:
 
 ```bash
-python tasks/gsfit_2pt/scripts/gsfit.py --operator plain \
+python tasks/gsfit_2pt/scripts/fit.py \
+  --submission plain \
   --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz \
   --case boosted_clean
 ```
 
-Optional meff plot output:
-
-```bash
-python tasks/gsfit_2pt/scripts/gsfit.py --operator plain \
-  --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz \
-  --case boosted_clean \
-  --plot-output tasks/gsfit_2pt/benchmark/results/boosted_clean_meff.png
-```
-
-## NN Optimization
-
-A tiny NumPy MLP surrogate is included to search for stronger fit settings:
-
-```bash
-python tasks/gsfit_2pt/scripts/optimize_nn.py
-python tasks/gsfit_2pt/benchmark/run.py --operator nn \
-  --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz
-```
+`scripts/optimize_nn.py` is an optional framework helper for searching stronger
+fit configurations. It is not part of the benchmark contract.

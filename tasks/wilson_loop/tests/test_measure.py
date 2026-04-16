@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from tasks.wilson_loop.operators.plain import PlainWilsonLine
+from tasks.wilson_loop.submissions.plain import PlainWilsonLine
 from tasks.wilson_loop.scripts.measure import measure_single_config
 
 

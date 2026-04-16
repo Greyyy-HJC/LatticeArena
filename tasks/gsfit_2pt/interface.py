@@ -16,7 +16,7 @@ DEFAULT_TEMPORAL_EXTENT = 48
 
 
 @dataclass(frozen=True)
-class FitSubmissionMeta:
+class SubmissionMeta:
     """Metadata for a fit-configuration submission."""
 
     name: str
@@ -67,7 +67,7 @@ class Pion2PtGroundStateFit(ABC):
 
     @property
     @abstractmethod
-    def meta(self) -> FitSubmissionMeta:
+    def meta(self) -> SubmissionMeta:
         """Return submission metadata."""
         ...
 

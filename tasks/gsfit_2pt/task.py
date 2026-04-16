@@ -5,10 +5,11 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from latticearena.task import BenchmarkResult, TaskBase, register_task
+from core.task import BenchmarkResult, TaskBase, register_task
 
-from .benchmark.core import benchmark_submission
-from .interface import Pion2PtGroundStateFit, validate_config
+from .benchmark.metrics import benchmark_submission
+from .interface import Pion2PtGroundStateFit
+from .tests.validation import validate_submission
 
 
 @register_task
@@ -20,15 +21,7 @@ class Gsfit2PtTask(TaskBase):
         return "gsfit_2pt"
 
     def validate(self, operator: Any) -> bool:
-        if not isinstance(operator, Pion2PtGroundStateFit):
-            return False
-
-        try:
-            _ = operator.meta
-            validate_config(operator.config)
-        except (AttributeError, TypeError, ValueError):
-            return False
-        return True
+        return validate_submission(operator)
 
     def benchmark(
         self,
@@ -38,7 +31,7 @@ class Gsfit2PtTask(TaskBase):
         summary = benchmark_submission(operator)
         return BenchmarkResult(
             task_name=self.name,
-            operator_name=operator.meta.name,
+            submission_name=operator.meta.name,
             score=summary["score"],
             metrics=summary,
         )

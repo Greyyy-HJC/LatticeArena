@@ -1,10 +1,16 @@
 """Run benchmarks across all registered tasks."""
 
 import argparse
+from pathlib import Path
+import sys
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 import tasks  # noqa: F401  # import for task registration side effects
-from latticearena.task import get_task, list_tasks
-from latticearena.leaderboard import print_leaderboard, load_results
+from core.task import get_task, list_tasks
+from core.leaderboard import print_leaderboard, load_results
 
 
 def main():

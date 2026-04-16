@@ -1,9 +1,17 @@
-"""Measurement pipeline sketch for boosted pion two-point correlators.
+"""Measurement pipeline for boosted pion two-point correlators (not yet implemented).
 
-Intended workflow:
-1. Load gauge configuration and quark propagators.
-2. Call operator.setup() once per configuration.
-3. For each source time and target momentum (focus: |p| ~= 1 GeV), call
-   operator.build() to obtain source/sink profiles and Dirac structure.
-4. Form C_pi(p, t) and save correlators for benchmark metric extraction.
+Once implemented, this script will provide the fixed physics pipeline:
+
+1. Load gauge configuration from ``dataset/``
+2. Call ``submission.setup(gauge_field, latt_size, lattice_spacing_fm)``
+3. For each target momentum and source timeslice:
+   a. Call ``submission.build(gauge_field, momentum_gev, t_source)`` to obtain
+      source/sink profiles and Dirac structure
+   b. Construct the quark source using the submission's spatial profile
+   c. Invert the Dirac operator to obtain quark propagators (PyQUDA)
+   d. Contract propagators to form the pion two-point correlator
+4. Average over source times and return ``C_pi(p, t)``
+
+The benchmark will call this pipeline and extract metrics from the resulting
+correlators (SNR, effective mass plateau quality, excited-state contamination).
 """

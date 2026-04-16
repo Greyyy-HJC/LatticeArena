@@ -1,4 +1,4 @@
-"""Measure Wilson-loop correlators for a spatial operator submission."""
+"""Measure Wilson-loop correlators for a spatial-operator submission."""
 
 from __future__ import annotations
 
@@ -19,14 +19,14 @@ from tasks.wilson_loop.interface import SpatialOperator
 from tasks.wilson_loop.scripts.gauge_io import load_task_gauge_npy
 
 
-def load_submission(operator_name: str) -> SpatialOperator:
-    """Import and instantiate a submission from operators/<name>.py."""
+def load_submission(submission_name: str) -> SpatialOperator:
+    """Import and instantiate a submission from submissions/<name>.py."""
 
-    module = importlib.import_module(f"tasks.wilson_loop.operators.{operator_name}")
+    module = importlib.import_module(f"tasks.wilson_loop.submissions.{submission_name}")
     for value in module.__dict__.values():
         if isinstance(value, type) and issubclass(value, SpatialOperator) and value is not SpatialOperator:
             return value()
-    raise ValueError(f"No SpatialOperator implementation found in operator '{operator_name}'.")
+    raise ValueError(f"No SpatialOperator submission found in module '{submission_name}'.")
 
 
 def dagger(field: np.ndarray) -> np.ndarray:
@@ -163,8 +163,8 @@ def _json_default(value: object) -> object:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Measure Wilson-loop correlators for one operator.")
-    parser.add_argument("--operator", type=str, required=True, help="Operator module name under operators/")
+    parser = argparse.ArgumentParser(description="Measure Wilson-loop correlators for one submission.")
+    parser.add_argument("--submission", type=str, required=True, help="Submission module name under submissions/")
     parser.add_argument(
         "--dataset-path",
         type=Path,
@@ -187,10 +187,10 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    operator = load_submission(args.operator)
+    submission = load_submission(args.submission)
     r_values = parse_value_list(args.r_values)
     t_values = parse_value_list(args.t_values)
-    result = measure_dataset(args.dataset_path, operator, r_values, t_values, max_configs=args.max_configs)
+    result = measure_dataset(args.dataset_path, submission, r_values, t_values, max_configs=args.max_configs)
 
     if args.output is not None:
         args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -206,7 +206,7 @@ def main() -> None:
     print(
         json.dumps(
             {
-                "operator": operator.meta.name,
+                "submission": submission.meta.name,
                 "dataset_path": str(args.dataset_path),
                 "n_configs": len(result["files"]),
                 "max_configs": args.max_configs,

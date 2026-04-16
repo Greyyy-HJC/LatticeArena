@@ -1,4 +1,4 @@
-"""Validation helpers for Wilson-loop spatial operators."""
+"""Validation helpers for Wilson-loop submissions."""
 
 from __future__ import annotations
 
@@ -53,8 +53,8 @@ def apply_gauge_transform(gauge_field: np.ndarray, gauge_transform: np.ndarray) 
     return transformed
 
 
-def validate_operator(
-    operator: SpatialOperator,
+def validate_submission(
+    submission: SpatialOperator,
     *,
     latt_size: tuple[int, int, int, int] = (4, 4, 4, 8),
     r: int = 2,
@@ -62,17 +62,17 @@ def validate_operator(
     t: int = 3,
     atol: float = 1e-10,
 ) -> list[str]:
-    """Return a list of validation errors for one operator instance."""
+    """Return a list of validation errors for one submission instance."""
 
     errors: list[str] = []
     cold = identity_gauge_field(latt_size)
     expected_identity = np.broadcast_to(np.eye(3, dtype=np.complex128), (latt_size[0], latt_size[1], latt_size[2], 3, 3))
 
     try:
-        operator.setup(cold, latt_size)
-        cold_output = operator.compute(cold, r=r, direction=direction, t=t)
+        submission.setup(cold, latt_size)
+        cold_output = submission.compute(cold, r=r, direction=direction, t=t)
     except Exception as exc:
-        return [f"operator raised during cold-config evaluation: {exc}"]
+        return [f"submission raised during cold-config evaluation: {exc}"]
 
     if cold_output.shape != (latt_size[0], latt_size[1], latt_size[2], 3, 3):
         errors.append(f"output shape mismatch: got {cold_output.shape}")
@@ -86,12 +86,12 @@ def validate_operator(
     transformed_gauge = apply_gauge_transform(gauge, transform)
 
     try:
-        operator.setup(gauge, latt_size)
-        output = operator.compute(gauge, r=r, direction=direction, t=t)
-        operator.setup(transformed_gauge, latt_size)
-        transformed_output = operator.compute(transformed_gauge, r=r, direction=direction, t=t)
+        submission.setup(gauge, latt_size)
+        output = submission.compute(gauge, r=r, direction=direction, t=t)
+        submission.setup(transformed_gauge, latt_size)
+        transformed_output = submission.compute(transformed_gauge, r=r, direction=direction, t=t)
     except Exception as exc:
-        errors.append(f"operator raised during gauge-equivariance check: {exc}")
+        errors.append(f"submission raised during gauge-equivariance check: {exc}")
         return errors
 
     gt_start = transform[:, :, :, t]

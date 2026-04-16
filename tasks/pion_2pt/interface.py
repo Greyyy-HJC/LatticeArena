@@ -14,8 +14,8 @@ import numpy as np
 
 
 @dataclass
-class OperatorMeta:
-    """Metadata for an operator submission."""
+class SubmissionMeta:
+    """Metadata for a pion 2pt submission."""
 
     name: str
     description: str
@@ -61,8 +61,8 @@ class PionInterpolatingOperator(ABC):
 
     @property
     @abstractmethod
-    def meta(self) -> OperatorMeta:
-        """Return operator metadata."""
+    def meta(self) -> SubmissionMeta:
+        """Return submission metadata."""
         ...
 
     @abstractmethod

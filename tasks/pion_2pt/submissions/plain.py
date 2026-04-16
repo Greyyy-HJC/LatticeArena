@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from tasks.pion_2pt.interface import OperatorComponents, OperatorMeta, PionInterpolatingOperator
+from tasks.pion_2pt.interface import OperatorComponents, PionInterpolatingOperator, SubmissionMeta
 
 
 class PlainBoostedPion(PionInterpolatingOperator):
@@ -20,8 +20,8 @@ class PlainBoostedPion(PionInterpolatingOperator):
         self._a_fm: float | None = None
 
     @property
-    def meta(self) -> OperatorMeta:
-        return OperatorMeta(
+    def meta(self) -> SubmissionMeta:
+        return SubmissionMeta(
             name="plain",
             description="Gaussian profile with momentum phase and gamma_5 bilinear",
             authors=["LatticeArena"],

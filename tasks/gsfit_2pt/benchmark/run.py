@@ -12,17 +12,18 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from latticearena.leaderboard import save_result
-from latticearena.task import BenchmarkResult
+from core.leaderboard import save_result
+from core.task import BenchmarkResult
 
-from tasks.gsfit_2pt.benchmark.core import benchmark_submission, load_synthetic_cases
+from tasks.gsfit_2pt.benchmark.metrics import benchmark_submission
+from tasks.gsfit_2pt.dataset.synthetic import load_synthetic_cases
 from tasks.gsfit_2pt.interface import Pion2PtGroundStateFit
 
 
-def load_submission(operator_name: str) -> Pion2PtGroundStateFit:
-    """Import and instantiate a submission from operators/<name>.py."""
+def load_submission(submission_name: str) -> Pion2PtGroundStateFit:
+    """Import and instantiate a submission from submissions/<name>.py."""
 
-    module = importlib.import_module(f"tasks.gsfit_2pt.operators.{operator_name}")
+    module = importlib.import_module(f"tasks.gsfit_2pt.submissions.{submission_name}")
     for value in module.__dict__.values():
         if (
             isinstance(value, type)
@@ -30,12 +31,12 @@ def load_submission(operator_name: str) -> Pion2PtGroundStateFit:
             and value is not Pion2PtGroundStateFit
         ):
             return value()
-    raise ValueError(f"No Pion2PtGroundStateFit implementation found in operator '{operator_name}'.")
+    raise ValueError(f"No Pion2PtGroundStateFit submission found in module '{submission_name}'.")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the gsfit_2pt benchmark")
-    parser.add_argument("--operator", type=str, required=True, help="Operator module name under operators/")
+    parser.add_argument("--submission", type=str, required=True, help="Submission module name under submissions/")
     parser.add_argument("--num-samples", type=int, default=24, help="Synthetic resamples per benchmark case")
     parser.add_argument(
         "--max-resamples",
@@ -63,7 +64,7 @@ def main() -> None:
     )
     args = parser.parse_args()
 
-    submission = load_submission(args.operator)
+    submission = load_submission(args.submission)
     cases = load_synthetic_cases(args.dataset_file) if args.dataset_file is not None else None
     summary = benchmark_submission(
         submission,
@@ -74,7 +75,7 @@ def main() -> None:
     )
     result = BenchmarkResult(
         task_name="gsfit_2pt",
-        operator_name=submission.meta.name,
+        submission_name=submission.meta.name,
         score=summary["score"],
         metrics=summary,
     )
@@ -84,7 +85,7 @@ def main() -> None:
         json.dumps(
             {
                 "task": result.task_name,
-                "operator": result.operator_name,
+                "submission": result.submission_name,
                 "score": result.score,
                 "output": str(path),
                 "metrics": result.metrics,

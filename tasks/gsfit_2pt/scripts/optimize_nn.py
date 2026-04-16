@@ -13,9 +13,9 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from tasks.gsfit_2pt.benchmark.core import benchmark_config, make_synthetic_cases
+from tasks.gsfit_2pt.benchmark.metrics import benchmark_config
 from tasks.gsfit_2pt.interface import GroundStateFitConfig, config_to_dict
-from tasks.gsfit_2pt.operators.plain import PlainGroundStateFit
+from tasks.gsfit_2pt.submissions.plain import PlainGroundStateFit
 
 
 MAX_STATES = 3
@@ -128,8 +128,7 @@ def featurize_config(config: GroundStateFitConfig, *, lt: int = 48) -> np.ndarra
 def evaluate_config(config: GroundStateFitConfig, *, num_samples: int, max_resamples: int) -> dict[str, object]:
     """Evaluate a config on the deterministic synthetic benchmark."""
 
-    cases = make_synthetic_cases(num_samples=num_samples)
-    summary = benchmark_config(config, cases=cases, max_resample_fits=max_resamples)
+    summary = benchmark_config(config, num_samples=num_samples, max_resample_fits=max_resamples)
     return {
         "config": config,
         "score": float(summary["score"]),
@@ -199,7 +198,7 @@ def main() -> None:
     parser.add_argument(
         "--output-config",
         type=Path,
-        default=Path("tasks/gsfit_2pt/operators/nn_config.json"),
+        default=Path("tasks/gsfit_2pt/submissions/nn_config.json"),
         help="Path to write the optimized config JSON",
     )
     args = parser.parse_args()

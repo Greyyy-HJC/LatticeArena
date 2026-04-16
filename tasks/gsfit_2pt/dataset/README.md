@@ -1,7 +1,9 @@
 # gsfit_2pt Dataset
 
-The v1 `gsfit_2pt` benchmark uses deterministic synthetic pion 2pt samples.
-You can generate a concrete fake dataset archive directly inside this folder:
+`gsfit_2pt` uses deterministic synthetic pion two-point samples.
+
+The synthetic dataset logic lives in `dataset/synthetic.py`, and a saved archive
+can be generated with:
 
 ```bash
 python tasks/gsfit_2pt/scripts/generate_fake_data.py
@@ -11,13 +13,13 @@ By default this writes:
 
 - `tasks/gsfit_2pt/dataset/fake_data.npz`
 
-The archive contains multiple pion-like correlator cases, each with:
+Each case stores:
 
-- bootstrap/jackknife-like samples
+- correlated bootstrap/jackknife-like samples
 - known true energies
 - known amplitudes
 
-You can also customize the generated fake data:
+You can customize the generated archive:
 
 ```bash
 python tasks/gsfit_2pt/scripts/generate_fake_data.py \
@@ -27,15 +29,10 @@ python tasks/gsfit_2pt/scripts/generate_fake_data.py \
   --lt 48
 ```
 
-To benchmark against a saved fake dataset instead of regenerating in memory:
+Use a saved archive in the benchmark:
 
 ```bash
-python tasks/gsfit_2pt/benchmark/run.py --operator plain \
+python tasks/gsfit_2pt/benchmark/run.py \
+  --submission plain \
   --dataset-file tasks/gsfit_2pt/dataset/fake_data.npz
 ```
-
-Future extension:
-
-- drop real example correlator samples into this directory
-- add a second benchmark mode that compares against a trusted reference fit
-- keep the public submission interface unchanged

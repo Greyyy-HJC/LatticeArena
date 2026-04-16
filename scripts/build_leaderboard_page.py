@@ -5,8 +5,13 @@ from __future__ import annotations
 import argparse
 from html import escape
 from pathlib import Path
+import sys
 
-from latticearena.leaderboard import BenchmarkResult, collect_task_summaries
+REPO_ROOT = Path(__file__).resolve().parents[1]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from core.leaderboard import BenchmarkResult, collect_task_summaries
 
 
 def format_score(result: BenchmarkResult | None) -> str:
@@ -15,11 +20,11 @@ def format_score(result: BenchmarkResult | None) -> str:
 
 def metric_from_result(result: BenchmarkResult | None, key: str) -> str:
     if result is None:
-        return "—"
+        return "N/A"
     value = result.metrics.get(key)
     if isinstance(value, (float, int)):
         return f"{value:.4f}"
-    return "—"
+    return "N/A"
 
 
 def build_html() -> str:
@@ -44,7 +49,7 @@ def build_html() -> str:
         f"""
         <article class="task-card">
           <p class="eyebrow">{escape(summary.task_name)}</p>
-          <h2>{escape(summary.best_result.operator_name) if summary.best_result else "No submissions yet"}</h2>
+          <h2>{escape(summary.best_result.submission_name) if summary.best_result else "No submissions yet"}</h2>
           <p class="score">{format_score(summary.best_result)}</p>
           <div class="meta-grid">
             <span>Submissions</span><strong>{len(summary.results)}</strong>
@@ -65,7 +70,7 @@ def build_html() -> str:
                     <tr>
                       <td>{escape(summary.task_name)}</td>
                       <td>{rank}</td>
-                      <td>{escape(result.operator_name)}</td>
+                      <td>{escape(result.submission_name)}</td>
                       <td>{result.score:.4f}</td>
                       <td>{metric_from_result(result, "aggregate_relative_bias")}</td>
                       <td>{metric_from_result(result, "aggregate_relative_sigma")}</td>
@@ -78,12 +83,12 @@ def build_html() -> str:
                 f"""
                 <tr>
                   <td>{escape(summary.task_name)}</td>
-                  <td>—</td>
+                  <td>N/A</td>
                   <td>No results yet</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td>—</td>
+                  <td>N/A</td>
+                  <td>N/A</td>
+                  <td>N/A</td>
+                  <td>N/A</td>
                 </tr>
                 """
             )

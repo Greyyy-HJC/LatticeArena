@@ -24,13 +24,13 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["latticearena*", "tasks*"]
+include = ["core*", "tasks*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tasks/*/tests"]
 
 [tool.coverage.run]
-source = ["latticearena", "tasks"]
+source = ["core", "tasks"]
 omit = ["tasks/*/dataset/*", "tasks/*/scripts/*"]
 
 [tool.coverage.report]

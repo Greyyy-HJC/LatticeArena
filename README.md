@@ -1,162 +1,122 @@
 # LatticeArena
 
-A public benchmark for optimizing lattice QCD operators. Submit your operator design, pass the tests, and climb the leaderboard.
+LatticeArena is a benchmark suite for lattice QCD optimization targets. Each
+task isolates one fixed workflow and one optimization interface, so new ideas
+can be tested as comparable submissions instead of one-off scripts.
 
-## Why This Exists
+## Core Model
 
-LatticeArena is designed to be useful in two complementary ways.
+Every task is built from six first-class components:
 
-The underlying motivation is that a good ML task is often a relatively self-contained, result-oriented optimization problem, so this project breaks out that class of tasks from lattice QCD computation and analysis and turns them into a benchmark collection.
+- `dataset/`: task inputs and dataset contract
+- `scripts/`: framework-owned fixed workflow
+- `interface.py`: the submission interface for the optimization target
+- `submissions/`: baselines and contributed implementations
+- `tests/`: legality and validation checks
+- `benchmark/`: score computation and benchmark outputs
 
-Internally, once a benchmark is well-defined, it becomes much easier to automate research loops: an agent can generate candidate ideas, run the benchmark, compare results on the leaderboard, and keep iterating toward better designs with minimal manual bookkeeping.
+The composition rule is:
 
-Externally, the same benchmark suite acts as an optimization testbed for the broader community. If someone has a new ansatz, fitting strategy, architecture, or other unconventional idea, they can plug it into a controlled task and immediately see how it performs against a shared baseline.
+```text
+benchmark = scripts + submission + metrics
+```
 
-## How It Works
+`scripts/` defines the fixed physics or analysis flow. `submissions/` contains
+only the part we want to optimize. `benchmark/metrics.py` turns the workflow
+output into a comparable score.
 
-LatticeArena hosts a collection of **tasks**. Each task defines a lattice QCD measurement where the choice of operator matters — better operators give cleaner signals and more accurate results.
+## Shared Framework
 
-For each task, we provide:
-- **Dataset** — lattice gauge ensembles for testing and scoring
-- **Measurement scripts** — complete PyQUDA code for the physics pipeline
-- **A clear interface** — the one function you need to implement
-- **Automated tests** — your operator must satisfy physics constraints (e.g., gauge covariance)
-- **Benchmark scoring** — a numerical score that ranks your submission on the leaderboard
+`core/` is the shared framework layer for the repository. It is not task-
+specific physics code. Instead, it contains the cross-task utilities that hold
+the benchmark collection together, such as:
 
-You only need to write one file: your operator implementation.
+- task registration and the shared `TaskBase` / `BenchmarkResult` contract
+- leaderboard result loading and saving
+- reusable testing helpers shared across tasks
+
+## Task Layout
+
+```text
+tasks/<task_name>/
+  dataset/
+  scripts/
+  interface.py
+  submissions/
+  tests/
+    validation.py
+    test_validation.py
+  benchmark/
+    metrics.py
+    run.py
+    results/
+```
+
+Incomplete tasks should still expose this full skeleton. Use explicit WIP
+placeholders instead of leaving missing directories or ambiguous file names.
 
 ## Available Tasks
 
-| Task | What you optimize | Dataset | Status |
-|---|---|---|---|
-| [`wilson_loop`](tasks/wilson_loop/) | Spatial Wilson line operator for static quark-antiquark potential | Pure gauge SU(3) | In progress |
-| [`pion_2pt`](tasks/pion_2pt/) | Boosted pion interpolating operator for pion two-point correlators (target \|p\| ~ 1 GeV) | Gauge + quark propagators | In progress |
-| [`gsfit_2pt`](tasks/gsfit_2pt/) | Ground-state fit configuration for pion two-point correlators (`fit range`, priors, `N_states`) | Synthetic bootstrap/jackknife-like pion 2pt samples with known truth | In progress |
+| Task | Optimization target | Status by component |
+|---|---|---|
+| [`wilson_loop`](tasks/wilson_loop/) | Spatial Wilson-line submission for static-potential Wilson loops | dataset: ready, scripts: ready, interface: ready, submissions: ready, tests: ready, benchmark: ready |
+| [`pion_2pt`](tasks/pion_2pt/) | Boosted pion interpolating submission for two-point correlators | dataset: placeholder, scripts: WIP, interface: ready, submissions: baseline, tests: ready, benchmark: WIP |
+| [`gsfit_2pt`](tasks/gsfit_2pt/) | Fixed ground-state fit configuration submission for pion 2pt analysis | dataset: ready, scripts: ready, interface: ready, submissions: ready, tests: ready, benchmark: ready |
 
 ## Quick Start
 
 ```bash
-# Create a local virtual environment
 python -m venv .venv
 source .venv/bin/activate
 pip install -U pip setuptools wheel
-
-# Install the project and dev tooling
 pip install -e ".[dev]"
+```
 
-# Run tests for an existing operator
+Run task tests:
+
+```bash
 pytest tasks/wilson_loop/tests/
-
-# Run the benchmark
-python tasks/wilson_loop/benchmark/run.py --operator plain
+pytest tasks/pion_2pt/tests/
+pytest tasks/gsfit_2pt/tests/
 ```
 
-## Environment Setup
-
-All Python dependencies are declared in [pyproject.toml](/home/genie/git/LatticeArena/pyproject.toml), so users can create their own `.venv` and install directly from the repo.
-
-### Python Dependencies
-
-- Runtime deps: `numpy`, `scipy`, `gvar`, `lsqfit`, `gmpy2`, `pyquda`, `pyquda-utils`
-- Dev deps: `pytest`, `pytest-cov`
-- Optional viz deps: `matplotlib`
-- Optional GPU deps: `cupy-cuda12x` on CUDA 12 systems via the `gpu-cuda12` extra
-
-Install commands:
+Run benchmark or workflow CLIs:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -U pip setuptools wheel
-pip install -e ".[dev]"
+python tasks/wilson_loop/benchmark/run.py --submission plain
+python tasks/gsfit_2pt/scripts/fit.py --submission plain
+python tasks/gsfit_2pt/benchmark/run.py --submission plain
 ```
 
-On CUDA 12 machines that run PyQUDA scripts locally, install the GPU extra too:
+## Submission Workflow
 
-```bash
-pip install -e ".[dev,gpu-cuda12]"
-```
+1. Pick a task and read its `README.md`.
+2. Inspect `interface.py` to understand the optimization target.
+3. Use an existing file under `submissions/` as a baseline.
+4. Add a new submission under `tasks/<task>/submissions/`.
+5. Run `pytest tasks/<task>/tests/`.
+6. Run `python tasks/<task>/benchmark/run.py --submission <name>` when that
+   task has a live benchmark.
 
-If your system Python does not provide `venv`, you can create the same `.venv` with `uv`:
+## Environment Notes
 
-```bash
-uv venv .venv
-source .venv/bin/activate
-uv pip install -e ".[dev]"
-```
+- Python 3.10+
+- Runtime dependencies: `numpy`, `scipy`, `gvar`, `lsqfit`, `gmpy2`,
+  `pyquda`, `pyquda-utils`
+- Optional plotting dependency: `matplotlib`
+- GPU-dependent PyQUDA tasks require a local QUDA installation
 
-### QUDA / PyQUDA Prerequisites
-
-`pyquda` is a Python wrapper around a local QUDA installation. That means `pip install -e ".[dev]"` will only succeed after QUDA itself is installed on the machine and visible to the build.
-
-`pyquda-utils` also imports `gmpy2` at runtime for some HMC parameter helpers, so
-`gmpy2` is treated as a repository runtime dependency even though older PyQUDA
-package metadata may not install it automatically.
-
-PyQUDA's default GPU backend also expects a matching CuPy wheel. On CUDA 12
-systems in this repository, use the `gpu-cuda12` extra, which installs
-`cupy-cuda12x`.
-
-Before installing `pyquda`, make sure you have:
-
-- a working QUDA build
-- `libquda.so` available under the QUDA install tree
-- `QUDA_PATH` pointing to that install root
-- `LD_LIBRARY_PATH` including `$QUDA_PATH/lib`
-
-Typical shell setup:
-
-```bash
-export QUDA_PATH=/abs/path/to/quda
-export LD_LIBRARY_PATH="$QUDA_PATH/lib:$LD_LIBRARY_PATH"
-```
-
-Then install the project inside `.venv`:
-
-```bash
-source .venv/bin/activate
-pip install -e ".[dev,gpu-cuda12]"
-```
-
-If QUDA is not installed yet, tasks that depend on `pyquda` will not run. The pure fitting task [`gsfit_2pt`](tasks/gsfit_2pt/) is structurally independent of QUDA, but the repository-wide dependency set still declares `pyquda` and `pyquda-utils` as standard runtime requirements.
+The pure analysis task [`gsfit_2pt`](tasks/gsfit_2pt/) does not depend on
+PyQUDA for its fixed workflow, but the repository dependency set still declares
+the broader lattice stack.
 
 ## Leaderboard Page
-
-You can generate a standalone leaderboard page that highlights the current best score for each task:
 
 ```bash
 python scripts/build_leaderboard_page.py
 ```
 
 This writes `site/leaderboard.html`.
-
-## Contributing an Operator
-
-1. Pick a task (e.g., `wilson_loop`)
-2. Read the task's `README.md` for physics background
-3. Look at existing operators in `tasks/<task>/operators/` for examples
-4. Create your operator file in the same directory, implementing the interface
-5. Run the validation tests: `pytest tasks/<task>/tests/ -k your_operator`
-6. Run the benchmark to get your score
-7. Open a PR
-
-## Project Structure
-
-```
-tasks/<task_name>/
-  dataset/          Gauge ensembles (download separately, see README inside)
-  scripts/          Full measurement pipeline (PyQUDA)
-  interface.py      The abstract class you implement
-  operators/        Your submission goes here
-  tests/            Must pass before scoring
-  benchmark/        Computes your score
-```
-
-## Requirements
-
-- Python 3.10+
-- [PyQUDA](https://github.com/CLQCD/PyQUDA) with a working QUDA installation
-- numpy, scipy
 
 ## License
 

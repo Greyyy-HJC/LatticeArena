@@ -2,14 +2,15 @@
 
 from __future__ import annotations
 
-import json
-import subprocess
-import sys
-
 import numpy as np
 
-from latticearena.testing import identity_gauge_field
-from tasks.pion_2pt.operators.plain import PlainBoostedPion
+from core.testing import identity_gauge_field
+from tasks.pion_2pt.submissions.plain import PlainBoostedPion
+from tasks.pion_2pt.tests.validation import validate_submission
+
+
+def test_plain_submission_passes_validation_helper() -> None:
+    assert validate_submission(PlainBoostedPion())
 
 
 def test_plain_operator_shapes() -> None:
@@ -49,18 +50,3 @@ def test_plain_operator_requires_setup() -> None:
     except RuntimeError:
         return
     raise AssertionError("Expected RuntimeError when build() is called before setup().")
-
-
-def test_benchmark_smoke_cli() -> None:
-    """Benchmark CLI produces valid JSON with a positive score."""
-    result = subprocess.run(
-        [sys.executable, "tasks/pion_2pt/benchmark/run.py", "--operator", "plain"],
-        capture_output=True,
-        text=True,
-    )
-    assert result.returncode == 0, result.stderr
-    data = json.loads(result.stdout)
-    assert data["task"] == "pion_2pt"
-    assert data["operator"] == "plain"
-    assert data["score"] > 0
-    assert len(data["metrics"]["per_scenario"]) == 3

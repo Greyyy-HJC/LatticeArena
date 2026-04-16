@@ -6,9 +6,9 @@ import json
 from pathlib import Path
 
 from tasks.gsfit_2pt.interface import (
-    FitSubmissionMeta,
     GroundStateFitConfig,
     Pion2PtGroundStateFit,
+    SubmissionMeta,
     config_from_dict,
 )
 
@@ -20,10 +20,10 @@ class NNTunedGroundStateFit(Pion2PtGroundStateFit):
     """Fit configuration produced by the tiny-MLP surrogate optimizer."""
 
     @property
-    def meta(self) -> FitSubmissionMeta:
+    def meta(self) -> SubmissionMeta:
         payload = json.loads(CONFIG_PATH.read_text())
         meta = payload["meta"]
-        return FitSubmissionMeta(
+        return SubmissionMeta(
             name=str(meta["name"]),
             description=str(meta["description"]),
             authors=[str(author) for author in meta["authors"]],

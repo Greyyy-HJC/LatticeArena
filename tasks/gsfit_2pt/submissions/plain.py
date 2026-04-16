@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from tasks.gsfit_2pt.interface import (
-    FitSubmissionMeta,
     GroundStateFitConfig,
     Pion2PtGroundStateFit,
+    SubmissionMeta,
 )
 
 
@@ -13,8 +13,8 @@ class PlainGroundStateFit(Pion2PtGroundStateFit):
     """Conservative two-state Bayesian fit baseline."""
 
     @property
-    def meta(self) -> FitSubmissionMeta:
-        return FitSubmissionMeta(
+    def meta(self) -> SubmissionMeta:
+        return SubmissionMeta(
             name="plain",
             description="Conservative 2-state pion ground-state fit configuration",
             authors=["LatticeArena"],

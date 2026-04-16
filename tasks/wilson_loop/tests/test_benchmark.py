@@ -10,9 +10,9 @@ from pathlib import Path
 import numpy as np
 
 from tasks.wilson_loop.benchmark.metrics import benchmark_submission
-from tasks.wilson_loop.operators.plain import PlainWilsonLine
+from tasks.wilson_loop.submissions.plain import PlainWilsonLine
 from tasks.wilson_loop.scripts.gauge_io import save_task_gauge_npy
-from tasks.wilson_loop.validation import identity_gauge_field
+from tasks.wilson_loop.tests.validation import identity_gauge_field
 
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -61,7 +61,7 @@ def test_benchmark_cli_smoke(tmp_path: Path) -> None:
         [
             sys.executable,
             "tasks/wilson_loop/benchmark/run.py",
-            "--operator",
+            "--submission",
             "plain",
             "--dataset-path",
             str(dataset_dir),
@@ -80,5 +80,5 @@ def test_benchmark_cli_smoke(tmp_path: Path) -> None:
 
     payload = json.loads(result.stdout)
     assert payload["task"] == "wilson_loop"
-    assert payload["operator"] == "plain"
+    assert payload["submission"] == "plain"
     assert (output_dir / "plain.json").exists()

@@ -4,14 +4,14 @@ Gauge configurations are not stored in the repository (too large). Download or g
 
 ## Available Ensembles
 
-### `test_small` — for development and testing
+### `test_small` - for development and testing
 - Lattice: 8^3 x 16
 - beta: 5.8
 - Action: Wilson gauge
 - Configs: 100
 - Purpose: fast validation, unit tests
 
-### `benchmark` — for official scoring
+### `benchmark` - for official scoring
 - Lattice: 20^3 x 40
 - beta: 6.0
 - Action: Wilson gauge

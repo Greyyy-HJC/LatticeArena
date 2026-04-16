@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from tasks.wilson_loop.interface import OperatorMeta, SpatialOperator
+from tasks.wilson_loop.interface import SpatialOperator, SubmissionMeta
 
 
 class PlainWilsonLine(SpatialOperator):
@@ -22,8 +22,8 @@ class PlainWilsonLine(SpatialOperator):
         self._latt_size: tuple[int, int, int, int] | None = None
 
     @property
-    def meta(self) -> OperatorMeta:
-        return OperatorMeta(
+    def meta(self) -> SubmissionMeta:
+        return SubmissionMeta(
             name="plain",
             description="Straight spatial Wilson line built from ordered link products",
             authors=["LatticeArena"],

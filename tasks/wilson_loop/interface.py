@@ -5,7 +5,7 @@ Wilson line operators. The framework calls setup() once per gauge config,
 then compute() for each (r, direction, t) to build the full Wilson loop
 correlator.
 
-Reference: arXiv:2602.02436 — "Wilson loops with neural networks"
+Reference: arXiv:2602.02436 - "Wilson loops with neural networks"
 """
 
 from abc import ABC, abstractmethod
@@ -15,8 +15,8 @@ import numpy as np
 
 
 @dataclass
-class OperatorMeta:
-    """Metadata for an operator submission."""
+class SubmissionMeta:
+    """Metadata for a Wilson-loop submission."""
 
     name: str
     description: str
@@ -46,8 +46,8 @@ class SpatialOperator(ABC):
 
     @property
     @abstractmethod
-    def meta(self) -> OperatorMeta:
-        """Return operator metadata."""
+    def meta(self) -> SubmissionMeta:
+        """Return submission metadata."""
         ...
 
     @abstractmethod

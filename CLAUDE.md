@@ -1,37 +1,69 @@
 # LatticeArena
 
-Multi-task benchmark for lattice QCD operator optimization.
+Multi-task benchmark repository for lattice QCD optimization targets.
 
-## Build & Run
+## Build and Run
 
 ```bash
-python -m venv .venv && source .venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
 pip install -e ".[dev]"
-pytest                          # run all task validation tests
+pytest
 ```
 
-## Architecture
+## Canonical Task Layout
 
+Every task under `tasks/<name>/` must follow this structure:
+
+```text
+tasks/<task_name>/
+  dataset/             Task inputs and dataset contract
+  scripts/             Framework-owned fixed workflow
+  interface.py         Submission interface for the optimization target
+  submissions/         Baselines and contributed submissions
+  tests/               Validation and legality checks
+    validation.py      Reusable validation helpers
+    test_validation.py Main validation test module
+  benchmark/
+    metrics.py         Score computation
+    run.py             Benchmark CLI entrypoint
+    results/           Saved benchmark outputs
 ```
-latticearena/          Shared framework (TaskBase ABC, leaderboard)
-tasks/<name>/          Self-contained benchmark tasks
-  dataset/             Gauge configurations (gitignored, see README)
-  scripts/             Runnable PyQUDA measurement scripts
-  interface.py         Optimization interface ABC
-  operators/           Submitted operator implementations
-  tests/               Validation tests (legality checks)
-  benchmark/           Metrics and scoring
-```
+
+## Shared Framework
+
+`core/` contains repository-level framework code shared by multiple tasks. Use
+it for cross-task abstractions such as:
+
+- task registration and registry helpers
+- shared benchmark result types
+- leaderboard utilities
+- reusable testing helpers
+
+Do not put task-specific measurement or analysis logic in `core/`; that logic
+belongs under the relevant task in `tasks/<name>/`.
+
+## Naming Rules
+
+- Use `submission` as the generic cross-task term.
+- Keep task-specific physics names in class names and task docs.
+- Use the `submissions/` directory for contributed implementations.
+- Use the `--submission` CLI flag consistently.
+- `benchmark/run.py` loads a submission, runs the fixed workflow, calls
+  `benchmark/metrics.py`, and writes a scored result.
+- `scripts/` contains framework-owned code only. It is not the submission area.
+
+## Authoring Rules
+
+- Contributors should only need to modify files under `tasks/<name>/submissions/`
+  for ordinary benchmark participation.
+- Every submission must pass `tasks/<name>/tests/` before it is benchmarked.
+- Tasks that are still under construction should keep the full skeleton and use
+  explicit `NotImplementedError` placeholders where behavior is pending.
 
 ## Current Tasks
 
-- `wilson_loop` — Optimize spatial Wilson line operators for ground-state overlap in static quark-antiquark Wilson loops. Based on arXiv:2602.02436.
-- `pion_2pt` — Optimize boosted pion interpolating operators to improve SNR and reduce excited-state contamination for pion two-point correlators (focus: |p| ~ 1 GeV).
-
-## Conventions
-
-- All lattice code uses PyQUDA (https://github.com/CLQCD/PyQUDA)
-- Gauge fields stored in PyQUDA's even/odd ordering: `(Nd, 2, Lt/2, Lz, Ly, Lx/2, Nc, Nc)`
-- Contributors only modify files in `tasks/<name>/operators/`
-- Every operator must pass `tasks/<name>/tests/` before benchmark scoring
-- Python 3.10+, type hints encouraged
+- `wilson_loop`: reference measurement-task layout
+- `pion_2pt`: WIP measurement task with interface and validation in place
+- `gsfit_2pt`: analysis task with synthetic dataset, fixed fit pipeline, and
+  benchmark scoring

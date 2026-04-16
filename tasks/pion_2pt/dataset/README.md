@@ -1,10 +1,18 @@
-# pion_2pt dataset
+# pion_2pt Dataset Contract
 
-该任务需要带有轻夸克传播子的规范场数据（或可在线求解传播子），用于构造有动量 pion 的二点函数。
+This task will eventually require gauge-field data together with either stored
+quark propagators or a supported workflow for generating them on demand.
 
-建议至少提供：
+The intended dataset layout is:
 
-- `test_small`：用于验证接口与快速回归
-- `benchmark`：用于排行榜评分（重点包含 `|p| ~ 1 GeV` 的动量壳）
+- `test_small/` for validation and quick regression checks
+- `benchmark/` for leaderboard scoring
 
-> 当前仓库仅提供任务接口与验证框架，数据下载与生产流程后续补充。
+The benchmark focus is boosted pions with representative momentum shells around
+`|p| ~ 1 GeV`.
+
+Current status:
+
+- dataset contract: documented
+- concrete public dataset packaging: pending
+- fixed measurement workflow integration: pending

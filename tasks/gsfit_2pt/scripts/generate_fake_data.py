@@ -11,7 +11,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from tasks.gsfit_2pt.benchmark.core import make_synthetic_cases, save_synthetic_cases
+from tasks.gsfit_2pt.dataset.synthetic import make_synthetic_cases, save_synthetic_cases
 
 
 def main() -> None:

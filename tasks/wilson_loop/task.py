@@ -5,10 +5,10 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from latticearena.task import BenchmarkResult, TaskBase, register_task
+from core.task import BenchmarkResult, TaskBase, register_task
 from tasks.wilson_loop.benchmark.metrics import benchmark_submission
 from tasks.wilson_loop.interface import SpatialOperator
-from tasks.wilson_loop.validation import validate_operator
+from tasks.wilson_loop.tests.validation import validate_submission
 
 
 @register_task
@@ -22,7 +22,7 @@ class WilsonLoopTask(TaskBase):
     def validate(self, operator: Any) -> bool:
         if not isinstance(operator, SpatialOperator):
             return False
-        return not validate_operator(operator)
+        return not validate_submission(operator)
 
     def benchmark(self, operator: Any, dataset_path: str | Path | None = None) -> BenchmarkResult:
         if not isinstance(operator, SpatialOperator):
@@ -37,7 +37,7 @@ class WilsonLoopTask(TaskBase):
         )
         return BenchmarkResult(
             task_name=self.name,
-            operator_name=operator.meta.name,
+            submission_name=operator.meta.name,
             score=summary["score"],
             metrics=summary,
         )

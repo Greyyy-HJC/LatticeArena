@@ -1,61 +1,51 @@
 # Task: Wilson Loop
 
-Optimize the spatial Wilson line operator to improve ground-state overlap in static quark-antiquark Wilson loop measurements.
+`wilson_loop` is the reference measurement-task layout in this repository.
 
-## Background
+The optimization target is a spatial Wilson-line submission used inside a fixed
+Wilson-loop measurement workflow. Better submissions should improve ground-state
+overlap, flatten the effective-mass plateau earlier, and preserve gauge
+covariance.
 
-The Wilson loop `W_{r x t}` measures the potential between a static quark and antiquark separated by distance `r`. The correlator decays as:
+## Task Components
 
-```
-<tr W_{r x t}> = sum_n |c_n|^2 exp(-t * a * E_n(r))
-```
+- `dataset/`: pure-gauge SU(3) configurations for development and scoring
+- `scripts/`: fixed Wilson-loop measurement workflow
+- `interface.py`: `SpatialOperator`
+- `submissions/`: baseline and contributed spatial-path submissions
+- `tests/`: validation of gauge covariance and cold-config behavior
+- `benchmark/`: metric computation and benchmark CLI
 
-The spatial Wilson line connecting the quark and antiquark determines how well the operator projects onto the ground state. A straight product of links (the "plain" Wilson line) has poor overlap — you can do much better.
+## Submission Contract
 
-## What You Optimize
+Implement `SpatialOperator` from `interface.py`.
 
-You implement `SpatialOperator` from `interface.py`. Your operator replaces the straight spatial Wilson line with something that has better ground-state overlap `|c_0|^2`.
+- `setup(...)` runs once per gauge configuration
+- `compute(...)` returns the spatial Wilson-line field for one `(r, direction, t)`
 
-**Constraint**: your operator must be gauge-covariant. Under a gauge transformation, it must transform as `G(x) @ S(x) @ G^dag(x+r)`. Products and sums of gauge link paths from `x` to `x+r` automatically satisfy this.
+Gauge covariance is the key legality condition. On a cold gauge field, the
+submission should reduce to the identity matrix field.
 
-## Getting Started
-
-1. Look at `operators/plain.py` for the simplest baseline
-2. Read the [reference paper](../../references/2602.02436.pdf) for ideas (neural network layers, plaquette insertions, smearing)
-3. Create your operator in `operators/your_name.py`
-4. Test: `pytest tests/ -k your_operator`
-5. Benchmark: `python benchmark/run.py --operator your_name`
-
-You can also inspect raw correlators before scoring:
+## Quick Start
 
 ```bash
-.venv/bin/python tasks/wilson_loop/scripts/measure.py \
-  --operator plain \
+pytest tasks/wilson_loop/tests/
+python tasks/wilson_loop/scripts/measure.py --submission plain
+python tasks/wilson_loop/benchmark/run.py --submission plain
+```
+
+To benchmark a specific dataset subset:
+
+```bash
+python tasks/wilson_loop/benchmark/run.py \
+  --submission plain \
   --dataset-path tasks/wilson_loop/dataset/test_small \
   --r-values 1,2,3 \
   --t-values 0,1,2,3,4 \
   --max-configs 4
 ```
 
-For expensive datasets, both `measure.py` and `benchmark/run.py` support
-`--max-configs` so you can iterate on a small real subset before running the
-full ensemble.
+## Baseline
 
-## Baselines
-
-| Operator | Description | Score |
-|---|---|---|
-| `plain` | Straight Wilson line (product of links) | TBD |
-
-The official full-ensemble baseline is still pending. Small locally generated
-`8^3 x 16` development subsets were enough to verify that the measurement and
-benchmark stack runs end-to-end, but the resulting `plain` scores still move a
-lot with ensemble quality and post-warmup acceptance. Treat any current dev-only
-number as a smoke-test result, not a leaderboard reference.
-
-## Hints
-
-- Inserting plaquettes (clover-leaf field-strength terms) along the path adds chromo-electromagnetic structure
-- APE/HYP smearing of spatial links reduces UV noise
-- Coulomb gauge fixing makes spatial links smooth (but breaks manifest gauge invariance)
-- The paper's gauge-equivariant layers (linear, bilinear, convolutional) are systematic ways to build better operators
+`submissions/plain.py` implements the straight Wilson line built from ordered
+link products along a single spatial direction.

@@ -4,13 +4,13 @@ from __future__ import annotations
 
 import numpy as np
 
-from latticearena.testing import (
+from core.testing import (
     apply_gauge_transform,
     identity_gauge_field,
     random_gauge_field,
     random_gauge_transform,
 )
-from tasks.wilson_loop.operators.plain import PlainWilsonLine
+from tasks.wilson_loop.submissions.plain import PlainWilsonLine
 
 
 def test_plain_operator_shape_and_dtype() -> None:
