@@ -10,19 +10,17 @@ development and smoke tests. It is intentionally not tracked by git.
 
 Recommended layout:
 
-- `S16T16/`
+- `quenched_wilson_b6_16x16/`
   - local quenched `16^3 x 16` smoke-test ensemble
-  - `ensemble.json`
-  - one or more gauge configurations in NERSC / PyQUDA-readable format
-- `test_small/`
   - `ensemble.json`
   - one or more gauge configurations in NERSC / PyQUDA-readable format
 - `benchmark/`
   - reserved for future leaderboard datasets
 
 The repository `.gitignore` excludes concrete files under
-`tasks/pion_2pt/dataset/test_small/`, `tasks/pion_2pt/dataset/local_test/`, and
-`tasks/pion_2pt/dataset/benchmark/` so large local data stays untracked.
+`tasks/pion_2pt/dataset/quenched_wilson_b6_16x16/`,
+`tasks/pion_2pt/dataset/local_test/`, and `tasks/pion_2pt/dataset/benchmark/`
+so large local data stays untracked.
 
 ## Metadata contract
 

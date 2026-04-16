@@ -25,6 +25,17 @@ from tasks.pion_2pt.scripts.measure import (
 from tasks.pion_2pt.task import Pion2PtTask
 
 
+def _default_dataset_path() -> Path:
+    candidate = Path("tasks/pion_2pt/dataset/quenched_wilson_b6_16x16")
+    if candidate.exists():
+        return candidate
+    raise FileNotFoundError(
+        "No default pion_2pt dataset found. Provide --dataset-path pointing to a "
+        "dataset directory (containing ensemble.json) or an ensemble.json file. "
+        "Expected: tasks/pion_2pt/dataset/quenched_wilson_b6_16x16."
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the pion_2pt benchmark")
     parser.add_argument(
@@ -36,7 +47,7 @@ def main() -> None:
     parser.add_argument(
         "--dataset-path",
         type=Path,
-        default=Path("tasks/pion_2pt/dataset/test_small"),
+        default=_default_dataset_path(),
         help="Dataset directory or ensemble.json path.",
     )
     parser.add_argument(

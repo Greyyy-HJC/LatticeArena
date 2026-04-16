@@ -188,3 +188,19 @@ submission loop), and benchmark scoring was WIP.
 - **Follow-ups**: refine score terms once larger ensembles and multi-source
 averaging are standard in the dataset metadata.
 
+### 2026-04-16 — `pion_2pt` default dataset path cleanup
+
+- **Area**: `pion_2pt`
+- **Type**: change / docs
+- **Context**: the default dataset fallback still referenced `dataset/test_small`
+  even after standardizing on the renamed local quenched ensemble directory.
+- **Decision**:
+  - remove `test_small` from default CLI dataset resolution in
+    `benchmark/run.py` and `scripts/measure.py`
+  - keep a single default local dataset path:
+    `tasks/pion_2pt/dataset/quenched_wilson_b6_16x16`
+  - align `.gitignore` and `dataset/README.md` with the same naming
+- **Impact**: default runs are less ambiguous, docs and ignore rules now match the
+  active local dataset convention, and users should pass `--dataset-path` when
+  using any alternate local dataset.
+
