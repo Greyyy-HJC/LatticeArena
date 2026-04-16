@@ -44,7 +44,9 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
     snr_curve = np.abs(mean_real) / corr_std_safe
     signal_to_noise = float(np.nanmean(snr_curve[:, t_min:t_max]))
 
-    mean_eff = np.asarray([_effective_mass(corr) for corr in mean_real], dtype=np.float64)
+    mean_eff = np.asarray(
+        [_effective_mass(corr) for corr in mean_real], dtype=np.float64
+    )
     per_config_eff = np.asarray(
         [[_effective_mass(corr) for corr in cfg] for cfg in real_per_config],
         dtype=np.float64,
@@ -71,7 +73,9 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
             continue
 
         plateau_level = float(np.nanmean(values[valid]))
-        plateau_chi2 += float(np.sum(((values[valid] - plateau_level) / errors[valid]) ** 2))
+        plateau_chi2 += float(
+            np.sum(((values[valid] - plateau_level) / errors[valid]) ** 2)
+        )
         plateau_dof += max(np.count_nonzero(valid) - 1, 1)
 
         early_values = mean_eff[momentum_idx, 1 : 1 + np.count_nonzero(valid)]
@@ -90,7 +94,9 @@ def compute_metrics(measured: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "n_configs": int(n_configs),
-        "latt_size": [int(value) for value in np.asarray(measured["latt_size"], dtype=np.int64)],
+        "latt_size": [
+            int(value) for value in np.asarray(measured["latt_size"], dtype=np.int64)
+        ],
         "source_times": [
             int(value) for value in np.asarray(measured["source_times"], dtype=np.int64)
         ],

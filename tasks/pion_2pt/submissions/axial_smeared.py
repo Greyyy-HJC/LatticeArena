@@ -21,17 +21,32 @@ def _gamma_spatial(index: int) -> np.ndarray:
     zero = 0.0 + 0.0j
     if index == 0:
         return np.array(
-            [[zero, zero, zero, 1.0], [zero, zero, 1.0, zero], [zero, -1.0, zero, zero], [-1.0, zero, zero, zero]],
+            [
+                [zero, zero, zero, 1.0],
+                [zero, zero, 1.0, zero],
+                [zero, -1.0, zero, zero],
+                [-1.0, zero, zero, zero],
+            ],
             dtype=np.complex128,
         )
     if index == 1:
         return np.array(
-            [[zero, zero, zero, -1.0j], [zero, zero, 1.0j, zero], [zero, 1.0j, zero, zero], [-1.0j, zero, zero, zero]],
+            [
+                [zero, zero, zero, -1.0j],
+                [zero, zero, 1.0j, zero],
+                [zero, 1.0j, zero, zero],
+                [-1.0j, zero, zero, zero],
+            ],
             dtype=np.complex128,
         )
     if index == 2:
         return np.array(
-            [[zero, zero, 1.0, zero], [zero, zero, zero, -1.0], [-1.0, zero, zero, zero], [zero, 1.0, zero, zero]],
+            [
+                [zero, zero, 1.0, zero],
+                [zero, zero, zero, -1.0],
+                [-1.0, zero, zero, zero],
+                [zero, 1.0, zero, zero],
+            ],
             dtype=np.complex128,
         )
     raise ValueError(f"Unsupported spatial gamma index: {index}")
@@ -93,7 +108,9 @@ class AxialSmearedBoostedPion(PionInterpolatingOperator):
         profile /= np.linalg.norm(profile)
 
         gamma5 = _gamma5()
-        boost_direction = (_gamma_spatial(0) + _gamma_spatial(1) + _gamma_spatial(2)) / np.sqrt(3.0)
+        boost_direction = (
+            _gamma_spatial(0) + _gamma_spatial(1) + _gamma_spatial(2)
+        ) / np.sqrt(3.0)
         gamma_matrix = boost_direction @ gamma5
 
         return OperatorComponents(

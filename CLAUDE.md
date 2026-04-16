@@ -11,6 +11,14 @@ pip install -e ".[dev]"
 pytest
 ```
 
+## Pre-push Check
+
+Before every `git push`, check the latest GitHub Actions status for your branch
+or PR and run the relevant local validation first. At minimum, use
+`ruff check .`, `ruff format --check .`, and the task-specific `pytest` target
+needed for the files you changed so you do not stack new commits on top of a
+known red CI.
+
 ## Canonical Task Layout
 
 Every task under `tasks/<name>/` must follow this structure:

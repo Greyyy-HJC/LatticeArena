@@ -116,11 +116,15 @@ def load_ensemble_config(dataset_path: Path) -> tuple[EnsembleConfig, Path]:
         csw_t=float(clover["csw_t"]),
         t_boundary=int(clover.get("t_boundary", -1)),
         source_times=tuple(int(v) for v in data.get("source_times", [0])),
-        benchmark_momentum=tuple(int(v) for v in data.get("benchmark_momentum", [3, 3, 3])),
+        benchmark_momentum=tuple(
+            int(v) for v in data.get("benchmark_momentum", [3, 3, 3])
+        ),
         gauge_glob=str(data.get("gauge_glob", "*.nersc")),
         gauge_format=str(data.get("format", "nersc")),
         lattice_spacing_fm=(
-            None if data.get("lattice_spacing_fm") is None else float(data["lattice_spacing_fm"])
+            None
+            if data.get("lattice_spacing_fm") is None
+            else float(data["lattice_spacing_fm"])
         ),
         resource_path=data.get("resource_path"),
         invert_tolerance=float(data.get("invert_tolerance", 1e-8)),
@@ -201,7 +205,9 @@ def _build_source_propagator(
     propagator = core.LatticePropagator(latt_info)
     for spin in range(core.Ns):
         for color in range(core.Nc):
-            source_phase = cp.zeros((*base_phase.shape, core.Nc), dtype=base_phase.dtype)
+            source_phase = cp.zeros(
+                (*base_phase.shape, core.Nc), dtype=base_phase.dtype
+            )
             source_phase[..., color] = base_phase
             fermion = source_utils.source(
                 latt_info, "colorvector", t_source, spin, color, source_phase
@@ -232,7 +238,9 @@ def _contract_correlator(
 ) -> np.ndarray:
     gamma5 = cp.asarray(_gamma5())
     gamma_sink = gamma5 @ cp.asarray(np.asarray(gamma_matrix, dtype=np.complex128))
-    gamma_source = gamma5 @ cp.asarray(np.asarray(gamma_matrix, dtype=np.complex128).conj().T)
+    gamma_source = gamma5 @ cp.asarray(
+        np.asarray(gamma_matrix, dtype=np.complex128).conj().T
+    )
     correlator = cp.einsum(
         "wtzyx,wtzyxjiba,jk,wtzyxklba,li->t",
         sink_weights.conj(),

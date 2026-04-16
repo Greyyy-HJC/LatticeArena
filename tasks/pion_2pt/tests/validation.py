@@ -24,7 +24,9 @@ def validate_submission(
         submission.setup(
             gauge, latt_size=latt_size, lattice_spacing_fm=lattice_spacing_fm
         )
-        components = submission.build(gauge, momentum_mode=momentum_mode, t_source=t_source)
+        components = submission.build(
+            gauge, momentum_mode=momentum_mode, t_source=t_source
+        )
     except Exception:
         return False
 

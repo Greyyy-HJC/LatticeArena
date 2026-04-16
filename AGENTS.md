@@ -44,6 +44,14 @@ python tasks/wilson_loop/benchmark/run.py --submission plain
 python tasks/gsfit_2pt/scripts/fit.py --submission plain
 ```
 
+## Pre-push Check
+
+- Before every `git push`, check the latest GitHub Actions status for your
+  branch or PR.
+- Run the relevant local validation first. At minimum, use `ruff check .`,
+  `ruff format --check .`, and the task-specific `pytest` target for the files
+  you touched so you do not stack new commits on top of a known red CI.
+
 ## Quick Reference
 
 - Python 3.10+
