@@ -2,23 +2,20 @@
 
 from __future__ import annotations
 
+import json
+import subprocess
+import sys
+
 import numpy as np
 
+from latticearena.testing import identity_gauge_field
 from tasks.pion_2pt.operators.plain import PlainBoostedPion
-
-
-def _mock_gauge_field(latt_size: tuple[int, int, int, int]) -> np.ndarray:
-    lx, ly, lz, lt = latt_size
-    gauge = np.zeros((4, lx, ly, lz, lt, 3, 3), dtype=np.complex128)
-    eye = np.eye(3, dtype=np.complex128)
-    gauge[...] = eye
-    return gauge
 
 
 def test_plain_operator_shapes() -> None:
     latt_size = (8, 8, 8, 32)
     op = PlainBoostedPion(sigma=2.5)
-    gauge = _mock_gauge_field(latt_size)
+    gauge = identity_gauge_field(latt_size)
 
     op.setup(gauge, latt_size=latt_size, lattice_spacing_fm=0.09)
     components = op.build(gauge, momentum_gev=(1.0, 0.0, 0.0), t_source=0)
@@ -32,7 +29,7 @@ def test_plain_operator_shapes() -> None:
 def test_plain_operator_normalization() -> None:
     latt_size = (8, 8, 8, 32)
     op = PlainBoostedPion(sigma=2.0)
-    gauge = _mock_gauge_field(latt_size)
+    gauge = identity_gauge_field(latt_size)
 
     op.setup(gauge, latt_size=latt_size, lattice_spacing_fm=0.09)
     components = op.build(gauge, momentum_gev=(1.0, 0.0, 0.0), t_source=0)
@@ -45,10 +42,25 @@ def test_plain_operator_normalization() -> None:
 
 def test_plain_operator_requires_setup() -> None:
     op = PlainBoostedPion()
-    gauge = _mock_gauge_field((4, 4, 4, 8))
+    gauge = identity_gauge_field((4, 4, 4, 8))
 
     try:
         op.build(gauge, momentum_gev=(1.0, 0.0, 0.0), t_source=0)
     except RuntimeError:
         return
     raise AssertionError("Expected RuntimeError when build() is called before setup().")
+
+
+def test_benchmark_smoke_cli() -> None:
+    """Benchmark CLI produces valid JSON with a positive score."""
+    result = subprocess.run(
+        [sys.executable, "tasks/pion_2pt/benchmark/run.py", "--operator", "plain"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    data = json.loads(result.stdout)
+    assert data["task"] == "pion_2pt"
+    assert data["operator"] == "plain"
+    assert data["score"] > 0
+    assert len(data["metrics"]["per_scenario"]) == 3

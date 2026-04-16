@@ -7,6 +7,9 @@ from typing import Any
 
 from latticearena.task import BenchmarkResult, TaskBase, register_task
 
+from tasks.pion_2pt.benchmark.metrics import benchmark_submission
+from tasks.pion_2pt.interface import PionInterpolatingOperator
+
 
 @register_task
 class Pion2PtTask(TaskBase):
@@ -17,19 +20,18 @@ class Pion2PtTask(TaskBase):
         return "pion_2pt"
 
     def validate(self, operator: Any) -> bool:
-        """Placeholder validation hook.
-
-        Validation is currently implemented through pytest under
-        ``tasks/pion_2pt/tests``. This method is reserved for future API wiring.
-        """
-        return hasattr(operator, "build") and hasattr(operator, "setup")
+        """Check that the operator implements the required interface."""
+        return (
+            isinstance(operator, PionInterpolatingOperator)
+            or (hasattr(operator, "build") and hasattr(operator, "setup"))
+        )
 
     def benchmark(self, operator: Any, dataset_path: str | Path | None = None) -> BenchmarkResult:
-        """Benchmark entrypoint placeholder.
-
-        Full benchmark wiring is provided in tasks/pion_2pt/benchmark/run.py.
-        """
-        raise NotImplementedError(
-            "Use `python tasks/pion_2pt/benchmark/run.py --operator <name>` "
-            "for pion_2pt benchmarking."
+        """Run the synthetic pion_2pt benchmark."""
+        summary = benchmark_submission(operator)
+        return BenchmarkResult(
+            task_name="pion_2pt",
+            operator_name=getattr(operator, "meta", None) and operator.meta.name or "unknown",
+            score=summary["score"],
+            metrics=summary,
         )

@@ -1,43 +1,43 @@
 # Task: Pion 2pt (boosted)
 
-优化目标：设计更好的 **pion interpolating operator**，在 **有动量的 pion**（重点示例 `|p| ~ 1 GeV`）上得到：
+Optimization goal: design a better **pion interpolating operator** that achieves the following for **boosted pions** (flagship example `|p| ~ 1 GeV`):
 
-- 更高信噪比（SNR）
-- 更小激发态污染（更早出现稳定平台）
+- Higher signal-to-noise ratio (SNR)
+- Reduced excited-state contamination (earlier, flatter effective-mass plateau)
 
 ## Physics target
 
-测量的关联函数为：
+The measured correlator is:
 
-\[
-C_\pi(\mathbf{p}, t) = \langle O_\pi(\mathbf{p}, t_0+t) O_\pi^\dagger(\mathbf{p}, t_0) \rangle,
+$$
+C_\pi(\mathbf{p}, t) = \langle O_\pi(\mathbf{p}, t_0+t)\, O_\pi^\dagger(\mathbf{p}, t_0) \rangle,
 \quad
-O_\pi(\mathbf{p}, t) = \sum_{\mathbf{x}} e^{i\mathbf{p}\cdot\mathbf{x}} \bar d(\mathbf{x},t)\,\Gamma\,u(\mathbf{x},t).
-\]
+O_\pi(\mathbf{p}, t) = \sum_{\mathbf{x}} e^{i\mathbf{p}\cdot\mathbf{x}}\, \bar{d}(\mathbf{x},t)\,\Gamma\,u(\mathbf{x},t).
+$$
 
-你需要优化 `O_\pi` 的构造（例如 smearing profile、动量注入策略、Dirac 结构、位移/导数结构），从而改善 boosted pion 的有效质量平台和统计精度。
+You optimize the construction of $O_\pi$ (e.g. smearing profile, momentum injection strategy, Dirac structure, derivative operators) to improve the effective-mass plateau and statistical precision for boosted pions.
 
 ## What you implement
 
-实现 `tasks/pion_2pt/interface.py` 中的 `PionInterpolatingOperator`：
+Implement `PionInterpolatingOperator` from `tasks/pion_2pt/interface.py`:
 
-- `setup(...)`：每个规范场一次性的预处理
-- `build(...)`：对给定动量（GeV）和源时刻返回 source/sink profile 与 Dirac 结构
+- `setup(...)`: one-time preprocessing per gauge configuration
+- `build(...)`: for a given momentum (GeV) and source timeslice, return source/sink profiles and Dirac structure
 
 ## Baseline
 
-`operators/plain.py` 提供了一个简单 baseline：
+`operators/plain.py` provides a simple baseline:
 
-- Gaussian 空间 profile
-- plane-wave 相位注入动量
+- Gaussian spatial profile
+- Plane-wave momentum phase injection
 - `Gamma = gamma_5`
 
 ## Suggested benchmark metrics
 
-- **SNR at fixed t**: `mean(C)/std(C)`
-- **Plateau onset**: 有效质量进入平台的最早 `t_min`
-- **Excited-state contamination**: 2-state fit 中 excited-state 振幅
-- **Dispersion consistency**: `E(p)` 与色散关系的一致性
+- **SNR at fixed t**: `mean(C) / std(C)`
+- **Plateau onset**: earliest `t_min` at which the effective mass enters the plateau
+- **Excited-state contamination**: excited-state amplitude from a 2-state fit
+- **Dispersion consistency**: agreement of `E(p)` with the continuum dispersion relation
 
 ## Quick check
 

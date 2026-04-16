@@ -28,3 +28,11 @@ include = ["latticearena*", "tasks*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tasks/*/tests"]
+
+[tool.coverage.run]
+source = ["latticearena", "tasks"]
+omit = ["tasks/*/dataset/*", "tasks/*/scripts/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
