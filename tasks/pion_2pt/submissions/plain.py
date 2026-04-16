@@ -1,10 +1,12 @@
 """Baseline boosted-pion interpolating operator.
 
-This baseline uses a gauge-blind Gaussian profile multiplied by a plane-wave
-phase, with the conventional pseudoscalar Dirac structure Gamma = gamma_5.
+This baseline mirrors the simplest reference design: a pseudoscalar
+interpolator with a point source and a plane-wave sink projection.
 """
 
 from __future__ import annotations
+
+from typing import Any
 
 import numpy as np
 
@@ -16,68 +18,62 @@ from tasks.pion_2pt.interface import (
 
 
 class PlainBoostedPion(PionInterpolatingOperator):
-    """Simple Gaussian x plane-wave pion interpolating operator."""
+    """Point-source, pseudoscalar pion interpolating operator."""
 
-    def __init__(self, sigma: float = 2.0) -> None:
-        self.sigma = sigma
+    def __init__(self) -> None:
         self._latt_size: tuple[int, int, int, int] | None = None
-        self._a_fm: float | None = None
 
     @property
     def meta(self) -> SubmissionMeta:
         return SubmissionMeta(
             name="plain",
-            description="Gaussian profile with momentum phase and gamma_5 bilinear",
+            description="Point source with plane-wave sink and gamma_5 bilinear",
             authors=["LatticeArena"],
         )
 
     def setup(
         self,
-        gauge_field: np.ndarray,
+        gauge_field: Any,
         latt_size: tuple[int, int, int, int],
-        lattice_spacing_fm: float,
+        lattice_spacing_fm: float | None,
     ) -> None:
         self._latt_size = latt_size
-        self._a_fm = lattice_spacing_fm
 
     def build(
         self,
-        gauge_field: np.ndarray,
-        momentum_gev: tuple[float, float, float],
+        gauge_field: Any,
+        momentum_mode: tuple[int, int, int],
         t_source: int,
     ) -> OperatorComponents:
-        if self._latt_size is None or self._a_fm is None:
+        del gauge_field, t_source
+        if self._latt_size is None:
             raise RuntimeError("setup() must be called before build().")
 
         lx, ly, lz, _ = self._latt_size
-        x = np.arange(lx) - lx // 2
-        y = np.arange(ly) - ly // 2
-        z = np.arange(lz) - lz // 2
+        x = np.arange(lx)
+        y = np.arange(ly)
+        z = np.arange(lz)
         xx, yy, zz = np.meshgrid(x, y, z, indexing="ij")
 
-        radial2 = xx**2 + yy**2 + zz**2
-        gaussian = np.exp(-0.5 * radial2 / (self.sigma**2))
-
-        hbarc = 0.1973269804  # GeV*fm
-        a_over_hbarc = self._a_fm / hbarc
-        phase = np.exp(
-            1j
+        sink_profile = np.exp(
+            2j
+            * np.pi
             * (
-                momentum_gev[0] * a_over_hbarc * xx
-                + momentum_gev[1] * a_over_hbarc * yy
-                + momentum_gev[2] * a_over_hbarc * zz
+                momentum_mode[0] * xx / lx
+                + momentum_mode[1] * yy / ly
+                + momentum_mode[2] * zz / lz
             )
         )
+        sink_profile = sink_profile.astype(np.complex128)
+        sink_profile /= np.linalg.norm(sink_profile)
 
-        profile = gaussian * phase
-        norm = np.linalg.norm(profile)
-        if norm > 0:
-            profile = profile / norm
+        source_profile = np.zeros((lx, ly, lz), dtype=np.complex128)
+        source_profile[0, 0, 0] = 1.0
 
         gamma5 = np.diag([1.0, 1.0, -1.0, -1.0]).astype(np.complex128)
 
         return OperatorComponents(
-            source_profile=profile.astype(np.complex128),
-            sink_profile=profile.astype(np.complex128),
+            source_profile=source_profile,
+            sink_profile=sink_profile,
             gamma_matrix=gamma5,
         )

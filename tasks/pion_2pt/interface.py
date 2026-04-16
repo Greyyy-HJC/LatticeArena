@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
+from typing import Any
 
 import numpy as np
 
@@ -68,32 +69,36 @@ class PionInterpolatingOperator(ABC):
     @abstractmethod
     def setup(
         self,
-        gauge_field: np.ndarray,
+        gauge_field: Any,
         latt_size: tuple[int, int, int, int],
-        lattice_spacing_fm: float,
+        lattice_spacing_fm: float | None,
     ) -> None:
         """One-time setup per gauge configuration.
 
         Args:
-            gauge_field: Gauge links in natural ordering,
-                shape (Nd, Lx, Ly, Lz, Lt, Nc, Nc), complex128.
+            gauge_field:
+                Gauge links or a backend-specific gauge handle for the active
+                configuration.
             latt_size: (Lx, Ly, Lz, Lt).
-            lattice_spacing_fm: Lattice spacing in femtometers.
+            lattice_spacing_fm:
+                Lattice spacing in femtometers when available. May be ``None``
+                for exploratory ensembles without scale setting.
         """
         ...
 
     @abstractmethod
     def build(
         self,
-        gauge_field: np.ndarray,
-        momentum_gev: tuple[float, float, float],
+        gauge_field: Any,
+        momentum_mode: tuple[int, int, int],
         t_source: int,
     ) -> OperatorComponents:
         """Build source/sink operator components for a given momentum.
 
         Args:
             gauge_field: Gauge links in natural ordering.
-            momentum_gev: Target pion momentum (px, py, pz) in GeV.
+            momentum_mode:
+                Target pion momentum mode ``(npx, npy, npz)`` in lattice units.
             t_source: Source timeslice.
 
         Returns:

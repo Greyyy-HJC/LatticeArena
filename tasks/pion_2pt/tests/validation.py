@@ -13,7 +13,7 @@ def validate_submission(
     *,
     latt_size: tuple[int, int, int, int] = (8, 8, 8, 32),
     lattice_spacing_fm: float = 0.09,
-    momentum_gev: tuple[float, float, float] = (1.0, 0.0, 0.0),
+    momentum_mode: tuple[int, int, int] = (1, 0, 0),
     t_source: int = 0,
     atol: float = 1e-12,
 ) -> bool:
@@ -24,9 +24,7 @@ def validate_submission(
         submission.setup(
             gauge, latt_size=latt_size, lattice_spacing_fm=lattice_spacing_fm
         )
-        components = submission.build(
-            gauge, momentum_gev=momentum_gev, t_source=t_source
-        )
+        components = submission.build(gauge, momentum_mode=momentum_mode, t_source=t_source)
     except Exception:
         return False
 
@@ -39,6 +37,8 @@ def validate_submission(
     if not np.iscomplexobj(components.source_profile):
         return False
     if not np.iscomplexobj(components.sink_profile):
+        return False
+    if not np.iscomplexobj(components.gamma_matrix):
         return False
 
     src_norm = np.linalg.norm(components.source_profile)

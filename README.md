@@ -57,11 +57,13 @@ placeholders instead of leaving missing directories or ambiguous file names.
 
 ## Available Tasks
 
-| Task | Optimization target | Status by component |
-|---|---|---|
-| [`wilson_loop`](tasks/wilson_loop/) | Spatial Wilson-line submission for static-potential Wilson loops | dataset: ready, scripts: ready, interface: ready, submissions: ready, tests: ready, benchmark: ready |
-| [`pion_2pt`](tasks/pion_2pt/) | Boosted pion interpolating submission for two-point correlators | dataset: placeholder, scripts: WIP, interface: ready, submissions: baseline, tests: ready, benchmark: WIP |
-| [`gsfit_2pt`](tasks/gsfit_2pt/) | Fixed ground-state fit configuration submission for pion 2pt analysis | dataset: ready, scripts: ready, interface: ready, submissions: ready, tests: ready, benchmark: ready |
+
+| Task                                | Optimization target                                                   | Status by component                                                                                                       |
+| ----------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `[wilson_loop](tasks/wilson_loop/)` | Spatial Wilson-line submission for static-potential Wilson loops      | dataset: ready, scripts: ready, interface: ready, submissions: ready, tests: ready, benchmark: ready                      |
+| `[pion_2pt](tasks/pion_2pt/)`       | Boosted pion interpolating submission for two-point correlators       | dataset: local-test ready, scripts: ready, interface: ready, submissions: ready, tests: ready, benchmark: local-run ready |
+| `[gsfit_2pt](tasks/gsfit_2pt/)`     | Fixed ground-state fit configuration submission for pion 2pt analysis | dataset: ready, scripts: ready, interface: ready, submissions: ready, tests: ready, benchmark: ready                      |
+
 
 ## Quick Start
 
@@ -96,18 +98,20 @@ python tasks/gsfit_2pt/benchmark/run.py --submission plain
 4. Add a new submission under `tasks/<task>/submissions/`.
 5. Run `pytest tasks/<task>/tests/`.
 6. Run `python tasks/<task>/benchmark/run.py --submission <name>` when that
-   task has a live benchmark. The benchmark runner re-checks task validation
+  task has a live benchmark. The benchmark runner re-checks task validation
    and exits early if the submission fails.
 
 ## Environment Notes
 
 - Python 3.10+
 - Runtime dependencies: `numpy`, `scipy`, `gvar`, `lsqfit`, `gmpy2`,
-  `pyquda`, `pyquda-utils`
+`pyquda`, `pyquda-utils`
 - Optional plotting dependency: `matplotlib`
 - GPU-dependent PyQUDA tasks require a local QUDA installation
+- Measurement workflows that touch gauge-field generation or propagator solves
+are written against [PyQUDA](https://github.com/CLQCD/PyQUDA)
 
-The pure analysis task [`gsfit_2pt`](tasks/gsfit_2pt/) does not depend on
+The pure analysis task `[gsfit_2pt](tasks/gsfit_2pt/)` does not depend on
 PyQUDA for its fixed workflow, but the repository dependency set still declares
 the broader lattice stack.
 

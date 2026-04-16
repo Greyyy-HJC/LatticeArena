@@ -19,11 +19,21 @@ tasks/*/dataset/*.lime
 tasks/*/dataset/*.ildg
 tasks/*/dataset/*.nersc
 tasks/*/dataset/*.milc
+tasks/pion_2pt/dataset/S*/**
+!tasks/pion_2pt/dataset/**/README.md
+tasks/pion_2pt/dataset/test_small/**
+!tasks/pion_2pt/dataset/test_small/README.md
+tasks/pion_2pt/dataset/local_test/**
+!tasks/pion_2pt/dataset/local_test/README.md
+tasks/pion_2pt/dataset/benchmark/**
+!tasks/pion_2pt/dataset/benchmark/README.md
+tasks/pion_2pt/dataset/**/*.json
 !tasks/*/dataset/README.md
 
 # Benchmark results
 tasks/*/benchmark/results/*.json
 tasks/*/benchmark/results/*.npy
+tasks/*/benchmark/results/*.npz
 
 # IDE / tools
 .vscode/

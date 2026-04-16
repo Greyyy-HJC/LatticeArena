@@ -1,18 +1,66 @@
 # pion_2pt Dataset Contract
 
-This task will eventually require gauge-field data together with either stored
-quark propagators or a supported workflow for generating them on demand.
+`pion_2pt` uses task-local gauge data plus a small metadata file that tells the
+fixed PyQUDA measurement workflow how to interpret the ensemble.
 
-The intended dataset layout is:
+## Local-only quenched test ensemble
 
-- `test_small/` for validation and quick regression checks
-- `benchmark/` for leaderboard scoring
+The current regression target is a local quenched `16^3 x 16` ensemble used for
+development and smoke tests. It is intentionally not tracked by git.
 
-The benchmark focus is boosted pions with representative momentum shells around
-`|p| ~ 1 GeV`.
+Recommended layout:
 
-Current status:
+- `S16T16/`
+  - local quenched `16^3 x 16` smoke-test ensemble
+  - `ensemble.json`
+  - one or more gauge configurations in NERSC / PyQUDA-readable format
+- `test_small/`
+  - `ensemble.json`
+  - one or more gauge configurations in NERSC / PyQUDA-readable format
+- `benchmark/`
+  - reserved for future leaderboard datasets
 
-- dataset contract: documented
-- concrete public dataset packaging: pending
-- fixed measurement workflow integration: pending
+The repository `.gitignore` excludes concrete files under
+`tasks/pion_2pt/dataset/test_small/`, `tasks/pion_2pt/dataset/local_test/`, and
+`tasks/pion_2pt/dataset/benchmark/` so large local data stays untracked.
+
+## Metadata contract
+
+The fixed workflow expects `ensemble.json` with fields of this shape:
+
+```json
+{
+  "name": "quenched_16x16_local",
+  "latt_size": [16, 16, 16, 16],
+  "anisotropy": {
+    "xi_0": 1.0,
+    "nu": 1.0
+  },
+  "clover": {
+    "mass": -0.038888,
+    "csw_r": 1.02868,
+    "csw_t": 1.02868,
+    "t_boundary": -1
+  },
+  "source_times": [0, 8],
+  "benchmark_momentum": [3, 3, 3],
+  "gauge_glob": "wilson_b6.*",
+  "format": "nersc"
+}
+```
+
+Notes:
+
+- `benchmark_momentum` is a lattice momentum integer triplet for now, not a
+  scale-set physical momentum.
+- `gauge_glob` is resolved relative to the directory containing
+  `ensemble.json`.
+- `format` is currently expected to be `nersc`.
+
+## Current benchmark target
+
+Until scale setting is available, the boosted benchmark target is the pion with
+momentum `(3, 3, 3)` in lattice units. Metrics will prioritize:
+
+- better signal-to-noise ratio
+- smaller excited-state contamination
