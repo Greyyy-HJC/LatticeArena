@@ -4,16 +4,18 @@ import argparse
 from pathlib import Path
 import sys
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
-
-import tasks  # noqa: F401  # import for task registration side effects
-from core.task import get_task, list_tasks
-from core.leaderboard import print_leaderboard, load_results
+def _bootstrap_repo_root() -> None:
+    repo_root = Path(__file__).resolve().parents[1]
+    if str(repo_root) not in sys.path:
+        sys.path.insert(0, str(repo_root))
 
 
 def main():
+    _bootstrap_repo_root()
+    import tasks  # noqa: F401  # import for task registration side effects
+    from core.leaderboard import load_results, print_leaderboard
+    from core.task import get_task, list_tasks
+
     parser = argparse.ArgumentParser(description="Run LatticeArena benchmarks")
     parser.add_argument("--task", type=str, default=None, help="Run a specific task (default: all)")
     args = parser.parse_args()

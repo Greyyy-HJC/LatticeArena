@@ -7,18 +7,17 @@ from html import escape
 from pathlib import Path
 import sys
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+def _bootstrap_repo_root() -> None:
+    repo_root = Path(__file__).resolve().parents[1]
+    if str(repo_root) not in sys.path:
+        sys.path.insert(0, str(repo_root))
 
-from core.leaderboard import BenchmarkResult, collect_task_summaries
 
-
-def format_score(result: BenchmarkResult | None) -> str:
+def format_score(result: object | None) -> str:
     return f"{result.score:.2f}" if result is not None else "No score yet"
 
 
-def metric_from_result(result: BenchmarkResult | None, key: str) -> str:
+def metric_from_result(result: object | None, key: str) -> str:
     if result is None:
         return "N/A"
     value = result.metrics.get(key)
@@ -28,6 +27,9 @@ def metric_from_result(result: BenchmarkResult | None, key: str) -> str:
 
 
 def build_html() -> str:
+    _bootstrap_repo_root()
+    from core.leaderboard import collect_task_summaries
+
     summaries = collect_task_summaries()
     total_tasks = len(summaries)
     populated_tasks = sum(1 for summary in summaries if summary.best_result is not None)
@@ -295,6 +297,7 @@ def build_html() -> str:
 
 
 def main() -> None:
+    _bootstrap_repo_root()
     parser = argparse.ArgumentParser(description="Build the standalone LatticeArena leaderboard page")
     parser.add_argument(
         "--output",
