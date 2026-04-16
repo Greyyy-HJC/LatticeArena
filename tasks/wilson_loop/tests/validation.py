@@ -111,8 +111,7 @@ def validate_submission(
         return errors
     if transformed_output.shape != expected_identity.shape:
         errors.append(
-            "transformed output shape mismatch: "
-            f"got {transformed_output.shape}"
+            f"transformed output shape mismatch: got {transformed_output.shape}"
         )
         return errors
 

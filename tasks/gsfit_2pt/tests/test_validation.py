@@ -249,16 +249,31 @@ class InvalidFitWindow(Pion2PtGroundStateFit):
         )
 
 
-def test_underfit_single_state_scores_worse_than_baseline() -> None:
+def test_underfit_single_state_has_larger_bias_than_baseline() -> None:
     cases = make_synthetic_cases(num_samples=18, noise_multiplier=1.0)
-    baseline_score = benchmark_submission(
+    baseline_summary = benchmark_submission(
         PlainGroundStateFit(), cases=cases, max_resample_fits=8
-    )["score"]
-    underfit_score = benchmark_submission(
+    )
+    underfit_summary = benchmark_submission(
         UnderfitOneState(), cases=cases, max_resample_fits=8
-    )["score"]
+    )
 
-    assert baseline_score > underfit_score
+    assert (
+        underfit_summary["aggregate_relative_bias"]
+        > baseline_summary["aggregate_relative_bias"]
+    )
+
+    baseline_mixed = next(
+        case
+        for case in baseline_summary["cases"]
+        if case["case_name"] == "boosted_mixed"
+    )
+    underfit_mixed = next(
+        case
+        for case in underfit_summary["cases"]
+        if case["case_name"] == "boosted_mixed"
+    )
+    assert underfit_mixed["relative_bias"] > baseline_mixed["relative_bias"]
 
 
 def test_task_benchmark_rejects_invalid_submission() -> None:
