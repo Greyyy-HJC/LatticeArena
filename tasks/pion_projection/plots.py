@@ -21,7 +21,10 @@ def plot(output):
     labels = {'local': 'Local sink', 'tuned_gaussian': 'Tuned Gaussian ($H^{32}$)',
               'agent_signed_mixture': 'Agent signed mixture'}
     colors = {'local': '#536879', 'tuned_gaussian': '#D28B26', 'agent_signed_mixture': '#087F8C'}
-    fig, axes = plt.subplots(2, 2, figsize=(11, 8), layout='constrained')
+    try:
+        fig, axes = plt.subplots(2, 2, figsize=(11, 8), layout='constrained')
+    except TypeError:  # matplotlib < 3.6
+        fig, axes = plt.subplots(2, 2, figsize=(11, 8), constrained_layout=True)
     for name, item in report['results'].items():
         if 'risk' not in item:
             continue

@@ -1,0 +1,89 @@
+{
+  "version": "s16t16-wilson-v1",
+  "ensemble": "/public/home/acwzoxdwvj/dianjun/LatticeArena/data/S16T16",
+  "geometry": [
+    16,
+    16,
+    16,
+    16
+  ],
+  "development": [
+    0,
+    59
+  ],
+  "gap": [
+    60,
+    69
+  ],
+  "validation": [
+    70,
+    99
+  ],
+  "r_values": [
+    1,
+    2,
+    3
+  ],
+  "t_values": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "fit_window": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "reference_windows": [
+    [
+      4,
+      5,
+      6
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      5,
+      6,
+      7,
+      8
+    ]
+  ],
+  "reference_nominal_window": 1,
+  "kernels": [
+    {
+      "name": "identity",
+      "alpha": 0.0,
+      "steps": 0
+    },
+    {
+      "name": "ape_a0.5_n5",
+      "alpha": 0.5,
+      "steps": 5
+    },
+    {
+      "name": "ape_a0.5_n10",
+      "alpha": 0.5,
+      "steps": 10
+    },
+    {
+      "name": "ape_a0.7_n10",
+      "alpha": 0.7,
+      "steps": 10
+    }
+  ],
+  "reference_kernel": 0,
+  "block_length": 5,
+  "bootstrap_samples": 1000,
+  "seed": 20261116,
+  "reference_max_relative_se": 0.05,
+  "reference_max_window_z": 2.5,
+  "score_epsilon": 1e-12
+}

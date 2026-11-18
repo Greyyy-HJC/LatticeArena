@@ -1,12 +1,28 @@
 """Development-only optimization followed by frozen held-out evaluation."""
 import json
+import os
 from pathlib import Path
 
 import numpy as np
 from scipy.optimize import minimize
 
+from core.state import RunState
+
+from core.io import digest_text
+
 from .common import digest, fingerprint, load_data, protocol, write_json
-from .statistics import (ReferenceFit, blocks, bootstrap_indices, fold, inverse_covariance, risk)
+from .identity import verify_run_identity
+from .reference import make_reference, reference_kind, reference_spec, verify_reference
+from .statistics import blocks, bootstrap_indices, fold, inverse_covariance, risk
+
+
+def reflection_odd(raw):
+    """C(t) - C(T-t) for t=1..T/2-1, valid for any even temporal extent."""
+    temporal = raw.shape[-1]
+    if temporal % 2:
+        raise ValueError('Reflection check needs an even temporal extent')
+    t = np.arange(1, temporal // 2)
+    return raw[..., t] - raw[..., temporal - t]
 
 
 def late_metric(data, weights, p):
@@ -19,12 +35,13 @@ def develop(output):
     if (output / 'submission.json').exists() or (output / 'validation.npz').exists():
         raise ValueError('Development is closed for this run; use a new run and disclose prior validation access')
     p = protocol()
+    spec = reference_spec()
     raw = load_data(output, 'development')
     data = blocks(fold(raw), p['block_length'])
     index = bootstrap_indices(len(data), p['bootstrap_samples'], p['seed'])
     windows, masses = [], []
     for window in p['reference_windows']:
-        model = ReferenceFit(data, p, window)
+        model = make_reference(data, p, window, spec['kind'])
         result, boot = model.bootstrap(index)
         windows.append(result)
         masses.append(boot)
@@ -45,10 +62,12 @@ def develop(output):
                 failures.append(f'Reference window {window["window"]} shifts by {z:.2f} paired standard errors')
     if np.any(mb <= p['mass_bounds'][0]+1e-4) or np.any(mb >= p['mass_bounds'][1]-1e-4):
         failures.append('Reference bootstrap reaches mass bounds')
-    odd = raw[..., 1:8]-raw[..., 15:8:-1]
+    odd = reflection_odd(raw)
     odd_blocks = blocks(odd, p['block_length'])
     odd_se = odd_blocks.std(axis=0, ddof=1)/np.sqrt(len(odd_blocks))
-    reflection_z = float(np.max(abs(odd_blocks.mean(axis=0))/odd_se))
+    odd_mean = odd_blocks.mean(axis=0)
+    z = np.divide(np.abs(odd_mean), odd_se, out=np.zeros_like(odd_mean), where=odd_se > 0)
+    reflection_z = float(np.max(z))
     if reflection_z > p['reflection_max_z']:
         failures.append('Forward/backward symmetry check exceeds the fixed z threshold')
     sensitivity = {}
@@ -91,6 +110,27 @@ def develop(output):
     submissions = {'local': basis[0].tolist(), 'tuned_gaussian': basis[best].tolist(),
                    'agent_signed_mixture': weights.tolist()}
     metrics = {name: late_metric(data, w, p).tolist() for name, w in submissions.items()}
+    state = RunState()
+    tests_path = Path(__file__).resolve().parents[2] / 'tests' / 'test_pion_projection.py'
+    diagnostics = Path('results/pion_projection/score_diagnostics_v3/diagnostics.json')
+    state.set('operator', 'draft', 'kernels.py')
+    state.set('operator', 'validated', 'tests',
+              evidence_hash=digest(tests_path) if tests_path.exists() else None)
+    state.set('numerical', 'draft', 'condition numbers / floor diagnostics')
+    state.set('numerical', 'validated', 'score_diagnostics_v3',
+              evidence_hash=digest(diagnostics) if diagnostics.exists() else None)
+    calibration_hash = digest_text(json.dumps(calibration, sort_keys=True))
+    state.set('reference', 'draft', 'single-cosh calibration')
+    if calibration['reference_passed']:
+        state.set('reference', 'validated', 'reference gate passed', evidence_hash=calibration_hash)
+    else:
+        state.set('reference', 'failed', '; '.join(calibration['failure_reasons']))
+    state.set('statistical', 'draft', 'block bootstrap')
+    state.set('statistical', 'validated', f'{len(data)} blocks',
+              evidence_hash=digest(output / 'development.npz'))
+    state.set('comparison', 'draft', 'risk ratios')
+    if not calibration['reference_passed']:
+        state.set('comparison', 'failed', 'reference gate failed')
     frozen = {'protocol_hash': fingerprint(p), 'development_sha256': digest(output/'development.npz'),
               'statistics_sha256': digest(Path(__file__).with_name('statistics.py')),
               'kernel_sha256': digest(Path(__file__).with_name('kernels.py')),
@@ -99,14 +139,30 @@ def develop(output):
               'late_inverse_covariances': metrics, 'selected_gaussian_power': p['powers'][best],
               'optimizer': {'converged_starts': len(outcomes), 'objective': float(fit.fun),
                             'iterations': int(fit.nit), 'l1': float(abs(fit.x).sum())},
-              'calibration': calibration}
+              'calibration': calibration, 'reference': spec, 'run_state': state.summary(),
+              'gate_artifact': {
+                  'model': spec['kind'],
+                  'window': p['reference_windows'][p['reference_nominal_window']],
+                  'prior': {'mass_bounds': p['mass_bounds'], 'amplitude_z_min': p['amplitude_z_min'],
+                            'min_fit_p': p['reference_min_fit_p']},
+                  'reference_source': {'statistics': digest(Path(__file__).with_name('statistics.py')),
+                                       'implementation': digest(Path(__file__).with_name('reference.py'))},
+                  'development_sha256': digest(output / 'development.npz'),
+                  'candidates': list(submissions),
+                  'metric': {'score_window': p['score_window'], 'amplitude_window': p['amplitude_window'],
+                             'covariance_shrinkage': p['covariance_shrinkage']},
+                  'protocol_hash': fingerprint(p),
+                  'calibration': {'passed': calibration['reference_passed'],
+                                  'failures': calibration['failure_reasons'],
+                                  'chi2': calibration['reference']['chi2'],
+                                  'dof': 8 if spec['kind'] == 'single' else None}}}
     write_json(output/'development_results.json', {'basis': baseline_results, 'agent': candidate_result})
     write_json(output/'submission.json', frozen)
     np.savez_compressed(output/'reference_bootstrap.npz', masses=mb, indices=index)
     print('FROZEN_SUBMISSION', json.dumps(frozen), flush=True)
 
 
-def nested_intervals(development, validation, frozen, p):
+def nested_intervals(development, validation, frozen, p, kind=None):
     """Resample the entire conditional risk statistic, including its variance.
 
     Fit metrics are frozen at development, not re-estimated on validation or
@@ -114,7 +170,7 @@ def nested_intervals(development, validation, frozen, p):
     correlations between all candidates. No replicate is silently discarded.
     """
     rng = np.random.default_rng(p['seed']+2)
-    model = ReferenceFit(development, p, p['reference_windows'][p['reference_nominal_window']])
+    model = make_reference(development, p, p['reference_windows'][p['reference_nominal_window']], kind)
     names = list(frozen['submissions'])
     draws = []
     for outer in range(p['outer_samples']):
@@ -144,16 +200,55 @@ def evaluate(output):
         raise ValueError('Frozen protocol or development data changed')
     if frozen['statistics_sha256'] != digest(Path(__file__).with_name('statistics.py')) or frozen['kernel_sha256'] != digest(Path(__file__).with_name('kernels.py')):
         raise ValueError('Frozen scoring/kernel implementation changed')
+    spec = frozen.get('reference')
+    if spec is None:
+        if os.environ.get('LATTICEARENA_LEGACY_REFERENCE') != '1':
+            raise ValueError('Frozen submission has no reference spec; set LATTICEARENA_LEGACY_REFERENCE=1 for a read-only legacy replay')
+        kind = reference_kind()
+    else:
+        kind = verify_reference(spec)
     dev = blocks(fold(load_data(output, 'development')), p['block_length'])
     raw = load_data(output, 'validation')
     val = blocks(fold(raw), p['block_length'])
-    model = ReferenceFit(dev, p, p['reference_windows'][p['reference_nominal_window']])
+    model = make_reference(dev, p, p['reference_windows'][p['reference_nominal_window']], kind)
     reference, mb = model.bootstrap(bootstrap_indices(len(dev), p['bootstrap_samples'], p['seed']))
     vi = bootstrap_indices(len(val), p['bootstrap_samples'], p['seed']+1)
+    state = RunState()
+    frozen_state = frozen.get('run_state', {})
+    for name in ('operator', 'reference', 'numerical', 'statistical'):
+        state.status[name] = frozen_state.get('status', {}).get(name, 'draft')
+    state.set('comparison', 'draft', 'evaluate')
+    state.observe_validation(f'evaluate:{p["version"]}')
+    if not frozen['calibration']['reference_passed']:
+        state.set('comparison', 'failed', 'reference gate failed')
+    kind_checked, identity_reasons = verify_run_identity(output, (kind,))
+    certification = {'status': 'abstain', 'reasons': identity_reasons}
+    certification_source = 'identity_check'
+    joint_dir = output / 'joint'
+    if not identity_reasons and (joint_dir / 'joint_manifest.json').exists() and (joint_dir / 'metric_results.json').exists():
+        joint_manifest = json.loads((joint_dir / 'joint_manifest.json').read_text())
+        compatible = (joint_manifest.get('protocol_hash') == fingerprint(p)
+                      and joint_manifest.get('development_sha256') == digest(output / 'development.npz')
+                      and joint_manifest.get('validation_sha256') == digest(output / 'validation.npz')
+                      and joint_manifest.get('reference_kind') == kind)
+        if compatible:
+            certification = json.loads((joint_dir / 'metric_results.json').read_text())
+            certification_source = 'joint'
+        else:
+            certification = {'status': 'abstain',
+                             'reasons': ['joint manifest does not match this run identity']}
+            certification_source = 'joint_rejected'
+    elif not identity_reasons:
+        certification = {'status': 'abstain',
+                         'reasons': ['evaluate has no joint draws; run the joint command']}
+        certification_source = 'no_joint'
     report = {'protocol': p, 'submission_sha256': digest(output/'submission.json'),
+              'run_state': state.summary(), 'physical_score': state.score_or_null(),
+              'certification': certification, 'certification_source': certification_source,
               'validation_sha256': digest(output/'validation.npz'), 'reference': reference,
               'reference_passed': frozen['calibration']['reference_passed'],
               'reference_failure_reasons': frozen['calibration']['failure_reasons'],
+              'reference_spec': spec, 'reference_kind': kind,
               'n_validation_configurations': len(raw), 'n_validation_blocks': len(val),
               'results': {}, 'score_status': 'pilot_only' if frozen['calibration']['reference_passed'] else 'unscored_reference_failed'}
     for name, weights in frozen['submissions'].items():
@@ -169,7 +264,7 @@ def evaluate(output):
         for value in report['results'].values():
             value['diagnostic_loss_ratio_vs_local'] = (baseline+eps)/(value['risk']+eps)
             value['score'] = 100*value['diagnostic_loss_ratio_vs_local'] if report['reference_passed'] else None
-        draws, names = nested_intervals(dev, val, frozen, p)
+        draws, names = nested_intervals(dev, val, frozen, p, kind)
         np.savez_compressed(output/'nested_bootstrap.npz', risks=draws, names=np.array(names))
         for j, name in enumerate(names):
             ratios = (draws[:, 0]+eps)/(draws[:, j]+eps)
@@ -179,5 +274,6 @@ def evaluate(output):
         report['agent_vs_tuned_gaussian'] = {
             'risk_ratio': report['results']['tuned_gaussian']['risk']/report['results']['agent_signed_mixture']['risk'],
             'risk_ratio_95_interval': np.quantile((draws[:, k]+eps)/(draws[:, j]+eps), [.025, .975]).tolist()}
+    report['conditional_scores'] = {name: value.get('score') for name, value in report['results'].items()}
     write_json(output/'validation_results.json', report)
     print('VALIDATION', json.dumps(report), flush=True)

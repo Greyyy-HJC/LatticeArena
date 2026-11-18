@@ -1,0 +1,614 @@
+{
+  "lattice": [
+    16,
+    16,
+    16,
+    16
+  ],
+  "beta": 6.0,
+  "n_steps": 120,
+  "seed": 20261109,
+  "ensemble": "LatticeArena-pilot",
+  "configs": [
+    {
+      "id": 0,
+      "trajectory": 401,
+      "plaquette": 0.5933718937430758,
+      "sha256": "7a86559e843b3a419880d99efb3e0defe5de10b63cb6a4c0e808a7b3aa61649f"
+    },
+    {
+      "id": 1,
+      "trajectory": 406,
+      "plaquette": 0.5933801176784064,
+      "sha256": "3b70e8d9841a222822f9da0697bebcf53cf41e13f559caa46f1c44e4b52f4eb3"
+    },
+    {
+      "id": 2,
+      "trajectory": 411,
+      "plaquette": 0.5941724332827687,
+      "sha256": "539694bb3383d8f0980b2912c11c2135cfb60da9c0c1f606978640832e238dd7"
+    },
+    {
+      "id": 3,
+      "trajectory": 416,
+      "plaquette": 0.5930860169353129,
+      "sha256": "bb306a34f0aeece80db859ead2bada3deddccddcb1f15e0d03ba04a420b38289"
+    },
+    {
+      "id": 4,
+      "trajectory": 421,
+      "plaquette": 0.593924293132974,
+      "sha256": "ba0ffe5e7d68738cabe3c79a970cfaad005e37358cc62bcbc760472648328216"
+    },
+    {
+      "id": 5,
+      "trajectory": 426,
+      "plaquette": 0.5933938137157294,
+      "sha256": "aaf4880cd36d405982c44cdb895368de02c6fba3862bdf51ea4ec448b26b73d8"
+    },
+    {
+      "id": 6,
+      "trajectory": 431,
+      "plaquette": 0.5936095409806676,
+      "sha256": "76bbcc8d5c99c9cf18c45ee02bc9738bcd9879c8124ea64a768d28bddcc1ce58"
+    },
+    {
+      "id": 7,
+      "trajectory": 436,
+      "plaquette": 0.5935725793493936,
+      "sha256": "ce80e595e5c3dd7e33ad4522a2b51c5f874e8dbf0a35ab4ebc95c404e5e25307"
+    },
+    {
+      "id": 8,
+      "trajectory": 441,
+      "plaquette": 0.5940740476302859,
+      "sha256": "4c28f674ad7b91552260b9898feff21369dee3f4edb82c268b8fd6f4bba7451a"
+    },
+    {
+      "id": 9,
+      "trajectory": 446,
+      "plaquette": 0.5937920610286733,
+      "sha256": "781430dbe250ca9f0004a78dada7a55fd93fa78fcb29d54418430fcd6a3b820a"
+    },
+    {
+      "id": 10,
+      "trajectory": 451,
+      "plaquette": 0.5943134935603114,
+      "sha256": "09c200610c9ff4fc810e7781fe4da743009a9a9b6bf6ea41deba416a0e4bfa26"
+    },
+    {
+      "id": 11,
+      "trajectory": 456,
+      "plaquette": 0.5938551833391832,
+      "sha256": "06f303fcb4830a045d50ce31fe9230bc428cfeb8589d8b8c560fd3a7e312b0b2"
+    },
+    {
+      "id": 12,
+      "trajectory": 461,
+      "plaquette": 0.5941772287864531,
+      "sha256": "f36cea8800e7947cbefd024161226bd92f65397db0dfb884076f2b2a27b25ece"
+    },
+    {
+      "id": 13,
+      "trajectory": 466,
+      "plaquette": 0.5947197647404999,
+      "sha256": "0390655cec3a96e010fbd17be6cf7efca313b2cbe18745916d9f2ceea02d8bac"
+    },
+    {
+      "id": 14,
+      "trajectory": 471,
+      "plaquette": 0.5940730241332697,
+      "sha256": "8adee1f7367021012289f8fdd482e9f8e6c6cfdd0a172ac6614b20321a00c8a5"
+    },
+    {
+      "id": 15,
+      "trajectory": 476,
+      "plaquette": 0.5935219584193164,
+      "sha256": "df934b590e3d5f90cb09b8c553409a1f79ef4343f312e56db84d9bebf0bc0999"
+    },
+    {
+      "id": 16,
+      "trajectory": 481,
+      "plaquette": 0.5937615933076104,
+      "sha256": "e2926ae255f7b45522774ed5acdf4d0183b6a596851ec33d6ff25cefa6ae86b8"
+    },
+    {
+      "id": 17,
+      "trajectory": 486,
+      "plaquette": 0.593891526561406,
+      "sha256": "483abf7c715a686306e5fe42037efcd101f2dc4efc436d9166d647e98d0d8a3b"
+    },
+    {
+      "id": 18,
+      "trajectory": 491,
+      "plaquette": 0.5942656603597918,
+      "sha256": "71f9d27e2c48bda3e6ec396c51bea02095014f4e2b90de038b2ee379a0eaac9d"
+    },
+    {
+      "id": 19,
+      "trajectory": 496,
+      "plaquette": 0.5942147697523483,
+      "sha256": "313665321c2c5a5fc589e0e4181e5eaba12e260f99586ef93e4a5e73734f663a"
+    },
+    {
+      "id": 20,
+      "trajectory": 501,
+      "plaquette": 0.594318637233819,
+      "sha256": "e1df4d9623eea32ddcfda01dc4d8e6a295bd82192fad4fdce8d01583f7709256"
+    },
+    {
+      "id": 21,
+      "trajectory": 506,
+      "plaquette": 0.593844237683939,
+      "sha256": "2f861295c40f3e846cdcf3e1eddacaea275b1bd9ceb26ec5b1f795a694f013b0"
+    },
+    {
+      "id": 22,
+      "trajectory": 511,
+      "plaquette": 0.5933224248112765,
+      "sha256": "d52a351a8abec0261a80afebd08007fe68485bbc3a5469c990a8f0121afda607"
+    },
+    {
+      "id": 23,
+      "trajectory": 516,
+      "plaquette": 0.5947414004522893,
+      "sha256": "a6984a4ec1b318aa14cb0653a099115304c21d93ba10525b497e1c1a435d8f9c"
+    },
+    {
+      "id": 24,
+      "trajectory": 521,
+      "plaquette": 0.5941036747003667,
+      "sha256": "48471e71d59732b328c316591c71f7b98a97059e0818a82a554d0776b6156e6c"
+    },
+    {
+      "id": 25,
+      "trajectory": 526,
+      "plaquette": 0.5932020461869549,
+      "sha256": "1ecd0bc71c27d5943c00ea26ec3b063a32f5a92b81f387d5db0fb9ef9df636e8"
+    },
+    {
+      "id": 26,
+      "trajectory": 531,
+      "plaquette": 0.593667298837494,
+      "sha256": "ae1b93b818d1a0375b5ff978857c1ef3ed3915578856bf9e13bca486ee233ddc"
+    },
+    {
+      "id": 27,
+      "trajectory": 536,
+      "plaquette": 0.593550679081859,
+      "sha256": "621c5e5eb32d6a31bf8a5a247c30440495b51624495443a0ec8f20bd6be61d26"
+    },
+    {
+      "id": 28,
+      "trajectory": 541,
+      "plaquette": 0.5936451244547748,
+      "sha256": "496a2ed9ecc77865cfe55b2741104f41df0a7321950c7f0a53e059a8b1219e71"
+    },
+    {
+      "id": 29,
+      "trajectory": 546,
+      "plaquette": 0.5930547696705135,
+      "sha256": "2ab7efcb0e833fe8700caefb479bfb8dd4a306864b87accd36d7ef2e8770d730"
+    },
+    {
+      "id": 30,
+      "trajectory": 551,
+      "plaquette": 0.5942090351691199,
+      "sha256": "30a1cfc13942dd176d31b78db07fe223ba1ed2bbbe51b5ff2240e73e9777d2b3"
+    },
+    {
+      "id": 31,
+      "trajectory": 556,
+      "plaquette": 0.5942784644074619,
+      "sha256": "835fd18361dd82e6e9dbf130c1520289f7161712f858156b4329bff07fd896f9"
+    },
+    {
+      "id": 32,
+      "trajectory": 561,
+      "plaquette": 0.593614220318857,
+      "sha256": "dbe563f7184093b3d1be7981d1265db7fd2ffeefe2f24ca5e453d8f82025eb10"
+    },
+    {
+      "id": 33,
+      "trajectory": 566,
+      "plaquette": 0.5932829809844407,
+      "sha256": "086a7d874670db965de804a87c9aa11ee43eb106ea0b5330a0cda57f33065022"
+    },
+    {
+      "id": 34,
+      "trajectory": 571,
+      "plaquette": 0.5945999126684374,
+      "sha256": "2a9074f1a1c93a0ed7dd3a27fc93ef73cebdaf5e9ff39d7b114f801256d4c2ab"
+    },
+    {
+      "id": 35,
+      "trajectory": 576,
+      "plaquette": 0.5929628100205417,
+      "sha256": "38cd81872a1794bb2f073607f644af7935cff3e2354de294a5fb81106b9901ec"
+    },
+    {
+      "id": 36,
+      "trajectory": 581,
+      "plaquette": 0.5939777670477859,
+      "sha256": "a112017c19488631f17a456c959ee5e953f1194849f3a1637180d3fbbd82b724"
+    },
+    {
+      "id": 37,
+      "trajectory": 586,
+      "plaquette": 0.5938697573882981,
+      "sha256": "f7722bec67b5cedc2d78d161352603ea3330f73278f6ac0c04175d3d099882c2"
+    },
+    {
+      "id": 38,
+      "trajectory": 591,
+      "plaquette": 0.5928147393327388,
+      "sha256": "6486e422428b2739711109edc2cbd9762a90edc7ae3d62e96effb2e03cf0b0a4"
+    },
+    {
+      "id": 39,
+      "trajectory": 596,
+      "plaquette": 0.5936612810015526,
+      "sha256": "84240b98885ea13d3c9a7ec241dabe99aede4492f0203d90605d67c2260f6868"
+    },
+    {
+      "id": 40,
+      "trajectory": 601,
+      "plaquette": 0.5937311742538811,
+      "sha256": "40b19d6daa32ebe374a7ce8956ee2a43d5581583dc92d9fe3d31191aea7201de"
+    },
+    {
+      "id": 41,
+      "trajectory": 606,
+      "plaquette": 0.594506178236296,
+      "sha256": "0f81069b4417c6603e8dc4bf4b4bf0c6c4c7bcee167511e7d10c81080e1fe20f"
+    },
+    {
+      "id": 42,
+      "trajectory": 611,
+      "plaquette": 0.5933621797078088,
+      "sha256": "838184cbc424e7f6a078bf5679bc95578ee3f5387e50286775dde2baace18f3b"
+    },
+    {
+      "id": 43,
+      "trajectory": 616,
+      "plaquette": 0.5947456326742608,
+      "sha256": "45e2e711ea5d0de74c3e544d792684d1e03acf9a9d1bf32c7678b408895e2fb3"
+    },
+    {
+      "id": 44,
+      "trajectory": 621,
+      "plaquette": 0.5933166742885425,
+      "sha256": "c7889a4faecfb037cb0506a3c680c2bc5841c9c1e545d3e928b2e1a35fce3526"
+    },
+    {
+      "id": 45,
+      "trajectory": 626,
+      "plaquette": 0.5934979761057954,
+      "sha256": "b3b0b31430cb4b1ed0d19bcb5816f26035e029448536a16b1a5638a398c11b3c"
+    },
+    {
+      "id": 46,
+      "trajectory": 631,
+      "plaquette": 0.5937757439843898,
+      "sha256": "ae67f81e516e9c581604bc63836f48426903df038757d83ec6bbcefa0ba39c66"
+    },
+    {
+      "id": 47,
+      "trajectory": 636,
+      "plaquette": 0.5940744426728907,
+      "sha256": "219abc6ce7e61387078aafd351a67762e7cc74d32eca04479f0d8795289904fc"
+    },
+    {
+      "id": 48,
+      "trajectory": 641,
+      "plaquette": 0.5934226631071214,
+      "sha256": "2cfd81bf7be0f17719505d203c6c596c19afe285d125d4f26939d384de4683a4"
+    },
+    {
+      "id": 49,
+      "trajectory": 646,
+      "plaquette": 0.5935691340251134,
+      "sha256": "c6b794deb88f573f2721acea0b614173ad6f271bcc18011ceb6c900338820ce0"
+    },
+    {
+      "id": 50,
+      "trajectory": 651,
+      "plaquette": 0.5928758299377384,
+      "sha256": "38bb0206ce391911581eee4cb09bce9f2c0f6613c49b23b2e3e1d88d69323d3f"
+    },
+    {
+      "id": 51,
+      "trajectory": 656,
+      "plaquette": 0.5932589173795376,
+      "sha256": "77c906f38b4526f5a49166e08d8047d97359709053ec3fa183d159b24a06c2ed"
+    },
+    {
+      "id": 52,
+      "trajectory": 661,
+      "plaquette": 0.5935994233841666,
+      "sha256": "cd4d49146f2e5e4f3e625e1eb0e83a5ed6255544fab245ad67e450446ad40292"
+    },
+    {
+      "id": 53,
+      "trajectory": 666,
+      "plaquette": 0.5939218869383919,
+      "sha256": "c64cdd0347c9a9b6455ca92acc81540b1923899c21a752352e4c99af0c71ae52"
+    },
+    {
+      "id": 54,
+      "trajectory": 671,
+      "plaquette": 0.5942971902464494,
+      "sha256": "8134ea15f4bc6461b05e3f6d5e52d72bdf9bd28b84c231976128d9ca20e459f1"
+    },
+    {
+      "id": 55,
+      "trajectory": 676,
+      "plaquette": 0.5944456230768707,
+      "sha256": "3686bb9cd8f6975a9bb582fc08172060683732d8e62b85ca82dbe8f06415019c"
+    },
+    {
+      "id": 56,
+      "trajectory": 681,
+      "plaquette": 0.5942152946807426,
+      "sha256": "adc3f5bf07c6f1756cc22743576fc56c57a19d39b2f840ebc3d5e3700f06a1bf"
+    },
+    {
+      "id": 57,
+      "trajectory": 686,
+      "plaquette": 0.5931966958130821,
+      "sha256": "d53e82169caf7cb961ef549b2f325ac3b17f64206d23482c4fbabf9af4abdff2"
+    },
+    {
+      "id": 58,
+      "trajectory": 691,
+      "plaquette": 0.5936394166365078,
+      "sha256": "fc4ad916c5f65b959c64d30056e3374f879d021f73b4c8be28f8bd555761ba5a"
+    },
+    {
+      "id": 59,
+      "trajectory": 696,
+      "plaquette": 0.5936702224474691,
+      "sha256": "0ae6041d955d8df68abace87ee8b2af27881cde0889aeffd5d2c7949745b72f9"
+    },
+    {
+      "id": 60,
+      "trajectory": 701,
+      "plaquette": 0.5935029540443764,
+      "sha256": "2815f60ce8d2fc5dee5e42183094ea394d0822ffc5dd1c9cffcec740ba1ceb7e"
+    },
+    {
+      "id": 61,
+      "trajectory": 706,
+      "plaquette": 0.5931477245490497,
+      "sha256": "2bc588ad798fa1cb8ec1406ca54685cef61d9cc4bc05a1764a63a26567812c44"
+    },
+    {
+      "id": 62,
+      "trajectory": 711,
+      "plaquette": 0.594133186668386,
+      "sha256": "189f9b148038693f6018a05482db3a56ff0106d2d8404be8858e5e4e3cc2cea4"
+    },
+    {
+      "id": 63,
+      "trajectory": 716,
+      "plaquette": 0.5937351616609334,
+      "sha256": "ee875b1d0672713cbca243599b6d4f04a6a763a183eef43c5501d0ca89d3cff4"
+    },
+    {
+      "id": 64,
+      "trajectory": 721,
+      "plaquette": 0.5934996498354534,
+      "sha256": "b11f53e8598d6d4147a82de8b1a2591c54a3ef6368b995ede793acc44a62afdf"
+    },
+    {
+      "id": 65,
+      "trajectory": 726,
+      "plaquette": 0.5937544860583961,
+      "sha256": "7fd56ef168cfa4e4bcca59eaab2210d345a8c217606e9e2fd3780e0ae9533ca8"
+    },
+    {
+      "id": 66,
+      "trajectory": 731,
+      "plaquette": 0.5935782635975508,
+      "sha256": "a3b7a963e82d21c50ae08543f259176feee96e92ce22a9276327881ba1b05d92"
+    },
+    {
+      "id": 67,
+      "trajectory": 736,
+      "plaquette": 0.5936903865845236,
+      "sha256": "b954ae9d6bd2a9581987115bc9b31164d5289b09cab77321d2d2d3240338fe52"
+    },
+    {
+      "id": 68,
+      "trajectory": 741,
+      "plaquette": 0.593319359451898,
+      "sha256": "a5f44899f099ba3b091b9ad2bf56143f8bc352c9769785b6dbdd96ae2588b634"
+    },
+    {
+      "id": 69,
+      "trajectory": 746,
+      "plaquette": 0.5929215697240531,
+      "sha256": "60ddd159f22ed06251f45d18e918715426e159ad710b99d31111cdec81445c7c"
+    },
+    {
+      "id": 70,
+      "trajectory": 751,
+      "plaquette": 0.5933837182774495,
+      "sha256": "060882f5377dfb228b984b890e6060e7d22cbfb5eacc0f58e175001cc6da3fcd"
+    },
+    {
+      "id": 71,
+      "trajectory": 756,
+      "plaquette": 0.5938770159023192,
+      "sha256": "1d5bac18909b60d2574ce72d896f3ed9597279bece378d5d2da9d946d4df74d6"
+    },
+    {
+      "id": 72,
+      "trajectory": 761,
+      "plaquette": 0.5934284616435272,
+      "sha256": "92bbbc0704ae7016f03306b3b3f1d7d56be2e25147591c400b736227dbf67dec"
+    },
+    {
+      "id": 73,
+      "trajectory": 766,
+      "plaquette": 0.5944246149169035,
+      "sha256": "7d569310b278ce2dd5856a52f68b450e6f9534d2ecffc479f441bb9b6a9e276d"
+    },
+    {
+      "id": 74,
+      "trajectory": 771,
+      "plaquette": 0.5934296790040399,
+      "sha256": "9dfea83ffc9fefc9e03a69bacabb3ada2fd3022b690926a6872a3c275b20c0e7"
+    },
+    {
+      "id": 75,
+      "trajectory": 776,
+      "plaquette": 0.5939087828435803,
+      "sha256": "823891dfa66ec12a34c402f2fa1187f75ef85c69a34db35dbfb3e4c811a41ac4"
+    },
+    {
+      "id": 76,
+      "trajectory": 781,
+      "plaquette": 0.5948447096535594,
+      "sha256": "db9bcbfff46b8050c0957b00fbed88d6389187ed8474de0e423d17770b9ea216"
+    },
+    {
+      "id": 77,
+      "trajectory": 786,
+      "plaquette": 0.5936965373571841,
+      "sha256": "f8478559fbd1630ec9c86e73ed1b7ebae4b370c46bb321d9714c0617ff673a68"
+    },
+    {
+      "id": 78,
+      "trajectory": 791,
+      "plaquette": 0.5943784097971313,
+      "sha256": "c5339f3606a7603a223eb0a69fecd01608bcf3c7ba3821945cd41fb3ff1f64fe"
+    },
+    {
+      "id": 79,
+      "trajectory": 796,
+      "plaquette": 0.5933522529766406,
+      "sha256": "1f260f7c5399d83b122286aa5968a70f2e407607e231b2217a9a8492b5f6b0f5"
+    },
+    {
+      "id": 80,
+      "trajectory": 801,
+      "plaquette": 0.5930838215257692,
+      "sha256": "33e1472712b18a536dac1b04173856315cd58a3cf7efe489af10453994991607"
+    },
+    {
+      "id": 81,
+      "trajectory": 806,
+      "plaquette": 0.5937553472778576,
+      "sha256": "15b4a51627141bbda522fce7d4dd4f5067ff22eeef453ebc5c1230287a1c40c0"
+    },
+    {
+      "id": 82,
+      "trajectory": 811,
+      "plaquette": 0.5942837493661741,
+      "sha256": "3ba4432b59726d57e39a3c88b36162c6e2c1bbcd9fdfd51d82ab5c6719941967"
+    },
+    {
+      "id": 83,
+      "trajectory": 816,
+      "plaquette": 0.5932984481011705,
+      "sha256": "936e96bb80d7d1dc39559646fba453e92b900dca824d8ad889a76df73f7f2cc9"
+    },
+    {
+      "id": 84,
+      "trajectory": 821,
+      "plaquette": 0.5936137770373723,
+      "sha256": "1893b6a0814bbb1cd10fdcbcdf2779fa5fa633be71a42cbf6fc629c230226190"
+    },
+    {
+      "id": 85,
+      "trajectory": 826,
+      "plaquette": 0.5940041653894996,
+      "sha256": "6009647a4a5ae347801dbd282584880df415c1f86859d86d8b7bb49d75ad4475"
+    },
+    {
+      "id": 86,
+      "trajectory": 831,
+      "plaquette": 0.5955247672224266,
+      "sha256": "7045b2775cd401b0913315dc913b24ead806dea959953c6f0b1add76ff308be6"
+    },
+    {
+      "id": 87,
+      "trajectory": 836,
+      "plaquette": 0.5932079226033703,
+      "sha256": "4a88399bdbd52ca832e25075d724c7c63099fac7f04c2c6f4375854228c04127"
+    },
+    {
+      "id": 88,
+      "trajectory": 841,
+      "plaquette": 0.5941941008578783,
+      "sha256": "ebaed8d1e067893f9930a8de326f2e03f105a8c7969e8195c494aa129a5ac663"
+    },
+    {
+      "id": 89,
+      "trajectory": 846,
+      "plaquette": 0.593917130067735,
+      "sha256": "b76be4738fec93b65ef9f6a9735a4aff2bf79469eda8ee8dfd78fc15cc515b36"
+    },
+    {
+      "id": 90,
+      "trajectory": 851,
+      "plaquette": 0.5933766978915311,
+      "sha256": "4ede9aedfa53d937057c771d8669a3cf30242f717552c47d1aa795061a91ab48"
+    },
+    {
+      "id": 91,
+      "trajectory": 856,
+      "plaquette": 0.59410164006492,
+      "sha256": "616d953bb8fd77e3874539685e0f9bb0843daee974db2b60dfd2e455e927a071"
+    },
+    {
+      "id": 92,
+      "trajectory": 861,
+      "plaquette": 0.5932622073144939,
+      "sha256": "ac2498743faaee6a490b8efd1c7bd877ab941a0bc569b0baee9ba172fa01bff1"
+    },
+    {
+      "id": 93,
+      "trajectory": 866,
+      "plaquette": 0.5937441255110449,
+      "sha256": "d8aeab3537fb08389d6b96ddebbb838781b179bcfe1e5c08b759bd86f5d05e33"
+    },
+    {
+      "id": 94,
+      "trajectory": 871,
+      "plaquette": 0.5927323709913219,
+      "sha256": "e0aef2be36ef85458ce78200e7e15d777b4af6f78ea736ffb7ca12e072a00c84"
+    },
+    {
+      "id": 95,
+      "trajectory": 876,
+      "plaquette": 0.594107358897932,
+      "sha256": "0ebb6ae65cfba3ae1b051ef75d811a5069e565e88eb3d227bf5304a36d03dee9"
+    },
+    {
+      "id": 96,
+      "trajectory": 881,
+      "plaquette": 0.5942459954071664,
+      "sha256": "a8aec0a008ccdd53f0b2e2b45c91b5949bfe13cb37f79a9104cef9d3758cd5b0"
+    },
+    {
+      "id": 97,
+      "trajectory": 886,
+      "plaquette": 0.5934615161741487,
+      "sha256": "1ad61edcf3472922af0878ba4b5b9183b7d409bf7a639619261ca40e8f6121f2"
+    },
+    {
+      "id": 98,
+      "trajectory": 891,
+      "plaquette": 0.5939121044422824,
+      "sha256": "e81ba6ee1736e27955c5c064cf7878a9bd6f06d27155f793b0c305985f631726"
+    },
+    {
+      "id": 99,
+      "trajectory": 896,
+      "plaquette": 0.5930338526776917,
+      "sha256": "a606f781565fb61cbd37c4e98b66002ffc40ac04fa34892138e3ec3881663d6e"
+    }
+  ]
+}

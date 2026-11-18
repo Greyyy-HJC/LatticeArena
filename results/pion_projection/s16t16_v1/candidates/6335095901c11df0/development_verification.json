@@ -1,0 +1,31 @@
+{
+  "definition": {
+    "builder": "tasks.pion_projection.kernels:build_kernel",
+    "parameters": {
+      "powers": [
+        0,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64
+      ],
+      "weights": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        32.74842628589201,
+        107.06242470728536,
+        0.0
+      ],
+      "alpha": 0.2
+    }
+  },
+  "configuration": 0,
+  "max_absolute_difference": 3.552713678800501e-15,
+  "max_relative_difference": 1.9229575545937308e-15,
+  "seconds": 17.03472221828997,
+  "reference_submission_sha256": "55d62bc21a07ddadc9cdbfb4e97f066710cf245a15e857390db61581cf5ccf86"
+}

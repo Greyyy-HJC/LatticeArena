@@ -1,0 +1,477 @@
+{
+  "protocol": {
+    "version": "s16t16-pilot-v1",
+    "ensemble": "/public/home/acwzoxdwvj/dianjun/LatticeArena/data/S16T16",
+    "geometry": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "development": [
+      0,
+      59
+    ],
+    "gap": [
+      60,
+      69
+    ],
+    "validation": [
+      70,
+      99
+    ],
+    "kappa": 0.14,
+    "t_boundary": -1,
+    "tolerance": 1e-10,
+    "max_iterations": 10000,
+    "source": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "alpha": 0.2,
+    "powers": [
+      0,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "score_window": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "amplitude_window": [
+      6,
+      7,
+      8
+    ],
+    "reference_basis": [
+      0,
+      3,
+      4
+    ],
+    "reference_windows": [
+      [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        5,
+        6,
+        7,
+        8
+      ],
+      [
+        6,
+        7,
+        8
+      ]
+    ],
+    "reference_nominal_window": 1,
+    "mass_bounds": [
+      0.1,
+      3.0
+    ],
+    "covariance_shrinkage": 0.25,
+    "block_length": 5,
+    "bootstrap_samples": 1000,
+    "outer_samples": 200,
+    "inner_samples": 128,
+    "seed": 20261109,
+    "amplitude_z_min": 3.0,
+    "reference_max_relative_error": 0.05,
+    "reference_max_window_z": 2.5,
+    "reference_min_fit_p": 0.01,
+    "reflection_max_z": 4.0,
+    "optimizer_l1_bound": 8.0,
+    "optimizer_ridge": 0.001,
+    "optimizer_max_iterations": 500,
+    "optimizer_starts": 8,
+    "wall_seconds_per_configuration": 300,
+    "gpu_memory_limit_gib": 10,
+    "score_epsilon": 1e-12
+  },
+  "software": {
+    "PyQUDA": "0.10.53",
+    "PyQUDA-Utils": "0.10.53.post3",
+    "cupy-cuda12x": "unavailable",
+    "cupy": "12.3.0",
+    "numpy": "1.24.4",
+    "mpi4py": "4.0.3",
+    "libquda_sha256": "f5553d3b725617e6c2bea3e1504cfe35b248e4f3062e0d36e4de6c31efa518ad",
+    "mpi": "Open MPI v4.1.4rc1, package: Open MPI root@e10r2n15 Distribution, ident: 4.1.4rc1, repo rev: v4.1.4rc1, Unreleased developer copy",
+    "measurement_sha256": "6c41481e21640e88742054abdeda83843601bcfa8e97412f58b4e940665b03d4",
+    "kernel_sha256": "f0e67f42d5418920e4f214286d67be13199f32a12ce2b714a41f00f41b6278a8"
+  },
+  "records": [
+    {
+      "id": 70,
+      "gauge_sha256": "060882f5377dfb228b984b890e6060e7d22cbfb5eacc0f58e175001cc6da3fcd",
+      "plaquette": 0.5933837182774497,
+      "residual_max": 9.976571260556463e-11,
+      "cache_key": "03c28450a69571e365bc68a8797ce8a297181507058504a756c035fb500e70f8",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 3.0829900699900463,
+      "sink_seconds": 1.8992287860019132,
+      "total_seconds": 7.392146794998553,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 71,
+      "gauge_sha256": "1d5bac18909b60d2574ce72d896f3ed9597279bece378d5d2da9d946d4df74d6",
+      "plaquette": 0.5938770159023192,
+      "residual_max": 9.473355779826504e-11,
+      "cache_key": "a1f212dfc45bebc6464917b2ad4ca238f57938510b47adcb42e740cfd1f22399",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8709924949798733,
+      "sink_seconds": 0.4150707979570143,
+      "total_seconds": 2.889733778021764,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 72,
+      "gauge_sha256": "92bbbc0704ae7016f03306b3b3f1d7d56be2e25147591c400b736227dbf67dec",
+      "plaquette": 0.5934284616435272,
+      "residual_max": 9.853667347294626e-11,
+      "cache_key": "9550066e0cfed2b466070bf023a7a0de4ed5bb8f32efc19068a85e876def4e8a",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8622238310053945,
+      "sink_seconds": 0.42309699102770537,
+      "total_seconds": 2.94473322405247,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 73,
+      "gauge_sha256": "7d569310b278ce2dd5856a52f68b450e6f9534d2ecffc479f441bb9b6a9e276d",
+      "plaquette": 0.5944246149169035,
+      "residual_max": 9.517230714764618e-11,
+      "cache_key": "235dd0a5002111e70f8a1714cc20a7306fa28327dd0876cd0e28630d6477c289",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8503729950170964,
+      "sink_seconds": 0.26515857595950365,
+      "total_seconds": 2.521780822018627,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 74,
+      "gauge_sha256": "9dfea83ffc9fefc9e03a69bacabb3ada2fd3022b690926a6872a3c275b20c0e7",
+      "plaquette": 0.5934296790040399,
+      "residual_max": 9.827063521624738e-11,
+      "cache_key": "069fcd87f046449a57412c989d65e287ca92068a9d65baabf8e23f96f810c569",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8331798170111142,
+      "sink_seconds": 0.26583984604803845,
+      "total_seconds": 2.7299640210112557,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 75,
+      "gauge_sha256": "823891dfa66ec12a34c402f2fa1187f75ef85c69a34db35dbfb3e4c811a41ac4",
+      "plaquette": 0.5939087828435803,
+      "residual_max": 9.641769540391339e-11,
+      "cache_key": "673e313c822b5bf4dbe9cd1634ef2022ba21d25e46c63c5182dd48badc20ae21",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8451786630321294,
+      "sink_seconds": 0.4908532139961608,
+      "total_seconds": 2.64732103201095,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 76,
+      "gauge_sha256": "db9bcbfff46b8050c0957b00fbed88d6389187ed8474de0e423d17770b9ea216",
+      "plaquette": 0.5948447096535594,
+      "residual_max": 8.38763068017447e-11,
+      "cache_key": "9b23089df5dd0d886b5a7dd43aa04f1ae85401a8907077494ded5880f1bd0588",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.865572381997481,
+      "sink_seconds": 0.32433063501957804,
+      "total_seconds": 2.4510150289861485,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 77,
+      "gauge_sha256": "f8478559fbd1630ec9c86e73ed1b7ebae4b370c46bb321d9714c0617ff673a68",
+      "plaquette": 0.5936965373571841,
+      "residual_max": 9.81870702282434e-11,
+      "cache_key": "147ec7763de7b6f85dc5fb44f8105ed422053f670e2b64aaed5645e3be646acc",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8273740449803881,
+      "sink_seconds": 0.40022399101871997,
+      "total_seconds": 2.62948935397435,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 78,
+      "gauge_sha256": "c5339f3606a7603a223eb0a69fecd01608bcf3c7ba3821945cd41fb3ff1f64fe",
+      "plaquette": 0.5943784097971313,
+      "residual_max": 9.51468370922178e-11,
+      "cache_key": "b8bf02386094ebf87e5b2630d94a0bbee9a5d8f5ed0db9a704b87041c4b5be46",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.9314122140058316,
+      "sink_seconds": 0.5952440329710953,
+      "total_seconds": 2.9668823539977893,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 79,
+      "gauge_sha256": "1f260f7c5399d83b122286aa5968a70f2e407607e231b2217a9a8492b5f6b0f5",
+      "plaquette": 0.5933522529766404,
+      "residual_max": 9.767462882415882e-11,
+      "cache_key": "ab1e42db82005dc57148eb31989b3fbd9970442068ac514fbc1a930c965bd1b0",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.9006242990144528,
+      "sink_seconds": 0.43207622604677454,
+      "total_seconds": 2.896709121996537,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 80,
+      "gauge_sha256": "33e1472712b18a536dac1b04173856315cd58a3cf7efe489af10453994991607",
+      "plaquette": 0.5930838215257692,
+      "residual_max": 9.641755357509946e-11,
+      "cache_key": "07481e5b1ac8efbcedd0abecb9b53dc0a7315774ed0a9ff58a9f980ad7c1cb71",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8162107390235178,
+      "sink_seconds": 0.2945585399866104,
+      "total_seconds": 2.470880178036168,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 81,
+      "gauge_sha256": "15b4a51627141bbda522fce7d4dd4f5067ff22eeef453ebc5c1230287a1c40c0",
+      "plaquette": 0.5937553472778577,
+      "residual_max": 9.131261966140834e-11,
+      "cache_key": "67878d80f94e7b80b554a1de3262f88794508883b7068bae96a7920a0ee8b7e1",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8371334989788011,
+      "sink_seconds": 0.4928193450323306,
+      "total_seconds": 2.6724460539990105,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 82,
+      "gauge_sha256": "3ba4432b59726d57e39a3c88b36162c6e2c1bbcd9fdfd51d82ab5c6719941967",
+      "plaquette": 0.5942837493661741,
+      "residual_max": 7.894622638429677e-11,
+      "cache_key": "927df10c0fd0bc46ea0302fe343fafa0c0738de9ad0d139c5ff9dad2a7437ec8",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8622331310180016,
+      "sink_seconds": 0.36228557297727093,
+      "total_seconds": 2.6148505469900556,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 83,
+      "gauge_sha256": "936e96bb80d7d1dc39559646fba453e92b900dca824d8ad889a76df73f7f2cc9",
+      "plaquette": 0.5932984481011704,
+      "residual_max": 9.670237785526661e-11,
+      "cache_key": "e75b633a410c4f034515b23322ab8caf2f281e3c939ca9e89887d21d2c651671",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.845982693019323,
+      "sink_seconds": 0.277424352010712,
+      "total_seconds": 2.656255047011655,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 84,
+      "gauge_sha256": "1893b6a0814bbb1cd10fdcbcdf2779fa5fa633be71a42cbf6fc629c230226190",
+      "plaquette": 0.5936137770373723,
+      "residual_max": 8.948571592002862e-11,
+      "cache_key": "e241c650cad8553138bf9934060c218c823c5ecd7cf5f337bd4a7d36562e13da",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.876700347987935,
+      "sink_seconds": 0.42573525296757,
+      "total_seconds": 2.7129069329821505,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 85,
+      "gauge_sha256": "6009647a4a5ae347801dbd282584880df415c1f86859d86d8b7bb49d75ad4475",
+      "plaquette": 0.5940041653894996,
+      "residual_max": 7.982324247725279e-11,
+      "cache_key": "fad7b6d7765834224b96a3577c1892080a80dcf1d0a558482ff42aa03fff42a5",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8889608640456572,
+      "sink_seconds": 0.4853776710224338,
+      "total_seconds": 2.9445122739998624,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 86,
+      "gauge_sha256": "7045b2775cd401b0913315dc913b24ead806dea959953c6f0b1add76ff308be6",
+      "plaquette": 0.5955247672224266,
+      "residual_max": 8.418292778032522e-11,
+      "cache_key": "6eb7237fdb99bdbf0c03fb0b04a21956b29a8d7cc6b8c586bfd1ba02befc6699",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8619689609622583,
+      "sink_seconds": 0.4087818849948235,
+      "total_seconds": 2.946327104989905,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 87,
+      "gauge_sha256": "4a88399bdbd52ca832e25075d724c7c63099fac7f04c2c6f4375854228c04127",
+      "plaquette": 0.5932079226033703,
+      "residual_max": 9.868086648312039e-11,
+      "cache_key": "663e7fbbbf5c970d0103389b7d260ba409fecbbbe8e2b2603c48279c12954a0b",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8638132520136423,
+      "sink_seconds": 0.39997512102127075,
+      "total_seconds": 2.68056282796897,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 88,
+      "gauge_sha256": "ebaed8d1e067893f9930a8de326f2e03f105a8c7969e8195c494aa129a5ac663",
+      "plaquette": 0.5941941008578782,
+      "residual_max": 8.945567171596499e-11,
+      "cache_key": "3866363570378cc12052b2d2da93848fd47b968c0fd091d0502df064b58b296f",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8903279739897698,
+      "sink_seconds": 0.3024167339899577,
+      "total_seconds": 2.527418685029261,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 89,
+      "gauge_sha256": "b76be4738fec93b65ef9f6a9735a4aff2bf79469eda8ee8dfd78fc15cc515b36",
+      "plaquette": 0.593917130067735,
+      "residual_max": 8.72014501226996e-11,
+      "cache_key": "514c3ade0644bd2a463eb96b58dc7e97887f2148b36f88ff8588e9842863bb94",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8518997069913894,
+      "sink_seconds": 0.47543175698956475,
+      "total_seconds": 2.616036557999905,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 90,
+      "gauge_sha256": "4ede9aedfa53d937057c771d8669a3cf30242f717552c47d1aa795061a91ab48",
+      "plaquette": 0.5933766978915311,
+      "residual_max": 9.019334112728164e-11,
+      "cache_key": "4bfea6fd2224a00c209f36606262df0b706a1b786025248595aca9cd5c8c5879",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.9269986220169812,
+      "sink_seconds": 0.29750653204973787,
+      "total_seconds": 2.5979176179971546,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 91,
+      "gauge_sha256": "616d953bb8fd77e3874539685e0f9bb0843daee974db2b60dfd2e455e927a071",
+      "plaquette": 0.59410164006492,
+      "residual_max": 9.920202298480416e-11,
+      "cache_key": "ab05948a8c5d3d3af403aaf0b408eacceb43149c3c20164f4b0aa78a1cdcb617",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8313306559575722,
+      "sink_seconds": 0.6485565589973703,
+      "total_seconds": 3.2401347850100137,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 92,
+      "gauge_sha256": "ac2498743faaee6a490b8efd1c7bd877ab941a0bc569b0baee9ba172fa01bff1",
+      "plaquette": 0.5932622073144939,
+      "residual_max": 9.683660293230806e-11,
+      "cache_key": "ae04fd3129ba2eaf4bd406b30cc5f769dc74dfd139ea4b426a2a4a68da83ca3b",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8658646929543465,
+      "sink_seconds": 0.2747179109719582,
+      "total_seconds": 2.4805062229861505,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 93,
+      "gauge_sha256": "d8aeab3537fb08389d6b96ddebbb838781b179bcfe1e5c08b759bd86f5d05e33",
+      "plaquette": 0.5937441255110449,
+      "residual_max": 9.562175672135257e-11,
+      "cache_key": "634d8f375d2a127ed353f29f298721aa599711ce54f864ff57366019d57146a3",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.845149444998242,
+      "sink_seconds": 0.4670276530086994,
+      "total_seconds": 2.665416068979539,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 94,
+      "gauge_sha256": "e0aef2be36ef85458ce78200e7e15d777b4af6f78ea736ffb7ca12e072a00c84",
+      "plaquette": 0.592732370991322,
+      "residual_max": 9.923870735032701e-11,
+      "cache_key": "045ee5d18e138fe713271c5a4efdf7d14c42932c302051ce4590d5fdfa41c8d3",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 1.0070090260123834,
+      "sink_seconds": 0.3799418509588577,
+      "total_seconds": 3.2756464940030128,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 95,
+      "gauge_sha256": "0ebb6ae65cfba3ae1b051ef75d811a5069e565e88eb3d227bf5304a36d03dee9",
+      "plaquette": 0.594107358897932,
+      "residual_max": 9.869726903617288e-11,
+      "cache_key": "a016b354d992a4cc881b4b7dc5080ea2e69f9f21f99937de89bad9223d278c21",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.9149045059457421,
+      "sink_seconds": 0.2730089800315909,
+      "total_seconds": 2.690368662995752,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 96,
+      "gauge_sha256": "a8aec0a008ccdd53f0b2e2b45c91b5949bfe13cb37f79a9104cef9d3758cd5b0",
+      "plaquette": 0.5942459954071664,
+      "residual_max": 9.742793673834904e-11,
+      "cache_key": "9c62eba87993e36a52a768ffba410e2db0653366f6305908a88fe178889f96b4",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 1.1771403509774245,
+      "sink_seconds": 0.2890550079755485,
+      "total_seconds": 3.492749365977943,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 97,
+      "gauge_sha256": "1ad61edcf3472922af0878ba4b5b9183b7d409bf7a639619261ca40e8f6121f2",
+      "plaquette": 0.5934615161741487,
+      "residual_max": 8.735968898668483e-11,
+      "cache_key": "e27baeb21dba9061bc88ae58975bccd8dea8c9b9b8b83dd1f0d833ddd9bda908",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8231557820108719,
+      "sink_seconds": 0.44372097199084237,
+      "total_seconds": 2.591213616018649,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 98,
+      "gauge_sha256": "e81ba6ee1736e27955c5c064cf7878a9bd6f06d27155f793b0c305985f631726",
+      "plaquette": 0.5939121044422824,
+      "residual_max": 9.880516151155095e-11,
+      "cache_key": "109360691f35390a9a349790a29da0c5bcac2583bb77ee6c83449e38bd7872af",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.9818983979639597,
+      "sink_seconds": 0.7394091530004516,
+      "total_seconds": 3.1165162160177715,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    },
+    {
+      "id": 99,
+      "gauge_sha256": "a606f781565fb61cbd37c4e98b66002ffc40ac04fa34892138e3ec3881663d6e",
+      "plaquette": 0.5930338526776917,
+      "residual_max": 8.824118704429233e-11,
+      "cache_key": "9b8ea2cc8bff96c1cc37887f1b6b3ffc42b54baba8cd2010f17eafbbbdf774ee",
+      "cache_hit": false,
+      "solve_and_residual_seconds": 0.8428077420103364,
+      "sink_seconds": 0.3374525309773162,
+      "total_seconds": 2.491609657998197,
+      "cupy_pool_peak_reserved_bytes": 515899392
+    }
+  ]
+}

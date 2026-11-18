@@ -1,0 +1,24 @@
+{
+  "builder": "tasks.pion_projection.kernels:build_kernel",
+  "parameters": {
+    "powers": [
+      0,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      32.74842628589201,
+      107.06242470728536,
+      0.0
+    ],
+    "alpha": 0.2
+  }
+}

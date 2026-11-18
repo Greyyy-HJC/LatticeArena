@@ -1,0 +1,95 @@
+{
+  "version": "s16t16-wilson-v4",
+  "ensemble": "/public/home/acwzoxdwvj/dianjun/LatticeArena/data/S16T16B",
+  "geometry": [
+    16,
+    16,
+    16,
+    16
+  ],
+  "development": [
+    0,
+    99
+  ],
+  "gap": [
+    100,
+    119
+  ],
+  "validation": [
+    120,
+    199
+  ],
+  "r_values": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "t_values": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "fit_window": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "reference_windows": [
+    [
+      4,
+      5,
+      6
+    ],
+    [
+      4,
+      5,
+      6,
+      7
+    ],
+    [
+      5,
+      6,
+      7,
+      8
+    ]
+  ],
+  "reference_nominal_window": 1,
+  "kernels": [
+    {
+      "name": "identity",
+      "alpha": 0.0,
+      "steps": 0
+    },
+    {
+      "name": "ape_a0.4_n5",
+      "alpha": 0.4,
+      "steps": 5,
+      "equivalent_v1_alpha": 0.5
+    },
+    {
+      "name": "ape_a0.4_n10",
+      "alpha": 0.4,
+      "steps": 10,
+      "equivalent_v1_alpha": 0.5
+    },
+    {
+      "name": "ape_a0.6087_n10",
+      "alpha": 0.6086956521739131,
+      "steps": 10,
+      "equivalent_v1_alpha": 0.7
+    }
+  ],
+  "reference_kernel": 0,
+  "block_length": 5,
+  "bootstrap_samples": 1000,
+  "seed": 20261116,
+  "reference_max_relative_se": 0.05,
+  "reference_max_window_z": 2.5,
+  "score_epsilon": 1e-12,
+  "normalization": "alpha/4 with four staples per link; P(gMh)=gP(M)h polar projection",
+  "supersedes": "s16t16-wilson-v1 (alpha/6 and column Gram-Schmidt projection, no longer valid)"
+}

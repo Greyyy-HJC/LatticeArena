@@ -1,0 +1,64 @@
+{
+  "version": "s16t16-optgauss-v9",
+  "ensemble": "/public/home/acwzoxdwvj/dianjun/LatticeArena/data/S16T16",
+  "geometry": [
+    16,
+    16,
+    16,
+    16
+  ],
+  "fit": [
+    0,
+    19
+  ],
+  "dev_val": [
+    20,
+    59
+  ],
+  "test": [
+    70,
+    99
+  ],
+  "hidden": 8,
+  "alpha": 0.0,
+  "base_steps": 8,
+  "base_alpha": 0.09090909,
+  "seed": 20261117,
+  "reference": {
+    "m0": 1.086166941112527,
+    "score_window": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "amplitude_window": [
+      6,
+      7,
+      8
+    ]
+  },
+  "risk": {
+    "block_length": 2,
+    "bootstrap_samples": 1000,
+    "covariance_shrinkage": 0.25,
+    "amplitude_z_min": 3.0
+  },
+  "l2_grid": [
+    0.0,
+    0.01
+  ],
+  "v_max": 3.0,
+  "optimizer": {
+    "maxiter": 400
+  },
+  "cache_manifest": "results/pion_projection/s16t16_v1/development_provenance.json",
+  "validation_manifest": "results/pion_projection/s16t16_v1/validation_provenance.json",
+  "reference_bootstrap": "results/pion_projection/s16t16_v1/reference_bootstrap.npz",
+  "output": "results/optimize_gaussian/v9",
+  "seeds": [
+    20261117,
+    20261118,
+    20261119
+  ]
+}

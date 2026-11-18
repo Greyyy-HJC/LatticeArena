@@ -1,6 +1,7 @@
 """Trusted one-rank PyQUDA measurement and checked point-propagator cache."""
 import json
-from importlib.metadata import version
+import os
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 from time import perf_counter
 
@@ -31,8 +32,14 @@ def measure(output, split, limit=None):
     if MPI.COMM_WORLD.Get_size() != 1:
         raise ValueError('Pilot supports one MPI rank')
     cp.get_default_memory_pool().set_limit(size=p['gpu_memory_limit_gib'] * 1024**3)
-    software = {name: version(name) for name in ['PyQUDA', 'PyQUDA-Utils', 'cupy-cuda12x', 'numpy', 'mpi4py']}
-    software['libquda_sha256'] = digest('/home/jinchen/software/quda/build/lib/libquda.so')
+    software = {}
+    for name in ['PyQUDA', 'PyQUDA-Utils', 'cupy-cuda12x', 'cupy', 'numpy', 'mpi4py']:
+        try:
+            software[name] = version(name)
+        except PackageNotFoundError:
+            software[name] = 'unavailable'
+    quda_lib = Path(os.environ.get('QUDA_PATH', '')) / 'lib' / 'libquda.so'
+    software['libquda_sha256'] = digest(quda_lib) if quda_lib.is_file() else 'unavailable'
     software['mpi'] = MPI.Get_library_version().strip('\x00\n')
     software['measurement_sha256'] = digest(__file__)
     software['kernel_sha256'] = digest(Path(__file__).with_name('kernels.py'))

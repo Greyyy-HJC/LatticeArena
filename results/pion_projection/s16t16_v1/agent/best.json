@@ -1,0 +1,42 @@
+{
+  "risk": 0.0022203199818982607,
+  "weights": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0,
+    0.0
+  ],
+  "round": -1,
+  "llm_best": {
+    "risk": 0.0022203199818982785,
+    "u": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "weights": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      214.12484941457072,
+      0.0
+    ],
+    "round": "0.0"
+  },
+  "validation_risk": 0.012556369241987813,
+  "validation_ratio_vs_local": 24.901326880593572,
+  "validation_risk_of": "0.0",
+  "model": "deepseek-v4-pro",
+  "rounds": 3,
+  "protocol_hash": "d03b1e6f7221b63e5d79f1907c1e354dcd0164bdd7bdabd1a242654130a59f97",
+  "note": "post-hoc diagnostic, not an official submission"
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "pion-measurement-plan-v1",
+  "status": "NOT_RUN",
+  "ensemble": "S16T16C or a new S16T16D",
+  "geometry": [16, 16, 16, 16],
+  "sources": ["point", "H4", "H16"],
+  "sink_powers": [0, 2, 4, 8, 16, 24, 32, 64],
+  "splits": {"development": [0, 119], "validation": [140, 199]},
+  "identity": {
+    "gauge_sha256": "per-config file digest",
+    "propagator_sha256": "per-config propagator digest",
+    "quda": "version string and build hash",
+    "device": "dcu model / driver",
+    "precision": "complex128",
+    "trajectory_ids": "trajectory index per saved config",
+    "generation": "sha256(ids + protocol hash + kernel hash)"
+  },
+  "checks": {
+    "gamma5_self_contraction": "small-volume fast vs generic comparison",
+    "fast_generic_consistency": "same sink channel via both paths",
+    "source_averaging": "average over sources inside a configuration, then block across configurations",
+    "residual_12_rhs": "per-source max relative residual",
+    "gauge_header_geometry": "read_nersc geometry check"
+  },
+  "statistics": {
+    "unit": "configuration block",
+    "block_length": 5,
+    "bootstrap_samples": 1000,
+    "power_simulation": "target effect vs block variance, pre-registered seed",
+    "sources_are_not_configurations": true
+  },
+  "freeze": {
+    "candidates": "frozen before validation",
+    "reference": "kind + statistics/implementation hashes",
+    "score_spec": "pion-score-v1 fields",
+    "primary_endpoint": "paired risk difference on the validation split",
+    "validation_ids": "never opened before freeze",
+    "access_log": "who/when opened validation"
+  },
+  "budget": {
+    "inversions_per_source": 1,
+    "sink_applies_per_config": 8,
+    "estimated_hours": "to be measured on a pilot",
+    "setup_solve_kernel_io_analysis": "recorded via core.ledger"
+  },
+  "stop_rules": [
+    "residual or gamma5 check fails -> stop before production",
+    "reference gate fails on the new development -> no score",
+    "power simulation shows the target effect is unreachable -> stop"
+  ]
+}

@@ -53,7 +53,7 @@ development amplitudes. The normalized coefficients were:
 
 The coefficients sum to one and have L1 norm 1.747, below the fixed limit of 8.
 All eight optimization starts converged. The raw, directly applicable kernel
-coefficients are preserved in the [candidate definition](../results/pion_projection/s16t16_v1/agent_candidate.json),
+coefficients are preserved in the [candidate definition](../results/pion_projection/s16t16_v1/agent/llm_candidate.json),
 and all calibration and search choices are in the
 [frozen submission](../results/pion_projection/s16t16_v1/submission.json).
 The negative local term can cancel part of the short-distance contribution;
@@ -141,3 +141,98 @@ temporal lattice at matched physics. It should compare the frozen signed
 candidate and Gaussian baseline on independent data, with new scoring calibration
 fixed before evaluation. The current attempt has not covered the full arbitrary
 kernel search space or a comprehensive set of literature SOTA methods.
+
+## 后续对照：learned A1+ smear（2026-11）
+
+在同一份 60/10/30 数据上，用 `tasks/optimize_gaussian` 的 A1+ 学习核（9 个参数，$G^8$ 基座 +
+三明治式厄米修正）走完了 `candidate` 冻结流程：
+
+- 留出 risk：learned 0.00960 vs SLSQP 混合 0.00770 vs local 0.31267；
+- 配对比 $\mathrm{risk}_{SLSQP}/\mathrm{risk}_{learned}=0.803$，95% 区间 $[0.636, 0.944]$；
+- 官方 `score` 仍为 `null`（参考 gate 未通过）。
+
+结论（v8，旧特征）：学习核比 Gaussian 基座好（约 1.5 倍），但**没有**超过 7 参数的 SLSQP 混合。
+
+> **更新（v9，2026-11-18 晚些）**：修复特征（plaquette 闭合、link 中心锚点、A1+ 认证）后重训，
+> 学习核测试 risk 0.009236（相对 $G^8$ **2.12 倍**），候选 risk **0.007721**，与 SLSQP 0.007703
+> 的配对比 $0.998\ [0.78,1.18]$——**统计上打平**。官方 `score` 仍为 `null`（参考 gate 未过）。
+> 详见 [tasks/optimize_gaussian/README.md](../tasks/optimize_gaussian/README.md)。
+
+## 参考 p 值的模拟校准（2026-11）
+
+用参数化 bootstrap 校准参考拟合的 p 值（`tasks/pion_projection/calibration.py`）：
+
+| 窗口 | 渐近 p | 校准 p | 零假设中位数 |
+| --- | ---: | ---: | ---: |
+| 4–8 | $1.1\times10^{-57}$ | 0 | 10.4 |
+| 5–8（名义） | $1.7\times10^{-8}$ | 0 | 7.6 |
+| 6–8 | 0.281 | 0.267 | 4.2 |
+
+校准本身是对的（合成零假设下的误判率 0%），但**名义参考仍然失败**：$\chi^2=52.0$ 远高于
+零假设中位数 7.6，说明单 cosh + 共质量模型在 5–8 上本身不成立，不是 p 值阈值的问题。
+这直接指向“更长的时间方向（T=32）或更好的参考模型”，而不是继续调阈值。
+
+## 更长的时间方向：T=32 尝试（2026-11）
+
+为检验“参考失败是不是因为周期回绕/时间太短”，在 kunshan 上用同一套 HMC 生成 100 个
+$16^3\times32$、$\beta=6.0$ 的组态（接受率 96.7%，$0.77$ s/轨迹），测了 60 个开发组态，
+参考窗口随 $T$ 调整为 $4\text{–}8$ / $5\text{–}9$ / $6\text{–}10$：
+
+| 量 | T=16（原 pilot） | T=32 |
+| --- | ---: | ---: |
+| 名义窗口 $\chi^2/\mathrm{dof}$ | 52.0 / 8 | 120.2 / 11 |
+| 名义 p 值 | $1.7\times10^{-8}$ | $1.6\times10^{-20}$ |
+| 窗口偏移 | 21.6σ / 7.8σ | 20.3σ / 16.3σ |
+| 反射对称 z | 1.53（通过） | 归档 274.27 → 按真实 $C(t)-C(T-t)$ 修正后 **2.40（通过）** |
+
+**结论：加长时间方向没有让参考站住。** 回绕项不是问题，问题在“共质量 + 单 cosh”这个参考模型
+本身——三个通道（$H^0,H^8,H^{16}$）在 $t=4\text{–}9$ 的有效质量形状并不共享同一个 $m_0$。
+下一步应当换参考模型（两态拟合、或分通道质量 + 渐近共质量），而不是继续加组态、加 $T$ 或调阈值。
+
+## 两态参考模型（2026-11）
+
+实现 `TwoStateFit`：每个通道 $\mu_k(t)=A_k f(t;m_0)+B_k f(t;m_1)$，共质量、分通道幅度；
+用变投影（给定 $m_0,m_1$ 时幅度线性求解）+ 粗网格 + 局部细化拟合。在 T=16 的 60/10/30 数据上重跑：
+
+| 窗口 | $m_0$ | SE | $\chi^2/\mathrm{dof}$ | $p$ |
+| --- | ---: | ---: | ---: | ---: |
+| 4–8 | 1.0500 | 0.0095 | 0.15 / 7 | $\approx1$ |
+| 5–8 | 1.0570 | 0.0098 | 0.06 / 4 | 0.9996 |
+| 6–8 | 1.0500 | 0.0285 | 0.001 / 1 | 0.975 |
+
+窗口偏移 1.4σ / 0.25σ，**gate 通过**，并给出该任务第一个非空分数：
+
+| 候选 | risk | score | 比值 95% 区间 |
+| --- | ---: | ---: | ---: |
+| local | 0.5592 | 100 | — |
+| tuned Gaussian | 0.01381 | 4050 | [19.4, 384] |
+| SLSQP 混合 | 0.00926 | 6040 | [25.5, 431] |
+
+**但这不能当作可信的分数**：
+
+- $m_0$ 从单 cosh 的 1.086 变成 1.057（3%），local 的 risk 从 0.312 涨到 0.559，分数随之放大近 2 倍；
+- 两态拟合 $\chi^2=0.06/\mathrm{dof}=4$（$p\approx1$），是**过拟合**：8 个参数对 12–15 个点、
+  25% 收缩协方差，几乎能拟合任何数据，p 值门槛因此失去意义；
+- $m_0$ 的模型误差没有传播进分数（参考 SE 只有约 1%）。
+
+结论：**gate 通过 ≠ 分数可信**。参考模型的系统误差（$m_0$ 的模型依赖）大于统计误差；要么把它
+边缘化进分数，要么换一个参考更稳的可观测量。第二个任务（静态势）已经给出 $V(R)$ 且参考通过，
+是更可信的下一步。
+
+## 参考模型系统误差（2026-11）
+
+固定同一批候选权重（来自单 cosh 冻结的 `submission.json`），只更换参考模型：
+
+| 参考模型 | $m_0$ | local | tuned | SLSQP | score(tuned) | score(SLSQP) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 单 cosh（gate 未过） | 1.0862 | 0.3127 | 0.01256 | 0.00770 | 2490\* | 4059\* |
+| 两态（gate 通过） | 1.0570 | 0.5592 | 0.00470 | 0.00484 | 11899 | 11554 |
+
+\* 单 cosh 的 gate 未通过，分数按设计为 `null`；这里列出“若给分”的数值只为比较尺度。
+
+- 尺度变化：local $\times1.79$，tuned $\times0.37$，SLSQP $\times0.63$；
+- 排序甚至会翻转：单 cosh 下 SLSQP 明显优于 tuned（0.0077 vs 0.0126），两态下几乎持平（0.00484 vs 0.00470）。
+
+**结论**：参考模型的系统误差与要测量的效应同量级。绝对分数、甚至 tuned 与 SLSQP 的排序，
+都不能在两种参考模型下同时成立。这个 pilot 在 16⁴、60 组态、$\kappa=0.14$ 上无法给出可信分数；
+要救它，必须把参考模型的系统误差边缘化（模型平均 / 对 $m_0$ 给系统误差），而不是挑一个能过 gate 的模型。

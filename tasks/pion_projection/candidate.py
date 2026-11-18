@@ -7,14 +7,25 @@ complex non-Hermitian observables require the future complex scoring extension.
 import importlib
 import inspect
 import json
+import os
 from pathlib import Path
 from time import perf_counter
 
 import numpy as np
 
 from .common import digest, fingerprint, indices, load_data, protocol, write_json
-from .statistics import ReferenceFit, blocks, bootstrap_indices, fold, risk
+from .reference import make_reference, reference_kind, verify_reference
+from .statistics import blocks, bootstrap_indices, fold, risk
 from .experiment import late_metric, nested_intervals
+
+
+def check_dependencies(spec):
+    """Optional frozen hashes for helper modules a builder imports."""
+    dependencies = spec.get('dependencies') or {}
+    for name, expected in dependencies.items():
+        if digest(Path(name)) != expected:
+            raise ValueError(f'submission dependency {name} changed since the definition was frozen')
+    return dependencies
 
 
 def apply_kernel(gauge, prop, builder, parameters):
@@ -48,10 +59,17 @@ def run_candidate(output, definition_path, split, verify_only=False):
         raise ValueError('Frozen reference protocol/development data changed')
     if reference_frozen['statistics_sha256'] != digest(Path(__file__).with_name('statistics.py')):
         raise ValueError('Frozen scoring implementation changed')
+    from .identity import verify_run_identity
+    kind_checked, identity_reasons = verify_run_identity(output)
+    if kind_checked is None or any('protocol hash' in r or 'development data hash' in r
+                                   for r in identity_reasons):
+        raise ValueError('Run identity check failed: ' + '; '.join(identity_reasons))
     spec = json.loads(Path(definition_path).read_text())
     module, function = spec['builder'].split(':')
     builder = getattr(importlib.import_module(module), function)
-    identity = {'definition': spec, 'builder_sha256': digest(inspect.getsourcefile(builder)),
+    dependencies = check_dependencies(spec)
+    identity = {'definition': spec, 'dependencies': dependencies,
+                'builder_sha256': digest(inspect.getsourcefile(builder)),
                 'protocol_hash': fingerprint(p), 'reference_submission_sha256': digest(output/'submission.json')}
     destination = output/'candidates'/fingerprint(identity)[:16]
     destination.mkdir(parents=True, exist_ok=True)
@@ -111,7 +129,15 @@ def run_candidate(output, definition_path, split, verify_only=False):
         return
     np.savez_compressed(destination/f'{split}.npz', ids=expected_ids, correlators=np.asarray(rows)[:, None, :])
     dev = blocks(fold(load_data(output, 'development')), p['block_length'])
-    model = ReferenceFit(dev, p, p['reference_windows'][p['reference_nominal_window']])
+    run_frozen = json.loads((output/'submission.json').read_text())
+    run_spec = run_frozen.get('reference')
+    if run_spec is None:
+        if os.environ.get('LATTICEARENA_LEGACY_REFERENCE') != '1':
+            raise ValueError('Frozen run has no reference spec; set LATTICEARENA_LEGACY_REFERENCE=1 for a read-only legacy replay')
+        kind = reference_kind()
+    else:
+        kind = verify_reference(run_spec)
+    model = make_reference(dev, p, p['reference_windows'][p['reference_nominal_window']], kind)
     ref, masses = model.bootstrap(bootstrap_indices(len(dev), p['bootstrap_samples'], p['seed']))
     measured = blocks(fold(np.asarray(rows)[:, None, :]), p['block_length'])
     if split == 'development':
@@ -137,6 +163,9 @@ def run_candidate(output, definition_path, split, verify_only=False):
                    'diagnostic_loss_ratio_95_interval': interval.tolist(),
                    'score': 100*ratio if reference_frozen['calibration']['reference_passed'] else None,
                    'reference_failure_reasons': reference_frozen['calibration']['failure_reasons'],
+                   'certification': {'status': 'abstain',
+                                     'reasons': ['candidate is diagnostic; the joint command issues certificates']},
+                   'physical_score': None,
                    'validation_sha256': digest(destination/'validation.npz')})
     write_json(destination/f'{split}_provenance.json', {'identity': identity, 'seconds_per_configuration': timings,
                'source_manifest_sha256': digest(output/f'{split}_provenance.json')})
