@@ -1,0 +1,46 @@
+{
+  "access": {
+    "confirmation": false,
+    "gap": false,
+    "sealed": false,
+    "shared_holdout": false,
+    "validation": false
+  },
+  "classification": "retrospective_development_diagnostic_only",
+  "decision_summary": {
+    "A_point_max": 2.0965151602194148,
+    "B_all_pair_point_max": 2.0965151602194148,
+    "C_centered_joint_q95": 2.7408155857761267,
+    "C_uncentered_joint_q95": 4.084380379164924,
+    "failed_contrasts": 0,
+    "invalid_draws": 0
+  },
+  "files": {
+    "README.md": "785ceeadf02c3e3aed9a0863ce80c832bf134358efff5c8366b5ed3e06a04ac7",
+    "SOURCE_REPORT.md": "ff24ef5dfda42f4343a984462e1eb02ca4e569f13930ebb5787401e2a365dfd2",
+    "candidate_decisions.csv": "aa66eb635f89e9a7977c40e052281845e5788d40750be8a56ec60b3ec5f026d2",
+    "reference_joint_max.png": "907ac2578456361cda57101cb3a1f1266363205080dc808047de3d8433fb7460",
+    "reference_window_z.png": "f3415e57ac64103cb1a21eef8dce99ca0accf9451cd83be7f5b1ba446d998c70",
+    "reference_windows.png": "1fcf327a053bddddded7d1278ce33704c591b6ca78ccd7c63d20297446a1ee74"
+  },
+  "input": {
+    "commit_marker_sha256": "0ff2766e4550d0a687d051f44376af5528cb047b05c556912b50ad5c9833951a",
+    "generation": "dd38c39f21982307c5abc2d5093b93c2aa12ef8848d6f9136519b1f8054b619e",
+    "npz_sha256": "da8cc5d72481475a8cd6d821692db2e21555c0bd5b1849747dc75a946dbd7209",
+    "provenance_sha256": "082ad7060e776f6e724ee02ac1de9c94e706332eb875019f3b9d1c45d4e9e82b",
+    "split": "development IDs 0-99"
+  },
+  "package": "wilson_reference_window_open_development_archive_v1",
+  "production_score": null,
+  "protocol": {
+    "block_length": 5,
+    "bootstrap_draws": 5000,
+    "equality_passes": true,
+    "n_blocks": 20,
+    "n_config": 100,
+    "seed": 2026112021,
+    "threshold": 2.5
+  },
+  "reproducibility": "archive_only_original_runner_unavailable",
+  "status": "PROPOSAL_NOT_FROZEN"
+}

@@ -1,0 +1,75 @@
+{
+  "classification": "exact synthetic forward-spectrum; method mapping only",
+  "limitations": [
+    "does not use raw Wilson measurements or estimate physical q bounds",
+    "does not establish positive transfer-matrix assumptions for production data",
+    "does not fit energies/overlaps, calibrate interval coverage, or quantify finite-Nt effects",
+    "td=2 GEVP composite is a separate diagnostic and must not populate kernel-indexed q cells",
+    "independent review and authorized raw cross-correlator measurements remain required"
+  ],
+  "schema": "wilson-f-q-object-semantics-diagnostic-v1",
+  "selected_q_overlap_contract": {
+    "definition_id": "bare_basis_squared_overlap_ratio_v1",
+    "fit_source": "joint finite-Nt spectral fit to the measured 3x3 C_ij(R,t) matrix",
+    "gevp_role": "GEVP may initialize, label, and stress-test joint spectral fits; its single composite projected operator is separate and must not be copied into identity, APE, or stout kernel-indexed q cells",
+    "kernel_to_basis_operator": {
+      "ape_alpha0.4_n5": "APE",
+      "identity": "identity",
+      "spatial_stout_rho0.10_n5": "stout"
+    },
+    "matrix_convention": "C_ij(R,t)=sum_n Z_ni(R) * conjugate(Z_nj(R)) * exp(-E_n(R)*t)",
+    "operator_overlap_convention": "Z_nk(R)=<n|O_k(R)|0> for the ordered bare smearing operator O_k",
+    "q_definition": "q_k(R,T)=sum_{n>0} |Z_nk(R)/Z_0k(R)|^2 * exp(-(E_n(R)-E_0(R))*T)",
+    "ratio_upper_semantics": "one-sided upper bound on |Z_nk(R)/Z_0k(R)|^2",
+    "scope": "positive forward-spectrum q term only; finite-Nt backward/thermal, mixed-sector, fit-truncation, and interval-coverage bounds remain separate",
+    "status": "PROPOSED_METHOD_DEFAULT_REQUIRES_INDEPENDENT_REVIEW"
+  },
+  "source_sha256": {
+    "gevp_overlap_object_diagnostic.py": "f7a3f14d6a55b619abbadbce28b0127a65dbb7348120b86242073e891b2c83a3",
+    "gevp_t0_truncation_diagnostic.py": "732cf530e540dac90d1d0c05d2216be7a9b8905f8eb790ac10fabdb087dc4871",
+    "lane_contract.py": "3b4d8f0acb521a9a22158e1981f03ae9c1565f02613d4d630ebd20b256d88129",
+    "lane_contract_v2.json": "319c1ca06bd4913bd4cc555d218c0d09ca0998e85b94fb9044720b0881276d8e",
+    "q_cell_semantics_diagnostic.py": "8a3d1cef10b2ac00ce84550ae80ba7d99d95cb171f0577ab413de21ca10c87e3"
+  },
+  "synthetic_input": {
+    "T_values": [
+      5,
+      6
+    ],
+    "basis_order": [
+      "identity",
+      "APE (descriptive)",
+      "stout"
+    ],
+    "energies": [
+      0.18,
+      0.32,
+      0.49,
+      0.7
+    ],
+    "overlaps_state_by_operator": [
+      [
+        1.0,
+        0.8,
+        0.55
+      ],
+      [
+        0.72,
+        -0.35,
+        0.6
+      ],
+      [
+        0.45,
+        0.62,
+        -0.5
+      ],
+      [
+        1.2,
+        0.75,
+        0.95
+      ]
+    ],
+    "t0": 1,
+    "td": 2
+  }
+}

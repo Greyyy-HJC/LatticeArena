@@ -1,0 +1,57 @@
+{
+  "schema": "wilson-c-lane-alternative-interval-coverage-v1",
+  "classification": "synthetic_method_comparison_only",
+  "physical_score": null,
+  "data_access": "No Wilson measurement, development/sealed split, GPU or QUDA data read.",
+  "base_protocol_sha256": "1e0bf1109f34957bcdd0ad53a48976bab2896a5bd6f54f449515b4699db2c370",
+  "base_source_sha256": "a14fc65ce1992484b8c98d49ff1c192c3c2e207eb283ab327ad1cd2ce92c6c8d",
+  "known_rho_covariance_benchmark": "normal delta interval using exact finite-n mean covariance under known rho and lognormal scale; non-deployable benchmark",
+  "hac": {
+    "kernel": "Newey-West Bartlett",
+    "bandwidths": [
+      5,
+      10,
+      20,
+      30
+    ]
+  },
+  "stationary_bootstrap": {
+    "mean_block_lengths": [
+      5,
+      10,
+      20
+    ],
+    "draws": 800,
+    "interval": "97.5% equal-tail percentile"
+  },
+  "outer_grid": {
+    "rho": [
+      0.0,
+      0.3,
+      0.6,
+      0.8,
+      0.9
+    ],
+    "log_loop_sd": [
+      0.1,
+      0.35
+    ],
+    "n": 100,
+    "replicates_per_cell": 240
+  },
+  "loop_mean_order": [
+    "W(3,6)",
+    "W(2,5)",
+    "W(3,5)",
+    "W(2,6)"
+  ],
+  "loop_arithmetic_means": [
+    0.02,
+    0.06,
+    0.035,
+    0.04
+  ],
+  "true_chi": 0.15415067982725805,
+  "precision_halfwidth_target": 0.02,
+  "interpretation_limit": "Conditional synthetic coverage only; no estimate of actual HMC dependence."
+}

@@ -1,0 +1,34 @@
+{
+  "fit_starts": "captured point-fit start plus neighboring cold-valid cell parameters; each start is force-eliminated at target force",
+  "floor": 0.9,
+  "input_report": "tasks/wilson_loop/f_lane_three_static_stratified_profile_20261128_v1",
+  "max_nfev_per_start": 1600,
+  "neighbor_rule": "choose nearest force target with a valid cold-start fit; tie-break by target force then objective",
+  "physical_gate": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR",
+  "post_run_source_closure_audit": {
+    "additional_sources": [
+      "local_gauss_newton_profile.py",
+      "two_sector_fit_candidate.py",
+      "joint_spectral_gls.py"
+    ],
+    "note": "After the run, an import-closure review added the unchanged source bytes for three runtime dependencies; the execution script snapshot remains the exact code used for this report.",
+    "status": "captured"
+  },
+  "post_run_saved_attempt_attribution": {
+    "status": "read_only_summary",
+    "cold_invalid_starts": 26,
+    "cold_invalid_starts_at_max_nfev": 26,
+    "cold_invalid_starts_full_local_rank": 26,
+    "neighbor_retry_failed_starts": 23,
+    "neighbor_retry_failed_starts_at_max_nfev": 23,
+    "neighbor_retry_failed_starts_full_local_rank": 23,
+    "note": "Condition and overlap-floor-slack summaries are computed from saved fit receipts; no optimizer was rerun for this attribution."
+  },
+  "profile_threshold": 3.84,
+  "schema": "wilson-f-lane-profile-continuation-protocol-v1",
+  "selection": "only cold-invalid cells under the per-panel toy oracle floor in near_degenerate and omitted_vacuum_truth",
+  "target_strata": [
+    "near_degenerate",
+    "omitted_vacuum_truth"
+  ]
+}

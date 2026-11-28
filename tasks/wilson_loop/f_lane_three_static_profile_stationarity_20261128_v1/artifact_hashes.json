@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "README.md": "cc8b21fccd5c17479aaee0132dcf3e262e2edccffe7e513ae06aae9bf898dbb2",
+    "failed_start_stationarity.csv": "4431129f9f8cb80e40ab5c9ca654b6bb9e1abc4dc2593d9c4eb01083505321a0",
+    "protocol.json": "b1844d3106c854370305afd5d84bc8ec102595392c352da8b699db7614748537",
+    "source_snapshot/joint_spectral_gls.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "source_snapshot/nonlinear_overlap_profile.py": "9985028571e61cb8785014ad518228b49962a9cb73fdde181cac332175812ca4",
+    "source_snapshot/npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/profile_continuation_diagnostic.py": "577028dd2d3c590b0c56fedcfb1393d6dbc200d251f1ceeba560eb3aa7782883",
+    "source_snapshot/profile_stationarity.py": "5d4dff8fd9088120eab378bc0ef8ccab4aae460c9c3dba932a984c559e8b85d2",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "source_snapshot/two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "stationarity_and_weak_directions.png": "95835af0f7eb628fe2e0de04e144a843728528310f2597e28312527fb8e00d01",
+    "summary.json": "3d7b485a4f0c1fa506586d62a6a980f9df6af7488bdd1e0ffb7bbd39dc51ac9a"
+  },
+  "schema": "wilson-profile-stationarity-artifact-hashes-v1"
+}

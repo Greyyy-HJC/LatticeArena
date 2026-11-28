@@ -1,0 +1,312 @@
+{
+  "schema": "trainable-w-synthetic-stress-v1",
+  "classification": "synthetic algorithm diagnostic only",
+  "physical_score": null,
+  "generator_families": [
+    {
+      "name": "haar_like",
+      "weak_field_epsilon": null
+    },
+    {
+      "name": "weak_field_eps0.08",
+      "weak_field_epsilon": 0.08
+    },
+    {
+      "name": "weak_field_eps0.25",
+      "weak_field_epsilon": 0.25
+    }
+  ],
+  "target_families": [
+    "spectral_heat",
+    "local_environment"
+  ],
+  "target_noise_relative_frobenius": [
+    0.0,
+    0.02
+  ],
+  "replicates_per_cell": 3,
+  "fit_links_per_panel": 2,
+  "heldout_links_per_panel": 2,
+  "call_budgets": [
+    32,
+    128
+  ],
+  "model_arms": [
+    "joint_W_SLSQP",
+    "joint_W_L-BFGS-B",
+    "fixed_W_width2_SLSQP",
+    "fixed_W_width6_SLSQP"
+  ],
+  "initialization": "paired within each panel; fixed width-6 arm shares width-2 prefix and adds four seeded features",
+  "operator_loss": "full identity-basis relative squared Frobenius loss; same target and fit/heldout IDs across arms",
+  "spectral_baseline": "unconstrained degree-1/degree-4 Chebyshev fit on fitting panels; relevant strong baseline only for spectral_heat target",
+  "local_baseline": "fixed degree-2 centered local feature operator basis by weighted linear least squares; a target-matched synthetic baseline, not the selected physical strong baseline",
+  "seed_plan": [
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026112300
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026112301
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026112302
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026112400
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026112401
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026112402
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026113300
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026113301
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026113302
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026113400
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026113401
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026113402
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026122300
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026122301
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026122302
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026122400
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026122401
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026122402
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026123300
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026123301
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026123302
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026123400
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026123401
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026123402
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026132300
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026132301
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026132302
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026132400
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026132401
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026132402
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026133300
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026133301
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026133302
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026133400
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026133401
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026133402
+    }
+  ],
+  "source_sha256": {
+    "trainable_w_stress_diagnostic.py": "db89fb374bffe0729d4a46848d3d6a3ef0a76d0110618de4bfcd15506e59514e",
+    "trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0",
+    "trainable_w_operator_diagnostic.py": "584235dd49eab347c4ac078fdc00724bdf1f3b31eb6fc1d56d05fc688df2596b",
+    "trainable_w_diagnostic.py": "9d772bff2af5aaa8f7bfbf4736b419a57b9d1fe90dd834c3a27c13f07404298e",
+    "features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+  },
+  "versions": {
+    "python": "3.13.12",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0"
+  },
+  "limitations": "3 panels per cell; no physical gauge ensemble, inferential interval, GPU timing, or production contract; optimizer seconds exclude input/target setup and postchecks"
+}

@@ -1,0 +1,231 @@
+{
+  "artifact_hashes": {
+    "README.md": "dd1dda02845320591d5396142ca9ad08e8b7519e2bc228fedf2ca36d758bf42a",
+    "contract_diagnostics.json": "eba8726e51595dbdf673a553a98ab2864b5a895c1dd9840e4c24d8918303fa3f",
+    "lane_contract_v2.json": "cd2a98e8d31f559067530d8da1a3f43f285287a4831e42f8c3ebd56ff603c17d",
+    "lane_summary.csv": "373a069a8100d78476cbf04fa05b271aaf289f78c400f5e009122646c17a1a3e",
+    "protocol.json": "9f7e8d55ad496dd93fdff506681e3748e93db01fb228e6a2f7aa7229e31d7f1a",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_core_state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+    "snapshot_lane_contract.py": "f64cd4df1b7720b97ceb0a3af7cf3fca6e1c65af2571f1ba372580bd2e854289"
+  },
+  "denominators": {
+    "current_selected_method_draft::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "current_selected_method_draft::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "physical_run_state_gates": {
+      "abstained": 5,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5,
+      "unit": "one physical certification stage in core.RunState",
+      "valid": 0
+    },
+    "synthetic_C_and_F_schema_complete::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 1
+    },
+    "synthetic_C_and_F_schema_complete::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 1
+    },
+    "synthetic_C_only_complete::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 1
+    },
+    "synthetic_C_only_complete::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "synthetic_C_reversed_sign::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "synthetic_C_reversed_sign::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 1
+    },
+    "synthetic_C_wrong_precision_units::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "synthetic_C_wrong_precision_units::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 1
+    },
+    "synthetic_F_reversed_sign::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 1
+    },
+    "synthetic_F_reversed_sign::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "synthetic_F_wrong_precision_units::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 1
+    },
+    "synthetic_F_wrong_precision_units::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "synthetic_null_common_kernel_ids::finite_T_Creutz": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    },
+    "synthetic_null_common_kernel_ids::ground_state_discrete_static_force": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one fixture-lane structural check",
+      "valid": 0
+    }
+  },
+  "reason_rows": [
+    {
+      "count": 1,
+      "reason": "common.action_id: missing nonempty receipt/identifier; common.static_source_action_id: missing nonempty receipt/identifier; common.independent_review_receipt: missing nonempty receipt/identifier; common.geometry.spatial_extents: expected three positive integers; common.geometry.temporal_extent: expected a positive integer; common.boundary_conditions.spatial: missing; common.boundary_conditions.temporal: missing; common.lattice_spacing.a_s: expected a positive finite value; common.lattice_spacing.a_t: expected a positive finite value; common.lattice_spacing.length_unit: missing unit; common.lattice_spacing.energy_unit: missing unit; common.kernel_ids: expected unique nonempty identifiers; common.split_manifest_sha256: expected a SHA-256 receipt; common.paired_block_plan_sha256: expected a SHA-256 receipt; finite_T_Creutz.primary.R: expected a positive integer; finite_T_Creutz.primary.T: expected a positive integer; finite_T_Creutz.primary.kernel_id: not declared in common.kernel_ids; finite_T_Creutz.log_rule: must explicitly be log of positive ensemble means; finite_T_Creutz.invalid_point_rule: missing failure rule; finite_T_Creutz.comparison_family: missing; finite_T_Creutz.inference.interval_method: missing; finite_T_Creutz.inference.multiplicity_method: missing; finite_T_Creutz.inference.alpha_total: expected a value in (0,1); finite_T_Creutz.inference.alpha_allocations: list the prospective familywise allocations; finite_T_Creutz.inference.precision_target: expected a positive finite value; finite_T_Creutz.inference.precision_units: missing",
+      "state": "failed",
+      "unit": "current_selected_method_draft::finite_T_Creutz"
+    },
+    {
+      "count": 1,
+      "reason": "common.action_id: missing nonempty receipt/identifier; common.static_source_action_id: missing nonempty receipt/identifier; common.independent_review_receipt: missing nonempty receipt/identifier; common.geometry.spatial_extents: expected three positive integers; common.geometry.temporal_extent: expected a positive integer; common.boundary_conditions.spatial: missing; common.boundary_conditions.temporal: missing; common.lattice_spacing.a_s: expected a positive finite value; common.lattice_spacing.a_t: expected a positive finite value; common.lattice_spacing.length_unit: missing unit; common.lattice_spacing.energy_unit: missing unit; common.kernel_ids: expected unique nonempty identifiers; common.split_manifest_sha256: expected a SHA-256 receipt; common.paired_block_plan_sha256: expected a SHA-256 receipt; ground_state_discrete_static_force.primary.R: expected a positive integer; ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids; ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids; ground_state_discrete_static_force.primary: candidate and reference kernels must differ; ground_state_discrete_static_force.units: missing; ground_state_discrete_static_force.spectral_bounds: expected evidence rows; ground_state_discrete_static_force.systematic_bounds: expected evidence rows; ground_state_discrete_static_force.total_tolerance: expected a positive finite value; ground_state_discrete_static_force.inference.interval_method: missing; ground_state_discrete_static_force.inference.multiplicity_method: missing; ground_state_discrete_static_force.inference.alpha_total: expected a value in (0,1); ground_state_discrete_static_force.inference.alpha_allocations: list the prospective familywise allocations; ground_state_discrete_static_force.inference.statistical_precision_target: expected a positive finite value; ground_state_discrete_static_force.inference.precision_units: missing",
+      "state": "failed",
+      "unit": "current_selected_method_draft::ground_state_discrete_static_force"
+    },
+    {
+      "count": 1,
+      "reason": "ground_state_discrete_static_force.primary.R: expected a positive integer; ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids; ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids; ground_state_discrete_static_force.primary: candidate and reference kernels must differ; ground_state_discrete_static_force.units: missing; ground_state_discrete_static_force.spectral_bounds: expected evidence rows; ground_state_discrete_static_force.systematic_bounds: expected evidence rows; ground_state_discrete_static_force.total_tolerance: expected a positive finite value; ground_state_discrete_static_force.inference.interval_method: missing; ground_state_discrete_static_force.inference.multiplicity_method: missing; ground_state_discrete_static_force.inference.alpha_total: expected a value in (0,1); ground_state_discrete_static_force.inference.alpha_allocations: list the prospective familywise allocations; ground_state_discrete_static_force.inference.statistical_precision_target: expected a positive finite value; ground_state_discrete_static_force.inference.precision_units: missing",
+      "state": "failed",
+      "unit": "synthetic_C_only_complete::ground_state_discrete_static_force"
+    },
+    {
+      "count": 1,
+      "reason": "finite_T_Creutz.stencil: coefficients violate the prescribed signed four-point convention",
+      "state": "failed",
+      "unit": "synthetic_C_reversed_sign::finite_T_Creutz"
+    },
+    {
+      "count": 1,
+      "reason": "ground_state_discrete_static_force.force_stencil: coefficients must encode candidate minus reference",
+      "state": "failed",
+      "unit": "synthetic_F_reversed_sign::ground_state_discrete_static_force"
+    },
+    {
+      "count": 1,
+      "reason": "ground_state_discrete_static_force.inference.precision_units: expected 'SYNTHETIC_ONLY_GeV'",
+      "state": "failed",
+      "unit": "synthetic_F_wrong_precision_units::ground_state_discrete_static_force"
+    },
+    {
+      "count": 1,
+      "reason": "finite_T_Creutz.inference.precision_units: expected 'dimensionless'",
+      "state": "failed",
+      "unit": "synthetic_C_wrong_precision_units::finite_T_Creutz"
+    },
+    {
+      "count": 1,
+      "reason": "common.kernel_ids: expected unique nonempty identifiers; finite_T_Creutz.primary.kernel_id: not declared in common.kernel_ids",
+      "state": "failed",
+      "unit": "synthetic_null_common_kernel_ids::finite_T_Creutz"
+    },
+    {
+      "count": 1,
+      "reason": "common.kernel_ids: expected unique nonempty identifiers; ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids; ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids",
+      "state": "failed",
+      "unit": "synthetic_null_common_kernel_ids::ground_state_discrete_static_force"
+    },
+    {
+      "count": 5,
+      "reason": "physical certification awaits independent C/F receipts and explicit authorization",
+      "state": "abstained",
+      "unit": "physical_run_state_gates"
+    }
+  ],
+  "scenario": {
+    "assumptions": [
+      "fixtures are software checks and are not independent physical observations",
+      "structural validity does not imply physics validity or certification"
+    ],
+    "description": "Synthetic contract validation only; no Wilson measurements or production inputs.",
+    "name": "wilson-two-lane-contract-fixtures",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+      "tasks/wilson_loop/lane_contract.py": "f64cd4df1b7720b97ceb0a3af7cf3fca6e1c65af2571f1ba372580bd2e854289"
+    },
+    "unit": "one fixture-lane structural check"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "synthetic contract fixture -> separate C/F lane validation -> fixture-lane denominator and blocker reasons -> hashed report; complete means accounting only, not scientific success; human physics review and authorized measurement remain later gates"
+}

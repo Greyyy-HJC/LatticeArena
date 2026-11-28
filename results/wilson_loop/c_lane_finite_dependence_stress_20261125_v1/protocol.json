@@ -1,0 +1,68 @@
+{
+  "schema": "wilson-c-lane-finite-dependence-stress-v1",
+  "classification": "synthetic_conditional_method_comparison_only",
+  "physical_score": null,
+  "data_access": "No Wilson measurements, development/sealed split, GPU or QUDA data read.",
+  "estimator": "absolute finite-T Creutz -log(mean W36)-log(mean W25)+log(mean W35)+log(mean W26)",
+  "true_loop_means_order": [
+    "W(3,6)",
+    "W(2,5)",
+    "W(3,5)",
+    "W(2,6)"
+  ],
+  "true_loop_means": [
+    0.02,
+    0.06,
+    0.035,
+    0.04
+  ],
+  "true_chi": 0.15415067982725805,
+  "observation_support": {
+    "lower": -0.3333333333333333,
+    "upper": 1.0,
+    "basis": "real normalized SU(3) trace lies in [-1/3,1]; the three-direction average preserves this support"
+  },
+  "marginal_family": "affinely transformed Beta(mean=mu_j, concentration=kappa)",
+  "concentrations": [
+    5.0,
+    50.0
+  ],
+  "temporal_process": "stationary moving-average of m+1 iid Gaussian vectors, followed by coordinatewise Gaussian-copula Beta transform; exact m-dependence",
+  "dependence_ranges": [
+    0,
+    5,
+    10
+  ],
+  "latent_cross_correlations": [
+    0.0,
+    0.75
+  ],
+  "n_configurations": 100,
+  "replicates_per_cell": 250,
+  "block_hull": {
+    "lengths": [
+      2,
+      5,
+      10
+    ],
+    "draws_per_length": 500,
+    "interval": "hull of equal-tail intervals at alpha=0.025"
+  },
+  "finite_dependence_method": {
+    "chromatic_number_bound": "chi=m+1 for the finite-range interval dependency graph",
+    "bound": "radius=(4/3)*sqrt(chi*log(2/alpha_cell)/(2*n))",
+    "alpha_cell": "lane_alpha/(2 tails * 4 loop means)",
+    "propagation": "componentwise loop mean intervals through monotone log Creutz expression",
+    "precision_gate": 0.02,
+    "invalid_draw_fraction_max": 0.01
+  },
+  "sample_size_planning": "population-centered optimistic radius calculation; not an achieved-coverage or physical N recommendation",
+  "observable_source": {
+    "git_revision": "54f0e97ba85b7f8f724c31d9f9d3512f040583a9",
+    "measure_py_sha256": "5fdee931db8a0b9bc74debb6f8c53e659ec6ccef7a42b0443788db4593e84ef6",
+    "normalization": "sum ReTr(W) over 3 spatial orientations and volume, divided by 9*volume"
+  },
+  "seed_rule": "20261125 + 10000000*kappa_index + 1000000*cross_corr_index + 10000*m_index + replicate; bootstrap adds 50000000 and block length",
+  "planned_data_sets": 3000,
+  "interpretation_limit": "Synthetic coverage is conditional on the exact finite-m dependence graph and declared Beta-copula DGP; it does not estimate physical HMC dependence or authorize production data."
+}

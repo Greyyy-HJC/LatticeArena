@@ -1,0 +1,25 @@
+{
+  "action": "wilson_gauge_beta6",
+  "boundary_conditions": "periodic",
+  "dimension_order": "block,Nt,R,T,i,j",
+  "geometry": "S16T16",
+  "lane_contract_sha256": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+  "matrix_sha256": "6cfa1f0f7db00907b5ef00649bb8916a1f0145b1c6c42cea30a09290451ef938",
+  "radius_order": [
+    2,
+    3
+  ],
+  "schema": "wilson-f-two-sector-raw-manifest-v1",
+  "split_id": "F-synthetic-open-state-count-009",
+  "temporal_extents": [
+    16,
+    32
+  ],
+  "time_slices": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

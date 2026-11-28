@@ -1,0 +1,126 @@
+{
+  "derived_uniform_cap_check": {
+    "assumption_only_numeric_gate_pass": true,
+    "certification_status": "NOT_CERTIFIED_REQUIRES_INDEPENDENT_RECEIPTS_AND_REVIEW",
+    "combined_log_corner_bound": 0.0399345560861009,
+    "component_force_bounds": {
+      "h": 0.015,
+      "q": 0.015,
+      "x": 0.01
+    },
+    "component_gates_pass": true,
+    "component_relative_bounds": {
+      "h": 0.015,
+      "model_truncation": 0.01,
+      "q": 0.015,
+      "statistical": 0.05,
+      "x": 0.01
+    },
+    "factorized_qhx_bound": 0.04,
+    "force_corner_count": 8,
+    "limits": {
+      "component_fractions": {
+        "h": 0.015,
+        "q": 0.015,
+        "x": 0.01
+      },
+      "model_fraction": 0.01,
+      "statistical_fraction": 0.05,
+      "total_fraction": 0.1
+    },
+    "model_gate_pass": true,
+    "physical_score": null,
+    "reference_force_lower": 1.0,
+    "statistical_gate_pass": true,
+    "systematic_relative_bound": 0.05,
+    "total_gate_pass": true,
+    "total_relative_bound": 0.1
+  },
+  "formula": {
+    "component_bound": "sum over 8 corners log(1+q_component)",
+    "force_contrast_bound": "sum over 8 kernel/R/t corners of delta",
+    "loop_log_envelope": "delta=log(1+q+h+x), for nonnegative q,h,x",
+    "uniform_raw_cap": "expm1(component_fraction * reference_force_lower / 8)"
+  },
+  "input_hashes": {
+    "force_budget.py": "25f9ed3cf209501b0e15782a1747731b92c8f78a5f7f1766f85274116bede343",
+    "force_budget_diagnostic.py": "649ad32c49b45ede772867d066ec70bc63b5a6c64113d3fd2a517678f3df5db3",
+    "lane_contract.py": "7ed2d02e9b28d75dd83c975e3bf76f7e62d7f7acda863f1f09301af740722179",
+    "lane_contract_v2.json": "b99383471b983332e4585da40f6b6d3dc1abd5da1c1f0adba52a64fb8bea2b33"
+  },
+  "inputs": {
+    "assumed_raw_loop_caps_counterexample": {
+      "h": 0.015,
+      "q": 0.015,
+      "x": 0.01
+    },
+    "component_force_fraction_budgets": {
+      "h": 0.015,
+      "q": 0.015,
+      "x": 0.01
+    },
+    "force_corner_count": 8,
+    "illustrative_reference_force_lower": 1.0,
+    "kernel_count": 2,
+    "loop_corners_per_kernel": 4,
+    "reference_force_range_for_plot": [
+      0.01,
+      1.0
+    ]
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "naive_per_loop_cap_counterexample": {
+    "assumption_only_numeric_gate_pass": false,
+    "certification_status": "NOT_CERTIFIED_REQUIRES_INDEPENDENT_RECEIPTS_AND_REVIEW",
+    "combined_log_corner_bound": 0.31376570522625036,
+    "component_force_bounds": {
+      "h": 0.11910889995000523,
+      "q": 0.11910889995000523,
+      "x": 0.07960264682534467
+    },
+    "component_gates_pass": false,
+    "component_relative_bounds": {
+      "h": 0.11910889995000523,
+      "model_truncation": 0.01,
+      "q": 0.11910889995000523,
+      "statistical": 0.05,
+      "x": 0.07960264682534467
+    },
+    "factorized_qhx_bound": 0.31782044672535514,
+    "force_corner_count": 8,
+    "limits": {
+      "component_fractions": {
+        "h": 0.015,
+        "q": 0.015,
+        "x": 0.01
+      },
+      "model_fraction": 0.01,
+      "statistical_fraction": 0.05,
+      "total_fraction": 0.1
+    },
+    "model_gate_pass": true,
+    "physical_score": null,
+    "reference_force_lower": 1.0,
+    "statistical_gate_pass": true,
+    "systematic_relative_bound": 0.32782044672535515,
+    "total_gate_pass": false,
+    "total_relative_bound": 0.37782044672535514
+  },
+  "physical_evidence_denominator": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "reason": "no independent q/h/x, positive reference-force, model-truncation, or review receipts",
+    "valid": 0
+  },
+  "physical_score": null,
+  "purpose": "formula-only translation from loop q/h/x envelopes to candidate-minus-reference force bounds",
+  "scenario_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "meaning": "deterministic formula sensitivity rows; not measurements or Monte Carlo datasets",
+    "planned": 50,
+    "valid": 50
+  },
+  "schema": "wilson-force-budget-propagation-diagnostic-v1"
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "wilson-two-lane-contract-v2",
+  "status": "STRUCTURE_DIAGNOSTIC_ONLY",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "lane_estimands": [
+    "finite_T_Creutz",
+    "ground_state_discrete_static_force_difference"
+  ],
+  "fixed_sign_conventions": {
+    "finite_T_Creutz": "minus the R-T rectangular log-W difference, matching finite_nt_toy.py",
+    "ground_state_discrete_static_force_difference": "candidate force minus reference force"
+  },
+  "fixtures": [
+    "current_null_draft",
+    "synthetic_C_only_complete",
+    "synthetic_C_and_F_schema_complete",
+    "synthetic_C_reversed_sign",
+    "synthetic_F_reversed_sign",
+    "synthetic_F_wrong_precision_units",
+    "synthetic_null_common_kernel_ids"
+  ],
+  "meaning_of_valid": "schema complete only; requires human physics review and does not certify",
+  "receipt": {
+    "schema": "latticearena-run-receipt-v1",
+    "unit": "one fixture-lane structural check",
+    "complete_means": "all planned schema checks are accounted for; not scientific success"
+  }
+}

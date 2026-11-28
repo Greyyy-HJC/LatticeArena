@@ -1,0 +1,70 @@
+{
+  "schema": "optimize-d11-operator-audit-v1",
+  "status": "SOURCE_MATH_AUDIT_ONLY",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "denominator": {
+    "planned": 9,
+    "valid": 7,
+    "failed": 0,
+    "abstained": 2,
+    "unit": "one source/algebra contract obligation"
+  },
+  "checks": [
+    {
+      "check": "spatial_layout_and_periodic_shift",
+      "status": "valid",
+      "evidence": "features.py declares storage axes (z,y,x), direction order x/y/z, and np.roll periodic shifts"
+    },
+    {
+      "check": "paired_forward_adjoint_hop",
+      "status": "valid",
+      "evidence": "kernels.py pairs each real forward coefficient with its shifted adjoint coefficient"
+    },
+    {
+      "check": "H_spectrum_under_unitary_links",
+      "status": "valid",
+      "evidence": "each unitary covariant shift T_i gives H_i=T_i+T_i\u2020-2I with 0<=-H_i<=4I; three directions give 0<=-H<=12I"
+    },
+    {
+      "check": "chebyshev_coordinate_matches_H",
+      "status": "valid",
+      "evidence": "the code applies x=I+H/6=2(I+H/12)-I, so x is in [-1,1] for the declared H spectrum"
+    },
+    {
+      "check": "Bernstein_constraints_and_endpoint",
+      "status": "valid",
+      "evidence": "nonnegative Bernstein basis plus monotone controls gives 0<=P4<=1 and P4'(y)>=0; b4=1 gives P4(y=1)=1"
+    },
+    {
+      "check": "Gaussian_affine_spectrum",
+      "status": "valid",
+      "evidence": "G=I+0.1 sum_i(T_i+T_i\u2020)=1.6I+0.1H, hence spec(G) is contained in [0.4,1.6]"
+    },
+    {
+      "check": "common_unnormalized_sandwich_and_conditional_factor",
+      "status": "valid",
+      "evidence": "the helper applies G^2 on each side without per-step normalization; G and P4(H) commute, giving response G(lambda)^4 P4(y); 6.5536 is conditional on lambda=0 being an eigenvalue"
+    },
+    {
+      "check": "physical_SU3_link_receipt",
+      "status": "abstained",
+      "evidence": "the CPU helper checks U\u2020U\u2248I but does not check det(U)=1; production SU(3) provenance or determinant-unitarity evidence is still absent"
+    },
+    {
+      "check": "production_objective_and_RunSpec_integration",
+      "status": "abstained",
+      "evidence": "trainable_w.py identifies itself as an isolated CPU parameterization with no production physics objective; D04 data and production evaluator receipts remain absent"
+    }
+  ],
+  "source_hashes": {
+    "research_contract_v1.json": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "contract.py": "bc3a1a97e3dd255f83f12f0932d8d4f9c43e5959ea7225f559855c02c4c5d541",
+    "candidate_contract.py": "e0954d0fe528be2f5ed5a3d7994435ace229a4d9dc0f1aab894a7d7e3ba4b62a",
+    "features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+    "chebyshev_baseline.py": "b8c3d9600aee79633fdefaa4eccec1b0fe8800ae8110ad96132abcf5bc60cc32",
+    "trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0"
+  }
+}

@@ -1,0 +1,97 @@
+planned_n,gamma_ps_lower_assumed,mean_floor_assumed,score_radius,loop_mean_radius,worst_case_halfwidth,status,reason
+100,1.0,0.1,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,1.0,0.25,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,1.0,0.5,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,1.0,1.0,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.5,0.1,4.810357428152357,3.206904952101571,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.5,0.25,4.810357428152357,3.206904952101571,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.5,0.5,4.810357428152357,3.206904952101571,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.5,1.0,4.810357428152357,3.206904952101571,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.1,0.1,23.291225392047103,15.527483594698069,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.1,0.25,23.291225392047103,15.527483594698069,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.1,0.5,23.291225392047103,15.527483594698069,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.1,1.0,23.291225392047103,15.527483594698069,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.01,0.1,231.13214878300954,154.08809918867303,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.01,0.25,231.13214878300954,154.08809918867303,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.01,0.5,231.13214878300954,154.08809918867303,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100,0.01,1.0,231.13214878300954,154.08809918867303,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,1.0,0.1,0.35929699483120386,0.23953132988746922,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,1.0,0.25,0.35929699483120386,0.23953132988746922,7.6901229316478625,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000,1.0,0.5,0.35929699483120386,0.23953132988746922,2.087068123773006,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000,1.0,1.0,0.35929699483120386,0.23953132988746922,0.547640729129226,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000,0.5,0.1,0.6124596604527155,0.4083064403018103,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.5,0.25,0.6124596604527155,0.4083064403018103,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.5,0.5,0.6124596604527155,0.4083064403018103,4.586259332973309,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000,0.5,1.0,0.6124596604527155,0.4083064403018103,1.049532827525325,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000,0.1,0.1,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.1,0.25,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.1,0.5,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.1,1.0,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.01,0.1,23.29122539204711,15.527483594698072,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.01,0.25,23.29122539204711,15.527483594698072,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.01,0.5,23.29122539204711,15.527483594698072,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+1000,0.01,1.0,23.29122539204711,15.527483594698072,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+10000,1.0,0.1,0.08044391570602746,0.05362927713735164,2.3957482432321986,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,1.0,0.25,0.08044391570602746,0.05362927713735164,0.8716063164995695,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,1.0,0.5,0.08044391570602746,0.05362927713735164,0.4306909279526674,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,1.0,1.0,0.08044391570602746,0.05362927713735164,0.11024180412833154,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.5,0.1,0.12188389014342962,0.0812559267622864,4.538064768237453,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.5,0.25,0.12188389014342962,0.0812559267622864,1.3490161233427194,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.5,0.5,0.12188389014342962,0.0812559267622864,0.6558624477058411,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.5,1.0,0.12188389014342962,0.0812559267622864,0.1694953587472489,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.1,0.1,0.35929699483120386,0.23953132988746922,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+10000,0.1,0.25,0.35929699483120386,0.23953132988746922,7.6901229316478625,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.1,0.5,0.35929699483120386,0.23953132988746922,2.087068123773006,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.1,1.0,0.35929699483120386,0.23953132988746922,0.547640729129226,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000,0.01,0.1,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+10000,0.01,0.25,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+10000,0.01,0.5,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+10000,0.01,1.0,2.4941944751617795,1.6627963167745197,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100000,1.0,0.1,0.022666479807644756,0.015110986538429837,0.6091041679581234,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,1.0,0.25,0.022666479807644756,0.015110986538429837,0.24207087198373228,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,1.0,0.5,0.022666479807644756,0.015110986538429837,0.1209247175208264,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,1.0,1.0,0.022666479807644756,0.015110986538429837,0.030452641694608887,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.5,0.1,0.03277491088022559,0.02184994058681706,0.8883189507312687,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.5,0.25,0.03277491088022559,0.02184994058681706,0.3504933145087445,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.5,0.5,0.03277491088022559,0.02184994058681706,0.17491092272613454,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.5,1.0,0.03277491088022559,0.02184994058681706,0.044184371468916406,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.1,0.1,0.08044391570602745,0.05362927713735163,2.395748243232198,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.1,0.25,0.08044391570602745,0.05362927713735163,0.8716063164995695,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.1,0.5,0.08044391570602745,0.05362927713735163,0.4306909279526674,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.1,1.0,0.08044391570602745,0.05362927713735163,0.11024180412833154,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.01,0.1,0.35929699483120386,0.23953132988746922,,ABSTAIN,support interval reaches zero; logarithm is not bounded
+100000,0.01,0.25,0.35929699483120386,0.23953132988746922,7.6901229316478625,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.01,0.5,0.35929699483120386,0.23953132988746922,2.087068123773006,ABSTAIN,simultaneous interval misses the 0.02 precision target
+100000,0.01,1.0,0.35929699483120386,0.23953132988746922,0.547640729129226,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,1.0,0.1,0.006909475892375261,0.004606317261583507,0.18438317338109492,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,1.0,0.25,0.006909475892375261,0.004606317261583507,0.0737094181573179,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,1.0,0.5,0.006909475892375261,0.004606317261583507,0.03685158067984901,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,1.0,1.0,0.006909475892375261,0.004606317261583507,0.009233918066199708,CONDITIONAL_VALID,conditional support and pseudo-gap assumptions meet precision
+1000000,0.5,0.1,0.009840444498479426,0.006560296332319617,0.26278927994887796,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.5,0.25,0.009840444498479426,0.006560296332319617,0.10498884417645381,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.5,0.5,0.009840444498479426,0.006560296332319617,0.05248538258219211,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.5,1.0,0.009840444498479426,0.006560296332319617,0.013163819309389702,CONDITIONAL_VALID,conditional support and pseudo-gap assumptions meet precision
+1000000,0.1,0.1,0.022666479807644756,0.015110986538429837,0.6091041679581234,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.1,0.25,0.022666479807644756,0.015110986538429837,0.24207087198373228,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.1,0.5,0.022666479807644756,0.015110986538429837,0.1209247175208264,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.1,1.0,0.022666479807644756,0.015110986538429837,0.030452641694608887,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.01,0.1,0.08044391570602746,0.05362927713735164,2.3957482432321986,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.01,0.25,0.08044391570602746,0.05362927713735164,0.8716063164995695,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.01,0.5,0.08044391570602746,0.05362927713735164,0.4306909279526674,ABSTAIN,simultaneous interval misses the 0.02 precision target
+1000000,0.01,1.0,0.08044391570602746,0.05362927713735164,0.11024180412833154,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,1.0,0.1,0.0021597429524304007,0.0014398286349536003,0.05759712578406004,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,1.0,0.25,0.0021597429524304007,0.0014398286349536003,0.02303751287733812,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,1.0,0.5,0.0021597429524304007,0.0014398286349536003,0.01151866091891392,CONDITIONAL_VALID,conditional support and pseudo-gap assumptions meet precision
+10000000,1.0,1.0,0.0021597429524304007,0.0014398286349536003,0.0028817323685020723,CONDITIONAL_VALID,conditional support and pseudo-gap assumptions meet precision
+10000000,0.5,0.1,0.003061139744014378,0.0020407598293429186,0.08164172821140851,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.5,0.25,0.003061139744014378,0.0020407598293429186,0.03265288255961347,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.5,0.5,0.003061139744014378,0.0020407598293429186,0.016326169293290713,CONDITIONAL_VALID,conditional support and pseudo-gap assumptions meet precision
+10000000,0.5,1.0,0.003061139744014378,0.0020407598293429186,0.004085690034155855,CONDITIONAL_VALID,conditional support and pseudo-gap assumptions meet precision
+10000000,0.1,0.1,0.006909475892375261,0.004606317261583507,0.18438317338109492,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.1,0.25,0.006909475892375261,0.004606317261583507,0.0737094181573179,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.1,0.5,0.006909475892375261,0.004606317261583507,0.03685158067984901,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.1,1.0,0.006909475892375261,0.004606317261583507,0.009233918066199708,CONDITIONAL_VALID,conditional support and pseudo-gap assumptions meet precision
+10000000,0.01,0.1,0.022666479807644753,0.015110986538429835,0.6091041679581234,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.01,0.25,0.022666479807644753,0.015110986538429835,0.24207087198373228,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.01,0.5,0.022666479807644753,0.015110986538429835,0.1209247175208264,ABSTAIN,simultaneous interval misses the 0.02 precision target
+10000000,0.01,1.0,0.022666479807644753,0.015110986538429835,0.030452641694608887,ABSTAIN,simultaneous interval misses the 0.02 precision target

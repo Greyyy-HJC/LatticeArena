@@ -1,0 +1,404 @@
+{
+  "schema": "wilson-two-lane-contract-v2",
+  "status": "DRAFT_NOT_READY",
+  "physical_score": null,
+  "certified": false,
+  "selected_protocol": {
+    "protocol_id": "wilson-two-lane-selected-v2",
+    "status": "METHOD_DEFAULTS_SELECTED_EVIDENCE_NOT_READY",
+    "ensemble_design": {
+      "geometry": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "action": "Wilson gauge action, beta=6",
+      "boundary_conditions": {
+        "spatial": "periodic",
+        "temporal": "periodic"
+      },
+      "temporal_extent_Nt": 16,
+      "primary_kernel": "spatial_stout_rho0.10_n5",
+      "descriptive_kernel": "ape_alpha0.4_n5",
+      "kernel_pair_interpretation": "weak-field matched candidate pair only; no nonperturbative radius equivalence asserted"
+    },
+    "familywise_inference": {
+      "alpha_total": 0.05,
+      "co_primary_lanes": [
+        "finite_T_Creutz",
+        "ground_state_discrete_static_force"
+      ],
+      "alpha_each_lane": 0.025,
+      "block_bootstrap_draws": 10000,
+      "block_bootstrap_seed_base": 20261125,
+      "block_bootstrap_seed_rule": "seed = seed_base + block_length",
+      "block_bootstrap_invalid_draw_fraction_max": 0.01,
+      "primary_circular_block_length": 5,
+      "sensitivity_block_lengths": [
+        2,
+        10
+      ],
+      "interval_rule": "hull of the required block-length intervals",
+      "failed_draw_rule": "invalid required loop mean invalidates the paired draw; abstain if >1% invalid draws or precision gate fails"
+    },
+    "familywise_alpha_allocation": {
+      "alpha_total": 0.05,
+      "alpha_creutz_lane": 0.025,
+      "alpha_force_lane": 0.025,
+      "alpha_force_statistics": 0.0125,
+      "alpha_force_systematics": 0.0125,
+      "alpha_force_difference_interval": 0.00625,
+      "alpha_reference_force_positive_lower_bound": 0.00625,
+      "force_systematic_bound_cells": 28,
+      "alpha_per_force_systematic_cell": 0.00044642857142857147
+    },
+    "finite_T_Creutz": {
+      "estimand": "absolute finite-T chi_stout(R=2,T=5), not a ground-state force",
+      "R": 2,
+      "T": 5,
+      "kernel_id": "spatial_stout_rho0.10_n5",
+      "formula": "-[log Wbar(3,6)+log Wbar(2,5)-log Wbar(3,5)-log Wbar(2,6)]",
+      "loop_mean_rule": "compute paired ensemble means first; take logs only for positive means",
+      "precision_halfwidth_target": 0.02,
+      "precision_units": "dimensionless",
+      "bootstrap_seed_base": 20261125,
+      "bootstrap_seed_rule": "seed = seed_base + block_length",
+      "bootstrap_invalid_draw_fraction_max": 0.01,
+      "data_receipt_sha256": null,
+      "paired_split_manifest_sha256": null
+    },
+    "ground_state_discrete_static_force": {
+      "estimand": "stout-minus-identity ground-state discrete static force at midpoint R=2.5",
+      "stencil_R": 2,
+      "midpoint_R": 2.5,
+      "candidate_kernel_id": "spatial_stout_rho0.10_n5",
+      "reference_kernel_id": "identity",
+      "formula": "[U0_stout(3)-U0_stout(2)]-[U0_identity(3)-U0_identity(2)]",
+      "units": "dimensionless lattice force a_s*a_t*F",
+      "spectral_evidence_plan": {
+        "basis": [
+          "identity",
+          "APE",
+          "stout"
+        ],
+        "gevp_dimension": 3,
+        "t0": 1,
+        "td": 2,
+        "R_values": [
+          2,
+          3
+        ],
+        "joint_finite_Nt_state_count_checks": [
+          2,
+          3
+        ],
+        "fit_window": [
+          3,
+          7
+        ],
+        "tmin_checks": [
+          3,
+          4,
+          5
+        ],
+        "contamination_stencil": {
+          "primary_effective_energy_T": 5,
+          "loop_time_extents": [
+            5,
+            6
+          ],
+          "rationale": "T=5 and T+1=6 lie inside every selected fit window [tmin,7] for tmin=3,4,5",
+          "q_envelope": "for each selected kernel and R, take the maximum over all tmin=3,4,5 and 2/3-state variants of sum_n overlap_ratio_upper[n]*exp(-gap_lower[n]*T)",
+          "within_cell_interval_family": "Bonferroni over 24 endpoint slots per q cell (6 fit variants x up to 2 excited states x 2 one-sided endpoints); 2-state variants use one excited state, unused slots are not reassigned, and alpha_endpoint=systematic_cell_alpha/24",
+          "status": "PROPOSED_METHOD_DEFAULT_REQUIRES_INDEPENDENT_REVIEW"
+        },
+        "matched_thermal_Nt": 32
+      },
+      "relative_error_budget": {
+        "reference": "positive simultaneous lower confidence bound for f_reference is required; otherwise abstain",
+        "excited_state_q_max_fraction": 0.015,
+        "thermal_h_max_fraction": 0.015,
+        "mixed_x_max_fraction": 0.01,
+        "spectral_model_truncation_max_fraction": 0.01,
+        "systematic_total_max_fraction": 0.05,
+        "statistical_halfwidth_max_fraction": 0.05,
+        "linear_total_max_fraction": 0.1,
+        "q_h_x_cells": 24,
+        "model_truncation_cells": 4,
+        "systematic_cell_alpha": 0.00044642857142857147
+      },
+      "error_propagation": "use log(1+q+h+x) at all four stencil points, then apply Delta_R Delta_t before force-unit gate",
+      "evidence_receipts": {
+        "gevp_and_overlap": null,
+        "excited_state_q": null,
+        "thermal_h_Nt32": null,
+        "mixed_x": null,
+        "spectral_model_truncation": null,
+        "independent_physics_review": null
+      }
+    },
+    "gates": {
+      "production_data_authorized": false,
+      "gpu_quda_authorized": false,
+      "sealed_confirmation_open": false,
+      "finite_T_Creutz_certified": false,
+      "ground_state_force_certified": false,
+      "physical_score": null
+    }
+  },
+  "common": {
+    "metadata_status": "PROPOSED_METHOD_METADATA_NO_PRODUCTION_RECEIPT",
+    "action_id": "wilson_gauge_beta6_proposed",
+    "static_source_action_id": "fundamental_rectangular_wilson_loop_proposed",
+    "geometry": {
+      "spatial_extents": [
+        16,
+        16,
+        16
+      ],
+      "temporal_extent": 16
+    },
+    "boundary_conditions": {
+      "spatial": "periodic",
+      "temporal": "periodic"
+    },
+    "lattice_spacing": {
+      "a_s": null,
+      "a_t": null,
+      "length_unit": null,
+      "energy_unit": null,
+      "scale_status": "not_required_for_dimensionless_lattice_estimands"
+    },
+    "kernel_ids": [
+      "spatial_stout_rho0.10_n5",
+      "ape_alpha0.4_n5",
+      "identity"
+    ],
+    "split_manifest_sha256": null,
+    "paired_block_plan_sha256": null,
+    "independent_review_receipt": null
+  },
+  "lanes": {
+    "finite_T_Creutz": {
+      "estimand": "finite_T_Creutz",
+      "primary": {
+        "R": 2,
+        "T": 5,
+        "kernel_id": "spatial_stout_rho0.10_n5"
+      },
+      "stencil": [
+        {
+          "R": 2,
+          "T": 5,
+          "coefficient": -1
+        },
+        {
+          "R": 3,
+          "T": 5,
+          "coefficient": 1
+        },
+        {
+          "R": 2,
+          "T": 6,
+          "coefficient": 1
+        },
+        {
+          "R": 3,
+          "T": 6,
+          "coefficient": -1
+        }
+      ],
+      "log_rule": "log_positive_ensemble_mean",
+      "invalid_point_rule": "invalidate a paired draw if any required loop mean is nonpositive or nonfinite; abstain if invalid fraction exceeds 0.01 or the precision gate fails",
+      "comparison_family": "co-primary family with the separate ground_state_discrete_static_force lane; alpha allocated to this lane is 0.025",
+      "inference": {
+        "interval_method": "paired circular block bootstrap: 10000 draws; primary block length 5; report hull across lengths 2, 5, 10; coverage calibration remains open",
+        "alpha_total": 0.025,
+        "alpha_allocations": {
+          "finite_T_Creutz_two_sided_interval": 0.025
+        },
+        "bootstrap_seed_base": 20261125,
+        "bootstrap_seed_rule": "seed = seed_base + block_length",
+        "bootstrap_invalid_draw_fraction_max": 0.01,
+        "precision_target": 0.02,
+        "precision_units": "dimensionless",
+        "multiplicity_method": "Bonferroni allocation across the two co-primary lanes"
+      }
+    },
+    "ground_state_discrete_static_force": {
+      "estimand": "ground_state_discrete_static_force_difference",
+      "primary": {
+        "R": 2,
+        "midpoint_R": 2.5,
+        "candidate_kernel_id": "spatial_stout_rho0.10_n5",
+        "reference_kernel_id": "identity"
+      },
+      "force_stencil": [
+        {
+          "R": 3,
+          "kernel_id": "spatial_stout_rho0.10_n5",
+          "coefficient": 1
+        },
+        {
+          "R": 2,
+          "kernel_id": "spatial_stout_rho0.10_n5",
+          "coefficient": -1
+        },
+        {
+          "R": 3,
+          "kernel_id": "identity",
+          "coefficient": -1
+        },
+        {
+          "R": 2,
+          "kernel_id": "identity",
+          "coefficient": 1
+        }
+      ],
+      "units": "dimensionless lattice force a_s*a_t*F",
+      "force_bound_propagation": {
+        "assumption": "q,h,x are nonnegative loop-level upper bounds and each correction is log(1+q+h+x)",
+        "corner_count": 8,
+        "corner_layout": [
+          "candidate_R2_t",
+          "candidate_R2_t_plus_1",
+          "candidate_R3_t",
+          "candidate_R3_t_plus_1",
+          "reference_R2_t",
+          "reference_R2_t_plus_1",
+          "reference_R3_t",
+          "reference_R3_t_plus_1"
+        ],
+        "component_force_bound": "sum over all 8 corners of log1p(component_bound)",
+        "uniform_raw_loop_cap": "expm1(force_fraction*positive_reference_force_lower/8)",
+        "evidence_status": "FORMULA_ONLY_INPUT_RECEIPTS_MISSING"
+      },
+      "spectral_bounds": [
+        {
+          "component": "q",
+          "bound": null,
+          "units": "dimensionless",
+          "proposed_relative_cap": 0.015,
+          "evidence_sha256": null,
+          "scope": "proposed 1.5% post-propagation force component budget; derive raw corner cap from positive reference-force lower bound",
+          "uniform_raw_loop_cap_formula": "expm1(0.015*reference_force_lower/8)",
+          "independent_review_receipt": null
+        },
+        {
+          "component": "h",
+          "bound": null,
+          "units": "dimensionless",
+          "proposed_relative_cap": 0.015,
+          "evidence_sha256": null,
+          "scope": "proposed 1.5% post-propagation force component budget; derive raw corner cap from positive reference-force lower bound",
+          "uniform_raw_loop_cap_formula": "expm1(0.015*reference_force_lower/8)",
+          "independent_review_receipt": null
+        },
+        {
+          "component": "x",
+          "bound": null,
+          "units": "dimensionless",
+          "proposed_relative_cap": 0.01,
+          "evidence_sha256": null,
+          "scope": "proposed 1.0% post-propagation force component budget; derive raw corner cap from positive reference-force lower bound",
+          "uniform_raw_loop_cap_formula": "expm1(0.01*reference_force_lower/8)",
+          "independent_review_receipt": null
+        }
+      ],
+      "systematic_bounds": [
+        {
+          "component": "excited_state_force",
+          "bound": null,
+          "units": "dimensionless lattice force a_s*a_t*F",
+          "proposed_relative_cap": 0.015,
+          "evidence_sha256": null,
+          "scope": "force-unit component bound after candidate-minus-reference propagation through all eight loop corners",
+          "independent_review_receipt": null
+        },
+        {
+          "component": "finite_T_thermal",
+          "bound": null,
+          "units": "dimensionless lattice force a_s*a_t*F",
+          "proposed_relative_cap": 0.015,
+          "evidence_sha256": null,
+          "scope": "force-unit component bound after candidate-minus-reference propagation through all eight loop corners",
+          "independent_review_receipt": null
+        },
+        {
+          "component": "mixed",
+          "bound": null,
+          "units": "dimensionless lattice force a_s*a_t*F",
+          "proposed_relative_cap": 0.01,
+          "evidence_sha256": null,
+          "scope": "force-unit component bound after candidate-minus-reference propagation through all eight loop corners",
+          "independent_review_receipt": null
+        },
+        {
+          "component": "spectral_model_truncation",
+          "bound": null,
+          "units": "dimensionless lattice force a_s*a_t*F",
+          "proposed_relative_cap": 0.01,
+          "evidence_sha256": null,
+          "scope": "four corner model-truncation bounds combined in force units",
+          "independent_review_receipt": null
+        }
+      ],
+      "spectral_evidence_plan": {
+        "basis": [
+          "identity",
+          "APE",
+          "stout"
+        ],
+        "gevp_dimension": 3,
+        "t0": 1,
+        "td": 2,
+        "R_values": [
+          2,
+          3
+        ],
+        "joint_finite_Nt_state_count_checks": [
+          2,
+          3
+        ],
+        "fit_window": [
+          3,
+          7
+        ],
+        "tmin_checks": [
+          3,
+          4,
+          5
+        ],
+        "contamination_stencil": {
+          "primary_effective_energy_T": 5,
+          "loop_time_extents": [
+            5,
+            6
+          ],
+          "rationale": "T=5 and T+1=6 lie inside every selected fit window [tmin,7] for tmin=3,4,5",
+          "q_envelope": "for each selected kernel and R, take the maximum over all tmin=3,4,5 and 2/3-state variants of sum_n overlap_ratio_upper[n]*exp(-gap_lower[n]*T)",
+          "within_cell_interval_family": "Bonferroni over 24 endpoint slots per q cell (6 fit variants x up to 2 excited states x 2 one-sided endpoints); 2-state variants use one excited state, unused slots are not reassigned, and alpha_endpoint=systematic_cell_alpha/24",
+          "status": "PROPOSED_METHOD_DEFAULT_REQUIRES_INDEPENDENT_REVIEW"
+        },
+        "matched_thermal_Nt": 32
+      },
+      "inference": {
+        "interval_method": "paired circular block bootstrap: 10000 draws; primary block length 5; report hull across lengths 2, 5, 10; coverage calibration remains open",
+        "alpha_total": 0.025,
+        "alpha_allocations": {
+          "force_difference_two_sided_interval": 0.00625,
+          "positive_reference_force_one_sided_lower_bound": 0.00625,
+          "systematic_family_28_cells": 0.0125
+        },
+        "statistical_precision_target": null,
+        "proposed_relative_statistical_halfwidth_cap": 0.05,
+        "precision_units": "dimensionless lattice force a_s*a_t*F",
+        "multiplicity_method": "Bonferroni: 24 q/h/x cells and 4 spectral-model cells; alpha=0.0125/28 per systematic cell"
+      },
+      "total_tolerance": null,
+      "proposed_relative_total_tolerance": 0.1,
+      "scope": "fixed lattice spacing, volume, action, and static-source convention; continuum and infinite-volume extrapolations are outside this estimand"
+    }
+  }
+}

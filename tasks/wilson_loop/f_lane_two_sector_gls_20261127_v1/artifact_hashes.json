@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "README.md": "01d0c79588aca49fc0b433378e6804f4b40882df7cb24fcf65dd2fc59cfcbc7e",
+    "lane_contract.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "manifest.json": "2378cb3242196a0a095522d91f5c829c4c19f0b7c8ee0ee248ab6ad9aba43474",
+    "protocol.json": "a6c59bd08ab644a67c512b518b072748f8346c3403f337eea97e2c8f0e200110",
+    "qhx_comparison.csv": "2d0771aa8571cbdd73ba93ff810af7996c3b5a24fcab3913a96c2301668c889e",
+    "raw_matrices.npz": "c20451ae997a1c1a8bdb498c6ec8b15397878eb33fb783d0ab4b933f74290fa0",
+    "source_hashes.json": "e9f3115c274ae68bd6b7b2ea7b79a1d7076439396bc45b6afddc0e5ce2b9abaa",
+    "source_snapshot/finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "source_snapshot/joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "source_snapshot/lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "source_snapshot/npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/test_two_sector_fit.py": "6d2f0ab18b6ed75075c9ddb13c2541899631a2c03d7e24f88ddda3e95cf230e3",
+    "source_snapshot/transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "source_snapshot/two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e",
+    "source_snapshot/two_sector_fit_diagnostic.py": "e86eca8e99c0359326f014989e304bff608bad27ec72dfb3113885fe46e3a4d5",
+    "source_snapshot/two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "standardized_errors.png": "ccdb4b9360a00a7cdc1da094df2a23fee1471d95e042f2e80044d03e5da7dcbb",
+    "summary.json": "b605430288d11e1275f406e605c00ac523eac61fb6ab6b288a4e7d9311c1a8d0"
+  },
+  "schema": "wilson-f-two-sector-gls-artifact-hashes-v1"
+}

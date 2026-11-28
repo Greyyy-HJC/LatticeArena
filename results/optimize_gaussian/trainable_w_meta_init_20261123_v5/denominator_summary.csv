@@ -1,0 +1,15 @@
+unit,planned,valid,failed,abstained,interpretation
+training panel,12,12,0,0,Synthetic tasks used only through fit link samples.
+training fit link target,24,24,0,0,Input to one pooled prior fit.
+evaluation panel,12,12,0,0,Independent synthetic panels; heldout links are never used for training.
+evaluation fit link target,24,24,0,0,Online SLSQP adaptation only.
+evaluation heldout link target,24,24,0,0,Paired final diagnostics; excluded from fitting and prior training.
+online solver run,108,108,0,0,"Budget stops and solver non-success are counted separately, not excluded."
+degree-4 spectral baseline,12,12,0,0,"Fit on evaluation fit links, scored once on independent heldout links."
+target-matched fixed local degree-2 baseline,12,12,0,0,"Synthetic target-family control; fit on evaluation fit links, score on heldout."
+pooled_learned_init reached 0.1 of cold-start initial fit loss,12,12,0,0,Shared synthetic training-fit contraction target only; not a physical r_star or heldout stop rule.
+random_cold_start reached 0.1 of cold-start initial fit loss,12,12,0,0,Shared synthetic training-fit contraction target only; not a physical r_star or heldout stop rule.
+fixed_nonzero_control reached 0.1 of cold-start initial fit loss,12,12,0,0,Shared synthetic training-fit contraction target only; not a physical r_star or heldout stop rule.
+pooled_learned_init reached 0.01 of cold-start initial fit loss,12,12,0,0,Shared synthetic training-fit contraction target only; not a physical r_star or heldout stop rule.
+random_cold_start reached 0.01 of cold-start initial fit loss,12,12,0,0,Shared synthetic training-fit contraction target only; not a physical r_star or heldout stop rule.
+fixed_nonzero_control reached 0.01 of cold-start initial fit loss,12,12,0,0,Shared synthetic training-fit contraction target only; not a physical r_star or heldout stop rule.

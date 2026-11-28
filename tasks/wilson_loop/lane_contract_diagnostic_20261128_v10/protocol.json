@@ -1,0 +1,243 @@
+{
+  "schema": "wilson-two-lane-contract-v2",
+  "status": "STRUCTURE_DIAGNOSTIC_ONLY",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "run_state": {
+    "status": {
+      "operator": "abstained",
+      "reference": "abstained",
+      "numerical": "abstained",
+      "statistical": "abstained",
+      "comparison": "abstained"
+    },
+    "validation_observed": false,
+    "score": null,
+    "evidence": {
+      "operator": [
+        "selected kernel descriptors lack independent production-link validation"
+      ],
+      "reference": [
+        "F-lane positive stout-force scale lower-bound receipt is missing"
+      ],
+      "numerical": [
+        "authorized C-loop means and independent F-lane spectrum/thermal receipts are missing"
+      ],
+      "statistical": [
+        "paired C/F interval results and full failed-draw denominators are missing"
+      ],
+      "comparison": [
+        "fresh confirmation IDs and data/resource owner authorization are missing"
+      ]
+    },
+    "evidence_hash": {
+      "operator": null,
+      "reference": null,
+      "numerical": null,
+      "statistical": null,
+      "comparison": null
+    },
+    "physical_ready": false
+  },
+  "selected_protocol": {
+    "protocol_id": "wilson-two-lane-selected-v3",
+    "status": "METHOD_DEFAULTS_SELECTED_EVIDENCE_NOT_READY",
+    "ensemble_design": {
+      "geometry": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "action": "Wilson gauge action, beta=6",
+      "boundary_conditions": {
+        "spatial": "periodic",
+        "temporal": "periodic"
+      },
+      "temporal_extent_Nt": 16,
+      "primary_kernel": "spatial_stout_rho0.10_n5",
+      "descriptive_kernel": "ape_alpha0.4_n5",
+      "kernel_pair_interpretation": "weak-field matched candidate pair only; no nonperturbative radius equivalence asserted"
+    },
+    "familywise_inference": {
+      "alpha_total": 0.05,
+      "co_primary_lanes": [
+        "finite_T_Creutz",
+        "ground_state_discrete_static_force"
+      ],
+      "alpha_each_lane": 0.025,
+      "block_bootstrap_draws": 10000,
+      "block_bootstrap_seed_base": 20261125,
+      "block_bootstrap_seed_rule": "seed = seed_base + block_length",
+      "block_bootstrap_invalid_draw_fraction_max": 0.01,
+      "primary_circular_block_length": 5,
+      "sensitivity_block_lengths": [
+        2,
+        10
+      ],
+      "interval_rule": "hull of the required block-length intervals",
+      "failed_draw_rule": "invalid required loop mean invalidates the paired draw; abstain if >1% invalid draws or precision gate fails"
+    },
+    "familywise_alpha_allocation": {
+      "alpha_total": 0.05,
+      "alpha_creutz_lane": 0.025,
+      "alpha_force_lane": 0.025,
+      "alpha_force_statistics": 0.0125,
+      "alpha_force_systematics": 0.0125,
+      "alpha_force_primary_interval": 0.00625,
+      "alpha_positive_force_scale_lower_bound": 0.00625,
+      "force_systematic_bound_cells": 28,
+      "alpha_per_force_systematic_cell": 0.00044642857142857147
+    },
+    "finite_T_Creutz": {
+      "estimand": "absolute finite-T chi_stout(R=2,T=5), not a ground-state force",
+      "R": 2,
+      "T": 5,
+      "kernel_id": "spatial_stout_rho0.10_n5",
+      "formula": "-[log Wbar(3,6)+log Wbar(2,5)-log Wbar(3,5)-log Wbar(2,6)]",
+      "loop_mean_rule": "compute paired ensemble means first; take logs only for positive means",
+      "precision_halfwidth_target": 0.02,
+      "precision_units": "dimensionless",
+      "bootstrap_seed_base": 20261125,
+      "bootstrap_seed_rule": "seed = seed_base + block_length",
+      "bootstrap_invalid_draw_fraction_max": 0.01,
+      "data_receipt_sha256": null,
+      "paired_split_manifest_sha256": null
+    },
+    "ground_state_discrete_static_force": {
+      "estimand": "absolute stout ground-state discrete static force at midpoint R=2.5",
+      "stencil_R": 2,
+      "midpoint_R": 2.5,
+      "candidate_kernel_id": "spatial_stout_rho0.10_n5",
+      "reference_kernel_id": "identity",
+      "formula": "U0_stout(3)-U0_stout(2)",
+      "reference_formula": "U0_identity(3)-U0_identity(2)",
+      "reference_role": "identity is an operator-overlap and shared-spectrum consistency check; the ground-state force difference is not the primary estimand",
+      "units": "dimensionless lattice force a_s*a_t*F",
+      "spectral_evidence_plan": {
+        "basis": [
+          "identity",
+          "APE",
+          "stout"
+        ],
+        "q_overlap_contract": {
+          "definition_id": "bare_basis_squared_overlap_ratio_v1",
+          "kernel_to_basis_operator": {
+            "identity": "identity",
+            "ape_alpha0.4_n5": "APE",
+            "spatial_stout_rho0.10_n5": "stout"
+          },
+          "matrix_convention": "C_ij(R,t)=sum_n Z_ni(R) * conjugate(Z_nj(R)) * exp(-E_n(R)*t)",
+          "operator_overlap_convention": "Z_nk(R)=<n|O_k(R)|0> for the ordered bare smearing operator O_k",
+          "ratio_upper_semantics": "one-sided upper bound on |Z_nk(R)/Z_0k(R)|^2",
+          "q_definition": "q_k(R,T)=sum_{n>0} |Z_nk(R)/Z_0k(R)|^2 * exp(-(E_n(R)-E_0(R))*T)",
+          "fit_source": "joint finite-Nt spectral fit to the measured 3x3 C_ij(R,t) matrix",
+          "gevp_role": "GEVP may initialize, label, and stress-test joint spectral fits; its single composite projected operator is separate and must not be copied into identity, APE, or stout kernel-indexed q cells",
+          "scope": "positive forward-spectrum q term only; finite-Nt backward/thermal, mixed-sector, fit-truncation, and interval-coverage bounds remain separate",
+          "finite_Nt_trace_decomposition": {
+            "definition_id": "two_sector_transfer_trace_qhx_v1",
+            "trace_formula": "C_ij(R,T;N_t)=Z0(N_t)^-1 * sum_(m,n) exp[-eps_m*(N_t-T)] * exp[-V_n(R)*T] * A_i,mn(R) * conjugate(A_j,mn(R))",
+            "partition_function": "Z0(N_t)=sum_m exp[-eps_m*N_t]",
+            "component_sectors": {
+              "q": "m=0,n>0: vacuum ground state with excited static-source states",
+              "h": "m>0,n=0: excited vacuum-sector states with static-source ground state",
+              "x": "m>0,n>0: excited states in both transfer-matrix sectors"
+            },
+            "diagonal_normalization": "C_kk/C_kk^(m=0,n=0)=1+q_k+h_k+x_k; delta_log=log1p(q_k+h_k+x_k)",
+            "endpoint_convention": "proposed time-local source/sink convention with constant endpoint factors absorbed into A; production exporter time origin and any insertion offsets require independent review",
+            "positivity_assumption": "q/h/x are nonnegative only under a positive transfer-matrix spectral representation and the stated endpoint factorization",
+            "status": "PROPOSED_TRACE_INTERPRETATION_REQUIRES_INDEPENDENT_REVIEW"
+          },
+          "status": "PROPOSED_METHOD_DEFAULT_REQUIRES_INDEPENDENT_REVIEW"
+        },
+        "gevp_dimension": 3,
+        "t0": 1,
+        "td": 2,
+        "R_values": [
+          2,
+          3
+        ],
+        "joint_finite_Nt_state_count_checks": [
+          2,
+          3
+        ],
+        "fit_window": [
+          3,
+          7
+        ],
+        "tmin_checks": [
+          3,
+          4,
+          5
+        ],
+        "contamination_stencil": {
+          "primary_effective_energy_T": 5,
+          "loop_time_extents": [
+            5,
+            6
+          ],
+          "rationale": "T=5 and T+1=6 lie inside every selected fit window [tmin,7] for tmin=3,4,5",
+          "q_envelope": "for each selected kernel and R, take the maximum over all tmin=3,4,5 and 2/3-state variants of sum_n overlap_ratio_upper[n]*exp(-gap_lower[n]*T); overlap_ratio_upper bounds |Z_nk/Z_0k|^2 for that bare basis operator",
+          "within_cell_interval_family": "Bonferroni over 24 endpoint slots per q cell (6 fit variants x up to 2 excited states x 2 one-sided endpoints); 2-state variants use one excited state, unused slots are not reassigned, and alpha_endpoint=systematic_cell_alpha/24",
+          "status": "PROPOSED_METHOD_DEFAULT_REQUIRES_INDEPENDENT_REVIEW"
+        },
+        "matched_thermal_Nt": 32
+      },
+      "relative_error_budget": {
+        "reference": "positive simultaneous lower confidence bound for f_reference is required; otherwise abstain",
+        "excited_state_q_max_fraction": 0.015,
+        "thermal_h_max_fraction": 0.015,
+        "mixed_x_max_fraction": 0.01,
+        "spectral_model_truncation_max_fraction": 0.01,
+        "systematic_total_max_fraction": 0.05,
+        "statistical_halfwidth_max_fraction": 0.05,
+        "linear_total_max_fraction": 0.1,
+        "q_h_x_cells": 24,
+        "model_truncation_cells": 4,
+        "systematic_cell_alpha": 0.00044642857142857147
+      },
+      "error_propagation": "use log(1+q+h+x) at the four stout R=2,3 and T=5,6 corners, then apply Delta_R Delta_t before the force-unit gate; identity corners are comparison diagnostics only",
+      "evidence_receipts": {
+        "gevp_and_overlap": null,
+        "excited_state_q": null,
+        "thermal_h_Nt32": null,
+        "mixed_x": null,
+        "spectral_model_truncation": null,
+        "independent_physics_review": null
+      }
+    },
+    "gates": {
+      "production_data_authorized": false,
+      "gpu_quda_authorized": false,
+      "sealed_confirmation_open": false,
+      "finite_T_Creutz_certified": false,
+      "ground_state_force_certified": false,
+      "physical_score": null
+    }
+  },
+  "lane_estimands": [
+    "finite_T_Creutz",
+    "absolute_ground_state_discrete_static_force"
+  ],
+  "fixed_sign_conventions": {
+    "finite_T_Creutz": "minus the R-T rectangular log-W difference, matching finite_nt_toy.py",
+    "absolute_ground_state_discrete_static_force": "U0_stout(R+1)-U0_stout(R); identity is a comparison diagnostic"
+  },
+  "fixtures": [
+    "current_selected_method_draft",
+    "synthetic_C_only_complete",
+    "synthetic_C_and_F_schema_complete",
+    "synthetic_C_reversed_sign",
+    "synthetic_F_reversed_sign",
+    "synthetic_F_wrong_precision_units",
+    "synthetic_C_wrong_precision_units",
+    "synthetic_null_common_kernel_ids"
+  ],
+  "meaning_of_valid": "schema complete only; requires human physics review and does not certify",
+  "receipt": {
+    "schema": "latticearena-run-receipt-v1",
+    "unit": "one fixture-lane structural check",
+    "complete_means": "all planned schema checks are accounted for; not scientific success"
+  }
+}

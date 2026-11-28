@@ -1,0 +1,458 @@
+{
+  "schema": "wilson-two-lane-contract-v2",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "run_state": {
+    "status": {
+      "operator": "abstained",
+      "reference": "abstained",
+      "numerical": "abstained",
+      "statistical": "abstained",
+      "comparison": "abstained"
+    },
+    "validation_observed": false,
+    "score": null,
+    "evidence": {
+      "operator": [
+        "selected kernel descriptors lack independent production-link validation"
+      ],
+      "reference": [
+        "F-lane positive reference-force lower-bound receipt is missing"
+      ],
+      "numerical": [
+        "authorized C-loop means and independent F-lane spectrum/thermal receipts are missing"
+      ],
+      "statistical": [
+        "paired C/F interval results and full failed-draw denominators are missing"
+      ],
+      "comparison": [
+        "fresh confirmation IDs and data/resource owner authorization are missing"
+      ]
+    },
+    "evidence_hash": {
+      "operator": null,
+      "reference": null,
+      "numerical": null,
+      "statistical": null,
+      "comparison": null
+    },
+    "physical_ready": false
+  },
+  "selected_protocol": {
+    "protocol_id": "wilson-two-lane-selected-v1",
+    "status": "METHOD_DEFAULTS_SELECTED_EVIDENCE_NOT_READY",
+    "ensemble_design": {
+      "geometry": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "action": "Wilson gauge action, beta=6",
+      "boundary_conditions": {
+        "spatial": "periodic",
+        "temporal": "periodic"
+      },
+      "temporal_extent_Nt": 16,
+      "primary_kernel": "spatial_stout_rho0.10_n5",
+      "descriptive_kernel": "ape_alpha0.4_n5",
+      "kernel_pair_interpretation": "weak-field matched candidate pair only; no nonperturbative radius equivalence asserted"
+    },
+    "familywise_inference": {
+      "alpha_total": 0.05,
+      "co_primary_lanes": [
+        "finite_T_Creutz",
+        "ground_state_discrete_static_force"
+      ],
+      "alpha_each_lane": 0.025,
+      "block_bootstrap_draws": 10000,
+      "primary_circular_block_length": 5,
+      "sensitivity_block_lengths": [
+        2,
+        10
+      ],
+      "interval_rule": "hull of the required block-length intervals",
+      "failed_draw_rule": "invalid required loop mean invalidates the paired draw; abstain if >1% invalid draws or precision gate fails"
+    },
+    "familywise_alpha_allocation": {
+      "alpha_total": 0.05,
+      "alpha_creutz_lane": 0.025,
+      "alpha_force_lane": 0.025,
+      "alpha_force_statistics": 0.0125,
+      "alpha_force_systematics": 0.0125,
+      "alpha_force_difference_interval": 0.00625,
+      "alpha_reference_force_positive_lower_bound": 0.00625,
+      "force_systematic_bound_cells": 28,
+      "alpha_per_force_systematic_cell": 0.00044642857142857147
+    },
+    "finite_T_Creutz": {
+      "estimand": "absolute finite-T chi_stout(R=2,T=5), not a ground-state force",
+      "R": 2,
+      "T": 5,
+      "kernel_id": "spatial_stout_rho0.10_n5",
+      "formula": "-[log Wbar(3,6)+log Wbar(2,5)-log Wbar(3,5)-log Wbar(2,6)]",
+      "loop_mean_rule": "compute paired ensemble means first; take logs only for positive means",
+      "precision_halfwidth_target": 0.02,
+      "precision_units": "dimensionless",
+      "data_receipt_sha256": null,
+      "paired_split_manifest_sha256": null
+    },
+    "ground_state_discrete_static_force": {
+      "estimand": "stout-minus-identity ground-state discrete static force at midpoint R=2.5",
+      "stencil_R": 2,
+      "midpoint_R": 2.5,
+      "candidate_kernel_id": "spatial_stout_rho0.10_n5",
+      "reference_kernel_id": "identity",
+      "formula": "[U0_stout(3)-U0_stout(2)]-[U0_identity(3)-U0_identity(2)]",
+      "units": "dimensionless lattice force a_s*a_t*F",
+      "spectral_evidence_plan": {
+        "basis": [
+          "identity",
+          "APE",
+          "stout"
+        ],
+        "gevp_dimension": 3,
+        "t0": 1,
+        "td": 2,
+        "R_values": [
+          2,
+          3
+        ],
+        "joint_finite_Nt_state_count_checks": [
+          2,
+          3
+        ],
+        "fit_window": [
+          3,
+          7
+        ],
+        "tmin_checks": [
+          3,
+          4,
+          5
+        ],
+        "matched_thermal_Nt": 32
+      },
+      "relative_error_budget": {
+        "reference": "positive simultaneous lower confidence bound for f_reference is required; otherwise abstain",
+        "excited_state_q_max_fraction": 0.015,
+        "thermal_h_max_fraction": 0.015,
+        "mixed_x_max_fraction": 0.01,
+        "spectral_model_truncation_max_fraction": 0.01,
+        "systematic_total_max_fraction": 0.05,
+        "statistical_halfwidth_max_fraction": 0.05,
+        "linear_total_max_fraction": 0.1,
+        "q_h_x_cells": 24,
+        "model_truncation_cells": 4,
+        "systematic_cell_alpha": 0.00044642857142857147
+      },
+      "error_propagation": "use log(1+q+h+x) at all four stencil points, then apply Delta_R Delta_t before force-unit gate",
+      "evidence_receipts": {
+        "gevp_and_overlap": null,
+        "excited_state_q": null,
+        "thermal_h_Nt32": null,
+        "mixed_x": null,
+        "spectral_model_truncation": null,
+        "independent_physics_review": null
+      }
+    },
+    "gates": {
+      "production_data_authorized": false,
+      "gpu_quda_authorized": false,
+      "sealed_confirmation_open": false,
+      "finite_T_Creutz_certified": false,
+      "ground_state_force_certified": false,
+      "physical_score": null
+    }
+  },
+  "fixtures": {
+    "current_selected_method_draft": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [
+        "common.action_id: missing nonempty receipt/identifier",
+        "common.static_source_action_id: missing nonempty receipt/identifier",
+        "common.independent_review_receipt: missing nonempty receipt/identifier",
+        "common.geometry.spatial_extents: expected three positive integers",
+        "common.geometry.temporal_extent: expected a positive integer",
+        "common.boundary_conditions.spatial: missing",
+        "common.boundary_conditions.temporal: missing",
+        "common.lattice_spacing.a_s: expected a positive finite value",
+        "common.lattice_spacing.a_t: expected a positive finite value",
+        "common.lattice_spacing.length_unit: missing unit",
+        "common.lattice_spacing.energy_unit: missing unit",
+        "common.kernel_ids: expected unique nonempty identifiers",
+        "common.split_manifest_sha256: expected a SHA-256 receipt",
+        "common.paired_block_plan_sha256: expected a SHA-256 receipt"
+      ],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.action_id: missing nonempty receipt/identifier",
+            "common.static_source_action_id: missing nonempty receipt/identifier",
+            "common.independent_review_receipt: missing nonempty receipt/identifier",
+            "common.geometry.spatial_extents: expected three positive integers",
+            "common.geometry.temporal_extent: expected a positive integer",
+            "common.boundary_conditions.spatial: missing",
+            "common.boundary_conditions.temporal: missing",
+            "common.lattice_spacing.a_s: expected a positive finite value",
+            "common.lattice_spacing.a_t: expected a positive finite value",
+            "common.lattice_spacing.length_unit: missing unit",
+            "common.lattice_spacing.energy_unit: missing unit",
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "common.split_manifest_sha256: expected a SHA-256 receipt",
+            "common.paired_block_plan_sha256: expected a SHA-256 receipt",
+            "finite_T_Creutz.primary.R: expected a positive integer",
+            "finite_T_Creutz.primary.T: expected a positive integer",
+            "finite_T_Creutz.primary.kernel_id: not declared in common.kernel_ids",
+            "finite_T_Creutz.log_rule: must explicitly be log of positive ensemble means",
+            "finite_T_Creutz.invalid_point_rule: missing failure rule",
+            "finite_T_Creutz.comparison_family: missing",
+            "finite_T_Creutz.inference.interval_method: missing",
+            "finite_T_Creutz.inference.multiplicity_method: missing",
+            "finite_T_Creutz.inference.alpha_total: expected a value in (0,1)",
+            "finite_T_Creutz.inference.alpha_allocations: list the prospective familywise allocations",
+            "finite_T_Creutz.inference.precision_target: expected a positive finite value",
+            "finite_T_Creutz.inference.precision_units: missing"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.action_id: missing nonempty receipt/identifier",
+            "common.static_source_action_id: missing nonempty receipt/identifier",
+            "common.independent_review_receipt: missing nonempty receipt/identifier",
+            "common.geometry.spatial_extents: expected three positive integers",
+            "common.geometry.temporal_extent: expected a positive integer",
+            "common.boundary_conditions.spatial: missing",
+            "common.boundary_conditions.temporal: missing",
+            "common.lattice_spacing.a_s: expected a positive finite value",
+            "common.lattice_spacing.a_t: expected a positive finite value",
+            "common.lattice_spacing.length_unit: missing unit",
+            "common.lattice_spacing.energy_unit: missing unit",
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "common.split_manifest_sha256: expected a SHA-256 receipt",
+            "common.paired_block_plan_sha256: expected a SHA-256 receipt",
+            "ground_state_discrete_static_force.primary.R: expected a positive integer",
+            "ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary: candidate and reference kernels must differ",
+            "ground_state_discrete_static_force.units: missing",
+            "ground_state_discrete_static_force.spectral_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.systematic_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.total_tolerance: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.interval_method: missing",
+            "ground_state_discrete_static_force.inference.multiplicity_method: missing",
+            "ground_state_discrete_static_force.inference.alpha_total: expected a value in (0,1)",
+            "ground_state_discrete_static_force.inference.alpha_allocations: list the prospective familywise allocations",
+            "ground_state_discrete_static_force.inference.statistical_precision_target: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.precision_units: missing"
+          ]
+        }
+      }
+    },
+    "synthetic_C_only_complete": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "ground_state_discrete_static_force.primary.R: expected a positive integer",
+            "ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary: candidate and reference kernels must differ",
+            "ground_state_discrete_static_force.units: missing",
+            "ground_state_discrete_static_force.spectral_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.systematic_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.total_tolerance: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.interval_method: missing",
+            "ground_state_discrete_static_force.inference.multiplicity_method: missing",
+            "ground_state_discrete_static_force.inference.alpha_total: expected a value in (0,1)",
+            "ground_state_discrete_static_force.inference.alpha_allocations: list the prospective familywise allocations",
+            "ground_state_discrete_static_force.inference.statistical_precision_target: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.precision_units: missing"
+          ]
+        }
+      }
+    },
+    "synthetic_C_and_F_schema_complete": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        }
+      }
+    },
+    "synthetic_C_reversed_sign": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "finite_T_Creutz.stencil: coefficients violate the prescribed signed four-point convention"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        }
+      }
+    },
+    "synthetic_F_reversed_sign": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "ground_state_discrete_static_force.force_stencil: coefficients must encode candidate minus reference"
+          ]
+        }
+      }
+    },
+    "synthetic_F_wrong_precision_units": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "ground_state_discrete_static_force.inference.precision_units: expected 'SYNTHETIC_ONLY_GeV'"
+          ]
+        }
+      }
+    },
+    "synthetic_C_wrong_precision_units": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "finite_T_Creutz.inference.precision_units: expected 'dimensionless'"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        }
+      }
+    },
+    "synthetic_null_common_kernel_ids": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [
+        "common.kernel_ids: expected unique nonempty identifiers"
+      ],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "finite_T_Creutz.primary.kernel_id: not declared in common.kernel_ids"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids"
+          ]
+        }
+      }
+    }
+  }
+}

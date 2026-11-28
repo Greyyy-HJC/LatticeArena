@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "bca3999c959b4f48d80eca0fad7c5a853894802ab3a7eca1625ef75f7faabdb3",
+    "coverage.png": "09438bf4454cc8a3ca31976dbf3e87ab4ef5dfbbf5b289ce32a38b52fab5934e",
+    "precision.png": "eb1f674fb3cb4f55c96ed23b0c0cc6e708181432e353b4ae550f9b5a525f7faf",
+    "sample_size.png": "a851507b44ac5c8c6600c0c8d11120abd4d6c4bbe42498197327b1efb993092d",
+    "coverage_summary.csv": "2d18455f9c623b39e78417aaee4d75a4b4d94bf71187b9c1b63bde26f6ddaf0e",
+    "replicates.csv": "60cd99d796380bf0dd4d577d4b27db8ee5d49df25e81da20efffe27faf06a289",
+    "sample_size_planning.csv": "4bcf20df283a61d2618f25f7e2c8edffb880ab5c87e165eb454f92fce157b49e",
+    "protocol.json": "46cd7b6a59f56928e7e189ca5b164a1350c527ce4b5ecfd9c96a9425c44a841c",
+    "summary.json": "d38fa900ab03c76ff29fe9f0190216cae5b4f470ae48686382586f6f85e1683d",
+    "source_snapshot.py": "112f56716f236445d40f7cde34f6abc7559f9f226a634948124821e27d09d201"
+  }
+}

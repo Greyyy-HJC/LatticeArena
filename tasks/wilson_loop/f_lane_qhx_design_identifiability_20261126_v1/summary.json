@@ -1,0 +1,385 @@
+{
+  "artifact_manifest": "artifact_hashes.json",
+  "certification_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "certified": false,
+  "degeneracy_stress_cases": {
+    "exactly_degenerate": {
+      "column_norms": [
+        0.39555350686829843,
+        0.39555350686829843,
+        0.030047023585033597,
+        0.0018316270670828182,
+        0.0018316270670828182
+      ],
+      "full_column_rank_unit_column_scaled": false,
+      "gap_separation_at": 0.0,
+      "interpretation": "rank deficient at the declared SVD tolerance; component weights are not separately identifiable",
+      "mode_count": 5,
+      "numerical_rank_raw": 3,
+      "numerical_rank_unit_column_scaled": 3,
+      "observation_count": 10,
+      "raw_condition_number": null,
+      "raw_rank_tolerance": 1.2423275459614515e-15,
+      "raw_singular_values": [
+        0.5594945873064096,
+        0.02826888378163075,
+        0.0011678689713877156,
+        1.1062692799354055e-17,
+        1.7528508210434688e-19
+      ],
+      "static_energies_at": [
+        0.44,
+        0.94,
+        0.94
+      ],
+      "unit_column_scaled_condition_number": null,
+      "unit_column_scaled_rank_tolerance": 4.3015761801512206e-15,
+      "unit_column_scaled_singular_values": [
+        1.9372576882034838,
+        1.0330969297507309,
+        0.42396153509027895,
+        3.132658259567936e-17,
+        3.1156872683802175e-17
+      ],
+      "weakest_scaled_direction": [
+        -0.7071067811865476,
+        0.7071067811865475,
+        1.4607096990670344e-16,
+        6.24396135795351e-17,
+        6.24396135795351e-17
+      ]
+    },
+    "near_degenerate": {
+      "column_norms": [
+        0.39555350686829843,
+        0.39555210342412933,
+        0.030047023585033597,
+        0.0018316270670828182,
+        0.0018316184886874134
+      ],
+      "full_column_rank_unit_column_scaled": true,
+      "gap_separation_at": 1.0000000000287557e-06,
+      "interpretation": "full numerical column rank at the reported SVD tolerance; no covariance-weighted identifiability threshold was set",
+      "mode_count": 5,
+      "numerical_rank_raw": 5,
+      "numerical_rank_unit_column_scaled": 5,
+      "observation_count": 10,
+      "raw_condition_number": 1314734978.6998684,
+      "raw_rank_tolerance": 1.2423253425159487e-15,
+      "raw_singular_values": [
+        0.5594935949627751,
+        0.028268885919260075,
+        0.0011678672252439198,
+        2.024647004526497e-07,
+        4.2555617978313327e-10
+      ],
+      "static_energies_at": [
+        0.44,
+        0.94,
+        0.940001
+      ],
+      "unit_column_scaled_condition_number": 8711827.360817447,
+      "unit_column_scaled_rank_tolerance": 4.301576002762627e-15,
+      "unit_column_scaled_singular_values": [
+        1.9372576083147635,
+        1.0330969082673196,
+        0.42396195248480767,
+        5.347953195702804e-07,
+        2.2237098235300507e-07
+      ],
+      "weakest_scaled_direction": [
+        -0.2252911595548975,
+        0.22529121209752512,
+        -1.355182623801719e-06,
+        0.6702571422048993,
+        -0.6702560156384436
+      ]
+    }
+  },
+  "diagnostic_cells": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 6,
+    "valid": 6
+  },
+  "physical_measurements": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "results": [
+    {
+      "N_t_plan": "16",
+      "R": 2,
+      "T_values": "3,4,5,6,7",
+      "column_norms": [
+        0.27969856702869345,
+        0.08635942800796323,
+        0.030047001714813622,
+        0.0018316257339029524,
+        0.00043431792411612003
+      ],
+      "full_column_rank_unit_column_scaled": true,
+      "interpretation": "full numerical column rank at the reported SVD tolerance; no covariance-weighted identifiability threshold was set",
+      "mode_count": 5,
+      "numerical_rank_raw": 5,
+      "numerical_rank_unit_column_scaled": 5,
+      "observation_count": 5,
+      "raw_condition_number": 2241053.66747964,
+      "raw_rank_tolerance": 3.246799163223329e-16,
+      "raw_singular_values": [
+        0.2924456700327885,
+        0.030697342300590166,
+        0.011349162286756765,
+        6.907120227577808e-05,
+        1.3049471963858954e-07
+      ],
+      "unit_column_scaled_condition_number": 9629.647007997799,
+      "unit_column_scaled_rank_tolerance": 2.253787333711024e-15,
+      "unit_column_scaled_singular_values": [
+        2.0300311592546625,
+        0.916395268628865,
+        0.19689810363327268,
+        0.020598457086225565,
+        0.00021081054763156346
+      ],
+      "weakest_scaled_direction": [
+        -0.7043621480712134,
+        0.07295122146462757,
+        0.010890689190299303,
+        -0.08087378989015187,
+        0.7013507729011842
+      ]
+    },
+    {
+      "N_t_plan": "32",
+      "R": 2,
+      "T_values": "3,4,5,6,7",
+      "column_norms": [
+        0.27969856702869345,
+        0.08635942800796323,
+        3.6252855783785394e-05,
+        2.209926441622852e-06,
+        5.240211724530271e-07
+      ],
+      "full_column_rank_unit_column_scaled": true,
+      "interpretation": "full numerical column rank at the reported SVD tolerance; no covariance-weighted identifiability threshold was set",
+      "mode_count": 5,
+      "numerical_rank_raw": 5,
+      "numerical_rank_unit_column_scaled": 5,
+      "observation_count": 5,
+      "raw_condition_number": 1855192086.7806,
+      "raw_rank_tolerance": 3.242901220638238e-16,
+      "raw_singular_values": [
+        0.2920945745773139,
+        0.019235372292552642,
+        2.1873566997013114e-05,
+        8.335749848672462e-08,
+        1.5744707874654587e-10
+      ],
+      "unit_column_scaled_condition_number": 9629.647008002788,
+      "unit_column_scaled_rank_tolerance": 2.253787333711024e-15,
+      "unit_column_scaled_singular_values": [
+        2.0300311592546625,
+        0.9163952686288649,
+        0.19689810363327281,
+        0.02059845708622549,
+        0.0002108105476314542
+      ],
+      "weakest_scaled_direction": [
+        -0.7043621480712163,
+        0.07295122146463262,
+        0.01089068919029967,
+        -0.08087378989015055,
+        0.7013507729011809
+      ]
+    },
+    {
+      "N_t_plan": "16+32",
+      "R": 2,
+      "T_values": "3,4,5,6,7",
+      "column_norms": [
+        0.39555350686829843,
+        0.12213067432764453,
+        0.030047023585033597,
+        0.0018316270670828182,
+        0.00043431824024178973
+      ],
+      "full_column_rank_unit_column_scaled": true,
+      "interpretation": "full numerical column rank at the reported SVD tolerance; no covariance-weighted identifiability threshold was set",
+      "mode_count": 5,
+      "numerical_rank_raw": 5,
+      "numerical_rank_unit_column_scaled": 5,
+      "observation_count": 10,
+      "raw_condition_number": 6711.594548512082,
+      "raw_rank_tolerance": 9.175064233980878e-16,
+      "raw_singular_values": [
+        0.4132081586525665,
+        0.03384208373577744,
+        0.019945417066321205,
+        0.0008677919771557451,
+        6.156631716440203e-05
+      ],
+      "unit_column_scaled_condition_number": 24.895258149122498,
+      "unit_column_scaled_rank_tolerance": 4.201924136914372e-15,
+      "unit_column_scaled_singular_values": [
+        1.8923783977246655,
+        1.035078298315171,
+        0.564026070204357,
+        0.15366665118998288,
+        0.07601360814936428
+      ],
+      "weakest_scaled_direction": [
+        -0.32514002543567094,
+        0.3370435566367811,
+        -0.2644341666405934,
+        0.6867994598660632,
+        -0.48894445311313095
+      ]
+    },
+    {
+      "N_t_plan": "16",
+      "R": 3,
+      "T_values": "3,4,5,6,7",
+      "column_norms": [
+        0.3003593864700187,
+        0.09514873710822434,
+        0.030047001714813622,
+        0.002013051839932938,
+        0.0004852075192395011
+      ],
+      "full_column_rank_unit_column_scaled": true,
+      "interpretation": "full numerical column rank at the reported SVD tolerance; no covariance-weighted identifiability threshold was set",
+      "mode_count": 5,
+      "numerical_rank_raw": 5,
+      "numerical_rank_unit_column_scaled": 5,
+      "observation_count": 5,
+      "raw_condition_number": 1923808.8590513065,
+      "raw_rank_tolerance": 3.4937849667769735e-16,
+      "raw_singular_values": [
+        0.3146921734897884,
+        0.03169764804528704,
+        0.011842425072106245,
+        7.315113050369615e-05,
+        1.6357767145587086e-07
+      ],
+      "unit_column_scaled_condition_number": 8590.852703122819,
+      "unit_column_scaled_rank_tolerance": 2.256829020501635e-15,
+      "unit_column_scaled_singular_values": [
+        2.032770867154017,
+        0.9112549413660345,
+        0.19250466521790527,
+        0.0199732662833454,
+        0.0002366203841924905
+      ],
+      "weakest_scaled_direction": [
+        -0.7010820970877943,
+        0.082724732203584,
+        0.013750416443570725,
+        -0.09698585198573208,
+        0.7014593234016181
+      ]
+    },
+    {
+      "N_t_plan": "32",
+      "R": 3,
+      "T_values": "3,4,5,6,7",
+      "column_norms": [
+        0.3003593864700187,
+        0.09514873710822434,
+        3.6252855783785394e-05,
+        2.428823971557634e-06,
+        5.854214136622389e-07
+      ],
+      "full_column_rank_unit_column_scaled": true,
+      "interpretation": "full numerical column rank at the reported SVD tolerance; no covariance-weighted identifiability threshold was set",
+      "mode_count": 5,
+      "numerical_rank_raw": 5,
+      "numerical_rank_unit_column_scaled": 5,
+      "observation_count": 5,
+      "raw_condition_number": 1592745421.9084013,
+      "raw_rank_tolerance": 3.489975210959749e-16,
+      "raw_singular_values": [
+        0.31434902119221186,
+        0.021301102250589714,
+        2.128022502780736e-05,
+        8.828070296141082e-08,
+        1.973630040735349e-10
+      ],
+      "unit_column_scaled_condition_number": 8590.852703132807,
+      "unit_column_scaled_rank_tolerance": 2.256829020501635e-15,
+      "unit_column_scaled_singular_values": [
+        2.032770867154017,
+        0.9112549413660346,
+        0.19250466521790563,
+        0.01997326628334541,
+        0.00023662038419221536
+      ],
+      "weakest_scaled_direction": [
+        -0.701082097087799,
+        0.08272473220358934,
+        0.01375041644356893,
+        -0.09698585198572618,
+        0.7014593234016133
+      ]
+    },
+    {
+      "N_t_plan": "16+32",
+      "R": 3,
+      "T_values": "3,4,5,6,7",
+      "column_norms": [
+        0.42477231793196235,
+        0.13456063446112307,
+        0.030047023585033597,
+        0.002013053305166873,
+        0.000485207872406026
+      ],
+      "full_column_rank_unit_column_scaled": true,
+      "interpretation": "full numerical column rank at the reported SVD tolerance; no covariance-weighted identifiability threshold was set",
+      "mode_count": 5,
+      "numerical_rank_raw": 5,
+      "numerical_rank_unit_column_scaled": 5,
+      "observation_count": 10,
+      "raw_condition_number": 6698.376876551632,
+      "raw_rank_tolerance": 9.87383409147531e-16,
+      "raw_singular_values": [
+        0.444677955350863,
+        0.03567934327214502,
+        0.020804802600180847,
+        0.0009241941360302692,
+        6.638592655296907e-05
+      ],
+      "unit_column_scaled_condition_number": 25.86263455008664,
+      "unit_column_scaled_rank_tolerance": 4.209350985886029e-15,
+      "unit_column_scaled_singular_values": [
+        1.895723153150795,
+        1.0360425742187704,
+        0.5516992339162407,
+        0.152002044154872,
+        0.07329969224440223
+      ],
+      "weakest_scaled_direction": [
+        -0.3002500830374198,
+        0.3122314993319843,
+        -0.27965721524042353,
+        0.7029429187341935,
+        -0.48992292600606935
+      ]
+    }
+  ],
+  "schema": "wilson-f-lane-qhx-design-identifiability-summary-v1",
+  "source_hashes": {
+    "design_diagnostic": "844c90ec2d30c2862cfd44c4f2a327b0cca7cf2a87ed466a17794555acaa8280",
+    "finite_trace_toy": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "lane_contract": "4c03703fe73d44825e7c4dcfc645fdcdaa4e63e07d9c1f29b3ada7b9983befeb",
+    "lane_contract_json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95"
+  },
+  "status": "SYNTHETIC_DESIGN_IDENTIFIABILITY_DIAGNOSTIC_ONLY"
+}

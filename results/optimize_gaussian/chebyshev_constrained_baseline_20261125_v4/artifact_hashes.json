@@ -1,0 +1,7 @@
+{
+  "contract.json": "bce69b8becf5ddd20e1e14b628a916482af275d5329ad0c190cfcd1a9ee406f4",
+  "spectral_response.png": "a8fd59b47c2f334f9189885b3f91903720f9522754ebf022caa2ff94cde3c8f0",
+  "README.md": "69edb77fd2334b7e731a58f6f1e8bf871024d9eb9f41a7b10d8be2257537bd48",
+  "snapshot_chebyshev_baseline.py": "b8c3d9600aee79633fdefaa4eccec1b0fe8800ae8110ad96132abcf5bc60cc32",
+  "snapshot_kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+}

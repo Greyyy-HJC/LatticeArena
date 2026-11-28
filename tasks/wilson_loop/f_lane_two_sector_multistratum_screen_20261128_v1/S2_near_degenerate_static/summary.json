@@ -1,0 +1,135 @@
+{
+  "certification_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "coverage": {
+    "average_pointwise_by_panel": {
+      "cluster_t95": [
+        0.6571819970712939,
+        0.6807809658916691
+      ],
+      "rate": 0.6689814814814815
+    },
+    "familywise_bonferroni72": {
+      "planned_panels": 12,
+      "rate": 0.0,
+      "successes": 0,
+      "wilson95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ]
+    },
+    "pointwise_all_cells": {
+      "planned_cells": 864,
+      "pooled_rate_descriptive_only": 0.6689814814814815,
+      "successes": 578,
+      "warning": "cells within a panel share the same fit and are correlated; use panel-cluster summaries for inference",
+      "wilson95_cellwise_not_cluster_adjusted": [
+        0.6369161437935366,
+        0.6995508422349918
+      ]
+    },
+    "pointwise_by_term": {
+      "h": {
+        "cluster_mean": 1.0,
+        "cluster_t95": [
+          1.0,
+          1.0
+        ],
+        "n_independent_panels": 12
+      },
+      "q": {
+        "cluster_mean": 0.013888888888888888,
+        "cluster_t95": [
+          0.0,
+          0.04445812722349498
+        ],
+        "n_independent_panels": 12
+      },
+      "x": {
+        "cluster_mean": 0.9930555555555555,
+        "cluster_t95": [
+          0.9777709363882524,
+          1.0
+        ],
+        "n_independent_panels": 12
+      }
+    }
+  },
+  "denominators": {
+    "fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 12,
+      "valid": 12
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 864,
+      "valid": 864
+    },
+    "unique_panel_matrix_hashes": 12
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "fit": {
+    "covariance_eigenvalue_floor_relative": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "fit_parameter_count": 45,
+    "interval_rule_frozen_across_panels": true,
+    "method": "regularized full-covariance GLS; q/h/x finite-difference delta normal uppers",
+    "model": "2 vacuum x 2 static (fixed across all strata)",
+    "pointwise_one_sided_level": 0.975,
+    "simultaneous_method": "one-sided Bonferroni over 72 q/h/x terms at family alpha 0.05"
+  },
+  "fit_diagnostics": {
+    "max_jacobian_condition_number": 10983.026363923302,
+    "median_gls_objective": 53354.300487181084,
+    "median_jacobian_condition_number": 3418.218079861187
+  },
+  "generator": {
+    "blocks_per_panel": 96,
+    "noise_model": {
+      "model": "iid_gaussian",
+      "scale_by_T": {}
+    },
+    "panel_independence": "fresh independent RNG stream per panel; blocks follow the declared within-panel noise model",
+    "panels": 12,
+    "relative_noise": 0.003,
+    "seed_rule": "numpy default_rng(2026113000 + panel_index); base follows 2026112900 + 100*stratum_index",
+    "truth": "2 vacuum x 3 static states; near-degenerate excited static levels"
+  },
+  "open_gates": [
+    "twelve independent panels per stratum are diagnostic screening only and cannot certify nominal coverage",
+    "no method, interval, fit window, covariance shrinkage or DGP parameter is selected from these screening results",
+    "synthetic source does not validate production exporter conventions, matched-Nt thermal/mixed receipts, static-force reference or physical uncertainty"
+  ],
+  "physical_measurements": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "report_metadata": {
+    "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+    "fit_model": "2 vacuum x 2 static (fixed across all strata)",
+    "interpretation": "This is the frozen 12-panel screen for `S2_near_degenerate_static`. It is used to identify qualitative failure modes and exercise the reproducible report path. The familywise Wilson interval and panel-cluster pointwise intervals are descriptive Monte Carlo summaries at this small n; they do not establish calibration or pass the separately frozen five-stratum confirmatory rule (606 panels and at least 588 familywise successes per stratum).",
+    "open_gates": [
+      "twelve independent panels per stratum are diagnostic screening only and cannot certify nominal coverage",
+      "no method, interval, fit window, covariance shrinkage or DGP parameter is selected from these screening results",
+      "synthetic source does not validate production exporter conventions, matched-Nt thermal/mixed receipts, static-force reference or physical uncertainty"
+    ],
+    "seed_rule": "numpy default_rng(2026113000 + panel_index); base follows 2026112900 + 100*stratum_index",
+    "split_prefix": "s2_near_degenerate_static",
+    "stratum_id": "S2_near_degenerate_static",
+    "stratum_index_zero_based": 1,
+    "truth": "2 vacuum x 3 static states; near-degenerate excited static levels"
+  },
+  "schema": "wilson-f-two-sector-omitted-coverage-summary-v1"
+}

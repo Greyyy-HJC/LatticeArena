@@ -1,0 +1,28 @@
+{
+  "base_seed": 2026112799,
+  "bootstrap_replicates_per_method_panel": 199,
+  "bootstrap_seed_rule": "BASE_SEED + 100000 + panel*10 + method index; iid index 0, estimated AR(1) index 1",
+  "classification": "SYNTHETIC_AR1_DEPENDENCE_BOOTSTRAP_STRESS_NOT_PHYSICAL_REFERENCE",
+  "configurations_per_panel": 128,
+  "finite_n_variance_inflation": 1.847576530612245,
+  "fit_rule": "same D04 joint PP-even/A4P-odd two-state fit, tmin=3, three starts",
+  "methods": {
+    "approximate": "reader's existing 13-dof approximate chi-square p-value",
+    "estimated_ar1_bootstrap": "same plug-in covariance with pooled lag-1 OLS rho estimated from that outer panel",
+    "iid_bootstrap": "plug-in sample covariance and rho=0 synthetic replicates"
+  },
+  "outer_panels": 160,
+  "outer_seed_rule": "single PCG64 stream; separate seed from the 20261127 iid pilot; no input file read",
+  "physical_score": null,
+  "pvalue_rule": "(1 + count(bootstrap chi2 >= observed chi2)) / (valid draws + 1)",
+  "schema": "optimize-d04-ar1-bootstrap-protocol-v1",
+  "source_hashes": {
+    "bootstrap_helpers": "6afa9ae799a3ff38572d2648b8566630c1ff9a4453cac3e5e5c0b620c72c8934",
+    "contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "diagnostic": "ab1b7d388ffb460e5bb4c914cd7bd9f1d70fd633c999ee8a9a48e3cc994668fa",
+    "gof_generator": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "test": "7c46fa2df386d150f07444e5b91efc67769c2d3518230c2646dd59827ddb718f"
+  },
+  "true_rho": 0.3
+}

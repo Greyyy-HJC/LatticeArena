@@ -1,0 +1,6 @@
+fixture,unit,planned,valid,failed,abstained,status,certified,physical_score,issue_count
+current_null_draft,one contract check,1,0,1,0,NOT_READY,False,,51
+synthetic_complete_requires_review,one contract check,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_missing_comparison,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_invalid_r_star,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_incomplete_D11,one contract check,1,0,1,0,NOT_READY,False,,1

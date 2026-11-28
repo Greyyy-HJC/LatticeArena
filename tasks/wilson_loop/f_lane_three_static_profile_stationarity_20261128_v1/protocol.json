@@ -1,0 +1,34 @@
+{
+  "gradient_active_bound_relative_tolerance": 1e-07,
+  "gtol_reference": 1e-09,
+  "input_integrity": {
+    "continuation_report": {
+      "failed": 0,
+      "manifest_sha256": "d9dd1927a4bc80a87557ae850bc3f613e5b9eb4a50a070422d087380918faa04",
+      "planned": 15,
+      "verified": 15
+    },
+    "stratified_profile_report": {
+      "failed": 0,
+      "manifest_sha256": "285796c5b2f62e823295538137e1b0a11a300a92b0acf4d3949f99032fdb6851",
+      "planned": 75,
+      "verified": 75
+    }
+  },
+  "no_clobber": true,
+  "optimizer_reruns": 0,
+  "output": [
+    "failed_start_stationarity.csv",
+    "stationarity_and_weak_directions.png"
+  ],
+  "overlap_floor": 0.9,
+  "phase_denominators": {
+    "cold": 26,
+    "neighbor_continuation": 23
+  },
+  "schema": "wilson-f-lane-profile-stationarity-protocol-v1",
+  "strata": [
+    "near_degenerate",
+    "omitted_vacuum_truth"
+  ]
+}

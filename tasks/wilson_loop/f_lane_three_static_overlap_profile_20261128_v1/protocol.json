@@ -1,0 +1,29 @@
+{
+  "fixed_force_grid": [
+    0.14,
+    0.15,
+    0.15757559165100204,
+    0.16,
+    0.17,
+    0.18
+  ],
+  "floor_values": [
+    0.0,
+    0.045,
+    0.075
+  ],
+  "input_origin": "tasks/wilson_loop/f_lane_three_static_identifiability_20261128_v1",
+  "local_approximation_thresholds": {
+    "force_constraint_absolute_error_max": 0.0025,
+    "maximum_parameter_shift": 0.25,
+    "nonlinear_objective_mismatch_fraction_max": 0.1
+  },
+  "optimizer_starts": "no nonlinear optimizer; one local expansion around the captured weak-overlap fit coordinates",
+  "overlap_definition": "min_R abs(A[m=0,n=0,operator=0]) in the toy's normalized endpoint convention",
+  "physical_status": "NOT_READY/UNCERTIFIED; F=GROUND_STATE_FORCE_UNCERTIFIED",
+  "profile_rule": "linearize whitened residuals at the captured weak-overlap fit; impose first-order force equality and active overlap-floor inequalities; solve a Gauss-Newton KKT system at each grid point; report objective-minus-minimum <= 3.84",
+  "receipt_gate": "production floor is not accepted without independent open-calibration source and review hashes",
+  "schema": "wilson-overlap-profile-protocol-v1",
+  "source_matrix_sha256": "ba7ec51abe947eb5c9d070c8b4c3460ed0a2d286bc8bf7e3c385255919582921",
+  "source_panel": "02_weak_ground_overlap; same previously analyzed panel, intentionally reused"
+}

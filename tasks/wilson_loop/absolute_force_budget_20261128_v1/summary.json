@@ -1,0 +1,64 @@
+{
+  "derived_cap_numeric_gate_pass": true,
+  "derived_uniform_caps_at_force_scale_lower_1": {
+    "h": 0.00375704004730843,
+    "q": 0.00375704004730843,
+    "x": 0.002503127605795085
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "naive_per_loop_cap_counterexample": {
+    "assumption_only_numeric_gate_pass": false,
+    "certification_status": "NOT_CERTIFIED_REQUIRES_INDEPENDENT_RECEIPTS_AND_REVIEW",
+    "combined_log_corner_bound": 0.15688285261312518,
+    "component_force_bounds": {
+      "h": 0.059554449975002616,
+      "q": 0.059554449975002616,
+      "x": 0.03980132341267233
+    },
+    "component_gates_pass": false,
+    "component_relative_bounds": {
+      "h": 0.059554449975002616,
+      "model_truncation": 0.01,
+      "q": 0.059554449975002616,
+      "statistical": 0.05,
+      "x": 0.03980132341267233
+    },
+    "factorized_qhx_bound": 0.15891022336267757,
+    "force_corner_count": 4,
+    "force_estimand": "absolute_stout_ground_state_discrete_static_force",
+    "limits": {
+      "component_fractions": {
+        "h": 0.015,
+        "q": 0.015,
+        "x": 0.01
+      },
+      "model_fraction": 0.01,
+      "statistical_fraction": 0.05,
+      "total_fraction": 0.1
+    },
+    "model_gate_pass": true,
+    "physical_score": null,
+    "positive_force_scale_lower": 1.0,
+    "statistical_gate_pass": true,
+    "systematic_relative_bound": 0.16891022336267758,
+    "total_gate_pass": false,
+    "total_relative_bound": 0.21891022336267757
+  },
+  "note": "conditional algebra only; no receipt, measurement, GPU, or QUDA evidence",
+  "physical_evidence_denominator": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "reason": "no independent q/h/x, positive stout-force scale, model-truncation, or review receipts",
+    "valid": 0
+  },
+  "physical_score": null,
+  "scenario_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "meaning": "deterministic formula sensitivity rows; not measurements or Monte Carlo datasets",
+    "planned": 50,
+    "valid": 50
+  },
+  "schema": "wilson-absolute-force-budget-propagation-diagnostic-v2"
+}

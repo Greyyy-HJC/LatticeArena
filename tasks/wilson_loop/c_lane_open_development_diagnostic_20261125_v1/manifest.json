@@ -1,0 +1,13 @@
+{
+  "files": {
+    "c_lane_open_development_diagnostic.py": "def951b70b948d78fa90f23daa0bc8c582928aa9521543ac532dc0eaf2b4f372",
+    "c_lane_open_development_diagnostic_20261125_v1/README.md": "29e265a21272b3b620cc9352ea8760dcecd870fbd3f9fd00301b8af023e58c2b",
+    "c_lane_open_development_diagnostic_20261125_v1/bootstrap_estimates.npz": "765b552e4896a224f6d8b4fd08860bf3411cf24dbdee32ddb8579d9894818087",
+    "c_lane_open_development_diagnostic_20261125_v1/c_lane_bootstrap_intervals.png": "243fdb0e161244f51087a99311eea8cad12338c05e0b8b14c7ffabb5165e2457",
+    "c_lane_open_development_diagnostic_20261125_v1/intervals.csv": "f8bb3fc01e4dc92af99b886adc2f7d055fa00f2b045adc353e61fb8dc577846c",
+    "c_lane_open_development_diagnostic_20261125_v1/protocol.json": "0b0326da3d8d3f24d861b943b6ace110a74572b69c066d7042823494b0f5d4aa",
+    "c_lane_open_development_diagnostic_20261125_v1/summary.json": "901d3b8000b33d2af52c73d832f33a1b12e8854396ac4a93e4622e2c0453a31d"
+  },
+  "schema": "latticearena-diagnostic-manifest-v1",
+  "status": "RETROSPECTIVE_DEVELOPMENT_ONLY_NOT_CONFIRMATION"
+}

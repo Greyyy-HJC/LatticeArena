@@ -1,0 +1,12 @@
+{
+  "README.md": "07a2833ff97ea3931f20c7d4542238ea8afdabff7c7af768184e759759eedddb",
+  "contract.json": "d1fb2e9a233fc38eef1b35b3e61c48d8f9375fac66d2a95a04e4420fff83ccde",
+  "run_receipt.json": "ec797c28cecb200164e160d8018a4226ab4d3d540ac9cd3ba3361546add37501",
+  "snapshot_candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+  "snapshot_chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+  "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+  "snapshot_core_specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+  "snapshot_core_state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+  "snapshot_kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+  "snapshot_research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+}

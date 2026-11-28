@@ -1,0 +1,54 @@
+{
+  "schema": "wilson-finite-nt-randomized-algebra-summary-v1",
+  "status": "SYNTHETIC_ALGEBRA_STRESS_ONLY",
+  "physical_score": null,
+  "data_access": "No Wilson measurements, sealed split, GPU, or QUDA inputs.",
+  "planned_cases": 4000,
+  "envelope_covered_cases": 4000,
+  "envelope_coverage_fraction": 1.0,
+  "identity_max_abs_error": 3.195100434227882e-14,
+  "median_abs_bias_to_envelope": 0.011760357513793139,
+  "p95_abs_bias_to_envelope": 0.11710681720861493,
+  "max_abs_bias_to_envelope": 0.39806171237996113,
+  "denominator_summary": [
+    {
+      "unit": "randomized parameter case",
+      "planned": 4000,
+      "valid": 4000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All cases use prespecified positive synthetic parameters; valid means the algebra checks completed."
+    },
+    {
+      "unit": "four-loop evaluation",
+      "planned": 16000,
+      "valid": 16000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Each Creutz stencil contains four finite-N_t loop values."
+    },
+    {
+      "unit": "envelope coverage check",
+      "planned": 4000,
+      "valid": 4000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "A failed case would contradict the declared positive-contamination envelope."
+    }
+  ],
+  "source_sha256": {
+    "finite_nt_randomized_stress.py": "a985f6b251ada24a8f5c462567d9d4ce7cdce54c930215f11cc1e482667edc93",
+    "finite_nt_toy.py": "bafc037fe07fa570520ebe822e9e72129eff4cdc9aafabcecccaa6813d3da0b8"
+  },
+  "files": [
+    "README.md",
+    "protocol.json",
+    "randomized_cases.csv",
+    "denominator_summary.csv",
+    "finite_nt_randomized_stress.png",
+    "snapshot_finite_nt_randomized_stress.py",
+    "snapshot_finite_nt_toy.py",
+    "summary.json",
+    "artifact_hashes.json"
+  ]
+}

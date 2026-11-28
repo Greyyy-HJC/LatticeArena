@@ -1,0 +1,60 @@
+{
+  "certified": false,
+  "classification": "post-hoc method feasibility diagnostic; not physical calibration",
+  "ftol_xtol_gtol": 1e-10,
+  "input_artifact_manifest_sha256": "285796c5b2f62e823295538137e1b0a11a300a92b0acf4d3949f99032fdb6851",
+  "input_panel_ids": [
+    "06_baseline",
+    "07_baseline",
+    "08_baseline",
+    "09_near_degenerate",
+    "10_near_degenerate",
+    "11_near_degenerate",
+    "12_omitted_vacuum_truth",
+    "13_omitted_vacuum_truth",
+    "14_omitted_vacuum_truth",
+    "15_dependent_unequal_variance",
+    "16_dependent_unequal_variance",
+    "17_dependent_unequal_variance"
+  ],
+  "input_report": "f_lane_three_static_stratified_profile_20261128_v1",
+  "max_nfev_per_start": 8000,
+  "methods": [
+    "fixed_operator0",
+    "largest_component_pivot"
+  ],
+  "not_claimed": [
+    "force interval coverage",
+    "global identifiability",
+    "production overlap floor",
+    "physical q/h/x bounds",
+    "C-lane finite-T Creutz result"
+  ],
+  "physical_score": null,
+  "primary_validity": "scipy success, finite residual and coordinates, numerical Jacobian rank 67",
+  "profile_advance_rule": "Advance to a paired profile comparison only if the pivot chart recovers at least one baseline-invalid start, or reduces median residual calls by >=20% in at least two strata among pairs valid in both methods, without any per-stratum valid-count loss.",
+  "reported_metrics": [
+    "planned/valid/failed/abstained starts by chart and stratum",
+    "actual residual-function calls including finite-difference Jacobian probes",
+    "nfev/njev, best GLS objective, and point-force difference between charts"
+  ],
+  "schema": "wilson-f-pivot-chart-paired-point-fit-screen-v1",
+  "shared_covariance": "same block vectors; 25% diagonal shrinkage and 1e-10 relative eigenvalue floor",
+  "shared_initialization": "same Nt=32 three-static forward initializer; epsilon/scale starts are fixed below",
+  "shared_model": "finite-Nt two-vacuum x three-static positive spectral trace; 67 coordinates",
+  "solver": "scipy least_squares(method=trf, jac=2-point, x_scale=jac)",
+  "starts_epsilon_excited_scale": [
+    [
+      0.15,
+      0.2
+    ],
+    [
+      0.3,
+      0.35
+    ],
+    [
+      0.55,
+      0.5
+    ]
+  ]
+}

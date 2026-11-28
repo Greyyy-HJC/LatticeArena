@@ -1,0 +1,12 @@
+{
+  "payload_sha256": {
+    "README.md": "6e418559e20fc07069130a2b7d4cd646b09b187e0ff4c0acfa6a5ccfdceb3a80",
+    "known_gap_coverage_stress.csv": "d160140177d942c010df62fde34852629941f89289ee10bd1b9e0271af56e1b5",
+    "markov_dependence_feasibility.png": "331daacabded88c081c7f5ae0efa92f2524cdfe8f731df6ab4007be53254efcf",
+    "protocol.json": "0cf69e0e15bd89c339d07a069e2806dff801d321a3823fefbfba8b8062306163",
+    "required_blocks.csv": "5f0ce485d9d65527cca3cc9a9ffa14fa126663b598d82e3bc6bf720a3f4c6f8e",
+    "sensitivity.csv": "fc9d66f4354e3481ab59209359ec7ea065a963871c3c100f23baba23ecb63ada",
+    "source_hashes.json": "c3b2fbf5fa09ac10f5fd232f6f2854a413ff2ad29454146eea188b85bcf7a641"
+  },
+  "schema": "optimize-d06-markov-dependence-artifact-manifest-v1"
+}

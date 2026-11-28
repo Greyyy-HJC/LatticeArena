@@ -1,0 +1,40 @@
+{
+  "comparison": "saved TRF starts and results versus Dogbox re-fit from byte-hash-bound reconstructed start vectors",
+  "dogbox_method": "least_squares(method='dogbox', x_scale='jac')",
+  "force_grid": "unchanged saved report grid",
+  "ftol_xtol_gtol": [
+    1e-09,
+    1e-09,
+    1e-09
+  ],
+  "input_strata": [
+    "near_degenerate",
+    "omitted_vacuum_truth"
+  ],
+  "max_nfev_per_start": 1600,
+  "no_clobber": true,
+  "optimizer_rerun_policy": "candidate Dogbox only; exact saved matrix/covariance/objective/bounds/start pairs",
+  "post_run_saved_receipt_rollup": {
+    "status": "documentation_amendment_no_optimizer_rerun",
+    "paired_rows": 52,
+    "unique_dogbox_jobs": 39,
+    "cold_trf_valid_starts": 0,
+    "cold_dogbox_valid_starts": 13,
+    "cold_dogbox_failed_at_cap": 13,
+    "neighbor_trf_valid_starts": 3,
+    "neighbor_dogbox_valid_starts": 13,
+    "neighbor_dogbox_failed_at_cap": 13,
+    "dogbox_nfev_median_max_each_branch": [1423, 1600],
+    "source": "paired_start_results.csv"
+  },
+  "optimizer_start_vectors": [
+    "captured_fit",
+    "lower_excited_vacuum_start",
+    "neighbor_force_continuation"
+  ],
+  "overlap_floor": 0.9,
+  "panels": 6,
+  "physical_gate": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR",
+  "random_seeds_added": 0,
+  "schema": "wilson-f-lane-profile-dogbox-comparison-protocol-v1"
+}

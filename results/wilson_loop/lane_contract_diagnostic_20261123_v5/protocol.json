@@ -1,0 +1,17 @@
+{
+  "schema": "wilson-two-lane-contract-v1",
+  "status": "STRUCTURE_DIAGNOSTIC_ONLY",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "lane_estimands": [
+    "finite_T_Creutz",
+    "ground_state_discrete_static_force_difference"
+  ],
+  "fixtures": [
+    "current_null_draft",
+    "synthetic_C_only_complete",
+    "synthetic_C_and_F_schema_complete"
+  ],
+  "meaning_of_valid": "schema complete only; requires human physics review and does not certify"
+}

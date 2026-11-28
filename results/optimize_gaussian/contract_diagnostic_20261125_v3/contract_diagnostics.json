@@ -1,0 +1,77 @@
+{
+  "schema": "optimize-gaussian-dual-contrast-contract-v1",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "fixtures": {
+    "current_selected_method_draft": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "D04_reference.independent_review_receipt: missing nonempty value",
+        "D04_reference.data_receipt_sha256: expected a SHA-256 receipt",
+        "D11_strong_spectral_operator.independent_review_receipt: missing nonempty value",
+        "D11_strong_spectral_operator.independent_review_receipt: expected a SHA-256 receipt",
+        "fair_budget.instance_plan_sha256: missing nonempty value",
+        "fair_budget.fit_manifest_sha256: missing nonempty value",
+        "fair_budget.heldout_manifest_sha256: missing nonempty value",
+        "fair_budget.seed_plan_sha256: missing nonempty value",
+        "fair_budget.instance_plan_sha256: expected a SHA-256 receipt",
+        "fair_budget.fit_manifest_sha256: expected a SHA-256 receipt",
+        "fair_budget.heldout_manifest_sha256: expected a SHA-256 receipt",
+        "fair_budget.seed_plan_sha256: expected a SHA-256 receipt",
+        "fair_budget.costs.training.amount: expected a finite nonnegative value",
+        "fair_budget.costs.setup.amount: expected a finite nonnegative value",
+        "fair_budget.costs.solve.amount: expected a finite nonnegative value",
+        "fair_budget.costs.inference.amount: expected a finite nonnegative value",
+        "fair_budget.costs.io.amount: expected a finite nonnegative value",
+        "fair_budget.costs.failure_recovery.amount: expected a finite nonnegative value",
+        "fair_budget.costs.total_walltime.amount: expected a finite nonnegative value"
+      ]
+    },
+    "synthetic_complete_requires_review": {
+      "schema_valid": true,
+      "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+      "structurally_complete": true,
+      "certified": false,
+      "physical_score": null,
+      "issues": []
+    },
+    "synthetic_missing_comparison": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "comparison_family: differs from the selected two-contrast family",
+        "comparison_family: must retain both selected contrasts in the declared order"
+      ]
+    },
+    "synthetic_invalid_r_star": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "D06_effect_threshold: differs from selected effect and inference defaults",
+        "D06_effect_threshold.r_star: expected a positive finite value"
+      ]
+    },
+    "synthetic_incomplete_D11": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "D11_strong_spectral_operator.positivity_projection_constraints: differs from selected method defaults",
+        "D11_strong_spectral_operator.positivity_projection_constraints: missing nonempty value"
+      ]
+    }
+  }
+}

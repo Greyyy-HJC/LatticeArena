@@ -1,0 +1,47 @@
+[
+  {
+    "abstained": 0,
+    "coverage": 0.868,
+    "failed": 0,
+    "mc_standard_error": 0.021408035874409405,
+    "n_configurations": 60,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.8204199080951821,
+      0.9044419834761707
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.856,
+    "failed": 0,
+    "mc_standard_error": 0.022204864331943127,
+    "n_configurations": 60,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.8070876594372886,
+      0.8941374313219549
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.764,
+    "failed": 0,
+    "mc_standard_error": 0.026855464993181557,
+    "n_configurations": 60,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.7076162988962981,
+      0.8123933189701072
+    ]
+  }
+]

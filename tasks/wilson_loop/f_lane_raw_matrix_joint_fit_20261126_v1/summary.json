@@ -1,0 +1,73 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_RAW_MATRIX_FIT_CANDIDATE_NOT_CALIBRATED_OR_CERTIFICATION",
+  "denominators": {
+    "joint_matrix_fits": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 12,
+      "valid": 12
+    },
+    "kernel_fit_variants": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 36,
+      "valid": 36
+    },
+    "physical_certification": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    },
+    "q_candidate_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 72,
+      "valid": 72
+    },
+    "source_files": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    }
+  },
+  "fit_counts": {
+    "joint_matrix_fits": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 12,
+      "valid": 12
+    },
+    "kernel_fit_variants": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 36,
+      "valid": 36
+    },
+    "q_candidate_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 72,
+      "valid": 72
+    }
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "not_connected_to_evidence_gate": true,
+  "not_connected_to_spectral_q_reader": true,
+  "physical_measurement_inputs": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "q_candidate_interval_status": "UNCALIBRATED_DELTA_METHOD",
+  "schema": "wilson-f-raw-matrix-joint-fit-candidate-v1",
+  "source_hashes": {
+    "manifest": "ba0854a82023958d91c31c2d292dfc5fc4378fdc083891894dc39a582748f1b4",
+    "matrix_npz": "0a9f00904f756573323b0e7ee54f1a7cadff00fac532f2a8dc7473d869886dcb"
+  },
+  "status": "RAW_MATRIX_JOINT_FIT_CANDIDATE_ONLY"
+}

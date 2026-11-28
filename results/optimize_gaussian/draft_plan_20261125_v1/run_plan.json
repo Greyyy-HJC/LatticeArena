@@ -1,0 +1,574 @@
+{
+  "authorization": {
+    "gpu_quda": false,
+    "production_data": false
+  },
+  "contract_sha256": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d",
+  "data_access": "none",
+  "denominators": {
+    "data_inputs": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "unit": "no input manifest or measurement read",
+      "valid": 0
+    },
+    "physical_gates": {
+      "abstained": 5,
+      "failed": 0,
+      "planned": 5,
+      "unit": "operator/reference/numerical/statistical/comparison certification stages",
+      "valid": 0
+    },
+    "schema_plan": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "unit": "one generic TaskSpec/RunSpec draft validated in memory",
+      "valid": 1
+    }
+  },
+  "illustrative_candidate": {
+    "builder": "tasks.optimize_gaussian.chebyshev_baseline:apply_hopping_filter_cpu",
+    "contract": "optimize-chebyshev-diagnostic-v1",
+    "dependencies": {
+      "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+      "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+      "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+    },
+    "parameters": {
+      "control_points": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    }
+  },
+  "launch_allowed": false,
+  "not_established": [
+    "production TaskSpec/RunSpec acceptance by a task runner",
+    "D04 independent reference receipt or successful reference gate",
+    "D11 independent production-operator review",
+    "D06 paired outcomes, measured costs or complete failure denominator",
+    "a train.main/training entrypoint in this checkout",
+    "GPU/QUDA permission or sealed-data permission"
+  ],
+  "operator_contract": {
+    "axes": "(z,y,x,3,nrhs)",
+    "constraints": {
+      "boundary": "periodic spatial shifts",
+      "control_constraints": "0<=b0<=b1<=b2<=b3<=b4=1",
+      "link_condition": "unitary SU(3)-like 3x3 matrices checked by CPU helper",
+      "normalization": "P4(1)=1 for the proposed low-mode endpoint",
+      "physical_contract_frozen": false,
+      "production_evaluator_connected": false,
+      "selected_method_defaults_recorded": true,
+      "spatial_directions": 3,
+      "unresolved": [
+        "D04 independent E-chain reference and receipt",
+        "D06 empirical paired-risk and full-cost receipts",
+        "D11 independent production-link/operator review",
+        "data-owner and GPU/QUDA authorization"
+      ]
+    },
+    "dependencies": {
+      "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+      "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+      "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+    },
+    "dtype": "complex128",
+    "name": "optimize-chebyshev-diagnostic-v1",
+    "parameters": {
+      "builder_parameters": {
+        "control_points": "five finite real Bernstein controls, 0<=b0<=...<=b4=1",
+        "field": "(z,y,x,3,nrhs)",
+        "links": "three periodic spatial directions of unitary 3x3 links"
+      },
+      "role": "diagnostic candidate schema for selected D11 method defaults; production review remains open",
+      "spectral_map": "P4(I+H/12), proposed H spectrum [-12,0]"
+    },
+    "support": "time_slice",
+    "transformation": "gauge_covariant"
+  },
+  "physical_score": null,
+  "run_spec": {
+    "authorization": {
+      "gpu_quda": false,
+      "production_data": false
+    },
+    "data": {},
+    "data_access": "none",
+    "illustrative_candidate": {
+      "builder": "tasks.optimize_gaussian.chebyshev_baseline:apply_hopping_filter_cpu",
+      "contract": "optimize-chebyshev-diagnostic-v1",
+      "dependencies": {
+        "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+        "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+        "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+        "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+        "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+        "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+        "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+      },
+      "parameters": {
+        "control_points": [
+          0.0,
+          0.25,
+          0.5,
+          0.75,
+          1.0
+        ]
+      }
+    },
+    "launch_allowed": false,
+    "methods": {
+      "D04_reference": {
+        "data_receipt_sha256": null,
+        "data_source": "independent E-chain; correlator receipt not yet supplied",
+        "failure_rule": "any failed reference gate makes D04 unresolved; do not substitute synthetic operator loss",
+        "fit_protocol": {
+          "A4P_fold": "odd",
+          "PP_fold": "even",
+          "all_arms_share_windows_covariance_blocks_and_reference_draws": true,
+          "covariance_diagonal_shrinkage": 0.25,
+          "covariance_eigenvalue_floor": 1e-10,
+          "main_window": [
+            3,
+            8
+          ],
+          "shared_states": true,
+          "state_count_checks": [
+            2,
+            3
+          ],
+          "tmin_checks": [
+            2,
+            3,
+            4
+          ]
+        },
+        "independent_review_receipt": null,
+        "observable": "lowest zero-momentum valence isovector pseudoscalar energy on S16T16 quenched Wilson, kappa=0.14",
+        "pass_rule": "relative mass error<=0.05; p>=0.01; PP/A4P and window/model shifts<=2.5 paired SE; no boundary hits",
+        "physical_interpretation": "independent target for the dimensionless Pion fixed-protocol risk objective",
+        "reference_method": "candidate-blind joint two-state PP(n=0,8,16)+local A4P spectral fit",
+        "risk_objective": {
+          "R_theta": "mean_t=2..5[Var_boot(q_theta(t))+|E_boot(q_theta(t))-1|^2]",
+          "amplitude_window": [
+            6,
+            8
+          ],
+          "f0_source": "independent E-chain reference",
+          "q_theta": "C_theta(t)/(A_theta*f0(t))",
+          "units": "dimensionless"
+        },
+        "units": "a_t m_pi"
+      },
+      "D06_effect_threshold": {
+        "alpha_per_comparison_bonferroni": 0.025,
+        "alpha_total_one_sided": 0.05,
+        "decision_rule": "hull lower bound across block lengths must exceed r_star for both comparisons",
+        "direction_and_interpretation": "rho=R_comparator/R_trainableW; rho>1 favors trainable-W; require at least 10% risk reduction",
+        "family_size": 2,
+        "invalid_or_zero_risk_rule": "ABSTAIN_RATIO_UNDEFINED; do not add epsilon or change to an absolute-difference estimand",
+        "paired_block_bootstrap_draws": 10000,
+        "prespecified_before_confirmation": true,
+        "primary_block_length": 5,
+        "r_star": 1.1111111111111112,
+        "sensitivity_block_lengths": [
+          2,
+          10
+        ],
+        "units": "dimensionless risk ratio"
+      },
+      "D11_operator": {
+        "H_definition": "H=sum_i(T_i+T_i^dagger-2I), three periodic spatial directions, equal-weight unitary 3x3 links",
+        "basis_parameterization": "monotone Bernstein controls mapped by a fixed exact dyadic rational degree-4 transform, evaluated in float64, to a Chebyshev series for Clenshaw application",
+        "coefficient_constraints": "P4(y)=sum_i b_i*C(4,i)*y^i*(1-y)^(4-i), 0<=b0<=b1<=b2<=b3<=b4=1",
+        "degree": 4,
+        "failure_rule": "reject nonunitary links, wrong shape/boundary, nonfinite values, or infeasible controls; never repair by clipping",
+        "family": "Chebyshev",
+        "identity_normalization": "P4(1)=b4=1 at the zero mode; outer unnormalized G^2 P4(H) G^2 is common to all arms",
+        "independent_review_receipt": null,
+        "outer_gaussian_sandwich": {
+          "G": "I+0.10*sum_i(T_i+T_i^dagger)",
+          "G_spectrum": [
+            0.4,
+            1.6
+          ],
+          "per_step_normalization": false,
+          "power_m": 2,
+          "raw_zero_mode_factor": 6.5536
+        },
+        "positivity_projection_constraints": "Bernstein basis gives 0<=P4<=1; monotone controls imply dP4/dy>=0; no post-fit clipping or projection",
+        "spectral_interval": [
+          -12.0,
+          0.0
+        ],
+        "spectral_mapping": "y=I+H/12 in [0,1]; x=2y-1 in [-1,1]"
+      },
+      "selected_comparisons": [
+        "trainable_W_vs_same_budget_SLSQP",
+        "trainable_W_vs_fixed_degree4_Chebyshev"
+      ]
+    },
+    "missing_input_hashes": [
+      "independent E-chain correlator/reference receipt",
+      "authorized D-chain input manifest for this task",
+      "fit/development input file hashes",
+      "frozen seed/initialization plan receipt",
+      "production evaluator and training entrypoint receipt"
+    ],
+    "operator_contract": {
+      "axes": "(z,y,x,3,nrhs)",
+      "constraints": {
+        "boundary": "periodic spatial shifts",
+        "control_constraints": "0<=b0<=b1<=b2<=b3<=b4=1",
+        "link_condition": "unitary SU(3)-like 3x3 matrices checked by CPU helper",
+        "normalization": "P4(1)=1 for the proposed low-mode endpoint",
+        "physical_contract_frozen": false,
+        "production_evaluator_connected": false,
+        "selected_method_defaults_recorded": true,
+        "spatial_directions": 3,
+        "unresolved": [
+          "D04 independent E-chain reference and receipt",
+          "D06 empirical paired-risk and full-cost receipts",
+          "D11 independent production-link/operator review",
+          "data-owner and GPU/QUDA authorization"
+        ]
+      },
+      "dependencies": {
+        "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+        "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+        "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+        "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+        "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+        "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+        "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+      },
+      "dtype": "complex128",
+      "name": "optimize-chebyshev-diagnostic-v1",
+      "parameters": {
+        "builder_parameters": {
+          "control_points": "five finite real Bernstein controls, 0<=b0<=...<=b4=1",
+          "field": "(z,y,x,3,nrhs)",
+          "links": "three periodic spatial directions of unitary 3x3 links"
+        },
+        "role": "diagnostic candidate schema for selected D11 method defaults; production review remains open",
+        "spectral_map": "P4(I+H/12), proposed H spectrum [-12,0]"
+      },
+      "support": "time_slice",
+      "transformation": "gauge_covariant"
+    },
+    "physical_score": null,
+    "protocol_hash": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d",
+    "run_state": {
+      "evidence": {
+        "comparison": [
+          "authorized independent confirmation IDs and measured total-cost comparison missing"
+        ],
+        "numerical": [
+          "real-link operator/solver evidence and numerical review receipt missing"
+        ],
+        "operator": [
+          "D11 schema is illustrative; independent production-link review receipt missing"
+        ],
+        "reference": [
+          "independent E-chain reference receipt and successful reference gate missing"
+        ],
+        "statistical": [
+          "paired empirical risk outcomes, precision receipt, and complete failure denominator missing"
+        ]
+      },
+      "evidence_hash": {
+        "comparison": null,
+        "numerical": null,
+        "operator": null,
+        "reference": null,
+        "statistical": null
+      },
+      "physical_ready": false,
+      "score": null,
+      "status": {
+        "comparison": "abstained",
+        "numerical": "abstained",
+        "operator": "abstained",
+        "reference": "abstained",
+        "statistical": "abstained"
+      },
+      "validation_observed": false
+    },
+    "split_semantics": {
+      "development": "D0-D59 fit-only role; IDs represented as metadata, no bytes read",
+      "sealed_roles_included": false,
+      "validation": "D60-D99 development-selection role; not final confirmation"
+    },
+    "status": "DRAFT_NO_LAUNCH",
+    "task": {
+      "boundary": {
+        "gauge_links": {
+          "spatial": "periodic",
+          "temporal": "periodic"
+        },
+        "valence_quarks": {
+          "spatial": "periodic",
+          "temporal": "antiperiodic"
+        }
+      },
+      "budget": {
+        "measured_costs": false,
+        "methods": [
+          "trainable_W",
+          "same_budget_SLSQP",
+          "fixed_degree4_Chebyshev"
+        ],
+        "objective_gradient_call_cap_per_arm": 160,
+        "starts_per_arm": 1,
+        "walltime_rule": "charge full training/setup/selection cost to one task until a supported deployment task count and cost ledger exist"
+      },
+      "dependencies": {
+        "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+        "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+        "contract.py": "9333c86e0f3490a2635a4c89491172a2909bb86aeea2d3650c1592b1e4938f91",
+        "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+        "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+        "draft_plan.py": "9435a5fcb51677698bf2af94f262067237b4e181f189e22b4e6275826ef79c56",
+        "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+        "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+      },
+      "geometry": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "metric": {
+        "D06": {
+          "alpha_per_comparison_bonferroni": 0.025,
+          "alpha_total_one_sided": 0.05,
+          "decision_rule": "hull lower bound across block lengths must exceed r_star for both comparisons",
+          "direction_and_interpretation": "rho=R_comparator/R_trainableW; rho>1 favors trainable-W; require at least 10% risk reduction",
+          "family_size": 2,
+          "invalid_or_zero_risk_rule": "ABSTAIN_RATIO_UNDEFINED; do not add epsilon or change to an absolute-difference estimand",
+          "paired_block_bootstrap_draws": 10000,
+          "prespecified_before_confirmation": true,
+          "primary_block_length": 5,
+          "r_star": 1.1111111111111112,
+          "sensitivity_block_lengths": [
+            2,
+            10
+          ],
+          "units": "dimensionless risk ratio"
+        },
+        "comparison_family": [
+          "trainable_W_vs_same_budget_SLSQP",
+          "trainable_W_vs_fixed_degree4_Chebyshev"
+        ],
+        "objective_id": "D04_fixed_Pion_risk_v1",
+        "risk": {
+          "R_theta": "mean_t=2..5[Var_boot(q_theta(t))+|E_boot(q_theta(t))-1|^2]",
+          "amplitude_window": [
+            6,
+            8
+          ],
+          "f0_source": "independent E-chain reference",
+          "q_theta": "C_theta(t)/(A_theta*f0(t))",
+          "units": "dimensionless"
+        }
+      },
+      "name": "optimize_gaussian",
+      "observable": "fixed-protocol dimensionless Pion Gaussian-smearing risk",
+      "reference": {
+        "method": "candidate-blind joint two-state PP(n=0,8,16)+local A4P spectral fit",
+        "observable": "lowest zero-momentum valence isovector pseudoscalar energy on S16T16 quenched Wilson, kappa=0.14",
+        "receipt_sha256": null,
+        "source": "independent E-chain; receipt missing",
+        "units": "a_t m_pi"
+      },
+      "source": {
+        "kind": "point",
+        "position": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "splits": {
+        "development": [
+          0,
+          59
+        ],
+        "validation": [
+          60,
+          99
+        ]
+      }
+    }
+  },
+  "run_state": {
+    "evidence": {
+      "comparison": [
+        "authorized independent confirmation IDs and measured total-cost comparison missing"
+      ],
+      "numerical": [
+        "real-link operator/solver evidence and numerical review receipt missing"
+      ],
+      "operator": [
+        "D11 schema is illustrative; independent production-link review receipt missing"
+      ],
+      "reference": [
+        "independent E-chain reference receipt and successful reference gate missing"
+      ],
+      "statistical": [
+        "paired empirical risk outcomes, precision receipt, and complete failure denominator missing"
+      ]
+    },
+    "evidence_hash": {
+      "comparison": null,
+      "numerical": null,
+      "operator": null,
+      "reference": null,
+      "statistical": null
+    },
+    "physical_ready": false,
+    "score": null,
+    "status": {
+      "comparison": "abstained",
+      "numerical": "abstained",
+      "operator": "abstained",
+      "reference": "abstained",
+      "statistical": "abstained"
+    },
+    "validation_observed": false
+  },
+  "schema": "optimize-gaussian-draft-run-plan-v1",
+  "source_hashes": {
+    "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+    "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+    "contract.py": "9333c86e0f3490a2635a4c89491172a2909bb86aeea2d3650c1592b1e4938f91",
+    "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+    "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+    "draft_plan.py": "9435a5fcb51677698bf2af94f262067237b4e181f189e22b4e6275826ef79c56",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+    "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+  },
+  "status": "DRAFT_NO_LAUNCH",
+  "task_spec": {
+    "boundary": {
+      "gauge_links": {
+        "spatial": "periodic",
+        "temporal": "periodic"
+      },
+      "valence_quarks": {
+        "spatial": "periodic",
+        "temporal": "antiperiodic"
+      }
+    },
+    "budget": {
+      "measured_costs": false,
+      "methods": [
+        "trainable_W",
+        "same_budget_SLSQP",
+        "fixed_degree4_Chebyshev"
+      ],
+      "objective_gradient_call_cap_per_arm": 160,
+      "starts_per_arm": 1,
+      "walltime_rule": "charge full training/setup/selection cost to one task until a supported deployment task count and cost ledger exist"
+    },
+    "dependencies": {
+      "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+      "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+      "contract.py": "9333c86e0f3490a2635a4c89491172a2909bb86aeea2d3650c1592b1e4938f91",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+      "draft_plan.py": "9435a5fcb51677698bf2af94f262067237b4e181f189e22b4e6275826ef79c56",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+      "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+    },
+    "geometry": [
+      16,
+      16,
+      16,
+      16
+    ],
+    "metric": {
+      "D06": {
+        "alpha_per_comparison_bonferroni": 0.025,
+        "alpha_total_one_sided": 0.05,
+        "decision_rule": "hull lower bound across block lengths must exceed r_star for both comparisons",
+        "direction_and_interpretation": "rho=R_comparator/R_trainableW; rho>1 favors trainable-W; require at least 10% risk reduction",
+        "family_size": 2,
+        "invalid_or_zero_risk_rule": "ABSTAIN_RATIO_UNDEFINED; do not add epsilon or change to an absolute-difference estimand",
+        "paired_block_bootstrap_draws": 10000,
+        "prespecified_before_confirmation": true,
+        "primary_block_length": 5,
+        "r_star": 1.1111111111111112,
+        "sensitivity_block_lengths": [
+          2,
+          10
+        ],
+        "units": "dimensionless risk ratio"
+      },
+      "comparison_family": [
+        "trainable_W_vs_same_budget_SLSQP",
+        "trainable_W_vs_fixed_degree4_Chebyshev"
+      ],
+      "objective_id": "D04_fixed_Pion_risk_v1",
+      "risk": {
+        "R_theta": "mean_t=2..5[Var_boot(q_theta(t))+|E_boot(q_theta(t))-1|^2]",
+        "amplitude_window": [
+          6,
+          8
+        ],
+        "f0_source": "independent E-chain reference",
+        "q_theta": "C_theta(t)/(A_theta*f0(t))",
+        "units": "dimensionless"
+      }
+    },
+    "name": "optimize_gaussian",
+    "observable": "fixed-protocol dimensionless Pion Gaussian-smearing risk",
+    "reference": {
+      "method": "candidate-blind joint two-state PP(n=0,8,16)+local A4P spectral fit",
+      "observable": "lowest zero-momentum valence isovector pseudoscalar energy on S16T16 quenched Wilson, kappa=0.14",
+      "receipt_sha256": null,
+      "source": "independent E-chain; receipt missing",
+      "units": "a_t m_pi"
+    },
+    "source": {
+      "kind": "point",
+      "position": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "splits": {
+      "development": [
+        0,
+        59
+      ],
+      "validation": [
+        60,
+        99
+      ]
+    }
+  },
+  "text_flow": [
+    "research_contract_v1.json + source files -> SHA-256 dependency map",
+    "selected D04/D06/D11 defaults -> generic TaskSpec + draft RunSpec",
+    "no data hashes / no runner entrypoint / no authorization -> launch_allowed=false",
+    "five physical certification stages remain abstained; physical_score=null"
+  ]
+}

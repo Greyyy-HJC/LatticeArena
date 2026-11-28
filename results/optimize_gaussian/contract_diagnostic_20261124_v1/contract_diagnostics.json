@@ -1,0 +1,106 @@
+{
+  "schema": "optimize-gaussian-dual-contrast-contract-v1",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "fixtures": {
+    "current_null_draft": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "D04_reference.observable: missing nonempty value",
+        "D04_reference.units: missing nonempty value",
+        "D04_reference.physical_interpretation: missing nonempty value",
+        "D04_reference.reference_method: missing nonempty value",
+        "D04_reference.data_source: missing nonempty value",
+        "D04_reference.pass_rule: missing nonempty value",
+        "D04_reference.failure_rule: missing nonempty value",
+        "D04_reference.independent_review_receipt: missing nonempty value",
+        "D04_reference.data_receipt_sha256: expected a SHA-256 receipt",
+        "D06_effect_threshold.r_star: expected a positive finite value",
+        "D06_effect_threshold.units: missing nonempty value",
+        "D06_effect_threshold.direction_and_interpretation: missing nonempty value",
+        "D06_effect_threshold.prespecified_before_confirmation: must be true",
+        "D11_strong_spectral_operator.H_definition: missing nonempty value",
+        "D11_strong_spectral_operator.spectral_mapping: missing nonempty value",
+        "D11_strong_spectral_operator.identity_normalization: missing nonempty value",
+        "D11_strong_spectral_operator.coefficient_constraints: missing nonempty value",
+        "D11_strong_spectral_operator.positivity_projection_constraints: missing nonempty value",
+        "D11_strong_spectral_operator.failure_rule: missing nonempty value",
+        "D11_strong_spectral_operator.independent_review_receipt: missing nonempty value",
+        "D11_strong_spectral_operator.spectral_interval: expected two finite increasing endpoints",
+        "D11_strong_spectral_operator.independent_review_receipt: expected a SHA-256 receipt",
+        "fair_budget.objective_id: missing nonempty value",
+        "fair_budget.instance_plan_sha256: missing nonempty value",
+        "fair_budget.fit_manifest_sha256: missing nonempty value",
+        "fair_budget.heldout_manifest_sha256: missing nonempty value",
+        "fair_budget.seed_plan_sha256: missing nonempty value",
+        "fair_budget.initialization_policy: missing nonempty value",
+        "fair_budget.restart_policy: missing nonempty value",
+        "fair_budget.stopping_rule: missing nonempty value",
+        "fair_budget.hardware_environment: missing nonempty value",
+        "fair_budget.instance_plan_sha256: expected a SHA-256 receipt",
+        "fair_budget.fit_manifest_sha256: expected a SHA-256 receipt",
+        "fair_budget.heldout_manifest_sha256: expected a SHA-256 receipt",
+        "fair_budget.seed_plan_sha256: expected a SHA-256 receipt",
+        "fair_budget.objective_gradient_call_cap_per_arm: expected a positive integer",
+        "fair_budget.amortization_task_count: expected a positive integer",
+        "fair_budget.costs.training.amount: expected a finite nonnegative value",
+        "fair_budget.costs.training.unit: missing nonempty value",
+        "fair_budget.costs.setup.amount: expected a finite nonnegative value",
+        "fair_budget.costs.setup.unit: missing nonempty value",
+        "fair_budget.costs.solve.amount: expected a finite nonnegative value",
+        "fair_budget.costs.solve.unit: missing nonempty value",
+        "fair_budget.costs.inference.amount: expected a finite nonnegative value",
+        "fair_budget.costs.inference.unit: missing nonempty value",
+        "fair_budget.costs.io.amount: expected a finite nonnegative value",
+        "fair_budget.costs.io.unit: missing nonempty value",
+        "fair_budget.costs.failure_recovery.amount: expected a finite nonnegative value",
+        "fair_budget.costs.failure_recovery.unit: missing nonempty value",
+        "fair_budget.costs.total_walltime.amount: expected a finite nonnegative value",
+        "fair_budget.costs.total_walltime.unit: missing nonempty value"
+      ]
+    },
+    "synthetic_complete_requires_review": {
+      "schema_valid": true,
+      "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+      "structurally_complete": true,
+      "certified": false,
+      "physical_score": null,
+      "issues": []
+    },
+    "synthetic_missing_comparison": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "comparison_family: must retain both selected contrasts in the declared order"
+      ]
+    },
+    "synthetic_invalid_r_star": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "D06_effect_threshold.r_star: expected a positive finite value"
+      ]
+    },
+    "synthetic_incomplete_D11": {
+      "schema_valid": true,
+      "status": "NOT_READY",
+      "structurally_complete": false,
+      "certified": false,
+      "physical_score": null,
+      "issues": [
+        "D11_strong_spectral_operator.positivity_projection_constraints: missing nonempty value"
+      ]
+    }
+  }
+}

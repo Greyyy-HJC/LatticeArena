@@ -1,0 +1,112 @@
+{
+  "block_intervals": [
+    {
+      "alpha_lane": 0.025,
+      "block_length": 2,
+      "empirical_numeric_gate_pass": true,
+      "halfwidth": 0.009097326324143812,
+      "hull_halfwidth": 0.009097326324143812,
+      "hull_lower": 0.09531340327134782,
+      "hull_upper": 0.11350805591963545,
+      "interval_level": 0.975,
+      "invalid_draws": 0,
+      "invalid_fraction": 0.0,
+      "invalid_gate_pass": true,
+      "lower": 0.09531340327134782,
+      "planned_draws": 10000,
+      "precision_gate_pass": true,
+      "precision_target_halfwidth": 0.02,
+      "seed": 20261127,
+      "upper": 0.11350805591963545,
+      "valid_draws": 10000
+    },
+    {
+      "alpha_lane": 0.025,
+      "block_length": 5,
+      "empirical_numeric_gate_pass": true,
+      "halfwidth": 0.008768640804484334,
+      "hull_halfwidth": 0.009097326324143812,
+      "hull_lower": 0.09531340327134782,
+      "hull_upper": 0.11350805591963545,
+      "interval_level": 0.975,
+      "invalid_draws": 0,
+      "invalid_fraction": 0.0,
+      "invalid_gate_pass": true,
+      "lower": 0.09588459113707415,
+      "planned_draws": 10000,
+      "precision_gate_pass": true,
+      "precision_target_halfwidth": 0.02,
+      "seed": 20261130,
+      "upper": 0.11342187274604282,
+      "valid_draws": 10000
+    },
+    {
+      "alpha_lane": 0.025,
+      "block_length": 10,
+      "empirical_numeric_gate_pass": true,
+      "halfwidth": 0.00696958708577973,
+      "hull_halfwidth": 0.009097326324143812,
+      "hull_lower": 0.09531340327134782,
+      "hull_upper": 0.11350805591963545,
+      "interval_level": 0.975,
+      "invalid_draws": 0,
+      "invalid_fraction": 0.0,
+      "invalid_gate_pass": true,
+      "lower": 0.09784608984611964,
+      "planned_draws": 10000,
+      "precision_gate_pass": true,
+      "precision_target_halfwidth": 0.02,
+      "seed": 20261135,
+      "upper": 0.1117852640176791,
+      "valid_draws": 10000
+    }
+  ],
+  "bootstrap_coverage_gate": "NOT_ESTABLISHED: block lengths and draw count do not prove dependence assumptions or interval coverage",
+  "certified": false,
+  "configuration_ids": [
+    0,
+    99
+  ],
+  "data_hashes": {
+    "development_commit_sha256": "0ff2766e4550d0a687d051f44376af5528cb047b05c556912b50ad5c9833951a",
+    "development_npz_sha256": "da8cc5d72481475a8cd6d821692db2e21555c0bd5b1849747dc75a946dbd7209",
+    "development_provenance_sha256": "082ad7060e776f6e724ee02ac1de9c94e706332eb875019f3b9d1c45d4e9e82b",
+    "loops_array_sha256": "513b67dde074d96c89c82395151a0079ca746be63c7dd5ac5c6ea1ae6d243dcc"
+  },
+  "empirical_numeric_gates_pass": true,
+  "f_lane_status": "UNCHANGED_UNCERTIFIED: this package has Nt=16 loops only; it has no independent GEVP receipt or matched Nt=32 thermal data",
+  "four_required_loop_means": {
+    "W(2,5)": 0.04694064145570726,
+    "W(2,6)": 0.025863056391037472,
+    "W(3,5)": 0.02515862364277295,
+    "W(3,6)": 0.012487157397748607
+  },
+  "hmc_trajectory_range": [
+    401,
+    896
+  ],
+  "hmc_trajectory_spacing_min_max": [
+    5,
+    5
+  ],
+  "independent_calibration_gate": "NOT_MET: D0-99 was already observed and used for development; retrospective re-analysis is not confirmation",
+  "interval_hull": {
+    "halfwidth": 0.009097326324143812,
+    "lower": 0.09531340327134782,
+    "upper": 0.11350805591963545
+  },
+  "invalid_draws": {
+    "abstained": 0,
+    "invalid": 0,
+    "planned": 30000,
+    "valid": 30000
+  },
+  "kernel_id": "stout_rho0.1_n5",
+  "observable": "absolute finite-T Creutz chi_stout(R=2,T=5), not ground-state force",
+  "physical_score": null,
+  "planned_configurations": 100,
+  "point_estimate": 0.10443171867097156,
+  "point_estimate_valid": true,
+  "precision_gate_outcome": "PASS",
+  "status": "RETROSPECTIVE_DEVELOPMENT_ONLY_NOT_CONFIRMATION"
+}

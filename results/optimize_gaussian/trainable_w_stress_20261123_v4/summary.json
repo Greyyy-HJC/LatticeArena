@@ -1,0 +1,45 @@
+{
+  "schema": "trainable-w-synthetic-stress-summary-v1",
+  "classification": "synthetic algorithm diagnostic only",
+  "physical_score": null,
+  "data_access": "No production gauge ensemble, sealed IDs, GPU, or QUDA data were accessed.",
+  "denominators": {
+    "planned_panels": 36,
+    "valid_panels": 36,
+    "failed_panels": 0,
+    "abstained_panels": 0,
+    "planned_fit_links": 72,
+    "valid_fit_links": 72,
+    "failed_fit_links": 0,
+    "abstained_fit_links": 0,
+    "planned_heldout_links": 72,
+    "valid_heldout_links": 72,
+    "failed_heldout_links": 0,
+    "abstained_heldout_links": 0,
+    "planned_solver_runs": 288,
+    "returned_solver_runs": 288,
+    "budget_stops": 93,
+    "solver_non_success": 93,
+    "excluded_samples": 0
+  },
+  "cells": 12,
+  "files": [
+    "README.md",
+    "protocol.json",
+    "raw.json",
+    "synthetic_inputs.npz",
+    "paired_summary.csv",
+    "paired_loss_ratios.png",
+    "budget_convergence.png",
+    "conditioning_and_baselines.png",
+    "artifact_hashes.json"
+  ],
+  "source_sha256": {
+    "trainable_w_stress_diagnostic.py": "db89fb374bffe0729d4a46848d3d6a3ef0a76d0110618de4bfcd15506e59514e",
+    "trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0",
+    "trainable_w_operator_diagnostic.py": "584235dd49eab347c4ac078fdc00724bdf1f3b31eb6fc1d56d05fc688df2596b",
+    "trainable_w_diagnostic.py": "9d772bff2af5aaa8f7bfbf4736b419a57b9d1fe90dd834c3a27c13f07404298e",
+    "features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+  }
+}

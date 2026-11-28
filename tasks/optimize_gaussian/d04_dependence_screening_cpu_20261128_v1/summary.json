@@ -1,0 +1,1402 @@
+{
+  "D04_reference_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "all_panel_count": 60,
+  "cell_summaries": {
+    "gaussian_ar1_rho030": {
+      "bootstrap_denominators": {
+        "approximate_chi_square": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "estimated_ar1_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "estimated_ar1_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "iid_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "iid_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        }
+      },
+      "cell": {
+        "innovation_df": null,
+        "kind": "gaussian_ar1",
+        "name": "gaussian_ar1_rho030",
+        "rho": 0.3
+      },
+      "finite_n_mean_variance_factor": 1.847576530612245,
+      "lag1_truth": 0.3,
+      "outer_fit_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "pvalue_summaries": {
+        "approximate_chi_square": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.3479994060495619,
+          "mean": 0.32010526391400235,
+          "median": 0.26518675592602614,
+          "rejection": {
+            "0.01": {
+              "count": 2,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.16666666666666666,
+              "wilson_95": [
+                0.04696514218385378,
+                0.4480308622529734
+              ]
+            },
+            "0.05": {
+              "count": 4,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.3333333333333333,
+              "wilson_95": [
+                0.13812009109121315,
+                0.6093779111272004
+              ]
+            }
+          }
+        },
+        "circular_moving_block_L8": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.22499999999999998,
+          "mean": 0.3729166666666666,
+          "median": 0.4,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 1,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.08333333333333333,
+              "wilson_95": [
+                0.014865094404917095,
+                0.35387991114111694
+              ]
+            }
+          }
+        },
+        "estimated_ar1_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.25,
+          "mean": 0.40625,
+          "median": 0.35,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 1,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.08333333333333333,
+              "wilson_95": [
+                0.014865094404917095,
+                0.35387991114111694
+              ]
+            }
+          }
+        },
+        "iid_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.6166666666666667,
+          "mean": 0.14375,
+          "median": 0.037500000000000006,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 6,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.5,
+              "wilson_95": [
+                0.2537815976337061,
+                0.7462184023662939
+              ]
+            }
+          }
+        }
+      },
+      "rho_ols_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_profile_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_summaries": {
+        "rho_ols": {
+          "bias_vs_lag1": -0.019178227897352795,
+          "count": 12,
+          "mean": 0.2808217721026472,
+          "median": 0.279895756973859,
+          "q05_q95": [
+            0.219491154691618,
+            0.33833984938921746
+          ],
+          "sd": 0.04218121169269073
+        },
+        "rho_profile": {
+          "bias_vs_lag1": -0.009049342021256235,
+          "count": 12,
+          "mean": 0.29095065797874375,
+          "median": 0.2980976605927679,
+          "q05_q95": [
+            0.24781301295879354,
+            0.32275546488216
+          ],
+          "sd": 0.027050361298822354
+        }
+      },
+      "unique_outer_sample_hashes": 12
+    },
+    "gaussian_ar1_rho060": {
+      "bootstrap_denominators": {
+        "approximate_chi_square": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "estimated_ar1_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "estimated_ar1_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "iid_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "iid_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        }
+      },
+      "cell": {
+        "innovation_df": null,
+        "kind": "gaussian_ar1",
+        "name": "gaussian_ar1_rho060",
+        "rho": 0.6
+      },
+      "finite_n_mean_variance_factor": 3.94140625,
+      "lag1_truth": 0.6,
+      "outer_fit_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "pvalue_summaries": {
+        "approximate_chi_square": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.7542756509983386,
+          "mean": 0.04789669429660571,
+          "median": 0.0003695830017621462,
+          "rejection": {
+            "0.01": {
+              "count": 7,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.5833333333333334,
+              "wilson_95": [
+                0.31951131254954973,
+                0.8067396863412435
+              ]
+            },
+            "0.05": {
+              "count": 10,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.8333333333333334,
+              "wilson_95": [
+                0.5519691377470266,
+                0.9530348578161463
+              ]
+            }
+          }
+        },
+        "circular_moving_block_L8": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.3916666666666666,
+          "mean": 0.27083333333333337,
+          "median": 0.125,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 1,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.08333333333333333,
+              "wilson_95": [
+                0.014865094404917095,
+                0.35387991114111694
+              ]
+            }
+          }
+        },
+        "estimated_ar1_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.15833333333333333,
+          "mean": 0.4604166666666667,
+          "median": 0.3875,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 1,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.08333333333333333,
+              "wilson_95": [
+                0.014865094404917095,
+                0.35387991114111694
+              ]
+            }
+          }
+        },
+        "iid_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.8583333333333334,
+          "mean": 0.03125000000000001,
+          "median": 0.025,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 11,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.9166666666666666,
+              "wilson_95": [
+                0.646120088858883,
+                0.9851349055950829
+              ]
+            }
+          }
+        }
+      },
+      "rho_ols_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_profile_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_summaries": {
+        "rho_ols": {
+          "bias_vs_lag1": -6.37525686173479e-05,
+          "count": 12,
+          "mean": 0.5999362474313826,
+          "median": 0.5944312306700982,
+          "q05_q95": [
+            0.5655116708283864,
+            0.6404233710197232
+          ],
+          "sd": 0.027613676550300847
+        },
+        "rho_profile": {
+          "bias_vs_lag1": -0.009848298812422662,
+          "count": 12,
+          "mean": 0.5901517011875773,
+          "median": 0.5877233150951063,
+          "q05_q95": [
+            0.5666517828126915,
+            0.6116788366663284
+          ],
+          "sd": 0.016292760872922068
+        }
+      },
+      "unique_outer_sample_hashes": 12
+    },
+    "gaussian_iid": {
+      "bootstrap_denominators": {
+        "approximate_chi_square": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "estimated_ar1_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "estimated_ar1_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "iid_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "iid_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        }
+      },
+      "cell": {
+        "innovation_df": null,
+        "kind": "gaussian_ar1",
+        "name": "gaussian_iid",
+        "rho": 0.0
+      },
+      "finite_n_mean_variance_factor": 1.0,
+      "lag1_truth": 0.0,
+      "outer_fit_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "pvalue_summaries": {
+        "approximate_chi_square": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.48254641023297734,
+          "mean": 0.7766248378361241,
+          "median": 0.8123934444971557,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            }
+          }
+        },
+        "circular_moving_block_L8": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.22499999999999998,
+          "mean": 0.43541666666666673,
+          "median": 0.35,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            }
+          }
+        },
+        "estimated_ar1_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.21666666666666667,
+          "mean": 0.4312499999999999,
+          "median": 0.375,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            }
+          }
+        },
+        "iid_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.11666666666666659,
+          "mean": 0.48124999999999996,
+          "median": 0.48750000000000004,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            }
+          }
+        }
+      },
+      "rho_ols_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_profile_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_summaries": {
+        "rho_ols": {
+          "bias_vs_lag1": -0.03228085566869137,
+          "count": 12,
+          "mean": -0.03228085566869137,
+          "median": -0.04253349948640809,
+          "q05_q95": [
+            -0.06788054420157148,
+            0.02698304656596189
+          ],
+          "sd": 0.03208874663586598
+        },
+        "rho_profile": {
+          "bias_vs_lag1": -0.019273235502080408,
+          "count": 12,
+          "mean": -0.019273235502080408,
+          "median": -0.021302785698856512,
+          "q05_q95": [
+            -0.03943808575963794,
+            0.007537975357866713
+          ],
+          "sd": 0.01757020910714012
+        }
+      },
+      "unique_outer_sample_hashes": 12
+    },
+    "multiscale_gaussian_mixture": {
+      "bootstrap_denominators": {
+        "approximate_chi_square": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "estimated_ar1_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "estimated_ar1_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "iid_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "iid_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        }
+      },
+      "cell": {
+        "fast_weight": 0.65,
+        "innovation_df": null,
+        "kind": "multiscale_gaussian",
+        "name": "multiscale_gaussian_mixture",
+        "rho_fast": 0.15,
+        "rho_slow": 0.75
+      },
+      "finite_n_mean_variance_factor": 3.2616782006920415,
+      "lag1_truth": 0.36,
+      "outer_fit_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "pvalue_summaries": {
+        "approximate_chi_square": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.5972701289472635,
+          "mean": 0.1773486529702378,
+          "median": 0.06232820061710198,
+          "rejection": {
+            "0.01": {
+              "count": 5,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.4166666666666667,
+              "wilson_95": [
+                0.19326031365875665,
+                0.6804886874504503
+              ]
+            },
+            "0.05": {
+              "count": 6,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.5,
+              "wilson_95": [
+                0.2537815976337061,
+                0.7462184023662939
+              ]
+            }
+          }
+        },
+        "circular_moving_block_L8": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.3,
+          "mean": 0.3333333333333333,
+          "median": 0.2375,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 3,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.25,
+              "wilson_95": [
+                0.08894166839405471,
+                0.5323053349335657
+              ]
+            }
+          }
+        },
+        "estimated_ar1_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.375,
+          "mean": 0.29583333333333334,
+          "median": 0.175,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 4,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.3333333333333333,
+              "wilson_95": [
+                0.13812009109121315,
+                0.6093779111272004
+              ]
+            }
+          }
+        },
+        "iid_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.7416666666666666,
+          "mean": 0.075,
+          "median": 0.025,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 8,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.6666666666666666,
+              "wilson_95": [
+                0.39062208887279953,
+                0.8618799089087867
+              ]
+            }
+          }
+        }
+      },
+      "rho_ols_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_profile_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_summaries": {
+        "rho_ols": {
+          "bias_vs_lag1": -0.02247753504042571,
+          "count": 12,
+          "mean": 0.3375224649595743,
+          "median": 0.34291404153384253,
+          "q05_q95": [
+            0.26977600629040244,
+            0.41035821800965977
+          ],
+          "sd": 0.050729542188216646
+        },
+        "rho_profile": {
+          "bias_vs_lag1": -0.0258498009960641,
+          "count": 12,
+          "mean": 0.3341501990039359,
+          "median": 0.33671972143368645,
+          "q05_q95": [
+            0.31426893264821826,
+            0.348574490924158
+          ],
+          "sd": 0.0123780068608095
+        }
+      },
+      "unique_outer_sample_hashes": 12
+    },
+    "student_t5_innovation_ar1_rho030": {
+      "bootstrap_denominators": {
+        "approximate_chi_square": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "circular_moving_block_L8_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "estimated_ar1_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "estimated_ar1_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        },
+        "iid_parametric": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 12,
+          "valid": 12
+        },
+        "iid_parametric_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 468,
+          "valid": 468
+        }
+      },
+      "cell": {
+        "innovation_df": 5.0,
+        "kind": "student_t_ar1",
+        "name": "student_t5_innovation_ar1_rho030",
+        "rho": 0.3
+      },
+      "finite_n_mean_variance_factor": 1.847576530612245,
+      "lag1_truth": 0.3,
+      "outer_fit_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "pvalue_summaries": {
+        "approximate_chi_square": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.24814297844967925,
+          "mean": 0.3769310098929075,
+          "median": 0.2724586446638304,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            }
+          }
+        },
+        "circular_moving_block_L8": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.2666666666666666,
+          "mean": 0.4270833333333334,
+          "median": 0.36250000000000004,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            }
+          }
+        },
+        "estimated_ar1_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.11666666666666659,
+          "mean": 0.5208333333333334,
+          "median": 0.5625,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            }
+          }
+        },
+        "iid_parametric": {
+          "count": 12,
+          "ks_distance_to_uniform": 0.5333333333333334,
+          "mean": 0.19791666666666663,
+          "median": 0.05,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.028722813232690145,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.24249400665524085
+              ]
+            },
+            "0.05": {
+              "count": 5,
+              "mcse": 0.06291528696058958,
+              "nominal_rate": 0.05,
+              "rate": 0.4166666666666667,
+              "wilson_95": [
+                0.19326031365875665,
+                0.6804886874504503
+              ]
+            }
+          }
+        }
+      },
+      "rho_ols_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_profile_denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "rho_summaries": {
+        "rho_ols": {
+          "bias_vs_lag1": -0.01623323268693755,
+          "count": 12,
+          "mean": 0.28376676731306244,
+          "median": 0.2790870821434298,
+          "q05_q95": [
+            0.20732400262806344,
+            0.3758929914165174
+          ],
+          "sd": 0.0625502286850708
+        },
+        "rho_profile": {
+          "bias_vs_lag1": -0.022173843206974075,
+          "count": 12,
+          "mean": 0.2778261567930259,
+          "median": 0.2798901654183996,
+          "q05_q95": [
+            0.25118550238047793,
+            0.30689196845737426
+          ],
+          "sd": 0.01894983155527566
+        }
+      },
+      "unique_outer_sample_hashes": 12
+    }
+  },
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "denominators_by_method_and_cell": {
+    "gaussian_ar1_rho030": {
+      "approximate_chi_square": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "estimated_ar1_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "estimated_ar1_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "iid_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "iid_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      }
+    },
+    "gaussian_ar1_rho060": {
+      "approximate_chi_square": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "estimated_ar1_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "estimated_ar1_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "iid_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "iid_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      }
+    },
+    "gaussian_iid": {
+      "approximate_chi_square": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "estimated_ar1_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "estimated_ar1_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "iid_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "iid_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      }
+    },
+    "multiscale_gaussian_mixture": {
+      "approximate_chi_square": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "estimated_ar1_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "estimated_ar1_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "iid_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "iid_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      }
+    },
+    "student_t5_innovation_ar1_rho030": {
+      "approximate_chi_square": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "circular_moving_block_L8_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "estimated_ar1_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "estimated_ar1_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      },
+      "iid_parametric": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "iid_parametric_draws": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 468,
+        "valid": 468
+      }
+    }
+  },
+  "draw_denominators_totals": {
+    "circular_moving_block_L8": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2340,
+      "valid": 2340
+    },
+    "estimated_ar1_parametric": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2340,
+      "valid": 2340
+    },
+    "iid_parametric": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2340,
+      "valid": 2340
+    }
+  },
+  "open_gates": [
+    "only the declared synthetic null strata are tested; no real HMC chain is modeled",
+    "the fixed L=8 moving-block bootstrap is a comparator, not a selected or calibrated production block length",
+    "outer panel counts give descriptive Wilson intervals and do not meet the earlier high-precision 1% tail target",
+    "profile-rho is evaluated for nuisance recovery only and does not replace the frozen pooled-OLS bootstrap parameter",
+    "independent source/provenance/dependence review and an authorized candidate-blind E-chain reference remain absent"
+  ],
+  "physical_e_chain": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "protocol": {
+    "base_seed": 2026112837,
+    "block_length": 8,
+    "bootstrap_replicates_per_method_panel": 39,
+    "cells": [
+      {
+        "innovation_df": null,
+        "kind": "gaussian_ar1",
+        "name": "gaussian_iid",
+        "rho": 0.0
+      },
+      {
+        "innovation_df": null,
+        "kind": "gaussian_ar1",
+        "name": "gaussian_ar1_rho030",
+        "rho": 0.3
+      },
+      {
+        "innovation_df": null,
+        "kind": "gaussian_ar1",
+        "name": "gaussian_ar1_rho060",
+        "rho": 0.6
+      },
+      {
+        "innovation_df": 5.0,
+        "kind": "student_t_ar1",
+        "name": "student_t5_innovation_ar1_rho030",
+        "rho": 0.3
+      },
+      {
+        "fast_weight": 0.65,
+        "innovation_df": null,
+        "kind": "multiscale_gaussian",
+        "name": "multiscale_gaussian_mixture",
+        "rho_fast": 0.15,
+        "rho_slow": 0.75
+      }
+    ],
+    "configurations_per_panel": 128,
+    "dataset_role": "screening_only",
+    "fit": {
+      "channels": "PP-even/A4P-odd joint",
+      "multistarts": 3,
+      "nominal_dof": 13,
+      "nstates": 2,
+      "tmin": 3
+    },
+    "methods": {
+      "approximate_chi_square": "existing 13-dof GOF p-value",
+      "circular_moving_block_L8": "center raw feature rows; resample circular residual blocks of fixed length 8; add fitted null mean",
+      "estimated_ar1_parametric": "same fitted mean/covariance, pooled lag-1 OLS rho estimated per outer panel",
+      "iid_parametric": "refit fitted null mean with raw panel covariance, rho=0"
+    },
+    "minimum_resolvable_bootstrap_pvalue": 0.025,
+    "minimum_valid_draws": 36,
+    "minimum_valid_fraction": 0.9,
+    "nominal_p_thresholds": [
+      0.01,
+      0.05
+    ],
+    "outer_panels_per_stratum": 12,
+    "seed_scheme": "SeedSequence([BASE_SEED, cell_index, panel_index, stream_index]); outer and method streams are disjoint and stored in seed_manifest.json",
+    "validation_status": "methods and L=8 frozen before this disjoint seed set; no thresholds or method parameters tuned on these panels"
+  },
+  "schema": "optimize-d04-heldout-dependence-summary-v1",
+  "source_hashes": {
+    "ar1_helpers": "202f22db002625b252f3ff362010bde982becb8313b398bc72afb981104a0c7c",
+    "bootstrap_failure_test": "ddc32c5a40a1645f911ff9b3377264ffedbd3e5f670cf181f0f6a09c6c796ab1",
+    "bootstrap_helpers": "699884417cb52822fd2f90f592769dceecf29d2f5b1b359c5431afa23f8535fb",
+    "contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "diagnostic": "5779ff31ae0e3c58ce1ed5961a8b72a220206a5ded8ae989227d2274c61ba25e",
+    "gof_generator": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "npz_safety": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "profile_test": "34ab30e2ad61d5e8e2f8862329679482281b4a389a5248aafd5c0484399ac65a",
+    "raw_reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "source_integrity": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6"
+  }
+}

@@ -1,0 +1,17 @@
+fixture,lane,planned,valid,failed,abstained,status,certified,physical_score,issue_count
+current_selected_method_draft,finite_T_Creutz,1,0,1,0,NOT_READY,False,,3
+current_selected_method_draft,ground_state_discrete_static_force,1,0,1,0,NOT_READY,False,,26
+synthetic_C_only_complete,finite_T_Creutz,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_C_only_complete,ground_state_discrete_static_force,1,0,1,0,NOT_READY,False,,25
+synthetic_C_and_F_schema_complete,finite_T_Creutz,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_C_and_F_schema_complete,ground_state_discrete_static_force,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_C_reversed_sign,finite_T_Creutz,1,0,1,0,NOT_READY,False,,1
+synthetic_C_reversed_sign,ground_state_discrete_static_force,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_F_reversed_sign,finite_T_Creutz,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_F_reversed_sign,ground_state_discrete_static_force,1,0,1,0,NOT_READY,False,,1
+synthetic_F_wrong_precision_units,finite_T_Creutz,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_F_wrong_precision_units,ground_state_discrete_static_force,1,0,1,0,NOT_READY,False,,1
+synthetic_C_wrong_precision_units,finite_T_Creutz,1,0,1,0,NOT_READY,False,,1
+synthetic_C_wrong_precision_units,ground_state_discrete_static_force,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_null_common_kernel_ids,finite_T_Creutz,1,0,1,0,NOT_READY,False,,2
+synthetic_null_common_kernel_ids,ground_state_discrete_static_force,1,0,1,0,NOT_READY,False,,3

@@ -1,0 +1,8 @@
+{
+  "README.md": "78293b3b4aa59b779105b03a07a60de6b0d5bc62e40989859e609e9f7196b7ea",
+  "contract.json": "8b6d15b2f913ddc75ca50430b1489809c42a8125b5587f7dd951d1f8f8dc810f",
+  "snapshot_candidate_contract.py": "50ee62419d2229cb69d22e25e59502ac91d2366f33e6ca68b63e076543ccb948",
+  "snapshot_chebyshev_baseline.py": "1bc260b866f44491ac63aec8c157325feede25a5128e276dc51d9183e2e2c437",
+  "snapshot_core_specs.py": "af54475690fa58806756246d153e96c4734450c3b2afa6964c5bf0f122993ccf",
+  "snapshot_kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+}

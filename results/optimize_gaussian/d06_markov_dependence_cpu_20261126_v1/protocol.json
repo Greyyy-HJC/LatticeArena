@@ -1,0 +1,101 @@
+{
+  "analytic_grid": {
+    "abstained_formula_rows": 0,
+    "best_case_support_feasible_rows": 69,
+    "failed_formula_rows": 0,
+    "gamma_ps_lower_assumptions": [
+      1.0,
+      0.36,
+      0.0975,
+      0.02
+    ],
+    "planned_formula_rows": 144,
+    "post_burn_in_tv_assumptions": [
+      0.0,
+      0.005,
+      0.02,
+      0.04
+    ],
+    "scored_block_counts": [
+      100,
+      250,
+      500,
+      1000,
+      2500,
+      5000,
+      10000,
+      25000,
+      50000
+    ],
+    "valid_formula_rows": 144
+  },
+  "assumptions_not_verified_for_production": [
+    "homogeneous Markov chain for the exact paired macroblock state",
+    "stationary initialization or a justified post-burn-in total-variation bound",
+    "valid audited lower bound on that chain's pseudo-spectral gap",
+    "fixed score map; any blockwise solver randomness included in the Markov state or otherwise justified",
+    "separate propagation of D04 reference-fit and candidate-selection uncertainty"
+  ],
+  "certified": false,
+  "coverage_stress": {
+    "abstained_panels": 0,
+    "alternative_effect": "Chebyshev has a large positive paired contrast, included only to exercise both comparisons",
+    "boundary_effect": "same-budget SLSQP risk ratio equals r_star exactly under stationarity",
+    "failed_panels": 0,
+    "generator": "stationary symmetric two-state Markov driver plus independent fresh armwise uniforms",
+    "intervals": "Wilson 95% intervals quantify Monte Carlo uncertainty of these synthetic coverage and release rates",
+    "known_gamma_ps": "1-(1-2p_switch)^2",
+    "panels_per_cell": 4000,
+    "planned_panels": 36000,
+    "scored_block_counts": [
+      250,
+      2000,
+      20000
+    ],
+    "seed_base": 20261126,
+    "switch_probabilities": [
+      0.5,
+      0.1,
+      0.025
+    ],
+    "valid_panels": 36000
+  },
+  "data_access": "no project measurements or sealed inputs",
+  "estimand": "bounded paired macroblock risk; separate from primary D04 nested-bootstrap risk",
+  "physical_score": null,
+  "schema": "optimize-d06-markov-dependence-diagnostic-v1",
+  "selected_contract": {
+    "alpha_total": 0.05,
+    "arms": [
+      "trainable_w",
+      "same_budget_slsqp",
+      "degree4_chebyshev"
+    ],
+    "family_events": [
+      "trainable-W mean positive denominator",
+      "trainable-W vs same-budget SLSQP paired contrast",
+      "trainable-W vs fixed degree-4 Chebyshev paired contrast"
+    ],
+    "post_burn_in_tv_grid": [
+      0.0,
+      0.005,
+      0.02,
+      0.04
+    ],
+    "r_star": 1.1111111111111112
+  },
+  "status": "CONDITIONAL_METHOD_DIAGNOSTIC_ONLY",
+  "support_only_inputs": {
+    "arm_score_support": [
+      0.0,
+      1.0
+    ],
+    "centered_absolute_bound": "support_width",
+    "paired_contrast_support": [
+      -1.1111111111111112,
+      1.0
+    ],
+    "tail": "two-sided corrected non-reversible Bernstein inequality, conservatively inverted for lower bounds",
+    "variance_bound": "support_width^2/4"
+  }
+}

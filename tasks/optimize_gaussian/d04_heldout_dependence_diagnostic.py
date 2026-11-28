@@ -1,0 +1,643 @@
+"""Independent held-out D04 GOF stress grid (synthetic CPU evidence only)."""
+from __future__ import annotations
+
+import argparse
+import csv
+from hashlib import sha256
+import json
+import math
+from pathlib import Path
+from typing import Any
+
+import matplotlib
+
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+
+from tasks.optimize_gaussian import d04_ar1_bootstrap_diagnostic as ar1
+from tasks.optimize_gaussian import d04_gof_calibration_diagnostic as generator
+from tasks.optimize_gaussian import d04_parametric_bootstrap_diagnostic as bootstrap
+from tasks.optimize_gaussian import d04_raw_reference as reader
+
+
+TASK_DIR = Path(__file__).resolve().parent
+ROOT = TASK_DIR.parents[1]
+DEFAULT_OUT = TASK_DIR / "d04_heldout_dependence_cpu_20261128_v1"
+OUTER_PANELS = 200
+BOOTSTRAP_REPLICATES = 199
+CONFIGURATIONS = 128
+MIN_VALID_FRACTION = 0.90
+BLOCK_LENGTH = 8
+BASE_SEED = 2026112829
+P_THRESHOLDS = (0.01, 0.05)
+METHODS = (
+    "iid_parametric",
+    "estimated_ar1_parametric",
+    "circular_moving_block_L8",
+)
+METHOD_COLORS = {
+    "approximate_chi_square": "#2b78e4",
+    "iid_parametric": "#dd8452",
+    "estimated_ar1_parametric": "#55a868",
+    "circular_moving_block_L8": "#8172b3",
+}
+DGP_CELLS = (
+    {"name": "gaussian_iid", "kind": "gaussian_ar1", "rho": 0.0,
+     "innovation_df": None},
+    {"name": "gaussian_ar1_rho030", "kind": "gaussian_ar1", "rho": 0.30,
+     "innovation_df": None},
+    {"name": "gaussian_ar1_rho060", "kind": "gaussian_ar1", "rho": 0.60,
+     "innovation_df": None},
+    {"name": "student_t5_innovation_ar1_rho030", "kind": "student_t_ar1",
+     "rho": 0.30, "innovation_df": 5.0},
+    {"name": "multiscale_gaussian_mixture", "kind": "multiscale_gaussian",
+     "rho_fast": 0.15, "rho_slow": 0.75, "fast_weight": 0.65,
+     "innovation_df": None},
+)
+_SOURCE_PATHS = {
+    "diagnostic": Path(__file__),
+    "ar1_helpers": TASK_DIR / "d04_ar1_bootstrap_diagnostic.py",
+    "bootstrap_helpers": TASK_DIR / "d04_parametric_bootstrap_diagnostic.py",
+    "gof_generator": TASK_DIR / "d04_gof_calibration_diagnostic.py",
+    "raw_reader": TASK_DIR / "d04_raw_reference.py",
+    "contract": TASK_DIR / "research_contract_v1.json",
+    "profile_test": ROOT / "tests/test_optimize_d04_ar1_profile_rho.py",
+    "bootstrap_failure_test": ROOT / "tests/test_optimize_d04_bootstrap_pvalue.py",
+    "source_integrity": ROOT / "core/source_integrity.py",
+    "npz_safety": ROOT / "core/npz_safety.py",
+}
+
+
+def _sha(payload: bytes) -> str:
+    return sha256(payload).hexdigest()
+
+
+def _json_bytes(value: dict[str, Any]) -> bytes:
+    return (json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + "\n").encode()
+
+
+def _write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
+    if not rows:
+        raise ValueError(f"refusing to write an empty CSV: {path.name}")
+    fields = list(dict.fromkeys(key for row in rows for key in row))
+    with path.open("w", encoding="utf-8", newline="") as stream:
+        writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def _seed(cell_index: int, panel: int, stream: int) -> int:
+    sequence = np.random.SeedSequence([BASE_SEED, cell_index, panel, stream])
+    words = sequence.generate_state(2, dtype=np.uint32)
+    return (int(words[0]) << 32) | int(words[1])
+
+
+def _draw_panel(cell: dict[str, Any], rng: np.random.Generator,
+                mean: np.ndarray, covariance: np.ndarray,
+                count: int = CONFIGURATIONS) -> np.ndarray:
+    kind = cell["kind"]
+    if kind == "gaussian_ar1":
+        return generator._sample_panel(
+            rng, mean, covariance, count,
+            dependence_rho=float(cell["rho"]), innovation_df=None,
+        )
+    if kind == "student_t_ar1":
+        return generator._sample_panel(
+            rng, mean, covariance, count,
+            dependence_rho=float(cell["rho"]),
+            innovation_df=float(cell["innovation_df"]),
+        )
+    if kind == "multiscale_gaussian":
+        fast = ar1._sample_stationary_ar1(
+            rng, mean, covariance, count, float(cell["rho_fast"]),
+        )
+        slow = ar1._sample_stationary_ar1(
+            rng, mean, covariance, count, float(cell["rho_slow"]),
+        )
+        weight = float(cell["fast_weight"])
+        residual = (math.sqrt(weight) * (fast - mean)
+                    + math.sqrt(1.0 - weight) * (slow - mean))
+        return mean + residual
+    raise ValueError(f"unknown DGP kind: {kind}")
+
+
+def _lag_correlation(cell: dict[str, Any], lag: int) -> float:
+    if cell["kind"] in ("gaussian_ar1", "student_t_ar1"):
+        return float(cell["rho"]) ** lag
+    if cell["kind"] == "multiscale_gaussian":
+        weight = float(cell["fast_weight"])
+        return (weight * float(cell["rho_fast"]) ** lag
+                + (1.0 - weight) * float(cell["rho_slow"]) ** lag)
+    raise ValueError(f"unknown DGP kind: {cell['kind']}")
+
+
+def _finite_n_mean_variance_factor(cell: dict[str, Any], count: int) -> float:
+    return float(1.0 + 2.0 * sum(
+        (1.0 - lag / count) * _lag_correlation(cell, lag)
+        for lag in range(1, count)
+    ))
+
+
+def _circular_moving_block_sample(
+    rng: np.random.Generator,
+    sample: np.ndarray,
+    fitted_mean: np.ndarray,
+    block_length: int = BLOCK_LENGTH,
+) -> np.ndarray:
+    """Resample centered circular residual blocks and restore the null mean."""
+    values = np.asarray(sample, dtype=float)
+    mean = np.asarray(fitted_mean, dtype=float)
+    if (values.ndim != 2 or values.shape[0] < 2 or mean.shape != (values.shape[1],)
+            or not np.isfinite(values).all() or not np.isfinite(mean).all()):
+        raise ValueError("block bootstrap sample and fitted mean must be finite and compatible")
+    if (isinstance(block_length, bool) or not isinstance(block_length, int)
+            or not 1 <= block_length <= values.shape[0]):
+        raise ValueError("block_length must be an integer in [1, n_configurations]")
+    n = len(values)
+    residual = values - np.mean(values, axis=0, keepdims=True)
+    blocks_needed = math.ceil(n / block_length)
+    starts = rng.integers(0, n, size=blocks_needed)
+    offsets = np.arange(block_length)
+    indices = ((starts[:, None] + offsets[None, :]) % n).reshape(-1)[:n]
+    return mean[None, :] + residual[indices]
+
+
+def _draw_bootstrap(
+    method: str,
+    rng: np.random.Generator,
+    sample: np.ndarray,
+    fitted_mean: np.ndarray,
+    sample_covariance: np.ndarray,
+    rho_hat: float,
+) -> np.ndarray:
+    if method == "iid_parametric":
+        return ar1._bootstrap_panel(rng, fitted_mean, sample_covariance, 0.0)
+    if method == "estimated_ar1_parametric":
+        return ar1._bootstrap_panel(rng, fitted_mean, sample_covariance, rho_hat)
+    if method == "circular_moving_block_L8":
+        return _circular_moving_block_sample(
+            rng, sample, fitted_mean, block_length=BLOCK_LENGTH,
+        )
+    raise ValueError(f"unknown bootstrap method: {method}")
+
+
+def _wilson(successes: int, trials: int) -> tuple[float, float]:
+    return bootstrap._wilson(successes, trials)
+
+
+def _pvalue_summary(values: list[float]) -> dict[str, Any] | None:
+    return bootstrap._pvalue_summary(values)
+
+
+def _summarize_cell(rows: list[dict[str, Any]], cell: dict[str, Any]) -> dict[str, Any]:
+    methods = ("approximate_chi_square",) + METHODS
+    pvalue_summaries = {
+        method: _pvalue_summary([
+            float(row[method]) for row in rows if row[method] is not None
+        ])
+        for method in methods
+    }
+    rho_summaries = {}
+    for key in ("rho_ols", "rho_profile"):
+        values = np.asarray([float(row[key]) for row in rows if row[key] is not None])
+        rho_summaries[key] = {
+            "count": int(len(values)),
+            "mean": float(np.mean(values)) if len(values) else None,
+            "median": float(np.median(values)) if len(values) else None,
+            "sd": float(np.std(values, ddof=1)) if len(values) > 1 else None,
+            "bias_vs_lag1": (float(np.mean(values) - _lag_correlation(cell, 1))
+                             if len(values) else None),
+            "q05_q95": ([float(value) for value in np.quantile(values, [0.05, 0.95])]
+                        if len(values) else None),
+        }
+    denominator = {}
+    for method in methods:
+        if method == "approximate_chi_square":
+            valid = sum(row[method] is not None for row in rows)
+            failed = sum(row["fit_status"] == "failed" for row in rows)
+            denominator[method] = {
+                "planned": OUTER_PANELS, "valid": valid, "failed": failed,
+                "abstained": OUTER_PANELS - valid - failed,
+            }
+        else:
+            valid = sum(row[method] is not None for row in rows)
+            failed = sum(row["fit_status"] == "failed" for row in rows)
+            denominator[method] = {
+                "planned": OUTER_PANELS, "valid": valid, "failed": failed,
+                "abstained": OUTER_PANELS - valid - failed,
+            }
+            draw_valid = sum(int(row[f"{method}_valid"]) for row in rows)
+            draw_failed = sum(int(row[f"{method}_failed"]) for row in rows)
+            planned_draws = OUTER_PANELS * BOOTSTRAP_REPLICATES
+            denominator[f"{method}_draws"] = {
+                "planned": planned_draws,
+                "valid": draw_valid,
+                "failed": draw_failed,
+                "abstained": planned_draws - draw_valid - draw_failed,
+            }
+    return {
+        "cell": cell,
+        "outer_fit_denominator": {
+            "planned": OUTER_PANELS,
+            "valid": sum(row["fit_status"] == "valid" for row in rows),
+            "failed": sum(row["fit_status"] == "failed" for row in rows),
+            "abstained": 0,
+        },
+        "rho_ols_denominator": {
+            "planned": OUTER_PANELS,
+            "valid": sum(row["rho_ols"] is not None for row in rows),
+            "failed": sum(row["rho_ols"] is None for row in rows),
+            "abstained": 0,
+        },
+        "rho_profile_denominator": {
+            "planned": OUTER_PANELS,
+            "valid": sum(row["rho_profile"] is not None for row in rows),
+            "failed": sum(row["rho_profile"] is None for row in rows),
+            "abstained": 0,
+        },
+        "bootstrap_denominators": denominator,
+        "pvalue_summaries": pvalue_summaries,
+        "rho_summaries": rho_summaries,
+        "lag1_truth": _lag_correlation(cell, 1),
+        "finite_n_mean_variance_factor": _finite_n_mean_variance_factor(
+            cell, CONFIGURATIONS,
+        ),
+        "unique_outer_sample_hashes": len({row["sample_sha256"] for row in rows}),
+    }
+
+
+def _plots(output: Path, rows_by_cell: dict[str, list[dict[str, Any]]],
+           summaries: dict[str, dict[str, Any]]) -> None:
+    method_labels = {
+        "approximate_chi_square": "Approx. chi-square",
+        "iid_parametric": "iid parametric",
+        "estimated_ar1_parametric": "Estimated AR(1)",
+        "circular_moving_block_L8": "Circular block L=8",
+    }
+    cell_names = [cell["name"] for cell in DGP_CELLS]
+
+    fig, axes = plt.subplots(2, 3, figsize=(15.5, 8.4), layout="constrained")
+    x = np.linspace(0.0, 1.0, 101)
+    curve_counts = [
+        sum(row[method] is not None for row in rows_by_cell[cell_name])
+        for cell_name in cell_names
+        for method in ("approximate_chi_square",) + METHODS
+    ]
+    minimum_curve_count = min(curve_counts, default=0)
+    family_size = len(cell_names) * (1 + len(METHODS))
+    epsilon = (math.sqrt(math.log(2.0 * family_size / 0.05)
+                         / (2.0 * minimum_curve_count))
+               if minimum_curve_count > 0 else 1.0)
+    for ax, cell_name in zip(axes.flat, cell_names):
+        rows = rows_by_cell[cell_name]
+        ax.fill_between(x, np.maximum(0.0, x - epsilon), np.minimum(1.0, x + epsilon),
+                        color="#cccccc", alpha=0.25,
+                        label=f"95% simultaneous DKW band (n_min={minimum_curve_count})")
+        ax.plot(x, x, color="black", linestyle="--", label="Uniform")
+        for method in ("approximate_chi_square",) + METHODS:
+            values = sorted(float(row[method]) for row in rows if row[method] is not None)
+            if values:
+                ax.step(values, np.arange(1, len(values) + 1) / len(values),
+                        where="post", color=METHOD_COLORS[method],
+                        label=method_labels[method])
+        ax.set(xlim=(0, 1), ylim=(0, 1), xlabel="null p-value", ylabel="ECDF",
+               title=cell_name.replace("_", " "))
+        ax.grid(alpha=0.2)
+    axes.flat[-1].axis("off")
+    handles, labels = axes.flat[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower right", fontsize=8)
+    fig.suptitle("D04 held-out null p-values by dependence and tail stratum")
+    fig.savefig(output / "pvalue_ecdf_by_stratum.png", dpi=160)
+    plt.close(fig)
+
+    fig, axes = plt.subplots(1, 2, figsize=(15.0, 5.2), layout="constrained")
+    methods = ("approximate_chi_square",) + METHODS
+    positions = np.arange(len(cell_names), dtype=float)
+    offsets = np.linspace(-0.30, 0.30, len(methods))
+    for ax, threshold in zip(axes, P_THRESHOLDS):
+        for offset, method in zip(offsets, methods):
+            rates, lower, upper = [], [], []
+            for cell_name in cell_names:
+                item = summaries[cell_name]["pvalue_summaries"][method]
+                if item is None:
+                    rates.append(np.nan); lower.append(np.nan); upper.append(np.nan)
+                else:
+                    interval = item["rejection"][str(threshold)]["wilson_95"]
+                    rate = item["rejection"][str(threshold)]["rate"]
+                    rates.append(rate); lower.append(rate - interval[0]); upper.append(interval[1] - rate)
+            ax.errorbar(positions + offset, rates, yerr=[lower, upper], fmt="o",
+                        capsize=3, color=METHOD_COLORS[method], label=method_labels[method])
+        ax.axhline(threshold, color="black", linestyle="--", linewidth=1.0,
+                   label=f"nominal {threshold:.0%}")
+        ax.set_xticks(positions, [name.replace("_", "\n") for name in cell_names], fontsize=8)
+        ax.set_ylabel("rejection fraction")
+        ax.set_title(f"Nominal alpha = {threshold:.0%}; Wilson 95% intervals")
+        ax.grid(axis="y", alpha=0.2)
+    axes[1].legend(fontsize=8, loc="upper left")
+    fig.savefig(output / "rejection_rates.png", dpi=160)
+    plt.close(fig)
+
+    fig, ax = plt.subplots(figsize=(12.5, 5.2), layout="constrained")
+    centers = np.arange(len(cell_names), dtype=float)
+    for offset, key, color, label in (
+        (-0.13, "rho_ols", "#dd8452", "Pooled lag-1 OLS"),
+        (0.13, "rho_profile", "#55a868", "Matrix-normal profile"),
+    ):
+        means = [summaries[name]["rho_summaries"][key]["mean"] for name in cell_names]
+        sds = [summaries[name]["rho_summaries"][key]["sd"] or 0.0 for name in cell_names]
+        ax.errorbar(centers + offset, means, yerr=sds, fmt="o", capsize=4,
+                    color=color, label=label)
+    truths = [summaries[name]["lag1_truth"] for name in cell_names]
+    ax.scatter(centers, truths, marker="*", s=90, color="black", label="True lag-1 correlation")
+    ax.set_xticks(centers, [name.replace("_", "\n") for name in cell_names], fontsize=8)
+    ax.set_ylabel("lag-1 correlation / fitted common rho")
+    ax.set_title("Nuisance dependence estimates (points: means; bars: ±1 SD)")
+    ax.grid(axis="y", alpha=0.2)
+    ax.legend(fontsize=8)
+    fig.savefig(output / "rho_recovery.png", dpi=160)
+    plt.close(fig)
+
+
+def _artifact_hashes(output: Path) -> dict[str, str]:
+    files = sorted(path for path in output.rglob("*")
+                    if path.is_file() and path.name != "artifact_hashes.json")
+    values = {str(path.relative_to(output)): _sha(path.read_bytes()) for path in files}
+    (output / "artifact_hashes.json").write_bytes(_json_bytes({
+        "schema": "optimize-d04-heldout-dependence-artifacts-v1",
+        "artifacts": values,
+    }))
+    return values
+
+
+def build(output: str | Path = DEFAULT_OUT) -> dict[str, Any]:
+    if (isinstance(OUTER_PANELS, bool) or not isinstance(OUTER_PANELS, int)
+            or OUTER_PANELS < 1):
+        raise ValueError("OUTER_PANELS must be a positive integer")
+    if (isinstance(BOOTSTRAP_REPLICATES, bool)
+            or not isinstance(BOOTSTRAP_REPLICATES, int)
+            or BOOTSTRAP_REPLICATES < 1):
+        raise ValueError("BOOTSTRAP_REPLICATES must be a positive integer")
+    out = Path(output)
+    if out.exists():
+        raise FileExistsError(f"refusing to overwrite existing report: {out}")
+    source_bytes = {name: path.read_bytes() for name, path in _SOURCE_PATHS.items()}
+    source_hashes = {name: _sha(payload) for name, payload in source_bytes.items()}
+    out.mkdir(parents=True)
+    truth_mean = generator._truth_mean(generator.MASS_NULL,
+                                       generator.PP_AMPLITUDES_NULL,
+                                       generator.A4_AMPLITUDES_NULL)
+    truth_covariance = generator._noise_covariance(truth_mean)
+    minimum_valid = math.ceil(MIN_VALID_FRACTION * BOOTSTRAP_REPLICATES)
+    rows_by_cell: dict[str, list[dict[str, Any]]] = {}
+    draw_valid_totals = {method: 0 for method in METHODS}
+    draw_failed_totals = {method: 0 for method in METHODS}
+    seed_manifest: list[dict[str, Any]] = []
+
+    for cell_index, cell in enumerate(DGP_CELLS):
+        cell_rows: list[dict[str, Any]] = []
+        for panel in range(OUTER_PANELS):
+            outer_seed = _seed(cell_index, panel, 0)
+            sample = _draw_panel(cell, np.random.default_rng(outer_seed),
+                                 truth_mean, truth_covariance)
+            sample_hash = _sha(np.ascontiguousarray(sample, dtype="<f8").tobytes())
+            row: dict[str, Any] = {
+                "cell": cell["name"], "panel": panel,
+                "outer_seed": outer_seed, "sample_sha256": sample_hash,
+                "configurations": CONFIGURATIONS,
+                "fit_status": "failed",
+                "rho_ols": None, "rho_profile": None,
+                "rho_profile_boundary_hit": None,
+                "approximate_chi_square": None,
+            }
+            method_seeds = {
+                method: _seed(cell_index, panel, method_index)
+                for method_index, method in enumerate(METHODS, start=1)
+            }
+            for method in METHODS:
+                row[method] = None
+                row[f"{method}_planned"] = BOOTSTRAP_REPLICATES
+                row[f"{method}_valid"] = 0
+                row[f"{method}_failed"] = 0
+                row[f"{method}_exceedances"] = 0
+                row[f"{method}_seed"] = method_seeds[method]
+            try:
+                rho_ols = ar1._estimate_common_rho(sample)
+                row["rho_ols"] = rho_ols
+            except (ValueError, FloatingPointError, np.linalg.LinAlgError):
+                rho_ols = None
+            try:
+                profile = ar1._profile_common_rho_candidate(sample)
+                rho_profile = float(profile["rho_candidate"])
+                row["rho_profile"] = rho_profile
+                row["rho_profile_boundary_hit"] = bool(profile["boundary_hit"])
+            except (ValueError, FloatingPointError, np.linalg.LinAlgError):
+                rho_profile = None
+            try:
+                fit, mean, fit_covariance, columns = bootstrap._fit_sample(sample)
+            except (ValueError, FloatingPointError, np.linalg.LinAlgError):
+                fit = {"status": "failed"}
+            if fit.get("status") != "valid":
+                cell_rows.append(row)
+                seed_manifest.append({"cell": cell["name"], "panel": panel,
+                                      "outer_seed": outer_seed,
+                                      "bootstrap_seeds": method_seeds,
+                                      "status": "outer_fit_failed"})
+                continue
+            row["fit_status"] = "valid"
+            row["approximate_chi_square"] = float(fit["gof_p_approx"])
+            try:
+                fitted_mean = bootstrap._fitted_null_mean(fit, mean, fit_covariance, columns)
+                sample_covariance, covariance_floor = bootstrap._regularize_sample_covariance(sample)
+                row["sample_covariance_floor"] = covariance_floor
+            except (ValueError, FloatingPointError, np.linalg.LinAlgError):
+                cell_rows.append(row)
+                seed_manifest.append({"cell": cell["name"], "panel": panel,
+                                      "outer_seed": outer_seed,
+                                      "bootstrap_seeds": method_seeds,
+                                      "status": "outer_fit_valid_bootstrap_setup_failed"})
+                continue
+
+            for method in METHODS:
+                if method == "estimated_ar1_parametric" and rho_ols is None:
+                    continue
+                seed = method_seeds[method]
+                rng = np.random.default_rng(seed)
+                exceedances = valid = failed = 0
+                for _replicate in range(BOOTSTRAP_REPLICATES):
+                    try:
+                        bootstrap_sample = _draw_bootstrap(
+                            method, rng, sample, fitted_mean, sample_covariance,
+                            float(rho_ols or 0.0),
+                        )
+                        boot_fit, _, _, _ = bootstrap._fit_sample(bootstrap_sample)
+                    except (ValueError, FloatingPointError, np.linalg.LinAlgError):
+                        boot_fit = {"status": "failed"}
+                    if boot_fit.get("status") == "valid":
+                        valid += 1
+                        exceedances += int(float(boot_fit["chi2"]) >= float(fit["chi2"]))
+                    else:
+                        failed += 1
+                row[method] = bootstrap._bootstrap_upper_tail_pvalue(
+                    exceedances=exceedances,
+                    valid_draws=valid,
+                    failed_draws=failed,
+                    planned_draws=BOOTSTRAP_REPLICATES,
+                    minimum_valid_draws=minimum_valid,
+                )
+                row[f"{method}_valid"] = valid
+                row[f"{method}_failed"] = failed
+                row[f"{method}_exceedances"] = exceedances
+                row[f"{method}_seed"] = seed
+                draw_valid_totals[method] += valid
+                draw_failed_totals[method] += failed
+            cell_rows.append(row)
+            seed_manifest.append({
+                "cell": cell["name"], "panel": panel,
+                "outer_seed": outer_seed,
+                "bootstrap_seeds": {method: row[f"{method}_seed"] for method in METHODS},
+                "sample_sha256": sample_hash,
+                "status": "outer_fit_valid" if row["fit_status"] == "valid"
+                          else "outer_fit_failed",
+            })
+        rows_by_cell[cell["name"]] = cell_rows
+
+    summaries = {name: _summarize_cell(rows, cell)
+                 for name, rows, cell in zip(
+                     (cell["name"] for cell in DGP_CELLS),
+                     rows_by_cell.values(), DGP_CELLS,
+                 )}
+    all_rows = [row for cell in DGP_CELLS for row in rows_by_cell[cell["name"]]]
+    is_screening = (OUTER_PANELS < 200 or BOOTSTRAP_REPLICATES < 199)
+    summary = {
+        "schema": "optimize-d04-heldout-dependence-summary-v1",
+        "classification": (
+            "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION"
+            if is_screening else
+            "INDEPENDENT_SYNTHETIC_HELDOUT_D04_DEPENDENCE_STRESS_NOT_PHYSICAL_REFERENCE"
+        ),
+        "protocol": {
+            "seed_scheme": "SeedSequence([BASE_SEED, cell_index, panel_index, stream_index]); outer and method streams are disjoint and stored in seed_manifest.json",
+            "base_seed": BASE_SEED,
+            "outer_panels_per_stratum": OUTER_PANELS,
+            "configurations_per_panel": CONFIGURATIONS,
+            "bootstrap_replicates_per_method_panel": BOOTSTRAP_REPLICATES,
+            "minimum_resolvable_bootstrap_pvalue": 1.0 / (BOOTSTRAP_REPLICATES + 1.0),
+            "minimum_valid_fraction": MIN_VALID_FRACTION,
+            "minimum_valid_draws": minimum_valid,
+            "block_length": BLOCK_LENGTH,
+            "nominal_p_thresholds": list(P_THRESHOLDS),
+            "fit": {"tmin": 3, "nstates": 2, "nominal_dof": 13,
+                    "channels": "PP-even/A4P-odd joint", "multistarts": 3},
+            "methods": {
+                "approximate_chi_square": "existing 13-dof GOF p-value",
+                "iid_parametric": "refit fitted null mean with raw panel covariance, rho=0",
+                "estimated_ar1_parametric": "same fitted mean/covariance, pooled lag-1 OLS rho estimated per outer panel",
+                "circular_moving_block_L8": "center raw feature rows; resample circular residual blocks of fixed length 8; add fitted null mean",
+            },
+            "cells": list(DGP_CELLS),
+            "dataset_role": "screening_only" if is_screening else "heldout_validation",
+            "validation_status": "methods and L=8 frozen before this disjoint seed set; no thresholds or method parameters tuned on these panels",
+        },
+        "cell_summaries": summaries,
+        "all_panel_count": len(all_rows),
+        "source_hashes": source_hashes,
+        "denominators_by_method_and_cell": {
+            name: item["bootstrap_denominators"] for name, item in summaries.items()
+        },
+        "draw_denominators_totals": {
+            method: {
+                "planned": len(DGP_CELLS) * OUTER_PANELS * BOOTSTRAP_REPLICATES,
+                "valid": draw_valid_totals[method],
+                "failed": draw_failed_totals[method],
+                "abstained": (len(DGP_CELLS) * OUTER_PANELS * BOOTSTRAP_REPLICATES
+                              - draw_valid_totals[method] - draw_failed_totals[method]),
+            }
+            for method in METHODS
+        },
+        "physical_e_chain": {"planned": 0, "valid": 0, "failed": 0, "abstained": 0},
+        "D04_reference_gate": {"planned": 1, "valid": 0, "failed": 0, "abstained": 1},
+        "physical_score": None,
+        "open_gates": [
+            "only the declared synthetic null strata are tested; no real HMC chain is modeled",
+            "the fixed L=8 moving-block bootstrap is a comparator, not a selected or calibrated production block length",
+            "outer panel counts give descriptive Wilson intervals and do not meet the earlier high-precision 1% tail target",
+            "profile-rho is evaluated for nuisance recovery only and does not replace the frozen pooled-OLS bootstrap parameter",
+            "independent source/provenance/dependence review and an authorized candidate-blind E-chain reference remain absent",
+        ],
+    }
+    (out / "summary.json").write_bytes(_json_bytes(summary))
+    _write_csv(out / "panel_results.csv", all_rows)
+    (out / "seed_manifest.json").write_bytes(_json_bytes({
+        "schema": "optimize-d04-heldout-seed-manifest-v1",
+        "base_seed": BASE_SEED,
+        "seed_records": seed_manifest,
+    }))
+    _plots(out, rows_by_cell, summaries)
+
+    source_dir = out / "source_snapshot"
+    source_dir.mkdir()
+    for name, payload in source_bytes.items():
+        (source_dir / name.replace("/", "_")).write_bytes(payload)
+    (out / "source_hashes.json").write_bytes(_json_bytes({
+        "schema": "optimize-d04-heldout-source-hashes-v1",
+        "sources": source_hashes,
+    }))
+
+    lines = [
+        "# D04 independent dependence stress",
+        "",
+        f"**Status:** {summary['classification']}. D04 stays `NOT_READY/UNCERTIFIED`; `physical_score=null`.",
+        "",
+        "## Frozen design",
+        "",
+        f"- Five null strata × {OUTER_PANELS} independently seeded panels per stratum; each panel has {CONFIGURATIONS} ordered configurations and the frozen joint PP-even/A4P-odd two-state `tmin=3` fit.",
+        "- DGPs: iid Gaussian; Gaussian AR(1) with rho 0.30 and 0.60; AR(1) with multivariate Student-t(5) innovations at rho 0.30; and a two-timescale Gaussian mixture with rho_fast=0.15, rho_slow=0.75, fast weight=0.65.",
+        f"- Paired p-value methods: approximate chi-square; iid plug-in parametric bootstrap; panel-specific pooled-OLS estimated-AR(1) bootstrap; circular moving-block residual bootstrap with pre-fixed `L={BLOCK_LENGTH}`. Every bootstrap plans {BOOTSTRAP_REPLICATES} refits; failures count as upper-tail exceedances and fewer than {minimum_valid} valid refits abstain.",
+        f"- Methods and block length were fixed before this disjoint seed set; dataset role is `{summary['protocol']['dataset_role']}`. No method or threshold is selected from these outputs. Rejection intervals are per-cell Wilson intervals; the p-value ECDF plot uses a Bonferroni simultaneous DKW band over the plotted curves.",
+        "",
+        "## Figures",
+        "",
+        "![Null p-value ECDFs by dependence and tail stratum](pvalue_ecdf_by_stratum.png)",
+        "![One and five percent rejection rates with Wilson intervals](rejection_rates.png)",
+        "![Pooled OLS and profile-rho recovery](rho_recovery.png)",
+        "",
+        "## Text flow and interpretation",
+        "",
+        "`fresh null DGP + disjoint per-cell seeds -> 200 ordered raw panels/stratum -> common PP/A4P fit -> approximate / iid / estimated-AR(1) / fixed-L circular-block p-values -> failed refits counted conservatively -> panel-level P/V/F/A + Wilson intervals + rho recovery -> diagnostic only`.",
+        "",
+        "The multiscale process has no single AR(1) parameter: the reported reference is its known lag-1 correlation, not a claim that the process is AR(1). The Student-t case uses t(5) innovations in a stationary-initialized AR recursion; it is not an iid Student-t panel. The fixed L=8 bootstrap is only one declared comparator. Screening runs have especially coarse outer and inner Monte Carlo precision; even the full 200-panel design does not meet the earlier high-precision 1% tail target. Use reported Wilson intervals rather than binary pass labels.",
+        "",
+        "This is new synthetic validation evidence, not a production chain receipt. It cannot establish HMC stationarity, candidate blindness, source/sink convention, physical reference coverage, or permission to inspect sealed data. A third-party reviewer and an authorized candidate-blind E-chain package remain necessary before D04 can become gate-ready.",
+        "",
+        "## Reproduction and provenance",
+        "",
+        f"Run from repository root: `python -m tasks.optimize_gaussian.d04_heldout_dependence_diagnostic --outer-panels {OUTER_PANELS} --bootstrap-replicates {BOOTSTRAP_REPLICATES} --base-seed {BASE_SEED} --output NEW_DIRECTORY`. The script refuses to overwrite a report directory; it stores panel rows, seed records, input source snapshots/hashes, plots and artifact hashes together.",
+        f"- Outer panels: `{len(all_rows)}/{len(all_rows)}/0/0` planned/valid/failed/abstained generators; fit validity is reported separately by stratum.",
+        f"- Total bootstrap draws planned: `{len(DGP_CELLS) * OUTER_PANELS * BOOTSTRAP_REPLICATES}` per method; per-cell/per-method failed and abstained draws are in `summary.json`.",
+        f"- The smallest bootstrap p-value representable with this inner plan is `{1.0 / (BOOTSTRAP_REPLICATES + 1.0):.5f}`; when it exceeds 0.01, the 1% rejection count is structurally zero and cannot be interpreted as size control.",
+        "- `physical_score=null`; no measurement or sealed split was read; no GPU/QUDA was started.",
+    ]
+    (out / "README.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    artifact_hashes = _artifact_hashes(out)
+    return {"output": str(out), "panels": len(all_rows),
+            "artifact_count": len(artifact_hashes), "source_count": len(source_hashes),
+            "draw_valid": draw_valid_totals, "draw_failed": draw_failed_totals}
+
+
+def main() -> None:
+    global OUTER_PANELS, BOOTSTRAP_REPLICATES, BASE_SEED
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
+    parser.add_argument("--outer-panels", type=int, default=OUTER_PANELS)
+    parser.add_argument("--bootstrap-replicates", type=int, default=BOOTSTRAP_REPLICATES)
+    parser.add_argument("--base-seed", type=int, default=BASE_SEED)
+    args = parser.parse_args()
+    OUTER_PANELS = args.outer_panels
+    BOOTSTRAP_REPLICATES = args.bootstrap_replicates
+    BASE_SEED = args.base_seed
+    print(json.dumps(build(args.output), indent=2, sort_keys=True))
+
+
+if __name__ == "__main__":
+    main()

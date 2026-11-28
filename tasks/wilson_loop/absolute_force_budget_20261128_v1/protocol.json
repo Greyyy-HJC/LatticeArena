@@ -1,0 +1,168 @@
+{
+  "derived_uniform_cap_check": {
+    "assumption_only_numeric_gate_pass": true,
+    "certification_status": "NOT_CERTIFIED_REQUIRES_INDEPENDENT_RECEIPTS_AND_REVIEW",
+    "combined_log_corner_bound": 0.039869472140700045,
+    "component_force_bounds": {
+      "h": 0.015000000000000001,
+      "q": 0.015000000000000001,
+      "x": 0.01
+    },
+    "component_gates_pass": true,
+    "component_relative_bounds": {
+      "h": 0.015000000000000001,
+      "model_truncation": 0.01,
+      "q": 0.015000000000000001,
+      "statistical": 0.05,
+      "x": 0.01
+    },
+    "factorized_qhx_bound": 0.04,
+    "force_corner_count": 4,
+    "force_estimand": "absolute_stout_ground_state_discrete_static_force",
+    "limits": {
+      "component_fractions": {
+        "h": 0.015,
+        "q": 0.015,
+        "x": 0.01
+      },
+      "model_fraction": 0.01,
+      "statistical_fraction": 0.05,
+      "total_fraction": 0.1
+    },
+    "model_gate_pass": true,
+    "physical_score": null,
+    "positive_force_scale_lower": 1.0,
+    "statistical_gate_pass": true,
+    "systematic_relative_bound": 0.05,
+    "total_gate_pass": true,
+    "total_relative_bound": 0.1
+  },
+  "formula": {
+    "absolute_stout_force_bound": "sum over 4 stout R/T corners of delta",
+    "component_bound": "sum over 4 stout corners log(1+q_component)",
+    "identity_role": "shared-spectrum consistency diagnostic only; excluded from primary propagation",
+    "loop_log_envelope": "delta=log(1+q+h+x), for nonnegative q,h,x",
+    "uniform_raw_cap": "expm1(component_fraction * positive_force_scale_lower / 4)"
+  },
+  "identity_comparison_diagnostic_only": {
+    "assumption_only_numeric_gate_pass": false,
+    "certification_status": "NOT_CERTIFIED_REQUIRES_INDEPENDENT_RECEIPTS_AND_REVIEW",
+    "combined_log_corner_bound": 0.31376570522625036,
+    "component_force_bounds": {
+      "h": 0.11910889995000523,
+      "q": 0.11910889995000523,
+      "x": 0.07960264682534467
+    },
+    "component_gates_pass": false,
+    "component_relative_bounds": {
+      "h": 0.11910889995000523,
+      "model_truncation": 0.0,
+      "q": 0.11910889995000523,
+      "statistical": 0.0,
+      "x": 0.07960264682534467
+    },
+    "factorized_qhx_bound": 0.31782044672535514,
+    "force_corner_count": 8,
+    "limits": {
+      "component_fractions": {
+        "h": 0.015,
+        "q": 0.015,
+        "x": 0.01
+      },
+      "model_fraction": 0.01,
+      "statistical_fraction": 0.05,
+      "total_fraction": 0.1
+    },
+    "model_gate_pass": true,
+    "physical_score": null,
+    "reference_force_lower": 1.0,
+    "statistical_gate_pass": true,
+    "systematic_relative_bound": 0.31782044672535514,
+    "total_gate_pass": false,
+    "total_relative_bound": 0.31782044672535514
+  },
+  "input_hashes": {
+    "core/numerics.py": "27631552db9e2fb0879e6dc1c91bfce553f516386bb3a26b405921f33824fe47",
+    "force_budget.py": "7e058c72a2411dcebec2dff946712240544f3908dbf57048afbd34a905ad4a07",
+    "force_budget_diagnostic.py": "3f015c4f5d82dd937c8586d4026bcc6f8e18b29c0df0a517e9b60c6544ad432a",
+    "lane_contract.py": "73558b60eee967d4ed0f282bac4d842781f230f71e826e603ac3b7b346aaa311",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca"
+  },
+  "inputs": {
+    "assumed_raw_loop_caps_counterexample": {
+      "h": 0.015,
+      "q": 0.015,
+      "x": 0.01
+    },
+    "comparison_kernel": "identity",
+    "component_force_fraction_budgets": {
+      "h": 0.015,
+      "q": 0.015,
+      "x": 0.01
+    },
+    "identity_comparison_corner_count": 4,
+    "illustrative_positive_force_scale_lower": 1.0,
+    "positive_force_scale_range_for_plot": [
+      0.01,
+      1.0
+    ],
+    "primary_force_corner_count": 4,
+    "primary_kernel": "spatial_stout_rho0.10_n5"
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "naive_per_loop_cap_counterexample": {
+    "assumption_only_numeric_gate_pass": false,
+    "certification_status": "NOT_CERTIFIED_REQUIRES_INDEPENDENT_RECEIPTS_AND_REVIEW",
+    "combined_log_corner_bound": 0.15688285261312518,
+    "component_force_bounds": {
+      "h": 0.059554449975002616,
+      "q": 0.059554449975002616,
+      "x": 0.03980132341267233
+    },
+    "component_gates_pass": false,
+    "component_relative_bounds": {
+      "h": 0.059554449975002616,
+      "model_truncation": 0.01,
+      "q": 0.059554449975002616,
+      "statistical": 0.05,
+      "x": 0.03980132341267233
+    },
+    "factorized_qhx_bound": 0.15891022336267757,
+    "force_corner_count": 4,
+    "force_estimand": "absolute_stout_ground_state_discrete_static_force",
+    "limits": {
+      "component_fractions": {
+        "h": 0.015,
+        "q": 0.015,
+        "x": 0.01
+      },
+      "model_fraction": 0.01,
+      "statistical_fraction": 0.05,
+      "total_fraction": 0.1
+    },
+    "model_gate_pass": true,
+    "physical_score": null,
+    "positive_force_scale_lower": 1.0,
+    "statistical_gate_pass": true,
+    "systematic_relative_bound": 0.16891022336267758,
+    "total_gate_pass": false,
+    "total_relative_bound": 0.21891022336267757
+  },
+  "physical_evidence_denominator": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "reason": "no independent q/h/x, positive stout-force scale, model-truncation, or review receipts",
+    "valid": 0
+  },
+  "physical_score": null,
+  "purpose": "formula-only translation from stout loop q/h/x envelopes to the absolute ground-state force budget",
+  "scenario_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "meaning": "deterministic formula sensitivity rows; not measurements or Monte Carlo datasets",
+    "planned": 50,
+    "valid": 50
+  },
+  "schema": "wilson-absolute-force-budget-propagation-diagnostic-v2"
+}

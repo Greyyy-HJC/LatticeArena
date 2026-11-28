@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "README.md": "ce629e0883e5ec966a2482236e41b36c0f88cb8581e008a5cbad2bbbc446e56a",
+    "ar1_bootstrap_calibration.png": "fb1f9500caa66004cb5ab6172a2c36697b1e6bb413208ba7c5acae58700a603f",
+    "bootstrap_draw_results.csv": "52f01ae7319a381be2c5db04e264044c0169ddc69e9efe3bd86ead42af18ef91",
+    "panel_results.csv": "6382140200570872fb5c2a071c3ffaac5b67c90ec534c7cc90a252659b04c446",
+    "protocol.json": "ce9af16e711e9bec80f4f615a5facd7111d61cce677d4485e03f332e434280b0",
+    "source_hashes.json": "97daf79e61970c847abc392e5c1d2fb0653d07647e51a1e826c8e510e1763473",
+    "source_snapshot/bootstrap_helpers": "6afa9ae799a3ff38572d2648b8566630c1ff9a4453cac3e5e5c0b620c72c8934",
+    "source_snapshot/contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "source_snapshot/diagnostic": "ab1b7d388ffb460e5bb4c914cd7bd9f1d70fd633c999ee8a9a48e3cc994668fa",
+    "source_snapshot/gof_generator": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "source_snapshot/reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "source_snapshot/test": "7c46fa2df386d150f07444e5b91efc67769c2d3518230c2646dd59827ddb718f",
+    "summary.json": "2ad3ae6ef957fbfaa30a50ae7157799077b45461e49a6daa11f35c8bc3f362a7"
+  },
+  "schema": "optimize-d04-ar1-bootstrap-artifact-hashes-v1"
+}

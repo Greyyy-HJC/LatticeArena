@@ -1,0 +1,56 @@
+{
+  "assumptions_not_transferred_to_production": [
+    "the production paired-macroblock process is homogeneous Markov",
+    "a valid pseudo-spectral-gap lower bound applies to the exact production scored chain",
+    "the production post-burn-in initial law has a justified TV bound",
+    "the D04 reference-fit and candidate-selection uncertainty are separately controlled"
+  ],
+  "certified": false,
+  "data_access": "synthetic finite-state chains only; no project measurements, sealed inputs, GPU or QUDA",
+  "estimand": "bounded paired-macroblock risk; distinct from primary D04 estimand",
+  "generator": {
+    "chain": "P=(1-eta) directed_cycle + eta uniform_refresh on 19 states",
+    "exact_means": [
+      0.47368421052631576,
+      0.5263157894736842,
+      1.0
+    ],
+    "exact_paired_contrasts": [
+      0.0,
+      0.47368421052631576
+    ],
+    "pseudo_gap": "gamma_ps=1-(1-eta)^2, analytically; verified against finite-state singular spectrum",
+    "reversible": false,
+    "score_map": "W=1 on 9 states, SLSQP=1 on remaining 10 states, Chebyshev=1 on all states",
+    "stationary_law": "uniform",
+    "tv_initialization": "nu=(1-rho)uniform+rho*delta_0 with rho=TV/(1-1/19)"
+  },
+  "grid": {
+    "confidence_rule": "Wilson 95% Monte Carlo intervals for coverage and release proportions",
+    "gamma_ps": [
+      0.36,
+      0.0975,
+      0.02
+    ],
+    "panels_per_cell": 1200,
+    "planned_cells": 12,
+    "post_burn_in_tv": [
+      0.0,
+      0.02
+    ],
+    "scored_blocks": [
+      2000,
+      20000
+    ],
+    "seed_base": 2026112603
+  },
+  "physical_score": null,
+  "schema": "optimize-d06-markov-multistate-diagnostic-v1",
+  "source_hashes": {
+    "tasks/optimize_gaussian/bounded_block_risk.py": "3f7c56686cefbd16f5387df18bd1a8757cc317b8927954e41ce48653ea1f9892",
+    "tasks/optimize_gaussian/bounded_block_risk_markov.py": "a7e0f40630b897a6c86cf008954b5bb271c6c84449832743a6a7207f685c3fae",
+    "tasks/optimize_gaussian/d06_markov_multistate_diagnostic.py": "b60ba8282604adeb77e20cf83b1b46b1f2b6e76c229165f49161c7d5f355a35e"
+  },
+  "status": "CONDITIONAL_METHOD_DIAGNOSTIC_ONLY",
+  "text_flow": "known non-reversible chain -> exact stationary law/pseudo-gap -> bounded paired scores -> simultaneous Markov bounds -> coverage and release diagnostics"
+}

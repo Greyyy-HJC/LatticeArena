@@ -1,0 +1,210 @@
+{
+  "classification": "SYNTHETIC_AR1_DEPENDENCE_BOOTSTRAP_STRESS_NOT_PHYSICAL_REFERENCE",
+  "denominators": {
+    "bootstrap_outer_total": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 320,
+      "valid": 320
+    },
+    "estimated_ar1_bootstrap_draws": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 31840,
+      "valid": 31840
+    },
+    "estimated_ar1_bootstrap_outer": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 160,
+      "valid": 160
+    },
+    "iid_bootstrap_draws": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 31840,
+      "valid": 31840
+    },
+    "iid_bootstrap_outer": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 160,
+      "valid": 160
+    },
+    "outer_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 160,
+      "valid": 160
+    },
+    "rho_estimate": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 160,
+      "valid": 160
+    }
+  },
+  "fit": {
+    "covariance_eigenvalue_floor": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "multistarts": 3,
+    "nominal_dof": 13,
+    "nstates": 2,
+    "pp_a4p_joint": true,
+    "tmin": 3
+  },
+  "generator": {
+    "bootstrap_covariance": "unshrunk raw within-panel sample covariance with eigenvalue floor 1e-12 of its largest eigenvalue",
+    "bootstrap_methods": [
+      "iid_bootstrap",
+      "estimated_ar1_bootstrap"
+    ],
+    "bootstrap_replicates_per_method_panel": 199,
+    "bootstrap_rule": "re-estimate folded covariance with 25% shrinkage and refit the two-state spectrum in every replicate",
+    "configurations_per_panel": 128,
+    "feature_count": 27,
+    "finite_n_mean_variance_inflation": 1.847576530612245,
+    "kind": "stationary_multivariate_gaussian_AR1",
+    "minimum_valid_draws": 180,
+    "minimum_valid_fraction": 0.9,
+    "outer_panels": 160,
+    "pvalue": "(1 + count(bootstrap chi2 >= observed chi2)) / (valid draws + 1)",
+    "rho_estimator": "pooled lag-1 OLS on each raw feature centered by its panel mean, clipped to [-0.95, 0.95]",
+    "true_rho": 0.3
+  },
+  "open_gates": [
+    "only one stationary Gaussian AR(1) rho=0.30 generator is evaluated",
+    "rho-hat uncertainty is represented only through the per-panel plug-in estimate; no block/HAC or multiscale chain bootstrap is evaluated",
+    "finite-sample rejection intervals remain Monte Carlo limited and the method uses one independent outer validation set only",
+    "a synthetic process does not establish production chain stationarity, source provenance, or candidate blindness",
+    "an independent reviewer must inspect the rho estimator, fitted-mean reconstruction, and covariance convention"
+  ],
+  "paired_comparisons": {
+    "estimated_ar1_bootstrap_minus_approx": {
+      "fraction_bootstrap_lower": 0.03125,
+      "mean": 0.1140388795189371,
+      "valid": 160
+    },
+    "estimated_ar1_bootstrap_minus_iid_bootstrap": {
+      "fraction_ar1_pvalue_lower": 0.0,
+      "mean": 0.31671875,
+      "valid": 160
+    },
+    "iid_bootstrap_minus_approx": {
+      "fraction_bootstrap_lower": 0.95,
+      "mean": -0.2026798704810629,
+      "valid": 160
+    }
+  },
+  "physical_e_chain": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "pvalue_summaries": {
+    "chi_square_approx": {
+      "count": 160,
+      "ks_distance_to_uniform": 0.24602376917804814,
+      "mean": 0.34911737048106295,
+      "median": 0.33777740337623563,
+      "rejection": {
+        "0.01": {
+          "count": 11,
+          "mcse": 0.007866066361276137,
+          "nominal_rate": 0.01,
+          "rate": 0.06875,
+          "wilson_95": [
+            0.03881942091091279,
+            0.11890292242451045
+          ]
+        },
+        "0.05": {
+          "count": 32,
+          "mcse": 0.017230060940112778,
+          "nominal_rate": 0.05,
+          "rate": 0.2,
+          "wilson_95": [
+            0.14538269154252415,
+            0.268685025560379
+          ]
+        }
+      }
+    },
+    "estimated_ar1_bootstrap": {
+      "count": 160,
+      "ks_distance_to_uniform": 0.09312500000000001,
+      "mean": 0.46315624999999994,
+      "median": 0.465,
+      "rejection": {
+        "0.01": {
+          "count": 2,
+          "mcse": 0.007866066361276137,
+          "nominal_rate": 0.01,
+          "rate": 0.0125,
+          "wilson_95": [
+            0.0034346711081265323,
+            0.044425369184091026
+          ]
+        },
+        "0.05": {
+          "count": 10,
+          "mcse": 0.017230060940112778,
+          "nominal_rate": 0.05,
+          "rate": 0.0625,
+          "wilson_95": [
+            0.034299666746119624,
+            0.11121575402894743
+          ]
+        }
+      }
+    },
+    "iid_bootstrap": {
+      "count": 160,
+      "ks_distance_to_uniform": 0.564375,
+      "mean": 0.1464375,
+      "median": 0.065,
+      "rejection": {
+        "0.01": {
+          "count": 33,
+          "mcse": 0.007866066361276137,
+          "nominal_rate": 0.01,
+          "rate": 0.20625,
+          "wilson_95": [
+            0.15080086366994006,
+            0.27547377599331924
+          ]
+        },
+        "0.05": {
+          "count": 72,
+          "mcse": 0.017230060940112778,
+          "nominal_rate": 0.05,
+          "rate": 0.45,
+          "wilson_95": [
+            0.3749863030702235,
+            0.5273583164469271
+          ]
+        }
+      }
+    }
+  },
+  "reference_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "rho_estimate_summary": {
+    "bias": -0.013770472006152723,
+    "count": 160,
+    "mean": 0.28622952799384727,
+    "median": 0.2880293519813011,
+    "q05_q95": [
+      0.22546253892914975,
+      0.3510093299153133
+    ],
+    "sd": 0.040790737827464355
+  },
+  "schema": "optimize-d04-ar1-bootstrap-summary-v1"
+}

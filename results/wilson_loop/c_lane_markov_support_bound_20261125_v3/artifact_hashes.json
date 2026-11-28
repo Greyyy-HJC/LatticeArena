@@ -1,0 +1,8 @@
+{
+  "README.md": "5b256858a20b0c9262e8d6b9928fb00b79d57b40274849c069c6c0fbe43f4f26",
+  "markov_bound_sensitivity.png": "15194b91f713010a9305079bb42826d724b769d6de4e1e14e565cd115c14fe95",
+  "protocol.json": "884e7471c1b1f7cd9959162811aa8c44893fca45e9bd4aec51089c0e70f36dd4",
+  "required_sample_size.csv": "508e4d6d9a82d0acbe378eb5a23a6532871114b7b713191e23f8c08e00df7420",
+  "sensitivity_grid.csv": "d3ae42a1560b72ccbe05df6bc9b8747181af2f3a673921d928876a81672699b6",
+  "source_snapshot.py": "cb9114a85e5fb689353a20cd4c06ab80a5f59261b88b8aff8af9a26227e8ec0c"
+}

@@ -1,0 +1,70 @@
+{
+  "schema": "trainable-w-pooled-meta-initialization-v1",
+  "status": "SYNTHETIC_CROSS_TASK_INITIALIZATION_DIAGNOSTIC_ONLY",
+  "physical_score": null,
+  "data_access": "No physical gauge links, sealed data, GPU, or QUDA data accessed.",
+  "training_panels": 12,
+  "evaluation_panels": 12,
+  "fit_links_per_panel": 2,
+  "heldout_links_per_evaluation_panel": 2,
+  "heldout_use": "evaluation-only; never used to fit pooled prior or online SLSQP",
+  "target_family": "local_environment polynomial teacher with task-level coefficient variation",
+  "base_teacher_coefficients": [
+    0.045,
+    0.025,
+    -0.018,
+    0.012,
+    0.008,
+    -0.006
+  ],
+  "teacher_relative_sd": 0.2,
+  "feature_generator": "weak_field_eps0.08 SU(3)-like synthetic links",
+  "parameterization": "joint trainable-W width-2; seven real parameters in [-3,3]",
+  "pooled_training_solver": "SLSQP with analytic gradient",
+  "pooled_training_objective_call_cap": 256,
+  "online_solver": "SLSQP with analytic gradient, same class and box for every arm",
+  "online_budgets": [
+    8,
+    32,
+    128
+  ],
+  "arms": [
+    "pooled_learned_init",
+    "random_cold_start",
+    "fixed_nonzero_control"
+  ],
+  "strong_baseline": "degree-4 Chebyshev in uniform hopping H, fit per evaluation panel",
+  "target_matched_control": "fixed degree-2 local polynomial operator basis, fit per evaluation panel",
+  "synthetic_fit_loss_fractions_of_cold_initial": [
+    0.1,
+    0.01
+  ],
+  "tolerance_warning": "Panel-specific shared training-fit contraction thresholds only; not D06 physical r_star or heldout selection rules.",
+  "seed": 2026112401,
+  "objective_call_accounting": {
+    "pooled_call_link_cases": 24,
+    "panel_equivalent_pooled_optimizer_cost": "optimizer calls * training_panels",
+    "panel_equivalent_total_cost": "(optimizer calls + one initial diagnostic evaluation) * training_panels",
+    "prior_inference": "copy seven frozen parameters; counted per evaluation task, no objective calls",
+    "optimizer_and_baseline_fit_walltime": "reported separately; synthetic input/target generation is excluded and not timed"
+  },
+  "source_hashes": {
+    "trainable_w_meta_init_diagnostic.py": "155470b3621596780ebc30d40a0c05f4e6a0d2642501da9c68529e7c57df122f",
+    "trainable_w_stress_diagnostic.py": "db89fb374bffe0729d4a46848d3d6a3ef0a76d0110618de4bfcd15506e59514e",
+    "trainable_w_operator_diagnostic.py": "584235dd49eab347c4ac078fdc00724bdf1f3b31eb6fc1d56d05fc688df2596b",
+    "trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0",
+    "features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0"
+  },
+  "limitations": [
+    "synthetic task distribution and shared teacher family only",
+    "no physical reference or D06 effect threshold",
+    "degree-4 spectral comparator is a different operator family",
+    "small panel counts do not support population inference"
+  ]
+}

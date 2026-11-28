@@ -1,0 +1,10 @@
+{
+  "files": {
+    "README.md": "f24b359e308d78a70654101759b766775bcd20ee5f94b620a33e61b533b92552",
+    "design_metrics.csv": "bce4828ee7fec567ed6bc89b6ea7aa6c28809ce3ae30b05ec33dd4d51ca9630b",
+    "design_singular_values.png": "fc4099fdb951039d929d33195fabd50c9a41270bfb2a7366f6f21fa0d06d6ba6",
+    "protocol.json": "2363bdb6d4468200d6f46835c2f9f1f2318ca8ba4f87702a15774a0ccddf7a31",
+    "summary.json": "1f66e3af1f4c53d72429f2194e292cf3adeefa227743fdfb30a728d34f5f1903"
+  },
+  "schema": "latticearena-artifact-hashes-v1"
+}

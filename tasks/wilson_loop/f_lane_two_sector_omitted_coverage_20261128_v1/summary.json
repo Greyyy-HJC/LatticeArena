@@ -1,0 +1,116 @@
+{
+  "certification_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_REPEATED_PANEL_COVERAGE_UNDER_ONE_MISSPECIFIED_DGP",
+  "coverage": {
+    "average_pointwise_by_panel": {
+      "cluster_t95": [
+        0.6542093148785278,
+        0.709216611047398
+      ],
+      "rate": 0.6817129629629629
+    },
+    "familywise_bonferroni72": {
+      "planned_panels": 24,
+      "rate": 0.0,
+      "successes": 0,
+      "wilson95": [
+        1.3877787807814457e-17,
+        0.13797620467498017
+      ]
+    },
+    "pointwise_all_cells": {
+      "planned_cells": 1728,
+      "pooled_rate_descriptive_only": 0.6817129629629629,
+      "successes": 1178,
+      "warning": "cells within a panel share the same fit and are correlated; use panel-cluster summaries for inference",
+      "wilson95_cellwise_not_cluster_adjusted": [
+        0.6593678307030274,
+        0.7032519673168441
+      ]
+    },
+    "pointwise_by_term": {
+      "h": {
+        "cluster_mean": 0.921875,
+        "cluster_t95": [
+          0.8952613838268643,
+          0.9484886161731357
+        ],
+        "n_independent_panels": 24
+      },
+      "q": {
+        "cluster_mean": 0.1597222222222222,
+        "cluster_t95": [
+          0.10588737730367552,
+          0.21355706714076889
+        ],
+        "n_independent_panels": 24
+      },
+      "x": {
+        "cluster_mean": 0.9635416666666666,
+        "cluster_t95": [
+          0.9278546058526106,
+          0.9992287274807227
+        ],
+        "n_independent_panels": 24
+      }
+    }
+  },
+  "denominators": {
+    "fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1728,
+      "valid": 1728
+    },
+    "unique_panel_matrix_hashes": 24
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "fit": {
+    "covariance_eigenvalue_floor_relative": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "fit_parameter_count": 45,
+    "interval_rule_frozen_across_panels": true,
+    "method": "regularized full-covariance GLS; q/h/x finite-difference delta normal uppers",
+    "pointwise_one_sided_level": 0.975,
+    "simultaneous_method": "one-sided Bonferroni over 72 q/h/x terms at family alpha 0.05"
+  },
+  "fit_diagnostics": {
+    "max_jacobian_condition_number": 909609862.3156253,
+    "median_gls_objective": 18011.30362993315,
+    "median_jacobian_condition_number": 16079.715246058953
+  },
+  "generator": {
+    "blocks_per_panel": 96,
+    "panel_independence": "fresh independent Gaussian blocks and RNG stream per panel; one fixed covariance/truth design",
+    "panels": 24,
+    "relative_noise": 0.003,
+    "seed_rule": "numpy default_rng(2026112800 + panel_index)",
+    "truth": "2 vacuum x 3 static states; fit fixed at 2 x 2"
+  },
+  "open_gates": [
+    "one omitted-state truth design only; no near-degenerate, weak-ground-overlap, vacuum-omission, finite-Nt alternates, correlated-block, or unequal-covariance grid",
+    "delta intervals condition on estimated covariance and the misspecified 2x2 model; no method selection or recalibration performed",
+    "small number of independent panels gives wide Monte Carlo intervals",
+    "production correlators, exporter convention, matched-Nt thermal/mixed receipts, force/reference uncertainty and independent review absent"
+  ],
+  "physical_measurements": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "schema": "wilson-f-two-sector-omitted-coverage-summary-v1"
+}

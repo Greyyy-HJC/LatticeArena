@@ -1,0 +1,90 @@
+{
+  "analysis_source_sha256": {
+    "snapshot_core_npz_safety.py": "541dc6fefa6b38c4fd53b0a490c0cb12e628bf409cbbde7ade2029a9d258b0c4",
+    "snapshot_core_source_integrity.py": "97db76f7e448be77711e837039536e4134e243d7f23d667b5d7f888b64392a7d",
+    "snapshot_f_lane_raw_matrix_reader.py": "42146f6c82f7a7d8ba799882a7308aac74edccd97fefb87c836c7d3140f3e6a8"
+  },
+  "classification": "SYNTHETIC_SCHEMA_AND_LINEAR_ALGEBRA_DIAGNOSTIC_NOT_MEASUREMENT",
+  "input": {
+    "R_values": [
+      2,
+      3
+    ],
+    "blocks": 24,
+    "matrix_manifest_sha256": "b647b4a6014833bb16dc3252f60fb2cde4e332dee1ecc983921e0ab09324ac8d",
+    "matrix_npz_sha256": "134792d12e324c3565a2e761856a0ecf04a0f70397ce4d86f9423fd9dfd54c7d",
+    "operator_basis_ids": [
+      "identity",
+      "ape_alpha0.4_n5",
+      "spatial_stout_rho0.10_n5"
+    ],
+    "read_mode": "immutable SourceByteSnapshot; NPZ size preflight before numpy.load",
+    "split_id": "synthetic_calibration_open",
+    "time_slices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "limitations": [
+    "synthetic input only; no Wilson measurement or production source bytes were read",
+    "the repository has no raw cross-correlator producer; diagonal loop arrays cannot reconstruct missing off-diagonal elements",
+    "the matrix basis uses three ordered smearing IDs; do not add an outer kernel axis or interpret one projected vector as three per-kernel q values",
+    "the q-bound contract asks for kernel-indexed q cells; mapping those cells to basis-operator or GEVP-composite overlaps remains unresolved",
+    "synthetic block spread is descriptive and is not a confidence interval or independence claim",
+    "captured-byte digest equality does not authenticate who issued the expected digests",
+    "no state-overlap/gap fit, q upper bound, coverage calibration, finite-Nt backward term, thermal h, mixed x, force propagation, or physical gate"
+  ],
+  "method": {
+    "gevp": "C(td)v=lambda C(t0)v; largest eigenvalue vector, C(t0)-normalized",
+    "must_measure_cross_terms": true,
+    "operator_basis_ids": [
+      "identity",
+      "ape_alpha0.4_n5",
+      "spatial_stout_rho0.10_n5"
+    ],
+    "operator_matrix": "one C_ij(R,t)=<O_i(R,t) O_j^dagger(R,0)> per R; i is sink and j is source",
+    "output": "one projected composite operator per R plus condition diagnostics; no per-basis q, fit, or interval",
+    "projection": "v^dagger C_block(R,t) v using one ensemble-mean vector per R cell",
+    "q_semantics": "This composite projection cannot be assigned to each basis kernel's q cell; the independent q-bound contract still needs a reviewed overlap-object mapping",
+    "t0": 1,
+    "td": 2
+  },
+  "schema": "wilson-f-raw-matrix-snapshot-diagnostic-protocol-v1",
+  "toy_model": {
+    "overlaps_state_by_operator": [
+      [
+        1.0,
+        0.8,
+        0.55
+      ],
+      [
+        0.72,
+        -0.35,
+        0.6
+      ],
+      [
+        0.45,
+        0.62,
+        -0.5
+      ],
+      [
+        1.2,
+        0.75,
+        0.95
+      ]
+    ],
+    "spectrum": [
+      0.18,
+      0.32,
+      0.49,
+      0.7
+    ],
+    "temporal_extent": "finite metadata, but synthetic input contains forward terms only",
+    "variation": "deterministic small block-dependent overlap/energy perturbations; no stochastic noise model"
+  }
+}

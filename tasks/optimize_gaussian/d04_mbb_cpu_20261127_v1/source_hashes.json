@@ -1,0 +1,9 @@
+{
+  "schema": "d04-mbb-source-hashes-v1",
+  "sources": {
+    "contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "diagnostic": "d35404c35312d88581ac27672ba51d1726f7ff5ae9a6851063aa91994bae8b33",
+    "reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "test": "da88884e8471a3e5e2eff60a8ae0664a85d271eda03090af505db24962a00f4d"
+  }
+}

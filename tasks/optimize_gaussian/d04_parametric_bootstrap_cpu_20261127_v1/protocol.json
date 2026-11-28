@@ -1,0 +1,30 @@
+{
+  "base_seed": 2026112753,
+  "bootstrap_replicates_per_panel": 199,
+  "bootstrap_rule": "(1 + count(bootstrap chi2 >= observed chi2)) / (valid bootstrap draws + 1)",
+  "bootstrap_seed_rule": "BASE_SEED + 50000 + outer panel index",
+  "classification": "SYNTHETIC_IID_GAUSSIAN_PARAMETRIC_BOOTSTRAP_PILOT_NOT_PHYSICAL_REFERENCE",
+  "configurations_per_panel": 128,
+  "fit_rule": "reader._fit_variant(mean, covariance_of_mean, columns, tmin=3, nstates=2)",
+  "minimum_valid_draws": 180,
+  "outer_generator": {
+    "cross_channel_correlation": 0.2,
+    "relative_noise": 0.03,
+    "temporal_feature_correlation": 0.65,
+    "truth_covariance_sha256": "d0b9fb115c555fe7537c825bb3ac14b201cfdc5ef106c11d8f013dd30e3b4c80",
+    "truth_mean_sha256": "f909df8fc7c802b53a37b3c361a6e2546b23b32c0c2198019b1ff0acea8fb90f"
+  },
+  "outer_panels": 60,
+  "outer_seed_rule": "single PCG64 stream initialized at BASE_SEED; no input file read",
+  "physical_score": null,
+  "schema": "optimize-d04-parametric-bootstrap-protocol-v1",
+  "source_hashes": {
+    "contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "diagnostic": "6afa9ae799a3ff38572d2648b8566630c1ff9a4453cac3e5e5c0b620c72c8934",
+    "generator": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "npz_safety": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "source_integrity": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "test": "7c46fa2df386d150f07444e5b91efc67769c2d3518230c2646dd59827ddb718f"
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "certification_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "coverage": {
+    "by_stratum": [
+      {
+        "child_artifact_hashes_sha256": "55f7895e3bca2a8779747ae3edf9e2c1b7d12b5cd71ca433956791b618418cc1",
+        "child_report": "S1_high_overlap_omitted_static",
+        "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+        "coverage": {
+          "familywise_bonferroni72": {
+            "planned_panels": 12,
+            "rate": 0.0,
+            "successes": 0,
+            "wilson95": [
+              2.7755575615628914e-17,
+              0.24249400665524085
+            ]
+          },
+          "pointwise_by_term": {
+            "h": {
+              "cluster_mean": 0.9618055555555555,
+              "cluster_t95": [
+                0.92708863363983,
+                0.996522477471281
+              ],
+              "n_independent_panels": 12
+            },
+            "q": {
+              "cluster_mean": 0.08333333333333333,
+              "cluster_t95": [
+                0.015602697088567041,
+                0.15106396957809962
+              ],
+              "n_independent_panels": 12
+            },
+            "x": {
+              "cluster_mean": 0.9305555555555557,
+              "cluster_t95": [
+                0.863454985435385,
+                0.9976561256757264
+              ],
+              "n_independent_panels": 12
+            }
+          }
+        },
+        "denominators": {
+          "panels": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 12,
+            "valid": 12
+          },
+          "q_h_x_cells": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 864,
+            "valid": 864
+          },
+          "unique_raw_matrix_hashes": 12
+        },
+        "fit_diagnostics": {
+          "failed_fit_status_counts": {},
+          "max_jacobian_condition_number": 1059026615.7447361,
+          "median_jacobian_condition_number": 10611.2752972868,
+          "n_condition_numbers": 12
+        },
+        "noise_model": {
+          "model": "iid_gaussian",
+          "scale_by_T": {}
+        },
+        "stratum_id": "S1_high_overlap_omitted_static",
+        "truth": "2 vacuum x 3 static states; original energies and vacuum spectrum"
+      },
+      {
+        "child_artifact_hashes_sha256": "7fb28df4b09d1dd191965f631011ba666c2c35448f33d8c80be349678bb26c40",
+        "child_report": "S2_near_degenerate_static",
+        "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+        "coverage": {
+          "familywise_bonferroni72": {
+            "planned_panels": 12,
+            "rate": 0.0,
+            "successes": 0,
+            "wilson95": [
+              2.7755575615628914e-17,
+              0.24249400665524085
+            ]
+          },
+          "pointwise_by_term": {
+            "h": {
+              "cluster_mean": 1.0,
+              "cluster_t95": [
+                1.0,
+                1.0
+              ],
+              "n_independent_panels": 12
+            },
+            "q": {
+              "cluster_mean": 0.013888888888888888,
+              "cluster_t95": [
+                0.0,
+                0.04445812722349498
+              ],
+              "n_independent_panels": 12
+            },
+            "x": {
+              "cluster_mean": 0.9930555555555555,
+              "cluster_t95": [
+                0.9777709363882524,
+                1.0
+              ],
+              "n_independent_panels": 12
+            }
+          }
+        },
+        "denominators": {
+          "panels": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 12,
+            "valid": 12
+          },
+          "q_h_x_cells": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 864,
+            "valid": 864
+          },
+          "unique_raw_matrix_hashes": 12
+        },
+        "fit_diagnostics": {
+          "failed_fit_status_counts": {},
+          "max_jacobian_condition_number": 10983.026363923302,
+          "median_jacobian_condition_number": 3418.218079861187,
+          "n_condition_numbers": 12
+        },
+        "noise_model": {
+          "model": "iid_gaussian",
+          "scale_by_T": {}
+        },
+        "stratum_id": "S2_near_degenerate_static",
+        "truth": "2 vacuum x 3 static states; near-degenerate excited static levels"
+      },
+      {
+        "child_artifact_hashes_sha256": "e9eb55c20938e2ee7b634966450acab73a1e0f2248f7923d72d8c2fbb504fd71",
+        "child_report": "S3_weak_operator_ground_overlap",
+        "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+        "coverage": {
+          "familywise_bonferroni72": {
+            "planned_panels": 12,
+            "rate": 0.0,
+            "successes": 0,
+            "wilson95": [
+              2.7755575615628914e-17,
+              0.24249400665524085
+            ]
+          },
+          "pointwise_by_term": {
+            "h": {
+              "cluster_mean": 1.0,
+              "cluster_t95": [
+                1.0,
+                1.0
+              ],
+              "n_independent_panels": 12
+            },
+            "q": {
+              "cluster_mean": 0.2708333333333333,
+              "cluster_t95": [
+                0.21972275026271265,
+                0.321943916403954
+              ],
+              "n_independent_panels": 12
+            },
+            "x": {
+              "cluster_mean": 0.9861111111111112,
+              "cluster_t95": [
+                0.955541872776505,
+                1.0
+              ],
+              "n_independent_panels": 12
+            }
+          }
+        },
+        "denominators": {
+          "panels": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 12,
+            "valid": 12
+          },
+          "q_h_x_cells": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 864,
+            "valid": 864
+          },
+          "unique_raw_matrix_hashes": 12
+        },
+        "fit_diagnostics": {
+          "failed_fit_status_counts": {},
+          "max_jacobian_condition_number": 75088.58530936224,
+          "median_jacobian_condition_number": 8696.05344594995,
+          "n_condition_numbers": 12
+        },
+        "noise_model": {
+          "model": "iid_gaussian",
+          "scale_by_T": {}
+        },
+        "stratum_id": "S3_weak_operator_ground_overlap",
+        "truth": "2 vacuum x 3 static states; operator 2 ground-sector overlaps suppressed"
+      },
+      {
+        "child_artifact_hashes_sha256": "0b6f1d82aa730524d7aa540d32a2a4d0a094167d09ee655da0787ee38a52927f",
+        "child_report": "S4_omitted_vacuum_state",
+        "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+        "coverage": {
+          "familywise_bonferroni72": {
+            "planned_panels": 12,
+            "rate": 0.0,
+            "successes": 0,
+            "wilson95": [
+              2.7755575615628914e-17,
+              0.24249400665524085
+            ]
+          },
+          "pointwise_by_term": {
+            "h": {
+              "cluster_mean": 0.8958333333333331,
+              "cluster_t95": [
+                0.857552372918414,
+                0.9341142937482523
+              ],
+              "n_independent_panels": 12
+            },
+            "q": {
+              "cluster_mean": 0.21527777777777776,
+              "cluster_t95": [
+                0.14226562726004705,
+                0.2882899282955085
+              ],
+              "n_independent_panels": 12
+            },
+            "x": {
+              "cluster_mean": 0.9583333333333334,
+              "cluster_t95": [
+                0.9160958607639786,
+                1.0
+              ],
+              "n_independent_panels": 12
+            }
+          }
+        },
+        "denominators": {
+          "panels": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 12,
+            "valid": 12
+          },
+          "q_h_x_cells": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 864,
+            "valid": 864
+          },
+          "unique_raw_matrix_hashes": 12
+        },
+        "fit_diagnostics": {
+          "failed_fit_status_counts": {},
+          "max_jacobian_condition_number": 162559.2680601401,
+          "median_jacobian_condition_number": 17858.473850436145,
+          "n_condition_numbers": 12
+        },
+        "noise_model": {
+          "model": "iid_gaussian",
+          "scale_by_T": {}
+        },
+        "stratum_id": "S4_omitted_vacuum_state",
+        "truth": "3 vacuum x 3 static truth; fitted model remains 2 vacuum x 2 static"
+      },
+      {
+        "child_artifact_hashes_sha256": "b8a431eb49ccc2a5c06421da04def331bd83c8391c8a684f1c4e8868167b7e5f",
+        "child_report": "S5_dependent_unequal_variance_blocks",
+        "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+        "coverage": {
+          "familywise_bonferroni72": {
+            "planned_panels": 12,
+            "rate": 0.0,
+            "successes": 0,
+            "wilson95": [
+              2.7755575615628914e-17,
+              0.24249400665524085
+            ]
+          },
+          "pointwise_by_term": {
+            "h": {
+              "cluster_mean": 0.9270833333333331,
+              "cluster_t95": [
+                0.891163739196268,
+                0.9630029274703983
+              ],
+              "n_independent_panels": 12
+            },
+            "q": {
+              "cluster_mean": 0.17361111111111113,
+              "cluster_t95": [
+                0.043019267699921815,
+                0.30420295452230045
+              ],
+              "n_independent_panels": 12
+            },
+            "x": {
+              "cluster_mean": 0.934027777777778,
+              "cluster_t95": [
+                0.8842326645402709,
+                0.9838228910152851
+              ],
+              "n_independent_panels": 12
+            }
+          }
+        },
+        "denominators": {
+          "panels": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 12,
+            "valid": 12
+          },
+          "q_h_x_cells": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 864,
+            "valid": 864
+          },
+          "unique_raw_matrix_hashes": 12
+        },
+        "fit_diagnostics": {
+          "failed_fit_status_counts": {},
+          "max_jacobian_condition_number": 864090245.7885277,
+          "median_jacobian_condition_number": 19548.41360245858,
+          "n_condition_numbers": 12
+        },
+        "noise_model": {
+          "model": "stationary_ar1",
+          "rho": 0.5,
+          "scale_by_T": {
+            "3": 0.5,
+            "4": 0.5,
+            "5": 0.5,
+            "6": 1.0,
+            "7": 2.0
+          }
+        },
+        "stratum_id": "S5_dependent_unequal_variance_blocks",
+        "truth": "2 vacuum x 3 static states; original energies and overlaps"
+      }
+    ],
+    "familywise_72": {
+      "planned_panels": 60,
+      "pooled_rate_descriptive_only": 0.0,
+      "successes": 0
+    }
+  },
+  "denominators": {
+    "familywise_events": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 60,
+      "valid": 60
+    },
+    "panels": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 60,
+      "valid": 60
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 4320,
+      "valid": 4320
+    },
+    "unique_raw_matrix_hashes": 60
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "interpretation_boundary": {
+    "calibration_claim": false,
+    "certified": false,
+    "confirmatory_requirement": "retain the separately frozen five-stratum design of 606 independent panels per stratum and at least 588 familywise successes per stratum for its declared p=0.98 power calculation",
+    "interval_or_model_tuning_on_screening_panels": false,
+    "physical_score": null,
+    "purpose": "locate qualitatively distinct failure modes and verify the report pipeline",
+    "sealed_data_access": false
+  },
+  "physical_measurements": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "protocol": {
+    "certified": false,
+    "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+    "confirmatory_boundary": {
+      "calibration_claim": false,
+      "certified": false,
+      "confirmatory_requirement": "retain the separately frozen five-stratum design of 606 independent panels per stratum and at least 588 familywise successes per stratum for its declared p=0.98 power calculation",
+      "interval_or_model_tuning_on_screening_panels": false,
+      "physical_score": null,
+      "purpose": "locate qualitatively distinct failure modes and verify the report pipeline",
+      "sealed_data_access": false
+    },
+    "frozen_protocol_sha256": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+    "panels_per_stratum": 12,
+    "physical_score": null,
+    "schema": "wilson-f-two-sector-multistratum-screen-run-v1",
+    "seed_rule": "2026112900 + 100 * stratum_index + panel_index; both indices are zero-based",
+    "source_hashes": {
+      "finite_nt_trace_diagnostic.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+      "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+      "multistratum_screen.py": "e9970ceb438969ac9a685dc6b11189709251812588c2d7ad176d66689ef0b06f",
+      "multistratum_screen_protocol.json": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+      "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+      "omitted_coverage_diagnostic.py": "fc790f1eb85140bdc6c2be369bcc024c710ae0b37e1538653f967fb1ac6e37a1",
+      "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+      "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+      "two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e"
+    },
+    "strata_order": [
+      "S1_high_overlap_omitted_static",
+      "S2_near_degenerate_static",
+      "S3_weak_operator_ground_overlap",
+      "S4_omitted_vacuum_state",
+      "S5_dependent_unequal_variance_blocks"
+    ]
+  },
+  "schema": "wilson-f-two-sector-multistratum-screen-summary-v1",
+  "summary": "This 5x12 screen is a synthetic diagnostic under five predeclared stresses. The Monte Carlo intervals are deliberately descriptive at n=12 and do not alter the frozen 606-panel/588-success confirmatory plan."
+}

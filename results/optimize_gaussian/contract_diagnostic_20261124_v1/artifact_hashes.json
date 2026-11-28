@@ -1,0 +1,7 @@
+{
+  "README.md": "734c1eefe16abcf7516d633d3d982728c61434ed951ddf1ae7cee02d1b459099",
+  "contract_diagnostics.json": "c3c059b4f5e169e9b2bc3fe02f063cd8d846e4e1437aaafb1a5d64aada7d0767",
+  "contract_summary.csv": "9bd71db582ff9fd6bdf59360f029433cb7366e8e753b654a5be0110ff90782e5",
+  "protocol.json": "94dc9f8e8cd8df94f86d3438fab221d1b5617b73bb37f5d683f7309bcb9955d0",
+  "snapshot_optimize_contract.py": "ced928d993f1395fa18ab5ff4fac0a6195216f063644a55c7f378ea05db78c0e"
+}

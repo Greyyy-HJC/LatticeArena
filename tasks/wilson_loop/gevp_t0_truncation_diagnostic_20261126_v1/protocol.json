@@ -1,0 +1,132 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_FORWARD_SPECTRUM_DEVELOPMENT_ONLY_NOT_CALIBRATION",
+  "contract_sha256": "367251c46d4e124642a9b9423afec1fbebcf5d6e496ba615a713c916f0b292c4",
+  "denominators": {
+    "deterministic_gevp_points": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 19,
+      "unit": "one fixed-time pair (mode,t,t0)",
+      "valid": 19
+    },
+    "physical_certification_gate": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    },
+    "physical_inputs": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "unit": "raw correlator matrix or physical fit receipt",
+      "valid": 0
+    },
+    "synthetic_model": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    }
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "method": {
+    "contract_td": 2,
+    "effective_energy": "log(lambda_0(t,t0)/lambda_0(t+1,t0))",
+    "fit_times": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "fixed_t0_sensitivity_values": [
+      1,
+      2,
+      3
+    ],
+    "gevp": "C(t)v=lambda(t,t0)C(t0)v",
+    "paired_time_condition": "t0=ceil((t+1)/2), so t0>=t/2 for both lambda times",
+    "selected_contract_t0": 1,
+    "td_semantics": "not defined by this diagnostic; current contract must say whether td freezes eigenvectors or denotes another time"
+  },
+  "mode_summaries": {
+    "fixed_t0_1": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.11856727178065252,
+      "mean_abs_bias_in_fit_window": 0.06275342089451583,
+      "planned": 5,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 5
+    },
+    "fixed_t0_2": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.10154284028634353,
+      "mean_abs_bias_in_fit_window": 0.05213106873396918,
+      "planned": 5,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 5
+    },
+    "fixed_t0_3": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.06486448289055369,
+      "mean_abs_bias_in_fit_window": 0.0375244224855032,
+      "planned": 4,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 4
+    },
+    "paired_time_condition_t0_ge_half": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.10154284028634353,
+      "mean_abs_bias_in_fit_window": 0.05011440612784936,
+      "planned": 5,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 5
+    }
+  },
+  "model": {
+    "bootstrap": false,
+    "energies": [
+      0.18,
+      0.32,
+      0.49,
+      0.7
+    ],
+    "formula": "C_ij(t)=sum_n Z_ni*conj(Z_nj)*exp(-E_n*t)",
+    "measurement_noise": false,
+    "operators": 3,
+    "overlaps_state_by_operator": [
+      [
+        1.0,
+        0.8,
+        0.55
+      ],
+      [
+        0.72,
+        -0.35,
+        0.6
+      ],
+      [
+        0.45,
+        0.62,
+        -0.5
+      ],
+      [
+        1.2,
+        0.75,
+        0.95
+      ]
+    ],
+    "states": 4,
+    "temporal_extent": "infinite_forward_model; no finite-Nt or thermal term"
+  },
+  "physical_score": null,
+  "schema": "wilson-gevp-t0-truncation-diagnostic-v1",
+  "source_sha256": "732cf530e540dac90d1d0c05d2216be7a9b8905f8eb790ac10fabdb087dc4871",
+  "status": "DIAGNOSTIC_ONLY"
+}

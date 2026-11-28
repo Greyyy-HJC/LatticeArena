@@ -1,0 +1,13 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "2d1c2f545a83a3890489c646304b4bbcca3d7c56fb6cc8daac1a179bd535d0a9",
+    "chebyshev_positivity.png": "726c8211606e560a49516eecc4c8e3f661fa95d1c41b4499ccec53ac34da089d",
+    "denominator_summary.csv": "621a08192d6b99580bbfcd7d4d6f6d1f621cf8785e6635b3af7609223d091945",
+    "interval_minima.csv": "85034d8bc6b26b94254016bb4de07547cb03711892abc4079d7ca197a8d5bb19",
+    "protocol.json": "76f17d1f12ea1cbb295d77a50f1fef9fa75d226c627bed28bd81fd4cd381c0da",
+    "summary.json": "3e1329a4eadb9605dce7e62519a72940611a84e195ed15339992fb885349391d",
+    "snapshot_chebyshev_interval.py": "7f8ba0f4836b35f7514a1ab2e668429c34bef169141069649427519e508cc40b",
+    "snapshot_chebyshev_positivity_diagnostic.py": "7202337ad82f0e86531f3964b86f1e5523b491127a17958f5dc072378bd8204f"
+  }
+}

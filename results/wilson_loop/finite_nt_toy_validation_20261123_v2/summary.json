@@ -1,0 +1,74 @@
+{
+  "schema": "wilson-finite-nt-toy-validation-v1",
+  "status": "SYNTHETIC_ALGEBRA_VALIDATION_ONLY",
+  "physical_score": null,
+  "data_access": "No Wilson-loop measurements, sealed split, GPU, or QUDA data were read.",
+  "unit": "dimensionless lattice units; V0 is a_t*V and gaps are a_t*Delta",
+  "temporal_extent": 16,
+  "time_extents": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "parameters": {
+    "R": {
+      "A0": 1.2,
+      "V0": 0.52,
+      "Q": 0.9,
+      "H": 0.3,
+      "X": 0.2,
+      "gap_q": 0.35,
+      "gap_0": 0.25
+    },
+    "R_plus_1": {
+      "A0": 0.9,
+      "V0": 0.65,
+      "Q": 1.3,
+      "H": 0.45,
+      "X": 0.15,
+      "gap_q": 0.3,
+      "gap_0": 0.25
+    }
+  },
+  "formulae": {
+    "q": "Q*exp(-gap_q*t)",
+    "h": "H*exp(-gap_0*(N_t-t))",
+    "x": "X*exp(-gap_q*t-gap_0*(N_t-t))",
+    "logW": "log(A0)-V0*t+log1p(q+h+x)",
+    "chi": "-[logW(R+1,t+1)+logW(R,t)-logW(R+1,t)-logW(R,t+1)]",
+    "force_bias": "chi-(V0(R+1)-V0(R))=-Delta_R_Delta_t_delta",
+    "envelope": "sum of log1p(q+h+x) over the four loop points"
+  },
+  "identity_max_abs_error": 7.632783294297951e-16,
+  "all_envelopes_cover": true,
+  "denominator_summary": [
+    {
+      "unit": "hypothetical toy Creutz time point",
+      "planned": 5,
+      "valid": 5,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Deterministic synthetic identities, not measured samples."
+    },
+    {
+      "unit": "four-loop evaluations in toy stencils",
+      "planned": 20,
+      "valid": 20,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Four symbolic loop points per planned toy time point."
+    }
+  ],
+  "planned_time_points": 5,
+  "source_sha256": "bafc037fe07fa570520ebe822e9e72129eff4cdc9aafabcecccaa6813d3da0b8",
+  "files": [
+    "README.md",
+    "toy_validation.csv",
+    "denominator_summary.csv",
+    "finite_nt_toy_validation.png",
+    "summary.json",
+    "artifact_hashes.json"
+  ]
+}

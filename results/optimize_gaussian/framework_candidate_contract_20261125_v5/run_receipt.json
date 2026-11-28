@@ -1,0 +1,70 @@
+{
+  "artifact_hashes": {
+    "README.md": "07a2833ff97ea3931f20c7d4542238ea8afdabff7c7af768184e759759eedddb",
+    "contract.json": "d1fb2e9a233fc38eef1b35b3e61c48d8f9375fac66d2a95a04e4420fff83ccde",
+    "snapshot_candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+    "snapshot_chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_core_specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+    "snapshot_core_state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+    "snapshot_kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+    "snapshot_research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+  },
+  "denominators": {
+    "coefficient_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 0,
+      "unit": "no D04 objective supplied",
+      "valid": 0
+    },
+    "run_state_gates": {
+      "abstained": 5,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5,
+      "unit": "one physical certification stage in core.RunState",
+      "valid": 0
+    },
+    "schema_fixture": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one illustrative candidate descriptor; no fit or measurement",
+      "valid": 1
+    }
+  },
+  "reason_rows": [
+    {
+      "count": 5,
+      "reason": "physical certification awaits independent receipts and explicit authorization",
+      "state": "abstained",
+      "unit": "run_state_gates"
+    }
+  ],
+  "scenario": {
+    "assumptions": [
+      "D11 production review and receipts remain open",
+      "the controls are illustrative"
+    ],
+    "description": "Schema validation only; no fitted coefficients or measurements.",
+    "name": "optimize-chebyshev-schema-example",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+      "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "core/state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+      "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+    },
+    "unit": "one illustrative candidate descriptor"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "selected research-contract defaults -> validate five Bernstein controls -> emit candidate descriptor -> CPU operator helper; D04/D06 empirical receipts, D11 production review and measurement authorization remain open"
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "optimize-d04-ar1-bootstrap-source-hashes-v1",
+  "sources": {
+    "bootstrap_helpers": "6afa9ae799a3ff38572d2648b8566630c1ff9a4453cac3e5e5c0b620c72c8934",
+    "contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "diagnostic": "ab1b7d388ffb460e5bb4c914cd7bd9f1d70fd633c999ee8a9a48e3cc994668fa",
+    "gof_generator": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "test": "7c46fa2df386d150f07444e5b91efc67769c2d3518230c2646dd59827ddb718f"
+  }
+}

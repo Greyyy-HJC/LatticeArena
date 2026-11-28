@@ -1,0 +1,31 @@
+{
+  "blocks_per_stratum": 96,
+  "classification": "DETERMINISTIC_SYNTHETIC_IDENTIFIABILITY_SCREEN",
+  "coverage_claim": false,
+  "failure_rule": "retain each panel; no model fit or rank failure is converted to a point estimate",
+  "relative_noise": 0.003,
+  "report_recovery": "All strata fits and receipts were persisted. The first README render failed on an unescaped literal dict brace; this recovery changes report formatting/source hashes only and reuses the saved matrices and fit results without refitting.",
+  "schema": "wilson-three-static-identifiability-protocol-v1",
+  "seed_rule": "2026114200 + stratum_index",
+  "source_hashes": {
+    "bootstrap_snapshot_helper.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "identifiability_screen.py": "f5a21c4380c5c07043d46fe2cdc4440bae3cfdee495c8cf597d5dbbf1f6d4559",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "three_static_fit_pilot.py": "e8f41a6c2b04456889d605ab26ee0e0690c134d132593540c2049f12b0045f9e",
+    "transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_static_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77"
+  },
+  "strata": [
+    "baseline",
+    "near_degenerate",
+    "weak_ground_overlap",
+    "omitted_vacuum_truth",
+    "dependent_unequal_variance"
+  ]
+}

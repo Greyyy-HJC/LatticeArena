@@ -1,0 +1,36 @@
+{
+  "schema": "trainable-w-replication-report-v1",
+  "classification": "synthetic operator-objective diagnostic only",
+  "physical_score": null,
+  "denominators": {
+    "planned_panels": 240,
+    "valid_panels": 240,
+    "failed_panels": 0,
+    "abstained_panels": 0,
+    "planned_fit_links": 480,
+    "valid_fit_links": 480,
+    "failed_fit_links": 0,
+    "abstained_fit_links": 0,
+    "planned_heldout_links": 480,
+    "valid_heldout_links": 480,
+    "failed_heldout_links": 0,
+    "abstained_heldout_links": 0,
+    "planned_solver_runs": 1920,
+    "returned_solver_runs": 1920,
+    "budget_stops": 566,
+    "solver_non_success": 566,
+    "excluded_samples": 0
+  },
+  "replicates_per_cell": 20,
+  "paired_median_bootstrap_draws": 10000,
+  "source_sha256": {
+    "trainable_w_stress_diagnostic.py": "d31da27e653e31b3fb6e15a542bf21ce3271e8801670538223a461c6428d860a",
+    "trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0",
+    "trainable_w_operator_diagnostic.py": "584235dd49eab347c4ac078fdc00724bdf1f3b31eb6fc1d56d05fc688df2596b",
+    "trainable_w_diagnostic.py": "9d772bff2af5aaa8f7bfbf4736b419a57b9d1fe90dd834c3a27c13f07404298e",
+    "features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+  },
+  "full_raw_artifact_path": "results/optimize_gaussian/trainable_w_stress_20261126_v7/",
+  "included_panel_rows": 240
+}

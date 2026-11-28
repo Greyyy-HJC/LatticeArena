@@ -1,0 +1,4 @@
+unit,planned,valid,failed,abstained,interpretation
+randomized parameter case,4000,4000,0,0,All cases use prespecified positive synthetic parameters; valid means the algebra checks completed.
+four-loop evaluation,16000,16000,0,0,Each Creutz stencil contains four finite-N_t loop values.
+envelope coverage check,4000,4000,0,0,A failed case would contradict the declared positive-contamination envelope.

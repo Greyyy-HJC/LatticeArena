@@ -1,0 +1,99 @@
+{
+  "analysis_source_hashes": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "test_two_sector_fit.py": "6d2f0ab18b6ed75075c9ddb13c2541899631a2c03d7e24f88ddda3e95cf230e3",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e",
+    "two_sector_fit_diagnostic.py": "e86eca8e99c0359326f014989e304bff608bad27ec72dfb3113885fe46e3a4d5",
+    "two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_omitted_state_diagnostic.py": "f230f061cde010efc61182e45b83d2d8e7d3102fa788b1145f2dd0c28a7c71ed"
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_OMITTED_STATIC_STATE_SINGLE_PANEL_NOT_COVERAGE",
+  "denominators": {
+    "diagonal_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    },
+    "diagonal_qhx": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    },
+    "gls_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    },
+    "gls_qhx": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    },
+    "truth_comparison": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 72,
+      "valid": 72
+    }
+  },
+  "fit": {
+    "covariance_eigenvalue_floor_relative": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "coverage_calibrated": false,
+    "data_components": 180,
+    "fit_parameters": 45,
+    "interval": "finite-difference delta; pointwise and Bonferroni-72 normal upper",
+    "objective_comparison": [
+      "diagonal",
+      "regularized_full_covariance"
+    ],
+    "starts": [
+      [
+        0.15,
+        0.2
+      ],
+      [
+        0.3,
+        0.35
+      ],
+      [
+        0.55,
+        0.5
+      ]
+    ],
+    "state_count": "2 vacuum x 2 static fitted to 2 vacuum x 3 static truth"
+  },
+  "generator": {
+    "blocks": 96,
+    "fit_static_states": 2,
+    "fit_vacuum_states": 2,
+    "noise_fraction": 0.003,
+    "omitted_static_state": "third static-source level at each R",
+    "seed": 2026112739,
+    "static_states": 3,
+    "vacuum_states": 2
+  },
+  "input_hashes": {
+    "lane_contract": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "manifest": "f7b8dd8a9cc2b5a6f6675914ded2c797a612601a38f5b709c17d998107ca7501",
+    "raw_matrices": "53e25a2f961397fa9ac2a0dafc7071ce71900468ae41df7961d3713cc463257d"
+  },
+  "input_paths": {
+    "lane_contract": "lane_contract.json",
+    "manifest": "manifest.json",
+    "raw_matrices": "raw_matrices.npz"
+  },
+  "physical_score": null,
+  "schema": "wilson-f-two-sector-omitted-state-protocol-v1"
+}

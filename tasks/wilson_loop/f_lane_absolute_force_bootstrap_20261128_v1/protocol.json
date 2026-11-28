@@ -1,0 +1,136 @@
+{
+  "bootstrap": {
+    "block_length": 8,
+    "comparison": "same outer panel asymptotic normal delta interval from inverse whitened-Jacobian covariance",
+    "fit": "full regularized 2x2 finite-Nt GLS refit for every resample; no parameter draw approximation",
+    "interval": "equal-tail 95% percentile using ranks ceil((B+1)*0.025) and ceil((B+1)*0.975); any failed refit abstains the panel interval",
+    "replicates_per_panel": 39,
+    "resampling": "circular moving blocks with replacement; concatenate and truncate to 96 ordered block rows",
+    "tail_resolution": "B=39 makes the 95% interval the minimum-to-maximum bootstrap fit range; very coarse screening only"
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_FULL_REFIT_MBB",
+  "coverage": {
+    "delta": {
+      "median_width": 0.0004981055899855591,
+      "observed_rate": 0.5,
+      "planned_panels": 6,
+      "successes": 3,
+      "valid": 6
+    },
+    "full_refit_mbb": {
+      "median_width": 0.0026003444192108094,
+      "observed_rate": 1.0,
+      "planned_panels": 6,
+      "successes": 6,
+      "valid": 6
+    },
+    "warning": "six outer panels and a 39-draw extreme-order interval are a method-feasibility screen, not a coverage calibration"
+  },
+  "denominators": {
+    "bootstrap_intervals": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 6,
+      "valid": 6
+    },
+    "bootstrap_refits": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 234,
+      "valid": 234
+    },
+    "certification": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    },
+    "delta_intervals": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 6,
+      "valid": 6
+    },
+    "outer_panels": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 6,
+      "valid": 6
+    },
+    "physical_measurements": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "valid": 0
+    }
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "generator": {
+    "blocks_per_panel": 96,
+    "bootstrap_seed_rule": "panel_seed + 100000000 + draw_index",
+    "noise_model": "stationary AR(1) across ordered blocks",
+    "panel_count": 6,
+    "panel_seed_rule": "2026113800 + panel_index",
+    "panel_seeds_disjoint_from_previous_force_delta_screen": true,
+    "relative_noise": 0.003,
+    "rho": 0.5
+  },
+  "open_gates": [
+    "only one omitted-static-state positive-spectrum design; broader near-degenerate, weak-overlap, vacuum-omission and covariance strata remain untested",
+    "the full-refit bootstrap cannot remove model misspecification bias; this run does not profile a 3-static-state model envelope",
+    "independent production exporter, source/time/boundary conventions, N_t=32 thermal/mixed receipts, force scale and review are absent"
+  ],
+  "physical_score": null,
+  "schema": "wilson-absolute-force-bootstrap-summary-v1",
+  "seed_manifest": [
+    {
+      "matrix_sha256": "833dfdc4583dfbc17d957e7d688d0caa971e3037b98d64461d51b196d1721f83",
+      "panel": 0,
+      "seed": 2026113800
+    },
+    {
+      "matrix_sha256": "47ec74d70e6ff78024438287ddca0c1655d622886b3c34c02ecc44636a46a37e",
+      "panel": 1,
+      "seed": 2026113801
+    },
+    {
+      "matrix_sha256": "208196bbc52aaf903edfd20670d65db56daf3cb3cf7e16ac0e13c0aafbdc15f8",
+      "panel": 2,
+      "seed": 2026113802
+    },
+    {
+      "matrix_sha256": "b498360bdb4c11a5cdd82ba56aa939c0c88daa1c70bda05c3db50997e47dceaa",
+      "panel": 3,
+      "seed": 2026113803
+    },
+    {
+      "matrix_sha256": "979eb2cb582fdcef16cfe129ab3605d14fc4ca9f82f5cc4e98780457d699de48",
+      "panel": 4,
+      "seed": 2026113804
+    },
+    {
+      "matrix_sha256": "e53568a6f7d5ab93bea7d91104f46e976645121fc3d7d0c474919fb37d750762",
+      "panel": 5,
+      "seed": 2026113805
+    }
+  ],
+  "source_hashes": {
+    "absolute_force_bootstrap_diagnostic.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "two_sector_omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f"
+  },
+  "truth": {
+    "exact_force": 0.14999999999999997,
+    "fit_model": "2-vacuum x 2-static two-sector GLS",
+    "force_unit": "a_t energy difference per one spatial lattice step (Delta R=1)",
+    "static_states": 3,
+    "vacuum_states": 2
+  }
+}

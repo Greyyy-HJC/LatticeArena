@@ -1,0 +1,192 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "coverage": {
+    "average_pointwise_by_panel": {
+      "cluster_t95": [
+        0.6552597045284647,
+        0.724369925101165
+      ],
+      "rate": 0.6898148148148149
+    },
+    "familywise_bonferroni72": {
+      "planned_panels": 12,
+      "rate": 0.0,
+      "successes": 0,
+      "wilson95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ]
+    },
+    "pointwise_all_cells": {
+      "planned_cells": 864,
+      "pooled_rate_descriptive_only": 0.6898148148148148,
+      "successes": 596,
+      "warning": "cells within a panel share the same fit and are correlated; use panel-cluster summaries for inference",
+      "wilson95_cellwise_not_cluster_adjusted": [
+        0.658187672521419,
+        0.7197615446613111
+      ]
+    },
+    "pointwise_by_term": {
+      "h": {
+        "cluster_mean": 0.8958333333333331,
+        "cluster_t95": [
+          0.857552372918414,
+          0.9341142937482523
+        ],
+        "n_independent_panels": 12
+      },
+      "q": {
+        "cluster_mean": 0.21527777777777776,
+        "cluster_t95": [
+          0.14226562726004705,
+          0.2882899282955085
+        ],
+        "n_independent_panels": 12
+      },
+      "x": {
+        "cluster_mean": 0.9583333333333334,
+        "cluster_t95": [
+          0.9160958607639786,
+          1.0
+        ],
+        "n_independent_panels": 12
+      }
+    }
+  },
+  "denominators": {
+    "fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 12,
+      "valid": 12
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 864,
+      "valid": 864
+    },
+    "unique_panel_matrix_hashes": 12
+  },
+  "fit": {
+    "covariance_eigenvalue_floor_relative": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "fit_parameter_count": 45,
+    "interval_rule_frozen_across_panels": true,
+    "method": "regularized full-covariance GLS; q/h/x finite-difference delta normal uppers",
+    "model": "2 vacuum x 2 static (fixed across all strata)",
+    "pointwise_one_sided_level": 0.975,
+    "simultaneous_method": "one-sided Bonferroni over 72 q/h/x terms at family alpha 0.05"
+  },
+  "generator": {
+    "blocks_per_panel": 96,
+    "noise_model": {
+      "model": "iid_gaussian",
+      "scale_by_T": {}
+    },
+    "panel_independence": "fresh independent RNG stream per panel; blocks follow the declared within-panel noise model",
+    "panels": 12,
+    "relative_noise": 0.003,
+    "seed_rule": "numpy default_rng(2026113200 + panel_index); base follows 2026112900 + 100*stratum_index",
+    "truth": "3 vacuum x 3 static truth; fitted model remains 2 vacuum x 2 static"
+  },
+  "physical_score": null,
+  "report_metadata": {
+    "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+    "fit_model": "2 vacuum x 2 static (fixed across all strata)",
+    "interpretation": "This is the frozen 12-panel screen for `S4_omitted_vacuum_state`. It is used to identify qualitative failure modes and exercise the reproducible report path. The familywise Wilson interval and panel-cluster pointwise intervals are descriptive Monte Carlo summaries at this small n; they do not establish calibration or pass the separately frozen five-stratum confirmatory rule (606 panels and at least 588 familywise successes per stratum).",
+    "open_gates": [
+      "twelve independent panels per stratum are diagnostic screening only and cannot certify nominal coverage",
+      "no method, interval, fit window, covariance shrinkage or DGP parameter is selected from these screening results",
+      "synthetic source does not validate production exporter conventions, matched-Nt thermal/mixed receipts, static-force reference or physical uncertainty"
+    ],
+    "seed_rule": "numpy default_rng(2026113200 + panel_index); base follows 2026112900 + 100*stratum_index",
+    "split_prefix": "s4_omitted_vacuum_state",
+    "stratum_id": "S4_omitted_vacuum_state",
+    "stratum_index_zero_based": 3,
+    "truth": "3 vacuum x 3 static truth; fitted model remains 2 vacuum x 2 static"
+  },
+  "schema": "wilson-f-two-sector-omitted-coverage-protocol-v1",
+  "seed_manifest": [
+    {
+      "matrix_sha256": "7210fe77810aa1a77f6d65e13a2e45fd8a3501ce223a3795678bcaafde983482",
+      "panel": 0,
+      "seed": 2026113200
+    },
+    {
+      "matrix_sha256": "78adfa3b1b99f925df81f2e9c530e2181708858e8329c5dd2fe2b009f338458d",
+      "panel": 1,
+      "seed": 2026113201
+    },
+    {
+      "matrix_sha256": "cd88a1c24b00d9a71566f01d63108ffb3648cd30a8307eb2bdc898ee6111c2a9",
+      "panel": 2,
+      "seed": 2026113202
+    },
+    {
+      "matrix_sha256": "9f68b7ae56d8a9b3c97e73fbff08c8d2b7bb6bb3fef01c6964606bcaee885984",
+      "panel": 3,
+      "seed": 2026113203
+    },
+    {
+      "matrix_sha256": "bbded535377040a755c3c89c55187de1b7d55c6c136e06e9288a31647943e0ea",
+      "panel": 4,
+      "seed": 2026113204
+    },
+    {
+      "matrix_sha256": "03ce7aab8a4e1c82e740facb3d7239b98b37f5b20b8330aa08676bc77e8db8c2",
+      "panel": 5,
+      "seed": 2026113205
+    },
+    {
+      "matrix_sha256": "8eba4389f620448218068a790fce69a63ea98cc63ba6c62be8a8e2dd872cfc9d",
+      "panel": 6,
+      "seed": 2026113206
+    },
+    {
+      "matrix_sha256": "caa230e0816eb0dd8d4dac89cdad4a560e70ae449249d335cc4c9ae9fe348945",
+      "panel": 7,
+      "seed": 2026113207
+    },
+    {
+      "matrix_sha256": "4e8cbc120878e344ecd87ad12eba9b14e70c12dd7c882efecebeca6fa33cfb4d",
+      "panel": 8,
+      "seed": 2026113208
+    },
+    {
+      "matrix_sha256": "f4ca68fad56164a98699ddbdcb0e9eac7c0029c02fb54ae03bb3f869509c96ec",
+      "panel": 9,
+      "seed": 2026113209
+    },
+    {
+      "matrix_sha256": "abd9081ec03347e9aec6ef6e47d9cf9c061aeb8f7d58825b0592c0c3a0186f29",
+      "panel": 10,
+      "seed": 2026113210
+    },
+    {
+      "matrix_sha256": "bd75f09fcfb4ef5c8927c8e33d45b69c56084f997d74a681de54616be8acb8a6",
+      "panel": 11,
+      "seed": 2026113211
+    }
+  ],
+  "source_hashes": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "gevp_overlap_object.py": "f7a3f14d6a55b619abbadbce28b0127a65dbb7348120b86242073e891b2c83a3",
+    "gevp_t0_truncation.py": "732cf530e540dac90d1d0c05d2216be7a9b8905f8eb790ac10fabdb087dc4871",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e",
+    "two_sector_fit_initializer.py": "e86eca8e99c0359326f014989e304bff608bad27ec72dfb3113885fe46e3a4d5",
+    "two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_multistratum_screen.py": "e9970ceb438969ac9a685dc6b11189709251812588c2d7ad176d66689ef0b06f",
+    "two_sector_multistratum_screen_protocol.json": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+    "two_sector_omitted_coverage_diagnostic.py": "fc790f1eb85140bdc6c2be369bcc024c710ae0b37e1538653f967fb1ac6e37a1",
+    "two_sector_omitted_state_diagnostic.py": "f230f061cde010efc61182e45b83d2d8e7d3102fa788b1145f2dd0c28a7c71ed"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "certification_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_SINGLE_PANEL_METHOD_COMPARISON_NOT_COVERAGE",
+  "diagonal": {
+    "chi2": 111.63399464169404,
+    "condition_number": 123500.47576204207,
+    "rank": 45,
+    "status": "two_sector_fit_candidate"
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "open_gates": [
+    "single-generator one-panel result does not calibrate interval coverage",
+    "finite-difference delta intervals omit optimizer, model-selection and covariance-estimation uncertainty",
+    "the generator has exactly two states per sector and independent Gaussian blocks",
+    "the draft endpoint/time-origin convention is not validated against a production exporter",
+    "no thermal, mixed, reference-force, contamination or production statistical budget was evaluated",
+    "source hashes do not establish provenance, external review or authorization"
+  ],
+  "physical_measurements": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "regularized_gls": {
+    "chi2": 238.3079810008336,
+    "condition_number": 65389.85925717263,
+    "covariance_diagnostics": {
+      "block_count": 96,
+      "component_count": 180,
+      "condition_number": 4225.511777445157,
+      "covariance_of": "sample mean",
+      "diagonal_shrinkage": 0.25,
+      "eigenvalue_floor_relative": 1e-10,
+      "floor_active_count": 0,
+      "max_eigenvalue": 1.041614237703075e-08,
+      "raw_min_eigenvalue": -1.6917182608235078e-24,
+      "regularized_min_eigenvalue": 2.465060547844122e-12,
+      "shrunk_min_eigenvalue": 2.465060547844122e-12
+    },
+    "qhx_interval_coverage_calibrated": false,
+    "qhx_interval_method": "finite-difference delta method; pointwise 97.5% and 95% Bonferroni across 72 q/h/x terms",
+    "rank": 45,
+    "status": "two_sector_fit_candidate"
+  },
+  "schema": "wilson-f-two-sector-gls-diagnostic-summary-v1",
+  "single_panel_truth_diagnostic": {
+    "bonferroni_upper_contains_truth": 64,
+    "gls_standardized_absolute_error_max": 5.794582428968171,
+    "gls_standardized_absolute_error_median": 1.6143248317704657,
+    "interpretation": "one known-truth synthetic draw; not an estimate of repeated-sampling coverage",
+    "pointwise_upper_contains_truth": 56,
+    "terms": 72
+  }
+}

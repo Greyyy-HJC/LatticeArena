@@ -1,0 +1,48 @@
+{
+  "schema": "wilson-f-qhx-gaussian-parameter-maxt-screen-v1",
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "generated_on": "2026-11-28",
+  "base_multistratum_protocol_sha256": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+  "panels_per_stratum": 12,
+  "seed_rule": "2026113400 + 100 * stratum_index + panel_index; both indices are zero-based",
+  "previous_screen_seed_ranges": [
+    [2026112800, 2026112823],
+    [2026112900, 2026113311]
+  ],
+  "fit": {
+    "objective": "regularized_full_covariance_GLS",
+    "diagonal_shrinkage": 0.25,
+    "relative_eigenvalue_floor": 1e-10,
+    "starts": 3,
+    "vacuum_states": 2,
+    "static_states": 2
+  },
+  "candidate_interval": {
+    "name": "Gaussian fit-coordinate parameter propagation with max-T family upper",
+    "fit_covariance": "inverse whitened-Jacobian information",
+    "draws_per_panel": 2048,
+    "seed_rule": "outer_panel_seed + 7000000",
+    "family_size": 72,
+    "family_alpha": 0.05,
+    "studentization": "per-cell sample SD across transformed parameter draws",
+    "critical_value": "higher empirical quantile at 1-alpha of each draw's maximum one-sided studentized q/h/x deviation, clamped below at zero",
+    "invalid_draw_rule": "any invalid q/h/x parameter transform fails the entire panel interval; retain all planned draws"
+  },
+  "comparison": {
+    "baseline": "same-panel finite-difference delta normal upper with Bonferroni-72 family adjustment",
+    "estimand": "panel-level simultaneous containment of all 72 exact synthetic q/h/x truths",
+    "truth_strata": [
+      "S1_high_overlap_omitted_static",
+      "S2_near_degenerate_static",
+      "S3_weak_operator_ground_overlap",
+      "S4_omitted_vacuum_state",
+      "S5_dependent_unequal_variance_blocks"
+    ]
+  },
+  "screening_rule": "If any stratum has fewer than 10/12 valid panel-level familywise successes, or any max-T panel interval abstains, stop this candidate. If every stratum reaches at least 10/12 with no interval abstentions, it is only eligible for separately reviewed confirmatory calibration; no synthetic screen certifies coverage.",
+  "no_tuning": true,
+  "sealed_data_access": false,
+  "gpu_quda": false,
+  "physical_score": null,
+  "certified": false
+}

@@ -1,0 +1,73 @@
+{
+  "certified": false,
+  "denominators": {
+    "deterministic_gevp_points": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 19,
+      "unit": "one fixed-time pair (mode,t,t0)",
+      "valid": 19
+    },
+    "physical_certification_gate": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    },
+    "physical_inputs": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "unit": "raw correlator matrix or physical fit receipt",
+      "valid": 0
+    },
+    "synthetic_model": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    }
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "mode_summaries": {
+    "fixed_t0_1": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.11856727178065252,
+      "mean_abs_bias_in_fit_window": 0.06275342089451583,
+      "planned": 5,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 5
+    },
+    "fixed_t0_2": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.10154284028634353,
+      "mean_abs_bias_in_fit_window": 0.05213106873396918,
+      "planned": 5,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 5
+    },
+    "fixed_t0_3": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.06486448289055369,
+      "mean_abs_bias_in_fit_window": 0.0375244224855032,
+      "planned": 4,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 4
+    },
+    "paired_time_condition_t0_ge_half": {
+      "abstained": 0,
+      "failed": 0,
+      "max_abs_bias_in_fit_window": 0.10154284028634353,
+      "mean_abs_bias_in_fit_window": 0.05011440612784936,
+      "planned": 5,
+      "unit": "dimensionless_energy_at_a_t_units_per_t_point",
+      "valid": 5
+    }
+  },
+  "physical_score": null,
+  "schema": "wilson-gevp-t0-truncation-diagnostic-v1",
+  "status": "DIAGNOSTIC_ONLY"
+}

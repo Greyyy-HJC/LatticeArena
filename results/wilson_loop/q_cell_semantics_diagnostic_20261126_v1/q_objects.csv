@@ -1,0 +1,9 @@
+object_kind,kernel_id,basis_operator_id,gevp_td,T,q_T,use
+bare_basis_operator,identity,identity,,5,0.4073639888140229,selected_force_q
+bare_basis_operator,identity,identity,,6,0.318908765519512,selected_force_q
+bare_basis_operator,ape_alpha0.4_n5,APE (descriptive),,5,0.2878104821859539,descriptive_only
+bare_basis_operator,ape_alpha0.4_n5,APE (descriptive),,6,0.21494297729624637,descriptive_only
+bare_basis_operator,spatial_stout_rho0.10_n5,stout,,5,0.9879821724298494,selected_force_q
+bare_basis_operator,spatial_stout_rho0.10_n5,stout,,6,0.7741679025627795,selected_force_q
+gevp_composite_operator,,principal_vector_composite,2,5,8.88190916073967,separate_diagnostic_not_kernel_q
+gevp_composite_operator,,principal_vector_composite,2,6,7.710588023420434,separate_diagnostic_not_kernel_q

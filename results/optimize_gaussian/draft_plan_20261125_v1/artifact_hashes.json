@@ -1,0 +1,9 @@
+{
+  "README.md": "1f5a7bd18c839ddf8b051873faf6f5669a4746b5288d2c1c8a8603a657691248",
+  "run_plan.json": "fa32aa8f5797fa8ae11fa396c2931e95d78406ab78607a348c462ace1b65333e",
+  "snapshot_candidate_contract.py": "1a0b4c0431fb0e26f21ffdec7c2256a016f673deb7b3e80b68d65c8ec2d55bf6",
+  "snapshot_core_specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+  "snapshot_core_state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+  "snapshot_draft_plan.py": "9435a5fcb51677698bf2af94f262067237b4e181f189e22b4e6275826ef79c56",
+  "snapshot_research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+}

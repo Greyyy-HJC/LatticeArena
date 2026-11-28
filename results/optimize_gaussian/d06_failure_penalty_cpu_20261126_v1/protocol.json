@@ -1,0 +1,50 @@
+{
+  "data_access": "none; no gauge, reference-fit, sealed split, GPU, or QUDA input",
+  "estimand_rule": "X=1 for a declared assigned-arm optimizer failure; otherwise X is the predeclared clipped q loss",
+  "evidence_class": "exact_mixture_sensitivity",
+  "failure_scenarios": {
+    "comparators_only": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "same_failure_rate_all_arms": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "trainable_w_only": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "formula_scenario_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 303,
+    "unit": "one exact probability and failure-pattern scenario; not a dataset or measurement",
+    "valid": 303
+  },
+  "invalid_input_rule": "missing/corrupt q outside a declared optimizer failure is not imputed and causes ABSTAIN at the runner",
+  "limits": [
+    "success risks and failure patterns are illustrative assumptions, not measured rates",
+    "does not establish independence of physical macroblocks or a physical failure probability",
+    "does not include D04 reference-fit uncertainty or production solver receipts"
+  ],
+  "mixture_formula": "mu_a = p_fail,a + (1-p_fail,a)*mu_success,a",
+  "optimizer_failure_rule": "the whole paired arm-macroblock receives loss 1 and remains in the planned denominator",
+  "physical_score": null,
+  "r_star": 1.1111111111111112,
+  "schema": "optimize-d06-failure-penalty-diagnostic-v1",
+  "source_hashes": {
+    "bounded_block_risk.py": "3f7c56686cefbd16f5387df18bd1a8757cc317b8927954e41ce48653ea1f9892",
+    "d06_failure_penalty_diagnostic.py": "cedf27433b4c77db21196df5c4a3363d7ac1bfd1e70a92cee970146c12bf4175"
+  },
+  "status": "ANALYTIC_SENSITIVITY_ONLY_NOT_CALIBRATION",
+  "success_risk_examples": {
+    "degree4_chebyshev": 0.075,
+    "same_budget_slsqp": 0.08,
+    "trainable_w": 0.04
+  }
+}

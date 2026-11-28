@@ -17,6 +17,15 @@ def test_task_spec_validation():
         task_spec(**dict(good, geometry=[16, 16]))
     with pytest.raises(ValueError, match='splits'):
         task_spec(**dict(good, splits={'development': [0, 9]}))
+    with pytest.raises(ValueError, match='overlap'):
+        task_spec(**dict(good, splits={'development': [0, 9], 'validation': [9, 19]}))
+    with pytest.raises(ValueError, match='start greater than end'):
+        task_spec(**dict(good, splits={'development': [9, 0], 'validation': [10, 19]}))
+    with pytest.raises(ValueError, match='inclusive'):
+        task_spec(**dict(good, splits={'development': [0, '9'], 'validation': [10, 19]}))
+    with pytest.raises(ValueError, match='split names'):
+        task_spec(**dict(good, splits={
+            'development': [0, 9], 'validation': [10, 19], 1: [20, 29]}))
 
 
 def test_operator_and_candidate_contracts():
@@ -91,6 +100,20 @@ def test_run_state_transitions_and_score_gating():
     assert state.score_or_null() == 42.0
     state.observe_validation('v3')
     assert state.validation_observed
+
+
+def test_run_state_abstention_is_explicit_terminal_and_never_scores():
+    from core.state import RunState
+
+    state = RunState().abstain('reference', 'independent reference receipt missing')
+    assert state.status['reference'] == 'abstained'
+    assert state.evidence['reference'] == ['independent reference receipt missing']
+    assert not state.physical_ready()
+    assert state.score_or_null() is None
+    with pytest.raises(ValueError, match='illegal transition'):
+        state.set('reference', 'draft')
+    with pytest.raises(ValueError, match='nonempty reason'):
+        RunState().set('statistical', 'abstained')
 
 
 def test_cost_ledger_phases_and_environment():

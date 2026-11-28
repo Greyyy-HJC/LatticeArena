@@ -1,0 +1,11 @@
+{
+  "files": {
+    "README.md": "a87b05cf8c2dcc04f4308dc2635fa1fce560d9832fda357760bf485532785311",
+    "protocol.json": "f7df9710aa49f6fbfd0a54c6f9808d305af05d23f0dd316e07f97ee77208dcc5",
+    "q_bare_basis_vs_gevp.png": "f4ac5733ae3dcde0dc0ad128ccde435ec0c914a8238d64a6d872190bd3656925",
+    "q_cell_semantics_diagnostic.py": "8a3d1cef10b2ac00ce84550ae80ba7d99d95cb171f0577ab413de21ca10c87e3",
+    "q_objects.csv": "185dcb3d413a1b4fd4c9fadc77a07c7fd6e8b1e8d6c27d4b5684da0fb373f456",
+    "summary.json": "a0097652e2e12c647dbfce21e2bf958e7872549fc60f316506d1c340cfd4b034"
+  },
+  "schema": "latticearena-artifact-hashes-v1"
+}

@@ -1,0 +1,54 @@
+{
+  "R": 2,
+  "T": 5,
+  "beta": 6.0,
+  "boundary_conditions": "periodic_all_directions",
+  "formula": "-[log Wbar(3,6)+log Wbar(2,5)-log Wbar(3,5)-log Wbar(2,6)]",
+  "geometry": [
+    16,
+    16,
+    16,
+    16
+  ],
+  "input_generation": "dd38c39f21982307c5abc2d5093b93c2aa12ef8848d6f9136519b1f8054b619e",
+  "input_hashes": {
+    "development_commit_sha256": "0ff2766e4550d0a687d051f44376af5528cb047b05c556912b50ad5c9833951a",
+    "development_npz_sha256": "da8cc5d72481475a8cd6d821692db2e21555c0bd5b1849747dc75a946dbd7209",
+    "development_provenance_sha256": "082ad7060e776f6e724ee02ac1de9c94e706332eb875019f3b9d1c45d4e9e82b",
+    "loops_array_sha256": "513b67dde074d96c89c82395151a0079ca746be63c7dd5ac5c6ea1ae6d243dcc"
+  },
+  "input_protocol_hash": "e861d2c05e690567cc023cb2929647cbf24465a44faa1cf7b02f19690da56b6c",
+  "input_split": "development IDs 0-99 only",
+  "kernel_id": "stout_rho0.1_n5",
+  "kernel_parameters": {
+    "kind": "stout",
+    "rho": 0.1,
+    "steps": 5
+  },
+  "loop_mean_rule": "paired configuration/block means first; take logs only when all four means are finite and positive",
+  "matplotlib_version": "3.11.1",
+  "numeric_gates": {
+    "interpretation": "empirical preflight checks only; bootstrap assumptions/coverage are not established",
+    "interval_hull_halfwidth_max": 0.02,
+    "invalid_fraction_max": 0.01
+  },
+  "numpy_version": "2.5.1",
+  "resampling": {
+    "block_lengths": [
+      2,
+      5,
+      10
+    ],
+    "draws_per_length": 10000,
+    "hull": "minimum lower endpoint to maximum upper endpoint across L=2,5,10",
+    "interval": "equal-tail percentile interval at lane alpha=0.025; quantiles 0.0125 and 0.9875",
+    "invalid_draw": "any required loop mean nonfinite or nonpositive; retained in planned denominator",
+    "method": "circular moving-block bootstrap over saved-configuration order",
+    "same_indices_for_all_four_loop_means": true,
+    "seed_rule": "seed = 20261125 + block_length"
+  },
+  "schema": "wilson-c-lane-open-development-diagnostic-v1",
+  "source_script_sha256": "def951b70b948d78fa90f23daa0bc8c582928aa9521543ac532dc0eaf2b4f372",
+  "status": "RETROSPECTIVE_DEVELOPMENT_ONLY_NOT_CONFIRMATION",
+  "temporal_extent_Nt": 16
+}

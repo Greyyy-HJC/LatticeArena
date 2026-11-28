@@ -1,0 +1,95 @@
+{
+  "schema": "wilson-f-two-sector-multistratum-screen-protocol-v1",
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "generated_on": "2026-11-28",
+  "panels_per_stratum": 12,
+  "blocks_per_panel": 96,
+  "seed_rule": "2026112900 + 100 * stratum_index + panel_index; both indices are zero-based",
+  "legacy_seed_range": [2026112800, 2026112823],
+  "relative_noise_fraction": 0.003,
+  "lattice_axes": {
+    "Nt": [16, 32],
+    "R": [2, 3],
+    "T": [3, 4, 5, 6, 7],
+    "matrix": "3x3 Hermitian"
+  },
+  "fit": {
+    "vacuum_states": 2,
+    "static_states": 2,
+    "objective": "regularized_full_covariance_GLS",
+    "diagonal_shrinkage": 0.25,
+    "relative_eigenvalue_floor": 1e-10,
+    "starts": 3,
+    "pointwise_upper": "one-sided 97.5% finite-difference delta-normal",
+    "familywise_upper": "one-sided Bonferroni over 72 q/h/x terms at family alpha 0.05"
+  },
+  "strata": [
+    {
+      "id": "S1_high_overlap_omitted_static",
+      "truth": "2 vacuum x 3 static states; original energies and vacuum spectrum",
+      "transform": {
+        "static_state_index": 2,
+        "transition_amplitude_multiplier": 1.5
+      },
+      "noise": {"model": "iid_gaussian", "scale_by_T": {}}
+    },
+    {
+      "id": "S2_near_degenerate_static",
+      "truth": "2 vacuum x 3 static states; near-degenerate excited static levels",
+      "transform": {
+        "static_energies_by_R": {
+          "2": [0.44, 0.94, 0.965],
+          "3": [0.59, 1.07, 1.095]
+        }
+      },
+      "noise": {"model": "iid_gaussian", "scale_by_T": {}}
+    },
+    {
+      "id": "S3_weak_operator_ground_overlap",
+      "truth": "2 vacuum x 3 static states; operator 2 ground-sector overlaps suppressed",
+      "transform": {
+        "operator_index": 2,
+        "static_state_index": 0,
+        "vacuum_state_indices": [0, 1],
+        "transition_amplitude_multiplier": 0.04
+      },
+      "noise": {"model": "iid_gaussian", "scale_by_T": {}}
+    },
+    {
+      "id": "S4_omitted_vacuum_state",
+      "truth": "3 vacuum x 3 static states; fit remains 2 vacuum x 2 static",
+      "transform": {
+        "vacuum_energies": [0.0, 0.42, 0.70],
+        "added_vacuum_amplitude_source_index": 0,
+        "added_vacuum_amplitude_multiplier": 0.25
+      },
+      "noise": {"model": "iid_gaussian", "scale_by_T": {}}
+    },
+    {
+      "id": "S5_dependent_unequal_variance_blocks",
+      "truth": "2 vacuum x 3 static states; original energies and overlaps",
+      "transform": {},
+      "noise": {
+        "model": "stationary_ar1",
+        "rho": 0.5,
+        "stationary_initial_state": true,
+        "innovation_scale_by_T": {
+          "3": 0.5,
+          "4": 0.5,
+          "5": 0.5,
+          "6": 1.0,
+          "7": 2.0
+        }
+      }
+    }
+  ],
+  "interpretation_boundary": {
+    "purpose": "locate qualitatively distinct failure modes and verify the report pipeline",
+    "calibration_claim": false,
+    "interval_or_model_tuning_on_screening_panels": false,
+    "confirmatory_requirement": "retain the separately frozen five-stratum design of 606 independent panels per stratum and at least 588 familywise successes per stratum for its declared p=0.98 power calculation",
+    "physical_score": null,
+    "certified": false,
+    "sealed_data_access": false
+  }
+}

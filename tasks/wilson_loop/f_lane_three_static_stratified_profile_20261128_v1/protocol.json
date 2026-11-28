@@ -1,0 +1,20 @@
+{
+  "new_panel_DGP": "96 ordered blocks; each stress profile uses the previously declared exact positive-spectrum generator setting",
+  "new_strata": [
+    "baseline",
+    "near_degenerate",
+    "omitted_vacuum_truth",
+    "dependent_unequal_variance"
+  ],
+  "physical_gate": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR",
+  "physical_status": "NOT_READY/UNCERTIFIED; F=GROUND_STATE_FORCE_UNCERTIFIED",
+  "profile": "no floor and per-panel oracle truth floor; fixed force grid plus fitted center; two starts per cell; nominal delta objective 3.84",
+  "replicates_per_new_stratum": 3,
+  "reused_weak_panels": {
+    "artifact_manifest_schema": "wilson-weak-overlap-profile-calibration-artifact-hashes-v1",
+    "source_artifact_count": 45,
+    "source_report": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+  },
+  "schema": "wilson-f-lane-stratified-profile-protocol-v1",
+  "seed_rule": "2026114400 + 100*stratum_index + replicate_index"
+}

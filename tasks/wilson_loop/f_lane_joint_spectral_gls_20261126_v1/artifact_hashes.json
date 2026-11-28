@@ -1,0 +1,11 @@
+{
+  "README.md": "2efd32db4c5975db2a08c5e179a959746d2c1f61ac32592d9bc0ee8a70714419",
+  "protocol.json": "f79749ed82beda16e2516fa22faf719eef818b273432b6c126306b6068c8b471",
+  "replicates.csv": "12dadd9cce08a0e66351fad86cc607c8dbbf406af7ceb0c02e6087c98ed2dd24",
+  "coverage_summary.csv": "171b6acb4c1850c2c6f23e4b04e16ef4f7565440dd01bcab787c5713a0f7c3df",
+  "calibration_summary.csv": "640fbc2b81f2303de6f748db2a49df43027528becf811aa9eda21594dcd429b9",
+  "coverage_and_interval_width.png": "4bf4438e8c7b66ce55173ac5cf4e2e49d182367238e1e0512a5e69d324e28827",
+  "calibration_holdout_coverage.png": "df558a7cb9589b6b064dc2029b480cf7bc94de6dfd5498146937560ae2d46989",
+  "snapshot_f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+  "summary.json": "1eefae898fe7da69d10cecb90fda7865b7965fc98760581688a76bb0a366c002"
+}

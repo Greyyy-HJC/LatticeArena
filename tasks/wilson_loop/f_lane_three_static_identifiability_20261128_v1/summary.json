@@ -1,0 +1,91 @@
+{
+  "certified": false,
+  "classification": "DETERMINISTIC_SYNTHETIC_IDENTIFIABILITY_SCREEN",
+  "denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 5,
+    "valid": 5
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "force_abs_error": {
+    "maximum": 0.007575591651002078,
+    "median": 0.0005534239765321858,
+    "valid_panels": 5
+  },
+  "physical_score": null,
+  "report_recovery": "All strata fits and receipts were persisted. The first README render failed on an unescaped literal dict brace; this recovery changes report formatting/source hashes only and reuses the saved matrices and fit results without refitting.",
+  "schema": "wilson-three-static-identifiability-summary-v1",
+  "scope_limits": [
+    "one deterministic panel per stratum does not estimate sampling coverage or failure rates",
+    "the five stress variations are method counterexamples, not physical parameter bounds",
+    "local Jacobian rank is not global identifiability and the candidate has no calibrated interval",
+    "production exporter/action convention, thermal/mixed bounds, force reference, independent review and authorization remain absent"
+  ],
+  "source_hashes": {
+    "bootstrap_snapshot_helper.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "identifiability_screen.py": "f5a21c4380c5c07043d46fe2cdc4440bae3cfdee495c8cf597d5dbbf1f6d4559",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "three_static_fit_pilot.py": "e8f41a6c2b04456889d605ab26ee0e0690c134d132593540c2049f12b0045f9e",
+    "transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_static_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77"
+  },
+  "strata": [
+    {
+      "condition_number": 83533.76978138152,
+      "force_error": 0.0007656072581074813,
+      "force_estimate": 0.14923439274189249,
+      "force_truth": 0.14999999999999997,
+      "rank": 67,
+      "status": "three_static_fit_candidate",
+      "stratum": "baseline",
+      "valid": true
+    },
+    {
+      "condition_number": 1184703.1179356845,
+      "force_error": 0.00047964377057480023,
+      "force_estimate": 0.15047964377057477,
+      "force_truth": 0.14999999999999997,
+      "rank": 67,
+      "status": "three_static_fit_candidate",
+      "stratum": "near_degenerate",
+      "valid": true
+    },
+    {
+      "condition_number": 89475.18899999122,
+      "force_error": 0.007575591651002078,
+      "force_estimate": 0.15757559165100204,
+      "force_truth": 0.14999999999999997,
+      "rank": 67,
+      "status": "three_static_fit_candidate",
+      "stratum": "weak_ground_overlap",
+      "valid": true
+    },
+    {
+      "condition_number": 967167.6724581231,
+      "force_error": 0.0005534239765321858,
+      "force_estimate": 0.15055342397653215,
+      "force_truth": 0.14999999999999997,
+      "rank": 67,
+      "status": "three_static_fit_candidate",
+      "stratum": "omitted_vacuum_truth",
+      "valid": true
+    },
+    {
+      "condition_number": 127413.28966922477,
+      "force_error": 0.00015146244072050674,
+      "force_estimate": 0.14984853755927946,
+      "force_truth": 0.14999999999999997,
+      "rank": 67,
+      "status": "three_static_fit_candidate",
+      "stratum": "dependent_unequal_variance",
+      "valid": true
+    }
+  ]
+}

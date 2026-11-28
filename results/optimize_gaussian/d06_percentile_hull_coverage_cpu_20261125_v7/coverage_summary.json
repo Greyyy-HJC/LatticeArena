@@ -1,0 +1,407 @@
+[
+  {
+    "abstained": 0,
+    "coverage": 0.96,
+    "failed": 0,
+    "mc_standard_error": 0.01239354670786374,
+    "n_configurations": 40,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.9279472764187334,
+      0.9781300880454574
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.984,
+    "failed": 0,
+    "mc_standard_error": 0.00793574193128784,
+    "n_configurations": 40,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.9595901906588808,
+      0.9937607754295288
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.952,
+    "failed": 0,
+    "mc_standard_error": 0.013519763311537675,
+    "n_configurations": 40,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.9179876987868126,
+      0.9723317984693053
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.956,
+    "failed": 0,
+    "mc_standard_error": 0.012971353052014278,
+    "n_configurations": 40,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.9229422290276481,
+      0.9752562018325064
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.932,
+    "failed": 0,
+    "mc_standard_error": 0.01592180894245374,
+    "n_configurations": 40,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.8938107478142963,
+      0.9571140814216397
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.896,
+    "failed": 0,
+    "mc_standard_error": 0.019306372005117894,
+    "n_configurations": 40,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.8519796592920389,
+      0.928034767507569
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.88,
+    "failed": 0,
+    "mc_standard_error": 0.020552372125864207,
+    "n_configurations": 40,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.8338618921256289,
+      0.9146368002578331
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.884,
+    "failed": 0,
+    "mc_standard_error": 0.020252802275240827,
+    "n_configurations": 40,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.8383692329120548,
+      0.9180083930754438
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.792,
+    "failed": 0,
+    "mc_standard_error": 0.025669904557672197,
+    "n_configurations": 40,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.7374559719572936,
+      0.8377061811373668
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.972,
+    "failed": 0,
+    "mc_standard_error": 0.010433791257256401,
+    "n_configurations": 60,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.9433422238771394,
+      0.9863719413991607
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.98,
+    "failed": 0,
+    "mc_standard_error": 0.008854377448471465,
+    "n_configurations": 60,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.9540443568684314,
+      0.9914276756159417
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.956,
+    "failed": 0,
+    "mc_standard_error": 0.012971353052014278,
+    "n_configurations": 60,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.9229422290276481,
+      0.9752562018325064
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.944,
+    "failed": 0,
+    "mc_standard_error": 0.014541526742402262,
+    "n_configurations": 60,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.908209279267056,
+      0.966352350780989
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.956,
+    "failed": 0,
+    "mc_standard_error": 0.012971353052014278,
+    "n_configurations": 60,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.9229422290276481,
+      0.9752562018325064
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.916,
+    "failed": 0,
+    "mc_standard_error": 0.017543545821754502,
+    "n_configurations": 60,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.8750051335864347,
+      0.9444039612333553
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.856,
+    "failed": 0,
+    "mc_standard_error": 0.022204864331943127,
+    "n_configurations": 60,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.8070876594372886,
+      0.8941374313219549
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.868,
+    "failed": 0,
+    "mc_standard_error": 0.021408035874409405,
+    "n_configurations": 60,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.8204199080951821,
+      0.9044419834761707
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.756,
+    "failed": 0,
+    "mc_standard_error": 0.02716350492848815,
+    "n_configurations": 60,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.699148919960885,
+      0.8051028306974474
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.976,
+    "failed": 0,
+    "mc_standard_error": 0.009679669415842676,
+    "n_configurations": 100,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.9486378761864735,
+      0.9889552226938632
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.972,
+    "failed": 0,
+    "mc_standard_error": 0.010433791257256401,
+    "n_configurations": 100,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.9433422238771394,
+      0.9863719413991607
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.948,
+    "failed": 0,
+    "mc_standard_error": 0.014042222046385685,
+    "n_configurations": 100,
+    "phi": 0.0,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.9130782188162728,
+      0.9693623448358087
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.956,
+    "failed": 0,
+    "mc_standard_error": 0.012971353052014278,
+    "n_configurations": 100,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.9229422290276481,
+      0.9752562018325064
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.964,
+    "failed": 0,
+    "mc_standard_error": 0.011782020200288238,
+    "n_configurations": 100,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.9330095775982306,
+      0.9809467204699966
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.932,
+    "failed": 0,
+    "mc_standard_error": 0.01592180894245374,
+    "n_configurations": 100,
+    "phi": 0.4,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.8938107478142963,
+      0.9571140814216397
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.88,
+    "failed": 0,
+    "mc_standard_error": 0.020552372125864207,
+    "n_configurations": 100,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "SLSQP",
+    "valid": 250,
+    "wilson_95": [
+      0.8338618921256289,
+      0.9146368002578331
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.872,
+    "failed": 0,
+    "mc_standard_error": 0.02112969474460055,
+    "n_configurations": 100,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "Chebyshev",
+    "valid": 250,
+    "wilson_95": [
+      0.824887758249811,
+      0.9078530669255781
+    ]
+  },
+  {
+    "abstained": 0,
+    "coverage": 0.788,
+    "failed": 0,
+    "mc_standard_error": 0.025850029013523367,
+    "n_configurations": 100,
+    "phi": 0.8,
+    "planned": 250,
+    "unit": "familywise",
+    "valid": 250,
+    "wilson_95": [
+      0.7331727674153838,
+      0.83411045207524
+    ]
+  }
+]

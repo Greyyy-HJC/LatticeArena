@@ -1,0 +1,128 @@
+{
+  "schema": "wilson-f-joint-spectral-mbb-length-sensitivity-v1",
+  "classification": "pre-registered synthetic CPU descriptive sensitivity only",
+  "assembly_mode": "derived-only rebuild from hash-verified per-length reports",
+  "physical_score": null,
+  "fixed_lengths": [
+    6,
+    8,
+    10
+  ],
+  "newly_run_lengths": [
+    6,
+    10
+  ],
+  "baseline_length": 8,
+  "baseline_was_examined_before_scan": true,
+  "same_stress_bundle_and_holdout_panels": true,
+  "calibration_panel_replicates": "0:40",
+  "holdout_panel_replicates": "40:80",
+  "bootstrap_replicates_per_panel": 40,
+  "upper_order_statistic_rank": 40,
+  "failed_or_missing_q_draw_rule": "+infinity; retain planned interval in denominator",
+  "seed_key_coupling": "same scenario/outer-panel/bootstrap-index seed keys across L; circular chunk layout varies with L",
+  "shared_seed_key_count": 9600,
+  "per_length_denominators": {
+    "6": {
+      "planned": 960,
+      "valid": 860,
+      "failed": 0,
+      "abstained": 100,
+      "bootstrap_refits_planned": 9600,
+      "bootstrap_refits_valid": 9522,
+      "bootstrap_refits_failed": 78
+    },
+    "8": {
+      "planned": 960,
+      "valid": 860,
+      "failed": 0,
+      "abstained": 100,
+      "bootstrap_refits_planned": 9600,
+      "bootstrap_refits_valid": 9510,
+      "bootstrap_refits_failed": 90
+    },
+    "10": {
+      "planned": 960,
+      "valid": 852,
+      "failed": 0,
+      "abstained": 108,
+      "bootstrap_refits_planned": 9600,
+      "bootstrap_refits_valid": 9512,
+      "bootstrap_refits_failed": 88
+    }
+  },
+  "combined_interval_denominators_reuse_same_holdout": {
+    "planned": 2880,
+    "valid": 2572,
+    "failed": 0,
+    "abstained": 308
+  },
+  "child_source_sha256": {
+    "6": {
+      "f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+      "f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+      "f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+      "f_lane_joint_spectral_mbb_length_sensitivity.py": "08cbbae5fae311b54fc52f4d7574278fe2bdb0ea4b57e0fb9100a6a76b5989a8"
+    },
+    "8": {
+      "f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+      "f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+      "f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f"
+    },
+    "10": {
+      "f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+      "f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+      "f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+      "f_lane_joint_spectral_mbb_length_sensitivity.py": "08cbbae5fae311b54fc52f4d7574278fe2bdb0ea4b57e0fb9100a6a76b5989a8"
+    }
+  },
+  "baseline_b40_artifact_hashes": {
+    "README.md": "b6deaec23872d0bd36be1f43ffb68b0294d00cc031e7e8e7455e9779dec1f784",
+    "protocol.json": "beaee8fbc98105f2549c95393f4d85cccb608167d7eeed969a10b957f91515e2",
+    "bootstrap_replicates.csv": "38d6515cf3b3d277e7b93830b0c763299afff2bc9bd69dd139e9843b027c8bb0",
+    "bootstrap_intervals.csv": "3ef21a394f668fa06ffd230d24410d202e06ea115e0146c2138ae03975819e5a",
+    "method_comparison.csv": "c4253526dc18656d21386b29e058ef9327117e615499b1447a8f06e429c81d48",
+    "calibration_summary.csv": "b95dfdf238b87091a96f9d12c30514f2aa7822a75f19428190afacc9078e44a7",
+    "method_coverage.png": "8a2d645bbe7a810ec1e61ca9d4c45be0d7900c5439d44f2ffb3c57d42d540867",
+    "summary.json": "44fca18b22514af9669c49b76893c592d225034873267c4c35390a171c884cd5",
+    "snapshot_f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+    "snapshot_f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+    "snapshot_f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f"
+  },
+  "baseline_protocol_source_sha256": {
+    "f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+    "f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+    "f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f"
+  },
+  "input_stress_artifact_hashes": {
+    "README.md": "ae21a22826d830c3c02e6057de2e1de1b7306d37645266db742a97199fce053d",
+    "protocol.json": "7928c839c61582ca8cf603184cf5ad031fd481ceb12f1cc123b412d2e7086072",
+    "panel_results.csv": "77bdb3b2f660b1b40c8b52f1cf3359941c6b12182c4255834ab662dcef5cdd27",
+    "coverage_summary.csv": "a95132f3bdfe1249ba6d45ca459f7c0cf27099b1ec83232f88af0ed8dd4f222f",
+    "stress_coverage.png": "d31828bd56c1752a384e2d5891e5df88b28510116d97a997795c9145eeb13b7f",
+    "interval_conservatism.png": "c4d88594c9bebbd099660cf0a27ac345d18b954317adca784eeb0f8edb38fdc9",
+    "snapshot_f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+    "snapshot_f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "summary.json": "cff933e0d6219d2ec70f2f12adab1a29073343e1a8441a42559d288b483167f5"
+  },
+  "source_sha256": {
+    "f_lane_joint_spectral_mbb_length_sensitivity.py": "ddc63548e6b85c6c71871e1ecd60f98c37ebd8f90ccc2af81dcdb3eec7544dc8",
+    "f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+    "f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+    "f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f"
+  },
+  "physical_measurements": {
+    "planned": 0,
+    "valid": 0,
+    "failed": 0,
+    "abstained": 0
+  },
+  "certification": {
+    "planned": 1,
+    "valid": 0,
+    "failed": 0,
+    "abstained": 1
+  },
+  "physical_reader_or_gate_use": false,
+  "next_action": "stop tuning L or B on this generator/holdout; await new independent calibration panels and authorized production receipts"
+}

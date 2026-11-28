@@ -1,0 +1,11 @@
+{
+  "README.md": "9bea085456af16d910317b8e71615cb4ef3d49cab34b818bd770fd06497e3cf1",
+  "protocol.json": "fcd4ccf0d5bf9ba982dcea0e950e193ad0376b568e5be983798691499033d9e5",
+  "raw.json": "d527ff323e08a055124315046ece182667f5f96466366583e290d268a3ace450",
+  "synthetic_inputs.npz": "b6e7aa5f5b2ca78126ca33d8e69ec29dd106bcc4ccee33eca827fb32c6be57d4",
+  "paired_summary.csv": "87f5c0ef894723e940d350d915807e2025603d9c7b5d6c605015f11f9fb6d127",
+  "paired_loss_ratios.png": "5f2ecd722faf96bd4a0c27f1796017e3e2c11f77e3f8a9b4b76e4ccd6ac9d2e0",
+  "budget_convergence.png": "c1aa041c829e7a453fb51f6de5ba06206085a262513adeb9682ae37e8e013b06",
+  "conditioning_and_baselines.png": "c7af6c27171095dbecebe3a7a4f9b5397431822192157cd32f52ca48557ce8eb",
+  "summary.json": "e8f7455a168e0eac77a5a85641b3acb13d5e2a8c07301eddd517c91d77955606"
+}

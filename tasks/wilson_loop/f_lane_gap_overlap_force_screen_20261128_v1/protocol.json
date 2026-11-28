@@ -1,0 +1,68 @@
+{
+  "classification": "CONDITIONAL_POSITIVE_SPECTRUM_EFFECTIVE_ENERGY_SCREEN_NOT_PHYSICAL_RECEIPT",
+  "contamination_budget_time": 5,
+  "display_assumptions": {
+    "Delta_min": 0.2,
+    "Q_max": 0.25
+  },
+  "effective_energy_start_times": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "estimand_note": "The selected repository F lane is stout-minus-identity ground-state force difference; this fixture separately reports absolute force identifiability and the finite-time effective-energy contrast bias.",
+  "kernels_in_order": [
+    "spatial_stout_rho0.10_n5",
+    "identity"
+  ],
+  "model_truncation_fraction": 0.01,
+  "physical_score": null,
+  "positive_spectrum_equations": {
+    "condition": "0<=rho(T)<=Qmax exp(-Delta_min*T)",
+    "correlator": "C_k,R(T)=A0_k,R exp(-E0(R) T) [1+rho_k,R(T)]",
+    "effective_energy": "Eeff_k,R(T)=E0(R)+log[(1+rho(T))/(1+rho(T+1))]",
+    "energy_interval": "Eeff(T)-log1p(Qmax exp(-Delta_min*T)) <= E0(R) <= Eeff(T)",
+    "force_interval": "[L_E0(R3)-U_E0(R2), U_E0(R3)-L_E0(R2)]/DeltaR",
+    "kernel_contrast_proxy_bias": "sum_{kernel,R} log1p(Qmax[k,R] exp(-Delta_min[k,R]*T))"
+  },
+  "production_data": "not accessed",
+  "radii": [
+    2,
+    3
+  ],
+  "source_hashes": {
+    "f_lane_gap_overlap_force_screen.py": "d2ded7a45248f4bf8d971ec509c4fdddc1958a78e1459332c2b31bd4abc7cbd0",
+    "ground_state_bound.py": "6ed1830184cd30fd9d2ed7c16bfc0b21c5047c4285c6e4ccd2c8e086647028ca",
+    "spectral_q_bound_reader.py": "1fad56610b26b7ccd1d0d0f7cbb44846a76385d9e16d9cfe66c983a5b75177fc"
+  },
+  "toy_reference_force_lower": 0.2,
+  "toy_truth": {
+    "E0_by_R": {
+      "2": -0.25,
+      "3": -0.05
+    },
+    "absolute_force": 0.2,
+    "gap_by_kernel_R": {
+      "identity": {
+        "2": 0.25,
+        "3": 0.4
+      },
+      "spatial_stout_rho0.10_n5": {
+        "2": 0.35,
+        "3": 0.45
+      }
+    },
+    "overlap_ratio_by_kernel_R": {
+      "identity": {
+        "2": 0.08,
+        "3": 0.16
+      },
+      "spatial_stout_rho0.10_n5": {
+        "2": 0.2,
+        "3": 0.1
+      }
+    },
+    "shared_spectrum_ground_force_difference": 0.0
+  }
+}

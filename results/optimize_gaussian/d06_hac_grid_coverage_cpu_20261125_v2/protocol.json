@@ -1,0 +1,460 @@
+{
+  "baseline_hashes": {
+    "artifact_hashes.json": "88c5d3de64f13e021f9ec5d8f096bc3e03a03a0abae2266f5918324b08be2a9f",
+    "protocol.json": "d1c53e5c621e57eec7545e1ddba8c2be69f3980db94fbe3f8111696303f4be12",
+    "replicates.csv": "ff63764c060f5fa0fe28857e4fbb8d23ba5c62441b25d1ee722d8f8cd7887cc1"
+  },
+  "baseline_report": "results/optimize_gaussian/d06_percentile_hull_coverage_cpu_20261125_v7",
+  "data_access": "reused_open_synthetic_panel_seeds_only",
+  "evidence_class": "synthetic_stationary_gaussian_ar1_only",
+  "family_size": 2,
+  "familywise_coverage": [
+    {
+      "abstained": 0,
+      "coverage": 0.952,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 40,
+      "phi": 0.0,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.9179876987868126,
+        0.9723317984693053
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.984,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 40,
+      "phi": 0.0,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.9595901906588808,
+        0.9937607754295288
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.896,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 40,
+      "phi": 0.4,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.8519796592920389,
+        0.928034767507569
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.976,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 40,
+      "phi": 0.4,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.9486378761864735,
+        0.9889552226938632
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.792,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 40,
+      "phi": 0.8,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.7374559719572936,
+        0.8377061811373668
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.952,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 40,
+      "phi": 0.8,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.9179876987868126,
+        0.9723317984693053
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.956,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 60,
+      "phi": 0.0,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.9229422290276481,
+        0.9752562018325064
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.944,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 60,
+      "phi": 0.0,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.908209279267056,
+        0.966352350780989
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.916,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 60,
+      "phi": 0.4,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.8750051335864347,
+        0.9444039612333553
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.968,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 60,
+      "phi": 0.4,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.9381375971659135,
+        0.9836976345063503
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.756,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 60,
+      "phi": 0.8,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.699148919960885,
+        0.8051028306974474
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.944,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 60,
+      "phi": 0.8,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.908209279267056,
+        0.966352350780989
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.948,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 100,
+      "phi": 0.0,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.9130782188162728,
+        0.9693623448358087
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.9,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 100,
+      "phi": 0.0,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.8565482893919354,
+        0.9313450710117088
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.932,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 100,
+      "phi": 0.4,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.8938107478142963,
+        0.9571140814216397
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.908,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 100,
+      "phi": 0.4,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.8657382427250239,
+        0.9379129848866933
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.788,
+      "failed": 0,
+      "method": "percentile",
+      "n_configurations": 100,
+      "phi": 0.8,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.7331727674153838,
+        0.83411045207524
+      ]
+    },
+    {
+      "abstained": 0,
+      "coverage": 0.828,
+      "failed": 0,
+      "method": "hac",
+      "n_configurations": 100,
+      "phi": 0.8,
+      "planned": 250,
+      "valid": 250,
+      "wilson_95": [
+        0.7763472799248405,
+        0.8697252756061478
+      ]
+    }
+  ],
+  "grid": {
+    "n_configuration_scenarios": [
+      40,
+      60,
+      100
+    ],
+    "outer_draws_per_block_length_for_percentile_baseline": 1000,
+    "panels_per_cell": 250,
+    "phi_scenarios": [
+      0.0,
+      0.4,
+      0.8
+    ]
+  },
+  "hac_bandwidths": [
+    2,
+    5,
+    10,
+    20,
+    30
+  ],
+  "hac_block_lengths": [
+    2,
+    5,
+    10
+  ],
+  "hac_cell_denominators": {
+    "n100_phi0": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n100_phi0.4": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n100_phi0.8": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n40_phi0": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n40_phi0.4": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n40_phi0.8": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n60_phi0": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n60_phi0.4": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    },
+    "n60_phi0.8": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 250,
+      "valid": 250
+    }
+  },
+  "hac_interval": "paired ratio influence, Newey-West Bartlett long-run variance, normal one-sided 0.975 lower endpoint, zero-truncated positive-ratio hull",
+  "interpretation_limits": [
+    "The percentile baseline uses 1,000 rather than the selected 10,000 outer draws; this is a method stress comparison, not final quantile Monte Carlo precision.",
+    "The HAC lower bound relies on asymptotic linearization and weak-dependence conditions not established for a production gauge chain.",
+    "The synthetic Gaussian AR(1) grid does not include heavy tails, nonstationarity, reference-fit uncertainty, or optimizer failures.",
+    "No physical score, gauge-chain dependence estimate, or production calibration is inferred."
+  ],
+  "paired_arm_order": [
+    "trainable_W",
+    "same_budget_SLSQP",
+    "fixed_degree4_Chebyshev"
+  ],
+  "paired_coverage_difference": {
+    "resamples_per_cell_unit": 10000,
+    "seed_rule": "2026112501 + sorted_cell_index*10 + unit_index"
+  },
+  "paired_familywise_differences": [
+    {
+      "hac_minus_percentile_coverage": 0.032,
+      "n_configurations": 40,
+      "paired_panel_bootstrap_95": [
+        0.008,
+        0.06
+      ],
+      "phi": 0.0
+    },
+    {
+      "hac_minus_percentile_coverage": 0.08,
+      "n_configurations": 40,
+      "paired_panel_bootstrap_95": [
+        0.048,
+        0.116
+      ],
+      "phi": 0.4
+    },
+    {
+      "hac_minus_percentile_coverage": 0.16,
+      "n_configurations": 40,
+      "paired_panel_bootstrap_95": [
+        0.116,
+        0.208
+      ],
+      "phi": 0.8
+    },
+    {
+      "hac_minus_percentile_coverage": -0.012,
+      "n_configurations": 60,
+      "paired_panel_bootstrap_95": [
+        -0.04,
+        0.016
+      ],
+      "phi": 0.0
+    },
+    {
+      "hac_minus_percentile_coverage": 0.052,
+      "n_configurations": 60,
+      "paired_panel_bootstrap_95": [
+        0.024,
+        0.084
+      ],
+      "phi": 0.4
+    },
+    {
+      "hac_minus_percentile_coverage": 0.188,
+      "n_configurations": 60,
+      "paired_panel_bootstrap_95": [
+        0.14,
+        0.24
+      ],
+      "phi": 0.8
+    },
+    {
+      "hac_minus_percentile_coverage": -0.048,
+      "n_configurations": 100,
+      "paired_panel_bootstrap_95": [
+        -0.076,
+        -0.024
+      ],
+      "phi": 0.0
+    },
+    {
+      "hac_minus_percentile_coverage": -0.024,
+      "n_configurations": 100,
+      "paired_panel_bootstrap_95": [
+        -0.048,
+        -0.004
+      ],
+      "phi": 0.4
+    },
+    {
+      "hac_minus_percentile_coverage": 0.04,
+      "n_configurations": 100,
+      "paired_panel_bootstrap_95": [
+        0.008,
+        0.072
+      ],
+      "phi": 0.8
+    }
+  ],
+  "physical_score": null,
+  "schema": "optimize-d06-hac-grid-coverage-diagnostic-v1",
+  "source_hashes": {
+    "d06_bootstrap_coverage_diagnostic.py": "5cfd901781ba62b2cad899d48828d2d707f9bfa68621347ef43330302249cc54",
+    "d06_hac_coverage_diagnostic.py": "96a550e51439125a846b879f2de60fbf30ec9cf60ec13c34774e171be11f7693",
+    "d06_hac_grid_coverage_diagnostic.py": "fc5690ef16d4ad03df0b35262389941f5500cbf57a720aada093ccc7389d1b7f"
+  },
+  "status": "HAC_METHOD_CANDIDATE_NOT_PRODUCTION_CALIBRATION",
+  "time_points": [
+    2,
+    3,
+    4,
+    5
+  ]
+}

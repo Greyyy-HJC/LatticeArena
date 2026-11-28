@@ -1,0 +1,27 @@
+{
+  "schema": "wilson-finite-nt-randomized-algebra-v1",
+  "classification": "synthetic positive-spectrum algebra stress only",
+  "physical_score": null,
+  "seed": 2026112308,
+  "planned_cases": 4000,
+  "temporal_extent_integer_range_inclusive": [
+    4,
+    64
+  ],
+  "time_extent_rule": "uniform integer t in [1, N_t-1]",
+  "parameter_ranges": {
+    "A0": "log-uniform [0.1, 10]",
+    "V0": "uniform [0, 1.5]",
+    "Q_H_X": "independent log-uniform [1e-3, 1e2] for each radius",
+    "gap_q_gap_0": "independent log-uniform [0.01, 1] for each radius"
+  },
+  "data_access": "No Wilson measurements, sealed split, GPU, or QUDA inputs.",
+  "source_sha256": {
+    "finite_nt_randomized_stress.py": "a985f6b251ada24a8f5c462567d9d4ce7cdce54c930215f11cc1e482667edc93",
+    "finite_nt_toy.py": "bafc037fe07fa570520ebe822e9e72129eff4cdc9aafabcecccaa6813d3da0b8"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.1"
+  }
+}

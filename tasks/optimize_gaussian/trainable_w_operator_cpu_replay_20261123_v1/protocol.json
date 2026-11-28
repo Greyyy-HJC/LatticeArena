@@ -1,0 +1,51 @@
+{
+  "classification": "diagnostic_only",
+  "physical_score": null,
+  "size": 3,
+  "tau": 0.18,
+  "hidden": 2,
+  "panel_seeds": [
+    2026112201,
+    2026112202,
+    2026112203
+  ],
+  "fit_per_panel": 3,
+  "heldout_per_panel": 3,
+  "budgets": [
+    40,
+    160
+  ],
+  "bounds": [
+    -3,
+    3
+  ],
+  "methods": [
+    "SLSQP",
+    "L-BFGS-B"
+  ],
+  "spectral_degrees": [
+    1,
+    4
+  ],
+  "target": "exp(tau H) / (trace exp(tau H) / dim), H=sum(U shift + adjoint)",
+  "loss": "mean configuration relative squared Frobenius operator error; full identity basis, no noisy probes",
+  "selection": "best fitting loss observed within cap; heldout never used for selection",
+  "source_hashes": {
+    "trainable_w_operator_diagnostic.py": "584235dd49eab347c4ac078fdc00724bdf1f3b31eb6fc1d56d05fc688df2596b",
+    "trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0",
+    "trainable_w_diagnostic.py": "9d772bff2af5aaa8f7bfbf4736b419a57b9d1fe90dd834c3a27c13f07404298e",
+    "features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+  },
+  "versions": {
+    "python": "3.13.12",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0"
+  },
+  "limitations": "3 independent synthetic panels only; no physics risk/production freeze; heat-kernel target favors spectral family; no multiplicity-adjusted inference",
+  "arms": [
+    "fixed W width2:3 fitted scalars",
+    "joint W width2:7 fitted scalars",
+    "fixed W width6:7 fitted scalars"
+  ]
+}

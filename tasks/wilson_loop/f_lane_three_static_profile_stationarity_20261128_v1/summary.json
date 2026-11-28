@@ -1,0 +1,91 @@
+{
+  "certified": false,
+  "classification": "READ_ONLY_SAVED_ENDPOINT_DIAGNOSTIC",
+  "continuation_report": "tasks/wilson_loop/f_lane_three_static_profile_continuation_20261128_v1",
+  "denominator": {
+    "cold": 26,
+    "neighbor_continuation": 23
+  },
+  "gradient_definition": "At each saved endpoint, recompute J and residual r from the captured matrix; project J.T@r against bounds within relative tolerance 1e-7, then divide each component by its whitened Jacobian column norm. This approximates the scaled box-constrained first-order optimality used with x_scale='jac'; it is not the saved SciPy optimality field.",
+  "input_integrity": {
+    "continuation_report": {
+      "failed": 0,
+      "manifest_sha256": "d9dd1927a4bc80a87557ae850bc3f613e5b9eb4a50a070422d087380918faa04",
+      "planned": 15,
+      "verified": 15
+    },
+    "stratified_profile_report": {
+      "failed": 0,
+      "manifest_sha256": "285796c5b2f62e823295538137e1b0a11a300a92b0acf4d3949f99032fdb6851",
+      "planned": 75,
+      "verified": 75
+    }
+  },
+  "input_report": "tasks/wilson_loop/f_lane_three_static_stratified_profile_20261128_v1",
+  "phase_summaries": {
+    "cold": {
+      "at_max_nfev_1600": 26,
+      "full_local_rank": 26,
+      "invalid_starts": 26,
+      "scaled_projected_gradient_inf": {
+        "above_gtol_reference": 26,
+        "maximum": 10.296688072724235,
+        "median": 0.33921300071680677,
+        "p90": 4.910943245085839
+      },
+      "weak_direction_mean_squared_loading": {
+        "R2_amplitudes": 0.48214736442942335,
+        "R2_energy_increments": 0.1313127711884418,
+        "R3_amplitudes": 0.3611491810275409,
+        "R3_energy_increments_excluding_force": 0.01732833896332872,
+        "vacuum_gap": 0.008062344391265368
+      }
+    },
+    "neighbor_continuation": {
+      "at_max_nfev_1600": 23,
+      "full_local_rank": 23,
+      "invalid_starts": 23,
+      "scaled_projected_gradient_inf": {
+        "above_gtol_reference": 23,
+        "maximum": 10.296688072724235,
+        "median": 0.11538447489229718,
+        "p90": 1.6402387060723103
+      },
+      "weak_direction_mean_squared_loading": {
+        "R2_amplitudes": 0.5729228247761892,
+        "R2_energy_increments": 0.13462500730785604,
+        "R3_amplitudes": 0.26858441788571347,
+        "R3_energy_increments_excluding_force": 0.015739389074826172,
+        "vacuum_gap": 0.008128360955415099
+      }
+    }
+  },
+  "physical_score": null,
+  "physical_status": "NOT_READY/UNCERTIFIED; F=GROUND_STATE_FORCE_UNCERTIFIED",
+  "schema": "wilson-f-lane-profile-stationarity-attribution-v1",
+  "scope_limits": [
+    "all input report artifacts are hash-checked before selected panel bytes are captured",
+    "only previously saved failed optimizer endpoints are evaluated; no optimizer is run",
+    "the failed starts are paired retries on reused synthetic matrices, not independent samples",
+    "full local rank does not establish global identifiability or a physical force interval",
+    "no production Wilson matrices, sealed inputs, GPU or QUDA are read or run"
+  ],
+  "selected_panels": {
+    "panel_count": 6,
+    "target_strata": [
+      "near_degenerate",
+      "omitted_vacuum_truth"
+    ]
+  },
+  "source_hashes": {
+    "joint_spectral_gls.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "nonlinear_overlap_profile.py": "9985028571e61cb8785014ad518228b49962a9cb73fdde181cac332175812ca4",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "profile_continuation_diagnostic.py": "577028dd2d3c590b0c56fedcfb1393d6dbc200d251f1ceeba560eb3aa7782883",
+    "profile_stationarity.py": "5d4dff8fd9088120eab378bc0ef8ccab4aae460c9c3dba932a984c559e8b85d2",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77"
+  },
+  "weak_direction_definition": "SVD of the whitened Jacobian after normalizing each nonzero column to unit norm; group loadings are squared components in the resulting weakest right singular vector. This is local and depends on the chosen parameterization."
+}

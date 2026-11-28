@@ -1,0 +1,21 @@
+{
+  "files": {
+    "README.md": "eb9d2326aebb73b4ff447eb56f39b0b466f8889382a9115946e071316b5ec1af",
+    "fit_status.csv": "d5d4432c773d11e85b26641ea3205a40888e15ee39d39a7d4db44ee4896f9a1b",
+    "fit_variants.csv": "40ca1cd3edac68cb7ed3ccc1a99b8318c4a6372df9f8ba7bd463d63cf92d36b6",
+    "protocol.json": "94b11d84548029f362c02d93faac21cac7cb7723cb794025caa99651d24742f7",
+    "q_candidates.csv": "b44edeb45099e57fd02d6db49e9f27c719c6164d231b97116a7d116f1deb8fef",
+    "q_fit_variants.png": "867dfe8f82399205299916cc532621dc5a67ec7487803989c7edcc19be2c1348",
+    "snapshot_joint_spectral_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "snapshot_lane_contract.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "snapshot_npz_safety.py": "541dc6fefa6b38c4fd53b0a490c0cb12e628bf409cbbde7ade2029a9d258b0c4",
+    "snapshot_raw_matrix_joint_fit_adapter.py": "c04dcfcb4deed38316a19dc860005c867fa23e1905391d4dc373bec788d1ebf6",
+    "snapshot_raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "snapshot_source_integrity.py": "97db76f7e448be77711e837039536e4134e243d7f23d667b5d7f888b64392a7d",
+    "snapshot_spectral_q_reader.py": "02aa1d71ddd21ee942a407a86ece089156fffc996bcb39078c310b8388ec100b",
+    "summary.json": "57be76f69fc0b737400dd01b190033154ddc45ea34778d906c924091aeb3ac8a",
+    "synthetic_raw_matrix_input.npz": "0a9f00904f756573323b0e7ee54f1a7cadff00fac532f2a8dc7473d869886dcb",
+    "synthetic_raw_matrix_manifest.json": "ba0854a82023958d91c31c2d292dfc5fc4378fdc083891894dc39a582748f1b4"
+  },
+  "schema": "latticearena-artifact-hashes-v1"
+}

@@ -1,0 +1,16 @@
+{
+  "schema": "wilson-f-qhx-maxt-screen-source-hashes-v1",
+  "sources": {
+    "base_omitted_screen.py": "fc790f1eb85140bdc6c2be369bcc024c710ae0b37e1538653f967fb1ac6e37a1",
+    "finite_nt_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "fit_candidate.py": "7b049e492368a2a8db18425c00f6513f65a26b0fee0f64134a8d4601500699e9",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "maxt_interval.py": "b2ed3f923592ab8471ad8b17f860d8cfb35661e72736bebee89ca6b9ec8e6a96",
+    "maxt_protocol.json": "d647b87d0403fd85795dc17555d5f6bb92bae8466b6f9214d4afdf0746a94070",
+    "maxt_screen.py": "4be445f68af9607278d62823595b074609b2e70d07c336a5bd1e4229ea521bbe",
+    "multistratum_protocol.json": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+    "multistratum_screen.py": "e9970ceb438969ac9a685dc6b11189709251812588c2d7ad176d66689ef0b06f",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6"
+  }
+}

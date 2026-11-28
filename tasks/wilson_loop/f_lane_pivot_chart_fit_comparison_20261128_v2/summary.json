@@ -1,0 +1,115 @@
+{
+  "advance_to_profile_comparison": false,
+  "all_initial_model_pair_differences_max": 1.1102230246251565e-16,
+  "any_stratum_valid_count_loss": true,
+  "best_force_difference_lattice_units": [
+    -4.057401148394035e-08,
+    -1.7582643365543493e-05,
+    -5.653949863848595e-09,
+    -3.175931184706826e-10,
+    1.9867327874512064e-06,
+    2.818035416130016e-09,
+    -8.95654661547951e-11,
+    2.267967980085217e-09,
+    -1.2044745256734046e-08,
+    3.534666004334497e-09,
+    -3.188986003044292e-08,
+    6.033630595148054e-09
+  ],
+  "certified": false,
+  "covariance": "same observed block vectors per panel, same fixed shrinkage/floor for both charts",
+  "fit_acceptance": "scipy success, finite residual and coordinates, numerical Jacobian rank 67",
+  "limitations": [
+    "point-fit feasibility only; no force-profile intervals or coverage",
+    "small reused synthetic panel set; results are not independent confirmation",
+    "current panels do not include the exact-zero-operator0 stress fixture",
+    "no production matrices, sealed data, GPU or QUDA"
+  ],
+  "median_solver_evaluation_savings_by_stratum": {
+    "baseline": -4.560311284046692,
+    "dependent_unequal_variance": 0.2147083685545224,
+    "near_degenerate": 0.32456140350877194,
+    "omitted_vacuum_truth": -1.3669724770642202
+  },
+  "paired_starts_valid_in_both": 32,
+  "panel_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 12,
+    "valid": 12
+  },
+  "physical_score": null,
+  "pivot_recovers_baseline_invalid_starts": 0,
+  "profile_advance_rule": "Advance to a paired profile comparison only if the pivot chart recovers at least one baseline-invalid start, or reduces median solver evaluations (nfev+njev) by >=20% in at least two strata among pairs valid in both methods, without any per-stratum valid-count loss.",
+  "schema": "wilson-f-pivot-chart-paired-point-fit-summary-v2",
+  "source_capture_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 36,
+    "valid": 36
+  },
+  "start_denominators": {
+    "fixed_operator0": {
+      "failed_or_abstained": 0,
+      "planned": 36,
+      "valid": 36
+    },
+    "largest_component_pivot": {
+      "failed_or_abstained": 4,
+      "planned": 36,
+      "valid": 32
+    }
+  },
+  "start_denominators_by_stratum": {
+    "baseline": {
+      "fixed_operator0": {
+        "failed_or_abstained": 0,
+        "planned": 9,
+        "valid": 9
+      },
+      "largest_component_pivot": {
+        "failed_or_abstained": 0,
+        "planned": 9,
+        "valid": 9
+      }
+    },
+    "dependent_unequal_variance": {
+      "fixed_operator0": {
+        "failed_or_abstained": 0,
+        "planned": 9,
+        "valid": 9
+      },
+      "largest_component_pivot": {
+        "failed_or_abstained": 1,
+        "planned": 9,
+        "valid": 8
+      }
+    },
+    "near_degenerate": {
+      "fixed_operator0": {
+        "failed_or_abstained": 0,
+        "planned": 9,
+        "valid": 9
+      },
+      "largest_component_pivot": {
+        "failed_or_abstained": 0,
+        "planned": 9,
+        "valid": 9
+      }
+    },
+    "omitted_vacuum_truth": {
+      "fixed_operator0": {
+        "failed_or_abstained": 0,
+        "planned": 9,
+        "valid": 9
+      },
+      "largest_component_pivot": {
+        "failed_or_abstained": 3,
+        "planned": 9,
+        "valid": 6
+      }
+    }
+  },
+  "status": "METHOD_SCREEN_COMPLETE",
+  "strata_meeting_20_percent_savings": 2
+}

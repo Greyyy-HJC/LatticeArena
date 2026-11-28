@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "README.md": "ec5b493142a035d4a54ccc4c18fd0e345edb9b7795f066b4edf2f7ca6f10bd78",
+    "gof_dependence_stress.png": "48a7edc7e70ac1fa42fab3cb28dfb3e84ce42bbcc6b8cd62e15624583bbca404",
+    "gof_pvalue_calibration.png": "9d51afa1d6ba8a61685e032519fa82103d003419557d60a937f781be1deb732b",
+    "panel_results.csv": "b02604e27a3dff1d2abe5d69e120452cc2bf4c3de6c6bbab31af4f045d4798ff",
+    "protocol.json": "0bf79dec6f9e4a9a936fa68d7b5793de8edd4a50d5f5bf4fcd1014b9ca693ef6",
+    "source_hashes.json": "a149cf6714c78be4b57928cd65624d002a5b262cff672d3ca68bc3a408f6fb4c",
+    "source_snapshot/contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "source_snapshot/diagnostic": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "source_snapshot/npz_safety": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "source_snapshot/source_integrity": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/test": "7c46fa2df386d150f07444e5b91efc67769c2d3518230c2646dd59827ddb718f",
+    "summary.json": "8a1e7098906e4441a4956413ca8ec8ac63b8a66b87bd772aa09358ca9ada0074"
+  },
+  "schema": "optimize-d04-gof-artifact-hashes-v1"
+}

@@ -1,0 +1,20 @@
+{
+  "sources": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "gevp_overlap_object.py": "f7a3f14d6a55b619abbadbce28b0127a65dbb7348120b86242073e891b2c83a3",
+    "gevp_t0_truncation.py": "732cf530e540dac90d1d0c05d2216be7a9b8905f8eb790ac10fabdb087dc4871",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "ff98535de822887ce89bd6ebaced288ca33568fa0cb3dbcf46ccd37bb316a00b",
+    "two_sector_fit_initializer.py": "e86eca8e99c0359326f014989e304bff608bad27ec72dfb3113885fe46e3a4d5",
+    "two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_multistratum_screen.py": "e9970ceb438969ac9a685dc6b11189709251812588c2d7ad176d66689ef0b06f",
+    "two_sector_multistratum_screen_protocol.json": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+    "two_sector_omitted_coverage_diagnostic.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f",
+    "two_sector_omitted_state_diagnostic.py": "f230f061cde010efc61182e45b83d2d8e7d3102fa788b1145f2dd0c28a7c71ed"
+  }
+}

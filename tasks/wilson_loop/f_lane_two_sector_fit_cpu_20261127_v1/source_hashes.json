@@ -1,0 +1,14 @@
+{
+  "schema": "wilson-f-two-sector-fit-source-hashes-v1",
+  "sources": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "fit_diagnostic.py": "5897cdd0ee0332d962e73d24224032a58d013465b6838b7d711e269f063985fd",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "97db76f7e448be77711e837039536e4134e243d7f23d667b5d7f888b64392a7d",
+    "test_two_sector_fit.py": "909744c5ae6970b9f30901a4417779dd02b84dca6061b3d926d12072adc2f8c2",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "617431cbcbb452402d65bd9f2067b0132644a74fe732cae3d6bc7cd91809879c"
+  }
+}

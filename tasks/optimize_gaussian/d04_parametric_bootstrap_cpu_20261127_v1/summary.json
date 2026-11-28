@@ -1,0 +1,130 @@
+{
+  "classification": "SYNTHETIC_IID_GAUSSIAN_PARAMETRIC_BOOTSTRAP_PILOT_NOT_PHYSICAL_REFERENCE",
+  "denominators": {
+    "bootstrap_draws": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 11940,
+      "valid": 11940
+    },
+    "bootstrap_outer": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 60,
+      "valid": 60
+    },
+    "chi_square": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 60,
+      "valid": 60
+    }
+  },
+  "fit": {
+    "covariance_eigenvalue_floor": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "multistarts": 3,
+    "nominal_dof": 13,
+    "nstates": 2,
+    "pp_a4p_joint": true,
+    "tmin": 3
+  },
+  "generator": {
+    "bootstrap_covariance": "unshrunk raw within-panel sample covariance, eigenvalue floor 1e-12 of max eigenvalue; every replicate refits the spectrum and re-estimates/shrinks covariance",
+    "bootstrap_minimum_valid_fraction": 0.9,
+    "bootstrap_minimum_valid_replicates": 180,
+    "bootstrap_pvalue": "(1 + count(bootstrap chi2 >= observed chi2)) / (valid bootstrap draws + 1)",
+    "bootstrap_replicates_per_panel": 199,
+    "configurations_per_panel": 128,
+    "feature_count": 27,
+    "kind": "independent_multivariate_Gaussian_configuration_panels",
+    "outer_panels": 60
+  },
+  "open_gates": [
+    "the outer null panel count is 60 and the 1%/5% rejection MC errors are coarse",
+    "only the iid Gaussian configuration model is assessed; no AR(1), heavy-tail, chain-selection or production E-chain validation is performed here",
+    "bootstrap draws use a plug-in raw sample covariance and are nested within each outer panel; independent calibration/validation panels are still required",
+    "these synthetic results cannot replace a candidate-blind E-chain reference receipt or independent statistical review"
+  ],
+  "paired_comparison": {
+    "abstained": 0,
+    "failed": 0,
+    "fraction_bootstrap_pvalue_lower": 1.0,
+    "mean_delta_bootstrap_minus_chi_square": -0.26770070605206886,
+    "median_delta_bootstrap_minus_chi_square": -0.2844143565184659,
+    "planned": 60,
+    "valid": 60
+  },
+  "physical_e_chain": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "pvalue_summaries": {
+    "chi_square_approx": {
+      "count": 60,
+      "ks_distance_to_uniform": 0.4193852585019485,
+      "mean": 0.7522840393854023,
+      "median": 0.8391344873160577,
+      "rejection": {
+        "0.01": {
+          "count": 0,
+          "mcse": 0.01284523257866513,
+          "nominal_rate": 0.01,
+          "rate": 0.0,
+          "wilson_95": [
+            0.0,
+            0.06017185214208986
+          ]
+        },
+        "0.05": {
+          "count": 1,
+          "mcse": 0.028136571693556888,
+          "nominal_rate": 0.05,
+          "rate": 0.016666666666666666,
+          "wilson_95": [
+            0.0029481597947862495,
+            0.08855129727590061
+          ]
+        }
+      }
+    },
+    "parametric_bootstrap": {
+      "count": 60,
+      "ks_distance_to_uniform": 0.06499999999999995,
+      "mean": 0.48458333333333337,
+      "median": 0.53,
+      "rejection": {
+        "0.01": {
+          "count": 0,
+          "mcse": 0.01284523257866513,
+          "nominal_rate": 0.01,
+          "rate": 0.0,
+          "wilson_95": [
+            0.0,
+            0.06017185214208986
+          ]
+        },
+        "0.05": {
+          "count": 3,
+          "mcse": 0.028136571693556888,
+          "nominal_rate": 0.05,
+          "rate": 0.05,
+          "wilson_95": [
+            0.01714950216439568,
+            0.1370051647634852
+          ]
+        }
+      }
+    }
+  },
+  "reference_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "schema": "optimize-d04-parametric-bootstrap-summary-v1"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "wilson-f-pivot-chart-screen-execution-status-v1",
+  "protocol_schema": "wilson-f-pivot-chart-paired-point-fit-screen-v1",
+  "status": "CANCELLED_FOR_RUNTIME_BEFORE_FIRST_FIT_COMPLETED",
+  "started_local": "2026-11-28 19:40:30 Asia/Shanghai",
+  "cancelled_local": "2026-11-28 about 20:03 Asia/Shanghai",
+  "elapsed_minutes_approx": 23,
+  "planned_fits": 72,
+  "completed_fits": 0,
+  "failed_fits": 0,
+  "abstained_fits": 0,
+  "in_progress_at_cancellation": {
+    "panel_id": "06_baseline",
+    "method": "fixed_operator0",
+    "start_index": 0,
+    "epsilon_start": 0.15,
+    "excited_scale_start": 0.2
+  },
+  "reason": "The 67-coordinate finite-difference Jacobian work was computationally impractical on the first planned fit. The run was interrupted before any fit outcome was observed; no partial fit is treated as evidence.",
+  "next_version": "f_lane_pivot_chart_fit_comparison_20261128_v2",
+  "next_version_change": "Use the existing analytic chart Jacobian for both equivalent coordinate charts, while keeping panels, starts, objective, solver budget, tolerances, validity rule, and advancement threshold fixed."
+}

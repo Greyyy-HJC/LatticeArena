@@ -1,0 +1,108 @@
+{
+  "analysis_snapshot_hashes": {
+    "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "manifest": "c770e1f2483f39a1bd65ff68d184125ca29418486fa4e4189a72422beac1b57a",
+    "raw_matrices": "ba7ec51abe947eb5c9d070c8b4c3460ed0a2d286bc8bf7e3c385255919582921"
+  },
+  "certified": false,
+  "classification": "CONDITIONAL_SYNTHETIC_PROFILE_SENSITIVITY",
+  "denominator": {
+    "abstained_profile_points": 16,
+    "failed_profile_points": 0,
+    "planned_profile_points": 18,
+    "valid_profile_points": 2
+  },
+  "floor_values": [
+    0.0,
+    0.045,
+    0.075
+  ],
+  "force_grid": [
+    0.14,
+    0.15,
+    0.15757559165100204,
+    0.16,
+    0.17,
+    0.18
+  ],
+  "gate_without_independent_floor_receipt": {
+    "physical_interval": null,
+    "physical_profile_permitted": false,
+    "status": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR"
+  },
+  "local_approximation_thresholds": {
+    "force_constraint_absolute_error_max": 0.0025,
+    "maximum_parameter_shift": 0.25,
+    "nonlinear_objective_mismatch_fraction_max": 0.1
+  },
+  "local_linearization": {
+    "center_force": 0.15757559165100204,
+    "covariance_diagnostics": {
+      "block_count": 96,
+      "component_count": 180,
+      "condition_number": 234705.318918205,
+      "covariance_of": "sample mean",
+      "diagonal_shrinkage": 0.25,
+      "eigenvalue_floor_relative": 1e-10,
+      "floor_active_count": 0,
+      "max_eigenvalue": 9.69810929470477e-11,
+      "raw_min_eigenvalue": -4.706714170049656e-27,
+      "regularized_min_eigenvalue": 4.132036435903938e-16,
+      "shrunk_min_eigenvalue": 4.132036435903938e-16
+    },
+    "jacobian_rank": 67,
+    "method": "central finite-difference whitened Jacobian plus active-set Gauss-Newton KKT",
+    "parameter_count": 67
+  },
+  "overlap_definition": "min_R abs(A[m=0,n=0,operator=0]) in the toy's normalized endpoint convention",
+  "physical_score": null,
+  "profile_by_floor": [
+    {
+      "abstained": 5,
+      "failed": 0,
+      "grid_interval": null,
+      "overlap_floor": 0.0,
+      "planned": 6,
+      "status": "ABSTAIN_INCOMPLETE_PROFILE_GRID",
+      "valid": 1
+    },
+    {
+      "abstained": 5,
+      "failed": 0,
+      "grid_interval": null,
+      "overlap_floor": 0.045,
+      "planned": 6,
+      "status": "ABSTAIN_INCOMPLETE_PROFILE_GRID",
+      "valid": 1
+    },
+    {
+      "abstained": 6,
+      "failed": 0,
+      "grid_interval": null,
+      "overlap_floor": 0.075,
+      "planned": 6,
+      "status": "ABSTAIN_INCOMPLETE_PROFILE_GRID",
+      "valid": 0
+    }
+  ],
+  "profile_reference_delta_objective": 3.84,
+  "schema": "wilson-f-lane-overlap-profile-summary-v1",
+  "scope_limits": [
+    "the source is one reused synthetic weak-overlap panel and is not independent calibration",
+    "the overlap floor is in the toy endpoint normalization and is not a physical receipt",
+    "the local Gauss-Newton profile and nominal delta-objective threshold are not finite-sample calibrated",
+    "the local profile is a first-order approximation, not a nonlinear nuisance refit",
+    "the fixed-force grid is coarse and may clip a conditional profile set",
+    "without an independent open-calibration production floor receipt, the physical gate abstains"
+  ],
+  "source_hashes": {
+    "bootstrap_snapshot_helper.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "identifiability_screen.py": "f5a21c4380c5c07043d46fe2cdc4440bae3cfdee495c8cf597d5dbbf1f6d4559",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "overlap_profile.py": "04bccfce185815c3f17c8883020fd9b4383bb49bfe1a7c2859025ba7455ca5fc",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "two_static_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77"
+  },
+  "source_raw_matrix_sha256": "ba7ec51abe947eb5c9d070c8b4c3460ed0a2d286bc8bf7e3c385255919582921"
+}

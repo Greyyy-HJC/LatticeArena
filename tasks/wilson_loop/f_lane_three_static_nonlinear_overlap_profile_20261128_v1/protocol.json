@@ -1,0 +1,27 @@
+{
+  "floor_values": [
+    0.0,
+    0.045,
+    0.075
+  ],
+  "force_grid": [
+    0.14,
+    0.15,
+    0.15757559165100204,
+    0.16,
+    0.17,
+    0.18
+  ],
+  "jacobian_check": {
+    "all_finite": true,
+    "max_abs": 8.816197771821521e-12,
+    "max_relative": 8.816197771821521e-12
+  },
+  "physical_gate_without_receipt": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR",
+  "physical_status": "NOT_READY/UNCERTIFIED; F=GROUND_STATE_FORCE_UNCERTIFIED",
+  "profile_method": "exact finite-Nt forward model; analytically differentiated residual; eliminate E0(R=3) coordinate to fix target force exactly; two retained starts per cell",
+  "schema": "wilson-nonlinear-overlap-profile-protocol-v1",
+  "source_panel": "02_weak_ground_overlap; intentionally reused from the prior frozen synthetic screen",
+  "source_raw_matrix_sha256": "ba7ec51abe947eb5c9d070c8b4c3460ed0a2d286bc8bf7e3c385255919582921",
+  "uncertainty_rule": "nominal objective difference <= 3.84 only; no finite-sample calibration claim"
+}

@@ -1,0 +1,1152 @@
+{
+  "block_bootstrap": {
+    "by_block_length": {
+      "1": {
+        "block_length": 1,
+        "contrasts": {
+          "a4p_only_tmin3_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.0007776562909652797,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -0.0022581800523003405,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 0.00046317554918033513
+            },
+            "paired_shift_over_se": 1.3356055664499111,
+            "point_shift_from_primary": -0.0010386420709980193
+          },
+          "joint_tmin2_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 2.9738454199951383e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -2.6629961100282926e-07,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 9.498599655366482e-06
+            },
+            "paired_shift_over_se": 1.3673326681560645,
+            "point_shift_from_primary": 4.066235992805645e-06
+          },
+          "joint_tmin2_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": null,
+              "denominator": {
+                "abstained": 1,
+                "failed": 0,
+                "planned": 1,
+                "valid": 0
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 3,
+                "planned": 24,
+                "valid": 21
+              },
+              "lower_95_percentile": null,
+              "reason": "fewer than 90% of paired bootstrap draws are valid",
+              "status": "abstained",
+              "upper_95_percentile": null
+            },
+            "paired_shift_over_se": null,
+            "point_shift_from_primary": -0.005331585291638186
+          },
+          "joint_tmin3_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.0043037665193714275,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -0.012509812258286583,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 5.44496314474355e-05
+            },
+            "paired_shift_over_se": 0.0002952547929211178,
+            "point_shift_from_primary": -1.2707076924578509e-06
+          },
+          "joint_tmin4_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 7.842134415491557e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -1.8890653607860076e-05,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 6.345193456416823e-06
+            },
+            "paired_shift_over_se": 0.912131831030873,
+            "point_shift_from_primary": -7.153060423592539e-06
+          },
+          "joint_tmin4_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.0021898840207063893,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -2.6421705119820944e-05,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 0.0074569693722284424
+            },
+            "paired_shift_over_se": 0.08141160032684905,
+            "point_shift_from_primary": 0.0001782819626559018
+          },
+          "pp_only_tmin3_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 4.632846108785685e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -1.0626072668301623e-07,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 1.6991834021780343e-05
+            },
+            "paired_shift_over_se": 1.606741237656811,
+            "point_shift_from_primary": 7.443784890703853e-06
+          }
+        },
+        "fit_denominators": {
+          "a4p_only_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin2_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin2_nstates3": {
+            "abstained": 0,
+            "failed": 3,
+            "planned": 24,
+            "valid": 21
+          },
+          "joint_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin3_nstates3": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin4_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin4_nstates3": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "pp_only_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          }
+        },
+        "primary_mass": {
+          "bootstrap_se": 5.7235634068161545e-06,
+          "denominator": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 1,
+            "valid": 1
+          },
+          "draw_denominator": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "lower_95_percentile": 0.31997941385432244,
+          "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+          "status": "diagnostic_only",
+          "upper_95_percentile": 0.3199983205902584
+        },
+        "resample_covariance_denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 24,
+          "valid": 24
+        },
+        "seed": 2026112716
+      },
+      "4": {
+        "block_length": 4,
+        "contrasts": {
+          "a4p_only_tmin3_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.0009267215309024368,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -0.002475080114117964,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 0.0004994805549590087
+            },
+            "paired_shift_over_se": 1.1207704109200902,
+            "point_shift_from_primary": -0.0010386420709980193
+          },
+          "joint_tmin2_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 2.5792609751868504e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -6.873939727411459e-07,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 7.501348763463978e-06
+            },
+            "paired_shift_over_se": 1.5765120443118683,
+            "point_shift_from_primary": 4.066235992805645e-06
+          },
+          "joint_tmin2_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.004803503141088492,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 1,
+                "planned": 24,
+                "valid": 23
+              },
+              "lower_95_percentile": -0.014665102649819817,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 0.001048805909803718
+            },
+            "paired_shift_over_se": 1.1099368804472205,
+            "point_shift_from_primary": -0.005331585291638186
+          },
+          "joint_tmin3_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.005415087636804946,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -0.016696483867179465,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 4.616758991534271e-05
+            },
+            "paired_shift_over_se": 0.00023466059603932912,
+            "point_shift_from_primary": -1.2707076924578509e-06
+          },
+          "joint_tmin4_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 8.18529933231511e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -2.179489698202891e-05,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 6.171983973024543e-06
+            },
+            "paired_shift_over_se": 0.8738911227537705,
+            "point_shift_from_primary": -7.153060423592539e-06
+          },
+          "joint_tmin4_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.0030437539933009946,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -0.003489736751594446,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 0.0072485257250065275
+            },
+            "paired_shift_over_se": 0.05857305256873026,
+            "point_shift_from_primary": 0.0001782819626559018
+          },
+          "pp_only_tmin3_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 6.009246850090255e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -1.963150769640484e-07,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 1.8767075339004568e-05
+            },
+            "paired_shift_over_se": 1.2387217693664976,
+            "point_shift_from_primary": 7.443784890703853e-06
+          }
+        },
+        "fit_denominators": {
+          "a4p_only_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin2_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin2_nstates3": {
+            "abstained": 0,
+            "failed": 1,
+            "planned": 24,
+            "valid": 23
+          },
+          "joint_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin3_nstates3": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin4_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin4_nstates3": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "pp_only_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          }
+        },
+        "primary_mass": {
+          "bootstrap_se": 6.240362200274247e-06,
+          "denominator": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 1,
+            "valid": 1
+          },
+          "draw_denominator": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "lower_95_percentile": 0.31997975698795866,
+          "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+          "status": "diagnostic_only",
+          "upper_95_percentile": 0.320001439176013
+        },
+        "resample_covariance_denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 24,
+          "valid": 24
+        },
+        "seed": 2026112719
+      },
+      "8": {
+        "block_length": 8,
+        "contrasts": {
+          "a4p_only_tmin3_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.000805472978326115,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -0.0020089052813376694,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 0.0006596309663774384
+            },
+            "paired_shift_over_se": 1.2894809620509706,
+            "point_shift_from_primary": -0.0010386420709980193
+          },
+          "joint_tmin2_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 1.992070553229259e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": 6.781422456816899e-07,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 7.895038360915264e-06
+            },
+            "paired_shift_over_se": 2.041210832725802,
+            "point_shift_from_primary": 4.066235992805645e-06
+          },
+          "joint_tmin2_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.005066165769651837,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 1,
+                "planned": 24,
+                "valid": 23
+              },
+              "lower_95_percentile": -0.015779541472209124,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": -0.00016274533024426016
+            },
+            "paired_shift_over_se": 1.0523906113724717,
+            "point_shift_from_primary": -0.005331585291638186
+          },
+          "joint_tmin3_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.00265720428315358,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -0.008867208110200944,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 3.1444924810408733e-05
+            },
+            "paired_shift_over_se": 0.0004782122701344476,
+            "point_shift_from_primary": -1.2707076924578509e-06
+          },
+          "joint_tmin4_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 5.739893906135696e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -1.8760306247422864e-05,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 3.944883045220449e-06
+            },
+            "paired_shift_over_se": 1.246200807988146,
+            "point_shift_from_primary": -7.153060423592539e-06
+          },
+          "joint_tmin4_nstates3": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 0.0014991671102459446,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -5.3131493773621305e-05,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 0.004893014492252587
+            },
+            "paired_shift_over_se": 0.11892067364435036,
+            "point_shift_from_primary": 0.0001782819626559018
+          },
+          "pp_only_tmin3_nstates2": {
+            "bootstrap_paired_shift": {
+              "bootstrap_se": 3.93039998593899e-06,
+              "denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 1,
+                "valid": 1
+              },
+              "draw_denominator": {
+                "abstained": 0,
+                "failed": 0,
+                "planned": 24,
+                "valid": 24
+              },
+              "lower_95_percentile": -1.5595051858635627e-07,
+              "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+              "status": "diagnostic_only",
+              "upper_95_percentile": 1.2284730219579154e-05
+            },
+            "paired_shift_over_se": 1.8939000909154287,
+            "point_shift_from_primary": 7.443784890703853e-06
+          }
+        },
+        "fit_denominators": {
+          "a4p_only_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin2_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin2_nstates3": {
+            "abstained": 0,
+            "failed": 1,
+            "planned": 24,
+            "valid": 23
+          },
+          "joint_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin3_nstates3": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin4_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "joint_tmin4_nstates3": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "pp_only_tmin3_nstates2": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          }
+        },
+        "primary_mass": {
+          "bootstrap_se": 4.4063825825832275e-06,
+          "denominator": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 1,
+            "valid": 1
+          },
+          "draw_denominator": {
+            "abstained": 0,
+            "failed": 0,
+            "planned": 24,
+            "valid": 24
+          },
+          "lower_95_percentile": 0.31998213981458906,
+          "reason": "empirical percentile summary; no finite-sample coverage guarantee",
+          "status": "diagnostic_only",
+          "upper_95_percentile": 0.31999638108828804
+        },
+        "resample_covariance_denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 24,
+          "valid": 24
+        },
+        "seed": 2026112723
+      }
+    },
+    "certified": false,
+    "estimator": "primary joint PP-even/A4P-odd two-state GLS, t=3..8",
+    "open_gates": [
+      "block lengths are sensitivity settings, not a dependence receipt",
+      "bootstrap percentiles are not coverage calibrated for this chain",
+      "the source reader has not authenticated provenance, independence, review, or authorization",
+      "the result cannot be converted into a gate-ready reference_summary"
+    ],
+    "point_estimates": {
+      "a4p_only_tmin3_nstates2": 0.31895133394294534,
+      "joint_tmin2_nstates2": 0.31999404224993616,
+      "joint_tmin2_nstates3": 0.31465839072230517,
+      "joint_tmin3_nstates2": 0.31998997601394336,
+      "joint_tmin3_nstates3": 0.3199887053062509,
+      "joint_tmin4_nstates2": 0.31998282295351976,
+      "joint_tmin4_nstates3": 0.32016825797659926,
+      "pp_only_tmin3_nstates2": 0.31999741979883406
+    },
+    "resampling": {
+      "assumptions_not_verified": [
+        "configuration order represents a stationary sequence",
+        "circular wraparound is acceptable for this finite sequence",
+        "the chosen block lengths cover relevant dependence"
+      ],
+      "block_lengths": [
+        1,
+        4,
+        8
+      ],
+      "interpretation": "L=1 is the iid bootstrap baseline; L=4,8 are user-selected sensitivity values, not estimated dependence scales",
+      "method": "circular moving-block bootstrap over the supplied configuration order",
+      "replicates_per_length": 24,
+      "seed_base": 2026112715
+    },
+    "schema": "optimize-d04-circular-mbb-diagnostic-v1",
+    "status": "diagnostic_only"
+  },
+  "certified": false,
+  "configuration_ids": {
+    "count": 240,
+    "first": 100,
+    "last": 339
+  },
+  "data_access": "captured_snapshot_bytes_only",
+  "fit_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 6,
+    "unit": "joint_fit_variant",
+    "valid": 6
+  },
+  "fit_protocol": {
+    "common_covariance_for_all_variants": true,
+    "diagonal_shrinkage": 0.25,
+    "multistarts_per_variant": 3,
+    "relative_eigenvalue_floor": 1e-10,
+    "state_counts": [
+      2,
+      3
+    ],
+    "windows": [
+      [
+        2,
+        8
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        8
+      ]
+    ]
+  },
+  "fit_variants": [
+    {
+      "attempts": [
+        {
+          "converged": true,
+          "cost": 0.025107292459210416,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 13,
+          "start_id": 0,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.02510729245953832,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 9,
+          "start_id": 1,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.025107292459350006,
+          "message": "Both `ftol` and `xtol` termination conditions are satisfied.",
+          "nfev": 33,
+          "start_id": 2,
+          "status": 4
+        }
+      ],
+      "boundary_hit_count": 0,
+      "chi2": 0.025107292459210416,
+      "dof": 17,
+      "fit_channels": [
+        "PP0",
+        "PP1",
+        "PP2",
+        "A4P"
+      ],
+      "gof_p_approx": 1.0,
+      "interpretation": "chi-square p is an approximate GLS diagnostic; dependence and finite-sample calibration are not established",
+      "minimum_fitted_state_gap": 0.5894544262673562,
+      "near_degenerate_state_gap_below_0p05": false,
+      "nstates": 2,
+      "planned_multistarts": 3,
+      "reference_mass": 0.31999404224993616,
+      "state_masses": [
+        0.31999404224993616,
+        0.9094484685172923
+      ],
+      "status": "valid",
+      "successful_multistarts": 3,
+      "tmax": 8,
+      "tmin": 2
+    },
+    {
+      "attempts": [
+        {
+          "converged": true,
+          "cost": 0.009746275783563085,
+          "message": "`xtol` termination condition is satisfied.",
+          "nfev": 2756,
+          "start_id": 0,
+          "status": 3
+        },
+        {
+          "converged": true,
+          "cost": 0.015483254012423139,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 214,
+          "start_id": 1,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.009747957756636502,
+          "message": "Both `ftol` and `xtol` termination conditions are satisfied.",
+          "nfev": 2215,
+          "start_id": 2,
+          "status": 4
+        }
+      ],
+      "boundary_hit_count": 0,
+      "chi2": 0.009746275783563085,
+      "dof": 12,
+      "fit_channels": [
+        "PP0",
+        "PP1",
+        "PP2",
+        "A4P"
+      ],
+      "gof_p_approx": 1.0,
+      "interpretation": "chi-square p is an approximate GLS diagnostic; dependence and finite-sample calibration are not established",
+      "minimum_fitted_state_gap": 0.008063537888875538,
+      "near_degenerate_state_gap_below_0p05": true,
+      "nstates": 3,
+      "planned_multistarts": 3,
+      "reference_mass": 0.31465839072230517,
+      "state_masses": [
+        0.31465839072230517,
+        0.3227219286111807,
+        0.9120297201834047
+      ],
+      "status": "valid",
+      "successful_multistarts": 3,
+      "tmax": 8,
+      "tmin": 2
+    },
+    {
+      "attempts": [
+        {
+          "converged": true,
+          "cost": 0.017826400760899887,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 35,
+          "start_id": 0,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.017826400760741355,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 10,
+          "start_id": 1,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.01782640076125208,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 43,
+          "start_id": 2,
+          "status": 2
+        }
+      ],
+      "boundary_hit_count": 0,
+      "chi2": 0.017826400760741355,
+      "dof": 13,
+      "fit_channels": [
+        "PP0",
+        "PP1",
+        "PP2",
+        "A4P"
+      ],
+      "gof_p_approx": 1.0,
+      "interpretation": "chi-square p is an approximate GLS diagnostic; dependence and finite-sample calibration are not established",
+      "minimum_fitted_state_gap": 0.5885785920473046,
+      "near_degenerate_state_gap_below_0p05": false,
+      "nstates": 2,
+      "planned_multistarts": 3,
+      "reference_mass": 0.31998997601394336,
+      "state_masses": [
+        0.31998997601394336,
+        0.9085685680612479
+      ],
+      "status": "valid",
+      "successful_multistarts": 3,
+      "tmax": 8,
+      "tmin": 3
+    },
+    {
+      "attempts": [
+        {
+          "converged": true,
+          "cost": 0.00841318983339173,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 205,
+          "start_id": 0,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.008413308925312118,
+          "message": "`xtol` termination condition is satisfied.",
+          "nfev": 148,
+          "start_id": 1,
+          "status": 3
+        },
+        {
+          "converged": true,
+          "cost": 0.008413308745083605,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 141,
+          "start_id": 2,
+          "status": 2
+        }
+      ],
+      "boundary_hit_count": 0,
+      "chi2": 0.00841318983339173,
+      "dof": 8,
+      "fit_channels": [
+        "PP0",
+        "PP1",
+        "PP2",
+        "A4P"
+      ],
+      "gof_p_approx": 0.9999999999869968,
+      "interpretation": "chi-square p is an approximate GLS diagnostic; dependence and finite-sample calibration are not established",
+      "minimum_fitted_state_gap": 0.0007931786033258392,
+      "near_degenerate_state_gap_below_0p05": true,
+      "nstates": 3,
+      "planned_multistarts": 3,
+      "reference_mass": 0.3199887053062509,
+      "state_masses": [
+        0.3199887053062509,
+        0.9056352371554048,
+        0.9064284157587307
+      ],
+      "status": "valid",
+      "successful_multistarts": 3,
+      "tmax": 8,
+      "tmin": 3
+    },
+    {
+      "attempts": [
+        {
+          "converged": true,
+          "cost": 0.011142753003587556,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 53,
+          "start_id": 0,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.011142753003847077,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 40,
+          "start_id": 1,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.011142753003508941,
+          "message": "`xtol` termination condition is satisfied.",
+          "nfev": 71,
+          "start_id": 2,
+          "status": 3
+        }
+      ],
+      "boundary_hit_count": 0,
+      "chi2": 0.011142753003508941,
+      "dof": 9,
+      "fit_channels": [
+        "PP0",
+        "PP1",
+        "PP2",
+        "A4P"
+      ],
+      "gof_p_approx": 0.9999999999986323,
+      "interpretation": "chi-square p is an approximate GLS diagnostic; dependence and finite-sample calibration are not established",
+      "minimum_fitted_state_gap": 0.5868162669842679,
+      "near_degenerate_state_gap_below_0p05": false,
+      "nstates": 2,
+      "planned_multistarts": 3,
+      "reference_mass": 0.31998282295351976,
+      "state_masses": [
+        0.31998282295351976,
+        0.9067990899377877
+      ],
+      "status": "valid",
+      "successful_multistarts": 3,
+      "tmax": 8,
+      "tmin": 4
+    },
+    {
+      "attempts": [
+        {
+          "converged": true,
+          "cost": 0.001946861600436225,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 528,
+          "start_id": 0,
+          "status": 2
+        },
+        {
+          "converged": true,
+          "cost": 0.0020989807720870816,
+          "message": "`xtol` termination condition is satisfied.",
+          "nfev": 272,
+          "start_id": 1,
+          "status": 3
+        },
+        {
+          "converged": true,
+          "cost": 0.001946675838628073,
+          "message": "`xtol` termination condition is satisfied.",
+          "nfev": 555,
+          "start_id": 2,
+          "status": 3
+        }
+      ],
+      "boundary_hit_count": 0,
+      "chi2": 0.001946675838628073,
+      "dof": 4,
+      "fit_channels": [
+        "PP0",
+        "PP1",
+        "PP2",
+        "A4P"
+      ],
+      "gof_p_approx": 0.999999526613911,
+      "interpretation": "chi-square p is an approximate GLS diagnostic; dependence and finite-sample calibration are not established",
+      "minimum_fitted_state_gap": 0.00812533464466525,
+      "near_degenerate_state_gap_below_0p05": true,
+      "nstates": 3,
+      "planned_multistarts": 3,
+      "reference_mass": 0.32016825797659926,
+      "state_masses": [
+        0.32016825797659926,
+        0.8471146694860305,
+        0.8552400041306958
+      ],
+      "status": "valid",
+      "successful_multistarts": 3,
+      "tmax": 8,
+      "tmin": 4
+    }
+  ],
+  "folding": {
+    "a4p": "0.5*(C(t)-C(T-t)); t=T/2 fixed to zero and excluded from fit",
+    "pp": "0.5*(C(t)+C(T-t)); t=0,T/2 kept once",
+    "reflection_diagnostics": {
+      "a4p_odd_relative_rms_defect": 1.6185301332755106e-05,
+      "interpretation": "descriptive ensemble-mean checks; no threshold or per-configuration symmetry imposed",
+      "pp_even_relative_rms_defect": 5.19928256865698e-06
+    }
+  },
+  "open_gates": [
+    "block lengths are sensitivity settings, not a dependence receipt",
+    "bootstrap percentiles are not coverage calibrated for this chain",
+    "the reader does not authenticate provenance, review independence, or authorization",
+    "the result cannot be converted into a gate-ready reference_summary"
+  ],
+  "physical_score": null,
+  "schema": "optimize-d04-joint-fit-diagnostic-v1",
+  "source_hashes": {
+    "correlator_data": "624390f8d3c8d256c1301fae450ee4b948f71b86b9feb504722f1c69fa53e181",
+    "manifest": "69dcf988fc999cc9f335df94a828f2c2a4c21f3630e248f4c7b10985171a0868",
+    "source_protocol": "d25085569423cfbb5e94708b2407243b1d9eebc39baa545566a642e690d5f5d9"
+  },
+  "split_id": "E-synthetic-development-only",
+  "status": "diagnostic_only",
+  "trajectory_ids": {
+    "count": 240,
+    "first": 703,
+    "last": 2376
+  }
+}

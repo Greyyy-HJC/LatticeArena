@@ -1,0 +1,18 @@
+{
+  "README.md": "4006f61634238b665309028d8717e90fa1de58ff2488b5fc3bc24aba3b3ab15f",
+  "protocol.json": "092495c89ffa7aae794fb08c256c9cc12de537719559f58dd07eca8a2576071e",
+  "raw.json": "fd5088778b4cb3b5924eca2f2736c7c9dfd1bff60344de570974b625a3717b95",
+  "paired_summary.csv": "3d8677ffb7a1a11c4befc481639978e45fd50cb94f0e48aee85d95901dac35b1",
+  "fit_tolerance_summary.csv": "20840336dd18be73792aa4f19c9d375b21e557c325ec48ac81991db42bbc1cae",
+  "local_polynomial_baseline.csv": "9d80c604994993b95a33816ddd0f622077e7d87b3081668f46e9218903a6e638",
+  "denominator_summary.csv": "2daa2e58ceaf89e5b8e29a4f9158bf7362029dc628001546d23cf2e059317c5b",
+  "synthetic_inputs.npz": "ab0c088cc2dfc821a3fce27fc166b27a243ae031f4706c9b6f2074808a2327db",
+  "meta_init_diagnostic.png": "fb3dc78ab6db121836f327cfb57ad3b5461f8951eeb28b70b8bc6120e47c803a",
+  "snapshot_trainable_w_meta_init_diagnostic.py": "155470b3621596780ebc30d40a0c05f4e6a0d2642501da9c68529e7c57df122f",
+  "snapshot_trainable_w_operator_diagnostic.py": "584235dd49eab347c4ac078fdc00724bdf1f3b31eb6fc1d56d05fc688df2596b",
+  "snapshot_trainable_w_stress_diagnostic.py": "db89fb374bffe0729d4a46848d3d6a3ef0a76d0110618de4bfcd15506e59514e",
+  "snapshot_trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0",
+  "snapshot_features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+  "snapshot_kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+  "summary.json": "68b6e9cfc0e14273ed92bc64a1e689f95178b339a77d2d211d7675bac461d644"
+}

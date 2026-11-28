@@ -1,0 +1,22 @@
+{
+  "DGP": "weak_ground_overlap; 96 blocks; AR(1) rho=0.5; relative noise=0.003; exact force 0.15",
+  "adaptive_grid_point": "each panel's nonlinear candidate force estimate, added to the fixed shared grid",
+  "base_force_grid": [
+    0.14,
+    0.15,
+    0.16,
+    0.17,
+    0.18
+  ],
+  "floors": [
+    0.0,
+    0.045
+  ],
+  "oracle_floor_note": "0.045 is the known minimum overlap in the synthetic generator only; never an independent production receipt",
+  "panel_count": 6,
+  "physical_status": "NOT_READY/UNCERTIFIED; F=GROUND_STATE_FORCE_UNCERTIFIED",
+  "profile_method": "exact-force 2-vacuum \u00d7 3-static nonlinear nuisance refit; analytic residual Jacobian; two starts",
+  "profile_rule": "objective minus per-floor grid minimum <= 3.84; clipped endpoints flagged",
+  "schema": "wilson-weak-overlap-profile-calibration-protocol-v1",
+  "seed_rule": "2026114300 + panel_index"
+}

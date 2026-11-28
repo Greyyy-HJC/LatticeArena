@@ -1,0 +1,107 @@
+{
+  "schema": "optimize-gaussian-chebyshev-positivity-diagnostic-v1",
+  "classification": "synthetic_only",
+  "physical_score": null,
+  "denominators": {
+    "planned": 3,
+    "valid": 3,
+    "failed": 0,
+    "abstained": 0
+  },
+  "interval": [
+    -1.0,
+    1.0
+  ],
+  "rows": [
+    {
+      "panel_seed": 2026112201,
+      "degree": 4,
+      "status": "valid",
+      "reason": "",
+      "coefficients": [
+        1.1935652163558008,
+        1.1287618752803597,
+        0.29131294261069707,
+        0.04929872204196039,
+        0.0065893382989623064
+      ],
+      "minimum": 0.3134068999431402,
+      "argmin": -1.0,
+      "p_at_lower": 0.3134068999431402,
+      "p_at_upper": 2.66952809458778,
+      "candidate_points": [
+        {
+          "kind": "lower_endpoint",
+          "x": -1.0,
+          "value": 0.3134068999431402
+        },
+        {
+          "kind": "upper_endpoint",
+          "x": 1.0,
+          "value": 2.66952809458778
+        }
+      ],
+      "numerically_certified": false
+    },
+    {
+      "panel_seed": 2026112202,
+      "degree": 4,
+      "status": "valid",
+      "reason": "",
+      "coefficients": [
+        1.193812463889825,
+        1.1291975011847262,
+        0.2912495130000736,
+        0.04937391383661768,
+        0.0065372970726794094
+      ],
+      "minimum": 0.3130278589412343,
+      "argmin": -1.0,
+      "p_at_lower": 0.3130278589412343,
+      "p_at_upper": 2.670170688983922,
+      "candidate_points": [
+        {
+          "kind": "lower_endpoint",
+          "x": -1.0,
+          "value": 0.3130278589412343
+        },
+        {
+          "kind": "upper_endpoint",
+          "x": 1.0,
+          "value": 2.670170688983922
+        }
+      ],
+      "numerically_certified": false
+    },
+    {
+      "panel_seed": 2026112203,
+      "degree": 4,
+      "status": "valid",
+      "reason": "",
+      "coefficients": [
+        1.1938395140457236,
+        1.1290398110993065,
+        0.29142434744746104,
+        0.0493388202088527,
+        0.006621305573458352
+      ],
+      "minimum": 0.31350653575848375,
+      "argmin": -1.0,
+      "p_at_lower": 0.31350653575848375,
+      "p_at_upper": 2.670263798374802,
+      "candidate_points": [
+        {
+          "kind": "lower_endpoint",
+          "x": -1.0,
+          "value": 0.31350653575848375
+        },
+        {
+          "kind": "upper_endpoint",
+          "x": 1.0,
+          "value": 2.670263798374802
+        }
+      ],
+      "numerically_certified": false
+    }
+  ]
+}

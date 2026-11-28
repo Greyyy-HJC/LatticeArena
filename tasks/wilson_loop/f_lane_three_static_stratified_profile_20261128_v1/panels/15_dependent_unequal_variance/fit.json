@@ -1,0 +1,180 @@
+{
+  "certified": false,
+  "covariance_diagnostics": {
+    "block_count": 96,
+    "component_count": 180,
+    "condition_number": 25289.09658000919,
+    "covariance_of": "sample mean",
+    "diagonal_shrinkage": 0.25,
+    "eigenvalue_floor_relative": 1e-10,
+    "floor_active_count": 0,
+    "max_eigenvalue": 1.4098862530090199e-08,
+    "raw_min_eigenvalue": -1.2482242147514535e-24,
+    "regularized_min_eigenvalue": 5.575075600460645e-13,
+    "shrunk_min_eigenvalue": 5.575075600460645e-13
+  },
+  "denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 1,
+    "valid": 1
+  },
+  "fit": {
+    "absolute_stout_ground_force": 0.15014334157683878,
+    "degrees_of_freedom": 113,
+    "fit_coordinates": [
+      -0.7155324942837505,
+      -0.5944668968596448,
+      -0.4320932281788248,
+      -0.7185709788284804,
+      -0.001909749658631204,
+      0.7186551156128723,
+      0.05022672383722671,
+      0.47966912435826636,
+      -0.04035515162995611,
+      -1.0652498959465457,
+      0.5981978448356862,
+      -0.11615914965264226,
+      0.28146219298560254,
+      0.04228810890473601,
+      -1.6807944189143578,
+      0.24181642429711567,
+      0.13260550071275473,
+      0.6400923538261908,
+      0.13160148638777897,
+      -1.0394439653379532,
+      0.22663647146991955,
+      0.06666934597831228,
+      0.4831892760670012,
+      -0.11534589051428835,
+      0.03963224177377378,
+      0.5791627318560508,
+      -0.019316314557467837,
+      0.09490428864773216,
+      -0.2044832913213563,
+      -0.31024061693551425,
+      -0.03899392470068793,
+      0.29832810510793933,
+      0.19726911541343853,
+      0.035634294751452716,
+      -0.21907845167393905,
+      -0.51682255992095,
+      -0.6439912381041314,
+      -0.10652504099848525,
+      0.6180146657593079,
+      0.07995259585977302,
+      0.5189170393260124,
+      -0.049718615041867587,
+      -1.2378767228515655,
+      0.5515188437112319,
+      -0.09325853153353869,
+      0.2287338556270766,
+      -0.008576564957963781,
+      -1.3763753593519166,
+      0.3132099390683704,
+      0.042471960533549444,
+      0.6215435265643172,
+      0.1851786527571947,
+      -1.0684912798462733,
+      0.2822753159975252,
+      0.03814955206966133,
+      0.45004097995044795,
+      -0.04574699079236419,
+      -0.5262991529509399,
+      0.375501197886056,
+      0.328120814360317,
+      0.22271533455498924,
+      -0.55978506166003,
+      -5.035987967288865,
+      0.003488759340761357,
+      -9.39194772557218e-05,
+      0.0030629172417038016,
+      -0.003673052002949661
+    ],
+    "force_delta_standard_error_diagnostic": 0.00011659637379382957,
+    "force_uncertainty_calibrated": false,
+    "gls_objective": 1841.5289892520248,
+    "jacobian_condition_number": 911545810.6192074,
+    "jacobian_rank": 67,
+    "parameter_count": 67,
+    "reduced_gls_objective": 16.29671671904447,
+    "static_energies_by_R": {
+      "2": [
+        0.4394520747101069,
+        0.9397113840124616,
+        1.336773507376001
+      ],
+      "3": [
+        0.5895954162869457,
+        1.05735440680587,
+        1.4794747556398664
+      ]
+    },
+    "vacuum_energies": [
+      0.0,
+      0.3980588756421606
+    ]
+  },
+  "fit_attempts": [
+    {
+      "epsilon_start": 0.15,
+      "excited_overlap_scale_start": 0.2,
+      "message": "`ftol` termination condition is satisfied.",
+      "nfev": 1689,
+      "objective": 1841.5289892520248,
+      "optimizer_success": true,
+      "parameter_count": 67,
+      "rank": 67,
+      "success": true
+    },
+    {
+      "epsilon_start": 0.3,
+      "excited_overlap_scale_start": 0.35,
+      "message": "`ftol` termination condition is satisfied.",
+      "nfev": 3261,
+      "objective": 1841.5294544718413,
+      "optimizer_success": true,
+      "parameter_count": 67,
+      "rank": 67,
+      "success": true
+    },
+    {
+      "epsilon_start": 0.55,
+      "excited_overlap_scale_start": 0.5,
+      "message": "`ftol` termination condition is satisfied.",
+      "nfev": 3066,
+      "objective": 1841.5292503549626,
+      "optimizer_success": true,
+      "parameter_count": 67,
+      "rank": 67,
+      "success": true
+    }
+  ],
+  "initializer_fits": [
+    {
+      "R": 2,
+      "nfev": 20,
+      "parameters": 18,
+      "rank": 18,
+      "reduced_chi_square": 9.123584644521154,
+      "success": true
+    },
+    {
+      "R": 3,
+      "nfev": 168,
+      "parameters": 18,
+      "rank": 18,
+      "reduced_chi_square": 11.346086852754187,
+      "success": true
+    }
+  ],
+  "open_gates": [
+    "the endpoint/source-sink factorization remains a draft convention",
+    "the inverse-Jacobian standard error is an asymptotic diagnostic, not calibrated coverage",
+    "no difficult-strata, production exporter, thermal/mixed contamination, reference force, review or authorization receipts"
+  ],
+  "physical_score": null,
+  "schema": "wilson-f-two-vacuum-three-static-fit-candidate-v1",
+  "split_id": "F-synthetic-open-stratified-profile-dependent_unequal_variance-00",
+  "status": "three_static_fit_candidate"
+}

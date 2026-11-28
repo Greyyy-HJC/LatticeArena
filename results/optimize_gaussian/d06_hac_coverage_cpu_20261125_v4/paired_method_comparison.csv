@@ -1,0 +1,4 @@
+unit,planned,valid_paired_panels,both_cover,percentile_only_covers,hac_only_covers,neither_covers,hac_minus_percentile_coverage,paired_panel_bootstrap_95,bootstrap_resamples,bootstrap_seed
+SLSQP,250,250,216,1,27,6,0.104,"[0.064, 0.144]",10000,2026112501
+Chebyshev,250,250,214,0,26,10,0.104,"[0.068, 0.144]",10000,2026112502
+familywise,250,250,190,1,43,16,0.168,"[0.12, 0.216]",10000,2026112503

@@ -1,0 +1,14 @@
+{
+  "action": "quenched_wilson",
+  "dimension_order": "configuration,channel,time",
+  "geometry": "S16T16",
+  "kappa": 0.14,
+  "pp_order": [
+    "PP_n0",
+    "PP_n8",
+    "PP_n16"
+  ],
+  "schema": "optimize-d04-e-chain-source-protocol-v1",
+  "temporal_correlator_boundary": "periodic",
+  "temporal_extent": 16
+}

@@ -1,0 +1,96 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_SCHEMA_AND_LINEAR_ALGEBRA_DIAGNOSTIC_NOT_MEASUREMENT",
+  "denominators": {
+    "R_projection_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    },
+    "R_time_values": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 14,
+      "valid": 14
+    },
+    "physical_q_interval_or_certification": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    },
+    "source_files": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    }
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "limits": [
+    "synthetic input only; no Wilson measurement or production source bytes were read",
+    "the repository has no raw cross-correlator producer; diagonal loop arrays cannot reconstruct missing off-diagonal elements",
+    "the matrix basis uses three ordered smearing IDs; do not add an outer kernel axis or interpret one projected vector as three per-kernel q values",
+    "the q-bound contract asks for kernel-indexed q cells; mapping those cells to basis-operator or GEVP-composite overlaps remains unresolved",
+    "synthetic block spread is descriptive and is not a confidence interval or independence claim",
+    "captured-byte digest equality does not authenticate who issued the expected digests",
+    "no state-overlap/gap fit, q upper bound, coverage calibration, finite-Nt backward term, thermal h, mixed x, force propagation, or physical gate"
+  ],
+  "matrix_condition": {
+    "R2": {
+      "condition_C_t0": 27.819708721080364,
+      "condition_C_td": 29.02705409060676,
+      "eigenvector": [
+        [
+          -1.2722192975665394,
+          0.0
+        ],
+        [
+          1.5423776739079575,
+          0.0
+        ],
+        [
+          0.5682701017454614,
+          0.0
+        ]
+      ],
+      "metric_norm": 0.9999999999999999,
+      "principal_generalized_eigenvalue": 0.7293237435199742
+    },
+    "R3": {
+      "condition_C_t0": 27.824156679721316,
+      "condition_C_td": 29.04763805959874,
+      "eigenvector": [
+        [
+          -1.264897013035601,
+          0.0
+        ],
+        [
+          1.5345134136510874,
+          0.0
+        ],
+        [
+          0.5653347439848687,
+          0.0
+        ]
+      ],
+      "metric_norm": 1.0000000000000007,
+      "principal_generalized_eigenvalue": 0.728417587064395
+    }
+  },
+  "physical_measurement_inputs": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "unit": "raw Wilson correlator or independent spectrum receipt",
+    "valid": 0
+  },
+  "physical_score": null,
+  "schema": "wilson-f-raw-matrix-snapshot-diagnostic-v1",
+  "source_hashes": {
+    "manifest": "b647b4a6014833bb16dc3252f60fb2cde4e332dee1ecc983921e0ab09324ac8d",
+    "matrix_npz": "134792d12e324c3565a2e761856a0ecf04a0f70397ce4d86f9423fd9dfd54c7d"
+  },
+  "status": "RAW_MATRIX_GEVP_PROJECTION_ONLY"
+}

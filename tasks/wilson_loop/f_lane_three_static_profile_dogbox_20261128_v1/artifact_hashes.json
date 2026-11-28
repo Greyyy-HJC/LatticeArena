@@ -1,0 +1,18 @@
+{
+  "artifacts": {
+    "README.md": "73d7377b10d46f4ccadad56e79e41e322382ad787663762da79935b9f67d06a6",
+    "paired_start_results.csv": "aa1b37df85c783c2c9be42b0007b590c1ea854ec14c0d4943ab7042a264c5f9b",
+    "protocol.json": "f514537b1b34608f6971a862dd7857072f01269f8d8939ee575c0307e8aa6bf2",
+    "solver_comparison.png": "c4531a6843e2ee299a4c0298fc7156c7ebf1e037334dcc76b6e08c121e4b2a1a",
+    "source_snapshot/joint_spectral_gls.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "source_snapshot/nonlinear_overlap_profile.py": "9985028571e61cb8785014ad518228b49962a9cb73fdde181cac332175812ca4",
+    "source_snapshot/npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/profile_continuation_diagnostic.py": "577028dd2d3c590b0c56fedcfb1393d6dbc200d251f1ceeba560eb3aa7782883",
+    "source_snapshot/profile_dogbox_comparison.py": "7eda67f45037e46882274612fab38c0a64c5b58187df3c86831a3ab392e8aa8a",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "source_snapshot/two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "summary.json": "20959c493374d2cafccbcb5972ce8ce190e4133f512a5ca59b0fc662a14c91c7"
+  },
+  "schema": "wilson-profile-dogbox-artifact-hashes-v1"
+}

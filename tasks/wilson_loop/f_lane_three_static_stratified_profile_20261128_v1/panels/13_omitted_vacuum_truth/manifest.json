@@ -1,0 +1,25 @@
+{
+  "action": "wilson_gauge_beta6",
+  "boundary_conditions": "periodic",
+  "dimension_order": "block,Nt,R,T,i,j",
+  "geometry": "S16T16",
+  "lane_contract_sha256": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+  "matrix_sha256": "49e4d54331da292abfe5c6eef82457eee1647f5425ba8c8ea8b64cb1324b31b9",
+  "radius_order": [
+    2,
+    3
+  ],
+  "schema": "wilson-f-two-sector-raw-manifest-v1",
+  "split_id": "F-synthetic-open-stratified-profile-omitted_vacuum_truth-01",
+  "temporal_extents": [
+    16,
+    32
+  ],
+  "time_slices": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "f1e98d4502ad92024a37e8e17cdb3a47195cb5ebd719d78efd2788a53c31ac4d",
+    "coverage_and_precision.png": "57fb5f42cddb995bc71532205d42999f64bbe7462a781d479df01e51d6e6e64f",
+    "coverage_summary.csv": "894147678e66a51c787924c852c78fab78f4d43acfbecd9a6daa7155e1d45e57",
+    "replicates.csv": "19f7b2ca914b0335f63cd18a117e6ecf4d2f03dcb96f61033968c9360378d02a",
+    "protocol.json": "7db60cc5b8f970d70f7f156a151ac95d4cd0435571b52352ca50a7f8f49ce6ed",
+    "summary.json": "3458177c5856ad4087113fe937b06179520e53e97e37a61ca73da5129e48c9ca",
+    "source_snapshot.py": "7cb7f0f5bcf9ed26f2dbec2e1a27954ff738a57b08ca4c70719847120efb9edb",
+    "base_generator_snapshot.py": "a14fc65ce1992484b8c98d49ff1c192c3c2e207eb283ab327ad1cd2ce92c6c8d"
+  }
+}

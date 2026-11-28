@@ -1,0 +1,14 @@
+panel,stratum,replicate,seed,target_force,floor,cold_valid,neighbor_force,continuation_valid,valid_starts,planned_starts,nfev_total,status
+9,near_degenerate,0,2026114500,0.17,0.9,False,0.16,True,1,2,2054,VALID_NONLINEAR_PROFILE
+9,near_degenerate,0,2026114500,0.18,0.9,False,0.16,False,0,2,3200,ABSTAIN_NO_VALID_START
+10,near_degenerate,1,2026114501,0.17,0.9,False,0.16,False,0,2,3200,ABSTAIN_NO_VALID_START
+10,near_degenerate,1,2026114501,0.18,0.9,False,0.16,True,1,2,1930,VALID_NONLINEAR_PROFILE
+11,near_degenerate,2,2026114502,0.18,0.9,False,0.17,True,1,2,1817,VALID_NONLINEAR_PROFILE
+12,omitted_vacuum_truth,0,2026114600,0.14,0.9,False,0.15,False,0,2,3200,ABSTAIN_NO_VALID_START
+13,omitted_vacuum_truth,1,2026114601,0.14,0.9,False,0.14990750372746853,False,0,2,3200,ABSTAIN_NO_VALID_START
+13,omitted_vacuum_truth,1,2026114601,0.16,0.9,False,0.15,False,0,2,3200,ABSTAIN_NO_VALID_START
+13,omitted_vacuum_truth,1,2026114601,0.17,0.9,False,0.15,False,0,2,3200,ABSTAIN_NO_VALID_START
+13,omitted_vacuum_truth,1,2026114601,0.18,0.9,False,0.15,False,0,2,3200,ABSTAIN_NO_VALID_START
+14,omitted_vacuum_truth,2,2026114602,0.14,0.9,False,0.15,False,0,2,3200,ABSTAIN_NO_VALID_START
+14,omitted_vacuum_truth,2,2026114602,0.17,0.9,False,0.16,False,0,2,3200,ABSTAIN_NO_VALID_START
+14,omitted_vacuum_truth,2,2026114602,0.18,0.9,False,0.16,False,0,2,3200,ABSTAIN_NO_VALID_START

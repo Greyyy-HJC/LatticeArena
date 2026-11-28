@@ -1,0 +1,84 @@
+{
+  "schema": "wilson-c-lane-colored-empirical-bernstein-v1",
+  "classification": "synthetic_conditional_method_comparison_only",
+  "physical_score": null,
+  "data_access": "no Wilson measurement, development/sealed split, GPU or QUDA data read",
+  "dgp": {
+    "source": "the same Gaussian-copula Beta moving-sum DGP as the prior finite-dependence report; this study adds a bound and sample-size comparison",
+    "dependence_ranges": [
+      0,
+      5,
+      10
+    ],
+    "cross_correlations": [
+      0.0,
+      0.75
+    ],
+    "beta_concentrations": [
+      5.0,
+      50.0
+    ],
+    "sample_sizes": [
+      100,
+      500,
+      2000,
+      5000
+    ],
+    "replicates_per_cell": 250,
+    "total_datasets": 12000,
+    "mean_seed_matched_across_sample_sizes": true
+  },
+  "estimand": {
+    "name": "absolute finite-T Creutz",
+    "truth": 0.15415067982725805,
+    "loop_order": [
+      "W(3,6)",
+      "W(2,5)",
+      "W(3,5)",
+      "W(2,6)"
+    ],
+    "support": [
+      -0.3333333333333333,
+      1.0
+    ],
+    "precision_halfwidth_target": 0.02
+  },
+  "methods": {
+    "colored_empirical_Bernstein": {
+      "source": "Maurer and Pontil (2009), Theorem 11, independent not necessarily identically distributed variables; arXiv:0907.3740",
+      "coloring": "index modulo (m+1), valid for this synthetic moving-sum DGP only",
+      "alpha_allocation": "LANE_ALPHA / (2 tails * 4 means * chi color classes)",
+      "log_propagation": "monotone interval arithmetic through the four log means; zero-crossing intervals abstain"
+    },
+    "graph_color_Hoeffding": {
+      "source": "same conditional finite-dependence bound as the prior report",
+      "purpose": "same-sample baseline for adaptive variance interval"
+    }
+  },
+  "method_denominators": {
+    "colored_empirical_Bernstein": {
+      "planned": 12000,
+      "valid": 0,
+      "failed": 0,
+      "abstained": 12000,
+      "valid_release": 0,
+      "finite_interval_count": 1426,
+      "unbounded_count": 10574
+    },
+    "graph_color_Hoeffding": {
+      "planned": 12000,
+      "valid": 0,
+      "failed": 0,
+      "abstained": 12000,
+      "valid_release": 0,
+      "finite_interval_count": 0,
+      "unbounded_count": 12000
+    }
+  },
+  "limitations": [
+    "simulation coverage is conditional on the exact synthetic dependence graph and support",
+    "the true m is supplied by the synthetic generator and is not estimated from HMC data",
+    "the study does not validate theorem assumptions or coverage on physical Wilson configurations",
+    "a valid finite-sample interval may remain too wide to pass the 0.02 precision gate"
+  ]
+}

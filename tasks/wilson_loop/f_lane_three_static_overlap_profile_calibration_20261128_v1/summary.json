@@ -1,0 +1,413 @@
+{
+  "certified": false,
+  "classification": "SMALL_CONDITIONAL_SYNTHETIC_COVERAGE_SCREEN",
+  "coverage_by_floor": [
+    {
+      "clipped_intervals": 1,
+      "conditional_containment_fraction": 0.4,
+      "failed_or_abstained_panels": 0,
+      "floor": 0.0,
+      "planned_panels": 6,
+      "profile_complete_panels": 6,
+      "truth_contained_panels": 2,
+      "unclipped_profiles_used_for_coverage": 5,
+      "wilson_95_interval": [
+        0.11762077423264783,
+        0.769275718723987
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "conditional_containment_fraction": 0.5,
+      "failed_or_abstained_panels": 0,
+      "floor": 0.045,
+      "planned_panels": 6,
+      "profile_complete_panels": 6,
+      "truth_contained_panels": 3,
+      "unclipped_profiles_used_for_coverage": 6,
+      "wilson_95_interval": [
+        0.1876163064826506,
+        0.8123836935173494
+      ]
+    }
+  ],
+  "data_generation": {
+    "blocks": 96,
+    "relative_noise": 0.003,
+    "rho": 0.5,
+    "stratum": "weak_ground_overlap",
+    "truth_force": 0.15
+  },
+  "denominator": {
+    "failed_or_abstained_profile_cells": 0,
+    "failed_or_abstained_start_fits": 0,
+    "planned_panels": 6,
+    "planned_profile_cells": 72,
+    "planned_start_fits": 144,
+    "valid_candidate_fit_panels": 6,
+    "valid_profile_cells": 72,
+    "valid_start_fits": 144
+  },
+  "panel_count": 6,
+  "panel_summaries": [
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15146515973042762
+          ],
+          "minimum_objective": 799.2540636605127,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.15146515973042762,
+            0.16
+          ],
+          "minimum_objective": 812.1000810301834,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.15146515973042762,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15146515973042762,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "panel": 0,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "29692b3ed8b82f71d0baa675c79f45f072a189b96a3100c800894318fcb79ecf",
+      "seed": 2026114300,
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15198467772606566
+          ],
+          "minimum_objective": 881.9743927465586,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15198467772606566
+          ],
+          "minimum_objective": 881.9743928838051,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.15198467772606566,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15198467772606566,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "panel": 1,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "0bf0e874003c8912ea16c6dd6bd20cbc869af89589ced7f09f7a8b7212a1a035",
+      "seed": 2026114301,
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": true,
+          "interval": [
+            0.14,
+            0.14136623240669277
+          ],
+          "minimum_objective": 633.5084353559249,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15
+          ],
+          "minimum_objective": 664.4428572100273,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.14136623240669277,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14136623240669277,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "panel": 2,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "b0ac157a8c2f62ee783a29d1f03be19ce208f3261f916a359ff4f56a3934aeb3",
+      "seed": 2026114302,
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.14781474158111035,
+            0.15
+          ],
+          "minimum_objective": 591.8671759838858,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.14781474158111035,
+            0.15
+          ],
+          "minimum_objective": 593.2181856961228,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.14781474158111035,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14781474158111035,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "panel": 3,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "c5266b45de16d4a0a9c6e8aff896e2e027e2c152f905dc6bd55102617faea577",
+      "seed": 2026114303,
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.1449839283264272,
+            0.1449839283264272
+          ],
+          "minimum_objective": 538.8287647709192,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.1449839283264272,
+            0.15
+          ],
+          "minimum_objective": 542.7667851223647,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.1449839283264272,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.1449839283264272,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "panel": 4,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "e0f76596c37c5c28215f1a81fe6675a019f68c3ab8b9fb64582f0b9f65987fb6",
+      "seed": 2026114304,
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.14976427188200014,
+            0.15
+          ],
+          "minimum_objective": 839.4156133264842,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.14976427188200014,
+            0.15
+          ],
+          "minimum_objective": 839.4156239429896,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.14976427188200014,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14976427188200014,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "panel": 5,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "0f53f50393abae704ce87eae8713530b6793d5e50f953fc45c67ae69e63a58bc",
+      "seed": 2026114305,
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    }
+  ],
+  "physical_gate_without_independent_floor_receipt": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR",
+  "physical_score": null,
+  "profile": {
+    "base_force_grid": [
+      0.14,
+      0.15,
+      0.16,
+      0.17,
+      0.18
+    ],
+    "floors": [
+      0.0,
+      0.045
+    ],
+    "profile_threshold": 3.84,
+    "starts_per_cell": 2
+  },
+  "schema": "wilson-weak-overlap-profile-calibration-summary-v1",
+  "scope_limits": [
+    "six panels from one synthetic DGP are a small conditional screen, not publication-grade calibration",
+    "the 0.045 floor equals the generator's toy minimum overlap and is an oracle simulation condition, not independent production evidence",
+    "nominal delta-objective threshold and coarse grid do not prove 95 percent coverage",
+    "two-start success and full local rank do not prove global identifiability",
+    "production force remains uncertified and no physical score is produced"
+  ],
+  "seed_base": 2026114300,
+  "source_hashes": {
+    "bootstrap_snapshot_helper.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "identifiability_generator.py": "f5a21c4380c5c07043d46fe2cdc4440bae3cfdee495c8cf597d5dbbf1f6d4559",
+    "nonlinear_overlap_profile.py": "6aa9f5219a1a61a934122c749c9bf712a26ced0e31331eed41bead14415b336b",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "profile_calibration.py": "8f4c2a70b897e0537329b364e0b86b3b683515a4b833a4d0ac08127248d93a9d",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511"
+  }
+}

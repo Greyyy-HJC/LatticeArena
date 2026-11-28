@@ -1,0 +1,72 @@
+{
+  "analysis_source_sha256": {
+    "snapshot_joint_spectral_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "snapshot_lane_contract.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "snapshot_npz_safety.py": "541dc6fefa6b38c4fd53b0a490c0cb12e628bf409cbbde7ade2029a9d258b0c4",
+    "snapshot_raw_matrix_joint_fit_adapter.py": "c04dcfcb4deed38316a19dc860005c867fa23e1905391d4dc373bec788d1ebf6",
+    "snapshot_raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "snapshot_source_integrity.py": "97db76f7e448be77711e837039536e4134e243d7f23d667b5d7f888b64392a7d",
+    "snapshot_spectral_q_reader.py": "02aa1d71ddd21ee942a407a86ece089156fffc996bcb39078c310b8388ec100b"
+  },
+  "classification": "SYNTHETIC_RAW_MATRIX_FIT_CANDIDATE_NOT_CALIBRATED_OR_CERTIFICATION",
+  "fit_contract": {
+    "R_values": [
+      2,
+      3
+    ],
+    "covariance": "same-block full covariance on 9*Nt real/imag matrix components; 0.25 diagonal shrinkage and 1e-10 eigen floor",
+    "fit_window_end": 7,
+    "kernel_to_basis_operator": {
+      "ape_alpha0.4_n5": "APE",
+      "identity": "identity",
+      "spatial_stout_rho0.10_n5": "stout"
+    },
+    "operator_basis_ids": [
+      "identity",
+      "ape_alpha0.4_n5",
+      "spatial_stout_rho0.10_n5"
+    ],
+    "q_point_upper": "qhat + 1.95996398454 * delta-method SE; uncalibrated candidate only",
+    "selected_q_kernels": [
+      "identity",
+      "spatial_stout_rho0.10_n5"
+    ],
+    "state_counts": [
+      2,
+      3
+    ],
+    "times_for_q": [
+      5,
+      6
+    ],
+    "tmin_values": [
+      3,
+      4,
+      5
+    ]
+  },
+  "method_boundary": {
+    "not_connected_to_evidence_gate": true,
+    "not_connected_to_spectral_q_reader": true,
+    "physical_score": null,
+    "reason": "candidate q intervals are not coverage-calibrated and do not emit ratio_upper/gap_lower support receipts or selected familywise envelope"
+  },
+  "schema": "wilson-f-raw-matrix-joint-fit-diagnostic-protocol-v1",
+  "source_snapshot": {
+    "block_count": 80,
+    "expected_sha256": {
+      "synthetic_manifest": "ba0854a82023958d91c31c2d292dfc5fc4378fdc083891894dc39a582748f1b4",
+      "synthetic_matrix_npz": "0a9f00904f756573323b0e7ee54f1a7cadff00fac532f2a8dc7473d869886dcb"
+    },
+    "paths": {
+      "synthetic_manifest": "synthetic_raw_matrix_manifest.json",
+      "synthetic_matrix_npz": "synthetic_raw_matrix_input.npz"
+    },
+    "read_mode": "same captured SourceByteSnapshot passed to strict matrix reader and joint fitter",
+    "source_sha256": {
+      "manifest": "ba0854a82023958d91c31c2d292dfc5fc4378fdc083891894dc39a582748f1b4",
+      "matrix_npz": "0a9f00904f756573323b0e7ee54f1a7cadff00fac532f2a8dc7473d869886dcb"
+    },
+    "split_id": "synthetic_calibration_open"
+  }
+}

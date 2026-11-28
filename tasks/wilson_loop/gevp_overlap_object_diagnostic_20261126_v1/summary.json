@@ -1,0 +1,104 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_FORWARD_SPECTRUM_METHOD_PROPOSAL_NOT_CALIBRATION",
+  "denominators": {
+    "bare_operator_time_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 6,
+      "unit": "operator,T pair",
+      "valid": 6
+    },
+    "gevp_projected_time_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 16,
+      "unit": "td,T pair",
+      "valid": 16
+    },
+    "physical_certification_gate": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "unit": "F-lane certification",
+      "valid": 0
+    },
+    "physical_inputs": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "unit": "raw Wilson correlator or independent spectrum receipt",
+      "valid": 0
+    }
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "limitations": [
+    "the four-state, three-operator spectrum is deterministic and has infinite temporal extent",
+    "q(T) is a positive spectral contamination diagnostic, not the effective-energy bias",
+    "there is no noise, bootstrap, fitted interval, finite-Nt backward term, thermal h, mixed x, or force propagation",
+    "the proposed td and projected-overlap semantics require independent physics review before contract adoption"
+  ],
+  "physical_score": null,
+  "proposed_contract_candidate": {
+    "eigenproblem": "C(td) v0 = lambda0 C(t0) v0; choose largest lambda0",
+    "normalization": "v0^dagger C(t0) v0 = 1; phase fixed only for deterministic serialization",
+    "overlap_object": "Z_n(v0)=sum_i conjugate(v0_i) Z_ni in C_ij=sum_n Z_ni conjugate(Z_nj) exp(-E_n t)",
+    "q_definition": "sum_{n>0}|Z_n(v0)/Z_0(v0)|^2 exp[-(E_n-E_0) T]",
+    "q_times": [
+      5,
+      6
+    ],
+    "status": "review_candidate_only_not_written_into_production_contract",
+    "t0": 1,
+    "t0_role": "metric_reference_time_in_C(t0)",
+    "td_for_first_candidate": 2,
+    "td_role": "fixed time used once to solve the principal GEVP and define a time-independent projected operator"
+  },
+  "results": {
+    "C_t0_condition_number": 28.21478217996619,
+    "C_td_condition_number_by_td": {
+      "2": 29.39120121462407,
+      "3": 32.54057443488118,
+      "4": 37.88296703550047,
+      "5": 45.86630628053074
+    },
+    "gevp_projected_q_by_td_and_T": {
+      "2": {
+        "5": 8.88190916073967,
+        "6": 7.710588023420434
+      },
+      "3": {
+        "5": 4.270948161757401,
+        "6": 3.6968255586466534
+      },
+      "4": {
+        "5": 1.445751872454736,
+        "6": 1.2348556608603627
+      },
+      "5": {
+        "5": 0.473509854749806,
+        "6": 0.3856271260127718
+      }
+    },
+    "largest_bare_operator_q_by_T": {
+      "5": 0.9879821724298494,
+      "6": 0.7741679025627795
+    },
+    "selected_td2_projected_q_by_T": {
+      "5": 8.88190916073967,
+      "6": 7.710588023420434
+    },
+    "selected_to_largest_bare_ratio_by_T": {
+      "5": 8.98994881546845,
+      "6": 9.95983945846316
+    }
+  },
+  "schema": "wilson-gevp-overlap-object-diagnostic-v1",
+  "source_hashes": {
+    "contract": "367251c46d4e124642a9b9423afec1fbebcf5d6e496ba615a713c916f0b292c4",
+    "diagnostic_source": "f7a3f14d6a55b619abbadbce28b0127a65dbb7348120b86242073e891b2c83a3",
+    "parent_gevp_diagnostic": "732cf530e540dac90d1d0c05d2216be7a9b8905f8eb790ac10fabdb087dc4871",
+    "protocol": "6e6a24649cebf98aafd9c47ce9aba77726f6d4c81cebe0747f8081717f4bd6e8"
+  },
+  "status": "DIAGNOSTIC_ONLY"
+}

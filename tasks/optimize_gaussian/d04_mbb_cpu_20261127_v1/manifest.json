@@ -1,0 +1,18 @@
+{
+  "action": "quenched_wilson",
+  "configuration_ids_sha256": "431cd0035a4c7a84600f702ff6b67d1dfca8beada767d89bbf3260248ff3b4b6",
+  "correlator_data_sha256": "624390f8d3c8d256c1301fae450ee4b948f71b86b9feb504722f1c69fa53e181",
+  "dimension_order": "configuration,channel,time",
+  "geometry": "S16T16",
+  "kappa": 0.14,
+  "pp_order": [
+    "PP_n0",
+    "PP_n8",
+    "PP_n16"
+  ],
+  "schema": "optimize-d04-e-chain-manifest-v1",
+  "source_protocol_sha256": "d25085569423cfbb5e94708b2407243b1d9eebc39baa545566a642e690d5f5d9",
+  "split_id": "E-synthetic-development-only",
+  "temporal_correlator_boundary": "periodic",
+  "trajectory_ids_sha256": "dab4f430bb98112115f650aa920a2f447f0579f6993019a034ad9618b6e412ba"
+}

@@ -1,0 +1,4 @@
+epsilon_start,excited_overlap_scale_start,success,optimizer_success,rank,parameter_count,objective,nfev,message
+0.15,0.2,True,True,67,67,692.0814239006668,33,`ftol` termination condition is satisfied.
+0.3,0.35,True,True,67,67,692.0814238982882,31,`ftol` termination condition is satisfied.
+0.55,0.5,True,True,67,67,729.5203359684433,87,`ftol` termination condition is satisfied.

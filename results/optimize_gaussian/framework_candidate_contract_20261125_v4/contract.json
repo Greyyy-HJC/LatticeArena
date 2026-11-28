@@ -1,0 +1,94 @@
+{
+  "authorization": {
+    "gpu_quda": false,
+    "production_data": false
+  },
+  "data_access": "none",
+  "denominators": {
+    "coefficient_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "unit": "no D04 objective supplied",
+      "valid": 0
+    },
+    "schema_fixture": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "unit": "one illustrative candidate descriptor; no fit or measurement",
+      "valid": 1
+    }
+  },
+  "example_candidate": {
+    "builder": "tasks.optimize_gaussian.chebyshev_baseline:apply_hopping_filter_cpu",
+    "contract": "optimize-chebyshev-diagnostic-v1",
+    "dependencies": {
+      "candidate_contract.py": "000759dc8236d303dfb19ea8c9847d298981ea96b22291c6d72b3c8b9f3022e1",
+      "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+      "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+    },
+    "parameters": {
+      "control_points": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    }
+  },
+  "example_only": true,
+  "open_gates": [
+    "D04 independent reference and data receipts",
+    "D06 empirical paired-risk and full-cost receipts",
+    "D11 independent production-link/operator review",
+    "measurement evaluator and production authorization"
+  ],
+  "operator_contract": {
+    "axes": "(z,y,x,3,nrhs)",
+    "constraints": {
+      "boundary": "periodic spatial shifts",
+      "control_constraints": "0<=b0<=b1<=b2<=b3<=b4=1",
+      "link_condition": "unitary SU(3)-like 3x3 matrices checked by CPU helper",
+      "normalization": "P4(1)=1 for the proposed low-mode endpoint",
+      "physical_contract_frozen": false,
+      "production_evaluator_connected": false,
+      "selected_method_defaults_recorded": true,
+      "spatial_directions": 3,
+      "unresolved": [
+        "D04 independent E-chain reference and receipt",
+        "D06 empirical paired-risk and full-cost receipts",
+        "D11 independent production-link/operator review",
+        "data-owner and GPU/QUDA authorization"
+      ]
+    },
+    "dependencies": {
+      "candidate_contract.py": "000759dc8236d303dfb19ea8c9847d298981ea96b22291c6d72b3c8b9f3022e1",
+      "chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+      "research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+    },
+    "dtype": "complex128",
+    "name": "optimize-chebyshev-diagnostic-v1",
+    "parameters": {
+      "builder_parameters": {
+        "control_points": "five finite real Bernstein controls, 0<=b0<=...<=b4=1",
+        "field": "(z,y,x,3,nrhs)",
+        "links": "three periodic spatial directions of unitary 3x3 links"
+      },
+      "role": "diagnostic candidate schema for selected D11 method defaults; production review remains open",
+      "spectral_map": "P4(I+H/12), proposed H spectrum [-12,0]"
+    },
+    "support": "time_slice",
+    "transformation": "gauge_covariant"
+  },
+  "physical_score": null,
+  "schema": "optimize-framework-candidate-diagnostic-v1",
+  "status": "DIAGNOSTIC_SCHEMA_ONLY"
+}

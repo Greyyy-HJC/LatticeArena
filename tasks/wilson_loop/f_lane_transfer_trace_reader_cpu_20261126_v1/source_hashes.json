@@ -1,0 +1,28 @@
+{
+  "denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 4,
+    "unit": "source_file",
+    "valid": 4
+  },
+  "schema": "latticearena-diagnostic-source-snapshot-v1",
+  "sources": {
+    "core/source_integrity.py": {
+      "sha256": "97db76f7e448be77711e837039536e4134e243d7f23d667b5d7f888b64392a7d",
+      "snapshot": "snapshot_core_source_integrity.py"
+    },
+    "tasks/wilson_loop/f_lane_transfer_trace_reader.py": {
+      "sha256": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+      "snapshot": "snapshot_f_lane_transfer_trace_reader.py"
+    },
+    "tasks/wilson_loop/lane_contract_v2.json": {
+      "sha256": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+      "snapshot": "snapshot_lane_contract_v2.json"
+    },
+    "tests/test_wilson_f_lane_transfer_trace_reader.py": {
+      "sha256": "caeb7e8d7397a76ef996c570bf65a5634a159e092018547d1ba6a2c40f5d8d83",
+      "snapshot": "snapshot_test_wilson_f_lane_transfer_trace_reader.py"
+    }
+  }
+}

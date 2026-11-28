@@ -1,0 +1,51 @@
+{
+  "schema": "wilson-f-joint-spectral-mbb-v1",
+  "classification": "synthetic CPU interval-method comparison; not physical evidence",
+  "physical_score": null,
+  "input_stress_schema": "wilson-f-joint-spectral-stress-v1",
+  "input_stress_artifact_hashes": {
+    "README.md": "ae21a22826d830c3c02e6057de2e1de1b7306d37645266db742a97199fce053d",
+    "protocol.json": "7928c839c61582ca8cf603184cf5ad031fd481ceb12f1cc123b412d2e7086072",
+    "panel_results.csv": "77bdb3b2f660b1b40c8b52f1cf3359941c6b12182c4255834ab662dcef5cdd27",
+    "coverage_summary.csv": "a95132f3bdfe1249ba6d45ca459f7c0cf27099b1ec83232f88af0ed8dd4f222f",
+    "stress_coverage.png": "d31828bd56c1752a384e2d5891e5df88b28510116d97a997795c9145eeb13b7f",
+    "interval_conservatism.png": "c4d88594c9bebbd099660cf0a27ac345d18b954317adca784eeb0f8edb38fdc9",
+    "snapshot_f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+    "snapshot_f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "summary.json": "cff933e0d6219d2ec70f2f12adab1a29073343e1a8441a42559d288b483167f5"
+  },
+  "scenarios": [
+    "matched_3state_independent",
+    "omitted_4th_state",
+    "near_degenerate_first_gap",
+    "small_ground_overlap_operator_2",
+    "ar1_block_rho_0p75",
+    "student_t5_independent"
+  ],
+  "outer_panel_replicates": "40:80",
+  "calibration_replicates": "0:40",
+  "n_blocks": 96,
+  "block_length": 8,
+  "bootstrap_replicates_per_outer_panel": 40,
+  "alpha": 0.025,
+  "moving_block_rule": "circular moving blocks sampled with replacement; concatenate until n_blocks; refit full 3-state GLS for every resample",
+  "upper_order_statistic": "rank=ceil((B+1)*(1-alpha)); failed or missing bootstrap q estimates are +infinity; insufficient rank or infinite selected value abstains",
+  "comparison_methods": {
+    "delta": "qhat + 1.95996398454 * same-fit delta-method SE",
+    "split_conformal": "qhat + per-scenario/operator/time multiplier calibrated on the disjoint first 40 panels",
+    "moving_block_bootstrap": "empirical one-sided percentile of bootstrap refit q estimates using circular block length 8"
+  },
+  "source_sha256": {
+    "f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+    "f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+    "f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f"
+  },
+  "warning": "B=40 has coarse 97.5% tail resolution; bootstrap coverage is an empirical synthetic pilot and has no finite-sample guarantee",
+  "omitted": [
+    "finite-Nt thermal h",
+    "mixed-sector x",
+    "familywise q/h/x envelope",
+    "production Wilson snapshots",
+    "independent contamination receipts"
+  ]
+}

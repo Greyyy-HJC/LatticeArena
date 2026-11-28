@@ -1,0 +1,47 @@
+{
+  "artifact_manifest": "artifact_hashes.json",
+  "certified": false,
+  "denominators": {
+    "R_operator_Nt_T_decomposition_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 60,
+      "unit": "R x bare_operator x N_t x T",
+      "valid": 60
+    },
+    "certification_gate": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "unit": "physical F-lane certificate",
+      "valid": 0
+    },
+    "finite_Nt_matrix_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 20,
+      "unit": "R x N_t x T Hermitian PSD matrix",
+      "valid": 20
+    },
+    "physical_measurements": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "unit": "raw Wilson measurement",
+      "valid": 0
+    }
+  },
+  "h_decreases_when_Nt_doubles": true,
+  "max_decomposition_abs_error": 4.440892098500626e-16,
+  "minimum_matrix_eigenvalue": 8.056323974909504e-06,
+  "physical_score": null,
+  "q_nt_independent": true,
+  "schema": "wilson-f-finite-nt-transfer-trace-summary-v1",
+  "source_hashes": {
+    "diagnostic": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "finite_nt_toy": "bafc037fe07fa570520ebe822e9e72129eff4cdc9aafabcecccaa6813d3da0b8",
+    "lane_contract": "4c03703fe73d44825e7c4dcfc645fdcdaa4e63e07d9c1f29b3ada7b9983befeb",
+    "lane_contract_json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95"
+  },
+  "status": "SYNTHETIC_TRANSFER_TRACE_DIAGNOSTIC_ONLY"
+}

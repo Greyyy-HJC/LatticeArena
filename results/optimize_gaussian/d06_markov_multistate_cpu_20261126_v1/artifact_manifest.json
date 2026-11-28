@@ -1,0 +1,9 @@
+{
+  "payload_sha256": {
+    "README.md": "79d2257ceefcfe67185a1d86f6e70d22085035a4346b91cea922bd6f6da7a3c9",
+    "coverage.csv": "0d9eca0070898bec657fc50ad00098e25358ac64a3643e52bb010c4c97958f07",
+    "multistate_markov_coverage.png": "e56ce8521382c71fb12f304c9326c1759559d28bfc2038a0da60f1a267dad951",
+    "protocol.json": "06ff3b1c468a605a1c811b5cf8a1241786d14b5cb397d66254076e8b0b09c553"
+  },
+  "schema": "optimize-d06-markov-multistate-artifact-manifest-v1"
+}

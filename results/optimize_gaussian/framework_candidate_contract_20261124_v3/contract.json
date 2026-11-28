@@ -1,0 +1,91 @@
+{
+  "authorization": {
+    "gpu_quda": false,
+    "production_data": false
+  },
+  "data_access": "none",
+  "denominators": {
+    "coefficient_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "unit": "no D04 objective supplied",
+      "valid": 0
+    },
+    "schema_fixture": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "unit": "one illustrative candidate descriptor; no fit or measurement",
+      "valid": 1
+    }
+  },
+  "example_candidate": {
+    "builder": "tasks.optimize_gaussian.chebyshev_baseline:apply_hopping_filter_cpu",
+    "contract": "optimize-chebyshev-diagnostic-v1",
+    "dependencies": {
+      "candidate_contract.py": "1724ef8ba13482b8e07a0d6fc1fdaa235be16919ff070daff8fb92c7eeed024d",
+      "chebyshev_baseline.py": "1bc260b866f44491ac63aec8c157325feede25a5128e276dc51d9183e2e2c437",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+    },
+    "parameters": {
+      "control_points": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ]
+    }
+  },
+  "example_only": true,
+  "not_frozen": [
+    "D04 objective",
+    "D06 r_star",
+    "D11 production contract",
+    "measurement evaluator",
+    "production data/GPU authorization"
+  ],
+  "operator_contract": {
+    "axes": "(z,y,x,3,nrhs)",
+    "constraints": {
+      "boundary": "periodic spatial shifts",
+      "control_constraints": "0<=b0<=b1<=b2<=b3<=b4=1",
+      "link_condition": "unitary SU(3)-like 3x3 matrices checked by CPU helper",
+      "normalization": "P4(1)=1 for the proposed low-mode endpoint",
+      "physical_contract_frozen": false,
+      "production_evaluator_connected": false,
+      "spatial_directions": 3,
+      "unresolved": [
+        "D04 objective",
+        "D06 r_star",
+        "D11 production review"
+      ]
+    },
+    "dependencies": {
+      "candidate_contract.py": "1724ef8ba13482b8e07a0d6fc1fdaa235be16919ff070daff8fb92c7eeed024d",
+      "chebyshev_baseline.py": "1bc260b866f44491ac63aec8c157325feede25a5128e276dc51d9183e2e2c437",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+    },
+    "dtype": "complex128",
+    "name": "optimize-chebyshev-diagnostic-v1",
+    "parameters": {
+      "builder_parameters": {
+        "control_points": "five finite real Bernstein controls, 0<=b0<=...<=b4=1",
+        "field": "(z,y,x,3,nrhs)",
+        "links": "three periodic spatial directions of unitary 3x3 links"
+      },
+      "role": "diagnostic candidate schema; not a frozen production operator",
+      "spectral_map": "P4(I+H/12), proposed H spectrum [-12,0]"
+    },
+    "support": "time_slice",
+    "transformation": "gauge_covariant"
+  },
+  "physical_score": null,
+  "schema": "optimize-framework-candidate-diagnostic-v1",
+  "status": "DIAGNOSTIC_SCHEMA_ONLY"
+}

@@ -1,0 +1,56 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_MODEL_SENSITIVITY_SCREEN_ONLY",
+  "denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 12,
+    "valid": 12
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "fit_quality": {
+    "2": {
+      "median_mean_reduced_chi_square": 152.99407291668425,
+      "planned_radius_fits": 24,
+      "valid_radius_fits": 24,
+      "valid_two_radius_panels": 12
+    },
+    "3": {
+      "median_mean_reduced_chi_square": 4.127361645201627,
+      "planned_radius_fits": 24,
+      "valid_radius_fits": 24,
+      "valid_two_radius_panels": 12
+    }
+  },
+  "open_gates": [
+    "Nt=32 per-R 2/3-state diagnostic does not match the full finite-Nt two-vacuum F primary estimator",
+    "point-estimate span has no within-model confidence construction and is not a model-truncation bound",
+    "only one omitted-static-state positive-spectrum generator and one AR(1) dependence/noise stratum were screened",
+    "production exporter/action convention, thermal/mixed q/h/x bounds, independent reference-force interval, review and authorization remain absent"
+  ],
+  "physical_score": null,
+  "schema": "wilson-absolute-force-state-count-summary-v1",
+  "source_hashes": {
+    "absolute_force_bootstrap_diagnostic.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "state_count_envelope_screen.py": "6c3fb8acbc33c094541e5ec35e24783ab0af439ed67c3214f4f738f2f4d97e6c",
+    "transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "two_sector_omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f"
+  },
+  "state_count_envelope": {
+    "interpretation": "descriptive span of two model point estimates; not interval coverage",
+    "median_width": 0.001362019455343283,
+    "observed_fraction": 0.4166666666666667,
+    "successes_containing_truth": 5,
+    "valid_panel_count": 12
+  },
+  "truth": {
+    "force": 0.14999999999999997,
+    "unit": "a_t energy difference per spatial lattice step; Delta R=1"
+  }
+}

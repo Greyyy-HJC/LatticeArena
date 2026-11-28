@@ -1,0 +1,27 @@
+{
+  "schema": "wilson-kernel-identity-crosswalk-v1",
+  "classification": "static_source_and_parameter_identity_only_not_production_validation",
+  "physical_score": null,
+  "audit_denominator": {
+    "planned": 6,
+    "resolved": 6,
+    "failed": 0,
+    "abstained": 0
+  },
+  "evidence": {
+    "source_revision": "54f0e97ba85b7f8f724c31d9f9d3512f040583a9",
+    "contract_sha256": "cd2a98e8d31f559067530d8da1a3f43f285287a4831e42f8c3ebd56ff603c17d",
+    "development_protocol_sha256": "0b0326da3d8d3f24d861b943b6ace110a74572b69c066d7042823494b0f5d4aa",
+    "measure_py_sha256": "5fdee931db8a0b9bc74debb6f8c53e659ec6ccef7a42b0443788db4593e84ef6",
+    "kernels_py_sha256": "a6b54eb606f1b7c790de596185d8c0190601fde4495d9f26eba89ba16abdd7dc",
+    "stout_py_sha256": "7d9f5f8ea0c0e006b09f58abc087e5825fd74c5efecf085db176c7c23ed69f35"
+  },
+  "files": {
+    "README.md": "86dbcb5d012d06f5a51ee96a53127ee18e65c2b7cab4d10d176195c6fc8395e5"
+  },
+  "remaining_gates": [
+    "independent production-link/source/action receipt",
+    "fresh confirmation receipt",
+    "independent physics review"
+  ]
+}

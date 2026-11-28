@@ -1,0 +1,104 @@
+{
+  "analysis_snapshot_hashes": {
+    "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "manifest": "a44be77862cd4d8a25523bfc79d2356d0bfd777d0b825cd7476edfcb67b2e0b0",
+    "raw_matrices": "ba7ec51abe947eb5c9d070c8b4c3460ed0a2d286bc8bf7e3c385255919582921"
+  },
+  "certified": false,
+  "classification": "CONDITIONAL_SYNTHETIC_NONLINEAR_PROFILE_FEASIBILITY",
+  "denominator": {
+    "failed_or_abstained_profile_cells": 0,
+    "failed_or_abstained_start_fits": 0,
+    "planned_profile_cells": 18,
+    "planned_start_fits": 36,
+    "valid_profile_cells": 18,
+    "valid_start_fits": 36
+  },
+  "floor_grid": [
+    0.0,
+    0.045,
+    0.075
+  ],
+  "force_grid": [
+    0.14,
+    0.15,
+    0.15757559165100204,
+    0.16,
+    0.17,
+    0.18
+  ],
+  "gate_without_independent_floor_receipt": {
+    "physical_interval": null,
+    "physical_profile_permitted": false,
+    "status": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR"
+  },
+  "jacobian_validation": {
+    "all_finite": true,
+    "max_abs": 8.816197771821521e-12,
+    "max_relative": 8.816197771821521e-12
+  },
+  "overlap_floor_definition": "min_R abs(A[m=0,n=0,operator=0]) in the toy's normalized endpoint convention",
+  "physical_score": null,
+  "profile_by_floor": [
+    {
+      "failed_or_abstained": 0,
+      "grid_boundary_clipped": false,
+      "grid_interval": [
+        0.15757559165100204,
+        0.16
+      ],
+      "minimum_objective": 866.6798729953839,
+      "overlap_floor": 0.0,
+      "planned": 6,
+      "profile_reference_delta_objective": 3.84,
+      "status": "CONDITIONAL_UNCALIBRATED_NONLINEAR_PROFILE_SET",
+      "valid": 6
+    },
+    {
+      "failed_or_abstained": 0,
+      "grid_boundary_clipped": false,
+      "grid_interval": [
+        0.15757559165100204,
+        0.16
+      ],
+      "minimum_objective": 866.6798736348137,
+      "overlap_floor": 0.045,
+      "planned": 6,
+      "profile_reference_delta_objective": 3.84,
+      "status": "CONDITIONAL_UNCALIBRATED_NONLINEAR_PROFILE_SET",
+      "valid": 6
+    },
+    {
+      "failed_or_abstained": 0,
+      "grid_boundary_clipped": true,
+      "grid_interval": [
+        0.18,
+        0.18
+      ],
+      "minimum_objective": 13357.033979267399,
+      "overlap_floor": 0.075,
+      "planned": 6,
+      "profile_reference_delta_objective": 3.84,
+      "status": "CONDITIONAL_UNCALIBRATED_NONLINEAR_PROFILE_SET",
+      "valid": 6
+    }
+  ],
+  "schema": "wilson-f-lane-nonlinear-overlap-profile-summary-v1",
+  "scope_limits": [
+    "one reused synthetic weak-overlap panel is a conditional method screen, not independent calibration",
+    "the endpoint-normalized overlap floors are hypothetical and have no physical unit receipt",
+    "each grid cell has two starts only; nonlinear optimizer success and full rank do not prove global identifiability",
+    "the nominal delta-objective threshold is not finite-sample calibrated",
+    "production force remains uncertified without production matrices, independent floor/gap bounds, reference, review and authorization"
+  ],
+  "source_hashes": {
+    "bootstrap_snapshot_helper.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "local_overlap_profile_gate.py": "04bccfce185815c3f17c8883020fd9b4383bb49bfe1a7c2859025ba7455ca5fc",
+    "nonlinear_overlap_profile.py": "6aa9f5219a1a61a934122c749c9bf712a26ced0e31331eed41bead14415b336b",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "two_static_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77"
+  },
+  "source_raw_matrix_sha256": "ba7ec51abe947eb5c9d070c8b4c3460ed0a2d286bc8bf7e3c385255919582921"
+}

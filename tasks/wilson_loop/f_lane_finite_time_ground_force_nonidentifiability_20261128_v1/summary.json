@@ -1,0 +1,20 @@
+{
+  "abstained": 0,
+  "base_ground_force": 0.0,
+  "certified": false,
+  "classification": "DETERMINISTIC_POSITIVE_SPECTRUM_NONIDENTIFIABILITY_WITNESS_NOT_PHYSICAL_FORCE",
+  "failed": 0,
+  "finite_matrix_points": 10,
+  "finite_time_force": 0.0,
+  "hidden_ground_force": 0.05,
+  "max_matrix_relative_residual": 7.749694015765691e-17,
+  "minimum_adjusted_old_weight": 0.19999754460776764,
+  "physical_score": null,
+  "planned": 10,
+  "positivity_only_force_interval": [
+    -0.19494905943040766,
+    0.19494905943040766
+  ],
+  "schema": "wilson-finite-time-ground-force-nonidentifiability-v1",
+  "valid": 10
+}

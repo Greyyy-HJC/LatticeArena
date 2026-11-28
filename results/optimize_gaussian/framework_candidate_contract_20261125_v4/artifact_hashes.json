@@ -1,0 +1,11 @@
+{
+  "README.md": "153bdb1d45d6fe69235fde1524489eb23764ab0b9c0cfd6d4438712b93228ca0",
+  "contract.json": "ee8a073975e628cb08c59e1c39f100f193e386474ed862cafae2f28500c07a69",
+  "run_receipt.json": "9e98cc82d8eed3dadf4fbad92fe906770e828e0fca1f57f33164a26b4aacf04d",
+  "snapshot_candidate_contract.py": "000759dc8236d303dfb19ea8c9847d298981ea96b22291c6d72b3c8b9f3022e1",
+  "snapshot_chebyshev_baseline.py": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+  "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+  "snapshot_core_specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+  "snapshot_kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+  "snapshot_research_contract_v1.json": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d"
+}

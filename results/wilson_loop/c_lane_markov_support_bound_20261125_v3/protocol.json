@@ -1,0 +1,64 @@
+{
+  "abstention_reason_counts": {
+    "conditional support and pseudo-gap assumptions meet precision": 7,
+    "simultaneous interval misses the 0.02 precision target": 56,
+    "support interval reaches zero; logarithm is not bounded": 33
+  },
+  "alpha_lane": 0.025,
+  "best_possible_gap_and_mean_floor_required_n": 222616,
+  "bound": "Paulin corrected arXiv v5 Theorem 3.11 / Eq. (3.25), fixed-score Bernstein with V_f<=1 and C=2",
+  "bound_url": "https://arxiv.org/html/1212.2015v5",
+  "certified": false,
+  "denominators": {
+    "abstained": 89,
+    "failed": 0,
+    "planned": 96,
+    "unit": "conditional analytic planning scenario; no datasets are generated",
+    "valid": 7
+  },
+  "estimand": "finite-T Creutz chi_stout(R=2,T=5), separate from ground-state force",
+  "family": 4,
+  "gamma_ps_grid": [
+    1.0,
+    0.5,
+    0.1,
+    0.01
+  ],
+  "gap_grid_is_hypothetical": true,
+  "gpu_quda": false,
+  "halfwidth_target": 0.02,
+  "initial_law": "stationary, the optimistic case; burn-in TV correction would further widen intervals and spend alpha",
+  "loop_order": [
+    "W(3,6)",
+    "W(2,5)",
+    "W(3,5)",
+    "W(2,6)"
+  ],
+  "mean_floor_grid": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "mean_floor_grid_is_hypothetical": true,
+  "multiple_testing": "Bonferroni across four two-sided marginal mean intervals; interval alpha=0.025",
+  "n_grid": [
+    100,
+    1000,
+    10000,
+    100000,
+    1000000,
+    10000000
+  ],
+  "normalization_is_a_production_receipt": false,
+  "physical_data_access": "none",
+  "physical_score": null,
+  "sample_chain": "saved-configuration chain; gamma_ps receipt must apply to this exact transition, not inferred from trajectory spacing",
+  "sealed_inputs_accessed": false,
+  "source_hashes": {
+    "c_lane_markov_support_bound.py": "cb9114a85e5fb689353a20cd4c06ab80a5f59261b88b8aff8af9a26227e8ec0c",
+    "lane_contract_v2.json": "de13c0a46d2c55184e18e0320c5cdb3c650ae0ddf9af2f43e8fba92c26ed45ef"
+  },
+  "status": "CONDITIONAL_ANALYTIC_SENSITIVITY_ONLY",
+  "support_assumption": "each saved-configuration observable is ReTr(U_loop)/3 in [-1/3,1]"
+}

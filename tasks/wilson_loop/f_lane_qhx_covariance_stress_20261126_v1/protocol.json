@@ -1,0 +1,51 @@
+{
+  "classification": "HYPOTHETICAL_CORRELATION_ONLY_DESIGN_STRESS_NOT_PRODUCTION_COVARIANCE",
+  "limitations": [
+    "all hypothetical observation variances are equal; only correlation changes",
+    "the separable covariance family is illustrative and is not estimated from raw blocks",
+    "unit-column scaling removes absolute q/h/x signal amplitude",
+    "no measured covariance, fit, bootstrap, interval coverage, or force bound is used",
+    "the underlying energies remain the hand-set values from the companion toy"
+  ],
+  "model": {
+    "N_t_plans": [
+      [
+        16
+      ],
+      [
+        32
+      ],
+      [
+        16,
+        32
+      ]
+    ],
+    "R_Nt": "[[1,rho_Nt],[rho_Nt,1]] for paired N_t=16,32; identity for single extent",
+    "R_T": "rho_T^abs(T_i-T_j), using T=3..7",
+    "condition_metric": "unit-column-scaled condition number after covariance whitening; reports shape only",
+    "covariance": "Sigma = R_Nt ⊗ R_T, with unit marginal variances",
+    "radii": [
+      2,
+      3
+    ],
+    "rho_Nt_values": [
+      -0.9,
+      0.0,
+      0.9
+    ],
+    "rho_T_values": [
+      -0.9,
+      -0.5,
+      0.0,
+      0.5,
+      0.9
+    ],
+    "whitening": "L^-1 X where Sigma=L L^T; no regularization or covariance fitting"
+  },
+  "schema": "wilson-f-lane-qhx-covariance-stress-v1",
+  "source_sha256": {
+    "base_design_diagnostic": "844c90ec2d30c2862cfd44c4f2a327b0cca7cf2a87ed466a17794555acaa8280",
+    "covariance_diagnostic": "6d2d0dce0694e836cda34eedb756e14a25736dd42458c54fc38c7d23875765f3",
+    "finite_trace_toy": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08"
+  }
+}

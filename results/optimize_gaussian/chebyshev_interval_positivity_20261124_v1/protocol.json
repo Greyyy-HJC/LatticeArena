@@ -1,0 +1,22 @@
+{
+  "schema": "optimize-gaussian-chebyshev-positivity-diagnostic-v1",
+  "classification": "synthetic_only",
+  "physical_score": null,
+  "input_path": "tasks/optimize_gaussian/trainable_w_operator_cpu_replay_20261123_v1/raw.json",
+  "input_sha256": "086f17a9ac7da9869014b554b0a1d364922a0b116d95745d9f9384936031fb9e",
+  "source_commit": "f25acababd490729328af1189a5934f56bde7f89",
+  "degree": 4,
+  "spectral_interval": [
+    -1.0,
+    1.0
+  ],
+  "minimum_method": "evaluate endpoints and real roots of the Chebyshev derivative",
+  "root_imag_tolerance": 1e-10,
+  "boundary_tolerance": 1e-12,
+  "notes": [
+    "Uses the existing three synthetic heat-kernel replay panels; no new panels are generated.",
+    "A positive polynomial on [-1,1] implies a positive-semidefinite p(H/6) only if H is Hermitian and spec(H/6) is contained in the interval.",
+    "Floating-point root finding is diagnostic, not an interval-arithmetic certificate.",
+    "The original coefficient fit is unconstrained; this report does not make positivity a production contract."
+  ]
+}

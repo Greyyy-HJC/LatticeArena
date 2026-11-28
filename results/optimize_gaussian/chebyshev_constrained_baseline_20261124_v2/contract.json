@@ -1,0 +1,104 @@
+{
+  "schema": "optimize-degree4-chebyshev-baseline-review-v1",
+  "status": "REVIEW_DRAFT_NOT_FROZEN",
+  "physical_score": null,
+  "certified": false,
+  "data_access": "none",
+  "degree_cap": 4,
+  "hopping_operator": "H psi(x)=sum_i[U_i(x)psi(x+i)+U_i(x-i)^dagger psi(x-i)-2psi(x)] over three spatial directions",
+  "assumptions": [
+    "periodic spatial boundaries",
+    "unitary SU(3) links",
+    "color-position inner product"
+  ],
+  "spectrum": "H is Hermitian with spectrum in [-12,0]; X=I+H/6 has spectrum in [-1,1]; y=I+H/12 has spectrum in [0,1]",
+  "polynomial": "P4(y)=sum_i b_i C(4,i)y^i(1-y)^(4-i); equivalently sum_k a_k T_k(2y-1)",
+  "coefficient_domain": "0<=b0<=b1<=b2<=b3<=b4=1; four free control parameters",
+  "properties": [
+    "0<=P4(y)<=1",
+    "P4 is nondecreasing in y",
+    "P4(1)=1",
+    "positive Hermitian contraction on H"
+  ],
+  "application": "five Clenshaw operator matvecs; CPU matrix-free P4 and unnormalized G^m P4(H) G^m candidates use the periodic hopping kernel without an eigensolver; GPU/train.main integration is not implemented",
+  "coefficient_fit_helper": "fit_control_points_slsqp accepts a fixed scalar objective callback, constrains four free Bernstein controls with b4=1, enforces a hard objective-call cap, and returns solver status and best feasible controls; it has no D04 objective wired in",
+  "coefficient_fit_denominators": {
+    "planned": 0,
+    "valid": 0,
+    "failed": 0,
+    "abstained": 0,
+    "unit": "no D04 callback supplied"
+  },
+  "comparison_contract_proposal": "Use the same outer Gaussian sandwich, objective/reference, fit/development IDs, precision, failure accounting, and paired evaluation as trainable-W; fit the four fixed-basis controls on fit IDs only; charge basis/application, solver calls, walltime, setup, and selection cost to this arm.",
+  "not_frozen": [
+    "D04 reference/objective",
+    "D06 r_star or Delta_star",
+    "alpha/sample-size/family-wise procedure",
+    "whether this positivity/monotonicity constraint is the accepted strong baseline",
+    "outer Gaussian sandwich power and normalization",
+    "calls and walltime budgets"
+  ],
+  "basis_reference_source": "tasks/optimize_gaussian/kernels.py",
+  "basis_reference_source_sha256": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+  "contract_source_sha256": "1bc260b866f44491ac63aec8c157325feede25a5128e276dc51d9183e2e2c437",
+  "illustrative_control_points": {
+    "identity": {
+      "bernstein": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "chebyshev": [
+        1.0,
+        -0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "note": "algebraic example only; no fitting or physical data"
+    },
+    "linear": {
+      "bernstein": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "chebyshev": [
+        0.5,
+        0.5,
+        2.7840625524588654e-17,
+        -7.054597090473839e-18,
+        -7.99213859870578e-17
+      ],
+      "note": "algebraic example only; no fitting or physical data"
+    },
+    "strong_cutoff": {
+      "bernstein": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "chebyshev": [
+        0.2734375000000001,
+        0.43750000000000006,
+        0.21875000000000014,
+        0.06250000000000007,
+        0.00781250000000001
+      ],
+      "note": "algebraic example only; no fitting or physical data"
+    }
+  },
+  "illustration_denominators": {
+    "planned": 3,
+    "valid": 3,
+    "failed": 0,
+    "abstained": 0,
+    "unit": "deterministic response examples, not fit runs or physical samples"
+  }
+}

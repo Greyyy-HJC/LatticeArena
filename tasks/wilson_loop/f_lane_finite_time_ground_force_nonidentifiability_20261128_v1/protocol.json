@@ -1,0 +1,63 @@
+{
+  "certified": false,
+  "classification": "DETERMINISTIC_POSITIVE_SPECTRUM_NONIDENTIFIABILITY_WITNESS_NOT_PHYSICAL_FORCE",
+  "construction": {
+    "base_nodes": [
+      0.15,
+      0.32,
+      0.51,
+      0.7,
+      0.9
+    ],
+    "base_state_count": 15,
+    "base_weights": [
+      0.9,
+      0.7,
+      0.5,
+      0.35,
+      0.2
+    ],
+    "hidden_amplitude": 1e-06,
+    "hidden_ground_energy_a_t_E_by_radius": {
+      "2": 0.03,
+      "3": 0.08
+    },
+    "hidden_model_state_count": 18,
+    "operator_overlap_gram": "diag(1.0,0.8,0.6), repeated for each degenerate spectral level",
+    "positive_spectral_form": "C_ij(t)=sum_n Z_i^(n) Z_j^(n)* exp(-a_t E_n t)"
+  },
+  "force_definition": "[a_t E0(R=3)-a_t E0(R=2)]/(3-2), lattice-coordinate slope",
+  "gpu_quda": false,
+  "inference_claim": "finite-time moments do not identify a unique ground-state force or a tight project-specific model-truncation budget without additional spectral restrictions; positivity alone may still imply a broad envelope under an explicit energy convention",
+  "observation_contract": {
+    "current_f_lane_source": "f_lane_two_sector_fit_candidate.py: T_VALUES=(3,4,5,6,7); synthetic witness only",
+    "match_tolerance_relative": 1e-14,
+    "matrix_shape": [
+      2,
+      5,
+      3,
+      3
+    ],
+    "radii": [
+      2,
+      3
+    ],
+    "time_slices": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "physical_score": null,
+  "runtime": {
+    "numpy": "2.5.1",
+    "python": "3.13.12"
+  },
+  "schema": "wilson-finite-time-ground-force-nonidentifiability-v1",
+  "sealed_data_access": false,
+  "source_sha256": {
+    "source_snapshot/f_lane_finite_time_ground_force_nonidentifiability.py": "d6d3a3a49b76ba09dc7f1bca63041b0535ab08628a59bbe0ea1707dd9766e89e"
+  }
+}

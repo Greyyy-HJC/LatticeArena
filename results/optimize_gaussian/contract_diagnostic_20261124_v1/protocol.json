@@ -1,0 +1,19 @@
+{
+  "schema": "optimize-gaussian-dual-contrast-contract-v1",
+  "status": "STRUCTURE_DIAGNOSTIC_ONLY",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "comparisons": [
+    "trainable_W_vs_same_budget_SLSQP",
+    "trainable_W_vs_fixed_degree4_Chebyshev"
+  ],
+  "fixtures": [
+    "current_null_draft",
+    "synthetic_complete_requires_review",
+    "synthetic_missing_comparison",
+    "synthetic_invalid_r_star",
+    "synthetic_incomplete_D11"
+  ],
+  "synthetic_fixture_values_are_physical": false
+}

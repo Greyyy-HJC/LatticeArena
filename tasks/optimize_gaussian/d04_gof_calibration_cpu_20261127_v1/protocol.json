@@ -1,0 +1,249 @@
+{
+  "classification": "SYNTHETIC_GOF_SIZE_AND_POWER_PILOT_NOT_PHYSICAL_REFERENCE",
+  "covariance_modes": {
+    "chain_ar1_gaussian_est_n128": "estimated_shrunk",
+    "chain_ar1_gaussian_oracle_lrv_n128": "oracle_long_run",
+    "chain_ar1_student_t5_est_n128": "estimated_shrunk",
+    "chain_ar1_student_t5_oracle_lrv_n128": "oracle_long_run",
+    "chain_iid_gaussian_n128": "estimated_shrunk",
+    "chain_iid_student_t5_n128": "estimated_shrunk",
+    "null_n128": "estimated_shrunk",
+    "null_n128_oracle_full": "oracle_full",
+    "null_n128_oracle_shrunk_a05": "oracle_shrunk",
+    "null_n128_oracle_shrunk_a10": "oracle_shrunk",
+    "null_n128_oracle_shrunk_a25": "oracle_shrunk",
+    "null_n128_oracle_shrunk_a50": "oracle_shrunk",
+    "null_n64": "estimated_shrunk",
+    "omitted_state_mild_n128": "estimated_shrunk",
+    "omitted_state_strong_n128": "estimated_shrunk",
+    "omitted_state_strong_oracle_full_n128": "oracle_full"
+  },
+  "covariance_shrinkage": {
+    "chain_ar1_gaussian_est_n128": 0.25,
+    "chain_ar1_gaussian_oracle_lrv_n128": 0.0,
+    "chain_ar1_student_t5_est_n128": 0.25,
+    "chain_ar1_student_t5_oracle_lrv_n128": 0.0,
+    "chain_iid_gaussian_n128": 0.25,
+    "chain_iid_student_t5_n128": 0.25,
+    "null_n128": 0.25,
+    "null_n128_oracle_full": 0.0,
+    "null_n128_oracle_shrunk_a05": 0.05,
+    "null_n128_oracle_shrunk_a10": 0.1,
+    "null_n128_oracle_shrunk_a25": 0.25,
+    "null_n128_oracle_shrunk_a50": 0.5,
+    "null_n64": 0.25,
+    "omitted_state_mild_n128": 0.25,
+    "omitted_state_strong_n128": 0.25,
+    "omitted_state_strong_oracle_full_n128": 0.0
+  },
+  "dependence": {
+    "chain_ar1_gaussian_est_n128": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.847576530612245,
+      "rho": 0.3
+    },
+    "chain_ar1_gaussian_oracle_lrv_n128": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.847576530612245,
+      "rho": 0.3
+    },
+    "chain_ar1_student_t5_est_n128": {
+      "innovation_df": 5.0,
+      "mean_variance_inflation_factor": 1.847576530612245,
+      "rho": 0.3
+    },
+    "chain_ar1_student_t5_oracle_lrv_n128": {
+      "innovation_df": 5.0,
+      "mean_variance_inflation_factor": 1.847576530612245,
+      "rho": 0.3
+    },
+    "chain_iid_gaussian_n128": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "chain_iid_student_t5_n128": {
+      "innovation_df": 5.0,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "null_n128": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "null_n128_oracle_full": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "null_n128_oracle_shrunk_a05": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "null_n128_oracle_shrunk_a10": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "null_n128_oracle_shrunk_a25": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "null_n128_oracle_shrunk_a50": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "null_n64": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "omitted_state_mild_n128": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "omitted_state_strong_n128": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    },
+    "omitted_state_strong_oracle_full_n128": {
+      "innovation_df": null,
+      "mean_variance_inflation_factor": 1.0,
+      "rho": 0.0
+    }
+  },
+  "design_note": "The strong omitted-state cell was added after an initial mild-alternative pilot showed weak separation. The rho=0.30 AR(1) and finite-variance Student-t(5) panels are predeclared synthetic chain-stress designs; covariance-oracle cells are paired by sample hash and do not tune a production threshold.",
+  "fit_rule": "reader._fit_variant(mean,cov,columns,tmin=3,nstates=2)",
+  "fit_settings": {
+    "eigenvalue_floor": 1e-10,
+    "pvalue": "chi2.sf(fitted GLS residual, dof=13)",
+    "shrinkage": 0.25,
+    "starts": 3
+  },
+  "generation": "all samples generated from the source bytes of this diagnostic; no input file read",
+  "paired_contrasts": [
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 1.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128",
+      "mean_delta_chi2": 3.9637149905647235,
+      "mean_delta_gof_p_approx": -0.24156044749644784,
+      "median_delta_gof_p_approx": -0.24699695121374737,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_full",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.29,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128",
+      "mean_delta_chi2": -0.3411077919741489,
+      "mean_delta_gof_p_approx": 0.022199105281915498,
+      "median_delta_gof_p_approx": 0.009689154452503068,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_shrunk_a25",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128_oracle_shrunk_a05",
+      "mean_delta_chi2": -0.9963649056472473,
+      "mean_delta_gof_p_approx": 0.06159521208976126,
+      "median_delta_gof_p_approx": 0.06469396889263807,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_shrunk_a10",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128_oracle_shrunk_a25",
+      "mean_delta_chi2": -1.874378946444658,
+      "mean_delta_gof_p_approx": 0.10571345329328004,
+      "median_delta_gof_p_approx": 0.09390856979830547,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_shrunk_a50",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 1.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "omitted_state_strong_n128",
+      "mean_delta_chi2": 4.213698219913875,
+      "mean_delta_gof_p_approx": -0.2413032557203935,
+      "median_delta_gof_p_approx": -0.2504660404197006,
+      "planned_pairs": 300,
+      "right_cell": "omitted_state_strong_oracle_full_n128",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.006666666666666667,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "chain_ar1_gaussian_est_n128",
+      "mean_delta_chi2": -3.768562421649344,
+      "mean_delta_gof_p_approx": 0.1592078931956019,
+      "median_delta_gof_p_approx": 0.1446747102435393,
+      "planned_pairs": 300,
+      "right_cell": "chain_ar1_gaussian_oracle_lrv_n128",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.08666666666666667,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "chain_ar1_student_t5_est_n128",
+      "mean_delta_chi2": -3.3264637265219035,
+      "mean_delta_gof_p_approx": 0.15154104268972035,
+      "median_delta_gof_p_approx": 0.14288247551915262,
+      "planned_pairs": 300,
+      "right_cell": "chain_ar1_student_t5_oracle_lrv_n128",
+      "valid_pairs": 300
+    }
+  ],
+  "panels_per_cell": 300,
+  "physical_score": null,
+  "schema": "optimize-d04-gof-calibration-protocol-v1",
+  "seeds": {
+    "chain_ar1_gaussian_est_n128": 2026121712,
+    "chain_ar1_gaussian_oracle_lrv_n128": 2026121712,
+    "chain_ar1_student_t5_est_n128": 2026123712,
+    "chain_ar1_student_t5_oracle_lrv_n128": 2026123712,
+    "chain_iid_gaussian_n128": 2026120712,
+    "chain_iid_student_t5_n128": 2026122712,
+    "null_n128": 2026113712,
+    "null_n128_oracle_full": 2026113712,
+    "null_n128_oracle_shrunk_a05": 2026113712,
+    "null_n128_oracle_shrunk_a10": 2026113712,
+    "null_n128_oracle_shrunk_a25": 2026113712,
+    "null_n128_oracle_shrunk_a50": 2026113712,
+    "null_n64": 2026112712,
+    "omitted_state_mild_n128": 2026116712,
+    "omitted_state_strong_n128": 2026117712,
+    "omitted_state_strong_oracle_full_n128": 2026117712
+  },
+  "source_hashes": {
+    "contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "diagnostic": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "npz_safety": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "source_integrity": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "test": "7c46fa2df386d150f07444e5b91efc67769c2d3518230c2646dd59827ddb718f"
+  },
+  "thresholds": [
+    0.01,
+    0.05
+  ]
+}

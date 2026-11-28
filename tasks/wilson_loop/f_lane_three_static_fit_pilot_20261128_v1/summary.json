@@ -1,0 +1,245 @@
+{
+  "certified": false,
+  "classification": "SINGLE_PANEL_SYNTHETIC_FIT_FEASIBILITY",
+  "denominators": {
+    "observables": {
+      "components": 180,
+      "nominal_degrees_of_freedom": 113,
+      "parameters": 67
+    },
+    "primary_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    },
+    "three_static_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    },
+    "three_static_multistarts": {
+      "failed": 0,
+      "planned": 3,
+      "valid": 3,
+      "valid_objective_max": 729.5203359684433,
+      "valid_objective_min": 692.0814238982882
+    }
+  },
+  "f_lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "input_hashes": {
+    "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "manifest": "6260afc604e695c4538129f496924b792058ab0533b0882804eb8f90d5aeab40",
+    "raw_matrices": "529e22258405fb789ae4931d2f01d0e4f0bbe10b8509af2c106c81a22e366c6a"
+  },
+  "open_gates": [
+    "single synthetic panel does not measure finite-sample coverage or method stability",
+    "full-rank local Jacobian is not a proof of global identifiability; condition number and multiple starts require broader stress",
+    "inverse-Jacobian force standard error is uncalibrated and is not connected to the force summary reader",
+    "production exporter/action convention, thermal/mixed q/h/x bounds, independent force reference, model-truncation review and authorization remain absent"
+  ],
+  "physical_score": null,
+  "primary_fit": {
+    "absolute_force": 0.14619508602493136,
+    "degrees_of_freedom": 135,
+    "fit_attempts": [
+      {
+        "chi_square_diagonal": 22162.258707668458,
+        "converged": true,
+        "epsilon_start": 0.15,
+        "excited_overlap_scale_start": 0.2,
+        "finite": true,
+        "jacobian_rank": 45,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 113,
+        "optimizer_success": true,
+        "parameter_count": 45,
+        "status_code": 2
+      },
+      {
+        "chi_square_diagonal": 22620.222578568377,
+        "converged": true,
+        "epsilon_start": 0.3,
+        "excited_overlap_scale_start": 0.35,
+        "finite": true,
+        "jacobian_rank": 45,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 29,
+        "optimizer_success": true,
+        "parameter_count": 45,
+        "status_code": 2
+      },
+      {
+        "chi_square_diagonal": 22162.25870771018,
+        "converged": true,
+        "epsilon_start": 0.55,
+        "excited_overlap_scale_start": 0.5,
+        "finite": true,
+        "jacobian_rank": 45,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 23,
+        "optimizer_success": true,
+        "parameter_count": 45,
+        "status_code": 2
+      }
+    ],
+    "force_se_diagnostic_uncalibrated": 0.00014089238356204244,
+    "gls_objective": 22162.258707668458,
+    "initializer_fits": [
+      {
+        "R": 2,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 16,
+        "parameter_count": 12,
+        "rank": 12,
+        "success": true
+      },
+      {
+        "R": 3,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 23,
+        "parameter_count": 12,
+        "rank": 12,
+        "success": true
+      }
+    ],
+    "jacobian_condition_number": 13470.666614373704,
+    "jacobian_rank": 45,
+    "parameter_count": 45,
+    "reduced_gls_objective": 164.16487931606264,
+    "static_energies_by_R": {
+      "2": [
+        0.4432617919380166,
+        1.0889713032504709
+      ],
+      "3": [
+        0.589456877962948,
+        1.1225370995177302
+      ]
+    },
+    "status": "two_sector_fit_candidate",
+    "vacuum_energies": [
+      0.0,
+      0.34821459282001815
+    ],
+    "valid": true
+  },
+  "schema": "wilson-three-static-pilot-summary-v1",
+  "source_hashes": {
+    "absolute_force_bootstrap_diagnostic.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "three_static_fit_pilot.py": "e8f41a6c2b04456889d605ab26ee0e0690c134d132593540c2049f12b0045f9e",
+    "transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_static_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77"
+  },
+  "three_static_fit": {
+    "absolute_force": 0.15071560917493237,
+    "degrees_of_freedom": 113,
+    "fit_attempts": [
+      {
+        "epsilon_start": 0.15,
+        "excited_overlap_scale_start": 0.2,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 33,
+        "objective": 692.0814239006668,
+        "optimizer_success": true,
+        "parameter_count": 67,
+        "rank": 67,
+        "success": true
+      },
+      {
+        "epsilon_start": 0.3,
+        "excited_overlap_scale_start": 0.35,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 31,
+        "objective": 692.0814238982882,
+        "optimizer_success": true,
+        "parameter_count": 67,
+        "rank": 67,
+        "success": true
+      },
+      {
+        "epsilon_start": 0.55,
+        "excited_overlap_scale_start": 0.5,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 87,
+        "objective": 729.5203359684433,
+        "optimizer_success": true,
+        "parameter_count": 67,
+        "rank": 67,
+        "success": true
+      }
+    ],
+    "force_se_diagnostic_uncalibrated": 0.0001898505114253922,
+    "gls_objective": 692.0814238982882,
+    "initializer_fits": [
+      {
+        "R": 2,
+        "nfev": 20,
+        "parameters": 18,
+        "rank": 18,
+        "reduced_chi_square": 4.560033653029916,
+        "success": true
+      },
+      {
+        "R": 3,
+        "nfev": 106,
+        "parameters": 18,
+        "rank": 18,
+        "reduced_chi_square": 4.480575188583814,
+        "success": true
+      }
+    ],
+    "jacobian_condition_number": 64766.62902913902,
+    "jacobian_rank": 67,
+    "parameter_count": 67,
+    "reduced_gls_objective": 6.124614370781312,
+    "static_energies_by_R": {
+      "2": [
+        0.4398248398210192,
+        0.9250171458596682,
+        1.2879612272103889
+      ],
+      "3": [
+        0.5905404489959516,
+        1.0831191962654092,
+        1.4828005704504514
+      ]
+    },
+    "status": "three_static_fit_candidate",
+    "vacuum_energies": [
+      0.0,
+      0.34272316662371555
+    ],
+    "valid": true
+  },
+  "three_static_force_absolute_error": 0.0007156091749324078,
+  "truth": {
+    "absolute_force": 0.14999999999999997,
+    "force_unit": "a_t energy difference per one spatial lattice step; Delta R=1",
+    "maximum_exact_forward_identity_absolute_component_error": 1.1102230246251565e-16,
+    "static_energies_by_R": {
+      "2": [
+        0.44,
+        0.94,
+        1.29
+      ],
+      "3": [
+        0.59,
+        1.07,
+        1.41
+      ]
+    },
+    "vacuum_energies": [
+      0.0,
+      0.42
+    ]
+  }
+}

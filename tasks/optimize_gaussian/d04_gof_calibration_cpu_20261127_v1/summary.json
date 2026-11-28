@@ -1,0 +1,940 @@
+{
+  "classification": "SYNTHETIC_GOF_SIZE_AND_POWER_PILOT_NOT_PHYSICAL_REFERENCE",
+  "fit": {
+    "covariance_eigenvalue_floor": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "fit_dof": 13,
+    "fit_state_count": 2,
+    "pp_a4p_joint": true,
+    "tmin": 3,
+    "true_mass_ground": 0.32
+  },
+  "generator": {
+    "cells": [
+      {
+        "boundary_hit_panels": 0,
+        "cell": "null_n64",
+        "configurations_per_panel": 64,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.3700562584955978,
+          "mean": 0.7461778016217486,
+          "median": 0.8280833727382348,
+          "rejection": {
+            "0.01": {
+              "count": 1,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0033333333333333335,
+              "wilson_95": [
+                0.0005886577218511581,
+                0.018636693694531237
+              ]
+            },
+            "0.05": {
+              "count": 2,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.006666666666666667,
+              "wilson_95": [
+                0.0018301483579117855,
+                0.023977583250306973
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "null_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.38788308505898883,
+          "mean": 0.7607195763508298,
+          "median": 0.8482653130421038,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "null_n128_oracle_full",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_full",
+        "covariance_shrinkage": 0.0,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.057418606090310575,
+          "mean": 0.5191591288543819,
+          "median": 0.5065795016894917,
+          "rejection": {
+            "0.01": {
+              "count": 2,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.006666666666666667,
+              "wilson_95": [
+                0.0018301483579117855,
+                0.023977583250306973
+              ]
+            },
+            "0.05": {
+              "count": 12,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.04,
+              "wilson_95": [
+                0.023027321487942308,
+                0.06860421203864003
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "null_n128_oracle_shrunk_a25",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.4267998434070631,
+          "mean": 0.7829186816327453,
+          "median": 0.8562912764839317,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "null_n128_oracle_shrunk_a05",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_shrunk",
+        "covariance_shrinkage": 0.05,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.15205752394823546,
+          "mean": 0.59459590647255,
+          "median": 0.6198432665993248,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 6,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.02,
+              "wilson_95": [
+                0.009197631557703617,
+                0.042939620817860576
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "null_n128_oracle_shrunk_a10",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_shrunk",
+        "covariance_shrinkage": 0.1,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.24034446267226783,
+          "mean": 0.6561911185623112,
+          "median": 0.699419959841471,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 3,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.01,
+              "wilson_95": [
+                0.003406618437715286,
+                0.02898349336233983
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "null_n128_oracle_shrunk_a50",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_shrunk",
+        "covariance_shrinkage": 0.5,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.6275737669526658,
+          "mean": 0.888632134926025,
+          "median": 0.9468835597658024,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "omitted_state_mild_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "three_state_omission_mild",
+        "innovation_df": null,
+        "is_null": false,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.3636025226803681,
+          "mean": 0.7430301620966113,
+          "median": 0.828622469759848,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 1,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.0033333333333333335,
+              "wilson_95": [
+                0.0005886577218511581,
+                0.018636693694531237
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 3
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "omitted_state_strong_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "three_state_omission_strong",
+        "innovation_df": null,
+        "is_null": false,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.27970849815281285,
+          "mean": 0.6891620831800491,
+          "median": 0.759881752990113,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 2,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.006666666666666667,
+              "wilson_95": [
+                0.0018301483579117855,
+                0.023977583250306973
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 3
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "omitted_state_strong_oracle_full_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_full",
+        "covariance_shrinkage": 0.0,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "three_state_omission_strong",
+        "innovation_df": null,
+        "is_null": false,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.10344982546295739,
+          "mean": 0.4478588274596556,
+          "median": 0.4112221560333851,
+          "rejection": {
+            "0.01": {
+              "count": 5,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.016666666666666666,
+              "wilson_95": [
+                0.00713947735063333,
+                0.0384153948330945
+              ]
+            },
+            "0.05": {
+              "count": 24,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.08,
+              "wilson_95": [
+                0.054346855395144764,
+                0.11627324043347391
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 3
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "chain_iid_gaussian_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "exact_two_state_null",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.35709300578279196,
+          "mean": 0.7376836514596574,
+          "median": 0.7981993742098226,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "chain_ar1_gaussian_est_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.3,
+        "fit_state_count": 2,
+        "generator": "two_state_ar1_gaussian_rho_0.30",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.847576530612245,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.2823720651857157,
+          "mean": 0.31408174800337746,
+          "median": 0.24036417888564798,
+          "rejection": {
+            "0.01": {
+              "count": 25,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.08333333333333333,
+              "wilson_95": [
+                0.057080874056394275,
+                0.12012160196406074
+              ]
+            },
+            "0.05": {
+              "count": 65,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.21666666666666667,
+              "wilson_95": [
+                0.1737878350698321,
+                0.2667098486240773
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "chain_ar1_gaussian_oracle_lrv_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_long_run",
+        "covariance_shrinkage": 0.0,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.3,
+        "fit_state_count": 2,
+        "generator": "two_state_ar1_gaussian_rho_0.30",
+        "innovation_df": null,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.847576530612245,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.0710992765694583,
+          "mean": 0.4732896411989793,
+          "median": 0.4432604589931145,
+          "rejection": {
+            "0.01": {
+              "count": 5,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.016666666666666666,
+              "wilson_95": [
+                0.00713947735063333,
+                0.0384153948330945
+              ]
+            },
+            "0.05": {
+              "count": 19,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.06333333333333334,
+              "wilson_95": [
+                0.040916882383915276,
+                0.09679131248552161
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "chain_iid_student_t5_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.0,
+        "fit_state_count": 2,
+        "generator": "two_state_iid_student_t_df_5",
+        "innovation_df": 5.0,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.0,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.40594768358216077,
+          "mean": 0.7688970232689534,
+          "median": 0.8315869419462707,
+          "rejection": {
+            "0.01": {
+              "count": 0,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            },
+            "0.05": {
+              "count": 0,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.0,
+              "wilson_95": [
+                0.0,
+                0.012642971224546034
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "chain_ar1_student_t5_est_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "estimated_shrunk",
+        "covariance_shrinkage": 0.25,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.3,
+        "fit_state_count": 2,
+        "generator": "two_state_ar1_student_t_df_5_rho_0.30",
+        "innovation_df": 5.0,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.847576530612245,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.2695496842604311,
+          "mean": 0.3228748201320046,
+          "median": 0.2535691381592587,
+          "rejection": {
+            "0.01": {
+              "count": 19,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.06333333333333334,
+              "wilson_95": [
+                0.040916882383915276,
+                0.09679131248552161
+              ]
+            },
+            "0.05": {
+              "count": 49,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.16333333333333333,
+              "wilson_95": [
+                0.1258064331944026,
+                0.20937316743012502
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      },
+      {
+        "boundary_hit_panels": 0,
+        "cell": "chain_ar1_student_t5_oracle_lrv_n128",
+        "configurations_per_panel": 128,
+        "covariance_mode": "oracle_long_run",
+        "covariance_shrinkage": 0.0,
+        "denominator": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 300,
+          "valid": 300
+        },
+        "dependence_rho": 0.3,
+        "fit_state_count": 2,
+        "generator": "two_state_ar1_student_t_df_5_rho_0.30",
+        "innovation_df": 5.0,
+        "is_null": true,
+        "mean_variance_inflation_factor": 1.847576530612245,
+        "near_degenerate_fit_panels": 0,
+        "panels": 300,
+        "pvalue_summary": {
+          "ks_distance_to_uniform": 0.05680456675334755,
+          "mean": 0.47441586282172493,
+          "median": 0.46724404893731397,
+          "rejection": {
+            "0.01": {
+              "count": 7,
+              "mcse": 0.005744562646538029,
+              "nominal_rate": 0.01,
+              "rate": 0.023333333333333334,
+              "wilson_95": [
+                0.011347660299125234,
+                0.04737197226827532
+              ]
+            },
+            "0.05": {
+              "count": 20,
+              "mcse": 0.012583057392117916,
+              "nominal_rate": 0.05,
+              "rate": 0.06666666666666667,
+              "wilson_95": [
+                0.043567515545158274,
+                0.10072305951611496
+              ]
+            }
+          }
+        },
+        "reference_mass_true": 0.32,
+        "true_state_count": 2
+      }
+    ],
+    "chain_stress": {
+      "ar1_rho": 0.3,
+      "burn_in_configurations": 200,
+      "innovation_covariance": "(1-rho^2) * stationary feature covariance; Student-t scaled to the same finite covariance",
+      "oracle_long_run_covariance": "finite-n multiplier 1 + 2*sum_{k=1}^{n-1} (1-k/n)*rho^k applied to stationary covariance/n",
+      "student_t_degrees_of_freedom": 5
+    },
+    "cross_channel_correlation": 0.2,
+    "feature_count": 27,
+    "fit_rows": 4800,
+    "kind": "synthetic_two_state_null_and_omitted_state_panels",
+    "noise_fraction": 0.03,
+    "panels_per_cell": 300,
+    "temporal_correlation": 0.65,
+    "unique_sample_panels": 2400
+  },
+  "open_gates": [
+    "default p-values use an approximate chi-square reference with data-estimated, 25%-shrunk covariance; paired oracle cells use known full covariance or known-covariance diagonal shrinkage alpha sensitivity",
+    "six chain-stress cells add one rho=0.30 AR(1) and one iid/AR(1) Student-t(5) design; this does not certify any production Markov chain",
+    "oracle long-run covariance is synthetic truth and is not an available production estimator",
+    "only sixteen synthetic cells are evaluated; multiple covariance cells reuse identical raw panels",
+    "the alternative is an omitted third state and the rejection fractions are power diagnostics only",
+    "no HMC chain dependence, estimator selection, or candidate-blind production E-chain provenance is modeled",
+    "these results cannot replace the independent D04 reference receipt or statistical review"
+  ],
+  "paired_contrasts": [
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 1.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128",
+      "mean_delta_chi2": 3.9637149905647235,
+      "mean_delta_gof_p_approx": -0.24156044749644784,
+      "median_delta_gof_p_approx": -0.24699695121374737,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_full",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.29,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128",
+      "mean_delta_chi2": -0.3411077919741489,
+      "mean_delta_gof_p_approx": 0.022199105281915498,
+      "median_delta_gof_p_approx": 0.009689154452503068,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_shrunk_a25",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128_oracle_shrunk_a05",
+      "mean_delta_chi2": -0.9963649056472473,
+      "mean_delta_gof_p_approx": 0.06159521208976126,
+      "median_delta_gof_p_approx": 0.06469396889263807,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_shrunk_a10",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "null_n128_oracle_shrunk_a25",
+      "mean_delta_chi2": -1.874378946444658,
+      "mean_delta_gof_p_approx": 0.10571345329328004,
+      "median_delta_gof_p_approx": 0.09390856979830547,
+      "planned_pairs": 300,
+      "right_cell": "null_n128_oracle_shrunk_a50",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 1.0,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "omitted_state_strong_n128",
+      "mean_delta_chi2": 4.213698219913875,
+      "mean_delta_gof_p_approx": -0.2413032557203935,
+      "median_delta_gof_p_approx": -0.2504660404197006,
+      "planned_pairs": 300,
+      "right_cell": "omitted_state_strong_oracle_full_n128",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.006666666666666667,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "chain_ar1_gaussian_est_n128",
+      "mean_delta_chi2": -3.768562421649344,
+      "mean_delta_gof_p_approx": 0.1592078931956019,
+      "median_delta_gof_p_approx": 0.1446747102435393,
+      "planned_pairs": 300,
+      "right_cell": "chain_ar1_gaussian_oracle_lrv_n128",
+      "valid_pairs": 300
+    },
+    {
+      "failed_or_missing_pairs": 0,
+      "fraction_right_pvalue_lower": 0.08666666666666667,
+      "interpretation": "right minus left; identical simulated panel samples verified by SHA-256",
+      "left_cell": "chain_ar1_student_t5_est_n128",
+      "mean_delta_chi2": -3.3264637265219035,
+      "mean_delta_gof_p_approx": 0.15154104268972035,
+      "median_delta_gof_p_approx": 0.14288247551915262,
+      "planned_pairs": 300,
+      "right_cell": "chain_ar1_student_t5_oracle_lrv_n128",
+      "valid_pairs": 300
+    }
+  ],
+  "physical_e_chain": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "reference_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "schema": "optimize-d04-gof-calibration-summary-v1"
+}

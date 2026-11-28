@@ -1,0 +1,199 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "coverage": {
+    "average_pointwise_by_panel": {
+      "cluster_t95": [
+        0.6259886461392048,
+        0.7304928353422764
+      ],
+      "rate": 0.6782407407407406
+    },
+    "familywise_bonferroni72": {
+      "planned_panels": 12,
+      "rate": 0.0,
+      "successes": 0,
+      "wilson95": [
+        2.7755575615628914e-17,
+        0.24249400665524085
+      ]
+    },
+    "pointwise_all_cells": {
+      "planned_cells": 864,
+      "pooled_rate_descriptive_only": 0.6782407407407407,
+      "successes": 586,
+      "warning": "cells within a panel share the same fit and are correlated; use panel-cluster summaries for inference",
+      "wilson95_cellwise_not_cluster_adjusted": [
+        0.646361443022091,
+        0.7085420901860824
+      ]
+    },
+    "pointwise_by_term": {
+      "h": {
+        "cluster_mean": 0.9270833333333331,
+        "cluster_t95": [
+          0.891163739196268,
+          0.9630029274703983
+        ],
+        "n_independent_panels": 12
+      },
+      "q": {
+        "cluster_mean": 0.17361111111111113,
+        "cluster_t95": [
+          0.043019267699921815,
+          0.30420295452230045
+        ],
+        "n_independent_panels": 12
+      },
+      "x": {
+        "cluster_mean": 0.934027777777778,
+        "cluster_t95": [
+          0.8842326645402709,
+          0.9838228910152851
+        ],
+        "n_independent_panels": 12
+      }
+    }
+  },
+  "denominators": {
+    "fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 12,
+      "valid": 12
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 864,
+      "valid": 864
+    },
+    "unique_panel_matrix_hashes": 12
+  },
+  "fit": {
+    "covariance_eigenvalue_floor_relative": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "fit_parameter_count": 45,
+    "interval_rule_frozen_across_panels": true,
+    "method": "regularized full-covariance GLS; q/h/x finite-difference delta normal uppers",
+    "model": "2 vacuum x 2 static (fixed across all strata)",
+    "pointwise_one_sided_level": 0.975,
+    "simultaneous_method": "one-sided Bonferroni over 72 q/h/x terms at family alpha 0.05"
+  },
+  "generator": {
+    "blocks_per_panel": 96,
+    "noise_model": {
+      "model": "stationary_ar1",
+      "rho": 0.5,
+      "scale_by_T": {
+        "3": 0.5,
+        "4": 0.5,
+        "5": 0.5,
+        "6": 1.0,
+        "7": 2.0
+      }
+    },
+    "panel_independence": "fresh independent RNG stream per panel; blocks follow the declared within-panel noise model",
+    "panels": 12,
+    "relative_noise": 0.003,
+    "seed_rule": "numpy default_rng(2026113300 + panel_index); base follows 2026112900 + 100*stratum_index",
+    "truth": "2 vacuum x 3 static states; original energies and overlaps"
+  },
+  "physical_score": null,
+  "report_metadata": {
+    "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+    "fit_model": "2 vacuum x 2 static (fixed across all strata)",
+    "interpretation": "This is the frozen 12-panel screen for `S5_dependent_unequal_variance_blocks`. It is used to identify qualitative failure modes and exercise the reproducible report path. The familywise Wilson interval and panel-cluster pointwise intervals are descriptive Monte Carlo summaries at this small n; they do not establish calibration or pass the separately frozen five-stratum confirmatory rule (606 panels and at least 588 familywise successes per stratum).",
+    "open_gates": [
+      "twelve independent panels per stratum are diagnostic screening only and cannot certify nominal coverage",
+      "no method, interval, fit window, covariance shrinkage or DGP parameter is selected from these screening results",
+      "synthetic source does not validate production exporter conventions, matched-Nt thermal/mixed receipts, static-force reference or physical uncertainty"
+    ],
+    "seed_rule": "numpy default_rng(2026113300 + panel_index); base follows 2026112900 + 100*stratum_index",
+    "split_prefix": "s5_dependent_unequal_variance_blocks",
+    "stratum_id": "S5_dependent_unequal_variance_blocks",
+    "stratum_index_zero_based": 4,
+    "truth": "2 vacuum x 3 static states; original energies and overlaps"
+  },
+  "schema": "wilson-f-two-sector-omitted-coverage-protocol-v1",
+  "seed_manifest": [
+    {
+      "matrix_sha256": "262af68d0554ff332660ee31a76945ea4948ed729b458c6f83375957ae21f8d5",
+      "panel": 0,
+      "seed": 2026113300
+    },
+    {
+      "matrix_sha256": "ac40ba08db78555e65ee361268dea00fcc2cbf16435b812587c16cf5e2232a8f",
+      "panel": 1,
+      "seed": 2026113301
+    },
+    {
+      "matrix_sha256": "d6f00667e9f026d0c44235162a9d87bd25b22171c75cd73ad9a4bf1d29e59f7c",
+      "panel": 2,
+      "seed": 2026113302
+    },
+    {
+      "matrix_sha256": "bfd00858ae7d489935c10affaf1a0b7765244559f74dfecfe1e7ee2bf39531a1",
+      "panel": 3,
+      "seed": 2026113303
+    },
+    {
+      "matrix_sha256": "ed3cc453925aab32dd7691960e97ee33a812c4051c021aa8b6cedce4fbbefede",
+      "panel": 4,
+      "seed": 2026113304
+    },
+    {
+      "matrix_sha256": "e3170f27d04249a9f519abea5c323830ec26c8e208d1dbb6e1e54c811ebfffcf",
+      "panel": 5,
+      "seed": 2026113305
+    },
+    {
+      "matrix_sha256": "35fd9db781a58eb6fb85f5239dde81629a85a629e615132319e02f71d5f3c321",
+      "panel": 6,
+      "seed": 2026113306
+    },
+    {
+      "matrix_sha256": "33ec3661effaa39b82ccb54bfa82001a91eb34cf432783a51949a458fadf1645",
+      "panel": 7,
+      "seed": 2026113307
+    },
+    {
+      "matrix_sha256": "0dda3f6bf9125f941e8563d893df8e00f86c8b388ce1fce304a9d124114b5114",
+      "panel": 8,
+      "seed": 2026113308
+    },
+    {
+      "matrix_sha256": "b85d5206dab53822d6676f75e414f75e93bd868bf4ea5dc49bd5c75fb84bf074",
+      "panel": 9,
+      "seed": 2026113309
+    },
+    {
+      "matrix_sha256": "104a5eab2f52ea5b35bf9fef0f69729a954ef174a2f752e16fa866ea955eb92a",
+      "panel": 10,
+      "seed": 2026113310
+    },
+    {
+      "matrix_sha256": "6b7df8e9273433b125290693362a11697301621bc871da60da786806f556b68e",
+      "panel": 11,
+      "seed": 2026113311
+    }
+  ],
+  "source_hashes": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "gevp_overlap_object.py": "f7a3f14d6a55b619abbadbce28b0127a65dbb7348120b86242073e891b2c83a3",
+    "gevp_t0_truncation.py": "732cf530e540dac90d1d0c05d2216be7a9b8905f8eb790ac10fabdb087dc4871",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e",
+    "two_sector_fit_initializer.py": "e86eca8e99c0359326f014989e304bff608bad27ec72dfb3113885fe46e3a4d5",
+    "two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_multistratum_screen.py": "e9970ceb438969ac9a685dc6b11189709251812588c2d7ad176d66689ef0b06f",
+    "two_sector_multistratum_screen_protocol.json": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+    "two_sector_omitted_coverage_diagnostic.py": "fc790f1eb85140bdc6c2be369bcc024c710ae0b37e1538653f967fb1ac6e37a1",
+    "two_sector_omitted_state_diagnostic.py": "f230f061cde010efc61182e45b83d2d8e7d3102fa788b1145f2dd0c28a7c71ed"
+  }
+}

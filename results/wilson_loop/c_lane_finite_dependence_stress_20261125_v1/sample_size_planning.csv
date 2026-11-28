@@ -1,0 +1,12 @@
+dependence_range_m,chromatic_number_bound,alpha_per_one_sided_loop_event,optimistic_required_mean_radius,optimistic_n_for_halfwidth_target,assumption
+0,1,0.003125,0.00016633448286492225,207593669,sample means equal the known synthetic population means; actual precision may require more
+1,2,0.003125,0.00016633448286492225,415187337,sample means equal the known synthetic population means; actual precision may require more
+2,3,0.003125,0.00016633448286492225,622781005,sample means equal the known synthetic population means; actual precision may require more
+3,4,0.003125,0.00016633448286492225,830374673,sample means equal the known synthetic population means; actual precision may require more
+4,5,0.003125,0.00016633448286492225,1037968341,sample means equal the known synthetic population means; actual precision may require more
+5,6,0.003125,0.00016633448286492225,1245562009,sample means equal the known synthetic population means; actual precision may require more
+6,7,0.003125,0.00016633448286492225,1453155677,sample means equal the known synthetic population means; actual precision may require more
+7,8,0.003125,0.00016633448286492225,1660749345,sample means equal the known synthetic population means; actual precision may require more
+8,9,0.003125,0.00016633448286492225,1868343013,sample means equal the known synthetic population means; actual precision may require more
+9,10,0.003125,0.00016633448286492225,2075936681,sample means equal the known synthetic population means; actual precision may require more
+10,11,0.003125,0.00016633448286492225,2283530349,sample means equal the known synthetic population means; actual precision may require more

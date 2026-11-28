@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "README.md": "7be81279c7703106e0c066e5acb65eb67896d1f127391a9dc69615d0ce052d7f",
+    "input_snapshot/lane_contract.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "input_snapshot/manifest.json": "a44be77862cd4d8a25523bfc79d2356d0bfd777d0b825cd7476edfcb67b2e0b0",
+    "input_snapshot/raw_matrices.npz": "ba7ec51abe947eb5c9d070c8b4c3460ed0a2d286bc8bf7e3c385255919582921",
+    "lane_contract.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "nonlinear_profiles.png": "7fae666bd357899d202c73078bf2328722c263633c01779250582d6b6e14c6d4",
+    "profile_fit_receipts.json": "81254dfc70b2cd2f767da8d4ee0352f8b871bcd0edffa3c9b6d7b96bbebc4dfe",
+    "profile_grid.csv": "eeab0bec440df97bb040686a84e38081eac55122f0d743a4924b12e0749ee0b7",
+    "protocol.json": "eb702735265c42e4510adb4a9728236b695b10fb355a35a4462c01af772d4595",
+    "source_fit_receipt.json": "3a7868d7aced23706f122ca5225ea74598cb4345c7e2c3f4fa5fe5fa2315853f",
+    "source_panel_manifest.json": "00f97a8a661b358f53273ee5f43a2120f0c4f988e04ef2443b7947a1bdc24d71",
+    "source_snapshot/bootstrap_snapshot_helper.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "source_snapshot/local_overlap_profile_gate.py": "04bccfce185815c3f17c8883020fd9b4383bb49bfe1a7c2859025ba7455ca5fc",
+    "source_snapshot/nonlinear_overlap_profile.py": "6aa9f5219a1a61a934122c749c9bf712a26ced0e31331eed41bead14415b336b",
+    "source_snapshot/npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "source_snapshot/two_static_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "summary.json": "46d516b76ee13ec8400741439b2fd4f2b3606b376e7d8907808fb205d86257c3"
+  },
+  "schema": "wilson-nonlinear-overlap-profile-artifact-hashes-v1"
+}

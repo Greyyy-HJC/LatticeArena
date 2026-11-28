@@ -1,0 +1,36 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "confirmatory_boundary": {
+    "calibration_claim": false,
+    "certified": false,
+    "confirmatory_requirement": "retain the separately frozen five-stratum design of 606 independent panels per stratum and at least 588 familywise successes per stratum for its declared p=0.98 power calculation",
+    "interval_or_model_tuning_on_screening_panels": false,
+    "physical_score": null,
+    "purpose": "locate qualitatively distinct failure modes and verify the report pipeline",
+    "sealed_data_access": false
+  },
+  "frozen_protocol_sha256": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+  "panels_per_stratum": 12,
+  "physical_score": null,
+  "schema": "wilson-f-two-sector-multistratum-screen-run-v1",
+  "seed_rule": "2026112900 + 100 * stratum_index + panel_index; both indices are zero-based",
+  "source_hashes": {
+    "finite_nt_trace_diagnostic.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "multistratum_screen.py": "e9970ceb438969ac9a685dc6b11189709251812588c2d7ad176d66689ef0b06f",
+    "multistratum_screen_protocol.json": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "omitted_coverage_diagnostic.py": "fc790f1eb85140bdc6c2be369bcc024c710ae0b37e1538653f967fb1ac6e37a1",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e"
+  },
+  "strata_order": [
+    "S1_high_overlap_omitted_static",
+    "S2_near_degenerate_static",
+    "S3_weak_operator_ground_overlap",
+    "S4_omitted_vacuum_state",
+    "S5_dependent_unequal_variance_blocks"
+  ]
+}

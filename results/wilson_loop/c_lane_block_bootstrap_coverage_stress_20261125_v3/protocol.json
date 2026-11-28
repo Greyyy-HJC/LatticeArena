@@ -1,0 +1,57 @@
+{
+  "schema": "wilson-c-lane-block-bootstrap-coverage-stress-v1",
+  "classification": "synthetic_method_calibration_only",
+  "physical_score": null,
+  "data_access": "No Wilson measurement, development split, sealed split, GPU, or QUDA data read.",
+  "estimator": "absolute finite-T Creutz -log(mean W36)-log(mean W25)+log(mean W35)+log(mean W26)",
+  "sampling_model": "four-variate stationary Gaussian AR(1) log-loops; exponentiated to positive loop observations",
+  "ar1_rho_grid": [
+    0.0,
+    0.3,
+    0.6,
+    0.8,
+    0.9
+  ],
+  "log_loop_marginal_sd_grid": [
+    0.1,
+    0.35
+  ],
+  "n_configurations": 100,
+  "planned_replicates_per_rho": 240,
+  "bootstrap_draws_per_length": 800,
+  "primary_block_lengths": [
+    2,
+    5,
+    10
+  ],
+  "extended_sensitivity_block_lengths": [
+    2,
+    5,
+    10,
+    20,
+    30
+  ],
+  "interval": "equal-tail percentile interval at lane alpha 0.025; quantiles 0.0125 and 0.9875; compare primary L=2/5/10 hull with extended L=2/5/10/20/30 hull",
+  "true_loop_arithmetic_means_order": [
+    "W(3,6)",
+    "W(2,5)",
+    "W(3,5)",
+    "W(2,6)"
+  ],
+  "true_loop_arithmetic_means": [
+    0.02,
+    0.06,
+    0.035,
+    0.04
+  ],
+  "log_loop_marginal_sd": "each of four log loops uses the selected grid value",
+  "log_loop_cross_correlation": 0.75,
+  "true_chi": 0.15415067982725805,
+  "precision_halfwidth_target": 0.02,
+  "seeds": {
+    "base": 20261125,
+    "data_rule": "base + 1000000*sigma_index + 100000*rho_index + replicate",
+    "bootstrap_rule": "base + 10000000*sigma_index + 1000000*rho_index + 10000*replicate + block_length"
+  },
+  "interpretation_limit": "Coverage is conditional on this declared AR(1) lognormal family; it does not establish physical dependence or production coverage."
+}

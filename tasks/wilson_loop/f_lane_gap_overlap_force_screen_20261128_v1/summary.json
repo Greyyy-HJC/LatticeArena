@@ -1,0 +1,44 @@
+{
+  "classification": "CONDITIONAL_POSITIVE_SPECTRUM_EFFECTIVE_ENERGY_SCREEN_NOT_PHYSICAL_RECEIPT",
+  "display_metrics": {
+    "absolute_ground_force_truth": 0.2,
+    "budget_ratio": 175.96655295480016,
+    "candidate_minus_reference_ground_force_truth": 0.0,
+    "energy_lower": [
+      -0.31551364135430104,
+      -0.11787038874907846
+    ],
+    "energy_upper": [
+      -0.24611320508730375,
+      -0.04757798826694789
+    ],
+    "finite_time_candidate_minus_reference_bias_abs": 0.008224903847671355,
+    "finite_time_candidate_minus_reference_force": -0.008224903847671355,
+    "force_interval": [
+      0.1282428163382253,
+      0.2679356530873532
+    ],
+    "four_corner_bias_bound": 0.35193310590960036,
+    "observed_proxy_bias_to_budget_ratio": 4.112451923835677,
+    "one_percent_toy_budget": 0.002
+  },
+  "grid_denominator": {
+    "conditional_interval_abstained": 0,
+    "conditional_interval_valid": 495,
+    "interpretation": "deterministic parameter grid, not Monte Carlo coverage",
+    "one_percent_budget_fail": 495,
+    "one_percent_budget_pass": 0,
+    "planned": 3721,
+    "premise_holds": 495,
+    "premise_violated": 3226,
+    "truth_covered_when_premise_holds": 495
+  },
+  "physical_score": null,
+  "synthetic_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 4,
+    "unit": "kernel-radius positive-spectrum corner",
+    "valid": 4
+  }
+}

@@ -1,0 +1,7 @@
+fixture,lane,planned,valid,failed,abstained,status,certified,physical_score,issue_count
+current_null_draft,finite_T_Creutz,1,0,1,0,NOT_READY,False,,26
+current_null_draft,ground_state_discrete_static_force,1,0,1,0,NOT_READY,False,,28
+synthetic_C_only_complete,finite_T_Creutz,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_C_only_complete,ground_state_discrete_static_force,1,0,1,0,NOT_READY,False,,14
+synthetic_C_and_F_schema_complete,finite_T_Creutz,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_C_and_F_schema_complete,ground_state_discrete_static_force,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0

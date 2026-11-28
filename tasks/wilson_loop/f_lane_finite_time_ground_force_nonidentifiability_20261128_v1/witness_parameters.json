@@ -1,0 +1,80 @@
+{
+  "adjusted_old_state_weights_by_radius": [
+    [
+      0.8999387950114777,
+      0.7000281975090721,
+      0.49998617953593716,
+      0.3500058074023017,
+      0.19999754460776764
+    ],
+    [
+      0.8999881356422115,
+      0.7000055548597279,
+      0.49999718627903866,
+      0.3500012858279181,
+      0.19999863319153116
+    ]
+  ],
+  "base_ground_energy_a_t_E_by_radius": [
+    0.10536051565782628,
+    0.10536051565782628
+  ],
+  "base_ground_force_lattice_coordinate": 0.0,
+  "base_positive_spectral_weights": [
+    0.9,
+    0.7,
+    0.5,
+    0.35,
+    0.2
+  ],
+  "base_transfer_eigenvalues_x_equals_exp_minus_a_t_E": [
+    0.15,
+    0.32,
+    0.51,
+    0.7,
+    0.9
+  ],
+  "certified": false,
+  "classification": "DETERMINISTIC_POSITIVE_SPECTRUM_NONIDENTIFIABILITY_WITNESS_NOT_PHYSICAL_FORCE",
+  "data_access": "no measurement or sealed data; finite-dimensional analytic toy only",
+  "finite_time_force_from_measured_effective_energies": 0.0,
+  "hidden_ground_energy_a_t_E_by_radius": {
+    "2": 0.03,
+    "3": 0.08
+  },
+  "hidden_ground_force_lattice_coordinate": 0.05,
+  "hidden_model_ground_energy_a_t_E_by_radius": [
+    0.03,
+    0.08
+  ],
+  "hidden_state_amplitude": 1e-06,
+  "max_matrix_absolute_residual": 2.7755575615628914e-17,
+  "max_matrix_relative_residual": 7.749694015765691e-17,
+  "measured_time_slices": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "minimum_adjusted_old_weight": 0.19999754460776764,
+  "minimum_correlator_matrix_eigenvalue": 0.0775274965753236,
+  "operator_diagonal_weights": [
+    1.0,
+    0.8,
+    0.6
+  ],
+  "physical_score": null,
+  "positivity_only_force_interval_assuming_nonnegative_ground_energies": [
+    -0.19494905943040766,
+    0.19494905943040766
+  ],
+  "positivity_only_ground_energy_upper_by_radius": [
+    0.19494905943040766,
+    0.19494905943040766
+  ],
+  "radii": [
+    2,
+    3
+  ]
+}

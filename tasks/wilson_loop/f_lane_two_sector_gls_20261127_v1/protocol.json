@@ -1,0 +1,91 @@
+{
+  "analysis_source_hashes": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "test_two_sector_fit.py": "6d2f0ab18b6ed75075c9ddb13c2541899631a2c03d7e24f88ddda3e95cf230e3",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e",
+    "two_sector_fit_diagnostic.py": "e86eca8e99c0359326f014989e304bff608bad27ec72dfb3113885fe46e3a4d5",
+    "two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc"
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_SINGLE_PANEL_METHOD_COMPARISON_NOT_COVERAGE",
+  "fit": {
+    "blocks": 96,
+    "components": 180,
+    "diagonal_objective": "diagonal inverse-SE weighted least squares",
+    "gls_covariance_diagnostics": {
+      "block_count": 96,
+      "component_count": 180,
+      "condition_number": 4225.511777445157,
+      "covariance_of": "sample mean",
+      "diagonal_shrinkage": 0.25,
+      "eigenvalue_floor_relative": 1e-10,
+      "floor_active_count": 0,
+      "max_eigenvalue": 1.041614237703075e-08,
+      "raw_min_eigenvalue": -1.6917182608235078e-24,
+      "regularized_min_eigenvalue": 2.465060547844122e-12,
+      "shrunk_min_eigenvalue": 2.465060547844122e-12
+    },
+    "gls_intervals": "finite-difference delta method; pointwise 97.5% and 95% Bonferroni across 72 q/h/x terms",
+    "gls_objective": "regularized full-covariance GLS over Hermitian 3x3 components",
+    "interval_calibration": "not performed; one synthetic known-truth panel only",
+    "parameters": 45,
+    "starts": [
+      [
+        0.15,
+        0.2
+      ],
+      [
+        0.3,
+        0.35
+      ],
+      [
+        0.55,
+        0.5
+      ]
+    ]
+  },
+  "fit_denominators": {
+    "diagonal": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    },
+    "gls": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "valid": 1
+    },
+    "qhx_diagonal": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    },
+    "qhx_gls": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    }
+  },
+  "input_hashes": {
+    "lane_contract": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "manifest": "2378cb3242196a0a095522d91f5c829c4c19f0b7c8ee0ee248ab6ad9aba43474",
+    "raw_matrices": "c20451ae997a1c1a8bdb498c6ec8b15397878eb33fb783d0ab4b933f74290fa0"
+  },
+  "input_paths": {
+    "lane_contract": "lane_contract.json",
+    "manifest": "manifest.json",
+    "raw_matrices": "raw_matrices.npz"
+  },
+  "physical_score": null,
+  "schema": "wilson-f-two-sector-gls-diagnostic-protocol-v1"
+}

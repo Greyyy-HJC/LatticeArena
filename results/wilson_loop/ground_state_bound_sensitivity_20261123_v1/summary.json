@@ -1,0 +1,26 @@
+{
+  "classification": "analytic transfer-matrix sensitivity; no physical contamination bound",
+  "positive_spectral_model": "W_k,R(T)=A0_k,R exp(-E0_R T) [1+rho_k,R(T)]",
+  "rho_bound": "rho_k,R(T) <= Q_k,R exp(-DeltaE_min,R*T), Q=sum excited/ground overlap ratios",
+  "creutz_identity": "chi_k(R,T)=f0(R+1/2)+g_k,R+1(T)-g_k,R(T); g=log[(1+rho(T))/(1+rho(T+1))]",
+  "bias_bound": "|chi-f0| <= max_R log(1+rho_R(T)) <= log(1+Qmax exp(-DeltaE_min*T))",
+  "difference_candidate_identity_bound": "sum of the two lane-specific bias bounds",
+  "time_values": [
+    4,
+    5,
+    6,
+    7
+  ],
+  "Q_axis_illustrative_only": [
+    0.001,
+    100.0
+  ],
+  "gap_axis_illustrative_only": [
+    0.01,
+    1.0
+  ],
+  "finite_extent_warning": "This derivation assumes a positive forward spectral sum. Finite-Nt winding/thermal terms must be separately bounded or modeled.",
+  "data_use": "No Wilson loop values or restricted split were read by this analytic script.",
+  "protocol_sha256": null,
+  "source_sha256": "6ed1830184cd30fd9d2ed7c16bfc0b21c5047c4285c6e4ccd2c8e086647028ca"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE",
+  "assembly_mode": "derived-only rebuild from hash-verified per-length reports",
+  "fixed_lengths": [
+    6,
+    8,
+    10
+  ],
+  "completed_new_lengths": [
+    6,
+    10
+  ],
+  "next_length": null,
+  "seed_key_audit": "9600/9600",
+  "combined_interval_denominators": {
+    "planned": 2880,
+    "valid": 2572,
+    "failed": 0,
+    "abstained": 308
+  }
+}

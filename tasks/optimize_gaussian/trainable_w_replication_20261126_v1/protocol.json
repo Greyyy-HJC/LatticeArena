@@ -1,0 +1,1741 @@
+{
+  "schema": "trainable-w-synthetic-stress-v1",
+  "classification": "synthetic algorithm diagnostic only",
+  "physical_score": null,
+  "generator_families": [
+    {
+      "name": "haar_like",
+      "weak_field_epsilon": null
+    },
+    {
+      "name": "weak_field_eps0.08",
+      "weak_field_epsilon": 0.08
+    },
+    {
+      "name": "weak_field_eps0.25",
+      "weak_field_epsilon": 0.25
+    }
+  ],
+  "target_families": [
+    "spectral_heat",
+    "local_environment"
+  ],
+  "target_noise_relative_frobenius": [
+    0.0,
+    0.02
+  ],
+  "replicates_per_cell": 20,
+  "panel_bootstrap_draws_for_median_bands": 10000,
+  "fit_links_per_panel": 2,
+  "heldout_links_per_panel": 2,
+  "call_budgets": [
+    32,
+    128
+  ],
+  "model_arms": [
+    "joint_W_SLSQP",
+    "joint_W_L-BFGS-B",
+    "fixed_W_width2_SLSQP",
+    "fixed_W_width6_SLSQP"
+  ],
+  "initialization": "paired within each panel; fixed width-6 arm shares width-2 prefix and adds four seeded features",
+  "operator_loss": "full identity-basis relative squared Frobenius loss; same target and fit/heldout IDs across arms",
+  "spectral_baseline": "unconstrained degree-1/degree-4 Chebyshev fit on fitting panels; relevant strong baseline only for spectral_heat target",
+  "local_baseline": "fixed degree-2 centered local feature operator basis by weighted linear least squares; a target-matched synthetic baseline, not the selected physical strong baseline",
+  "seed_plan": [
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026112300
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026112301
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026112302
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 3,
+      "seed": 2026112303
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 4,
+      "seed": 2026112304
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 5,
+      "seed": 2026112305
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 6,
+      "seed": 2026112306
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 7,
+      "seed": 2026112307
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 8,
+      "seed": 2026112308
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 9,
+      "seed": 2026112309
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 10,
+      "seed": 2026112310
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 11,
+      "seed": 2026112311
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 12,
+      "seed": 2026112312
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 13,
+      "seed": 2026112313
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 14,
+      "seed": 2026112314
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 15,
+      "seed": 2026112315
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 16,
+      "seed": 2026112316
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 17,
+      "seed": 2026112317
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 18,
+      "seed": 2026112318
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 19,
+      "seed": 2026112319
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026112400
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026112401
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026112402
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 3,
+      "seed": 2026112403
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 4,
+      "seed": 2026112404
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 5,
+      "seed": 2026112405
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 6,
+      "seed": 2026112406
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 7,
+      "seed": 2026112407
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 8,
+      "seed": 2026112408
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 9,
+      "seed": 2026112409
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 10,
+      "seed": 2026112410
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 11,
+      "seed": 2026112411
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 12,
+      "seed": 2026112412
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 13,
+      "seed": 2026112413
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 14,
+      "seed": 2026112414
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 15,
+      "seed": 2026112415
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 16,
+      "seed": 2026112416
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 17,
+      "seed": 2026112417
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 18,
+      "seed": 2026112418
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 19,
+      "seed": 2026112419
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026113300
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026113301
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026113302
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 3,
+      "seed": 2026113303
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 4,
+      "seed": 2026113304
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 5,
+      "seed": 2026113305
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 6,
+      "seed": 2026113306
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 7,
+      "seed": 2026113307
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 8,
+      "seed": 2026113308
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 9,
+      "seed": 2026113309
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 10,
+      "seed": 2026113310
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 11,
+      "seed": 2026113311
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 12,
+      "seed": 2026113312
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 13,
+      "seed": 2026113313
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 14,
+      "seed": 2026113314
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 15,
+      "seed": 2026113315
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 16,
+      "seed": 2026113316
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 17,
+      "seed": 2026113317
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 18,
+      "seed": 2026113318
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 19,
+      "seed": 2026113319
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026113400
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026113401
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026113402
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 3,
+      "seed": 2026113403
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 4,
+      "seed": 2026113404
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 5,
+      "seed": 2026113405
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 6,
+      "seed": 2026113406
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 7,
+      "seed": 2026113407
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 8,
+      "seed": 2026113408
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 9,
+      "seed": 2026113409
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 10,
+      "seed": 2026113410
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 11,
+      "seed": 2026113411
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 12,
+      "seed": 2026113412
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 13,
+      "seed": 2026113413
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 14,
+      "seed": 2026113414
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 15,
+      "seed": 2026113415
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 16,
+      "seed": 2026113416
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 17,
+      "seed": 2026113417
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 18,
+      "seed": 2026113418
+    },
+    {
+      "generator": "haar_like",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 19,
+      "seed": 2026113419
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026122300
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026122301
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026122302
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 3,
+      "seed": 2026122303
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 4,
+      "seed": 2026122304
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 5,
+      "seed": 2026122305
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 6,
+      "seed": 2026122306
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 7,
+      "seed": 2026122307
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 8,
+      "seed": 2026122308
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 9,
+      "seed": 2026122309
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 10,
+      "seed": 2026122310
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 11,
+      "seed": 2026122311
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 12,
+      "seed": 2026122312
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 13,
+      "seed": 2026122313
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 14,
+      "seed": 2026122314
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 15,
+      "seed": 2026122315
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 16,
+      "seed": 2026122316
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 17,
+      "seed": 2026122317
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 18,
+      "seed": 2026122318
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 19,
+      "seed": 2026122319
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026122400
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026122401
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026122402
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 3,
+      "seed": 2026122403
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 4,
+      "seed": 2026122404
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 5,
+      "seed": 2026122405
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 6,
+      "seed": 2026122406
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 7,
+      "seed": 2026122407
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 8,
+      "seed": 2026122408
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 9,
+      "seed": 2026122409
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 10,
+      "seed": 2026122410
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 11,
+      "seed": 2026122411
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 12,
+      "seed": 2026122412
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 13,
+      "seed": 2026122413
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 14,
+      "seed": 2026122414
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 15,
+      "seed": 2026122415
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 16,
+      "seed": 2026122416
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 17,
+      "seed": 2026122417
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 18,
+      "seed": 2026122418
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 19,
+      "seed": 2026122419
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026123300
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026123301
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026123302
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 3,
+      "seed": 2026123303
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 4,
+      "seed": 2026123304
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 5,
+      "seed": 2026123305
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 6,
+      "seed": 2026123306
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 7,
+      "seed": 2026123307
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 8,
+      "seed": 2026123308
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 9,
+      "seed": 2026123309
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 10,
+      "seed": 2026123310
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 11,
+      "seed": 2026123311
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 12,
+      "seed": 2026123312
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 13,
+      "seed": 2026123313
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 14,
+      "seed": 2026123314
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 15,
+      "seed": 2026123315
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 16,
+      "seed": 2026123316
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 17,
+      "seed": 2026123317
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 18,
+      "seed": 2026123318
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 19,
+      "seed": 2026123319
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026123400
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026123401
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026123402
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 3,
+      "seed": 2026123403
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 4,
+      "seed": 2026123404
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 5,
+      "seed": 2026123405
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 6,
+      "seed": 2026123406
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 7,
+      "seed": 2026123407
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 8,
+      "seed": 2026123408
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 9,
+      "seed": 2026123409
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 10,
+      "seed": 2026123410
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 11,
+      "seed": 2026123411
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 12,
+      "seed": 2026123412
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 13,
+      "seed": 2026123413
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 14,
+      "seed": 2026123414
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 15,
+      "seed": 2026123415
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 16,
+      "seed": 2026123416
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 17,
+      "seed": 2026123417
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 18,
+      "seed": 2026123418
+    },
+    {
+      "generator": "weak_field_eps0.08",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 19,
+      "seed": 2026123419
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026132300
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026132301
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026132302
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 3,
+      "seed": 2026132303
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 4,
+      "seed": 2026132304
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 5,
+      "seed": 2026132305
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 6,
+      "seed": 2026132306
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 7,
+      "seed": 2026132307
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 8,
+      "seed": 2026132308
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 9,
+      "seed": 2026132309
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 10,
+      "seed": 2026132310
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 11,
+      "seed": 2026132311
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 12,
+      "seed": 2026132312
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 13,
+      "seed": 2026132313
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 14,
+      "seed": 2026132314
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 15,
+      "seed": 2026132315
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 16,
+      "seed": 2026132316
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 17,
+      "seed": 2026132317
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 18,
+      "seed": 2026132318
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.0,
+      "replicate": 19,
+      "seed": 2026132319
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026132400
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026132401
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026132402
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 3,
+      "seed": 2026132403
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 4,
+      "seed": 2026132404
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 5,
+      "seed": 2026132405
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 6,
+      "seed": 2026132406
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 7,
+      "seed": 2026132407
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 8,
+      "seed": 2026132408
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 9,
+      "seed": 2026132409
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 10,
+      "seed": 2026132410
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 11,
+      "seed": 2026132411
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 12,
+      "seed": 2026132412
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 13,
+      "seed": 2026132413
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 14,
+      "seed": 2026132414
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 15,
+      "seed": 2026132415
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 16,
+      "seed": 2026132416
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 17,
+      "seed": 2026132417
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 18,
+      "seed": 2026132418
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "spectral_heat",
+      "noise_level": 0.02,
+      "replicate": 19,
+      "seed": 2026132419
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 0,
+      "seed": 2026133300
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 1,
+      "seed": 2026133301
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 2,
+      "seed": 2026133302
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 3,
+      "seed": 2026133303
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 4,
+      "seed": 2026133304
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 5,
+      "seed": 2026133305
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 6,
+      "seed": 2026133306
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 7,
+      "seed": 2026133307
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 8,
+      "seed": 2026133308
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 9,
+      "seed": 2026133309
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 10,
+      "seed": 2026133310
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 11,
+      "seed": 2026133311
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 12,
+      "seed": 2026133312
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 13,
+      "seed": 2026133313
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 14,
+      "seed": 2026133314
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 15,
+      "seed": 2026133315
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 16,
+      "seed": 2026133316
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 17,
+      "seed": 2026133317
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 18,
+      "seed": 2026133318
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.0,
+      "replicate": 19,
+      "seed": 2026133319
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 0,
+      "seed": 2026133400
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 1,
+      "seed": 2026133401
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 2,
+      "seed": 2026133402
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 3,
+      "seed": 2026133403
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 4,
+      "seed": 2026133404
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 5,
+      "seed": 2026133405
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 6,
+      "seed": 2026133406
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 7,
+      "seed": 2026133407
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 8,
+      "seed": 2026133408
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 9,
+      "seed": 2026133409
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 10,
+      "seed": 2026133410
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 11,
+      "seed": 2026133411
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 12,
+      "seed": 2026133412
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 13,
+      "seed": 2026133413
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 14,
+      "seed": 2026133414
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 15,
+      "seed": 2026133415
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 16,
+      "seed": 2026133416
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 17,
+      "seed": 2026133417
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 18,
+      "seed": 2026133418
+    },
+    {
+      "generator": "weak_field_eps0.25",
+      "target_family": "local_environment",
+      "noise_level": 0.02,
+      "replicate": 19,
+      "seed": 2026133419
+    }
+  ],
+  "source_sha256": {
+    "trainable_w_stress_diagnostic.py": "d31da27e653e31b3fb6e15a542bf21ce3271e8801670538223a461c6428d860a",
+    "trainable_w.py": "f0789f6f1fd626769882a4d5f2fc5878601c904e6cf0b77863031867205ec4e0",
+    "trainable_w_operator_diagnostic.py": "584235dd49eab347c4ac078fdc00724bdf1f3b31eb6fc1d56d05fc688df2596b",
+    "trainable_w_diagnostic.py": "9d772bff2af5aaa8f7bfbf4736b419a57b9d1fe90dd834c3a27c13f07404298e",
+    "features.py": "2c2f7d37fedbd101ed67377545f737580c88c61be84a7498cc8cfa464af33cf0",
+    "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+  },
+  "versions": {
+    "python": "3.13.12",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0"
+  },
+  "limitations": "synthetic panels only; panel-bootstrap bands describe Monte Carlo uncertainty of cell medians and are not coverage calibrated; no physical gauge ensemble, physical confidence interval, GPU timing, or production contract; optimizer seconds exclude input/target setup and postchecks"
+}

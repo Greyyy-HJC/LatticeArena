@@ -1,0 +1,63 @@
+{
+  "derived_cap_numeric_gate_pass": true,
+  "derived_uniform_caps_at_reference_lower_1": {
+    "h": 0.0018767589116479898,
+    "q": 0.0018767589116479898,
+    "x": 0.001250781575622584
+  },
+  "lane_status": "GROUND_STATE_FORCE_UNCERTIFIED",
+  "naive_per_loop_cap_counterexample": {
+    "assumption_only_numeric_gate_pass": false,
+    "certification_status": "NOT_CERTIFIED_REQUIRES_INDEPENDENT_RECEIPTS_AND_REVIEW",
+    "combined_log_corner_bound": 0.31376570522625036,
+    "component_force_bounds": {
+      "h": 0.11910889995000523,
+      "q": 0.11910889995000523,
+      "x": 0.07960264682534467
+    },
+    "component_gates_pass": false,
+    "component_relative_bounds": {
+      "h": 0.11910889995000523,
+      "model_truncation": 0.01,
+      "q": 0.11910889995000523,
+      "statistical": 0.05,
+      "x": 0.07960264682534467
+    },
+    "factorized_qhx_bound": 0.31782044672535514,
+    "force_corner_count": 8,
+    "limits": {
+      "component_fractions": {
+        "h": 0.015,
+        "q": 0.015,
+        "x": 0.01
+      },
+      "model_fraction": 0.01,
+      "statistical_fraction": 0.05,
+      "total_fraction": 0.1
+    },
+    "model_gate_pass": true,
+    "physical_score": null,
+    "reference_force_lower": 1.0,
+    "statistical_gate_pass": true,
+    "systematic_relative_bound": 0.32782044672535515,
+    "total_gate_pass": false,
+    "total_relative_bound": 0.37782044672535514
+  },
+  "note": "conditional algebra only; no receipt, measurement, GPU, or QUDA evidence",
+  "physical_evidence_denominator": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "reason": "no independent q/h/x, positive reference-force, model-truncation, or review receipts",
+    "valid": 0
+  },
+  "physical_score": null,
+  "scenario_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "meaning": "deterministic formula sensitivity rows; not measurements or Monte Carlo datasets",
+    "planned": 50,
+    "valid": 50
+  },
+  "schema": "wilson-force-budget-propagation-diagnostic-v1"
+}

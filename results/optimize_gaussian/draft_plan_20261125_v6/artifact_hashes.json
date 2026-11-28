@@ -1,0 +1,10 @@
+{
+  "README.md": "4f603b76aac5a1c3a192a0b2407688f04b21ed5c27fd87be77e20a92ab8a7631",
+  "run_plan.json": "d05dac80db6a22f749c751ccfb796ad8da44ec7d1145ab8abac33d031d0d28de",
+  "snapshot_candidate_contract.py": "e0954d0fe528be2f5ed5a3d7994435ace229a4d9dc0f1aab894a7d7e3ba4b62a",
+  "snapshot_core_specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+  "snapshot_core_state.py": "9af58673cce44d1797b9f9ad1460db03fe276d481a59dc13188f28394f14f270",
+  "snapshot_draft_plan.py": "466f0f4a1172f47e9ea06529bdfafb1817f48a16a7bf262ce3010e21263f36a9",
+  "snapshot_research_contract_v1.json": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+  "snapshot_risk_statistics.py": "1f5f84e0a7b24c79d6270ea7c65b80d6e257bd202280c31dec74a156b687fc32"
+}

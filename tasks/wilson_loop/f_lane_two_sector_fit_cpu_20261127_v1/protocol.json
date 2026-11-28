@@ -1,0 +1,66 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_PROPOSED_TRACE_FIT_NOT_PHYSICS_EVIDENCE",
+  "fit": {
+    "N_t_values": [
+      16,
+      32
+    ],
+    "R_values": [
+      2,
+      3
+    ],
+    "T_values": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "data_components": 180,
+    "objective": "diagonal inverse-SE weighted least squares",
+    "parameters": 45,
+    "physical_formula_source": "selected lane_contract_v2.json draft q/h/x trace; production endpoint convention unreviewed",
+    "starts": [
+      [
+        0.15,
+        0.2
+      ],
+      [
+        0.3,
+        0.35
+      ],
+      [
+        0.55,
+        0.5
+      ]
+    ],
+    "static_state_count": 2,
+    "vacuum_state_count": 2
+  },
+  "fit_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 1,
+    "valid": 1
+  },
+  "fit_status": "two_sector_fit_candidate",
+  "physical_score": null,
+  "qhx_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 24,
+    "valid": 24
+  },
+  "schema": "wilson-f-two-sector-fit-pilot-protocol-v1",
+  "source_hashes": {
+    "lane_contract": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "manifest": "2378cb3242196a0a095522d91f5c829c4c19f0b7c8ee0ee248ab6ad9aba43474",
+    "raw_matrices": "c20451ae997a1c1a8bdb498c6ec8b15397878eb33fb783d0ab4b933f74290fa0"
+  },
+  "source_paths": {
+    "lane_contract": "lane_contract.json",
+    "manifest": "manifest.json",
+    "raw_matrices": "raw_matrices.npz"
+  }
+}

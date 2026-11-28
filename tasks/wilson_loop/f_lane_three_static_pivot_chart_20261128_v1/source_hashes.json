@@ -1,0 +1,6 @@
+{
+  "tasks/wilson_loop/f_lane_three_static_pivot_chart.py": "32989699cadae610b1136ba71cbc7dc8c105ab5f6ea1da084cfe90625d1cee05",
+  "tasks/wilson_loop/f_lane_three_static_two_vacuum_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+  "tasks/wilson_loop/f_lane_two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+  "tests/test_wilson_f_lane_three_static_pivot_chart.py": "5d29fbac1b2c8cb9a2a39e0483c1d64f3c715d8127bd142762b93f46c772e987"
+}

@@ -1,0 +1,33 @@
+{
+  "artifacts": {
+    "README.md": "d4d2ed8b6c7ed3e982d2d96ae8b3ff16c41aaa9724a3e1c02b8e6b1a6a6524fd",
+    "absolute_force_bootstrap.png": "3dc1187866a5d3c52869d562aa687d57bca330e1c59ad5b635664bedf983feaf",
+    "bootstrap_refits.csv": "4a598293f182e8608c001acac8d1b9465d12bb5d5bf0ac49abdcdfbdeb24ab43",
+    "lane_contract.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "panel_results.csv": "ee26cee5e45f2bc4bec41937aa30e7a547e1cbd57084f3a3a1e6d2ba9d209563",
+    "panels/panel_000/manifest.json": "809c93c7d8505b6836e703b889db614d051e681087e5efbdb52c927d9a67e9c6",
+    "panels/panel_000/raw_matrices.npz": "833dfdc4583dfbc17d957e7d688d0caa971e3037b98d64461d51b196d1721f83",
+    "panels/panel_001/manifest.json": "c2235253323a1e7429060b15964d24e7af3ff0eee49c32c6d93b2e5131327b1a",
+    "panels/panel_001/raw_matrices.npz": "47ec74d70e6ff78024438287ddca0c1655d622886b3c34c02ecc44636a46a37e",
+    "panels/panel_002/manifest.json": "4c705b50e02c378ffc469967489b27873f12fb4a1bc9592787033d021329c74e",
+    "panels/panel_002/raw_matrices.npz": "208196bbc52aaf903edfd20670d65db56daf3cb3cf7e16ac0e13c0aafbdc15f8",
+    "panels/panel_003/manifest.json": "a3f36d7a55471ba364e3250dfbcc88d941d31dcd3dfef41e9161191c82ff290f",
+    "panels/panel_003/raw_matrices.npz": "b498360bdb4c11a5cdd82ba56aa939c0c88daa1c70bda05c3db50997e47dceaa",
+    "panels/panel_004/manifest.json": "a2863e59cc3b2555374d4e86c2e93834cd2d53f24f52961cf4016eb0b8707280",
+    "panels/panel_004/raw_matrices.npz": "979eb2cb582fdcef16cfe129ab3605d14fc4ca9f82f5cc4e98780457d699de48",
+    "panels/panel_005/manifest.json": "20dc4dd4f0582fd880cee97ad37068a6dda98df9a8e439d2ccc3ade5d380a221",
+    "panels/panel_005/raw_matrices.npz": "e53568a6f7d5ab93bea7d91104f46e976645121fc3d7d0c474919fb37d750762",
+    "protocol.json": "26055ee7b8991d3103c50a0de92f035a16f49340e710e3d1ba17c004b904e783",
+    "source_snapshot/absolute_force_bootstrap_diagnostic.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "source_snapshot/finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "source_snapshot/joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "source_snapshot/lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "source_snapshot/npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "source_snapshot/two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "source_snapshot/two_sector_omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f",
+    "summary.json": "26055ee7b8991d3103c50a0de92f035a16f49340e710e3d1ba17c004b904e783"
+  },
+  "schema": "wilson-absolute-force-bootstrap-artifact-hashes-v1"
+}

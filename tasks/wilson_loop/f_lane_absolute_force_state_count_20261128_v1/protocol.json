@@ -1,0 +1,36 @@
+{
+  "blocks_per_panel": 96,
+  "classification": "SYNTHETIC_MODEL_SENSITIVITY_SCREEN_ONLY",
+  "diagnostic_estimators": {
+    "2state": "independent per-R 2-static-state positive-spectrum GLS on Nt=32, T=3..7",
+    "3state": "independent per-R 3-static-state positive-spectrum GLS on Nt=32, T=3..7"
+  },
+  "envelope": "min/max of the two Nt=32 model point estimates; not a confidence interval",
+  "failure_rule": "if either state-count fit is missing/rank-deficient at either R, abstain the panel envelope",
+  "noise": {
+    "process": "stationary AR(1)",
+    "relative_scale": 0.003,
+    "rho": 0.5
+  },
+  "panels": 12,
+  "primary_estimator": "regularized full-covariance 2-vacuum x 2-static fit over Nt={16,32}, T=3..7",
+  "schema": "wilson-absolute-force-state-count-screen-protocol-v1",
+  "scope_warning": "diagnostic models do not match the primary finite-Nt two-vacuum estimator",
+  "seed_rule": "2026114000 + panel_index",
+  "source_hashes": {
+    "absolute_force_bootstrap_diagnostic.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "state_count_envelope_screen.py": "6c3fb8acbc33c094541e5ec35e24783ab0af439ed67c3214f4f738f2f4d97e6c",
+    "transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "two_sector_omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f"
+  },
+  "truth": {
+    "force": 0.14999999999999997,
+    "unit": "a_t energy difference per spatial lattice step; Delta R=1"
+  }
+}

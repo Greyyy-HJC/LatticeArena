@@ -1,0 +1,109 @@
+{
+  "schema": "trainable-w-pooled-meta-init-summary-v1",
+  "status": "SYNTHETIC_CROSS_TASK_INITIALIZATION_DIAGNOSTIC_ONLY",
+  "physical_score": null,
+  "data_access": "No physical gauge links, sealed data, GPU, or QUDA data accessed.",
+  "planned_training_panels": 12,
+  "planned_evaluation_panels": 12,
+  "planned_solver_runs": 108,
+  "returned_solver_runs": 108,
+  "budget_exhausted_runs": 36,
+  "solver_non_success_runs": 36,
+  "pooled_training_calls": 15,
+  "pooled_training_panel_equivalent_optimizer_calls": 180,
+  "pooled_training_panel_equivalent_total_evaluations": 192,
+  "median_heldout_loss_by_arm_at_max_budget": {
+    "pooled_learned_init": 1.4405669374844226e-10,
+    "random_cold_start": 1.9613689635297728e-10,
+    "fixed_nonzero_control": 9.128814941599108e-10
+  },
+  "median_spectral_degree4_heldout_loss": 7.297582185214875e-08,
+  "median_target_matched_local_degree2_heldout_loss": 3.167500503727951e-33,
+  "fit_tolerance_summary": [
+    {
+      "method": "pooled_learned_init",
+      "fit_fraction_of_cold_initial": 0.1,
+      "mean_common_fit_loss_target": 3.344357512866537e-05,
+      "planned_panels": 12,
+      "reached_panels": 12,
+      "not_reached_panels": 0,
+      "total_calls_to_tolerance": 43,
+      "mean_calls_to_tolerance": 3.5833333333333335,
+      "break_even_K_vs_cold": 193
+    },
+    {
+      "method": "random_cold_start",
+      "fit_fraction_of_cold_initial": 0.1,
+      "mean_common_fit_loss_target": 3.344357512866537e-05,
+      "planned_panels": 12,
+      "reached_panels": 12,
+      "not_reached_panels": 0,
+      "total_calls_to_tolerance": 55,
+      "mean_calls_to_tolerance": 4.583333333333333,
+      "break_even_K_vs_cold": null
+    },
+    {
+      "method": "fixed_nonzero_control",
+      "fit_fraction_of_cold_initial": 0.1,
+      "mean_common_fit_loss_target": 3.344357512866537e-05,
+      "planned_panels": 12,
+      "reached_panels": 12,
+      "not_reached_panels": 0,
+      "total_calls_to_tolerance": 61,
+      "mean_calls_to_tolerance": 5.083333333333333,
+      "break_even_K_vs_cold": null
+    },
+    {
+      "method": "pooled_learned_init",
+      "fit_fraction_of_cold_initial": 0.01,
+      "mean_common_fit_loss_target": 3.3443575128665373e-06,
+      "planned_panels": 12,
+      "reached_panels": 12,
+      "not_reached_panels": 0,
+      "total_calls_to_tolerance": 51,
+      "mean_calls_to_tolerance": 4.25,
+      "break_even_K_vs_cold": 73
+    },
+    {
+      "method": "random_cold_start",
+      "fit_fraction_of_cold_initial": 0.01,
+      "mean_common_fit_loss_target": 3.3443575128665373e-06,
+      "planned_panels": 12,
+      "reached_panels": 12,
+      "not_reached_panels": 0,
+      "total_calls_to_tolerance": 83,
+      "mean_calls_to_tolerance": 6.916666666666667,
+      "break_even_K_vs_cold": null
+    },
+    {
+      "method": "fixed_nonzero_control",
+      "fit_fraction_of_cold_initial": 0.01,
+      "mean_common_fit_loss_target": 3.3443575128665373e-06,
+      "planned_panels": 12,
+      "reached_panels": 12,
+      "not_reached_panels": 0,
+      "total_calls_to_tolerance": 78,
+      "mean_calls_to_tolerance": 6.5,
+      "break_even_K_vs_cold": null
+    }
+  ],
+  "files": [
+    "README.md",
+    "protocol.json",
+    "raw.json",
+    "paired_summary.csv",
+    "fit_tolerance_summary.csv",
+    "local_polynomial_baseline.csv",
+    "denominator_summary.csv",
+    "synthetic_inputs.npz",
+    "meta_init_diagnostic.png",
+    "snapshot_trainable_w_meta_init_diagnostic.py",
+    "snapshot_trainable_w_operator_diagnostic.py",
+    "snapshot_trainable_w_stress_diagnostic.py",
+    "snapshot_trainable_w.py",
+    "snapshot_features.py",
+    "snapshot_kernels.py",
+    "summary.json",
+    "artifact_hashes.json"
+  ]
+}

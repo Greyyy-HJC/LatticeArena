@@ -1,0 +1,238 @@
+{
+  "evidence_class": "synthetic_arithmetic_fixture_only",
+  "scenarios": {
+    "d04_hand_calculation": {
+      "certified": false,
+      "data_access": "caller_supplied_arrays_only",
+      "draw_denominators": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 3,
+        "valid": 3
+      },
+      "per_time": [
+        {
+          "bootstrap_mean_q": 2.0,
+          "bootstrap_variance_q": 1.0,
+          "risk_contribution": 2.0,
+          "squared_bias_from_one": 1.0,
+          "t": 2
+        },
+        {
+          "bootstrap_mean_q": 0.5,
+          "bootstrap_variance_q": 0.0,
+          "risk_contribution": 0.25,
+          "squared_bias_from_one": 0.25,
+          "t": 3
+        },
+        {
+          "bootstrap_mean_q": 1.3333333333333333,
+          "bootstrap_variance_q": 0.3333333333333333,
+          "risk_contribution": 0.44444444444444436,
+          "squared_bias_from_one": 0.11111111111111106,
+          "t": 4
+        },
+        {
+          "bootstrap_mean_q": 0.6666666666666666,
+          "bootstrap_variance_q": 0.33333333333333337,
+          "risk_contribution": 0.44444444444444453,
+          "squared_bias_from_one": 0.11111111111111113,
+          "t": 5
+        }
+      ],
+      "physical_score": null,
+      "result_denominators": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "risk": 0.7847222222222222,
+      "schema": "optimize-d04-bootstrap-risk-v1",
+      "status": "D04_RISK_REDUCED_ARRAY_ONLY",
+      "times": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "variance_ddof": 1
+    },
+    "d06_synthetic_hull_clears": {
+      "alpha_per_comparison": 0.025,
+      "block_lengths": [
+        2,
+        5,
+        10
+      ],
+      "block_results": {
+        "10": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.30375,
+          "median_ratio": 1.375,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        },
+        "2": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.4037499999999998,
+          "median_ratio": 1.475,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        },
+        "5": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.35375,
+          "median_ratio": 1.4249999999999998,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        }
+      },
+      "certified": false,
+      "data_access": "caller_supplied_arrays_only",
+      "draw_denominators": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "hull_lower": 1.30375,
+      "physical_score": null,
+      "quantile_method": "linear",
+      "r_star": 1.1111111111111112,
+      "result_denominators": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "schema": "optimize-d06-paired-risk-ratio-v1",
+      "status": "D06_THRESHOLD_CLEARED_ARRAY_ONLY"
+    },
+    "d06_synthetic_hull_does_not_clear": {
+      "alpha_per_comparison": 0.025,
+      "block_lengths": [
+        2,
+        5,
+        10
+      ],
+      "block_results": {
+        "10": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.05375,
+          "median_ratio": 1.125,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        },
+        "2": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.4037499999999998,
+          "median_ratio": 1.475,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        },
+        "5": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.35375,
+          "median_ratio": 1.4249999999999998,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        }
+      },
+      "certified": false,
+      "data_access": "caller_supplied_arrays_only",
+      "draw_denominators": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 12,
+        "valid": 12
+      },
+      "hull_lower": 1.05375,
+      "physical_score": null,
+      "quantile_method": "linear",
+      "r_star": 1.1111111111111112,
+      "result_denominators": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "schema": "optimize-d06-paired-risk-ratio-v1",
+      "status": "D06_THRESHOLD_NOT_CLEARED"
+    },
+    "d06_synthetic_zero_risk_abstains": {
+      "alpha_per_comparison": 0.025,
+      "block_lengths": [
+        2,
+        5,
+        10
+      ],
+      "block_results": {
+        "10": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 1,
+          "lower_quantile": null,
+          "median_ratio": null,
+          "planned": 4,
+          "status": "ABSTAIN_NONPOSITIVE_OR_NONFINITE_RISK",
+          "valid": 3
+        },
+        "2": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.4037499999999998,
+          "median_ratio": 1.475,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        },
+        "5": {
+          "draw_id_sha256": "a1e03200f1f82ad2c1cec8795c271aaecf98f5aa2d151d2229ec5fa0c177cf77",
+          "failed": 0,
+          "lower_quantile": 1.35375,
+          "median_ratio": 1.4249999999999998,
+          "planned": 4,
+          "status": "VALID_PAIRED_RATIO_DRAWS",
+          "valid": 4
+        }
+      },
+      "certified": false,
+      "data_access": "caller_supplied_arrays_only",
+      "draw_denominators": {
+        "abstained": 0,
+        "failed": 1,
+        "planned": 12,
+        "valid": 11
+      },
+      "hull_lower": null,
+      "physical_score": null,
+      "quantile_method": "linear",
+      "r_star": 1.1111111111111112,
+      "result_denominators": {
+        "abstained": 1,
+        "failed": 0,
+        "planned": 1,
+        "valid": 0
+      },
+      "schema": "optimize-d06-paired-risk-ratio-v1",
+      "status": "ABSTAIN_INVALID_OR_UNPAIRED_RISK_DRAWS"
+    }
+  },
+  "schema": "optimize-d04-d06-risk-arithmetic-diagnostic-v1",
+  "source_hashes": {
+    "research_contract_v1.json": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "risk_statistics.py": "1f5f84e0a7b24c79d6270ea7c65b80d6e257bd202280c31dec74a156b687fc32"
+  }
+}

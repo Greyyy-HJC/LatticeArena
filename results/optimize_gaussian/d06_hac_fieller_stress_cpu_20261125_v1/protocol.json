@@ -1,0 +1,133 @@
+{
+  "aggregate_cell_summary": {
+    "fieller_contrast": {
+      "cell_count": 54,
+      "cells_with_wilson_lower_ge_0.95": 1,
+      "equal_cell_mean_family_coverage": 0.9133518518518519,
+      "equal_cell_mean_family_release_rate": 0.01675925925925926
+    },
+    "ratio_delta": {
+      "cell_count": 54,
+      "cells_with_wilson_lower_ge_0.95": 15,
+      "equal_cell_mean_family_coverage": 0.9426851851851852,
+      "equal_cell_mean_family_release_rate": 0.010407407407407409
+    }
+  },
+  "block_lengths": [
+    2,
+    5,
+    10
+  ],
+  "common_arm_correlation": [
+    0.0,
+    0.6400000000000001
+  ],
+  "common_noise_loadings": [
+    0.0,
+    0.8
+  ],
+  "denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 54000,
+    "unit": "independent synthetic panels; all method/contrast endpoints finite",
+    "valid": 54000
+  },
+  "evidence_class": "synthetic_known_risk_gaussian_t5_and_periodic_heteroskedastic_ar1",
+  "families": [
+    "gaussian",
+    "student_t5",
+    "periodic_volatility"
+  ],
+  "family_size": 2,
+  "hac_bandwidths": [
+    2,
+    5,
+    10,
+    20,
+    30
+  ],
+  "limits": [
+    "No lattice or sealed data, GPU, QUDA, production reference fit, or optimizer failures were modeled.",
+    "HAC relies on a studentized weak-dependence approximation and is not a finite-sample theorem.",
+    "This compares HAC ratio constructions; it does not select a production interval or replace the archived percentile method."
+  ],
+  "mc_replicates_per_cell": 1000,
+  "mc_standard_error_at_95pct_nominal": 0.006892024376045111,
+  "methods": [
+    "ratio_delta: HAC standard error of the plug-in risk-ratio influence function",
+    "fieller_contrast: invert HAC-studentized R_comparator-r*R_trainableW contrasts; solve for the upper root"
+  ],
+  "n_configuration_scenarios": [
+    40,
+    60,
+    100
+  ],
+  "one_sided_alpha_per_contrast": 0.025,
+  "phi_scenarios": [
+    0.0,
+    0.4,
+    0.8
+  ],
+  "physical_score": null,
+  "r_star": 1.1111111111111112,
+  "schema": "optimize-d06-hac-fieller-stress-v1",
+  "source_hashes": {
+    "d06_bootstrap_coverage_diagnostic.py": "5cfd901781ba62b2cad899d48828d2d707f9bfa68621347ef43330302249cc54",
+    "d06_hac_coverage_diagnostic.py": "96a550e51439125a846b879f2de60fbf30ec9cf60ec13c34774e171be11f7693",
+    "d06_hac_fieller_diagnostic.py": "360ec0a4853172f83f9e8af817c1e08461748819009f67558ffe7a510a7db2fb",
+    "risk_statistics.py": "1f5f84e0a7b24c79d6270ea7c65b80d6e257bd202280c31dec74a156b687fc32"
+  },
+  "status": "METHOD_STRESS_NOT_CALIBRATED_FOR_PHYSICAL_USE",
+  "truth": "exact finite-n expected D04 risk from declared means and covariance; Student-t innovations have finite variance and periodic heteroskedastic covariance is propagated exactly",
+  "worst_cell_summary": {
+    "gaussian:fieller_contrast": {
+      "cell_count": 18,
+      "cells_with_wilson_lower_ge_0.95": 0,
+      "mean_family_coverage_over_cells": 0.9143333333333332,
+      "mean_family_release_rate_over_cells": 0.017333333333333333,
+      "minimum_family_coverage": 0.849,
+      "minimum_family_release_rate": 0.006
+    },
+    "gaussian:ratio_delta": {
+      "cell_count": 18,
+      "cells_with_wilson_lower_ge_0.95": 4,
+      "mean_family_coverage_over_cells": 0.9424444444444444,
+      "mean_family_release_rate_over_cells": 0.010333333333333333,
+      "minimum_family_coverage": 0.894,
+      "minimum_family_release_rate": 0.002
+    },
+    "periodic_volatility:fieller_contrast": {
+      "cell_count": 18,
+      "cells_with_wilson_lower_ge_0.95": 1,
+      "mean_family_coverage_over_cells": 0.911888888888889,
+      "mean_family_release_rate_over_cells": 0.015444444444444446,
+      "minimum_family_coverage": 0.838,
+      "minimum_family_release_rate": 0.001
+    },
+    "periodic_volatility:ratio_delta": {
+      "cell_count": 18,
+      "cells_with_wilson_lower_ge_0.95": 5,
+      "mean_family_coverage_over_cells": 0.9409444444444445,
+      "mean_family_release_rate_over_cells": 0.009888888888888888,
+      "minimum_family_coverage": 0.882,
+      "minimum_family_release_rate": 0.0
+    },
+    "student_t5:fieller_contrast": {
+      "cell_count": 18,
+      "cells_with_wilson_lower_ge_0.95": 0,
+      "mean_family_coverage_over_cells": 0.9138333333333334,
+      "mean_family_release_rate_over_cells": 0.0175,
+      "minimum_family_coverage": 0.822,
+      "minimum_family_release_rate": 0.003
+    },
+    "student_t5:ratio_delta": {
+      "cell_count": 18,
+      "cells_with_wilson_lower_ge_0.95": 6,
+      "mean_family_coverage_over_cells": 0.9446666666666668,
+      "mean_family_release_rate_over_cells": 0.011000000000000001,
+      "minimum_family_coverage": 0.891,
+      "minimum_family_release_rate": 0.003
+    }
+  }
+}

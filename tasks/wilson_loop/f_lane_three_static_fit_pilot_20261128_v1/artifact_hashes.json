@@ -1,0 +1,26 @@
+{
+  "artifacts": {
+    "README.md": "244289de08c6cd4d2e731cedd1bc3e58040c6cb40c638890b5dabc10e9a441ae",
+    "fit_summary.json": "2ff18afbd657d70f8b3f2b1aab1caaf5785f9f3b00ca9fcbaf7b23ec8137f191",
+    "lane_contract.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "manifest.json": "6260afc604e695c4538129f496924b792058ab0533b0882804eb8f90d5aeab40",
+    "multistart.csv": "74492ae47c509e4fde9fe34063da8f99295606c685fc3c8b127d76fb80342811",
+    "protocol.json": "ed0a6bec01ca2f3a6635a7cc75dc91915f7aaacd2003923a426ff79c65d6463c",
+    "raw_matrices.npz": "529e22258405fb789ae4931d2f01d0e4f0bbe10b8509af2c106c81a22e366c6a",
+    "source_snapshot/absolute_force_bootstrap_diagnostic.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "source_snapshot/finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "source_snapshot/joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "source_snapshot/lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "source_snapshot/npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/omitted_coverage_generator.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "source_snapshot/three_static_fit_pilot.py": "e8f41a6c2b04456889d605ab26ee0e0690c134d132593540c2049f12b0045f9e",
+    "source_snapshot/transfer_trace_reader.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "source_snapshot/two_static_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "summary.json": "21368ea3830aa72c5d2b90164448620f5130f2598493a76f6cfb0b34e2305733",
+    "three_static_fit.png": "8ba8a78d66ffa9a249551aad3bfab541b4ebe8dd73786a61d0248b31ffbbce8f",
+    "truth.json": "f82a087f887df104d9ec970cceb1e7bf8b87627ca0da1c9c5c5a30f59d8eedd0"
+  },
+  "schema": "wilson-three-static-pilot-artifact-hashes-v1"
+}

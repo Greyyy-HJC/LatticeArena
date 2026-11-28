@@ -1,0 +1,149 @@
+{
+  "schema": "optimize-gaussian-dual-contrast-contract-v1",
+  "status": "DRAFT_NOT_READY",
+  "physical_score": null,
+  "certified": false,
+  "data_access": "none",
+  "authorization": {
+    "production_data": false,
+    "gpu_quda": false
+  },
+  "method_status": "METHOD_DEFAULTS_SELECTED_EVIDENCE_NOT_READY",
+  "comparison_family": [
+    "trainable_W_vs_same_budget_SLSQP",
+    "trainable_W_vs_fixed_degree4_Chebyshev"
+  ],
+  "D04_reference": {
+    "observable": "lowest zero-momentum valence isovector pseudoscalar energy on S16T16 quenched Wilson, kappa=0.14",
+    "units": "a_t m_pi",
+    "physical_interpretation": "independent target for the dimensionless Pion fixed-protocol risk objective",
+    "reference_method": "candidate-blind joint two-state PP(n=0,8,16)+local A4P spectral fit",
+    "data_source": "independent E-chain; correlator receipt not yet supplied",
+    "data_receipt_sha256": null,
+    "fit_protocol": {
+      "main_window": [
+        3,
+        8
+      ],
+      "tmin_checks": [
+        2,
+        3,
+        4
+      ],
+      "state_count_checks": [
+        2,
+        3
+      ],
+      "PP_fold": "even",
+      "A4P_fold": "odd",
+      "shared_states": true,
+      "covariance_diagonal_shrinkage": 0.25,
+      "covariance_eigenvalue_floor": 1e-10,
+      "all_arms_share_windows_covariance_blocks_and_reference_draws": true
+    },
+    "risk_objective": {
+      "q_theta": "C_theta(t)/(A_theta*f0(t))",
+      "R_theta": "mean_t=2..5[Var_boot(q_theta(t))+|E_boot(q_theta(t))-1|^2]",
+      "amplitude_window": [
+        6,
+        8
+      ],
+      "f0_source": "independent E-chain reference",
+      "units": "dimensionless"
+    },
+    "pass_rule": "relative mass error<=0.05; p>=0.01; PP/A4P and window/model shifts<=2.5 paired SE; no boundary hits",
+    "failure_rule": "any failed reference gate makes D04 unresolved; do not substitute synthetic operator loss",
+    "independent_review_receipt": null
+  },
+  "D06_effect_threshold": {
+    "r_star": 1.1111111111111112,
+    "units": "dimensionless risk ratio",
+    "direction_and_interpretation": "rho=R_comparator/R_trainableW; rho>1 favors trainable-W; require at least 10% risk reduction",
+    "prespecified_before_confirmation": true,
+    "family_size": 2,
+    "alpha_total_one_sided": 0.05,
+    "alpha_per_comparison_bonferroni": 0.025,
+    "paired_block_bootstrap_draws": 10000,
+    "primary_block_length": 5,
+    "sensitivity_block_lengths": [
+      2,
+      10
+    ],
+    "decision_rule": "hull lower bound across block lengths must exceed r_star for both comparisons",
+    "invalid_or_zero_risk_rule": "ABSTAIN_RATIO_UNDEFINED; do not add epsilon or change to an absolute-difference estimand"
+  },
+  "D11_strong_spectral_operator": {
+    "family": "Chebyshev",
+    "degree": 4,
+    "basis_parameterization": "monotone Bernstein controls mapped by a fixed exact dyadic rational degree-4 transform, evaluated in float64, to a Chebyshev series for Clenshaw application",
+    "H_definition": "H=sum_i(T_i+T_i^dagger-2I), three periodic spatial directions, equal-weight unitary 3x3 links; U(3) unitarity suffices for the stated spectral bound",
+    "mathematical_link_domain": "unitary U(3) links suffice for the Hermitian spectral bound",
+    "physical_link_gate": "production QCD inputs must carry an SU(3) provenance or determinant-unitarity receipt; the CPU helper checks U-dagger-U only",
+    "spectral_interval": [
+      -12.0,
+      0.0
+    ],
+    "spectral_mapping": "y=I+H/12 in [0,1]; x=2y-1 in [-1,1]",
+    "identity_normalization": "P4(y=1)=b4=1 at the upper spectral endpoint; this is an H=0 eigenmode normalization only when such a mode exists; outer unnormalized G^2 P4(H) G^2 is common to all arms",
+    "coefficient_constraints": "P4(y)=sum_i b_i*C(4,i)*y^i*(1-y)^(4-i), 0<=b0<=b1<=b2<=b3<=b4=1",
+    "positivity_projection_constraints": "Bernstein basis gives 0<=P4<=1; monotone controls imply dP4/dy>=0; no post-fit clipping or projection",
+    "outer_gaussian_sandwich": {
+      "G": "I+0.10*sum_i(T_i+T_i^dagger)",
+      "G_relation": "G=1.6I+0.1H",
+      "power_m": 2,
+      "G_spectrum": [
+        0.4,
+        1.6
+      ],
+      "raw_zero_mode_factor": 6.5536,
+      "raw_zero_mode_factor_condition": "conditional on an H=0 eigenmode; not guaranteed for a general gauge field",
+      "per_step_normalization": false
+    },
+    "failure_rule": "reject nonunitary links, wrong shape/boundary, nonfinite values, or infeasible controls; never repair by clipping; physical production also requires independently checked SU(3) link provenance",
+    "independent_review_receipt": null
+  },
+  "fair_budget": {
+    "objective_id": "D04_fixed_Pion_risk_v1",
+    "instance_plan_sha256": null,
+    "fit_manifest_sha256": null,
+    "heldout_manifest_sha256": null,
+    "seed_plan_sha256": null,
+    "initialization_policy": "freeze and hash one prespecified initialization plan; use matched starts where parameterizations permit",
+    "restart_policy": "one prespecified start per arm; no unbudgeted restarts; retain failed runs in assigned-arm denominator",
+    "stopping_rule": "stop at 160 objective/gradient calls or the prespecified solver tolerance; count all objective and gradient evaluations",
+    "hardware_environment": "not yet measured; record CPU/GPU model, thread count, precision, software versions and clock policy",
+    "objective_gradient_call_cap_per_arm": 160,
+    "amortization_task_count": 1,
+    "walltime_rule": "charge full training/setup/selection cost to one task until a supported deployment task count and cost ledger exist",
+    "costs": {
+      "training": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "setup": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "solve": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "inference": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "io": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "failure_recovery": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "total_walltime": {
+        "amount": null,
+        "unit": "seconds"
+      }
+    }
+  }
+}

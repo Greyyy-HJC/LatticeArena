@@ -1,0 +1,95 @@
+{
+  "classification": "FIXED_ENERGY_LINEAR_DESIGN_AUDIT_ONLY",
+  "degeneracy_stress_cases": {
+    "N_t_plans": [
+      16,
+      32
+    ],
+    "R": 2,
+    "T_values": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "static_energies_at": "a_t*E"
+  },
+  "diagnostics": {
+    "numerical_rank": "rank uses max(matrix_shape)*machine_epsilon*s_max separately for raw and scaled matrices",
+    "production_covariance": "not supplied; covariance-whitened information and acceptance threshold remain open",
+    "raw_svd": "unscaled design matrix; reports physical mode-amplitude suppression and shape together",
+    "unit_column_scaled_svd": "each design column normalized to unit Euclidean norm; compares shape collinearity only"
+  },
+  "limitations": [
+    "spectral energies are fixed hand-set toy values, not fitted or measured",
+    "linear design rank does not validate the nonlinear GEVP/spectral estimator",
+    "unit-column scaling removes absolute signal size and cannot establish practical identifiability",
+    "no measurement covariance, noise, bootstrap, interval coverage, or force bound is used",
+    "the planned exporter time origin and endpoint factorization still require independent review"
+  ],
+  "model": {
+    "N_t_plans": [
+      [
+        16
+      ],
+      [
+        32
+      ],
+      [
+        16,
+        32
+      ]
+    ],
+    "T_values": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "baseline": "(m=0,n=0) coefficient fixed to one; five correction coefficients remain",
+    "energies_from": "hand-set finite-trace toy; a_t*E units",
+    "kernel": "K_mn(T,N_t)=exp[-eps_m*(N_t-T)-(V_n-V_0)*T]",
+    "mode_indices_mn": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "mode_order": [
+      "q_static_1",
+      "q_static_2",
+      "h_vacuum_1",
+      "x_mixed_1",
+      "x_mixed_2"
+    ],
+    "radii": [
+      2,
+      3
+    ]
+  },
+  "schema": "wilson-f-lane-qhx-design-identifiability-v1",
+  "source_sha256": {
+    "design_diagnostic": "844c90ec2d30c2862cfd44c4f2a327b0cca7cf2a87ed466a17794555acaa8280",
+    "finite_trace_toy": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "lane_contract": "4c03703fe73d44825e7c4dcfc645fdcdaa4e63e07d9c1f29b3ada7b9983befeb",
+    "lane_contract_json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95"
+  }
+}

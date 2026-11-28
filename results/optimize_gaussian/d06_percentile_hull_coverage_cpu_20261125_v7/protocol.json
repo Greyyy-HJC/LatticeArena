@@ -1,0 +1,76 @@
+{
+  "base_seed": 20261125,
+  "block_lengths": [
+    2,
+    5,
+    10
+  ],
+  "cross_arm_common_noise_fraction": 0.6,
+  "csv_line_terminator": "LF",
+  "data_access": "none",
+  "evidence_class": "synthetic_stationary_gaussian_ar1_only",
+  "family_size": 2,
+  "inner_bootstrap": "analytic infinite-draw circular-block empirical bootstrap variance; avoids finite inner-bootstrap Monte Carlo noise",
+  "mc_replicates_per_phi": 250,
+  "n_configuration_scenarios": [
+    40,
+    60,
+    100
+  ],
+  "outer_draws_per_block_length": 1000,
+  "paired_arms": [
+    "trainable_W",
+    "same_budget_SLSQP",
+    "fixed_degree4_Chebyshev"
+  ],
+  "phi_scenarios": [
+    0.0,
+    0.4,
+    0.8
+  ],
+  "physical_score": null,
+  "q_means_by_arm_and_time": [
+    [
+      1.075,
+      1.08,
+      1.085,
+      1.08
+    ],
+    [
+      1.078,
+      1.084,
+      1.087,
+      1.083
+    ],
+    [
+      1.09,
+      1.092,
+      1.1,
+      1.095
+    ]
+  ],
+  "q_sigma_by_arm": [
+    0.04,
+    0.042,
+    0.05
+  ],
+  "quantile": 0.025,
+  "quantile_method": "linear",
+  "r_star": 1.1111111111111112,
+  "risk_truth": "mean_t[(mu_arm,t-1)^2 + exact Var(sample_mean_t)] for a stationary AR(1) with known marginal sigma and phi",
+  "schema": "optimize-d06-percentile-hull-coverage-pilot-v1",
+  "seed_rule": "base_seed + scenario_index*1000000 + replicate; outer draw seed adds 10000 + block_length",
+  "selected_contract_draws_per_block_length": 10000,
+  "source_hashes": {
+    "d06_bootstrap_coverage_diagnostic.py": "5cfd901781ba62b2cad899d48828d2d707f9bfa68621347ef43330302249cc54",
+    "research_contract_v1.json": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "risk_statistics.py": "1f5f84e0a7b24c79d6270ea7c65b80d6e257bd202280c31dec74a156b687fc32"
+  },
+  "status": "PILOT_CALIBRATION_NOT_PHYSICAL_EVIDENCE",
+  "time_points": [
+    2,
+    3,
+    4,
+    5
+  ]
+}

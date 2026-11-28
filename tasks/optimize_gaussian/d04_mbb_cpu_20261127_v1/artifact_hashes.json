@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "README.md": "eedcf1f6500b73893882764d2a2917503924edb3a13649ee99677fe3b879dc4a",
+    "manifest.json": "69dcf988fc999cc9f335df94a828f2c2a4c21f3630e248f4c7b10985171a0868",
+    "mbb_diagnostics.png": "e4617c9b445352a29ea0b3c14fa78ab424b9407eb0a738a3e49ce5ace51c9f5a",
+    "source_hashes.json": "e050f731300fb5d18846bf6c1d86b21c77cf888e0a3e6130451582ada382d2d8",
+    "source_protocol.json": "d25085569423cfbb5e94708b2407243b1d9eebc39baa545566a642e690d5f5d9",
+    "summary.csv": "323286cfb98b091a403c2ad6f9331ec8f256f9441c1de85c04084e1e7b1ad15f",
+    "summary.json": "80b88cf1b3d8ec6599bc4d05450d740a10c10d87c15bab2f544f8ca3a1aa3d4a",
+    "synthetic_correlators.npz": "624390f8d3c8d256c1301fae450ee4b948f71b86b9feb504722f1c69fa53e181"
+  },
+  "schema": "d04-mbb-artifact-hashes-v1"
+}

@@ -1,0 +1,280 @@
+{
+  "panels": [
+    {
+      "input_artifact_hashes": {
+        "fit.json": "48d2a9731691c5870e20e45232ece5a6cb8ed67b72fc5c3f698c485607858d92",
+        "manifest.json": "4d56893f12a591a258d07ef2180c890417948f8a811c6bc1ab45847b782f133b",
+        "profile_receipts.json": "a174049ff11f446a1c02a90945ee8aeb165732e9c47f7dfc47d1fdf639844053",
+        "raw_matrices.npz": "29692b3ed8b82f71d0baa675c79f45f072a189b96a3100c800894318fcb79ecf"
+      },
+      "panel": 0,
+      "reused_from": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+    },
+    {
+      "input_artifact_hashes": {
+        "fit.json": "2a6c04b161384e986d90d81c0b34d59a2259aa976900f779368621bdc319a2da",
+        "manifest.json": "78a0473ef19ebd8b878323626fcdeba507b9f7003de8b71b83e32deab5658844",
+        "profile_receipts.json": "7045febb97dfffe6a73c6a0ca61e209370a31b587451bddaeaa07a5aa62f51c1",
+        "raw_matrices.npz": "0bf0e874003c8912ea16c6dd6bd20cbc869af89589ced7f09f7a8b7212a1a035"
+      },
+      "panel": 1,
+      "reused_from": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+    },
+    {
+      "input_artifact_hashes": {
+        "fit.json": "4c6000f2c09d4db426d9bf3ce8f9eac1dd1510b27982d859bb69e3f86388b75c",
+        "manifest.json": "6a63f5ad53a895091a72471f61aa612d1a87b406611a7444b47a3a3332b5d519",
+        "profile_receipts.json": "a6ed0bb18fa288c093716a97f3b08452b4c1afd78f79f37ed3cef04e8f643297",
+        "raw_matrices.npz": "b0ac157a8c2f62ee783a29d1f03be19ce208f3261f916a359ff4f56a3934aeb3"
+      },
+      "panel": 2,
+      "reused_from": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+    },
+    {
+      "input_artifact_hashes": {
+        "fit.json": "e5bfe653a1588777df3ccae426a479afae8fd87fa78ec992e32798ae345febfc",
+        "manifest.json": "839d0951ee7b099abf8871dfbf3ea01e2bfe0ac3c647711329f8b9e5f334d531",
+        "profile_receipts.json": "ca44836fbecd9f543c8016260edf25c2088af48f6b21ce68258d79e5645f7aea",
+        "raw_matrices.npz": "c5266b45de16d4a0a9c6e8aff896e2e027e2c152f905dc6bd55102617faea577"
+      },
+      "panel": 3,
+      "reused_from": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+    },
+    {
+      "input_artifact_hashes": {
+        "fit.json": "6443b05e108b83577758e32e845fbc7bfc21521e4e761efbeffe744ab5cd1c68",
+        "manifest.json": "b3ca000fddd9871406b90e56ad1b21def9cf0a2212cb12f7cd21a3bc70799d15",
+        "profile_receipts.json": "2f83d47b3d897ddc7ff10c5a99ccfc1acff3b7cfe6cb68fcc0b0ebf6e4706d59",
+        "raw_matrices.npz": "e0f76596c37c5c28215f1a81fe6675a019f68c3ab8b9fb64582f0b9f65987fb6"
+      },
+      "panel": 4,
+      "reused_from": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+    },
+    {
+      "input_artifact_hashes": {
+        "fit.json": "04e3128cdfdf6f4dfb11f9020b6bbfa7f761e040e17a723ac7ce9f6634398853",
+        "manifest.json": "33ba81f88ea7979aa0a90cd132b05e05013f9ecbab6daa79ca04548c7877e2e8",
+        "profile_receipts.json": "8559e7404d7a6b990350fbd6cd0c64e7111176c12942c1f7da4a83bacb45ee61",
+        "raw_matrices.npz": "0f53f50393abae704ce87eae8713530b6793d5e50f953fc45c67ae69e63a58bc"
+      },
+      "panel": 5,
+      "reused_from": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 6,
+      "profile_cell_receipt_count": 12,
+      "replicate": 0,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "887c3ec03d0278c0bbf671c3bf1763656d3a4fe78559e033bf5ea43fca1e96d5",
+        "raw_matrices": "ae26c5ccd53b36be14b2ffce7278820e96051fcfe45202d1b722821311f3de24"
+      },
+      "stratum": "baseline"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 7,
+      "profile_cell_receipt_count": 12,
+      "replicate": 1,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "c93be2cdc1964cebf3f812a3f678d5cff2944a8cc491d13f9ceb85742b50c90d",
+        "raw_matrices": "a0948923aed12d7ba28d22e2d51bcd58217f3bbebe0c820da8d25b741088d647"
+      },
+      "stratum": "baseline"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 8,
+      "profile_cell_receipt_count": 12,
+      "replicate": 2,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "742fc89945788da7e30c462c6991c995edd64c0f233b9395c04a3ae7a7100c73",
+        "raw_matrices": "7f2f7d0d1247b5bd03f872c9e6a9eecd3f1a4c1f9f81b618d935b9f1b636b70f"
+      },
+      "stratum": "baseline"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 9,
+      "profile_cell_receipt_count": 12,
+      "replicate": 0,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "67b3d9ce13ef41ba0f27722ca47c279f65609129e24aaf95de7c245fbbf6edee",
+        "raw_matrices": "74533f90cbadc3305dda0231b873229e1a5817b96a0cb1b8dff52b775a3710eb"
+      },
+      "stratum": "near_degenerate"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 10,
+      "profile_cell_receipt_count": 12,
+      "replicate": 1,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "dd41c04386a489769c0c5fe9d3d5f650f1bbfd3bffe5604d7c9a48fd50669c35",
+        "raw_matrices": "402a83cf49f378bf5ccb6330cb80bf9304c25c78521fdcf70ea4070336a14110"
+      },
+      "stratum": "near_degenerate"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 11,
+      "profile_cell_receipt_count": 12,
+      "replicate": 2,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "a0e3d950b860fc085bcef0031e2cde1dbb036f1942adb96659aaa0b5464f36af",
+        "raw_matrices": "488914e4eb11f5dc0200dd2bc7a21095d2280fcf1cba0c608e78b5ac75df337a"
+      },
+      "stratum": "near_degenerate"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 12,
+      "profile_cell_receipt_count": 12,
+      "replicate": 0,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "bab1ffcbcb08dd6fe48cd4a5c1df2b8cfee08279fb83ae3fc0405d4e4ccc5723",
+        "raw_matrices": "4b4b3a41665002ff59f9e43e9faec2dfc1a5b1a5080d8f2db19d23af9caa0b9e"
+      },
+      "stratum": "omitted_vacuum_truth"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 13,
+      "profile_cell_receipt_count": 12,
+      "replicate": 1,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "cd2de73cc7db5d67ac33685735aa35ca9026f18e94eec68e9ecd8ef3c3687756",
+        "raw_matrices": "49e4d54331da292abfe5c6eef82457eee1647f5425ba8c8ea8b64cb1324b31b9"
+      },
+      "stratum": "omitted_vacuum_truth"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 14,
+      "profile_cell_receipt_count": 12,
+      "replicate": 2,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "70b4de47480d5e294cc983487fb49c8afdefa56da701156dc7888dd19dd3ac1c",
+        "raw_matrices": "c813e60fd7be5ff1eda14a403815984a408ad77890855c22d6c04566448f3d6e"
+      },
+      "stratum": "omitted_vacuum_truth"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 15,
+      "profile_cell_receipt_count": 12,
+      "replicate": 0,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "d7bdb8fee4a0039dd53d3ad77552c59033bf7c377d0df3afb48ac5afeb7fae83",
+        "raw_matrices": "7f8e6b71a2e9d16ef5609d6b3e5d55d5dec9192eee8319519cdb2d80f684f78d"
+      },
+      "stratum": "dependent_unequal_variance"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 16,
+      "profile_cell_receipt_count": 12,
+      "replicate": 1,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "af978d473d7be0972465ee15fbd1707768fc56e04e30115b9f528eb7768b98e3",
+        "raw_matrices": "6a78f73c18adedb9ec7c34f32482de45122898f5586b21cfd17c6dc201f1dd69"
+      },
+      "stratum": "dependent_unequal_variance"
+    },
+    {
+      "denominator": {
+        "abstained": 0,
+        "failed": 0,
+        "planned": 1,
+        "valid": 1
+      },
+      "fit_status": "three_static_fit_candidate",
+      "panel": 17,
+      "profile_cell_receipt_count": 12,
+      "replicate": 2,
+      "snapshot_hashes": {
+        "lane_contract": "558d4bef943f3059df38664f23094a3644110ddb255478b032007b502c139185",
+        "manifest": "41654aef2bf7080470540ea002a05e334acc7a326e8fa2f7c44026e3b0663b5c",
+        "raw_matrices": "82a64ed5092dd67388918504c7bbf4fc38e9534abbb186c307a7bebcef944d12"
+      },
+      "stratum": "dependent_unequal_variance"
+    }
+  ]
+}

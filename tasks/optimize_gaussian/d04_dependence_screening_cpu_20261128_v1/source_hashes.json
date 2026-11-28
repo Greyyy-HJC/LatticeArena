@@ -1,0 +1,15 @@
+{
+  "schema": "optimize-d04-heldout-source-hashes-v1",
+  "sources": {
+    "ar1_helpers": "202f22db002625b252f3ff362010bde982becb8313b398bc72afb981104a0c7c",
+    "bootstrap_failure_test": "ddc32c5a40a1645f911ff9b3377264ffedbd3e5f670cf181f0f6a09c6c796ab1",
+    "bootstrap_helpers": "699884417cb52822fd2f90f592769dceecf29d2f5b1b359c5431afa23f8535fb",
+    "contract": "2a272cffb0c49f0a87756f5a2d97fb2b80eaf53173e37e91a4e302e3d327a50e",
+    "diagnostic": "5779ff31ae0e3c58ce1ed5961a8b72a220206a5ded8ae989227d2274c61ba25e",
+    "gof_generator": "8d643d51fc2d99a3bd32190e00c71f86a5c3c3349695ea57616106d81de73cad",
+    "npz_safety": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "profile_test": "34ab30e2ad61d5e8e2f8862329679482281b4a389a5248aafd5c0484399ac65a",
+    "raw_reader": "2901d0e4c317e23136c8102807cbd59145b9340a29d5a51fd6a64ba294189651",
+    "source_integrity": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6"
+  }
+}

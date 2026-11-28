@@ -1,0 +1,50 @@
+{
+  "certification_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "certified": false,
+  "denominators": {
+    "GEVP_composite_T_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    },
+    "certification_gate": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    },
+    "descriptive_APE_T_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    },
+    "physical_measurements": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "valid": 0
+    },
+    "selected_bare_operator_T_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 4,
+      "valid": 4
+    }
+  },
+  "descriptive_bare_basis_cells": 2,
+  "gevp_metric_norm": 1.0000000000000004,
+  "gevp_principal_eigenvalue": 0.7290674874210646,
+  "overlap_definition_id": "bare_basis_squared_overlap_ratio_v1",
+  "physical_measurements": 0,
+  "physical_score": null,
+  "selected_bare_q_cells": 4,
+  "separate_gevp_composite_cells": 2,
+  "status": "METHOD_MAPPING_DIAGNOSTIC_ONLY"
+}

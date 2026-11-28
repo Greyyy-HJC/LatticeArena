@@ -1,0 +1,14 @@
+{
+  "README.md": "e42afd4566f27a4fdeaa56d986516b170f40385565426fcc9603b2b46978a0e8",
+  "protocol.json": "40cac91bc37a198bab5cf3c1cf618ce8037eb2b502edf9f6f015c13e41cee04f",
+  "additional_bootstrap_replicates.csv": "fb235db25f0b29e3e401e5e0516e251c14094e1fa3fd322348909a939818ec16",
+  "b80_intervals.csv": "c45a5884c10e714b0d7b38b1b40830bad258e6e21349ba3b211999851658d8f2",
+  "method_comparison.csv": "16f8092c0aacee1e6206d8256d589c610d05bf48e6bc5afae961e1371832a124",
+  "calibration_summary.csv": "b95dfdf238b87091a96f9d12c30514f2aa7822a75f19428190afacc9078e44a7",
+  "method_coverage.png": "3aa715adbc24801ede005ab771ab563b09d63845b3463b87e0d863de0be29ac3",
+  "summary.json": "0d3862b7b2f2cfbf2f3f459fa4a3a15a1efe3aaf11e1f2140c89664526840a55",
+  "snapshot_f_lane_joint_spectral_mbb_b80_diagnostic.py": "bf419cb680ff69ed60bee40bddbd4863cdba07a8c68d8b1b09402e0b33e42c4b",
+  "snapshot_f_lane_joint_spectral_mbb_diagnostic.py": "405466f1dd4edd0a0d86e00cd03aa00fe4699eaff44bae9492d966044f30a665",
+  "snapshot_f_lane_joint_spectral_stress_diagnostic.py": "df7a83d5a72f1c41d79b063bdacbcfec165a68fe7704179642dbb6cf57d7090f",
+  "snapshot_f_lane_joint_spectral_gls_diagnostic.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f"
+}

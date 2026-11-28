@@ -1,0 +1,244 @@
+{
+  "panels": [
+    {
+      "panel": 0,
+      "snapshot_hashes": {
+        "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+        "manifest": "4d56893f12a591a258d07ef2180c890417948f8a811c6bc1ab45847b782f133b",
+        "raw_matrices": "29692b3ed8b82f71d0baa675c79f45f072a189b96a3100c800894318fcb79ecf"
+      },
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114300,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "weak_ground_overlap",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      }
+    },
+    {
+      "panel": 1,
+      "snapshot_hashes": {
+        "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+        "manifest": "78a0473ef19ebd8b878323626fcdeba507b9f7003de8b71b83e32deab5658844",
+        "raw_matrices": "0bf0e874003c8912ea16c6dd6bd20cbc869af89589ced7f09f7a8b7212a1a035"
+      },
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114301,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "weak_ground_overlap",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      }
+    },
+    {
+      "panel": 2,
+      "snapshot_hashes": {
+        "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+        "manifest": "6a63f5ad53a895091a72471f61aa612d1a87b406611a7444b47a3a3332b5d519",
+        "raw_matrices": "b0ac157a8c2f62ee783a29d1f03be19ce208f3261f916a359ff4f56a3934aeb3"
+      },
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114302,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "weak_ground_overlap",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      }
+    },
+    {
+      "panel": 3,
+      "snapshot_hashes": {
+        "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+        "manifest": "839d0951ee7b099abf8871dfbf3ea01e2bfe0ac3c647711329f8b9e5f334d531",
+        "raw_matrices": "c5266b45de16d4a0a9c6e8aff896e2e027e2c152f905dc6bd55102617faea577"
+      },
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114303,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "weak_ground_overlap",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      }
+    },
+    {
+      "panel": 4,
+      "snapshot_hashes": {
+        "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+        "manifest": "b3ca000fddd9871406b90e56ad1b21def9cf0a2212cb12f7cd21a3bc70799d15",
+        "raw_matrices": "e0f76596c37c5c28215f1a81fe6675a019f68c3ab8b9fb64582f0b9f65987fb6"
+      },
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114304,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "weak_ground_overlap",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      }
+    },
+    {
+      "panel": 5,
+      "snapshot_hashes": {
+        "lane_contract": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+        "manifest": "33ba81f88ea7979aa0a90cd132b05e05013f9ecbab6daa79ca04548c7877e2e8",
+        "raw_matrices": "0f53f50393abae704ce87eae8713530b6793d5e50f953fc45c67ae69e63a58bc"
+      },
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114305,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "weak_ground_overlap",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      }
+    }
+  ]
+}

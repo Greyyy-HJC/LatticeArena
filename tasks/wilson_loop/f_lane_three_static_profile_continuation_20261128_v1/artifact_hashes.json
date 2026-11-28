@@ -1,0 +1,20 @@
+{
+  "artifacts": {
+    "README.md": "e4bc4f9d88780639dd9e7240430ff08d33a9ceb09f7bae42f0fc7586e82e69c7",
+    "continuation_cell_status.png": "5328669cd279c5b970abc60e1acee527da7d4f33f9112a542aa5cb41be651b96",
+    "protocol.json": "e3caed740ade72127ba0c0bdd66609655dd4e393723b4227c26895f5364092a6",
+    "rescue_cells.csv": "8dea4d8f29cb90ebeb0a1133481f0df3b6516c642b0120043b2684ceb7cacd65",
+    "rescue_receipts.json": "725d63ffc0d41fa8c84f83658c5abcea9994ef968b99e2c1e9aedde6f52666a3",
+    "source_snapshot/joint_spectral_gls.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "source_snapshot/local_gauss_newton_profile.py": "04bccfce185815c3f17c8883020fd9b4383bb49bfe1a7c2859025ba7455ca5fc",
+    "source_snapshot/nonlinear_overlap_profile.py": "9985028571e61cb8785014ad518228b49962a9cb73fdde181cac332175812ca4",
+    "source_snapshot/npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "source_snapshot/profile_continuation_diagnostic.py": "41c3689162277fd2c050a86fdac851f247c836a8e4462adab43011d2cc241b6c",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "source_snapshot/stratified_profile_screen.py": "1a62a7b481d5dffeab13c3195a3ae0c0855517f863c29fe5c68914463a5972e8",
+    "source_snapshot/three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511",
+    "source_snapshot/two_sector_fit_candidate.py": "8222d4fe2a084641cc1c0ad4c6c342abd3b00120461f589208ea153611390b77",
+    "summary.json": "167a2c68eb7a67f2a3294fb6c027e0d96898a5a8e28274a521ddf523edcccd35"
+  },
+  "schema": "wilson-profile-continuation-artifact-hashes-v1"
+}

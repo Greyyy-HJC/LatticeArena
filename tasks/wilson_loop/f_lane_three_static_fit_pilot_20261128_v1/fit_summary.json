@@ -1,0 +1,168 @@
+{
+  "candidate_three_static": {
+    "absolute_force": 0.15071560917493237,
+    "degrees_of_freedom": 113,
+    "fit_attempts": [
+      {
+        "epsilon_start": 0.15,
+        "excited_overlap_scale_start": 0.2,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 33,
+        "objective": 692.0814239006668,
+        "optimizer_success": true,
+        "parameter_count": 67,
+        "rank": 67,
+        "success": true
+      },
+      {
+        "epsilon_start": 0.3,
+        "excited_overlap_scale_start": 0.35,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 31,
+        "objective": 692.0814238982882,
+        "optimizer_success": true,
+        "parameter_count": 67,
+        "rank": 67,
+        "success": true
+      },
+      {
+        "epsilon_start": 0.55,
+        "excited_overlap_scale_start": 0.5,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 87,
+        "objective": 729.5203359684433,
+        "optimizer_success": true,
+        "parameter_count": 67,
+        "rank": 67,
+        "success": true
+      }
+    ],
+    "force_se_diagnostic_uncalibrated": 0.0001898505114253922,
+    "gls_objective": 692.0814238982882,
+    "initializer_fits": [
+      {
+        "R": 2,
+        "nfev": 20,
+        "parameters": 18,
+        "rank": 18,
+        "reduced_chi_square": 4.560033653029916,
+        "success": true
+      },
+      {
+        "R": 3,
+        "nfev": 106,
+        "parameters": 18,
+        "rank": 18,
+        "reduced_chi_square": 4.480575188583814,
+        "success": true
+      }
+    ],
+    "jacobian_condition_number": 64766.62902913902,
+    "jacobian_rank": 67,
+    "parameter_count": 67,
+    "reduced_gls_objective": 6.124614370781312,
+    "static_energies_by_R": {
+      "2": [
+        0.4398248398210192,
+        0.9250171458596682,
+        1.2879612272103889
+      ],
+      "3": [
+        0.5905404489959516,
+        1.0831191962654092,
+        1.4828005704504514
+      ]
+    },
+    "status": "three_static_fit_candidate",
+    "vacuum_energies": [
+      0.0,
+      0.34272316662371555
+    ],
+    "valid": true
+  },
+  "primary_two_static": {
+    "absolute_force": 0.14619508602493136,
+    "degrees_of_freedom": 135,
+    "fit_attempts": [
+      {
+        "chi_square_diagonal": 22162.258707668458,
+        "converged": true,
+        "epsilon_start": 0.15,
+        "excited_overlap_scale_start": 0.2,
+        "finite": true,
+        "jacobian_rank": 45,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 113,
+        "optimizer_success": true,
+        "parameter_count": 45,
+        "status_code": 2
+      },
+      {
+        "chi_square_diagonal": 22620.222578568377,
+        "converged": true,
+        "epsilon_start": 0.3,
+        "excited_overlap_scale_start": 0.35,
+        "finite": true,
+        "jacobian_rank": 45,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 29,
+        "optimizer_success": true,
+        "parameter_count": 45,
+        "status_code": 2
+      },
+      {
+        "chi_square_diagonal": 22162.25870771018,
+        "converged": true,
+        "epsilon_start": 0.55,
+        "excited_overlap_scale_start": 0.5,
+        "finite": true,
+        "jacobian_rank": 45,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 23,
+        "optimizer_success": true,
+        "parameter_count": 45,
+        "status_code": 2
+      }
+    ],
+    "force_se_diagnostic_uncalibrated": 0.00014089238356204244,
+    "gls_objective": 22162.258707668458,
+    "initializer_fits": [
+      {
+        "R": 2,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 16,
+        "parameter_count": 12,
+        "rank": 12,
+        "success": true
+      },
+      {
+        "R": 3,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 23,
+        "parameter_count": 12,
+        "rank": 12,
+        "success": true
+      }
+    ],
+    "jacobian_condition_number": 13470.666614373704,
+    "jacobian_rank": 45,
+    "parameter_count": 45,
+    "reduced_gls_objective": 164.16487931606264,
+    "static_energies_by_R": {
+      "2": [
+        0.4432617919380166,
+        1.0889713032504709
+      ],
+      "3": [
+        0.589456877962948,
+        1.1225370995177302
+      ]
+    },
+    "status": "two_sector_fit_candidate",
+    "vacuum_energies": [
+      0.0,
+      0.34821459282001815
+    ],
+    "valid": true
+  }
+}

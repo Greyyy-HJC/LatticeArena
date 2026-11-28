@@ -1,0 +1,51 @@
+{
+  "artifact_hashes": {
+    "README.md": "afe3523000df833dc11a2f2404eea35abc1c2014db5a318bf902279fe549facd",
+    "contract.json": "7249aff27a1ff9563cbb52d3d86af93c822456307ea9cc5100b59fb36c64fc3e",
+    "snapshot_candidate_contract.py": "1724ef8ba13482b8e07a0d6fc1fdaa235be16919ff070daff8fb92c7eeed024d",
+    "snapshot_chebyshev_baseline.py": "1bc260b866f44491ac63aec8c157325feede25a5128e276dc51d9183e2e2c437",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_core_specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+    "snapshot_kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+  },
+  "denominators": {
+    "coefficient_fit": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 0,
+      "unit": "no D04 objective supplied",
+      "valid": 0
+    },
+    "schema_fixture": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one illustrative candidate descriptor; no fit or measurement",
+      "valid": 1
+    }
+  },
+  "reason_rows": [],
+  "scenario": {
+    "assumptions": [
+      "D11 is not frozen",
+      "the controls are illustrative"
+    ],
+    "description": "Schema validation only; no fitted coefficients or measurements.",
+    "name": "optimize-chebyshev-schema-example",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "candidate_contract.py": "1724ef8ba13482b8e07a0d6fc1fdaa235be16919ff070daff8fb92c7eeed024d",
+      "chebyshev_baseline.py": "1bc260b866f44491ac63aec8c157325feede25a5128e276dc51d9183e2e2c437",
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/specs.py": "3f660d6fca7e5be78c06709dd8fb4f394f4b607d814e4911f82d1938a20e18be",
+      "kernels.py": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77"
+    },
+    "unit": "one illustrative candidate descriptor"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "versioned diagnostic contract -> validate five Bernstein controls -> emit candidate descriptor -> CPU operator helper; missing D04/D06/D11 and measurement authorization remain open"
+}

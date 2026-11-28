@@ -1,0 +1,227 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_REPEATED_PANEL_COVERAGE_UNDER_ONE_MISSPECIFIED_DGP",
+  "coverage": {
+    "average_pointwise_by_panel": {
+      "cluster_t95": [
+        0.6542093148785278,
+        0.709216611047398
+      ],
+      "rate": 0.6817129629629629
+    },
+    "familywise_bonferroni72": {
+      "planned_panels": 24,
+      "rate": 0.0,
+      "successes": 0,
+      "wilson95": [
+        1.3877787807814457e-17,
+        0.13797620467498017
+      ]
+    },
+    "pointwise_all_cells": {
+      "planned_cells": 1728,
+      "pooled_rate_descriptive_only": 0.6817129629629629,
+      "successes": 1178,
+      "warning": "cells within a panel share the same fit and are correlated; use panel-cluster summaries for inference",
+      "wilson95_cellwise_not_cluster_adjusted": [
+        0.6593678307030274,
+        0.7032519673168441
+      ]
+    },
+    "pointwise_by_term": {
+      "h": {
+        "cluster_mean": 0.921875,
+        "cluster_t95": [
+          0.8952613838268643,
+          0.9484886161731357
+        ],
+        "n_independent_panels": 24
+      },
+      "q": {
+        "cluster_mean": 0.1597222222222222,
+        "cluster_t95": [
+          0.10588737730367552,
+          0.21355706714076889
+        ],
+        "n_independent_panels": 24
+      },
+      "x": {
+        "cluster_mean": 0.9635416666666666,
+        "cluster_t95": [
+          0.9278546058526106,
+          0.9992287274807227
+        ],
+        "n_independent_panels": 24
+      }
+    }
+  },
+  "denominators": {
+    "fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1728,
+      "valid": 1728
+    },
+    "unique_panel_matrix_hashes": 24
+  },
+  "fit": {
+    "covariance_eigenvalue_floor_relative": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "fit_parameter_count": 45,
+    "interval_rule_frozen_across_panels": true,
+    "method": "regularized full-covariance GLS; q/h/x finite-difference delta normal uppers",
+    "pointwise_one_sided_level": 0.975,
+    "simultaneous_method": "one-sided Bonferroni over 72 q/h/x terms at family alpha 0.05"
+  },
+  "generator": {
+    "blocks_per_panel": 96,
+    "panel_independence": "fresh independent Gaussian blocks and RNG stream per panel; one fixed covariance/truth design",
+    "panels": 24,
+    "relative_noise": 0.003,
+    "seed_rule": "numpy default_rng(2026112800 + panel_index)",
+    "truth": "2 vacuum x 3 static states; fit fixed at 2 x 2"
+  },
+  "physical_score": null,
+  "schema": "wilson-f-two-sector-omitted-coverage-protocol-v1",
+  "seed_manifest": [
+    {
+      "matrix_sha256": "87e50b704d06cb305aa763cc8a434681642d7106fdc72e548b222c5effbe7278",
+      "panel": 0,
+      "seed": 2026112800
+    },
+    {
+      "matrix_sha256": "9c655b9cbdabeb72a00c63cdcd7d97eb4bb3b075e44f6a523678c0701ade5d82",
+      "panel": 1,
+      "seed": 2026112801
+    },
+    {
+      "matrix_sha256": "63f2c1830011cd54ba8c8d6819e0e044d353c8774bafb9e59178917353857599",
+      "panel": 2,
+      "seed": 2026112802
+    },
+    {
+      "matrix_sha256": "32940ec9a03408d6fc83d83bef17fd564cba46310c6bff1f282cfccf9bacf813",
+      "panel": 3,
+      "seed": 2026112803
+    },
+    {
+      "matrix_sha256": "bb07bb1919f250a9f1bffc513017e109b522aacf18d9bf142ad10b4b8a766717",
+      "panel": 4,
+      "seed": 2026112804
+    },
+    {
+      "matrix_sha256": "eb0bc347a245ec64bad68bf1956d64ce47f3191de36ed63e908a3cd5e6687db5",
+      "panel": 5,
+      "seed": 2026112805
+    },
+    {
+      "matrix_sha256": "878360a29ef385d583dbf6cd13a7642f431b53c10c2580bfbcfb4fec6437f6de",
+      "panel": 6,
+      "seed": 2026112806
+    },
+    {
+      "matrix_sha256": "121a5c15624a5a029a28bdf8e69ee2248aca76f553e346c90ee677d249a378bb",
+      "panel": 7,
+      "seed": 2026112807
+    },
+    {
+      "matrix_sha256": "72e648ebe650550d7307104a3e0733312d3f1b6b0c26ee68509ad7ef861da7d3",
+      "panel": 8,
+      "seed": 2026112808
+    },
+    {
+      "matrix_sha256": "a759154562ca4750a0743cbc27155ded51ae1552b6a29e12ad342c7a3fd185c0",
+      "panel": 9,
+      "seed": 2026112809
+    },
+    {
+      "matrix_sha256": "82b9c133cbe0acf99add84e72e2ec4a94c2f1ea743fc0d7261a42b425e5952d6",
+      "panel": 10,
+      "seed": 2026112810
+    },
+    {
+      "matrix_sha256": "2e006087301ab517c9fea31b2fde13d3f9946784ad565b3bf7dd266fd613e301",
+      "panel": 11,
+      "seed": 2026112811
+    },
+    {
+      "matrix_sha256": "2ada3d94b544863d6cecd1542ff9dbfd45d94f42d8a8a079da404223f01f8385",
+      "panel": 12,
+      "seed": 2026112812
+    },
+    {
+      "matrix_sha256": "07d74680b22c47a4494dccd36a282f0a97d13dce6d2273952ada7d5051a04dfe",
+      "panel": 13,
+      "seed": 2026112813
+    },
+    {
+      "matrix_sha256": "d1bddf41a8a9541717dca255cb589dd8d7d2a3302b553cc3bb2b72d7a83a3eba",
+      "panel": 14,
+      "seed": 2026112814
+    },
+    {
+      "matrix_sha256": "a8090836f2a5cd6a967cf133cb232f885a7be2eaffd7008213dd9b0685f109b2",
+      "panel": 15,
+      "seed": 2026112815
+    },
+    {
+      "matrix_sha256": "af5a85f8ce0fe691f32e1a65508de64a687f745dd4b7939df6de62a74fce5f72",
+      "panel": 16,
+      "seed": 2026112816
+    },
+    {
+      "matrix_sha256": "ba1629f1347418599b5d86d99954748e540ed8be3f983acdf6d344865acb514c",
+      "panel": 17,
+      "seed": 2026112817
+    },
+    {
+      "matrix_sha256": "b69d994de4cd01bde94698ab0f6473a8066c35abead2ec74cca980adb12d8353",
+      "panel": 18,
+      "seed": 2026112818
+    },
+    {
+      "matrix_sha256": "80d79871091111993e498e93e8f4b2111502143b05700e168c08288485dd2a9d",
+      "panel": 19,
+      "seed": 2026112819
+    },
+    {
+      "matrix_sha256": "e469538ecd3756a8a2c69be826cc51111f45fc17986ddf7ec8a87e8c156e717b",
+      "panel": 20,
+      "seed": 2026112820
+    },
+    {
+      "matrix_sha256": "c7eaf9f751b0f38d9eec6ae9f3762c07dfed78933a8e95aa030d6a66bc528305",
+      "panel": 21,
+      "seed": 2026112821
+    },
+    {
+      "matrix_sha256": "9433cdeed2b8d36cffceb52d5ede143e228876c9bac01fee0c143e983ec1eca0",
+      "panel": 22,
+      "seed": 2026112822
+    },
+    {
+      "matrix_sha256": "5ed4d28417ae1eeb9620fe73bbda87c5388dae2e147995b655477d27743cd7e0",
+      "panel": 23,
+      "seed": 2026112823
+    }
+  ],
+  "source_hashes": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "f06ae77ab0fedc18a3d47aafad12fc956456702a0de7cdde3f6b1b8309abce95",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "41e7b52022e97bc8a901a92926e9fcea5deee95b4ff55db69c74845aa8faaf2e",
+    "two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_omitted_coverage_diagnostic.py": "5291f4afa134a53d98b8523d80775e34e39f307e0b81cf153dbcab09ddb76ec6",
+    "two_sector_omitted_state_diagnostic.py": "f230f061cde010efc61182e45b83d2d8e7d3102fa788b1145f2dd0c28a7c71ed"
+  }
+}

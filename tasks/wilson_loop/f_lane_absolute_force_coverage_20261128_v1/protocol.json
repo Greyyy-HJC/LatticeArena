@@ -1,0 +1,264 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_ABSOLUTE_FORCE_ESTIMATOR_BRIDGE",
+  "coverage": {
+    "absolute_stout_ground_force_normal_delta_95": {
+      "exact_toy_truth": 0.14999999999999997,
+      "median_interval_width": 0.0005609988317084036,
+      "observed_containment": 0.16666666666666666,
+      "planned_panels": 24,
+      "successes": 4,
+      "valid_intervals": 24,
+      "warning": "one fixed synthetic omitted-state design only; this is screening evidence, not calibrated physical coverage",
+      "wilson95_over_valid_panels": [
+        0.06678676328632951,
+        0.3585307064969906
+      ]
+    },
+    "average_pointwise_by_panel": {
+      "cluster_t95": [
+        0.6751334670530736,
+        0.7218572736876668
+      ],
+      "rate": 0.6984953703703702
+    },
+    "familywise_bonferroni72": {
+      "planned_panels": 24,
+      "rate": 0.0,
+      "successes": 0,
+      "wilson95": [
+        0.0,
+        0.1379762046749802
+      ]
+    },
+    "pointwise_all_cells": {
+      "planned_cells": 1728,
+      "pooled_rate_descriptive_only": 0.6984953703703703,
+      "successes": 1207,
+      "warning": "cells within a panel share the same fit and are correlated; use panel-cluster summaries for inference",
+      "wilson95_cellwise_not_cluster_adjusted": [
+        0.6764372119304304,
+        0.7196729496008306
+      ]
+    },
+    "pointwise_by_term": {
+      "h": {
+        "cluster_mean": 0.9253472222222222,
+        "cluster_t95": [
+          0.9015833641946533,
+          0.9491110802497911
+        ],
+        "n_independent_panels": 24
+      },
+      "q": {
+        "cluster_mean": 0.19791666666666666,
+        "cluster_t95": [
+          0.14519758182353065,
+          0.25063575150980266
+        ],
+        "n_independent_panels": 24
+      },
+      "x": {
+        "cluster_mean": 0.9722222222222222,
+        "cluster_t95": [
+          0.949806320252908,
+          0.9946381241915364
+        ],
+        "n_independent_panels": 24
+      }
+    }
+  },
+  "denominators": {
+    "absolute_force_intervals": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    },
+    "fit": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 24,
+      "valid": 24
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1728,
+      "valid": 1728
+    },
+    "unique_panel_matrix_hashes": 24
+  },
+  "fit": {
+    "absolute_force_interval": "two-sided 95% normal delta interval from inverse whitened-Jacobian covariance; diagnostic and uncalibrated",
+    "covariance_eigenvalue_floor_relative": 1e-10,
+    "covariance_shrinkage": 0.25,
+    "fit_parameter_count": 45,
+    "interval_rule_frozen_across_panels": true,
+    "method": "regularized full-covariance GLS; q/h/x finite-difference delta uppers and absolute-force asymptotic normal delta interval",
+    "model": "2 vacuum x 2 static",
+    "pointwise_one_sided_level": 0.975,
+    "simultaneous_method": "one-sided Bonferroni over 72 q/h/x terms at family alpha 0.05"
+  },
+  "generator": {
+    "blocks_per_panel": 96,
+    "noise_model": {
+      "model": "iid_gaussian",
+      "scale_by_T": {}
+    },
+    "panel_independence": "fresh independent RNG stream per panel; blocks follow the declared within-panel noise model",
+    "panels": 24,
+    "relative_noise": 0.003,
+    "seed_rule": "numpy default_rng(2026113600 + panel_index); disjoint from prior screens",
+    "truth": "2 vacuum x 3 static states; fit fixed at 2 x 2"
+  },
+  "physical_score": null,
+  "report_metadata": {
+    "classification": "SYNTHETIC_SCREENING_ONLY_ABSOLUTE_FORCE_ESTIMATOR_BRIDGE",
+    "interpretation": "Checks only whether the current two-sector GLS absolute stout ground-force normal-delta interval contains the exact force in one fixed 2-vacuum x 3-static truth while fitting 2 x 2. It does not calibrate physical coverage or validate the source/exporter convention.",
+    "seed_rule": "numpy default_rng(2026113600 + panel_index); disjoint from prior screens",
+    "split_prefix": "absolute-force-v1",
+    "stratum_id": "baseline-positive-spectrum-omitted-static-state"
+  },
+  "schema": "wilson-f-two-sector-omitted-coverage-protocol-v2",
+  "seed_manifest": [
+    {
+      "matrix_sha256": "efead6ac5b7ed3a0ce039c512528e5b7efea2a6825b388ddb02ad72443b8384c",
+      "panel": 0,
+      "seed": 2026113600
+    },
+    {
+      "matrix_sha256": "ff60cd1f1f74deaf33dd7343ba4dad04409bc4797ef4c968dd514c201e0e8585",
+      "panel": 1,
+      "seed": 2026113601
+    },
+    {
+      "matrix_sha256": "8b4a7b7ea3aff6ecf27df3c623b3246f08cde93c9388a595bbe8f25803466f40",
+      "panel": 2,
+      "seed": 2026113602
+    },
+    {
+      "matrix_sha256": "5c36e0385ff808af6aa1fb7e5d317bf4c7ab62b3848ac9a155c443a834f199c7",
+      "panel": 3,
+      "seed": 2026113603
+    },
+    {
+      "matrix_sha256": "aad39f873cf3bda8af1065dc9ede4ff03345c4288ae405c94d844d4d818fb173",
+      "panel": 4,
+      "seed": 2026113604
+    },
+    {
+      "matrix_sha256": "48e2f47e0411a4114053e6c3d2fea634ffbbddb347f222d0777eb958cc15d5d5",
+      "panel": 5,
+      "seed": 2026113605
+    },
+    {
+      "matrix_sha256": "aa54a32e62778761c8fb02f5f41c059217bd4cb12985281b05c637673ef4a4fd",
+      "panel": 6,
+      "seed": 2026113606
+    },
+    {
+      "matrix_sha256": "0d6413efaa1ec1a8e544e36248fc2b04dee771917b860816a2c8b7069dc14b3e",
+      "panel": 7,
+      "seed": 2026113607
+    },
+    {
+      "matrix_sha256": "afe68f057b0e70da82dc97b5925ba51a4467cd43c96c3a70910932c80093160a",
+      "panel": 8,
+      "seed": 2026113608
+    },
+    {
+      "matrix_sha256": "56d0c9f5c6e485eb65f4446fe98a8f1ec800816925ea169a34b051361231e688",
+      "panel": 9,
+      "seed": 2026113609
+    },
+    {
+      "matrix_sha256": "179572ce81c1d3758413c476bc1e5480d7ef1f605ad128e67ec5a5fc19f01a0f",
+      "panel": 10,
+      "seed": 2026113610
+    },
+    {
+      "matrix_sha256": "a6e0959e174c29b82946cf5a8b0384d5d9de0991b8059313e752090a22687747",
+      "panel": 11,
+      "seed": 2026113611
+    },
+    {
+      "matrix_sha256": "16ed5618f1c85454132c83994a15e9e742bfe84a542b4a6e6763c43fe39ec752",
+      "panel": 12,
+      "seed": 2026113612
+    },
+    {
+      "matrix_sha256": "a2099d958279272c85d078b6f94b6f3ced717baa051776fd4b90b0c2a46966f7",
+      "panel": 13,
+      "seed": 2026113613
+    },
+    {
+      "matrix_sha256": "ebe590410f89bd0a176dcde1caf4c025c26b322202992c53368a282efea2fa39",
+      "panel": 14,
+      "seed": 2026113614
+    },
+    {
+      "matrix_sha256": "d9e2ad987c489ab2eae6b8b90818efaceeaee5c897d1e009251ba2df4fd079ee",
+      "panel": 15,
+      "seed": 2026113615
+    },
+    {
+      "matrix_sha256": "0d70a9158755014d860eeb20770ea3667f0907015c407948a8b539427e4fc382",
+      "panel": 16,
+      "seed": 2026113616
+    },
+    {
+      "matrix_sha256": "dfb14515ca6eafaf207d32236a6de271249e7e0442fd8feab0c67efe3596b82d",
+      "panel": 17,
+      "seed": 2026113617
+    },
+    {
+      "matrix_sha256": "5b129480815683687f531e933284d53d4f015e58af166cd4859960b61a101e30",
+      "panel": 18,
+      "seed": 2026113618
+    },
+    {
+      "matrix_sha256": "7989dc05249b7d851d6eb70991a00e245ae51941b3b4e1399765ef10b3f3e4a3",
+      "panel": 19,
+      "seed": 2026113619
+    },
+    {
+      "matrix_sha256": "503fbd37a898aff43fb254999ef2444f3a2b480d4a23531884c8d43a6951d4f4",
+      "panel": 20,
+      "seed": 2026113620
+    },
+    {
+      "matrix_sha256": "4a155164bace2d0de2df425e2ac7d37012ecddbb6a22baeb84281e6ae90d82fa",
+      "panel": 21,
+      "seed": 2026113621
+    },
+    {
+      "matrix_sha256": "1de03f85c01056cc86e9eb116fcc5260a3a1440e9dc1b11fe345a475e0b3a585",
+      "panel": 22,
+      "seed": 2026113622
+    },
+    {
+      "matrix_sha256": "bfd9ab5b01e6113b1a68b32fc5e2ec0fc494b7f1b55e10f60c37f43c4389609a",
+      "panel": 23,
+      "seed": 2026113623
+    }
+  ],
+  "source_hashes": {
+    "finite_trace_toy.py": "c827bfd084f9ebd1f9176fe7aad6e356f97c47a3960f85637b959a98ccf27e08",
+    "gevp_overlap_object.py": "f7a3f14d6a55b619abbadbce28b0127a65dbb7348120b86242073e891b2c83a3",
+    "gevp_t0_truncation.py": "732cf530e540dac90d1d0c05d2216be7a9b8905f8eb790ac10fabdb087dc4871",
+    "joint_forward_fit.py": "ec4493db7f4a267a78122acdc95559a1f8cea6d041644fd2dd1a2ccb297adc6f",
+    "lane_contract_v2.json": "b8a011eabcce9490b424df99035ff0b2933a04748ecee88d380c0f0263c43aca",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "raw_matrix_reader.py": "719137e557d82a9ec00c620ebb558e2d176fc751d274d2c12c7b6bef29748702",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "transfer_trace_reader.py": "4dadca6b7ec517b6618006c11bb54c347421e1dcf082efc131f5f036a5971874",
+    "two_sector_fit_candidate.py": "ff98535de822887ce89bd6ebaced288ca33568fa0cb3dbcf46ccd37bb316a00b",
+    "two_sector_fit_initializer.py": "e86eca8e99c0359326f014989e304bff608bad27ec72dfb3113885fe46e3a4d5",
+    "two_sector_gls_diagnostic.py": "e0747614a2f5eb665963fb66cf20bc56d8719b4b65f31050928d0824526e3afc",
+    "two_sector_multistratum_screen.py": "e9970ceb438969ac9a685dc6b11189709251812588c2d7ad176d66689ef0b06f",
+    "two_sector_multistratum_screen_protocol.json": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+    "two_sector_omitted_coverage_diagnostic.py": "b0f99d39e2df93891ca0a7f59d74aa87a4a08f9dfbb2107856125586174a1d5f",
+    "two_sector_omitted_state_diagnostic.py": "f230f061cde010efc61182e45b83d2d8e7d3102fa788b1145f2dd0c28a7c71ed"
+  }
+}

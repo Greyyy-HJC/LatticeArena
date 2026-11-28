@@ -1,0 +1,295 @@
+{
+  "schema": "wilson-two-lane-contract-v2",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "fixtures": {
+    "current_null_draft": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [
+        "common.action_id: missing nonempty receipt/identifier",
+        "common.static_source_action_id: missing nonempty receipt/identifier",
+        "common.independent_review_receipt: missing nonempty receipt/identifier",
+        "common.geometry.spatial_extents: expected three positive integers",
+        "common.geometry.temporal_extent: expected a positive integer",
+        "common.boundary_conditions.spatial: missing",
+        "common.boundary_conditions.temporal: missing",
+        "common.lattice_spacing.a_s: expected a positive finite value",
+        "common.lattice_spacing.a_t: expected a positive finite value",
+        "common.lattice_spacing.length_unit: missing unit",
+        "common.lattice_spacing.energy_unit: missing unit",
+        "common.kernel_ids: expected unique nonempty identifiers",
+        "common.split_manifest_sha256: expected a SHA-256 receipt",
+        "common.paired_block_plan_sha256: expected a SHA-256 receipt"
+      ],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.action_id: missing nonempty receipt/identifier",
+            "common.static_source_action_id: missing nonempty receipt/identifier",
+            "common.independent_review_receipt: missing nonempty receipt/identifier",
+            "common.geometry.spatial_extents: expected three positive integers",
+            "common.geometry.temporal_extent: expected a positive integer",
+            "common.boundary_conditions.spatial: missing",
+            "common.boundary_conditions.temporal: missing",
+            "common.lattice_spacing.a_s: expected a positive finite value",
+            "common.lattice_spacing.a_t: expected a positive finite value",
+            "common.lattice_spacing.length_unit: missing unit",
+            "common.lattice_spacing.energy_unit: missing unit",
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "common.split_manifest_sha256: expected a SHA-256 receipt",
+            "common.paired_block_plan_sha256: expected a SHA-256 receipt",
+            "finite_T_Creutz.primary.R: expected a positive integer",
+            "finite_T_Creutz.primary.T: expected a positive integer",
+            "finite_T_Creutz.primary.kernel_id: not declared in common.kernel_ids",
+            "finite_T_Creutz.log_rule: must explicitly be log of positive ensemble means",
+            "finite_T_Creutz.invalid_point_rule: missing failure rule",
+            "finite_T_Creutz.comparison_family: missing",
+            "finite_T_Creutz.inference.interval_method: missing",
+            "finite_T_Creutz.inference.multiplicity_method: missing",
+            "finite_T_Creutz.inference.alpha_total: expected a value in (0,1)",
+            "finite_T_Creutz.inference.alpha_allocations: list the prospective familywise allocations",
+            "finite_T_Creutz.inference.precision_target: expected a positive finite value",
+            "finite_T_Creutz.inference.precision_units: missing"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.action_id: missing nonempty receipt/identifier",
+            "common.static_source_action_id: missing nonempty receipt/identifier",
+            "common.independent_review_receipt: missing nonempty receipt/identifier",
+            "common.geometry.spatial_extents: expected three positive integers",
+            "common.geometry.temporal_extent: expected a positive integer",
+            "common.boundary_conditions.spatial: missing",
+            "common.boundary_conditions.temporal: missing",
+            "common.lattice_spacing.a_s: expected a positive finite value",
+            "common.lattice_spacing.a_t: expected a positive finite value",
+            "common.lattice_spacing.length_unit: missing unit",
+            "common.lattice_spacing.energy_unit: missing unit",
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "common.split_manifest_sha256: expected a SHA-256 receipt",
+            "common.paired_block_plan_sha256: expected a SHA-256 receipt",
+            "ground_state_discrete_static_force.primary.R: expected a positive integer",
+            "ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary: candidate and reference kernels must differ",
+            "ground_state_discrete_static_force.units: missing",
+            "ground_state_discrete_static_force.spectral_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.systematic_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.total_tolerance: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.interval_method: missing",
+            "ground_state_discrete_static_force.inference.multiplicity_method: missing",
+            "ground_state_discrete_static_force.inference.alpha_total: expected a value in (0,1)",
+            "ground_state_discrete_static_force.inference.alpha_allocations: list the prospective familywise allocations",
+            "ground_state_discrete_static_force.inference.statistical_precision_target: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.precision_units: missing"
+          ]
+        }
+      }
+    },
+    "synthetic_C_only_complete": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "ground_state_discrete_static_force.primary.R: expected a positive integer",
+            "ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary: candidate and reference kernels must differ",
+            "ground_state_discrete_static_force.units: missing",
+            "ground_state_discrete_static_force.spectral_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.systematic_bounds: expected evidence rows",
+            "ground_state_discrete_static_force.total_tolerance: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.interval_method: missing",
+            "ground_state_discrete_static_force.inference.multiplicity_method: missing",
+            "ground_state_discrete_static_force.inference.alpha_total: expected a value in (0,1)",
+            "ground_state_discrete_static_force.inference.alpha_allocations: list the prospective familywise allocations",
+            "ground_state_discrete_static_force.inference.statistical_precision_target: expected a positive finite value",
+            "ground_state_discrete_static_force.inference.precision_units: missing"
+          ]
+        }
+      }
+    },
+    "synthetic_C_and_F_schema_complete": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        }
+      }
+    },
+    "synthetic_C_reversed_sign": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "finite_T_Creutz.stencil: coefficients violate the prescribed signed four-point convention"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        }
+      }
+    },
+    "synthetic_F_reversed_sign": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "ground_state_discrete_static_force.force_stencil: coefficients must encode candidate minus reference"
+          ]
+        }
+      }
+    },
+    "synthetic_F_wrong_precision_units": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "ground_state_discrete_static_force.inference.precision_units: expected 'SYNTHETIC_ONLY_GeV'"
+          ]
+        }
+      }
+    },
+    "synthetic_C_wrong_precision_units": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "finite_T_Creutz.inference.precision_units: expected 'dimensionless'"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+          "structurally_complete": true,
+          "certified": false,
+          "physical_score": null,
+          "issues": []
+        }
+      }
+    },
+    "synthetic_null_common_kernel_ids": {
+      "schema_valid": true,
+      "status": "DRAFT_NOT_READY",
+      "physical_score": null,
+      "certified": false,
+      "common_issues": [
+        "common.kernel_ids: expected unique nonempty identifiers"
+      ],
+      "lanes": {
+        "finite_T_Creutz": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "finite_T_Creutz.primary.kernel_id: not declared in common.kernel_ids"
+          ]
+        },
+        "ground_state_discrete_static_force": {
+          "status": "NOT_READY",
+          "structurally_complete": false,
+          "certified": false,
+          "physical_score": null,
+          "issues": [
+            "common.kernel_ids: expected unique nonempty identifiers",
+            "ground_state_discrete_static_force.primary.candidate_kernel_id: not declared in common.kernel_ids",
+            "ground_state_discrete_static_force.primary.reference_kernel_id: not declared in common.kernel_ids"
+          ]
+        }
+      }
+    }
+  }
+}

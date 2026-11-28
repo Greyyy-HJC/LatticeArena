@@ -1,0 +1,114 @@
+{
+  "baseline_artifact_hashes": {
+    "README.md": "f1c805fb199d69aae791a91f6c0ad22ad913d3b79ca655f9b14dcd6eda471bb4",
+    "block_length_coverage.csv": "a1e07f7b965ba953ff27fb7197b5df61d6e9740cbacdb5e38b897a0319afbc63",
+    "coverage_summary.json": "9910840428a03150c5146a7e5355b090e3b3e42f77051b4597f96e3fc78a8b26",
+    "protocol.json": "a1c47cbc894db2550a80ee45108d525b76fe96feeeb8a7c13088818e785be13a",
+    "replicates.csv": "3827dc5da7df06d9e6f1ed0d14e6d6384e9d0f1fb496d8e3a47fc0f162ad8001"
+  },
+  "cross_arm_common_noise_fraction": 0.6,
+  "data_access": "reused_open_synthetic_panel_seeds_only",
+  "empirical_d04_risk": "exact moments of the empirical circular-block bootstrap law, separately for L=2,5,10",
+  "evidence_class": "synthetic_stationary_gaussian_ar1_only",
+  "family_size": 2,
+  "hac_method": {
+    "bandwidths": [
+      2,
+      5,
+      10,
+      20,
+      30
+    ],
+    "block_lengths": [
+      2,
+      5,
+      10
+    ],
+    "hull": "minimum over all L x HAC bandwidth combinations; invalid cell forces panel abstention",
+    "kernel": "Newey-West Bartlett",
+    "lower_endpoint": "max(0, ratio_hat - z_0.975 * sqrt(omega_hat / n))",
+    "normal_critical_value": 1.9599639845400534,
+    "risk_influence": "analytic derivative of finite-L empirical D04 risk; ratio influence uses paired arms"
+  },
+  "mc_panels": 250,
+  "n_configurations": 60,
+  "not_inferred": [
+    "actual gauge-chain autocorrelation or dependence envelope",
+    "finite-sample validity of Newey-West under the production chain",
+    "independent D04 reference-fit uncertainty",
+    "production D06 coverage or physical improvement"
+  ],
+  "paired_arm_order": [
+    "trainable_W",
+    "same_budget_SLSQP",
+    "fixed_degree4_Chebyshev"
+  ],
+  "paired_coverage_difference": {
+    "interval": "percentile bootstrap over the same paired Monte Carlo panels",
+    "resamples": 10000,
+    "seed_rule": "2026112501 + unit_index in SLSQP, Chebyshev, familywise order"
+  },
+  "panel_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 250,
+    "valid": 250
+  },
+  "percentile_comparator": {
+    "alpha_per_comparison": 0.025,
+    "block_lengths": [
+      2,
+      5,
+      10
+    ],
+    "outer_draws_per_block_length": 10000,
+    "source_report": "results/optimize_gaussian/d06_percentile_hull_coverage_cpu_20261125_v8"
+  },
+  "phi": 0.8,
+  "physical_score": null,
+  "q_means_by_arm_and_time": [
+    [
+      1.075,
+      1.08,
+      1.085,
+      1.08
+    ],
+    [
+      1.078,
+      1.084,
+      1.087,
+      1.083
+    ],
+    [
+      1.09,
+      1.092,
+      1.1,
+      1.095
+    ]
+  ],
+  "q_sigma_by_arm": [
+    0.04,
+    0.042,
+    0.05
+  ],
+  "risk_truth": "mean_t[(mu_arm,t-1)^2 + exact Var(sample_mean_t)]",
+  "schema": "optimize-d06-hac-coverage-diagnostic-v1",
+  "source_hashes": {
+    "baseline_protocol.json": "a1c47cbc894db2550a80ee45108d525b76fe96feeeb8a7c13088818e785be13a",
+    "baseline_replicates.csv": "3827dc5da7df06d9e6f1ed0d14e6d6384e9d0f1fb496d8e3a47fc0f162ad8001",
+    "d06_bootstrap_coverage_diagnostic.py": "5cfd901781ba62b2cad899d48828d2d707f9bfa68621347ef43330302249cc54",
+    "d06_hac_coverage_diagnostic.py": "8b29e0ea1470470afb935a7aa898b649a43aa1b96c64ab66e7ea9eb83f90251b",
+    "risk_statistics.py": "1f5f84e0a7b24c79d6270ea7c65b80d6e257bd202280c31dec74a156b687fc32"
+  },
+  "status": "HAC_METHOD_CANDIDATE_NOT_PRODUCTION_CALIBRATION",
+  "time_points": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "true_risk_ratios": {
+    "Chebyshev": 1.3933472897881716,
+    "SLSQP": 1.076834833682949
+  }
+}

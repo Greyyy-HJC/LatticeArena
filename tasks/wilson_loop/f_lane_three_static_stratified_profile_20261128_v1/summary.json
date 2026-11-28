@@ -1,0 +1,1559 @@
+{
+  "certified": false,
+  "classification": "SMALL_MULTI_STRATUM_SYNTHETIC_PROFILE_SCREEN",
+  "coverage_by_stratum_and_floor_condition": [
+    {
+      "clipped_intervals": 1,
+      "failed_or_abstained_panels": 0,
+      "floor_condition": "no_floor",
+      "floor_values": [
+        0.0
+      ],
+      "observed_containment_fraction": 0.4,
+      "planned_panels": 6,
+      "profile_complete_panels": 6,
+      "stratum": "weak_ground_overlap",
+      "truth_contained_panels": 2,
+      "unclipped_profiles_used_for_coverage": 5,
+      "wilson_95_interval": [
+        0.11762077423264783,
+        0.769275718723987
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 0,
+      "floor_condition": "oracle_truth_floor",
+      "floor_values": [
+        0.045
+      ],
+      "observed_containment_fraction": 0.5,
+      "planned_panels": 6,
+      "profile_complete_panels": 6,
+      "stratum": "weak_ground_overlap",
+      "truth_contained_panels": 3,
+      "unclipped_profiles_used_for_coverage": 6,
+      "wilson_95_interval": [
+        0.1876163064826506,
+        0.8123836935173494
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 1,
+      "floor_condition": "no_floor",
+      "floor_values": [
+        0.0
+      ],
+      "observed_containment_fraction": 0.5,
+      "planned_panels": 3,
+      "profile_complete_panels": 2,
+      "stratum": "baseline",
+      "truth_contained_panels": 1,
+      "unclipped_profiles_used_for_coverage": 2,
+      "wilson_95_interval": [
+        0.09453120573423074,
+        0.9054687942657693
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 1,
+      "floor_condition": "oracle_truth_floor",
+      "floor_values": [
+        0.9
+      ],
+      "observed_containment_fraction": 0.5,
+      "planned_panels": 3,
+      "profile_complete_panels": 2,
+      "stratum": "baseline",
+      "truth_contained_panels": 1,
+      "unclipped_profiles_used_for_coverage": 2,
+      "wilson_95_interval": [
+        0.09453120573423074,
+        0.9054687942657693
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 2,
+      "floor_condition": "no_floor",
+      "floor_values": [
+        0.0
+      ],
+      "observed_containment_fraction": 0.0,
+      "planned_panels": 3,
+      "profile_complete_panels": 1,
+      "stratum": "near_degenerate",
+      "truth_contained_panels": 0,
+      "unclipped_profiles_used_for_coverage": 1,
+      "wilson_95_interval": [
+        0.0,
+        0.7934506856227626
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 3,
+      "floor_condition": "oracle_truth_floor",
+      "floor_values": [
+        0.9
+      ],
+      "observed_containment_fraction": null,
+      "planned_panels": 3,
+      "profile_complete_panels": 0,
+      "stratum": "near_degenerate",
+      "truth_contained_panels": 0,
+      "unclipped_profiles_used_for_coverage": 0,
+      "wilson_95_interval": null
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 1,
+      "floor_condition": "no_floor",
+      "floor_values": [
+        0.0
+      ],
+      "observed_containment_fraction": 0.5,
+      "planned_panels": 3,
+      "profile_complete_panels": 2,
+      "stratum": "omitted_vacuum_truth",
+      "truth_contained_panels": 1,
+      "unclipped_profiles_used_for_coverage": 2,
+      "wilson_95_interval": [
+        0.09453120573423074,
+        0.9054687942657693
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 3,
+      "floor_condition": "oracle_truth_floor",
+      "floor_values": [
+        0.9
+      ],
+      "observed_containment_fraction": null,
+      "planned_panels": 3,
+      "profile_complete_panels": 0,
+      "stratum": "omitted_vacuum_truth",
+      "truth_contained_panels": 0,
+      "unclipped_profiles_used_for_coverage": 0,
+      "wilson_95_interval": null
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 1,
+      "floor_condition": "no_floor",
+      "floor_values": [
+        0.0
+      ],
+      "observed_containment_fraction": 0.0,
+      "planned_panels": 3,
+      "profile_complete_panels": 2,
+      "stratum": "dependent_unequal_variance",
+      "truth_contained_panels": 0,
+      "unclipped_profiles_used_for_coverage": 2,
+      "wilson_95_interval": [
+        0.0,
+        0.6576197724933469
+      ]
+    },
+    {
+      "clipped_intervals": 0,
+      "failed_or_abstained_panels": 1,
+      "floor_condition": "oracle_truth_floor",
+      "floor_values": [
+        0.9
+      ],
+      "observed_containment_fraction": 0.0,
+      "planned_panels": 3,
+      "profile_complete_panels": 2,
+      "stratum": "dependent_unequal_variance",
+      "truth_contained_panels": 0,
+      "unclipped_profiles_used_for_coverage": 2,
+      "wilson_95_interval": [
+        0.0,
+        0.6576197724933469
+      ]
+    }
+  ],
+  "denominator": {
+    "failed_or_abstained_profile_cells": 21,
+    "failed_or_abstained_start_fits": 52,
+    "planned_panels": 18,
+    "planned_profile_cells": 216,
+    "planned_start_fits": 432,
+    "valid_candidate_fit_panels": 18,
+    "valid_profile_cells": 195,
+    "valid_start_fits": 380
+  },
+  "new_panels": 12,
+  "panel_count": 18,
+  "panel_summaries": [
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15146515973042762
+          ],
+          "minimum_objective": 799.2540636605127,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.15146515973042762,
+            0.16
+          ],
+          "minimum_objective": 812.1000810301834,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.15146515973042762,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15146515973042762,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.045000000000000005,
+      "panel": 0,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "29692b3ed8b82f71d0baa675c79f45f072a189b96a3100c800894318fcb79ecf",
+      "replicate": 0,
+      "seed": 2026114300,
+      "stratum": "weak_ground_overlap",
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15198467772606566
+          ],
+          "minimum_objective": 881.9743927465586,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15198467772606566
+          ],
+          "minimum_objective": 881.9743928838051,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.15198467772606566,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15198467772606566,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.045000000000000005,
+      "panel": 1,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "0bf0e874003c8912ea16c6dd6bd20cbc869af89589ced7f09f7a8b7212a1a035",
+      "replicate": 1,
+      "seed": 2026114301,
+      "stratum": "weak_ground_overlap",
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": true,
+          "interval": [
+            0.14,
+            0.14136623240669277
+          ],
+          "minimum_objective": 633.5084353559249,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15
+          ],
+          "minimum_objective": 664.4428572100273,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.14136623240669277,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14136623240669277,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.045000000000000005,
+      "panel": 2,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "b0ac157a8c2f62ee783a29d1f03be19ce208f3261f916a359ff4f56a3934aeb3",
+      "replicate": 2,
+      "seed": 2026114302,
+      "stratum": "weak_ground_overlap",
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.14781474158111035,
+            0.15
+          ],
+          "minimum_objective": 591.8671759838858,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.14781474158111035,
+            0.15
+          ],
+          "minimum_objective": 593.2181856961228,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.14781474158111035,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14781474158111035,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.045000000000000005,
+      "panel": 3,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "c5266b45de16d4a0a9c6e8aff896e2e027e2c152f905dc6bd55102617faea577",
+      "replicate": 3,
+      "seed": 2026114303,
+      "stratum": "weak_ground_overlap",
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.1449839283264272,
+            0.1449839283264272
+          ],
+          "minimum_objective": 538.8287647709192,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.1449839283264272,
+            0.15
+          ],
+          "minimum_objective": 542.7667851223647,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.1449839283264272,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.1449839283264272,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.045000000000000005,
+      "panel": 4,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "e0f76596c37c5c28215f1a81fe6675a019f68c3ab8b9fb64582f0b9f65987fb6",
+      "replicate": 4,
+      "seed": 2026114304,
+      "stratum": "weak_ground_overlap",
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 0,
+      "floor_results": [
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.14976427188200014,
+            0.15
+          ],
+          "minimum_objective": 839.4156133264842,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.045,
+          "grid_clipped": false,
+          "interval": [
+            0.14976427188200014,
+            0.15
+          ],
+          "minimum_objective": 839.4156239429896,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.14976427188200014,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14976427188200014,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.045000000000000005,
+      "panel": 5,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "0f53f50393abae704ce87eae8713530b6793d5e50f953fc45c67ae69e63a58bc",
+      "replicate": 5,
+      "seed": 2026114305,
+      "stratum": "weak_ground_overlap",
+      "truth_definition": "one positive 2-vacuum \u00d7 3-static weak-overlap DGP; 96 ordered AR(1) blocks; rho=0.5; relative noise=0.003",
+      "truth_overlap_floor_min_R": 0.045000000000000005,
+      "valid_profile_cells": 12,
+      "valid_start_fits": 24
+    },
+    {
+      "failed_or_abstained_profile_cells": 1,
+      "failed_or_abstained_start_fits": 2,
+      "floor_results": [
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.14995320405784773,
+            0.15
+          ],
+          "minimum_objective": 593.8590562233524,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        }
+      ],
+      "force_point": 0.14995320405784773,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14995320405784773,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 6,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "ae26c5ccd53b36be14b2ffce7278820e96051fcfe45202d1b722821311f3de24",
+      "replicate": 0,
+      "seed": 2026114400,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114400,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "baseline",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "baseline",
+      "valid_profile_cells": 11,
+      "valid_start_fits": 22
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 2,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.14943418203424946,
+            0.14943418203424946
+          ],
+          "minimum_objective": 941.7372362668166,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.9,
+          "grid_clipped": false,
+          "interval": [
+            0.14943418203424946,
+            0.15
+          ],
+          "minimum_objective": 953.6379335152556,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.14943418203424946,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14943418203424946,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 7,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "a0948923aed12d7ba28d22e2d51bcd58217f3bbebe0c820da8d25b741088d647",
+      "replicate": 1,
+      "seed": 2026114401,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114401,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "baseline",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "baseline",
+      "valid_profile_cells": 12,
+      "valid_start_fits": 22
+    },
+    {
+      "failed_or_abstained_profile_cells": 1,
+      "failed_or_abstained_start_fits": 2,
+      "floor_results": [
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.0,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.9,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15023029147707517
+          ],
+          "minimum_objective": 829.9958917609429,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.15023029147707517,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15023029147707517,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 8,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "7f2f7d0d1247b5bd03f872c9e6a9eecd3f1a4c1f9f81b618d935b9f1b636b70f",
+      "replicate": 2,
+      "seed": 2026114402,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114402,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "baseline",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "baseline",
+      "valid_profile_cells": 11,
+      "valid_start_fits": 22
+    },
+    {
+      "failed_or_abstained_profile_cells": 2,
+      "failed_or_abstained_start_fits": 4,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.15103469628980543,
+            0.15103469628980543
+          ],
+          "minimum_objective": 720.256973107042,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 2,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 4
+        }
+      ],
+      "force_point": 0.15103469628980543,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15103469628980543,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 9,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "74533f90cbadc3305dda0231b873229e1a5817b96a0cb1b8dff52b775a3710eb",
+      "replicate": 0,
+      "seed": 2026114500,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114500,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.475,
+            1.29
+          ],
+          "3": [
+            0.59,
+            0.625,
+            1.41
+          ]
+        },
+        "stratum": "near_degenerate",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "near_degenerate",
+      "valid_profile_cells": 10,
+      "valid_start_fits": 20
+    },
+    {
+      "failed_or_abstained_profile_cells": 3,
+      "failed_or_abstained_start_fits": 6,
+      "floor_results": [
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.0,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 2,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 4
+        }
+      ],
+      "force_point": 0.15040570160325178,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15040570160325178,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 10,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "402a83cf49f378bf5ccb6330cb80bf9304c25c78521fdcf70ea4070336a14110",
+      "replicate": 1,
+      "seed": 2026114501,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114501,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.475,
+            1.29
+          ],
+          "3": [
+            0.59,
+            0.625,
+            1.41
+          ]
+        },
+        "stratum": "near_degenerate",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "near_degenerate",
+      "valid_profile_cells": 9,
+      "valid_start_fits": 18
+    },
+    {
+      "failed_or_abstained_profile_cells": 3,
+      "failed_or_abstained_start_fits": 6,
+      "floor_results": [
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 2,
+          "floor": 0.0,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 4
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        }
+      ],
+      "force_point": 0.1502658491398059,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.1502658491398059,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 11,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "488914e4eb11f5dc0200dd2bc7a21095d2280fcf1cba0c608e78b5ac75df337a",
+      "replicate": 2,
+      "seed": 2026114502,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114502,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.475,
+            1.29
+          ],
+          "3": [
+            0.59,
+            0.625,
+            1.41
+          ]
+        },
+        "stratum": "near_degenerate",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "near_degenerate",
+      "valid_profile_cells": 9,
+      "valid_start_fits": 18
+    },
+    {
+      "failed_or_abstained_profile_cells": 1,
+      "failed_or_abstained_start_fits": 2,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.1510414654204949,
+            0.1510414654204949
+          ],
+          "minimum_objective": 822.1157930338776,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        }
+      ],
+      "force_point": 0.1510414654204949,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.1510414654204949,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 12,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "4b4b3a41665002ff59f9e43e9faec2dfc1a5b1a5080d8f2db19d23af9caa0b9e",
+      "replicate": 0,
+      "seed": 2026114600,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114600,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "omitted_vacuum_truth",
+        "vacuum_energies_truth": [
+          0.0
+        ],
+        "vacuum_state_count_truth": 1
+      },
+      "stratum": "omitted_vacuum_truth",
+      "valid_profile_cells": 11,
+      "valid_start_fits": 22
+    },
+    {
+      "failed_or_abstained_profile_cells": 4,
+      "failed_or_abstained_start_fits": 9,
+      "floor_results": [
+        {
+          "contains_truth": true,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.14990750372746853,
+            0.15
+          ],
+          "minimum_objective": 790.6216991851717,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 4,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 2
+        }
+      ],
+      "force_point": 0.14990750372746853,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.14990750372746853,
+        0.15,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 13,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "49e4d54331da292abfe5c6eef82457eee1647f5425ba8c8ea8b64cb1324b31b9",
+      "replicate": 1,
+      "seed": 2026114601,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114601,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "omitted_vacuum_truth",
+        "vacuum_energies_truth": [
+          0.0
+        ],
+        "vacuum_state_count_truth": 1
+      },
+      "stratum": "omitted_vacuum_truth",
+      "valid_profile_cells": 8,
+      "valid_start_fits": 15
+    },
+    {
+      "failed_or_abstained_profile_cells": 4,
+      "failed_or_abstained_start_fits": 10,
+      "floor_results": [
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.0,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 3,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 3
+        }
+      ],
+      "force_point": 0.15089372706434767,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15089372706434767,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 14,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "c813e60fd7be5ff1eda14a403815984a408ad77890855c22d6c04566448f3d6e",
+      "replicate": 2,
+      "seed": 2026114602,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.5,
+        "scale_by_T": {
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0,
+          "6": 1.0,
+          "7": 1.0
+        },
+        "seed": 2026114602,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "omitted_vacuum_truth",
+        "vacuum_energies_truth": [
+          0.0
+        ],
+        "vacuum_state_count_truth": 1
+      },
+      "stratum": "omitted_vacuum_truth",
+      "valid_profile_cells": 8,
+      "valid_start_fits": 14
+    },
+    {
+      "failed_or_abstained_profile_cells": 1,
+      "failed_or_abstained_start_fits": 4,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15014334157683878
+          ],
+          "minimum_objective": 1841.5282165741605,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.9,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        }
+      ],
+      "force_point": 0.15014334157683878,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15014334157683878,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 15,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "7f8e6b71a2e9d16ef5609d6b3e5d55d5dec9192eee8319519cdb2d80f684f78d",
+      "replicate": 0,
+      "seed": 2026114700,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.75,
+        "scale_by_T": {
+          "3": 0.5,
+          "4": 1.4,
+          "5": 0.8,
+          "6": 1.8,
+          "7": 0.65
+        },
+        "seed": 2026114700,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "dependent_unequal_variance",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "dependent_unequal_variance",
+      "valid_profile_cells": 11,
+      "valid_start_fits": 20
+    },
+    {
+      "failed_or_abstained_profile_cells": 1,
+      "failed_or_abstained_start_fits": 3,
+      "floor_results": [
+        {
+          "contains_truth": null,
+          "failed_or_abstained_cells": 1,
+          "floor": 0.0,
+          "grid_clipped": null,
+          "interval": null,
+          "planned_cells": 6,
+          "status": "ABSTAIN_INCOMPLETE_GRID",
+          "valid_cells": 5
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.9,
+          "grid_clipped": false,
+          "interval": [
+            0.1506158419737919,
+            0.1506158419737919
+          ],
+          "minimum_objective": 3019.4026599658923,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.1506158419737919,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.1506158419737919,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 16,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "6a78f73c18adedb9ec7c34f32482de45122898f5586b21cfd17c6dc201f1dd69",
+      "replicate": 1,
+      "seed": 2026114701,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.75,
+        "scale_by_T": {
+          "3": 0.5,
+          "4": 1.4,
+          "5": 0.8,
+          "6": 1.8,
+          "7": 0.65
+        },
+        "seed": 2026114701,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "dependent_unequal_variance",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "dependent_unequal_variance",
+      "valid_profile_cells": 11,
+      "valid_start_fits": 21
+    },
+    {
+      "failed_or_abstained_profile_cells": 0,
+      "failed_or_abstained_start_fits": 2,
+      "floor_results": [
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.0,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15001826326279372
+          ],
+          "minimum_objective": 1472.243259172638,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        },
+        {
+          "contains_truth": false,
+          "failed_or_abstained_cells": 0,
+          "floor": 0.9,
+          "grid_clipped": false,
+          "interval": [
+            0.15,
+            0.15001826326279372
+          ],
+          "minimum_objective": 1472.243259450609,
+          "planned_cells": 6,
+          "status": "CONDITIONAL_UNCALIBRATED_PROFILE_SET",
+          "valid_cells": 6
+        }
+      ],
+      "force_point": 0.15001826326279372,
+      "force_truth": 0.14999999999999997,
+      "grid": [
+        0.14,
+        0.15,
+        0.15001826326279372,
+        0.16,
+        0.17,
+        0.18
+      ],
+      "oracle_truth_floor": 0.9,
+      "panel": 17,
+      "panel_valid": true,
+      "planned_profile_cells": 12,
+      "planned_start_fits": 24,
+      "raw_matrices_sha256": "82a64ed5092dd67388918504c7bbf4fc38e9534abbb186c307a7bebcef944d12",
+      "replicate": 2,
+      "seed": 2026114702,
+      "source_spec": {
+        "blocks": 96,
+        "force_truth": 0.14999999999999997,
+        "relative_noise": 0.003,
+        "rho": 0.75,
+        "scale_by_T": {
+          "3": 0.5,
+          "4": 1.4,
+          "5": 0.8,
+          "6": 1.8,
+          "7": 0.65
+        },
+        "seed": 2026114702,
+        "static_energies_truth_by_R": {
+          "2": [
+            0.44,
+            0.94,
+            1.29
+          ],
+          "3": [
+            0.59,
+            1.07,
+            1.41
+          ]
+        },
+        "stratum": "dependent_unequal_variance",
+        "vacuum_energies_truth": [
+          0.0,
+          0.42
+        ],
+        "vacuum_state_count_truth": 2
+      },
+      "stratum": "dependent_unequal_variance",
+      "valid_profile_cells": 12,
+      "valid_start_fits": 22
+    }
+  ],
+  "physical_gate_without_independent_floor_receipt": "ABSTAIN_NO_INDEPENDENT_OVERLAP_FLOOR",
+  "physical_score": null,
+  "replicates_per_new_stratum": 3,
+  "schema": "wilson-f-lane-stratified-profile-screen-v1",
+  "scope_limits": [
+    "three new panels per added stratum are a small screening sample and cannot establish coverage",
+    "nonweak-stratum oracle floors are read from each toy generator truth, not independent production evidence",
+    "the nominal profile threshold and coarse force grid are uncalibrated",
+    "two starts and local full rank do not prove global identifiability",
+    "no physical Wilson input, sealed data, GPU or QUDA is used"
+  ],
+  "source_hashes": {
+    "bootstrap_snapshot_helper.py": "37be2745ad5d5e7369d23080eab0fdee88a98aedefbbadca35c8f6f90c71ed39",
+    "identifiability_generator.py": "f5a21c4380c5c07043d46fe2cdc4440bae3cfdee495c8cf597d5dbbf1f6d4559",
+    "nonlinear_overlap_profile.py": "6aa9f5219a1a61a934122c749c9bf712a26ced0e31331eed41bead14415b336b",
+    "npz_safety.py": "af60a75cf78a1b0812ccebaf690fc69c3522fcfd3ab54cf5c06aea925c22d750",
+    "profile_calibration.py": "ce78b9c47a8945cfb35d664b19ff0ee8c149d92f07da71edaca4d8e3657df22b",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "stratified_profile_screen.py": "1a62a7b481d5dffeab13c3195a3ae0c0855517f863c29fe5c68914463a5972e8",
+    "three_static_candidate.py": "3cdf87a63573ba2ccccaabfad87fc463a5ec92537b3b1c98349c5f37b260a511"
+  },
+  "strata": [
+    "weak_ground_overlap",
+    "baseline",
+    "near_degenerate",
+    "omitted_vacuum_truth",
+    "dependent_unequal_variance"
+  ],
+  "weak_overlap_panels_reused": 6,
+  "weak_panel_source": {
+    "artifact_manifest_schema": "wilson-weak-overlap-profile-calibration-artifact-hashes-v1",
+    "source_artifact_count": 45,
+    "source_report": "tasks/wilson_loop/f_lane_three_static_overlap_profile_calibration_20261128_v1"
+  }
+}

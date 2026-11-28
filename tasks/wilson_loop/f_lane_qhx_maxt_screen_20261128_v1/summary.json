@@ -1,0 +1,548 @@
+{
+  "base_multistratum_protocol_sha256": "25b5e8aa22b65368d8d9b7f7a6ccb26f592e57c7a4e6c8f603ef08c104eea12e",
+  "baseline_delta_familywise_successes": 0,
+  "candidate_disposition": "NO_GO_FOR_THIS_GAUSSIAN_PARAMETER_MAXT_CANDIDATE",
+  "certified": false,
+  "classification": "SYNTHETIC_SCREENING_ONLY_NOT_CALIBRATION",
+  "continuation_rule": "If any stratum has fewer than 10/12 valid panel-level familywise successes, or any max-T panel interval abstains, stop this candidate. If every stratum reaches at least 10/12 with no interval abstentions, it is only eligible for separately reviewed confirmatory calibration; no synthetic screen certifies coverage.",
+  "denominators": {
+    "maxt_draws": {
+      "abstained": 0,
+      "failed": 5534,
+      "planned": 122880,
+      "valid": 117346
+    },
+    "maxt_intervals": {
+      "abstained": 6,
+      "failed": 0,
+      "planned": 60,
+      "valid": 54
+    },
+    "panels": {
+      "fit_failed": 0,
+      "fit_valid": 60,
+      "planned": 60
+    },
+    "q_h_x_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 4320,
+      "valid": 4320
+    }
+  },
+  "max_t_interval_abstained_panels": 6,
+  "maxt_familywise_successes": 0,
+  "median_of_stratum_median_absolute_upper_width_by_method_term": {
+    "delta_bonferroni72": {
+      "h": 0.00018508794895646577,
+      "q": 0.0009261070066652003,
+      "x": 1.2993246880335988e-05
+    },
+    "gaussian_parameter_maxt": {
+      "h": 0.00016759102505934547,
+      "q": 0.000937283509897073,
+      "x": 2.795099393880351e-05
+    }
+  },
+  "min_maxt_successes_in_any_stratum": 0,
+  "physical_measurements": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "schema": "wilson-f-qhx-maxt-screen-summary-v1",
+  "strata": [
+    {
+      "denominators": {
+        "maxt_draws": {
+          "abstained": 0,
+          "failed": 1871,
+          "planned": 24576,
+          "valid": 22705
+        },
+        "panels": {
+          "fit_failed": 0,
+          "fit_valid": 12,
+          "planned": 12
+        },
+        "qhx_cells": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 864,
+          "valid": 864
+        }
+      },
+      "familywise_coverage": {
+        "delta_bonferroni72": {
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        },
+        "gaussian_parameter_maxt": {
+          "abstained_intervals": 2,
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "valid_intervals": 10,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        }
+      },
+      "median_absolute_upper_width_by_method_term": {
+        "delta_bonferroni72": {
+          "h": 7.005259175358088e-05,
+          "q": 0.000783299317214858,
+          "x": 1.2993246880335988e-05
+        },
+        "gaussian_parameter_maxt": {
+          "h": 6.455467052191083e-05,
+          "q": 0.000711958051207176,
+          "x": 1.7732653691594292e-05
+        }
+      },
+      "pointwise_by_term": {
+        "delta_bonferroni72": {
+          "h": {
+            "coverage_rate_over_planned": 0.9826388888888888,
+            "planned_cells": 288,
+            "successes": 283,
+            "valid_intervals": 288
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.1111111111111111,
+            "planned_cells": 288,
+            "successes": 32,
+            "valid_intervals": 288
+          },
+          "x": {
+            "coverage_rate_over_planned": 0.96875,
+            "planned_cells": 288,
+            "successes": 279,
+            "valid_intervals": 288
+          }
+        },
+        "gaussian_parameter_maxt": {
+          "h": {
+            "coverage_rate_over_planned": 0.8194444444444444,
+            "planned_cells": 288,
+            "successes": 236,
+            "valid_intervals": 240
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.06944444444444445,
+            "planned_cells": 288,
+            "successes": 20,
+            "valid_intervals": 240
+          },
+          "x": {
+            "coverage_rate_over_planned": 0.8298611111111112,
+            "planned_cells": 288,
+            "successes": 239,
+            "valid_intervals": 240
+          }
+        }
+      },
+      "stratum_id": "S1_high_overlap_omitted_static"
+    },
+    {
+      "denominators": {
+        "maxt_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 24576,
+          "valid": 24576
+        },
+        "panels": {
+          "fit_failed": 0,
+          "fit_valid": 12,
+          "planned": 12
+        },
+        "qhx_cells": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 864,
+          "valid": 864
+        }
+      },
+      "familywise_coverage": {
+        "delta_bonferroni72": {
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        },
+        "gaussian_parameter_maxt": {
+          "abstained_intervals": 0,
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "valid_intervals": 12,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        }
+      },
+      "median_absolute_upper_width_by_method_term": {
+        "delta_bonferroni72": {
+          "h": 0.0005656520698998431,
+          "q": 0.0012307955510170235,
+          "x": 0.0001792393970052332
+        },
+        "gaussian_parameter_maxt": {
+          "h": 0.0005012562312426351,
+          "q": 0.001126554125714073,
+          "x": 0.00016144445247405265
+        }
+      },
+      "pointwise_by_term": {
+        "delta_bonferroni72": {
+          "h": {
+            "coverage_rate_over_planned": 0.9930555555555556,
+            "planned_cells": 288,
+            "successes": 286,
+            "valid_intervals": 288
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.125,
+            "planned_cells": 288,
+            "successes": 36,
+            "valid_intervals": 288
+          },
+          "x": {
+            "coverage_rate_over_planned": 1.0,
+            "planned_cells": 288,
+            "successes": 288,
+            "valid_intervals": 288
+          }
+        },
+        "gaussian_parameter_maxt": {
+          "h": {
+            "coverage_rate_over_planned": 0.9930555555555556,
+            "planned_cells": 288,
+            "successes": 286,
+            "valid_intervals": 288
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.125,
+            "planned_cells": 288,
+            "successes": 36,
+            "valid_intervals": 288
+          },
+          "x": {
+            "coverage_rate_over_planned": 1.0,
+            "planned_cells": 288,
+            "successes": 288,
+            "valid_intervals": 288
+          }
+        }
+      },
+      "stratum_id": "S2_near_degenerate_static"
+    },
+    {
+      "denominators": {
+        "maxt_draws": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 24576,
+          "valid": 24576
+        },
+        "panels": {
+          "fit_failed": 0,
+          "fit_valid": 12,
+          "planned": 12
+        },
+        "qhx_cells": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 864,
+          "valid": 864
+        }
+      },
+      "familywise_coverage": {
+        "delta_bonferroni72": {
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        },
+        "gaussian_parameter_maxt": {
+          "abstained_intervals": 0,
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "valid_intervals": 12,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        }
+      },
+      "median_absolute_upper_width_by_method_term": {
+        "delta_bonferroni72": {
+          "h": 0.0007109139264319972,
+          "q": 0.0009261070066652003,
+          "x": 0.00044911128242428424
+        },
+        "gaussian_parameter_maxt": {
+          "h": 0.0006646218054147683,
+          "q": 0.000937283509897073,
+          "x": 0.00042309577642639796
+        }
+      },
+      "pointwise_by_term": {
+        "delta_bonferroni72": {
+          "h": {
+            "coverage_rate_over_planned": 0.9930555555555556,
+            "planned_cells": 288,
+            "successes": 286,
+            "valid_intervals": 288
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.3194444444444444,
+            "planned_cells": 288,
+            "successes": 92,
+            "valid_intervals": 288
+          },
+          "x": {
+            "coverage_rate_over_planned": 1.0,
+            "planned_cells": 288,
+            "successes": 288,
+            "valid_intervals": 288
+          }
+        },
+        "gaussian_parameter_maxt": {
+          "h": {
+            "coverage_rate_over_planned": 0.9930555555555556,
+            "planned_cells": 288,
+            "successes": 286,
+            "valid_intervals": 288
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.3194444444444444,
+            "planned_cells": 288,
+            "successes": 92,
+            "valid_intervals": 288
+          },
+          "x": {
+            "coverage_rate_over_planned": 1.0,
+            "planned_cells": 288,
+            "successes": 288,
+            "valid_intervals": 288
+          }
+        }
+      },
+      "stratum_id": "S3_weak_operator_ground_overlap"
+    },
+    {
+      "denominators": {
+        "maxt_draws": {
+          "abstained": 0,
+          "failed": 937,
+          "planned": 24576,
+          "valid": 23639
+        },
+        "panels": {
+          "fit_failed": 0,
+          "fit_valid": 12,
+          "planned": 12
+        },
+        "qhx_cells": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 864,
+          "valid": 864
+        }
+      },
+      "familywise_coverage": {
+        "delta_bonferroni72": {
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        },
+        "gaussian_parameter_maxt": {
+          "abstained_intervals": 1,
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "valid_intervals": 11,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        }
+      },
+      "median_absolute_upper_width_by_method_term": {
+        "delta_bonferroni72": {
+          "h": 0.00018508794895646577,
+          "q": 0.0011662406239710595,
+          "x": 1.181424427184785e-05
+        },
+        "gaussian_parameter_maxt": {
+          "h": 0.00016759102505934547,
+          "q": 0.0011398863963062462,
+          "x": 2.795099393880351e-05
+        }
+      },
+      "pointwise_by_term": {
+        "delta_bonferroni72": {
+          "h": {
+            "coverage_rate_over_planned": 0.9097222222222222,
+            "planned_cells": 288,
+            "successes": 262,
+            "valid_intervals": 288
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.09722222222222222,
+            "planned_cells": 288,
+            "successes": 28,
+            "valid_intervals": 288
+          },
+          "x": {
+            "coverage_rate_over_planned": 0.9583333333333334,
+            "planned_cells": 288,
+            "successes": 276,
+            "valid_intervals": 288
+          }
+        },
+        "gaussian_parameter_maxt": {
+          "h": {
+            "coverage_rate_over_planned": 0.8263888888888888,
+            "planned_cells": 288,
+            "successes": 238,
+            "valid_intervals": 264
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.0763888888888889,
+            "planned_cells": 288,
+            "successes": 22,
+            "valid_intervals": 264
+          },
+          "x": {
+            "coverage_rate_over_planned": 0.8958333333333334,
+            "planned_cells": 288,
+            "successes": 258,
+            "valid_intervals": 264
+          }
+        }
+      },
+      "stratum_id": "S4_omitted_vacuum_state"
+    },
+    {
+      "denominators": {
+        "maxt_draws": {
+          "abstained": 0,
+          "failed": 2726,
+          "planned": 24576,
+          "valid": 21850
+        },
+        "panels": {
+          "fit_failed": 0,
+          "fit_valid": 12,
+          "planned": 12
+        },
+        "qhx_cells": {
+          "abstained": 0,
+          "failed": 0,
+          "planned": 864,
+          "valid": 864
+        }
+      },
+      "familywise_coverage": {
+        "delta_bonferroni72": {
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        },
+        "gaussian_parameter_maxt": {
+          "abstained_intervals": 3,
+          "planned_panels": 12,
+          "rate": 0.0,
+          "successes": 0,
+          "valid_intervals": 9,
+          "wilson95": [
+            0.0,
+            0.24249400665524085
+          ]
+        }
+      },
+      "median_absolute_upper_width_by_method_term": {
+        "delta_bonferroni72": {
+          "h": 0.00014562235130445036,
+          "q": 0.0007459371725092017,
+          "x": 6.775971780950254e-06
+        },
+        "gaussian_parameter_maxt": {
+          "h": 0.00014620319765869583,
+          "q": 0.0007384538397142842,
+          "x": 2.5170911774646538e-05
+        }
+      },
+      "pointwise_by_term": {
+        "delta_bonferroni72": {
+          "h": {
+            "coverage_rate_over_planned": 0.8715277777777778,
+            "planned_cells": 288,
+            "successes": 251,
+            "valid_intervals": 288
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.16666666666666666,
+            "planned_cells": 288,
+            "successes": 48,
+            "valid_intervals": 288
+          },
+          "x": {
+            "coverage_rate_over_planned": 0.9375,
+            "planned_cells": 288,
+            "successes": 270,
+            "valid_intervals": 288
+          }
+        },
+        "gaussian_parameter_maxt": {
+          "h": {
+            "coverage_rate_over_planned": 0.6493055555555556,
+            "planned_cells": 288,
+            "successes": 187,
+            "valid_intervals": 216
+          },
+          "q": {
+            "coverage_rate_over_planned": 0.1527777777777778,
+            "planned_cells": 288,
+            "successes": 44,
+            "valid_intervals": 216
+          },
+          "x": {
+            "coverage_rate_over_planned": 0.7291666666666666,
+            "planned_cells": 288,
+            "successes": 210,
+            "valid_intervals": 216
+          }
+        }
+      },
+      "stratum_id": "S5_dependent_unequal_variance_blocks"
+    }
+  ]
+}

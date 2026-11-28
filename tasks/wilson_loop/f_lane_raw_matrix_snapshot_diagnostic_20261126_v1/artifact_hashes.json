@@ -1,0 +1,15 @@
+{
+  "files": {
+    "README.md": "e6b85db89f08613357956528800f9d3a29d73ff104a213346e8cb1f9f0d468be",
+    "projected_correlators.csv": "542e0515fe9e515327a5bc07f1b88f36e74bffd3125266f059b20984c3ddfea8",
+    "projected_correlators.png": "c9adbd5f145a3b0377a8d674129af8f791ac5a424ef112e10a06ac2a2714f9a2",
+    "protocol.json": "6ccca761408960ba32c4b0e08b07b81e37b68e6b16bd3eb039e653d47de31177",
+    "snapshot_core_npz_safety.py": "541dc6fefa6b38c4fd53b0a490c0cb12e628bf409cbbde7ade2029a9d258b0c4",
+    "snapshot_core_source_integrity.py": "97db76f7e448be77711e837039536e4134e243d7f23d667b5d7f888b64392a7d",
+    "snapshot_f_lane_raw_matrix_reader.py": "42146f6c82f7a7d8ba799882a7308aac74edccd97fefb87c836c7d3140f3e6a8",
+    "summary.json": "c3701a7fe79e904c1ccb65b7a774ff19a6eeabdfb6e9d96b28ac841e25b76221",
+    "synthetic_raw_matrix_input.npz": "134792d12e324c3565a2e761856a0ecf04a0f70397ce4d86f9423fd9dfd54c7d",
+    "synthetic_raw_matrix_manifest.json": "b647b4a6014833bb16dc3252f60fb2cde4e332dee1ecc983921e0ab09324ac8d"
+  },
+  "schema": "latticearena-artifact-hashes-v1"
+}

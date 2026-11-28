@@ -1,0 +1,236 @@
+{
+  "schema": "optimize-degree4-chebyshev-baseline-review-v2",
+  "status": "METHOD_DEFAULTS_SELECTED_EVIDENCE_NOT_READY",
+  "physical_score": null,
+  "certified": false,
+  "data_access": "none",
+  "selected_method_defaults": {
+    "D04_reference": {
+      "observable": "lowest zero-momentum valence isovector pseudoscalar energy on S16T16 quenched Wilson, kappa=0.14",
+      "units": "a_t m_pi",
+      "physical_interpretation": "independent target for the dimensionless Pion fixed-protocol risk objective",
+      "reference_method": "candidate-blind joint two-state PP(n=0,8,16)+local A4P spectral fit",
+      "data_source": "independent E-chain; correlator receipt not yet supplied",
+      "data_receipt_sha256": null,
+      "fit_protocol": {
+        "main_window": [
+          3,
+          8
+        ],
+        "tmin_checks": [
+          2,
+          3,
+          4
+        ],
+        "state_count_checks": [
+          2,
+          3
+        ],
+        "PP_fold": "even",
+        "A4P_fold": "odd",
+        "shared_states": true,
+        "covariance_diagonal_shrinkage": 0.25,
+        "covariance_eigenvalue_floor": 1e-10,
+        "all_arms_share_windows_covariance_blocks_and_reference_draws": true
+      },
+      "risk_objective": {
+        "q_theta": "C_theta(t)/(A_theta*f0(t))",
+        "R_theta": "mean_t=2..5[Var_boot(q_theta(t))+|E_boot(q_theta(t))-1|^2]",
+        "amplitude_window": [
+          6,
+          8
+        ],
+        "f0_source": "independent E-chain reference",
+        "units": "dimensionless"
+      },
+      "pass_rule": "relative mass error<=0.05; p>=0.01; PP/A4P and window/model shifts<=2.5 paired SE; no boundary hits",
+      "failure_rule": "any failed reference gate makes D04 unresolved; do not substitute synthetic operator loss",
+      "independent_review_receipt": null
+    },
+    "D06_effect_threshold": {
+      "r_star": 1.1111111111111112,
+      "units": "dimensionless risk ratio",
+      "direction_and_interpretation": "rho=R_comparator/R_trainableW; rho>1 favors trainable-W; require at least 10% risk reduction",
+      "prespecified_before_confirmation": true,
+      "family_size": 2,
+      "alpha_total_one_sided": 0.05,
+      "alpha_per_comparison_bonferroni": 0.025,
+      "paired_block_bootstrap_draws": 10000,
+      "primary_block_length": 5,
+      "sensitivity_block_lengths": [
+        2,
+        10
+      ],
+      "decision_rule": "hull lower bound across block lengths must exceed r_star for both comparisons",
+      "invalid_or_zero_risk_rule": "ABSTAIN_RATIO_UNDEFINED; do not add epsilon or change to an absolute-difference estimand"
+    },
+    "D11_strong_spectral_operator": {
+      "family": "Chebyshev",
+      "degree": 4,
+      "basis_parameterization": "monotone Bernstein controls mapped by a fixed exact dyadic rational degree-4 transform, evaluated in float64, to a Chebyshev series for Clenshaw application",
+      "H_definition": "H=sum_i(T_i+T_i^dagger-2I), three periodic spatial directions, equal-weight unitary 3x3 links",
+      "spectral_interval": [
+        -12.0,
+        0.0
+      ],
+      "spectral_mapping": "y=I+H/12 in [0,1]; x=2y-1 in [-1,1]",
+      "identity_normalization": "P4(1)=b4=1 at the zero mode; outer unnormalized G^2 P4(H) G^2 is common to all arms",
+      "coefficient_constraints": "P4(y)=sum_i b_i*C(4,i)*y^i*(1-y)^(4-i), 0<=b0<=b1<=b2<=b3<=b4=1",
+      "positivity_projection_constraints": "Bernstein basis gives 0<=P4<=1; monotone controls imply dP4/dy>=0; no post-fit clipping or projection",
+      "outer_gaussian_sandwich": {
+        "G": "I+0.10*sum_i(T_i+T_i^dagger)",
+        "power_m": 2,
+        "G_spectrum": [
+          0.4,
+          1.6
+        ],
+        "raw_zero_mode_factor": 6.5536,
+        "per_step_normalization": false
+      },
+      "failure_rule": "reject nonunitary links, wrong shape/boundary, nonfinite values, or infeasible controls; never repair by clipping",
+      "independent_review_receipt": null
+    }
+  },
+  "selected_fair_budget_defaults": {
+    "objective_id": "D04_fixed_Pion_risk_v1",
+    "instance_plan_sha256": null,
+    "fit_manifest_sha256": null,
+    "heldout_manifest_sha256": null,
+    "seed_plan_sha256": null,
+    "initialization_policy": "freeze and hash one prespecified initialization plan; use matched starts where parameterizations permit",
+    "restart_policy": "one prespecified start per arm; no unbudgeted restarts; retain failed runs in assigned-arm denominator",
+    "stopping_rule": "stop at 160 objective/gradient calls or the prespecified solver tolerance; count all objective and gradient evaluations",
+    "hardware_environment": "not yet measured; record CPU/GPU model, thread count, precision, software versions and clock policy",
+    "objective_gradient_call_cap_per_arm": 160,
+    "amortization_task_count": 1,
+    "walltime_rule": "charge full training/setup/selection cost to one task until a supported deployment task count and cost ledger exist",
+    "costs": {
+      "training": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "setup": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "solve": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "inference": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "io": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "failure_recovery": {
+        "amount": null,
+        "unit": "seconds"
+      },
+      "total_walltime": {
+        "amount": null,
+        "unit": "seconds"
+      }
+    }
+  },
+  "research_contract_source": "tasks/optimize_gaussian/research_contract_v1.json",
+  "research_contract_source_sha256": "2b045c2682e5e0e9c7c8891b0b927e230c9270362d7b0ab90f91c45583bc101d",
+  "degree_cap": 4,
+  "hopping_operator": "H psi(x)=sum_i[U_i(x)psi(x+i)+U_i(x-i)^dagger psi(x-i)-2psi(x)] over three spatial directions",
+  "assumptions": [
+    "periodic spatial boundaries",
+    "unitary SU(3) links",
+    "color-position inner product"
+  ],
+  "spectrum": "H is Hermitian with spectrum in [-12,0]; X=I+H/6 has spectrum in [-1,1]; y=I+H/12 has spectrum in [0,1]",
+  "polynomial": "P4(y)=sum_i b_i C(4,i)y^i(1-y)^(4-i); equivalently sum_k a_k T_k(2y-1)",
+  "coefficient_domain": "0<=b0<=b1<=b2<=b3<=b4=1; four free control parameters",
+  "properties": [
+    "0<=P4(y)<=1",
+    "P4 is nondecreasing in y",
+    "P4(1)=1",
+    "positive Hermitian contraction on H"
+  ],
+  "application": "five Clenshaw operator matvecs; CPU matrix-free P4 and unnormalized G^m P4(H) G^m candidates use the periodic hopping kernel without an eigensolver; GPU/train.main integration is not implemented",
+  "coefficient_fit_helper": "fit_control_points_slsqp accepts a fixed scalar objective callback, constrains four free Bernstein controls with b4=1, enforces a hard objective-call cap, and returns solver status and best feasible controls; it has no D04 objective wired in",
+  "coefficient_fit_denominators": {
+    "planned": 0,
+    "valid": 0,
+    "failed": 0,
+    "abstained": 0,
+    "unit": "no D04 callback supplied"
+  },
+  "comparison_contract": "Use the selected common outer G^2 P4(H) G^2 sandwich, candidate-blind D04 risk/reference, common fit IDs and precision, full failure accounting, and paired evaluation; fit the four Bernstein controls on fit IDs only; charge basis/application, all solver calls, walltime, setup and selection cost to this arm.",
+  "open_gates": [
+    "independent E-chain D04 reference data and receipt",
+    "fit/evaluation ID and hash receipts",
+    "empirical paired-risk and full-cost receipts for the two selected comparisons",
+    "independent production-link/operator review",
+    "data-owner and GPU/QUDA authorization for production runs"
+  ],
+  "basis_reference_source": "tasks/optimize_gaussian/kernels.py",
+  "basis_reference_source_sha256": "9b95f4d1207041f15cdddfaf18ad341c43a4c80f4e9c6071cfeac4d20fd4fc77",
+  "contract_source_sha256": "43a74f1b8c35183bd6a07ff61ce7ec7ce8acfc3a3a0935968b7a5f9ec0451c52",
+  "illustrative_control_points": {
+    "identity": {
+      "bernstein": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "chebyshev": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "note": "algebraic example only; no fitting or physical data"
+    },
+    "linear": {
+      "bernstein": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "chebyshev": [
+        0.5,
+        0.5,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "note": "algebraic example only; no fitting or physical data"
+    },
+    "strong_cutoff": {
+      "bernstein": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "chebyshev": [
+        0.2734375,
+        0.4375,
+        0.21875,
+        0.0625,
+        0.0078125
+      ],
+      "note": "algebraic example only; no fitting or physical data"
+    }
+  },
+  "illustration_denominators": {
+    "planned": 3,
+    "valid": 3,
+    "failed": 0,
+    "abstained": 0,
+    "unit": "deterministic response examples, not fit runs or physical samples"
+  }
+}
