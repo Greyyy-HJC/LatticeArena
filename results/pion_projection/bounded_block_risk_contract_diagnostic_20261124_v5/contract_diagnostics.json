@@ -1,0 +1,626 @@
+{
+  "schema": "pion-bounded-block-risk-contract-v1",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "fixtures": {
+    "current_null_contract": {
+      "contract": {
+        "schema": "pion-bounded-block-risk-contract-v1",
+        "status": "DRAFT_NOT_READY",
+        "physical_score": null,
+        "certified": false,
+        "data_access": "none",
+        "authorization": {
+          "production_data": false,
+          "gpu_quda": false
+        },
+        "estimand": {
+          "name": "bounded_block_risk",
+          "target": {
+            "m_star": null,
+            "observable": null,
+            "units": null,
+            "physical_interpretation": null
+          },
+          "score_component": "paired_squared_error_difference",
+          "score_scale_R": null,
+          "scale_units": null,
+          "prediction_difference_abs_bound": null,
+          "prediction_difference_receipt_sha256": null,
+          "clipping_interval": null,
+          "failure_policy": null,
+          "planned_blocks_N": null,
+          "block_plan_receipt_sha256": null,
+          "delta_star": null,
+          "delta_star_units": null,
+          "result_unit": "one planned candidate-reference comparison",
+          "candidate_family_ids": null,
+          "reference_gate": {
+            "method": null,
+            "data_source_receipt_sha256": null,
+            "pass_rule": null,
+            "failure_rule": null,
+            "independent_review_receipt_sha256": null
+          }
+        },
+        "dependence": {
+          "method": null,
+          "score_specific_block_map": null,
+          "evidence_receipt_sha256": null,
+          "chromatic_number": null,
+          "color_class_independence_receipt_sha256": null,
+          "gamma_ps_lower_bound": null,
+          "block_chain_assumptions": null,
+          "block_chain_receipt_sha256": null
+        },
+        "anchor": {
+          "estimate_receipt_sha256": null,
+          "target_match_statement": null,
+          "units": null,
+          "total_error_bound_B": null,
+          "common_bias_bound_C": null,
+          "bound_combination_rule": null,
+          "coverage_method": null,
+          "coverage_parameters": null,
+          "coverage_probability_lower_bound": null,
+          "coverage_receipt_sha256": null,
+          "common_bias_coverage_receipt_sha256": null,
+          "conditional_independence_receipt_sha256": null
+        },
+        "inference": {
+          "comparison_family_ids": null,
+          "F": null,
+          "alpha_total": null,
+          "alpha_score": null,
+          "alpha_anchor": null
+        }
+      },
+      "result": {
+        "schema_valid": true,
+        "status": "NOT_READY",
+        "structurally_complete": false,
+        "certified": false,
+        "physical_score": null,
+        "issues": [
+          "estimand.target.observable: missing nonempty value",
+          "estimand.target.units: missing nonempty value",
+          "estimand.target.physical_interpretation: missing nonempty value",
+          "estimand.target.m_star: expected an explicit finite target value",
+          "estimand.score_scale_R: expected a finite positive value",
+          "estimand.scale_units: missing nonempty value",
+          "estimand.prediction_difference_abs_bound: expected a finite nonnegative value",
+          "estimand.prediction_difference_receipt_sha256: expected a SHA-256 receipt",
+          "estimand.clipping_interval: v1 helper requires [-1, 1]; human confirmation remains required",
+          "estimand.failure_policy: must preserve failed-block and all-failed rules",
+          "estimand.planned_blocks_N: expected a positive integer",
+          "estimand.block_plan_receipt_sha256: expected a SHA-256 receipt",
+          "estimand.delta_star: expected a positive finite predeclared effect",
+          "estimand.delta_star_units: missing nonempty value",
+          "estimand.candidate_family_ids: expected unique nonempty comparison IDs",
+          "estimand.reference_gate.method: missing nonempty value",
+          "estimand.reference_gate.pass_rule: missing nonempty value",
+          "estimand.reference_gate.failure_rule: missing nonempty value",
+          "estimand.reference_gate.data_source_receipt_sha256: expected a SHA-256 receipt",
+          "estimand.reference_gate.independent_review_receipt_sha256: expected a SHA-256 receipt",
+          "dependence.method: expected one of ['graph_color_hoeffding', 'markov_pseudo_gap_bernstein']",
+          "dependence.score_specific_block_map: missing score-to-block definition",
+          "dependence.evidence_receipt_sha256: expected a SHA-256 receipt",
+          "anchor.estimate_receipt_sha256: expected a SHA-256 receipt",
+          "anchor.target_match_statement: missing target/anchor correspondence",
+          "anchor.units: missing nonempty value",
+          "anchor.total_error_bound_B: expected a finite nonnegative bound",
+          "anchor.common_bias_bound_C: expected a finite nonnegative bound",
+          "anchor.bound_combination_rule: state how random and common-bias terms form total B",
+          "anchor.coverage_method: expected one of ['bounded_iid_hoeffding', 'known_sigma_normal_interval']",
+          "anchor.coverage_parameters: expected method-specific assumptions",
+          "anchor.coverage_probability_lower_bound: expected a value in (0, 1]",
+          "anchor.coverage_receipt_sha256: expected a SHA-256 receipt",
+          "anchor.common_bias_coverage_receipt_sha256: expected a SHA-256 receipt",
+          "anchor.conditional_independence_receipt_sha256: expected a SHA-256 receipt",
+          "inference.comparison_family_ids: expected unique nonempty IDs",
+          "inference.F: expected a positive integer",
+          "inference.alpha_total: expected a value in (0, 1)",
+          "inference.alpha_score: expected a value in (0, 1)",
+          "inference.alpha_anchor: expected a value in [0, 1)"
+        ]
+      }
+    },
+    "synthetic_graph_color_complete": {
+      "contract": {
+        "schema": "pion-bounded-block-risk-contract-v1",
+        "status": "DRAFT_NOT_READY",
+        "physical_score": null,
+        "certified": false,
+        "data_access": "none",
+        "authorization": {
+          "production_data": false,
+          "gpu_quda": false
+        },
+        "estimand": {
+          "name": "bounded_block_risk",
+          "target": {
+            "m_star": 0.14,
+            "observable": "SYNTHETIC_ONLY_observable",
+            "units": "SYNTHETIC_ONLY_unit",
+            "physical_interpretation": "SYNTHETIC_ONLY_interpretation"
+          },
+          "score_component": "paired_squared_error_difference",
+          "score_scale_R": 2.0,
+          "scale_units": "SYNTHETIC_ONLY_unit",
+          "prediction_difference_abs_bound": 1.5,
+          "prediction_difference_receipt_sha256": "d7f8a142e59f6b114fd32d7322495c635eb4a2b953457c4e99d32d813e562150",
+          "clipping_interval": [
+            -1,
+            1
+          ],
+          "failure_policy": "failed_block=-1; all_failed_comparison=abstain",
+          "planned_blocks_N": 20,
+          "block_plan_receipt_sha256": "abd738dc8f322a7536210a6b89c87dff8973e0524cebd8e53ae0495a06b7eda0",
+          "delta_star": 0.1,
+          "delta_star_units": "SYNTHETIC_ONLY_unit_squared",
+          "result_unit": "one planned candidate-reference comparison",
+          "candidate_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "reference_gate": {
+            "method": "SYNTHETIC_ONLY_reference_method",
+            "data_source_receipt_sha256": "3f1b8cde4d4635cfa5600510c57cfc0b4ffbd1830fdf4f15867b18193e51be84",
+            "pass_rule": "SYNTHETIC_ONLY_pass_rule",
+            "failure_rule": "SYNTHETIC_ONLY_failure_rule",
+            "independent_review_receipt_sha256": "05306177e297d4e632b5b3ec7d7d6fe118951e55ae2406ffeda3d9543f5c0625"
+          }
+        },
+        "dependence": {
+          "method": "graph_color_hoeffding",
+          "score_specific_block_map": "SYNTHETIC_ONLY fixed block map",
+          "evidence_receipt_sha256": "1f7d8c64daae06dc6151fb771f64c58ea01a8617c32de7bf889c944598462b8e",
+          "chromatic_number": 2,
+          "color_class_independence_receipt_sha256": "c6fbf3e9fc63a2987370e29a25df46523374ab7517dfa4ea6893725ae5215297",
+          "gamma_ps_lower_bound": null,
+          "block_chain_assumptions": null,
+          "block_chain_receipt_sha256": null
+        },
+        "anchor": {
+          "estimate_receipt_sha256": "8e967ee2ff19a57526af3949cc4f6c5fea46dfb324a9ce006ba137fec017eaed",
+          "target_match_statement": "SYNTHETIC_ONLY matched anchor target",
+          "units": "SYNTHETIC_ONLY_unit",
+          "total_error_bound_B": 0.3,
+          "common_bias_bound_C": 0.01,
+          "bound_combination_rule": "SYNTHETIC_ONLY total B includes the random coverage radius and common-bias C",
+          "coverage_method": "bounded_iid_hoeffding",
+          "coverage_parameters": {
+            "sample_count_n_A": 40,
+            "support_interval": [
+              -0.5,
+              0.5
+            ],
+            "iid_unit_statement": "SYNTHETIC_ONLY independent anchor observations",
+            "support_receipt_sha256": "e56d1753dbfc4f71a176669b7f89cf76bf28b38fce9a861b0a78005810d31cf4"
+          },
+          "coverage_probability_lower_bound": 0.99,
+          "coverage_receipt_sha256": "e947a7309996aec23af703d8819908dab151cef6b53067661eaccdafd4291df2",
+          "common_bias_coverage_receipt_sha256": "a05b0669af455a5ee2075bb9cd94bab4fe6c4f31993ce70e96a54e7625c6865b",
+          "conditional_independence_receipt_sha256": "d2f1b250e6388adcbc5194ca4c3065a49f4d051cbc15ff343ad7c85b8bbd3725"
+        },
+        "inference": {
+          "comparison_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "F": 2,
+          "alpha_total": 0.05,
+          "alpha_score": 0.04,
+          "alpha_anchor": 0.01
+        }
+      },
+      "result": {
+        "schema_valid": true,
+        "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+        "structurally_complete": true,
+        "certified": false,
+        "physical_score": null,
+        "issues": []
+      }
+    },
+    "synthetic_markov_gap_complete": {
+      "contract": {
+        "schema": "pion-bounded-block-risk-contract-v1",
+        "status": "DRAFT_NOT_READY",
+        "physical_score": null,
+        "certified": false,
+        "data_access": "none",
+        "authorization": {
+          "production_data": false,
+          "gpu_quda": false
+        },
+        "estimand": {
+          "name": "bounded_block_risk",
+          "target": {
+            "m_star": 0.14,
+            "observable": "SYNTHETIC_ONLY_observable",
+            "units": "SYNTHETIC_ONLY_unit",
+            "physical_interpretation": "SYNTHETIC_ONLY_interpretation"
+          },
+          "score_component": "paired_squared_error_difference",
+          "score_scale_R": 2.0,
+          "scale_units": "SYNTHETIC_ONLY_unit",
+          "prediction_difference_abs_bound": 1.5,
+          "prediction_difference_receipt_sha256": "d7f8a142e59f6b114fd32d7322495c635eb4a2b953457c4e99d32d813e562150",
+          "clipping_interval": [
+            -1,
+            1
+          ],
+          "failure_policy": "failed_block=-1; all_failed_comparison=abstain",
+          "planned_blocks_N": 20,
+          "block_plan_receipt_sha256": "abd738dc8f322a7536210a6b89c87dff8973e0524cebd8e53ae0495a06b7eda0",
+          "delta_star": 0.1,
+          "delta_star_units": "SYNTHETIC_ONLY_unit_squared",
+          "result_unit": "one planned candidate-reference comparison",
+          "candidate_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "reference_gate": {
+            "method": "SYNTHETIC_ONLY_reference_method",
+            "data_source_receipt_sha256": "3f1b8cde4d4635cfa5600510c57cfc0b4ffbd1830fdf4f15867b18193e51be84",
+            "pass_rule": "SYNTHETIC_ONLY_pass_rule",
+            "failure_rule": "SYNTHETIC_ONLY_failure_rule",
+            "independent_review_receipt_sha256": "05306177e297d4e632b5b3ec7d7d6fe118951e55ae2406ffeda3d9543f5c0625"
+          }
+        },
+        "dependence": {
+          "method": "markov_pseudo_gap_bernstein",
+          "score_specific_block_map": "SYNTHETIC_ONLY fixed block map",
+          "evidence_receipt_sha256": "1f7d8c64daae06dc6151fb771f64c58ea01a8617c32de7bf889c944598462b8e",
+          "chromatic_number": null,
+          "color_class_independence_receipt_sha256": null,
+          "gamma_ps_lower_bound": 0.25,
+          "block_chain_assumptions": "SYNTHETIC_ONLY stationary block-chain assumptions",
+          "block_chain_receipt_sha256": "44e4099633a2e5ef288ca884f798d51daeb0884221bb7c9a8da3f8afef5a957b"
+        },
+        "anchor": {
+          "estimate_receipt_sha256": "8e967ee2ff19a57526af3949cc4f6c5fea46dfb324a9ce006ba137fec017eaed",
+          "target_match_statement": "SYNTHETIC_ONLY matched anchor target",
+          "units": "SYNTHETIC_ONLY_unit",
+          "total_error_bound_B": 0.3,
+          "common_bias_bound_C": 0.01,
+          "bound_combination_rule": "SYNTHETIC_ONLY total B includes the random coverage radius and common-bias C",
+          "coverage_method": "bounded_iid_hoeffding",
+          "coverage_parameters": {
+            "sample_count_n_A": 40,
+            "support_interval": [
+              -0.5,
+              0.5
+            ],
+            "iid_unit_statement": "SYNTHETIC_ONLY independent anchor observations",
+            "support_receipt_sha256": "e56d1753dbfc4f71a176669b7f89cf76bf28b38fce9a861b0a78005810d31cf4"
+          },
+          "coverage_probability_lower_bound": 0.99,
+          "coverage_receipt_sha256": "e947a7309996aec23af703d8819908dab151cef6b53067661eaccdafd4291df2",
+          "common_bias_coverage_receipt_sha256": "a05b0669af455a5ee2075bb9cd94bab4fe6c4f31993ce70e96a54e7625c6865b",
+          "conditional_independence_receipt_sha256": "d2f1b250e6388adcbc5194ca4c3065a49f4d051cbc15ff343ad7c85b8bbd3725"
+        },
+        "inference": {
+          "comparison_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "F": 2,
+          "alpha_total": 0.05,
+          "alpha_score": 0.04,
+          "alpha_anchor": 0.01
+        }
+      },
+      "result": {
+        "schema_valid": true,
+        "status": "CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW",
+        "structurally_complete": true,
+        "certified": false,
+        "physical_score": null,
+        "issues": []
+      }
+    },
+    "synthetic_alpha_over_budget": {
+      "contract": {
+        "schema": "pion-bounded-block-risk-contract-v1",
+        "status": "DRAFT_NOT_READY",
+        "physical_score": null,
+        "certified": false,
+        "data_access": "none",
+        "authorization": {
+          "production_data": false,
+          "gpu_quda": false
+        },
+        "estimand": {
+          "name": "bounded_block_risk",
+          "target": {
+            "m_star": 0.14,
+            "observable": "SYNTHETIC_ONLY_observable",
+            "units": "SYNTHETIC_ONLY_unit",
+            "physical_interpretation": "SYNTHETIC_ONLY_interpretation"
+          },
+          "score_component": "paired_squared_error_difference",
+          "score_scale_R": 2.0,
+          "scale_units": "SYNTHETIC_ONLY_unit",
+          "prediction_difference_abs_bound": 1.5,
+          "prediction_difference_receipt_sha256": "d7f8a142e59f6b114fd32d7322495c635eb4a2b953457c4e99d32d813e562150",
+          "clipping_interval": [
+            -1,
+            1
+          ],
+          "failure_policy": "failed_block=-1; all_failed_comparison=abstain",
+          "planned_blocks_N": 20,
+          "block_plan_receipt_sha256": "abd738dc8f322a7536210a6b89c87dff8973e0524cebd8e53ae0495a06b7eda0",
+          "delta_star": 0.1,
+          "delta_star_units": "SYNTHETIC_ONLY_unit_squared",
+          "result_unit": "one planned candidate-reference comparison",
+          "candidate_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "reference_gate": {
+            "method": "SYNTHETIC_ONLY_reference_method",
+            "data_source_receipt_sha256": "3f1b8cde4d4635cfa5600510c57cfc0b4ffbd1830fdf4f15867b18193e51be84",
+            "pass_rule": "SYNTHETIC_ONLY_pass_rule",
+            "failure_rule": "SYNTHETIC_ONLY_failure_rule",
+            "independent_review_receipt_sha256": "05306177e297d4e632b5b3ec7d7d6fe118951e55ae2406ffeda3d9543f5c0625"
+          }
+        },
+        "dependence": {
+          "method": "graph_color_hoeffding",
+          "score_specific_block_map": "SYNTHETIC_ONLY fixed block map",
+          "evidence_receipt_sha256": "1f7d8c64daae06dc6151fb771f64c58ea01a8617c32de7bf889c944598462b8e",
+          "chromatic_number": 2,
+          "color_class_independence_receipt_sha256": "c6fbf3e9fc63a2987370e29a25df46523374ab7517dfa4ea6893725ae5215297",
+          "gamma_ps_lower_bound": null,
+          "block_chain_assumptions": null,
+          "block_chain_receipt_sha256": null
+        },
+        "anchor": {
+          "estimate_receipt_sha256": "8e967ee2ff19a57526af3949cc4f6c5fea46dfb324a9ce006ba137fec017eaed",
+          "target_match_statement": "SYNTHETIC_ONLY matched anchor target",
+          "units": "SYNTHETIC_ONLY_unit",
+          "total_error_bound_B": 0.3,
+          "common_bias_bound_C": 0.01,
+          "bound_combination_rule": "SYNTHETIC_ONLY total B includes the random coverage radius and common-bias C",
+          "coverage_method": "bounded_iid_hoeffding",
+          "coverage_parameters": {
+            "sample_count_n_A": 40,
+            "support_interval": [
+              -0.5,
+              0.5
+            ],
+            "iid_unit_statement": "SYNTHETIC_ONLY independent anchor observations",
+            "support_receipt_sha256": "e56d1753dbfc4f71a176669b7f89cf76bf28b38fce9a861b0a78005810d31cf4"
+          },
+          "coverage_probability_lower_bound": 0.99,
+          "coverage_receipt_sha256": "e947a7309996aec23af703d8819908dab151cef6b53067661eaccdafd4291df2",
+          "common_bias_coverage_receipt_sha256": "a05b0669af455a5ee2075bb9cd94bab4fe6c4f31993ce70e96a54e7625c6865b",
+          "conditional_independence_receipt_sha256": "d2f1b250e6388adcbc5194ca4c3065a49f4d051cbc15ff343ad7c85b8bbd3725"
+        },
+        "inference": {
+          "comparison_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "F": 2,
+          "alpha_total": 0.05,
+          "alpha_score": 0.05,
+          "alpha_anchor": 0.01
+        }
+      },
+      "result": {
+        "schema_valid": true,
+        "status": "NOT_READY",
+        "structurally_complete": false,
+        "certified": false,
+        "physical_score": null,
+        "issues": [
+          "inference.alpha_score + alpha_anchor: exceeds alpha_total"
+        ]
+      }
+    },
+    "synthetic_prediction_bound_over_R": {
+      "contract": {
+        "schema": "pion-bounded-block-risk-contract-v1",
+        "status": "DRAFT_NOT_READY",
+        "physical_score": null,
+        "certified": false,
+        "data_access": "none",
+        "authorization": {
+          "production_data": false,
+          "gpu_quda": false
+        },
+        "estimand": {
+          "name": "bounded_block_risk",
+          "target": {
+            "m_star": 0.14,
+            "observable": "SYNTHETIC_ONLY_observable",
+            "units": "SYNTHETIC_ONLY_unit",
+            "physical_interpretation": "SYNTHETIC_ONLY_interpretation"
+          },
+          "score_component": "paired_squared_error_difference",
+          "score_scale_R": 2.0,
+          "scale_units": "SYNTHETIC_ONLY_unit",
+          "prediction_difference_abs_bound": 2.1,
+          "prediction_difference_receipt_sha256": "d7f8a142e59f6b114fd32d7322495c635eb4a2b953457c4e99d32d813e562150",
+          "clipping_interval": [
+            -1,
+            1
+          ],
+          "failure_policy": "failed_block=-1; all_failed_comparison=abstain",
+          "planned_blocks_N": 20,
+          "block_plan_receipt_sha256": "abd738dc8f322a7536210a6b89c87dff8973e0524cebd8e53ae0495a06b7eda0",
+          "delta_star": 0.1,
+          "delta_star_units": "SYNTHETIC_ONLY_unit_squared",
+          "result_unit": "one planned candidate-reference comparison",
+          "candidate_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "reference_gate": {
+            "method": "SYNTHETIC_ONLY_reference_method",
+            "data_source_receipt_sha256": "3f1b8cde4d4635cfa5600510c57cfc0b4ffbd1830fdf4f15867b18193e51be84",
+            "pass_rule": "SYNTHETIC_ONLY_pass_rule",
+            "failure_rule": "SYNTHETIC_ONLY_failure_rule",
+            "independent_review_receipt_sha256": "05306177e297d4e632b5b3ec7d7d6fe118951e55ae2406ffeda3d9543f5c0625"
+          }
+        },
+        "dependence": {
+          "method": "graph_color_hoeffding",
+          "score_specific_block_map": "SYNTHETIC_ONLY fixed block map",
+          "evidence_receipt_sha256": "1f7d8c64daae06dc6151fb771f64c58ea01a8617c32de7bf889c944598462b8e",
+          "chromatic_number": 2,
+          "color_class_independence_receipt_sha256": "c6fbf3e9fc63a2987370e29a25df46523374ab7517dfa4ea6893725ae5215297",
+          "gamma_ps_lower_bound": null,
+          "block_chain_assumptions": null,
+          "block_chain_receipt_sha256": null
+        },
+        "anchor": {
+          "estimate_receipt_sha256": "8e967ee2ff19a57526af3949cc4f6c5fea46dfb324a9ce006ba137fec017eaed",
+          "target_match_statement": "SYNTHETIC_ONLY matched anchor target",
+          "units": "SYNTHETIC_ONLY_unit",
+          "total_error_bound_B": 0.3,
+          "common_bias_bound_C": 0.01,
+          "bound_combination_rule": "SYNTHETIC_ONLY total B includes the random coverage radius and common-bias C",
+          "coverage_method": "bounded_iid_hoeffding",
+          "coverage_parameters": {
+            "sample_count_n_A": 40,
+            "support_interval": [
+              -0.5,
+              0.5
+            ],
+            "iid_unit_statement": "SYNTHETIC_ONLY independent anchor observations",
+            "support_receipt_sha256": "e56d1753dbfc4f71a176669b7f89cf76bf28b38fce9a861b0a78005810d31cf4"
+          },
+          "coverage_probability_lower_bound": 0.99,
+          "coverage_receipt_sha256": "e947a7309996aec23af703d8819908dab151cef6b53067661eaccdafd4291df2",
+          "common_bias_coverage_receipt_sha256": "a05b0669af455a5ee2075bb9cd94bab4fe6c4f31993ce70e96a54e7625c6865b",
+          "conditional_independence_receipt_sha256": "d2f1b250e6388adcbc5194ca4c3065a49f4d051cbc15ff343ad7c85b8bbd3725"
+        },
+        "inference": {
+          "comparison_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "F": 2,
+          "alpha_total": 0.05,
+          "alpha_score": 0.04,
+          "alpha_anchor": 0.01
+        }
+      },
+      "result": {
+        "schema_valid": true,
+        "status": "NOT_READY",
+        "structurally_complete": false,
+        "certified": false,
+        "physical_score": null,
+        "issues": [
+          "estimand.prediction_difference_abs_bound: exceeds score_scale_R"
+        ]
+      }
+    },
+    "synthetic_missing_anchor_coverage": {
+      "contract": {
+        "schema": "pion-bounded-block-risk-contract-v1",
+        "status": "DRAFT_NOT_READY",
+        "physical_score": null,
+        "certified": false,
+        "data_access": "none",
+        "authorization": {
+          "production_data": false,
+          "gpu_quda": false
+        },
+        "estimand": {
+          "name": "bounded_block_risk",
+          "target": {
+            "m_star": 0.14,
+            "observable": "SYNTHETIC_ONLY_observable",
+            "units": "SYNTHETIC_ONLY_unit",
+            "physical_interpretation": "SYNTHETIC_ONLY_interpretation"
+          },
+          "score_component": "paired_squared_error_difference",
+          "score_scale_R": 2.0,
+          "scale_units": "SYNTHETIC_ONLY_unit",
+          "prediction_difference_abs_bound": 1.5,
+          "prediction_difference_receipt_sha256": "d7f8a142e59f6b114fd32d7322495c635eb4a2b953457c4e99d32d813e562150",
+          "clipping_interval": [
+            -1,
+            1
+          ],
+          "failure_policy": "failed_block=-1; all_failed_comparison=abstain",
+          "planned_blocks_N": 20,
+          "block_plan_receipt_sha256": "abd738dc8f322a7536210a6b89c87dff8973e0524cebd8e53ae0495a06b7eda0",
+          "delta_star": 0.1,
+          "delta_star_units": "SYNTHETIC_ONLY_unit_squared",
+          "result_unit": "one planned candidate-reference comparison",
+          "candidate_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "reference_gate": {
+            "method": "SYNTHETIC_ONLY_reference_method",
+            "data_source_receipt_sha256": "3f1b8cde4d4635cfa5600510c57cfc0b4ffbd1830fdf4f15867b18193e51be84",
+            "pass_rule": "SYNTHETIC_ONLY_pass_rule",
+            "failure_rule": "SYNTHETIC_ONLY_failure_rule",
+            "independent_review_receipt_sha256": "05306177e297d4e632b5b3ec7d7d6fe118951e55ae2406ffeda3d9543f5c0625"
+          }
+        },
+        "dependence": {
+          "method": "graph_color_hoeffding",
+          "score_specific_block_map": "SYNTHETIC_ONLY fixed block map",
+          "evidence_receipt_sha256": "1f7d8c64daae06dc6151fb771f64c58ea01a8617c32de7bf889c944598462b8e",
+          "chromatic_number": 2,
+          "color_class_independence_receipt_sha256": "c6fbf3e9fc63a2987370e29a25df46523374ab7517dfa4ea6893725ae5215297",
+          "gamma_ps_lower_bound": null,
+          "block_chain_assumptions": null,
+          "block_chain_receipt_sha256": null
+        },
+        "anchor": {
+          "estimate_receipt_sha256": "8e967ee2ff19a57526af3949cc4f6c5fea46dfb324a9ce006ba137fec017eaed",
+          "target_match_statement": "SYNTHETIC_ONLY matched anchor target",
+          "units": "SYNTHETIC_ONLY_unit",
+          "total_error_bound_B": 0.3,
+          "common_bias_bound_C": 0.01,
+          "bound_combination_rule": "SYNTHETIC_ONLY total B includes the random coverage radius and common-bias C",
+          "coverage_method": "bounded_iid_hoeffding",
+          "coverage_parameters": {
+            "sample_count_n_A": 40,
+            "support_interval": [
+              -0.5,
+              0.5
+            ],
+            "iid_unit_statement": "SYNTHETIC_ONLY independent anchor observations",
+            "support_receipt_sha256": "e56d1753dbfc4f71a176669b7f89cf76bf28b38fce9a861b0a78005810d31cf4"
+          },
+          "coverage_probability_lower_bound": 0.99,
+          "coverage_receipt_sha256": "e947a7309996aec23af703d8819908dab151cef6b53067661eaccdafd4291df2",
+          "common_bias_coverage_receipt_sha256": null,
+          "conditional_independence_receipt_sha256": "d2f1b250e6388adcbc5194ca4c3065a49f4d051cbc15ff343ad7c85b8bbd3725"
+        },
+        "inference": {
+          "comparison_family_ids": [
+            "SYNTHETIC_ONLY_candidate_A",
+            "SYNTHETIC_ONLY_candidate_B"
+          ],
+          "F": 2,
+          "alpha_total": 0.05,
+          "alpha_score": 0.04,
+          "alpha_anchor": 0.01
+        }
+      },
+      "result": {
+        "schema_valid": true,
+        "status": "NOT_READY",
+        "structurally_complete": false,
+        "certified": false,
+        "physical_score": null,
+        "issues": [
+          "anchor.common_bias_coverage_receipt_sha256: expected a SHA-256 receipt"
+        ]
+      }
+    }
+  }
+}

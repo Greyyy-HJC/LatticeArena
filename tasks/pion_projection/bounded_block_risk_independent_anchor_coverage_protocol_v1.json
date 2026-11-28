@@ -1,0 +1,45 @@
+{
+  "schema": "pion-independent-anchor-setwise-markov-coverage-v1",
+  "classification": "SYNTHETIC_JOINT_COVERAGE_SCREEN_NOT_PHYSICAL_CALIBRATION",
+  "generated_on": "2026-11-28",
+  "anchor": {
+    "sampling": "iid Bernoulli from the same exact target probability as the score-chain stationary mass",
+    "target_probability": 0.4,
+    "sample_size": 256,
+    "interval": "two-sided exact Clopper-Pearson with alpha_anchor=0.025"
+  },
+  "score_chain": {
+    "family": "two-state reversible Markov chains with stationary mass P(state=1)=0.4",
+    "pseudo_spectral_gap_grid": [0.5, 0.75, 1.0],
+    "second_eigenvalue_rule": "lambda=sqrt(1-gamma_ps); P01=(1-lambda)*0.4; P10=(1-lambda)*0.6",
+    "initial_law": "exact stationary draw; initial TV=0",
+    "planned_blocks_per_chain": 16384,
+    "reference_prediction": "score-chain state 0 or 1",
+    "candidate_prediction": 0.5
+  },
+  "estimand": {
+    "score": "clip(((m-reference)^2-(m-candidate)^2)/R^2,-1,1)",
+    "target_set": "random anchor interval; common across all planned score-chain blocks",
+    "prediction_domain": [0.0, 1.0],
+    "score_scale_R": 1.0,
+    "grid_mesh_step_R": 0.1,
+    "joint_success": "anchor interval covers p and uniform setwise Markov LCB is no greater than the exact minimum expected score over that interval"
+  },
+  "error_allocation": {
+    "alpha_anchor": 0.025,
+    "alpha_score": 0.025,
+    "alpha_total": 0.05,
+    "union_bound_joint_coverage_lower": 0.95
+  },
+  "replicates_per_gap": 1000,
+  "seed_rules": {
+    "anchor": "202611282300 + 10000*gap_index",
+    "score_chain": "202611287300 + 10000*gap_index",
+    "indices": "gap_index is zero-based; anchor and score-chain streams use disjoint seed ranges"
+  },
+  "no_tuning": true,
+  "sealed_data_access": false,
+  "gpu_quda": false,
+  "physical_score": null,
+  "certified": false
+}

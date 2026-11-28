@@ -1,0 +1,27 @@
+{
+  "schema": "pion-bounded-anchor-robustness-summary-v1",
+  "status": "SYNTHETIC_EXACT_ENUMERATION_ONLY",
+  "physical_score": null,
+  "data_access": "No physical anchor, correlator, ensemble, sealed split, GPU, or QUDA data accessed.",
+  "cells": 12,
+  "exact_count_states_total": 2076,
+  "alpha_anchor": 0.01,
+  "normal_z_coverage_min": 0.9229311239742363,
+  "hoeffding_coverage_min": 0.9987670725600812,
+  "hoeffding_coverage_all_at_least_nominal": true,
+  "normal_z_coverage_rare_spike_n16": 0.9229311239742363,
+  "hoeffding_to_normal_radius_ratio_max": 8.95860450888012,
+  "files": [
+    "README.md",
+    "protocol.json",
+    "coverage_summary.csv",
+    "denominator_summary.csv",
+    "coverage_and_radius_cost.png",
+    "snapshot_anchor_robustness_exact.py",
+    "snapshot_anchor_coverage_mc.py",
+    "snapshot_bounded_block_risk_score.py",
+    "snapshot_dependency_graph_bound.py",
+    "summary.json",
+    "artifact_hashes.json"
+  ]
+}

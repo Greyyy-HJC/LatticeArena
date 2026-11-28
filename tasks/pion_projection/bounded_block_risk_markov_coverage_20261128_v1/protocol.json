@@ -1,0 +1,65 @@
+{
+  "alpha_anchor_reserved_but_not_used_for_fixed_target_set": 0.01,
+  "alpha_score": 0.04,
+  "alpha_total": 0.05,
+  "certified": false,
+  "chain": {
+    "candidate_prediction": 0.5,
+    "initial_law": "exact stationary draw; no burn-in",
+    "pseudo_spectral_gap": "gamma for gamma in (0,1]",
+    "score_states": {
+      "state_0": 0.0,
+      "state_1": 1.0
+    },
+    "stationary_distribution": [
+      0.5,
+      0.5
+    ],
+    "transition_matrix": "[[1-gamma/2,gamma/2],[gamma/2,1-gamma/2]]"
+  },
+  "classification": "CONDITIONAL_SYNTHETIC_MARKOV_COVERAGE_SCREEN_NOT_CALIBRATION",
+  "data_access": "synthetic two-state chains only; no lattice, gauge, anchor, E-reference, or sealed bytes",
+  "failed_block_rule": "none in this exact-state simulation; production failures remain score -1",
+  "family_size_outside_grid": 1,
+  "gamma_grid": [
+    0.25,
+    0.5,
+    1.0
+  ],
+  "grid_endpoints": [
+    0.45,
+    0.55
+  ],
+  "maximum_grid_gap_over_R_upper_bound": 0.050000000000000044,
+  "mesh_step_R": 0.1,
+  "numpy_version": "2.5.1",
+  "physical_score": null,
+  "planned_blocks_per_chain": 4096,
+  "prediction_domain": [
+    0.0,
+    1.0
+  ],
+  "replicates_per_gamma": 1000,
+  "schema": "pion-markov-setwise-coverage-screen-v1",
+  "score": "clip(((m-reference)^2-(m-candidate)^2)/R^2,-1,1)",
+  "score_scale_R": 1.0,
+  "seed_rule": "202611281103 + round(1000*gamma_ps)",
+  "simultaneous_family_size": 3,
+  "source_sha256": {
+    "core/numerics.py": "27631552db9e2fb0879e6dc1c91bfce553f516386bb3a26b405921f33824fe47",
+    "tasks/pion_projection/bounded_block_risk_markov_coverage_screen.py": "6005e2b339b3733fae622fcea5da72ed226afea6e828303f5215a8d3cc73633f",
+    "tasks/pion_projection/bounded_block_risk_markov_gap.py": "b14f9580c2d0ee4a38ea7cebe008bc26ce8482ca66686db9785294e33ac223b0",
+    "tasks/pion_projection/bounded_block_risk_markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+    "tasks/pion_projection/bounded_block_risk_setwise_markov.py": "947816cbce995f2aa1853aec1c1d9713829dd687ab2cb12d0bbababe5a3044ef"
+  },
+  "target_grid": [
+    0.45,
+    0.5,
+    0.55
+  ],
+  "target_interval": [
+    0.45,
+    0.55
+  ],
+  "true_uniform_mean": 0.25
+}

@@ -1,0 +1,14 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "3296c122943a0467f10fe56c2d991a14fabd670a9031128771f928e440fbda77",
+    "contract_diagnostics.json": "4fbca09aa9cd49f0d64b98cfbd45927a69894bea6f78f6ccef5921a40d978c45",
+    "contract_summary.csv": "c6983c201217b1e3c3554753f67f9e7179b51a9c8f09814b0a1bb33fc1f844fd",
+    "protocol.json": "2ee826ce422c4184eca0e9e77831fa4d6ca9c0a5ee7c733636ce37e90b6352bd",
+    "snapshot_bounded_block_risk_contract.py": "cd5d0e719884be8c25d96f29d03ec919641ff09aab74fec977bc80690aaf617e",
+    "snapshot_bounded_block_risk_contract_v1.json": "8803607c7b461676344d12b7491d05943b88cedc2e13f92b4ab1c10930b0c291",
+    "snapshot_bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "run_receipt.json": "1070b164f3c42b7612367ed269df7da7e62074d6ba4fe5d4d068239d9001904a"
+  }
+}

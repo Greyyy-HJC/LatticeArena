@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "0f54b6f9c5de070b671d2c9180b581f7dbab4e1a82561d025bf8aafee0287c86",
+    "contract_diagnostics.json": "6ab7df58a7fa93ee5df7c466c83fa29bddd6ced1aba560266071714780a48382",
+    "contract_summary.csv": "b88a2d064a05391e29047f2d0fe388c0236c21c8cfd40728262deb32e1f529b9",
+    "protocol.json": "e052f8c4cb677eeea76a308a5a5ed9666a7d6ff70fbeb7d1ecba0369ecfecab7",
+    "snapshot_bounded_block_risk_contract.py": "74b7f3bffe3afff3b676f850d5240bb9d7d638332046f22c8aaa73e28a94ae56",
+    "snapshot_bounded_block_risk_contract_v1.json": "641f4f15c88546977545232b10e667bb92952c8c85be29afb98a0ee79b40d259",
+    "snapshot_bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f",
+    "snapshot_bounded_block_risk_markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "run_receipt.json": "a02c51e2c577add7671499e141246904e7e8107cb8c457903d425a0165a740bb"
+  }
+}

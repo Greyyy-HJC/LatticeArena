@@ -1,0 +1,15 @@
+{
+  "analysis_source_sha256": "72bbd0842adc95e14519cd8c08a0ef3648994a7e02c7bf2ea59b6a1618f33371",
+  "bootstrap_indices_sha256": "d27c20b0e9dea4d6a7e6a73879f73e86a3e260168e648c80bb27c1a4a24195c0",
+  "measurement_provenance_sha256": "c58a016943e211ab32d613dfa677bb20261c694e048cde9ae700c45f350bc785",
+  "measurement_sha256": "8a78947c8b4d1bec3b672ed57cd1406ed0bcccf6ec874747ece4d64078da7fe3",
+  "outputs_sha256": {
+    "two_state_bootstrap.npz": "e23d0781054adb5f035320c2b07494895fc76251bdf09f87b6d6b795d59eabcd",
+    "two_state_diagnostic.json": "006e245ce34e71265c4407c101bb196d5e9daea684201885209df248e92dae80",
+    "two_state_diagnostic.md": "14e9ca650df5c50c258d60d1b19c125b0517d75ada57eee8abcd28d9a13b9653",
+    "two_state_diagnostic.png": "a01ac072db57005cde1fe87ca03e46459f95aa5112f2aba05cddcd6867dd8847"
+  },
+  "protocol_sha256": "1568592a9263bc3bbedd2d9c50ad740e307aa02175736f4deb795defccefa5e7",
+  "schema": "pion-two-state-development-diagnostic-provenance-v1",
+  "scope": "post-failure comparison on D development IDs 0-99; no anchor, validation, gap, or shared holdout data read"
+}

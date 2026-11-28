@@ -1,0 +1,21 @@
+{
+  "R": 2.9,
+  "amplitude_solution": "w4=(cosh(M)-cosh(m0))/(cosh(m1)-cosh(m0)); A1/A0=(w4/(1-w4))*K(m0,4)/K(m1,4)",
+  "classification": "EXACT_NOISELESS_TWO_STATE_IDENTIFIABILITY_COUNTEREXAMPLE_NOT_PHYSICAL_DATA",
+  "excited_mass": 1.2,
+  "formula_check": "reader.anchor_scalar(correlator) == target_map_mass within absolute tolerance 1e-12 for every row",
+  "ground_masses": [
+    0.15,
+    0.45
+  ],
+  "kernel": "K(m,t)=exp(-m*t)+exp(-m*(16-t))",
+  "physical_score": null,
+  "required_C_over_R": 0.01,
+  "schema": "pion-anchor-scalar-nonidentifiability-protocol-v1",
+  "source_hashes": {
+    "anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "bounded_risk_contract": "7394380e264690e6166294e68112dbbf118ec46423e35c16d2fe984ef7bf77f8",
+    "diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926"
+  },
+  "target_map_mass": 0.5
+}

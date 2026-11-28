@@ -1,0 +1,17 @@
+{
+  "artifacts": {
+    "README.md": "67c82409e5494fd72d00ce0c165b2f8ca45c9e2a84cd3161163e9990c58182a4",
+    "coverage_and_sharpness.png": "dbbc660ab475b46b624f1359b53349cb54b26b23ce88515681a1c2eab7f6748a",
+    "protocol.json": "0612f68eb884b4538265b6eda04380b365d314d00f34e90b6648c039c50ef9eb",
+    "replicate_results.csv": "09fa43136e4cda7e7985338b7dc3c1efc95d287a5d4828ce517b3436478880ee",
+    "source_snapshot/independent_anchor_coverage_screen.py": "db5e07e967900f848c3fd68f2c02d0aa188ab2881a084c823a8e3d7c6d7b2162",
+    "source_snapshot/markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+    "source_snapshot/nonuniform_multistate_screen.py": "1b35aebf164e43027daa6e0dd2351874378dcd0022fb28d16f23d66ecc28804e",
+    "source_snapshot/numerics.py": "27631552db9e2fb0879e6dc1c91bfce553f516386bb3a26b405921f33824fe47",
+    "source_snapshot/setwise_markov.py": "947816cbce995f2aa1853aec1c1d9713829dd687ab2cb12d0bbababe5a3044ef",
+    "source_snapshot/source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6",
+    "summary.json": "c47f0cccb750f314de781a4a711aee61d0a52b197a4fe5b09c7b9ffa24ec8c7b",
+    "synthetic_inputs.npz": "b6a20173d66ca8fbc4db15824e7dec9a01f0ba96dff3103df1aa2076b905b30d"
+  },
+  "schema": "pion-nonuniform-multistate-artifact-hashes-v1"
+}

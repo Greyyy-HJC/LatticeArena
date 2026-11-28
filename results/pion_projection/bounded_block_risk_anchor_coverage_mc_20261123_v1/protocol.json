@@ -1,0 +1,59 @@
+{
+  "schema": "pion-bounded-block-risk-anchor-coverage-mc-protocol-v1",
+  "status": "SYNTHETIC_METHOD_DIAGNOSTIC_ONLY",
+  "physical_score": null,
+  "data_access": "No physical correlator, anchor, ensemble, sealed split, GPU, or QUDA data accessed.",
+  "grid": {
+    "planned_blocks_N": [
+      128,
+      512
+    ],
+    "known_m_dependence_order": [
+      0,
+      15
+    ],
+    "hypothetical_failure_probability": [
+      0.0,
+      0.1
+    ],
+    "independent_anchor_sample_size": [
+      32,
+      128
+    ],
+    "replicates_per_cell": 5000
+  },
+  "estimand": {
+    "families_F": 2,
+    "true_anchor_A_star": 0.0,
+    "score_scale_R": 1.0,
+    "valid_score_mean": 0.2,
+    "noise_amplitude": 0.8,
+    "failure_score": -1.0,
+    "true_failure_augmented_mean": "(1-phi)*0.2 - phi"
+  },
+  "anchor_model": {
+    "iid_normal_observations": true,
+    "known_sigma": 0.05,
+    "two_sided_alpha_A": 0.01,
+    "bound": "B=z_(1-alpha_A/2)*sigma/sqrt(n_anchor)",
+    "independent_of_score_innovations": true
+  },
+  "confidence_allocation": {
+    "alpha_total": 0.05,
+    "alpha_score": 0.04,
+    "alpha_anchor": 0.01,
+    "family_size": 2
+  },
+  "comparators": [
+    "known graph chi=m+1",
+    "deliberately misspecified IID chi=1"
+  ],
+  "positive_threshold": 0.0,
+  "seed": 2026112311,
+  "chunk_size": 250,
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.1"
+  },
+  "theoretical_event": "P(any issued graph LCB exceeds its true failure-augmented mean) <= alpha_score + alpha_anchor under the declared synthetic assumptions"
+}

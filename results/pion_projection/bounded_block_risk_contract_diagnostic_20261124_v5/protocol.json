@@ -1,0 +1,17 @@
+{
+  "schema": "pion-bounded-block-risk-contract-v1",
+  "status": "STRUCTURE_DIAGNOSTIC_ONLY",
+  "input_contract_sha256": "07ba6e2bba0f3ea38fb34dceca40b0a20a6df9536dd2f7dbf5af01a0034b26e0",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "fixtures": [
+    "current_null_contract",
+    "synthetic_graph_color_complete",
+    "synthetic_markov_gap_complete",
+    "synthetic_alpha_over_budget",
+    "synthetic_prediction_bound_over_R",
+    "synthetic_missing_anchor_coverage"
+  ],
+  "synthetic_fixture_values_are_physical": false
+}

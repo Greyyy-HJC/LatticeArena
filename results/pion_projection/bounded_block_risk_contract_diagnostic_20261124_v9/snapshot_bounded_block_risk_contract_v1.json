@@ -1,0 +1,84 @@
+{
+  "schema": "pion-bounded-block-risk-contract-v1",
+  "status": "DRAFT_NOT_READY",
+  "physical_score": null,
+  "certified": false,
+  "data_access": "none",
+  "authorization": {
+    "production_data": false,
+    "gpu_quda": false
+  },
+  "estimand": {
+    "name": "bounded_block_risk",
+    "target": {
+      "m_star": null,
+      "observable": null,
+      "units": null,
+      "physical_interpretation": null
+    },
+    "score_component": "paired_squared_error_difference",
+    "score_scale_R": null,
+    "scale_units": null,
+    "prediction_difference_abs_bound": null,
+    "prediction_difference_receipt_sha256": null,
+    "clipping_interval": null,
+    "failure_policy": null,
+    "planned_blocks_N": null,
+    "block_plan_receipt_sha256": null,
+    "delta_star": null,
+    "delta_star_units": null,
+    "result_unit": "one planned candidate-reference comparison",
+    "candidate_family_ids": null,
+    "reference_gate": {
+      "method": null,
+      "data_source_receipt_sha256": null,
+      "pass_rule": null,
+      "failure_rule": null,
+      "independent_review_receipt_sha256": null
+    }
+  },
+  "dependence": {
+    "method": null,
+    "score_specific_block_map": null,
+    "evidence_receipt_sha256": null,
+    "chromatic_number": null,
+    "color_class_independence_receipt_sha256": null,
+    "gamma_ps_lower_bound": null,
+    "gamma_ps_lower_receipt_sha256": null,
+    "pseudo_gap_k_ps": null,
+    "pseudo_gap_k_ps_receipt_sha256": null,
+    "block_chain_assumptions": null,
+    "block_chain_receipt_sha256": null,
+    "score_function_time_homogeneous": null,
+    "score_schedule_receipt_sha256": null,
+    "variance_upper_by_residue": null,
+    "variance_upper_receipt_sha256": null,
+    "initial_law_mode": null,
+    "burn_in_blocks": null,
+    "initial_law_tv_bound": null,
+    "initial_law_receipt_sha256": null
+  },
+  "anchor": {
+    "estimate_receipt_sha256": null,
+    "target_match_statement": null,
+    "units": null,
+    "total_error_bound_B": null,
+    "common_bias_bound_C": null,
+    "bound_combination_rule": null,
+    "time_varying_score_shift_bound": null,
+    "time_varying_score_shift_receipt_sha256": null,
+    "coverage_method": null,
+    "coverage_parameters": null,
+    "coverage_probability_lower_bound": null,
+    "coverage_receipt_sha256": null,
+    "common_bias_coverage_receipt_sha256": null,
+    "conditional_independence_receipt_sha256": null
+  },
+  "inference": {
+    "comparison_family_ids": null,
+    "F": null,
+    "alpha_total": null,
+    "alpha_score": null,
+    "alpha_anchor": null
+  }
+}

@@ -1,0 +1,81 @@
+cell,unit,planned,valid,failed,abstained,interpretation
+N128_m0_phi0.0_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m0_phi0.0_nA32,paired block event,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.0_nA32,family block score,1280000,1280000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.0_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.0_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.0_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m0_phi0.0_nA128,paired block event,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.0_nA128,family block score,1280000,1280000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.0_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.0_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m0_phi0.1_nA32,paired block event,640000,575631,64369,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA32,family block score,1280000,1151262,128738,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m0_phi0.1_nA128,paired block event,640000,576046,63954,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA128,family block score,1280000,1152092,127908,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m0_phi0.1_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m15_phi0.0_nA32,paired block event,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA32,family block score,1280000,1280000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m15_phi0.0_nA128,paired block event,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA128,family block score,1280000,1280000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.0_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m15_phi0.1_nA32,paired block event,640000,575999,64001,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA32,family block score,1280000,1151998,128002,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N128_m15_phi0.1_nA128,paired block event,640000,576273,63727,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA128,family block score,1280000,1152546,127454,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N128_m15_phi0.1_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m0_phi0.0_nA32,paired block event,2560000,2560000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA32,family block score,5120000,5120000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m0_phi0.0_nA128,paired block event,2560000,2560000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA128,family block score,5120000,5120000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.0_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m0_phi0.1_nA32,paired block event,2560000,2303612,256388,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA32,family block score,5120000,4607224,512776,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m0_phi0.1_nA128,paired block event,2560000,2304882,255118,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA128,family block score,5120000,4609764,510236,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m0_phi0.1_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m15_phi0.0_nA32,paired block event,2560000,2560000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA32,family block score,5120000,5120000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m15_phi0.0_nA128,paired block event,2560000,2560000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA128,family block score,5120000,5120000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.0_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA32,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m15_phi0.1_nA32,paired block event,2560000,2304404,255596,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA32,family block score,5120000,4608808,511192,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA32,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA32,anchor observation,160000,160000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA128,MC replicate,5000,5000,0,0,All-failed MC replicates abstain; failed block scores remain -1 in planned N.
+N512_m15_phi0.1_nA128,paired block event,2560000,2304287,255713,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA128,family block score,5120000,4608574,511426,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA128,anchor estimate,5000,5000,0,0,Synthetic denominator; not a measured physical sample count.
+N512_m15_phi0.1_nA128,anchor observation,640000,640000,0,0,Synthetic denominator; not a measured physical sample count.

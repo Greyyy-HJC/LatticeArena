@@ -1,0 +1,35 @@
+{
+  "candidate_point": {
+    "abstained": 0,
+    "alpha_anchor": 0.01,
+    "anchor_tv_bound_assumed": 0.001,
+    "best_case_exceeds_0_05": true,
+    "best_case_lcb_assuming_score_mean_1": 0.18760507246068875,
+    "failed": 0,
+    "fixed_score_plan_radius_assumed": 0.3863156964822313,
+    "gamma_ps_anchor_assumed": 0.2,
+    "planned": 1,
+    "planned_anchor_units": 4000,
+    "random_radius_over_R": 0.20203961552853997,
+    "score_anchor_penalty_2B_over_R": 0.42407923105707995,
+    "stationary_alpha": 0.009000000000000001,
+    "status": "FORMULA_SCENARIO_ONLY",
+    "total_B_over_R": 0.21203961552853998,
+    "valid": 1
+  },
+  "certified": false,
+  "data_access": "none",
+  "iid_hoeffding_selected_plan_n1000_score_penalty": 0.12293995693167971,
+  "physical_anchor_units": 0,
+  "physical_score": null,
+  "physical_score_units": 0,
+  "scenario_denominators": {
+    "abstained": 35,
+    "failed": 0,
+    "planned": 175,
+    "valid": 140
+  },
+  "schema": "pion-markov-anchor-coverage-summary-v1",
+  "status": "CONDITIONAL_ANALYTIC_ONLY_NOT_READY",
+  "theorem": "Paulin corrected arXiv v5 Theorem 3.11 / Eq. (3.25), with Proposition 3.15 / Eq. (3.29) initial-law TV probability cost"
+}

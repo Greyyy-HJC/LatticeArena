@@ -1,0 +1,52 @@
+{
+  "denominators": {
+    "all_failed_block_slots": {
+      "abstained": 0,
+      "failed": 4,
+      "planned": 4,
+      "unit": "all failed block slots",
+      "valid": 0
+    },
+    "all_failed_comparison_result": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "unit": "all failed comparison result",
+      "valid": 0
+    },
+    "analytic_grid_cells": {
+      "abstained": 67,
+      "failed": 0,
+      "planned": 72,
+      "unit": "hypothetical Eq. (3.26) analytic cell",
+      "valid": 5
+    },
+    "partial_block_slots": {
+      "abstained": 0,
+      "failed": 2,
+      "planned": 20,
+      "unit": "partial block slots",
+      "valid": 18
+    },
+    "partial_comparison_result": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 1,
+      "unit": "partial comparison result",
+      "valid": 1
+    },
+    "tv_sensitivity_cells": {
+      "abstained": 6,
+      "failed": 0,
+      "planned": 6,
+      "unit": "hypothetical post-burn-in TV sensitivity cell",
+      "valid": 0
+    }
+  },
+  "physical_score": null,
+  "schema": "pion-markov-varying-receipt-summary-v1",
+  "simulation_or_formula_grid_rerun": false,
+  "source_report_manifest_entries": 10,
+  "source_report_manifest_sha256": "8132f3ffc5259a3662a67c58d79d413626de81038ac3202c174ea287e26440bd",
+  "status": "SAVED_SYNTHETIC_REPORT_RECEIPT_ONLY"
+}

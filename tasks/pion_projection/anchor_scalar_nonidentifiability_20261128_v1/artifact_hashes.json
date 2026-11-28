@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "README.md": "389e185a24629e26e4b8aa38a921143c8f5510792dc3d632c98e8ae988f3a73b",
+    "counterexample_spectra.csv": "a948bc1240e9834e6f63371a940eb09a7b24b96900a7a83dc7bc0b6dd137339d",
+    "nonidentifiability.png": "7a81c332e35cbe9dc12822f69b859610e007eb93cbf45b89c22169c8d2c24aeb",
+    "protocol.json": "ad6e61d734d617514959d19f80b15d5b0b765c2de1307a35749b89b748fc1127",
+    "source_hashes.json": "f05094565c00cee3d3b379e9cd4c147c55816df19caa327df51dd02df7d8f78e",
+    "source_snapshot/anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "source_snapshot/bounded_risk_contract": "7394380e264690e6166294e68112dbbf118ec46423e35c16d2fe984ef7bf77f8",
+    "source_snapshot/diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926",
+    "summary.json": "a55d6ca75a2cb9f2484fceb818b61bf66c90223c98008fc04e0aeca68606837d"
+  },
+  "schema": "pion-anchor-scalar-nonidentifiability-artifact-hashes-v1"
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "pion-bounded-block-risk-coverage-mc-v1",
+  "classification": "synthetic conditional calibration experiment",
+  "physical_score": null,
+  "blocks": [
+    32,
+    128,
+    512
+  ],
+  "dependence_orders": [
+    0,
+    1,
+    3,
+    7,
+    15
+  ],
+  "graph_chromatic_number": "m + 1; residues modulo m+1 use disjoint innovation windows",
+  "failure_probabilities": [
+    0.0,
+    0.1
+  ],
+  "replicates_per_cell": 5000,
+  "family": 2,
+  "alpha_s": 0.05,
+  "valid_score_mean": 0.2,
+  "bounded_noise": "0.8*tanh(sum of m+1 iid standard-normal innovations / sqrt(m+1))",
+  "failure_policy": "shared paired-block failure mask across F arms; score coded to -1, retained in N",
+  "estimand_mean": "(1-phi)*valid_score_mean - phi",
+  "comparison": [
+    "naive IID chi=1",
+    "known graph-color bound chi=m+1"
+  ],
+  "anchor": "none; alpha_A=0 and anchor bias bound=0 for this algebra-only study",
+  "positive_certificate_threshold": 0.0,
+  "seed_rule": "seed = base + 1009*N + 9176*m + 17713*round(100*phi)",
+  "source_sha256": {
+    "bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.1"
+  }
+}

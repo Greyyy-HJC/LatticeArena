@@ -1,0 +1,19 @@
+{
+  "analysis_units": [
+    "analytic_grid_cells",
+    "tv_sensitivity_cells",
+    "partial_block_slots",
+    "partial_comparison_result",
+    "all_failed_block_slots",
+    "all_failed_comparison_result"
+  ],
+  "physical_or_sealed_data_access": false,
+  "physical_score": null,
+  "receipt_status_meaning": "all planned diagnostic units are accounted for; not theorem validity, coverage, or scientific success",
+  "schema": "pion-markov-varying-receipt-v1",
+  "simulation_or_formula_grid_rerun": false,
+  "source_report": "source_report/",
+  "source_report_manifest_entries": 10,
+  "source_report_manifest_sha256": "8132f3ffc5259a3662a67c58d79d413626de81038ac3202c174ea287e26440bd",
+  "status": "SAVED_SYNTHETIC_REPORT_RECEIPT_ONLY"
+}

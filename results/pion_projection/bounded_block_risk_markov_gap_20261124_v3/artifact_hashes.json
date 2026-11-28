@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "b412d0d4bc28d6a5f8c6823b26dc74f519e44a8e461390070ca55253dbeb524d",
+    "denominator_summary.csv": "e3ffcd8b46f1a57add90634f5ad0b647efed9e1d7c491b005aaeeb565018995b",
+    "initial_law_tv_sensitivity.csv": "da094a7c771b077342ce43257e05edc13b9fa1d36f491d4e521c9c3ca4c5470e",
+    "initial_law_tv_sensitivity.png": "55556706b9b1920b66da9e860254e1a017736b43929c854466a7067a60392f1f",
+    "markov_gap_sensitivity.png": "5ec60f6780a864b0bd8773190fd0068e5d648b5b2e06c2bb68f921a74a2b02c4",
+    "markov_lcb_demo.json": "85fa2a84eb05cb2a95c05f4111ba2847473a0af2629339351013b67ec1279196",
+    "protocol.json": "786692fe93f7a4549a32c907ec56f1869b90d8967b031624fdb2facde171ffc2",
+    "sensitivity_grid.csv": "c0d4ed4bd1791c4feef6dfe3fb9393af9b9400bb91b2aac40063b9991fbfd0d3",
+    "source_snapshot.py": "e8a6af0227eb685750208ad5f4278cf2307afb936c4ba6774ce30497cbcbf06e",
+    "summary.json": "987d3c74f80de922742e8304e8ad1f7387f5baa4f5309d7e65fa1a3cb65b86c1"
+  }
+}

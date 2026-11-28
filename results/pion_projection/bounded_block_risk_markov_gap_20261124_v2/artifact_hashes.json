@@ -1,0 +1,13 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "5a8e3bc2cb678a9a0eddfdb2e60288bca8fa72a763a3b036c2cad057c4a68798",
+    "denominator_summary.csv": "de99261d673b9a660ebc2665b401aec2bfcf83bc793d15af65a065ed1904e73f",
+    "markov_gap_sensitivity.png": "5ec60f6780a864b0bd8773190fd0068e5d648b5b2e06c2bb68f921a74a2b02c4",
+    "markov_lcb_demo.json": "3b9dbf41635551f283425d4a349e1dc7801d41a6a095c74111584f0efd27f975",
+    "protocol.json": "791e6eab561817c9b7b2c5716fbee08b7300d1fc73cc98fd03b18db8135391b5",
+    "sensitivity_grid.csv": "c0d4ed4bd1791c4feef6dfe3fb9393af9b9400bb91b2aac40063b9991fbfd0d3",
+    "source_snapshot.py": "5222d452070f890e6ea3c67999997fab9db092a3479845b12b3d0ab4b76c9815",
+    "summary.json": "beba471fba4c3a78277b7394e09a3774b5637cd2d82dcf13c96caf51a63c303f"
+  }
+}

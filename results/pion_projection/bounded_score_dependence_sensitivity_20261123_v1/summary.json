@@ -1,0 +1,38 @@
+{
+  "schema": "pion-bounded-score-dependency-graph-sensitivity-v1",
+  "status": "ANALYTIC_SENSITIVITY_ONLY",
+  "physical_score": null,
+  "data_access": "No correlator, anchor, validation, gap, holdout, GPU, or QUDA input was read.",
+  "assumption": "Conditional on a valid dependency graph for the planned normalized block scores, whose color classes are jointly independent (conditional on the frozen shared anchor and protocol).",
+  "normalized_score_range": [
+    -1,
+    1
+  ],
+  "formula": {
+    "penalty": "sqrt(2*chi*log(F/alpha_s)/N)",
+    "lower_bound": "L/R^2=(1-phi)*mu_valid-phi-sqrt(2*chi*log(F/alpha_s)/N)-2*B/R",
+    "required_mean": "mu_valid>(delta_star/R^2+sqrt(2*chi*log(F/alpha_s)/N)+2*B/R+phi)/(1-phi)",
+    "algebraic_effective_count": "N/chi (notation for this bound only; not an estimated ESS)"
+  },
+  "illustration_only": {
+    "planned_blocks": [
+      20,
+      100,
+      400
+    ],
+    "family": 2,
+    "alpha_s": 0.05,
+    "alpha_anchor": 0.0,
+    "relative_anchor_bound": 0.0,
+    "normalized_threshold": 0.0,
+    "failure_fraction": 0.0,
+    "note": "Optimistic sensitivity values only; none is frozen for Pion."
+  },
+  "rows": 520,
+  "source_sha256": "0819a6b2af5f91f897f235d8eb113c0e1899185298514c022898311f13dc4682",
+  "files": [
+    "README.md",
+    "sensitivity.csv",
+    "dependence_sensitivity.png"
+  ]
+}

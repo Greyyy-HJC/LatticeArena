@@ -1,0 +1,159 @@
+{
+  "analysis_amendment_sha256": "72bbd0842adc95e14519cd8c08a0ef3648994a7e02c7bf2ea59b6a1618f33371",
+  "block_length": 5,
+  "bootstrap_draws": 1000,
+  "bootstrap_indices_sha256": "d27c20b0e9dea4d6a7e6a73879f73e86a3e260168e648c80bb27c1a4a24195c0",
+  "measurement_sha256": "8a78947c8b4d1bec3b672ed57cd1406ed0bcccf6ec874747ece4d64078da7fe3",
+  "n_development_blocks": 20,
+  "n_development_configurations": 100,
+  "protocol_sha256": "1568592a9263bc3bbedd2d9c50ad740e307aa02175736f4deb795defccefa5e7",
+  "schema": "pion-two-state-development-diagnostic-v1",
+  "scope": "post-failure comparison on D development IDs 0-99; no anchor, validation, gap, or shared holdout data read",
+  "single_state_reference_gate_passed": false,
+  "single_state_windows": [
+    {
+      "chi2": 424.0311239261295,
+      "dof": 11,
+      "mass": 1.1290549433471968,
+      "p_approx": 4.807082220318319e-84,
+      "paired_shift_z": 20.406117061399204,
+      "se": 0.0024125105482447427,
+      "window": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "chi2": 88.19484281629123,
+      "dof": 8,
+      "mass": 1.0961829088336696,
+      "p_approx": 1.0806540952847216e-15,
+      "se": 0.00304575179818424,
+      "window": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "chi2": 14.175990307337623,
+      "dof": 5,
+      "mass": 1.0772963935139583,
+      "p_approx": 0.014529314453354964,
+      "paired_shift_z": 15.783952357018881,
+      "se": 0.0034816587021178117,
+      "window": [
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "status": "EXPLORATORY_DIAGNOSTIC_ONLY",
+  "two_state_threshold_screen": {
+    "failures": [
+      "Window [6, 7, 8] reaches a mass bound"
+    ],
+    "interpretation": "screen only; the two-state model was not part of the frozen primary reference, so a pass cannot reopen the anchor or certify a score",
+    "passed": false
+  },
+  "two_state_windows": [
+    {
+      "amplitudes": [
+        47.981018179124945,
+        260.23563028656616,
+        54.05367983997143,
+        174.90182888985785,
+        57.01331263112901,
+        132.46928639989824
+      ],
+      "at_boundary": false,
+      "bootstrap_failures": [],
+      "bootstrap_total": 1000,
+      "bootstrap_valid": 1000,
+      "chi2": 0.8660075438095873,
+      "condition": 7394.073828012377,
+      "dof": 7,
+      "gap": 0.6629999999999976,
+      "mass": 1.049,
+      "mass2": 1.7119999999999975,
+      "mass2_se": 0.06401834256042775,
+      "mass_bounds_reached": false,
+      "mass_se": 0.008937997919378124,
+      "p_approx": 0.996710530548441,
+      "paired_shift_z": 0.8583742367474082,
+      "window": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "amplitudes": [
+        144.11382521443923,
+        592.5656481339931,
+        154.5355135832582,
+        424.8025482768835,
+        159.93868444253604,
+        336.5288352917757
+      ],
+      "at_boundary": false,
+      "bootstrap_failures": [],
+      "bootstrap_total": 1000,
+      "bootstrap_valid": 1000,
+      "chi2": 0.6703250297176047,
+      "condition": 14572.639994457655,
+      "dof": 4,
+      "gap": 0.5559999999999996,
+      "mass": 1.0400000000000003,
+      "mass2": 1.5959999999999999,
+      "mass2_se": 0.11962974136484235,
+      "mass_bounds_reached": false,
+      "mass_se": 0.012910222997991199,
+      "p_approx": 0.9549373942218332,
+      "window": [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "amplitudes": [
+        549.332814469176,
+        3417.597932828037,
+        567.998085169582,
+        1373.0554773803246,
+        578.4170726579592,
+        229.58389611668005
+      ],
+      "at_boundary": false,
+      "bootstrap_failures": [],
+      "bootstrap_total": 1000,
+      "bootstrap_valid": 1000,
+      "chi2": 0.01529527379015743,
+      "condition": 299317.16442104906,
+      "dof": 1,
+      "gap": 0.7809999999999959,
+      "mass": 1.0630000000000002,
+      "mass2": 1.843999999999996,
+      "mass2_se": 0.2787326816356697,
+      "mass_bounds_reached": true,
+      "mass_se": 0.00964182912464583,
+      "p_approx": 0.901573348918055,
+      "paired_shift_z": 1.917388035413158,
+      "window": [
+        6,
+        7,
+        8
+      ]
+    }
+  ],
+  "warning": "A two-state fit can absorb excited-state curvature, but window robustness and fit p-values on this same development sample are not independent validation. Amplitudes are unconstrained; inspect signs and conditioning."
+}

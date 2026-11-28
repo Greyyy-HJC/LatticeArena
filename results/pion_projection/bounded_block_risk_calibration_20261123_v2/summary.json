@@ -1,0 +1,42 @@
+{
+  "schema": "pion-bounded-block-risk-calibration-v2",
+  "status": "ANALYTIC_SENSITIVITY_ONLY",
+  "physical_score": null,
+  "data_access": "No correlator, anchor, validation, gap, holdout, GPU, or QUDA input was read.",
+  "assumption": "Conditional on a valid dependency graph for the planned normalized block scores, whose color classes are jointly independent (conditional on the frozen shared anchor and protocol).",
+  "normalized_score_range": [
+    -1,
+    1
+  ],
+  "formula": {
+    "penalty": "sqrt(2*chi*log(F/alpha_s)/N)",
+    "coded_sample_mean": "zbar=(1-phi_hat)*zbar_valid-phi_hat",
+    "lower_bound": "L/R^2=zbar-sqrt(2*chi*log(F/alpha_s)/N)-2*B/R",
+    "required_mean": "zbar_valid>(delta_star/R^2+sqrt(2*chi*log(F/alpha_s)/N)+2*B/R+phi_hat)/(1-phi_hat)",
+    "anchor_error_condition": "|D(A)-D(m*)|=2*|A-m*|*|y_candidate-y_reference| <= 2*B*R",
+    "algebraic_effective_count": "N/chi (notation for this bound only; not an estimated ESS)"
+  },
+  "illustration_only": {
+    "planned_blocks": [
+      20,
+      100,
+      400
+    ],
+    "family": 2,
+    "alpha_s": 0.05,
+    "alpha_anchor": 0.0,
+    "alpha_total": 0.05,
+    "relative_anchor_bound": 0.0,
+    "normalized_threshold": 0.0,
+    "failure_fraction": 0.0,
+    "note": "Optimistic sensitivity values only; none is frozen for Pion."
+  },
+  "rows": 520,
+  "source_sha256": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+  "files": [
+    "README.md",
+    "sensitivity.csv",
+    "dependence_sensitivity.png",
+    "artifact_hashes.json"
+  ]
+}

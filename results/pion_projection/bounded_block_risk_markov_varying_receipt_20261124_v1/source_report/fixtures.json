@@ -1,0 +1,150 @@
+{
+  "partial_failure_fixture": {
+    "estimand": "mean of predeclared time-varying bounded block scores",
+    "dependence_method": "markov_time_varying_bernstein_eq_3_26",
+    "status": "CONDITIONAL_BOUND_ONLY",
+    "certified": false,
+    "physical_score": null,
+    "data_access": "none",
+    "denominators": {
+      "planned": 20,
+      "valid": 18,
+      "failed": 2,
+      "abstained": 0
+    },
+    "result_denominators": {
+      "planned": 1,
+      "valid": 1,
+      "failed": 0,
+      "abstained": 0
+    },
+    "coded_scores": [
+      -0.7,
+      -0.08235294117647052,
+      0.5352941176470589,
+      -0.34705882352941175,
+      -1.0,
+      -0.6117647058823529,
+      0.00588235294117645,
+      0.6235294117647059,
+      -0.2588235294117647,
+      0.35882352941176476,
+      -0.5235294117647058,
+      0.09411764705882364,
+      0.7117647058823529,
+      -1.0,
+      0.44705882352941173,
+      -0.4352941176470588,
+      0.1823529411764706,
+      -0.7,
+      -0.08235294117647052,
+      0.5352941176470589
+    ],
+    "planned_mean": -0.11235294117647059,
+    "radius": 46.763783083614356,
+    "initial_law_tv_bound": 0.001,
+    "initial_law_mode": "post_burn_in_tv",
+    "burn_in_blocks": 8,
+    "initial_law_receipt_sha256": "ab8171751e054d9aa64c1e87cf8c5732521dfc59e288ec180d5c70b3ed88ce92",
+    "familywise_tv_cost": 0.002,
+    "stationary_alpha": 0.038,
+    "initial_law_mean_shift_penalty": 0.002,
+    "anchor_score_shift_bound": 0.02,
+    "anchor_shift_receipt_sha256": "17e1fb1749f5b71bea0bb7b9752437265ffd42958d0a4766b1cea90ff52628b5",
+    "lcb_scope": "conditional on all cited score-map, chain, variance, gap, TV, and anchor-shift assumptions",
+    "variance_receipt_sha256": "ef157134b2d01cb242a16cc161dd2c98ce39c104bea65b9ffce047d5e0aadcbf",
+    "score_schedule_receipt_sha256": "8fd7392d507c00b9d25eaff35d5aee78973ef82a892001fd9d5256ead6067d05",
+    "k_ps_receipt_sha256": "cf6b80a199140fa81e10ec06ff1013cdef91a10eb130b7852604fb789302b02f",
+    "sum_deviation_radius": 935.2756616722871,
+    "log_tail": 4.656463480375642,
+    "variance_sum_upper": 20.0,
+    "variance_upper_by_residue": [
+      10.0,
+      10.0
+    ],
+    "M": 2.0,
+    "M_over_k_ps": 1.0,
+    "gamma_ps_lower_bound": 0.2,
+    "k_ps": 2,
+    "centered_abs_bound": 2.0,
+    "normalized_lower_bound": -46.89813602479083
+  },
+  "all_failed_fixture": {
+    "estimand": "mean of predeclared time-varying bounded block scores",
+    "dependence_method": "markov_time_varying_bernstein_eq_3_26",
+    "status": "ABSTAIN_NO_VALID_BLOCKS",
+    "certified": false,
+    "physical_score": null,
+    "data_access": "none",
+    "denominators": {
+      "planned": 4,
+      "valid": 0,
+      "failed": 4,
+      "abstained": 0
+    },
+    "result_denominators": {
+      "planned": 1,
+      "valid": 0,
+      "failed": 0,
+      "abstained": 1
+    },
+    "coded_scores": [
+      -1.0,
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "planned_mean": null,
+    "radius": 230.45833588273675,
+    "initial_law_tv_bound": 0.0,
+    "initial_law_mode": "stationary",
+    "burn_in_blocks": 0,
+    "initial_law_receipt_sha256": "336cff70b11ed7a19d1ed04f02725038acaa72fa5b05139d9839f88eee35b72f",
+    "familywise_tv_cost": 0.0,
+    "stationary_alpha": 0.04,
+    "initial_law_mean_shift_penalty": 0.0,
+    "anchor_score_shift_bound": 0.0,
+    "anchor_shift_receipt_sha256": "03e839042b63f7e3330be5b8d665eabd58d5b50b1698127b6349ecd8fefc0b37",
+    "lcb_scope": "conditional on all cited score-map, chain, variance, gap, TV, and anchor-shift assumptions",
+    "variance_receipt_sha256": "b32c48e98597201b6dc2c5326eadf2adf15911afd4f6c7c02ab55d6ad4e6fc9c",
+    "score_schedule_receipt_sha256": "9735d9d5c724651335ab562ba1150c7c73d6808d610cc9a7dbd0b1dbcc8fe36b",
+    "k_ps_receipt_sha256": "0596758c69abf15fe6a8a7ede0dad6eaf63725b1ebae3a2832e0724864afda1b",
+    "sum_deviation_radius": 921.833343530947,
+    "log_tail": 4.605170185988091,
+    "variance_sum_upper": 4.0,
+    "variance_upper_by_residue": [
+      2.0,
+      2.0
+    ],
+    "M": 2.0,
+    "M_over_k_ps": 1.0,
+    "gamma_ps_lower_bound": 0.2,
+    "k_ps": 2,
+    "centered_abs_bound": 2.0,
+    "normalized_lower_bound": null
+  },
+  "partial_failure_fixture_denominators": {
+    "planned": 20,
+    "valid": 18,
+    "failed": 2,
+    "abstained": 0
+  },
+  "partial_failure_result_denominators": {
+    "planned": 1,
+    "valid": 1,
+    "failed": 0,
+    "abstained": 0
+  },
+  "all_failed_fixture_denominators": {
+    "planned": 4,
+    "valid": 0,
+    "failed": 4,
+    "abstained": 0
+  },
+  "all_failed_result_denominators": {
+    "planned": 1,
+    "valid": 0,
+    "failed": 0,
+    "abstained": 1
+  }
+}

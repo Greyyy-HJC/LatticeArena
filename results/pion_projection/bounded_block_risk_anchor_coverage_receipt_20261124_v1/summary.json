@@ -1,0 +1,49 @@
+{
+  "aggregate_denominators": {
+    "anchor_estimate": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 80000,
+      "valid": 80000
+    },
+    "anchor_observation": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 6400000,
+      "valid": 6400000
+    },
+    "family_block_score": {
+      "abstained": 0,
+      "failed": 2557732,
+      "planned": 51200000,
+      "valid": 48642268
+    },
+    "mc_replicate": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 80000,
+      "valid": 80000
+    },
+    "paired_block_event": {
+      "abstained": 0,
+      "failed": 1278866,
+      "planned": 25600000,
+      "valid": 24321134
+    }
+  },
+  "cell_unit_rows": 80,
+  "physical_score": null,
+  "scenario_cells": 16,
+  "schema": "pion-joint-score-anchor-coverage-receipt-summary-v1",
+  "simulation_rerun": false,
+  "source_report_manifest_sha256": "0d2b59f4d17211096a228e6b187e4bbc0514edf4610a4a09875de81d9ab42590",
+  "source_report_summary": {
+    "anchor_interval_coverage_max": 0.9922,
+    "anchor_interval_coverage_min": 0.9892,
+    "graph_false_certificate_mc95_upper_max": 0.0007677019450571244,
+    "graph_false_certificate_rate_max": 0.0,
+    "iid_false_certificate_rate_max": 0.11,
+    "planned_replicates": 80000
+  },
+  "status": "SAVED_SYNTHETIC_REPORT_RECEIPT_ONLY"
+}

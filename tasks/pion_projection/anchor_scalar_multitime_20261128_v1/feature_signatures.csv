@@ -1,0 +1,9 @@
+model_id,ground_mass,feature,time,value
+spectrum_1,0.15,C_fold(2)/C_fold(4),2,2.6372985366706208
+spectrum_1,0.15,C_fold(3)/C_fold(4),3,1.4163969669109775
+spectrum_1,0.15,C_fold(5)/C_fold(4),5,0.8388549635017841
+spectrum_1,0.15,C_fold(6)/C_fold(4),6,0.7667579759408968
+spectrum_2,0.45,C_fold(2)/C_fold(4),2,2.7052305673952177
+spectrum_2,0.45,C_fold(3)/C_fold(4),3,1.6054470442196418
+spectrum_2,0.45,C_fold(5)/C_fold(4),5,0.6498048861931196
+spectrum_2,0.45,C_fold(6)/C_fold(4),6,0.44829325813939586

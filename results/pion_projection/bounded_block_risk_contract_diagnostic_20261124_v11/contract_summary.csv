@@ -1,0 +1,17 @@
+fixture,unit,planned,valid,failed,abstained,status,certified,physical_score,issue_count
+current_null_contract,one contract check,1,0,1,0,NOT_READY,False,,40
+synthetic_graph_color_complete,one contract check,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_markov_gap_complete,one contract check,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_markov_time_varying_complete,one contract check,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_markov_time_varying_support_gap_complete,one contract check,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_markov_post_burn_in_tv_complete,one contract check,1,1,0,0,CONTRACT_COMPLETE_REQUIRES_HUMAN_REVIEW,False,,0
+synthetic_alpha_over_budget,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_prediction_bound_over_R,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_missing_anchor_coverage,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_missing_initial_law_receipt,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_initial_tv_spends_score_alpha,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_time_varying_score_function,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_time_varying_missing_schedule_receipt,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_time_varying_zero_class_variance,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_time_varying_anchor_shift_under_2B_over_R,one contract check,1,0,1,0,NOT_READY,False,,1
+synthetic_markov_missing_gamma_receipt,one contract check,1,0,1,0,NOT_READY,False,,1

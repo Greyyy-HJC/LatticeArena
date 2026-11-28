@@ -1,0 +1,3 @@
+unit,planned,valid,failed,abstained,interpretation
+synthetic planning scenario,1728,1132,0,596,Valid means the bound is mathematically attainable under stated assumptions; it is not an observed or certified physical result.
+hypothetical blocks summed over grid rows,299520,269568,29952,0,Scenario-weighted hypothetical denominator; not a measurement sample and not a count of independent blocks.

@@ -1,0 +1,110 @@
+{
+  "certified": false,
+  "classification": "DATA_FREE_ANALYTIC_SENSITIVITY_ONLY",
+  "example_overlap_thresholds": [
+    {
+      "gap": 0.05,
+      "mass0": 0.25,
+      "max_A1_over_A0": 1.6004283052005515
+    },
+    {
+      "gap": 0.1,
+      "mass0": 0.25,
+      "max_A1_over_A0": 0.5457442949389012
+    },
+    {
+      "gap": 0.25,
+      "mass0": 0.25,
+      "max_A1_over_A0": 0.2658997296840855
+    },
+    {
+      "gap": 0.5,
+      "mass0": 0.25,
+      "max_A1_over_A0": 0.2541684401748983
+    },
+    {
+      "gap": 1.0,
+      "mass0": 0.25,
+      "max_A1_over_A0": 0.5664188372450483
+    },
+    {
+      "gap": 0.05,
+      "mass0": 0.5,
+      "max_A1_over_A0": 1.6111976237259213
+    },
+    {
+      "gap": 0.1,
+      "mass0": 0.5,
+      "max_A1_over_A0": 0.5558973877965256
+    },
+    {
+      "gap": 0.25,
+      "mass0": 0.5,
+      "max_A1_over_A0": 0.2841645929453698
+    },
+    {
+      "gap": 0.5,
+      "mass0": 0.5,
+      "max_A1_over_A0": 0.29322654231999146
+    },
+    {
+      "gap": 1.0,
+      "mass0": 0.5,
+      "max_A1_over_A0": 0.7167270732213213
+    },
+    {
+      "gap": 0.05,
+      "mass0": 1.0,
+      "max_A1_over_A0": 1.6332068928652559
+    },
+    {
+      "gap": 0.1,
+      "mass0": 1.0,
+      "max_A1_over_A0": 0.5713941458337346
+    },
+    {
+      "gap": 0.25,
+      "mass0": 1.0,
+      "max_A1_over_A0": 0.30406618311712597
+    },
+    {
+      "gap": 0.5,
+      "mass0": 1.0,
+      "max_A1_over_A0": 0.33145067721586263
+    },
+    {
+      "gap": 1.0,
+      "mass0": 1.0,
+      "max_A1_over_A0": 0.8684735209081063
+    }
+  ],
+  "grid": {
+    "cells_passing_noiseless_C_cap": 19115,
+    "gap_values": 90,
+    "mass0_values": 5,
+    "overlap_ratio_values": 81,
+    "pass_fraction": 0.6840221864376453,
+    "valid_spectral_cells": 27945
+  },
+  "limitations": [
+    "The response surface uses the ensemble-mean exact two-state spectrum, not random per-block correlators.",
+    "It omits stochastic nonlinearity E[m_eff(C_block)]-m_eff(E[C_block]), thermal/model mismatch, fit uncertainty, and chain dependence.",
+    "Therefore it cannot certify the anchor common-bias cap C<=0.029 or Markov coverage.",
+    "A real anchor map must be fixed per block, preserve all invalid states by abstaining, and receive an independent bias/support receipt."
+  ],
+  "map": {
+    "channel": "zero-momentum folded PP",
+    "formula": "acosh((C_fold(3)+C_fold(5))/(2*C_fold(4)))",
+    "invalid_policy": "ABSTAIN; no clipping and no dropped anchor states",
+    "map_time": 4,
+    "support": [
+      0.1,
+      3.0
+    ],
+    "temporal_extent": 16
+  },
+  "physical_score": null,
+  "schema": "pion-anchor-scalar-map-two-state-bias-v1",
+  "spectral_model": "C_fold(t)=sum_{n=0,1} A_n*(exp(-m_n*t)+exp(-m_n*(16-t))); A0>0, A1>=0",
+  "target": "m0, the exact two-state ground mass; compared with proposed common-bias cap C=0.029 a_t m_pi"
+}

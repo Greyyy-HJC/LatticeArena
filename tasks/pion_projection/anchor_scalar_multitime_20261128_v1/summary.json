@@ -1,0 +1,86 @@
+{
+  "classification": "EXACT_TWO_STATE_PAIR_SEPARATED_BY_MULTITIME_FEATURE_NOT_GLOBAL_IDENTIFIABILITY",
+  "denominators": {
+    "counterexample_spectra": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    },
+    "feature_vectors": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    },
+    "physical_anchor_inputs": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "valid": 0
+    },
+    "physical_gate": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    }
+  },
+  "models": [
+    {
+      "A1_over_A0": 14.780683550375636,
+      "excited_mass": 1.2,
+      "ground_mass": 0.15,
+      "m_eff4": 0.5000000000000002,
+      "model_id": "spectrum_1"
+    },
+    {
+      "A1_over_A0": 0.744802048733928,
+      "excited_mass": 1.2,
+      "ground_mass": 0.45,
+      "m_eff4": 0.49999999999999944,
+      "model_id": "spectrum_2"
+    }
+  ],
+  "multi_time_feature": {
+    "conditional_noise_statement": "if each observed feature vector has deterministic L2 error <= epsilon and 2*epsilon < the exact vector separation, these two neighborhoods do not overlap; no noise/error bound is supplied here",
+    "definition": [
+      "C_fold(2)/C_fold(4)",
+      "C_fold(3)/C_fold(4)",
+      "C_fold(5)/C_fold(4)",
+      "C_fold(6)/C_fold(4)"
+    ],
+    "feature_times": [
+      2,
+      3,
+      5,
+      6
+    ],
+    "l2_separation": 0.42132457885053565,
+    "linf_separation": 0.31846471780150093,
+    "vector_spectrum_1": [
+      2.6372985366706208,
+      1.4163969669109775,
+      0.8388549635017841,
+      0.7667579759408968
+    ],
+    "vector_spectrum_2": [
+      2.7052305673952177,
+      1.6054470442196418,
+      0.6498048861931196,
+      0.44829325813939586
+    ]
+  },
+  "physical_score": null,
+  "scalar_collision": {
+    "absolute_difference": 7.771561172376096e-16,
+    "feature": "m_eff(4)",
+    "map_id": "pion-folded-pp-cosh-effective-mass-t4-v1"
+  },
+  "schema": "pion-anchor-scalar-multitime-summary-v1",
+  "source_hashes": {
+    "anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "diagnostic": "fbbed0b3c8b8c3f974f489c5076f8d9d2e2a5194605839cbc3e7e852539c29b8",
+    "scalar_collision_diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926"
+  }
+}

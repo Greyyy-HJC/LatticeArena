@@ -1,0 +1,38 @@
+{
+  "schema": "pion-bounded-block-risk-contract-v1",
+  "status": "STRUCTURE_DIAGNOSTIC_ONLY",
+  "input_contract_sha256": "641f4f15c88546977545232b10e667bb92952c8c85be29afb98a0ee79b40d259",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "fixtures": [
+    "current_null_contract",
+    "synthetic_graph_color_complete",
+    "synthetic_markov_gap_complete",
+    "synthetic_markov_time_varying_complete",
+    "synthetic_markov_time_varying_support_gap_complete",
+    "synthetic_markov_post_burn_in_tv_complete",
+    "synthetic_alpha_over_budget",
+    "synthetic_prediction_bound_over_R",
+    "synthetic_missing_anchor_coverage",
+    "synthetic_missing_initial_law_receipt",
+    "synthetic_initial_tv_spends_score_alpha",
+    "synthetic_time_varying_score_function",
+    "synthetic_time_varying_missing_schedule_receipt",
+    "synthetic_time_varying_zero_class_variance",
+    "synthetic_time_varying_anchor_shift_under_2B_over_R",
+    "synthetic_markov_missing_gamma_receipt"
+  ],
+  "synthetic_fixture_values_are_physical": false,
+  "receipt": {
+    "schema": "latticearena-run-receipt-v1",
+    "unit": "one contract fixture inspection",
+    "complete_means": "all planned schema checks are accounted for; not scientific success"
+  },
+  "markov_theorem_route": {
+    "stationary": "Paulin arXiv:1212.2015v5 Theorem 3.11 / Eq. (3.25), one fixed score function f",
+    "nonstationary": "Proposition 3.15 / Eq. (3.29), requires d_TV(q P^t0, pi) <= delta",
+    "time_varying_scores_exact_k": "Eq. (3.26), requires k_ps maximizer receipt, positive variance upper bound per residue, score schedule receipt, and explicit M/k_ps factor",
+    "time_varying_scores_support_gap": "Eq. (3.26) with f_i in [-1,1], gamma_ps lower-bound receipt, uniform V'_r=ceil(N/k_ps), M/k_ps=1, and V_sum<=N+ceil(1/gamma_ps_lower)-1"
+  }
+}

@@ -1,0 +1,796 @@
+{
+  "artifact_hashes": {
+    "README.md": "b8697d50eb1a8700bb90a9eadae6b67fa5567ee949013c7f0c3bf16cee29a6e1",
+    "protocol.json": "0f570ed014b4b7380b802b9a7e2a66cd59c21d4bf88105d103a94293e24115e9",
+    "snapshot_anchor_coverage_mc.py": "8172c8b5e75540a093b9eb9f22e6409bb6b08296ecca06db04bf0a1b5af727a6",
+    "snapshot_bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "snapshot_bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_coverage_receipt_wrapper.py": "bc92186473883a4446c783edaab13d1c170cfa1aa6a43ffdd0168203b5ae2cfe",
+    "snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+    "source_report/README.md": "1b654370307fe3c959f3b6e33f49aeba94d21d22a15fa6554197fe0655796531",
+    "source_report/artifact_hashes.json": "0d2b59f4d17211096a228e6b187e4bbc0514edf4610a4a09875de81d9ab42590",
+    "source_report/cell_summary.csv": "9d0c96e61d37cef70b5e0c2335a848709b716f0471d86c2b6c827f5485b4ced3",
+    "source_report/coverage_and_utility.png": "b284697c82c5efdc222b5c808a6f77a320364e649bca6456dd6ed3bd4d56bd4e",
+    "source_report/denominator_summary.csv": "9a85152ef16ea8c2c6ee3d226359cd621299a1c388657ca455512d352fc2d112",
+    "source_report/protocol.json": "bba79dfe54945e3eac67a075f58aa320fcf731e79050e253a60bef81b2883c2f",
+    "source_report/replicate_summary.npz": "94a8555a50e772a79323adf34cd34b4b3f4cacaadcc2971fdab3f5b739908918",
+    "source_report/snapshot_anchor_coverage_mc.py": "8172c8b5e75540a093b9eb9f22e6409bb6b08296ecca06db04bf0a1b5af727a6",
+    "source_report/snapshot_bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "source_report/snapshot_bounded_block_risk_score.py": "e9e329a475281d7137a54236db5a5e82a54367824662bff7965604e3946ce63d",
+    "source_report/snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+    "source_report/summary.json": "be4ed79b8713ebf8f26682536a63cf0197dea4a6bb51c74ca83cd474cb25bb3b",
+    "summary.json": "b505ad370caeb6e651ccb404fb7aa30d3d884449ed4962cfb11a8d5936b78f79"
+  },
+  "denominators": {
+    "anchor_estimate::N128_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N128_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N128_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N128_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N128_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N128_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N128_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N128_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_estimate::N512_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "anchor estimate",
+      "valid": 5000
+    },
+    "anchor_observation::N128_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N128_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "anchor_observation::N128_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N128_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "anchor_observation::N128_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N128_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "anchor_observation::N128_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N128_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "anchor_observation::N512_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N512_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "anchor_observation::N512_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N512_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "anchor_observation::N512_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N512_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "anchor_observation::N512_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "anchor observation",
+      "valid": 640000
+    },
+    "anchor_observation::N512_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 160000,
+      "unit": "anchor observation",
+      "valid": 160000
+    },
+    "family_block_score::N128_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1280000
+    },
+    "family_block_score::N128_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1280000
+    },
+    "family_block_score::N128_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 127908,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1152092
+    },
+    "family_block_score::N128_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 128738,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1151262
+    },
+    "family_block_score::N128_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1280000
+    },
+    "family_block_score::N128_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1280000
+    },
+    "family_block_score::N128_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 127454,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1152546
+    },
+    "family_block_score::N128_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 128002,
+      "not_run": 0,
+      "planned": 1280000,
+      "unit": "family block score",
+      "valid": 1151998
+    },
+    "family_block_score::N512_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 5120000
+    },
+    "family_block_score::N512_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 5120000
+    },
+    "family_block_score::N512_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 510236,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 4609764
+    },
+    "family_block_score::N512_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 512776,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 4607224
+    },
+    "family_block_score::N512_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 5120000
+    },
+    "family_block_score::N512_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 5120000
+    },
+    "family_block_score::N512_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 511426,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 4608574
+    },
+    "family_block_score::N512_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 511192,
+      "not_run": 0,
+      "planned": 5120000,
+      "unit": "family block score",
+      "valid": 4608808
+    },
+    "mc_replicate::N128_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N128_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N128_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N128_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N128_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N128_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N128_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N128_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "mc_replicate::N512_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5000,
+      "unit": "MC replicate",
+      "valid": 5000
+    },
+    "paired_block_event::N128_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 640000
+    },
+    "paired_block_event::N128_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 640000
+    },
+    "paired_block_event::N128_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 63954,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 576046
+    },
+    "paired_block_event::N128_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 64369,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 575631
+    },
+    "paired_block_event::N128_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 640000
+    },
+    "paired_block_event::N128_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 640000
+    },
+    "paired_block_event::N128_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 63727,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 576273
+    },
+    "paired_block_event::N128_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 64001,
+      "not_run": 0,
+      "planned": 640000,
+      "unit": "paired block event",
+      "valid": 575999
+    },
+    "paired_block_event::N512_m0_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2560000
+    },
+    "paired_block_event::N512_m0_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2560000
+    },
+    "paired_block_event::N512_m0_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 255118,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2304882
+    },
+    "paired_block_event::N512_m0_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 256388,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2303612
+    },
+    "paired_block_event::N512_m15_phi0.0_nA128": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2560000
+    },
+    "paired_block_event::N512_m15_phi0.0_nA32": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2560000
+    },
+    "paired_block_event::N512_m15_phi0.1_nA128": {
+      "abstained": 0,
+      "failed": 255713,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2304287
+    },
+    "paired_block_event::N512_m15_phi0.1_nA32": {
+      "abstained": 0,
+      "failed": 255596,
+      "not_run": 0,
+      "planned": 2560000,
+      "unit": "paired block event",
+      "valid": 2304404
+    },
+    "scenario_cells": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 16,
+      "unit": "synthetic joint-coverage scenario cell",
+      "valid": 16
+    }
+  },
+  "reason_rows": [
+    {
+      "count": 64369,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N128_m0_phi0.1_nA32"
+    },
+    {
+      "count": 128738,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N128_m0_phi0.1_nA32"
+    },
+    {
+      "count": 63954,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N128_m0_phi0.1_nA128"
+    },
+    {
+      "count": 127908,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N128_m0_phi0.1_nA128"
+    },
+    {
+      "count": 64001,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N128_m15_phi0.1_nA32"
+    },
+    {
+      "count": 128002,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N128_m15_phi0.1_nA32"
+    },
+    {
+      "count": 63727,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N128_m15_phi0.1_nA128"
+    },
+    {
+      "count": 127454,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N128_m15_phi0.1_nA128"
+    },
+    {
+      "count": 256388,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N512_m0_phi0.1_nA32"
+    },
+    {
+      "count": 512776,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N512_m0_phi0.1_nA32"
+    },
+    {
+      "count": 255118,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N512_m0_phi0.1_nA128"
+    },
+    {
+      "count": 510236,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N512_m0_phi0.1_nA128"
+    },
+    {
+      "count": 255596,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N512_m15_phi0.1_nA32"
+    },
+    {
+      "count": 511192,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N512_m15_phi0.1_nA32"
+    },
+    {
+      "count": 255713,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "paired_block_event::N512_m15_phi0.1_nA128"
+    },
+    {
+      "count": 511426,
+      "reason": "Synthetic denominator; not a measured physical sample count.",
+      "state": "failed",
+      "unit": "family_block_score::N512_m15_phi0.1_nA128"
+    }
+  ],
+  "scenario": {
+    "assumptions": [
+      "the graph and failure process are known only by synthetic construction",
+      "the anchor observations follow the report's independent known-sigma synthetic model",
+      "receipt hashes do not establish project anchor independence or common-bias coverage"
+    ],
+    "description": "Receipt overlay for a verified synthetic score/anchor report; no simulations rerun.",
+    "name": "pion-joint-score-anchor-saved-coverage-report",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "tasks/pion_projection/bounded_block_risk_anchor_coverage_mc.py": "8172c8b5e75540a093b9eb9f22e6409bb6b08296ecca06db04bf0a1b5af727a6",
+      "tasks/pion_projection/bounded_block_risk_anchor_coverage_receipt.py": "bc92186473883a4446c783edaab13d1c170cfa1aa6a43ffdd0168203b5ae2cfe",
+      "tasks/pion_projection/bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+      "tasks/pion_projection/bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f",
+      "tasks/pion_projection/dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af"
+    },
+    "unit": "scenario cell, cell-by-unit count, and analysis unit"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "verified saved joint score/anchor report -> 16 scenario cells and 80 cell-unit rows -> separate score, block, replicate, and anchor counts -> exact synthetic failure reasons -> complete accounting only, not scientific success"
+}

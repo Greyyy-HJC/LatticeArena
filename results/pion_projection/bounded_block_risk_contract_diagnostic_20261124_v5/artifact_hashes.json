@@ -1,0 +1,12 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "2d20047330595790547f8c3d73c5afec85429359545e6e62a6f9944f923c8a29",
+    "contract_diagnostics.json": "48bd5dab5c70a64b49604757991cc96e874b57503c492a57e744915c05ffb60b",
+    "contract_summary.csv": "82f5ab9521c399b9bf56d8278ed25d7cd531c48279a12fb720f722bc15779c09",
+    "protocol.json": "06ef86137e55b5ef45002fc68c6e3df723c69a650d7b8849668ba7050bd7b877",
+    "snapshot_bounded_block_risk_contract.py": "f5336e509e7476494b7d8f3b4714b452d0441de645b18075b2c4a1772c30ff66",
+    "snapshot_bounded_block_risk_contract_v1.json": "07ba6e2bba0f3ea38fb34dceca40b0a20a6df9536dd2f7dbf5af01a0034b26e0",
+    "snapshot_bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f"
+  }
+}

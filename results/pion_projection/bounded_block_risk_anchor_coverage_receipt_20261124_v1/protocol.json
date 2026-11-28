@@ -1,0 +1,13 @@
+{
+  "cell_unit_rows": 80,
+  "data_access": "verified saved synthetic report only; no simulation rerun",
+  "physical_score": null,
+  "receipt_schema": "latticearena-run-receipt-v1",
+  "receipt_status_meaning": "all planned units are accounted for; not scientific success",
+  "scenario_cell_count": 16,
+  "schema": "pion-joint-score-anchor-coverage-receipt-v1",
+  "source_report": "source_report/",
+  "source_report_manifest_entries": 11,
+  "source_report_manifest_sha256": "0d2b59f4d17211096a228e6b187e4bbc0514edf4610a4a09875de81d9ab42590",
+  "status": "SAVED_SYNTHETIC_REPORT_RECEIPT_ONLY"
+}

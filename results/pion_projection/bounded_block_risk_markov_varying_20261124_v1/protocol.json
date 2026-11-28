@@ -1,0 +1,30 @@
+{
+  "status": "SYNTHETIC_ANALYTIC_SENSITIVITY_ONLY",
+  "theorem": "Paulin arXiv:1212.2015v5 Theorem 3.11 / Eq. (3.26)",
+  "stationary_alpha": 0.04,
+  "family": 2,
+  "n_grid": [
+    20,
+    100,
+    500
+  ],
+  "k_ps_grid": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "gamma_ps_lower_grid": [
+    0.05,
+    0.2,
+    0.8
+  ],
+  "variance_profiles_are_hypothetical_upper_bounds": true,
+  "fixed_comparator": "Paulin Eq. (3.25) radius using the maximum per-index variance bound for each profile; formula-only context, not a simultaneous theorem for varying f_i",
+  "coverage_simulation": false,
+  "physical_data_access": "none",
+  "sealed_inputs_accessed": false,
+  "gpu_quda": false,
+  "physical_score": null,
+  "certified": false
+}

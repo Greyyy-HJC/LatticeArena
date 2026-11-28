@@ -1,0 +1,17 @@
+{
+  "analysis_units": [
+    "scenario_cell",
+    "monte_carlo_replicate",
+    "paired_planned_block_event",
+    "candidate_family_block_score"
+  ],
+  "data_access": "verified saved synthetic report only; no simulation rerun",
+  "physical_score": null,
+  "receipt_schema": "latticearena-run-receipt-v1",
+  "receipt_status_meaning": "all planned units are accounted for; not scientific success",
+  "schema": "pion-known-graph-coverage-receipt-v1",
+  "source_report": "source_report/",
+  "source_report_manifest_entries": 10,
+  "source_report_manifest_sha256": "9cf0deb20d197e935f2029afd74aa9775b18bd4fe70aeeb97b941bf92f18e3bf",
+  "status": "SAVED_SYNTHETIC_REPORT_RECEIPT_ONLY"
+}

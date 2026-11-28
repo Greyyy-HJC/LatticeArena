@@ -1,0 +1,25 @@
+cell,unit,planned,valid,failed,abstained,probability_mass,interpretation
+symmetric_two_point_nA16,hypothetical anchor observation,16,16,0,0,,Hypothetical iid observations; not measured data.
+symmetric_two_point_nA16,exact binomial count state,17,17,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+symmetric_two_point_nA32,hypothetical anchor observation,32,32,0,0,,Hypothetical iid observations; not measured data.
+symmetric_two_point_nA32,exact binomial count state,33,33,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+symmetric_two_point_nA128,hypothetical anchor observation,128,128,0,0,,Hypothetical iid observations; not measured data.
+symmetric_two_point_nA128,exact binomial count state,129,129,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+symmetric_two_point_nA512,hypothetical anchor observation,512,512,0,0,,Hypothetical iid observations; not measured data.
+symmetric_two_point_nA512,exact binomial count state,513,513,0,0,1.0000000000000002,All n+1 count states are enumerated and probability weighted; not MC replicates.
+moderate_skew_two_point_nA16,hypothetical anchor observation,16,16,0,0,,Hypothetical iid observations; not measured data.
+moderate_skew_two_point_nA16,exact binomial count state,17,17,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+moderate_skew_two_point_nA32,hypothetical anchor observation,32,32,0,0,,Hypothetical iid observations; not measured data.
+moderate_skew_two_point_nA32,exact binomial count state,33,33,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+moderate_skew_two_point_nA128,hypothetical anchor observation,128,128,0,0,,Hypothetical iid observations; not measured data.
+moderate_skew_two_point_nA128,exact binomial count state,129,129,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+moderate_skew_two_point_nA512,hypothetical anchor observation,512,512,0,0,,Hypothetical iid observations; not measured data.
+moderate_skew_two_point_nA512,exact binomial count state,513,513,0,0,0.9999999999999999,All n+1 count states are enumerated and probability weighted; not MC replicates.
+rare_spike_two_point_nA16,hypothetical anchor observation,16,16,0,0,,Hypothetical iid observations; not measured data.
+rare_spike_two_point_nA16,exact binomial count state,17,17,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+rare_spike_two_point_nA32,hypothetical anchor observation,32,32,0,0,,Hypothetical iid observations; not measured data.
+rare_spike_two_point_nA32,exact binomial count state,33,33,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.
+rare_spike_two_point_nA128,hypothetical anchor observation,128,128,0,0,,Hypothetical iid observations; not measured data.
+rare_spike_two_point_nA128,exact binomial count state,129,129,0,0,1.0000000000000002,All n+1 count states are enumerated and probability weighted; not MC replicates.
+rare_spike_two_point_nA512,hypothetical anchor observation,512,512,0,0,,Hypothetical iid observations; not measured data.
+rare_spike_two_point_nA512,exact binomial count state,513,513,0,0,1.0,All n+1 count states are enumerated and probability weighted; not MC replicates.

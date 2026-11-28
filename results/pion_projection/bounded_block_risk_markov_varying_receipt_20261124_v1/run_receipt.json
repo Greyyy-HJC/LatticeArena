@@ -1,0 +1,136 @@
+{
+  "artifact_hashes": {
+    "README.md": "1240788847b1e9d545ea9eef474079370f518a7829506b2dbf091f00d2c7beed",
+    "protocol.json": "78bf8559744d52e67ae5512e756ab8d1caf8893d8bd3fdb154480d489cde6c82",
+    "snapshot_contract.py": "cd5d0e719884be8c25d96f29d03ec919641ff09aab74fec977bc80690aaf617e",
+    "snapshot_contract_v1.json": "8803607c7b461676344d12b7491d05943b88cedc2e13f92b4ab1c10930b0c291",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_markov_varying.py": "1e435ff73ebfc4857174a81115c61d861a9fd913a684e7f312ceb2e486bd64e8",
+    "snapshot_markov_varying_diagnostic.py": "091d0511ac5eb61af70795e0506fe85f6ea42f53d09c98defe2035bd21a5a100",
+    "snapshot_markov_varying_receipt.py": "793c0a60001b67c0405817eaf760e9270c2c330f049331a91c288a4c00821b84",
+    "source_report/README.md": "3badb1755df7aaeba77ae7eaf64f0cbb26d347849969a433f570a95106b96cfa",
+    "source_report/artifact_hashes.json": "8132f3ffc5259a3662a67c58d79d413626de81038ac3202c174ea287e26440bd",
+    "source_report/fixtures.json": "0f542de23e7c1657049913ba7b391ebfb1775b212a17669e4dabcbdaa1dc349c",
+    "source_report/markov_varying_sensitivity.png": "5e0a9aae4320d7ad12764de840a2727f5e32ce813f819f73731dc70e8e8baff4",
+    "source_report/protocol.json": "8615c40c8fb05dd415910a4e2ab4ad42a782e108b4bd9bb88d9a2771b5cf28c4",
+    "source_report/scenario_grid.csv": "770b70ab9f8d106c4474d16bcb6a256d3e0f5aea9e0925f9b4c968d9352f290b",
+    "source_report/snapshot_contract_inspector.py": "aac724af4b1285c1ac467b7aad6d3ef97ed9359d715e76994027041bcbc1ceef",
+    "source_report/snapshot_contract_v1.json": "8803607c7b461676344d12b7491d05943b88cedc2e13f92b4ab1c10930b0c291",
+    "source_report/snapshot_markov_varying.py": "1e435ff73ebfc4857174a81115c61d861a9fd913a684e7f312ceb2e486bd64e8",
+    "source_report/snapshot_markov_varying_diagnostic.py": "091d0511ac5eb61af70795e0506fe85f6ea42f53d09c98defe2035bd21a5a100",
+    "source_report/tv_sensitivity.csv": "20000e3200062dfd34b3c10b90fcc2a0d650e342d1878cb2de76d6bb76fe618f",
+    "summary.json": "1c8217079c5e234642e7431a72d53e6007ab139ebeb6d1a77cc15142e3f3d1e2"
+  },
+  "denominators": {
+    "all_failed_block_slots": {
+      "abstained": 0,
+      "failed": 4,
+      "not_run": 0,
+      "planned": 4,
+      "unit": "all failed block slots",
+      "valid": 0
+    },
+    "all_failed_comparison_result": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "all failed comparison result",
+      "valid": 0
+    },
+    "analytic_grid_cells": {
+      "abstained": 67,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 72,
+      "unit": "hypothetical Eq. (3.26) analytic cell",
+      "valid": 5
+    },
+    "partial_block_slots": {
+      "abstained": 0,
+      "failed": 2,
+      "not_run": 0,
+      "planned": 20,
+      "unit": "partial block slots",
+      "valid": 18
+    },
+    "partial_comparison_result": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "partial comparison result",
+      "valid": 1
+    },
+    "tv_sensitivity_cells": {
+      "abstained": 6,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 6,
+      "unit": "hypothetical post-burn-in TV sensitivity cell",
+      "valid": 0
+    }
+  },
+  "reason_rows": [
+    {
+      "count": 67,
+      "reason": "Synthetic bound does not reach a positive zero-threshold LCB.",
+      "state": "abstained",
+      "unit": "analytic_grid_cells"
+    },
+    {
+      "count": 5,
+      "reason": "ABSTAIN_BOUND_EXCEEDS_MAX_SCORE",
+      "state": "abstained",
+      "unit": "tv_sensitivity_cells"
+    },
+    {
+      "count": 1,
+      "reason": "ABSTAIN_ALPHA_EXHAUSTED",
+      "state": "abstained",
+      "unit": "tv_sensitivity_cells"
+    },
+    {
+      "count": 2,
+      "reason": "Synthetic illustrative failure retained in the planned denominator; not a measurement failure.",
+      "state": "failed",
+      "unit": "partial_block_slots"
+    },
+    {
+      "count": 4,
+      "reason": "Synthetic illustrative failure retained in the planned denominator; not a measurement failure.",
+      "state": "failed",
+      "unit": "all_failed_block_slots"
+    },
+    {
+      "count": 1,
+      "reason": "All planned illustrative blocks failed; no conditional LCB is emitted.",
+      "state": "abstained",
+      "unit": "all_failed_comparison_result"
+    }
+  ],
+  "scenario": {
+    "assumptions": [
+      "gamma, k_ps, variance, TV, and score schedules in the source report are hypothetical",
+      "fixture receipts are synthetic placeholders and do not establish project assumptions",
+      "the time-varying finite-plan mean may differ from the accepted target unless reviewed"
+    ],
+    "description": "Receipt overlay for a verified synthetic Eq. (3.26) report; no diagnostic rerun.",
+    "name": "pion-time-varying-markov-saved-diagnostic",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "source_report/artifact_hashes.json": "8132f3ffc5259a3662a67c58d79d413626de81038ac3202c174ea287e26440bd",
+      "tasks/pion_projection/bounded_block_risk_contract.py": "cd5d0e719884be8c25d96f29d03ec919641ff09aab74fec977bc80690aaf617e",
+      "tasks/pion_projection/bounded_block_risk_contract_v1.json": "8803607c7b461676344d12b7491d05943b88cedc2e13f92b4ab1c10930b0c291",
+      "tasks/pion_projection/bounded_block_risk_markov_varying.py": "1e435ff73ebfc4857174a81115c61d861a9fd913a684e7f312ceb2e486bd64e8",
+      "tasks/pion_projection/bounded_block_risk_markov_varying_diagnostic.py": "091d0511ac5eb61af70795e0506fe85f6ea42f53d09c98defe2035bd21a5a100",
+      "tasks/pion_projection/bounded_block_risk_markov_varying_receipt.py": "793c0a60001b67c0405817eaf760e9270c2c330f049331a91c288a4c00821b84"
+    },
+    "unit": "analytic cell, TV sensitivity cell, fixture block slot, and result"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "verified saved Eq. (3.26) diagnostic -> separate analytic/TV cells and fixture units -> exact abstention/failure reasons -> hashed accounting receipt; no diagnostic rerun and complete does not mean theorem validity or coverage"
+}

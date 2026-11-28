@@ -1,0 +1,27 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "b8697d50eb1a8700bb90a9eadae6b67fa5567ee949013c7f0c3bf16cee29a6e1",
+    "protocol.json": "0f570ed014b4b7380b802b9a7e2a66cd59c21d4bf88105d103a94293e24115e9",
+    "run_receipt.json": "f57593b0e12d470f7021a38c63c1ad1915bceda56a89d9929107c8fdfb7896af",
+    "snapshot_anchor_coverage_mc.py": "8172c8b5e75540a093b9eb9f22e6409bb6b08296ecca06db04bf0a1b5af727a6",
+    "snapshot_bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "snapshot_bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_coverage_receipt_wrapper.py": "bc92186473883a4446c783edaab13d1c170cfa1aa6a43ffdd0168203b5ae2cfe",
+    "snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+    "source_report/README.md": "1b654370307fe3c959f3b6e33f49aeba94d21d22a15fa6554197fe0655796531",
+    "source_report/artifact_hashes.json": "0d2b59f4d17211096a228e6b187e4bbc0514edf4610a4a09875de81d9ab42590",
+    "source_report/cell_summary.csv": "9d0c96e61d37cef70b5e0c2335a848709b716f0471d86c2b6c827f5485b4ced3",
+    "source_report/coverage_and_utility.png": "b284697c82c5efdc222b5c808a6f77a320364e649bca6456dd6ed3bd4d56bd4e",
+    "source_report/denominator_summary.csv": "9a85152ef16ea8c2c6ee3d226359cd621299a1c388657ca455512d352fc2d112",
+    "source_report/protocol.json": "bba79dfe54945e3eac67a075f58aa320fcf731e79050e253a60bef81b2883c2f",
+    "source_report/replicate_summary.npz": "94a8555a50e772a79323adf34cd34b4b3f4cacaadcc2971fdab3f5b739908918",
+    "source_report/snapshot_anchor_coverage_mc.py": "8172c8b5e75540a093b9eb9f22e6409bb6b08296ecca06db04bf0a1b5af727a6",
+    "source_report/snapshot_bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "source_report/snapshot_bounded_block_risk_score.py": "e9e329a475281d7137a54236db5a5e82a54367824662bff7965604e3946ce63d",
+    "source_report/snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+    "source_report/summary.json": "be4ed79b8713ebf8f26682536a63cf0197dea4a6bb51c74ca83cd474cb25bb3b",
+    "summary.json": "b505ad370caeb6e651ccb404fb7aa30d3d884449ed4962cfb11a8d5936b78f79"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "pion-bounded-block-risk-color-empirical-bernstein-v1",
+  "classification": "synthetic conditional calibration experiment",
+  "physical_score": null,
+  "data_access": "no project measurements, anchor, sealed split, GPU, or QUDA data accessed",
+  "blocks": [
+    32,
+    128,
+    512
+  ],
+  "dependence_orders": [
+    0,
+    1,
+    3,
+    7,
+    15
+  ],
+  "failure_probabilities": [
+    0.0,
+    0.1
+  ],
+  "replicates_per_cell": 5000,
+  "family": 2,
+  "alpha_score": 0.05,
+  "score_generator": "mean + amplitude*tanh of moving sums of Gaussian innovations; residues modulo m+1 have disjoint innovations",
+  "failure_rule": "paired independent failure mask; each failed planned score remains in N and is encoded as -1",
+  "empirical_bernstein": "apply Maurer-Pontil Theorem 11 after [-1,1] to [0,1] scaling within each predeclared color class; Bonferroni alpha_s/(F*chi); singleton class fallback Hoeffding",
+  "graph_hoeffding_baseline": "existing graph-color penalty with known chi=m+1",
+  "multiplicity": "simultaneous over F candidates and chi color classes for empirical Bernstein; finite family F in Hoeffding baseline",
+  "positive_certificate_threshold": 0.0,
+  "source_hashes": {
+    "bounded_block_risk_empirical_bernstein_mc.py": "74e96d0d5ff60491f81fbda2f78b20bcbde881482e672b6bc838f6410afa854c",
+    "bounded_block_risk_empirical_bernstein.py": "fe62ee14bb5e02e2a860ecf5c3b925da8a8c7ec7c42e66ac69bf735d54c69d0c",
+    "bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af"
+  },
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.1"
+  },
+  "limitations": [
+    "the dependency graph and proper coloring are known by construction, not inferred",
+    "all guarantees are conditional on independent variables within each color class",
+    "sample variance cannot repair dependence, anchor bias, or misspecified clipping bounds",
+    "empirical Bernstein can be wider than Hoeffding at high chromatic number or small color classes",
+    "the positive threshold is an illustration, not a physical delta_star"
+  ]
+}

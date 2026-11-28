@@ -1,0 +1,59 @@
+{
+  "evidence_class": "analytic_selected_contract_sensitivity_only",
+  "formula": "best_case_LCB=1-score_radius-2*TV-2*(anchor_random_radius/R+C/R)",
+  "formula_scenario_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 101,
+    "unit": "one deterministic C/R value; not a measurement",
+    "valid": 101
+  },
+  "inputs": {
+    "C_over_R_max_for_any_best_case_pass": 0.07880253623034439,
+    "alpha_anchor": 0.01,
+    "alpha_score": 0.04,
+    "anchor_burn_in_units_assumed": 8,
+    "anchor_gamma_ps_lower_assumed": 0.2,
+    "anchor_method": "markov_pseudo_gap_bernstein",
+    "anchor_random_radius_over_R": 0.20203961552853997,
+    "anchor_stationary_alpha_after_tv": 0.009000000000000001,
+    "anchor_tv_bound_assumed": 0.001,
+    "best_case_lcb_before_C": 0.20760507246068877,
+    "delta_star_over_R2": 0.05,
+    "family_F": 3,
+    "gamma_ps_lower_assumed": 0.2,
+    "n_anchor": 4000,
+    "planned_score_blocks": 4000,
+    "post_burn_in_tv_assumed": 0.001,
+    "score_radius": 0.3863156964822313,
+    "selected_C_over_R": 0.01,
+    "selected_C_units": 0.028999999999999998,
+    "support_interval": [
+      0.1,
+      3.0
+    ],
+    "support_width_R": 2.9,
+    "target": "lowest zero-momentum valence isovector pseudoscalar energy",
+    "trivial_range_only_C_over_R": 1.0,
+    "units": "a_t m_pi"
+  },
+  "physical_evidence_denominator": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "reason": "no anchor scalar-map, common-bias, independence, reference, or chain receipts",
+    "valid": 0
+  },
+  "physical_score": null,
+  "range_only_C_over_R_best_case_lcb": -1.7923949275393112,
+  "schema": "pion-anchor-common-bias-feasibility-v2",
+  "selected_C_over_R_best_case_lcb": 0.18760507246068878,
+  "source_hashes": {
+    "anchor_bias_feasibility_diagnostic.py": "d6adc4d51bf9fb955ae320ab0713e14e00f2b98bb63c341886287d7ca5df53e8",
+    "bounded_block_risk_anchor_markov.py": "7046cb667509a73366982d46f89ce70a454f0feb4b8e3f4ac95be41e412e842b",
+    "bounded_block_risk_contract.py": "a7dc0649ef2970f3f2f6c2ead1b86acfd8241d2d06259cfb35ee5da9d8870278",
+    "bounded_block_risk_contract_v1.json": "7394380e264690e6166294e68112dbbf118ec46423e35c16d2fe984ef7bf77f8",
+    "bounded_block_risk_markov_gap.py": "e8a6af0227eb685750208ad5f4278cf2307afb936c4ba6774ce30497cbcbf06e"
+  },
+  "status": "NOT_READY_UNCERTIFIED"
+}

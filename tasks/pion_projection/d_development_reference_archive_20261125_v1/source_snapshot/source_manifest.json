@@ -1,0 +1,28 @@
+{
+  "files": {
+    "core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "core/io.py": "17da0ac2eaaaaf8795841770195dfee491a08f3751b10a1ebc52973c3ad94486",
+    "core/receipts.py": "a523507fcd0dffa527f57ae64e8482e6125e33a55956c2a3f65fd4e0678dfc42",
+    "core/state.py": "ea44101372e7a68f8cd48523c31ce809acd4873347a34e03fe52ee9b4a522062",
+    "tasks/__init__.py": "7445b17b967638a8fcf7719cd5ee94021ced0eddac41b18e4787cd1d0b0ef875",
+    "tasks/pion_projection/__init__.py": "eb87c24e79afd015b32482e2b50102239b3ef12510184ab5e90f443c5182bf1e",
+    "tasks/pion_projection/common.py": "606b6a5e5ca1dd9542a1133e08ca9f2f3df259c7c841d63fab04daa5b7371dc2",
+    "tasks/pion_projection/effective_mass_development_diagnostic.py": "03947100a7debae800b4edd42482ac4c831be227dab10e6b4ce93c4d0cad0210",
+    "tasks/pion_projection/experiment.py": "cd125c69a3b64cc37e1fbae8c2ac426f13c44003f42c606280fabc436a57a900",
+    "tasks/pion_projection/experiment_analysis_amendment_20261120.py": "6ce2a238c1a717a815815d7a66cfbaaa4bf1b286e630018e10640a48e4912784",
+    "tasks/pion_projection/identity.py": "0de741940b935b1e56f457618e13ce543ec3edca6ac358716c2f17c535078eab",
+    "tasks/pion_projection/reference.py": "153675ba921fda9f339342694ba7b84426a8a96f892b049a7bec060f85c0eb4a",
+    "tasks/pion_projection/reference_twostate.py": "df37ef7a1b5c8f4cd27d91c2e2a0d0653911c1a4c1a09bff0fc8b647c2a99aca",
+    "tasks/pion_projection/statistics.py": "69cda40c0f997a29179f1941388a90ea68d7f059ec686226b37a87bffc77d0e5",
+    "tasks/pion_projection/two_state_development_diagnostic.py": "72bbd0842adc95e14519cd8c08a0ef3648994a7e02c7bf2ea59b6a1618f33371"
+  },
+  "runners": [
+    "tasks/pion_projection/experiment.py",
+    "tasks/pion_projection/experiment_analysis_amendment_20261120.py",
+    "tasks/pion_projection/two_state_development_diagnostic.py",
+    "tasks/pion_projection/effective_mass_development_diagnostic.py"
+  ],
+  "schema": "pion-d-development-runner-source-snapshot-v1",
+  "scope": "exact local source closure used for the numerical replay; not a claim of standalone execution without the D input bundle and runtime dependencies",
+  "source_revision": "f9603b4c9abeaecae83058139e9ace62ea902e4a"
+}

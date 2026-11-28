@@ -6,9 +6,10 @@ a small table so a validated claim cannot silently regress or skip a stage.
 import re
 
 STATES = ('operator', 'reference', 'numerical', 'statistical', 'comparison')
-STATUS = ('not_run', 'draft', 'validated', 'failed')
+STATUS = ('not_run', 'draft', 'validated', 'failed', 'abstained')
 ALLOWED = {('not_run', 'draft'), ('not_run', 'failed'), ('draft', 'validated'),
-           ('draft', 'failed'), ('validated', 'failed')}
+           ('draft', 'failed'), ('validated', 'failed'),
+           ('not_run', 'abstained'), ('draft', 'abstained')}
 
 
 class RunState:
@@ -28,6 +29,8 @@ class RunState:
             raise ValueError(f'illegal transition {name}: {self.status[name]} -> {status}')
         if status == 'validated' and not evidence_hash:
             raise ValueError(f'{name}: validated requires a bound evidence hash, not a label')
+        if status == 'abstained' and (not isinstance(evidence, str) or not evidence.strip()):
+            raise ValueError(f'{name}: abstained requires a nonempty reason')
         if evidence_hash is not None and (not isinstance(evidence_hash, str)
                                           or not re.fullmatch(r'[0-9a-f]{64}', evidence_hash)):
             raise ValueError('evidence_hash must be a SHA-256 hex digest')
@@ -37,6 +40,10 @@ class RunState:
         if evidence_hash:
             self.evidence_hash[name] = evidence_hash
         return self
+
+    def abstain(self, name, reason, evidence_hash=None):
+        """Record a terminal no-certificate outcome without calling it failure."""
+        return self.set(name, 'abstained', evidence=reason, evidence_hash=evidence_hash)
 
     def physical_ready(self):
         return all(self.status[name] == 'validated' and self.evidence_hash[name]

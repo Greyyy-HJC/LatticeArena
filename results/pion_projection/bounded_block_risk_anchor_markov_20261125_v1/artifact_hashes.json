@@ -1,0 +1,11 @@
+{
+  "README.md": "b7b7d4823624001114006e744628b56dadbc4ca5d809c10408a7186f8671d5e3",
+  "anchor_markov_sensitivity.csv": "5e1351dfc4d17ac399108900130e04078451fb364e2b247d3b4f062de22d74b9",
+  "anchor_markov_sensitivity.png": "9a6238129a59ca6b310607cd014133e10c67c885bcdff5128b584a091c24804e",
+  "anchor_markov_sensitivity.svg": "3a47c74c5edc319d32af77682a5afff569d98dc8fcc85714a1fd78191725aed3",
+  "denominator_summary.csv": "1c380f91fd776b8bd09c6152c9cc0ce055790183be260f645eb1f302471189d3",
+  "protocol.json": "00eb5d09a4350c3e4252fd54747f1066eeac8f3203f4eee7ccf1620c255e1750",
+  "run_receipt.json": "c46ddce2bb18280bcec15155192b47f782322214e4fd13123a6434214e1f95a3",
+  "snapshot_bounded_block_risk_anchor_markov.py": "8e0c46aeb803bed5c4954be015783f4589e7af0e605ff41a65dde7d6f1d2150a",
+  "summary.json": "564ad17af3633c6b3662f834a3449a4c91124728f4947b3aa0da11bddf6d781e"
+}

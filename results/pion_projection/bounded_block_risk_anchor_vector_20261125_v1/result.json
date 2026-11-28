@@ -1,0 +1,126 @@
+{
+  "schema": "pion-vector-anchor-box-report-v1",
+  "status": "CONDITIONAL_VECTOR_MEAN_BOX_ONLY",
+  "physical_score": null,
+  "certified": false,
+  "data_access": "none",
+  "authorization": {
+    "physical_data": false,
+    "gpu_quda": false
+  },
+  "denominators": {
+    "vector_box": {
+      "planned": 1,
+      "valid": 1,
+      "failed": 0,
+      "abstained": 0
+    },
+    "feature_coordinates": {
+      "planned": 3,
+      "valid": 3,
+      "failed": 0,
+      "abstained": 0
+    }
+  },
+  "result": {
+    "status": "CONDITIONAL_MARKOV_VECTOR_MEAN_BOX_ONLY",
+    "method": "componentwise corrected Markov Bernstein with a Bonferroni union bound",
+    "sample_count_n_A": 4000,
+    "feature_count": 3,
+    "gamma_ps_lower_assumed": 0.2,
+    "alpha_anchor": 0.01,
+    "initial_law_tv_bound": 0.001,
+    "stationary_alpha_after_tv": 0.009000000000000001,
+    "burn_in_units": 8,
+    "stationary_start": false,
+    "feature_intervals": [
+      {
+        "feature_index": 0,
+        "support": [
+          0.0,
+          1.0
+        ],
+        "sample_mean": 0.5,
+        "raw_bernstein_radius": 0.23254746170891125,
+        "capped_radius": 0.23254746170891125,
+        "confidence_interval": [
+          0.2674525382910887,
+          0.7325474617089113
+        ],
+        "coordinate_family_size": 3,
+        "stationary_alpha": 0.009000000000000001
+      },
+      {
+        "feature_index": 1,
+        "support": [
+          -1.0,
+          1.0
+        ],
+        "sample_mean": 0.09993902737172052,
+        "raw_bernstein_radius": 0.4650949234178225,
+        "capped_radius": 0.4650949234178225,
+        "confidence_interval": [
+          -0.365155896046102,
+          0.565033950789543
+        ],
+        "coordinate_family_size": 3,
+        "stationary_alpha": 0.009000000000000001
+      },
+      {
+        "feature_index": 2,
+        "support": [
+          0.0,
+          1.0
+        ],
+        "sample_mean": 0.7000439189848714,
+        "raw_bernstein_radius": 0.23254746170891125,
+        "capped_radius": 0.23254746170891125,
+        "confidence_interval": [
+          0.4674964572759601,
+          0.9325913806937827
+        ],
+        "coordinate_family_size": 3,
+        "stationary_alpha": 0.009000000000000001
+      }
+    ],
+    "denominators": {
+      "vector_box": {
+        "planned": 1,
+        "valid": 1,
+        "failed": 0,
+        "abstained": 0
+      },
+      "feature_coordinates": {
+        "planned": 3,
+        "valid": 3,
+        "failed": 0,
+        "abstained": 0
+      }
+    },
+    "joint_coverage_probability_lower_bound": 0.99,
+    "coverage_status": "conditional on all stated chain, support and receipt assumptions",
+    "fit_target_interval": null,
+    "common_bias_bound_C": null,
+    "certified": false,
+    "physical_score": null,
+    "data_access": "in_memory_argument_only",
+    "required_assumptions": [
+      "each feature is a fixed measurable scalar of the same anchor-chain state",
+      "all retained rows use the same time-homogeneous anchor chain",
+      "each feature support is established independently of the observed sample values",
+      "gamma_ps_lower is justified for this anchor chain",
+      "stationary start or the post-burn-in path law has the declared TV bound",
+      "alpha_anchor covers the single joint vector box and is not reused as per-coordinate alpha",
+      "a separately certified fit-range map is required to connect this box to m_star"
+    ]
+  },
+  "target_fit_interval": null,
+  "common_bias_bound_C": null,
+  "not_established": [
+    "the assumed anchor-chain pseudo-gap or TV bound",
+    "the feature support bounds for actual correlator contributions",
+    "a certified interval image of the fixed PP/A4P nonlinear fit over the mean box",
+    "the correspondence of that fit image to the selected m_star",
+    "the common-bias bridge C and independence from the score-chain outcomes"
+  ]
+}

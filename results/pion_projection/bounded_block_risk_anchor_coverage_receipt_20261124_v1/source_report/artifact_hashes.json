@@ -1,0 +1,13 @@
+{
+  "README.md": "1b654370307fe3c959f3b6e33f49aeba94d21d22a15fa6554197fe0655796531",
+  "protocol.json": "bba79dfe54945e3eac67a075f58aa320fcf731e79050e253a60bef81b2883c2f",
+  "cell_summary.csv": "9d0c96e61d37cef70b5e0c2335a848709b716f0471d86c2b6c827f5485b4ced3",
+  "denominator_summary.csv": "9a85152ef16ea8c2c6ee3d226359cd621299a1c388657ca455512d352fc2d112",
+  "replicate_summary.npz": "94a8555a50e772a79323adf34cd34b4b3f4cacaadcc2971fdab3f5b739908918",
+  "coverage_and_utility.png": "b284697c82c5efdc222b5c808a6f77a320364e649bca6456dd6ed3bd4d56bd4e",
+  "snapshot_anchor_coverage_mc.py": "8172c8b5e75540a093b9eb9f22e6409bb6b08296ecca06db04bf0a1b5af727a6",
+  "snapshot_bounded_block_risk_score.py": "e9e329a475281d7137a54236db5a5e82a54367824662bff7965604e3946ce63d",
+  "snapshot_bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+  "snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+  "summary.json": "be4ed79b8713ebf8f26682536a63cf0197dea4a6bb51c74ca83cd474cb25bb3b"
+}

@@ -1,0 +1,26 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "1240788847b1e9d545ea9eef474079370f518a7829506b2dbf091f00d2c7beed",
+    "protocol.json": "78bf8559744d52e67ae5512e756ab8d1caf8893d8bd3fdb154480d489cde6c82",
+    "run_receipt.json": "83aa39fa804c5b95546c540e5442bef274737c1c86fc41e3a4ec6c216ff31615",
+    "snapshot_contract.py": "cd5d0e719884be8c25d96f29d03ec919641ff09aab74fec977bc80690aaf617e",
+    "snapshot_contract_v1.json": "8803607c7b461676344d12b7491d05943b88cedc2e13f92b4ab1c10930b0c291",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_markov_varying.py": "1e435ff73ebfc4857174a81115c61d861a9fd913a684e7f312ceb2e486bd64e8",
+    "snapshot_markov_varying_diagnostic.py": "091d0511ac5eb61af70795e0506fe85f6ea42f53d09c98defe2035bd21a5a100",
+    "snapshot_markov_varying_receipt.py": "793c0a60001b67c0405817eaf760e9270c2c330f049331a91c288a4c00821b84",
+    "source_report/README.md": "3badb1755df7aaeba77ae7eaf64f0cbb26d347849969a433f570a95106b96cfa",
+    "source_report/artifact_hashes.json": "8132f3ffc5259a3662a67c58d79d413626de81038ac3202c174ea287e26440bd",
+    "source_report/fixtures.json": "0f542de23e7c1657049913ba7b391ebfb1775b212a17669e4dabcbdaa1dc349c",
+    "source_report/markov_varying_sensitivity.png": "5e0a9aae4320d7ad12764de840a2727f5e32ce813f819f73731dc70e8e8baff4",
+    "source_report/protocol.json": "8615c40c8fb05dd415910a4e2ab4ad42a782e108b4bd9bb88d9a2771b5cf28c4",
+    "source_report/scenario_grid.csv": "770b70ab9f8d106c4474d16bcb6a256d3e0f5aea9e0925f9b4c968d9352f290b",
+    "source_report/snapshot_contract_inspector.py": "aac724af4b1285c1ac467b7aad6d3ef97ed9359d715e76994027041bcbc1ceef",
+    "source_report/snapshot_contract_v1.json": "8803607c7b461676344d12b7491d05943b88cedc2e13f92b4ab1c10930b0c291",
+    "source_report/snapshot_markov_varying.py": "1e435ff73ebfc4857174a81115c61d861a9fd913a684e7f312ceb2e486bd64e8",
+    "source_report/snapshot_markov_varying_diagnostic.py": "091d0511ac5eb61af70795e0506fe85f6ea42f53d09c98defe2035bd21a5a100",
+    "source_report/tv_sensitivity.csv": "20000e3200062dfd34b3c10b90fcc2a0d650e342d1878cb2de76d6bb76fe618f",
+    "summary.json": "1c8217079c5e234642e7431a72d53e6007ab139ebeb6d1a77cc15142e3f3d1e2"
+  }
+}

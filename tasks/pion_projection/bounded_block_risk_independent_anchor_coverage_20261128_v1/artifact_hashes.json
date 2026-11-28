@@ -1,0 +1,9 @@
+{
+  "README.md": "cdd2a9a76cb9ba4d5315bec15b215337db2dade82aaef2c4095e5fb2407e3e20",
+  "joint_coverage_and_sharpness.png": "a22d6a9a9b6b37322c9fc66a8650c127b78227a982dc85b3a7d4d412091f5dff",
+  "protocol.json": "0e8ffcabc551cbc409958b7a353f1955ded50cd1e2ec715b9ec1007600311505",
+  "replicate_results.csv": "d7892bcff885059d0c5bce5ffa841e36952db40cba9f3b17ea8430931c6f0bdf",
+  "summary.csv": "dba507b74b99128613f99c727f407f6e3be390c9dcb86e7d999d10312d5c4c6d",
+  "summary.json": "89b203809a8d0aa478de4932ed0b3f824bd51696dd0465c8bff2154e67c6be67",
+  "synthetic_inputs.npz": "216a9ddb703901a5bd366f8b2d36ed273ca87cd5788076595e34d7e61874f7c6"
+}

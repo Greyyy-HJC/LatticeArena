@@ -1,0 +1,8 @@
+{
+  "schema": "pion-anchor-scalar-nonidentifiability-source-hashes-v1",
+  "sources": {
+    "anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "bounded_risk_contract": "7394380e264690e6166294e68112dbbf118ec46423e35c16d2fe984ef7bf77f8",
+    "diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926"
+  }
+}

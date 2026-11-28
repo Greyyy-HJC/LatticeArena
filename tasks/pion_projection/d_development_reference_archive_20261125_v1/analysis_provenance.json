@@ -1,0 +1,42 @@
+{
+  "diagnostics": {
+    "image": "development_diagnostics.png",
+    "image_sha256": "f1fc3dbb538751310d8239fbd373327544b0d897adecaedcfb30a6ed0da0ec23",
+    "report": "README.md"
+  },
+  "inputs": {
+    "active_experiment_py_sha256": "cd125c69a3b64cc37e1fbae8c2ac426f13c44003f42c606280fabc436a57a900",
+    "analysis_amendment_sha256": "6ce2a238c1a717a815815d7a66cfbaaa4bf1b286e630018e10640a48e4912784",
+    "development_npz_sha256": "8a78947c8b4d1bec3b672ed57cd1406ed0bcccf6ec874747ece4d64078da7fe3",
+    "measurement_generation": "ab8a41d27e0488ca3646ac83475e680f677b17a913d05913f7731ec87a4448ce",
+    "measurement_plan_sha256": "2058c1f6fec04a6ab4da6176207746a90436b49963a83a3490e86e4f20de5969",
+    "measurement_protocol_hash": "18ed89c914be7d11522256e1b159e2037cd26e89dbd6f46521a442110088f442"
+  },
+  "omitted_block_length": {
+    "length": 3,
+    "reason": "100 development configurations are not divisible by 3; complete equal-size blocks are required and rows are not dropped"
+  },
+  "outputs_sha256": {
+    "development_results.json": "31772afbd75e60250a883dde33a8936573ea9ae8c24e7b324fd896bfa231c7d6",
+    "reference_bootstrap.npz": "d27c20b0e9dea4d6a7e6a73879f73e86a3e260168e648c80bb27c1a4a24195c0",
+    "submission.json": "8a3741e408f53a44039aaa8a9f4126ddf8fc3f1e22cfe7aa02d6a02b16cad209"
+  },
+  "reference_failure_reasons": [
+    "Nominal correlated reference fit fails the approximate goodness-of-fit gate",
+    "Reference window [4, 5, 6, 7, 8] shifts by 20.41 paired standard errors",
+    "Reference window [6, 7, 8] shifts by 15.78 paired standard errors"
+  ],
+  "reference_gate_passed": false,
+  "schema": "pion-development-analysis-amendment-v1",
+  "scope": "post-measurement analysis amendment; no measurement source or raw data changed",
+  "sensitivity_block_lengths": [
+    1,
+    2,
+    4,
+    5,
+    10,
+    20,
+    25
+  ],
+  "status": "COMPLETED_DIAGNOSTIC_ONLY"
+}

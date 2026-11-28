@@ -1,0 +1,1646 @@
+{
+  "artifact_hashes": {
+    "README.md": "b7b7d4823624001114006e744628b56dadbc4ca5d809c10408a7186f8671d5e3",
+    "anchor_markov_sensitivity.csv": "5e1351dfc4d17ac399108900130e04078451fb364e2b247d3b4f062de22d74b9",
+    "anchor_markov_sensitivity.png": "9a6238129a59ca6b310607cd014133e10c67c885bcdff5128b584a091c24804e",
+    "anchor_markov_sensitivity.svg": "3a47c74c5edc319d32af77682a5afff569d98dc8fcc85714a1fd78191725aed3",
+    "denominator_summary.csv": "1c380f91fd776b8bd09c6152c9cc0ce055790183be260f645eb1f302471189d3",
+    "protocol.json": "00eb5d09a4350c3e4252fd54747f1066eeac8f3203f4eee7ccf1620c255e1750",
+    "snapshot_bounded_block_risk_anchor_markov.py": "8e0c46aeb803bed5c4954be015783f4589e7af0e605ff41a65dde7d6f1d2150a",
+    "summary.json": "564ad17af3633c6b3662f834a3449a4c91124728f4947b3aa0da11bddf6d781e"
+  },
+  "denominators": {
+    "n1000_g0.05_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.05_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.05_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.05_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.05_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n1000_g0.1_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.1_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.1_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.1_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.1_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n1000_g0.2_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.2_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.2_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.2_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.2_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n1000_g0.5_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.5_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.5_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.5_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g0.5_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n1000_g1.0_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g1.0_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g1.0_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g1.0_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n1000_g1.0_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n16000_g0.05_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.05_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.05_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.05_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.05_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n16000_g0.1_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.1_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.1_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.1_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.1_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n16000_g0.2_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.2_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.2_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.2_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.2_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n16000_g0.5_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.5_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.5_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.5_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g0.5_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n16000_g1.0_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g1.0_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g1.0_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g1.0_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n16000_g1.0_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n2000_g0.05_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.05_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.05_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.05_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.05_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n2000_g0.1_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.1_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.1_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.1_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.1_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n2000_g0.2_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.2_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.2_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.2_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.2_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n2000_g0.5_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.5_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.5_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.5_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g0.5_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n2000_g1.0_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g1.0_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g1.0_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g1.0_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n2000_g1.0_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n32000_g0.05_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.05_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.05_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.05_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.05_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n32000_g0.1_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.1_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.1_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.1_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.1_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n32000_g0.2_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.2_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.2_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.2_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.2_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n32000_g0.5_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.5_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.5_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.5_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g0.5_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n32000_g1.0_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g1.0_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g1.0_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g1.0_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n32000_g1.0_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n4000_g0.05_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.05_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.05_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.05_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.05_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n4000_g0.1_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.1_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.1_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.1_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.1_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n4000_g0.2_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.2_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.2_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.2_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.2_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n4000_g0.5_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.5_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.5_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.5_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g0.5_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n4000_g1.0_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g1.0_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g1.0_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g1.0_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n4000_g1.0_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n64000_g0.05_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.05_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.05_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.05_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.05_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n64000_g0.1_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.1_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.1_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.1_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.1_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n64000_g0.2_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.2_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.2_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.2_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.2_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n64000_g0.5_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.5_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.5_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.5_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g0.5_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n64000_g1.0_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g1.0_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g1.0_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g1.0_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n64000_g1.0_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n8000_g0.05_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.05_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.05_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.05_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.05_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n8000_g0.1_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.1_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.1_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.1_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.1_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n8000_g0.2_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.2_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.2_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.2_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.2_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n8000_g0.5_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.5_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.5_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.5_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g0.5_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    },
+    "n8000_g1.0_tv0.0": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g1.0_tv0.001": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g1.0_tv0.005": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g1.0_tv0.009": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 1
+    },
+    "n8000_g1.0_tv0.01": {
+      "abstained": 1,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one analytic assumption combination",
+      "valid": 0
+    }
+  },
+  "reason_rows": [
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n1000_g0.05_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n1000_g0.1_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n1000_g0.2_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n1000_g0.5_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n1000_g1.0_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n2000_g0.05_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n2000_g0.1_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n2000_g0.2_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n2000_g0.5_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n2000_g1.0_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n4000_g0.05_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n4000_g0.1_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n4000_g0.2_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n4000_g0.5_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n4000_g1.0_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n8000_g0.05_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n8000_g0.1_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n8000_g0.2_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n8000_g0.5_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n8000_g1.0_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n16000_g0.05_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n16000_g0.1_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n16000_g0.2_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n16000_g0.5_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n16000_g1.0_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n32000_g0.05_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n32000_g0.1_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n32000_g0.2_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n32000_g0.5_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n32000_g1.0_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n64000_g0.05_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n64000_g0.1_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n64000_g0.2_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n64000_g0.5_tv0.01"
+    },
+    {
+      "count": 1,
+      "reason": "assumed anchor TV is not smaller than alpha_anchor",
+      "state": "abstained",
+      "unit": "n64000_g1.0_tv0.01"
+    }
+  ],
+  "scenario": {
+    "assumptions": [
+      "each anchor chain state emits one fixed bounded scalar in the declared support",
+      "the anchor chain satisfies corrected Markov pseudo-gap Bernstein assumptions",
+      "the anchor scalar expectation maps to m_star up to the supplied common bias bound",
+      "one shared anchor interval is used across the score comparison family"
+    ],
+    "description": "Conditional formula grid for Markov-dependent scalar anchor estimates.",
+    "name": "pion-markov-anchor-analytic-sensitivity",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "anchor_helper": "8e0c46aeb803bed5c4954be015783f4589e7af0e605ff41a65dde7d6f1d2150a",
+      "markov_gap_helper": "e8a6af0227eb685750208ad5f4278cf2307afb936c4ba6774ce30497cbcbf06e"
+    },
+    "unit": "anchor count, anchor pseudo-gap assumption, and post-burn-in TV assumption"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "predeclared bounded scalar per independent anchor-chain state -> require its target map, separate anchor gamma_ps and post-burn-in TV receipts -> spend delta_TV from alpha_anchor for one shared anchor interval -> corrected Bernstein radius + common-bias C -> subtract 2B/R from the score LCB -> missing map/receipt means NOT_READY; physical_score=null"
+}

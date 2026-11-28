@@ -1,0 +1,43 @@
+{
+  "classification": "SYNTHETIC_ANALYTIC_SENSITIVITY_ONLY",
+  "physical_score": null,
+  "scenario_denominators": {
+    "planned": 40,
+    "valid": 2,
+    "failed": 0,
+    "abstained": 38
+  },
+  "physical_block_score_denominators": {
+    "planned": 0,
+    "valid": 0,
+    "failed": 0,
+    "abstained": 0
+  },
+  "synthetic_helper_demo_comparisons": {
+    "planned": 3,
+    "valid": 2,
+    "failed": 0,
+    "abstained": 1
+  },
+  "synthetic_helper_demo_blocks": {
+    "planned": 10,
+    "valid": 6,
+    "failed": 4,
+    "abstained": 0
+  },
+  "initial_law_tv_sensitivity_denominators": {
+    "planned": 12,
+    "valid": 5,
+    "failed": 0,
+    "abstained": 7
+  },
+  "scenario_weighted_hypothetical_planned_blocks": 6960,
+  "feasible_scenarios": 2,
+  "unattainable_zero_threshold_scenarios": 38,
+  "smallest_planned_blocks": 20,
+  "largest_planned_blocks": 500,
+  "maximum_assumed_pseudo_gap_lower_bound": 1.0,
+  "baseline_at_N20_gamma1": 8.96924895472273,
+  "best_case_at_N500_gamma1": 0.4930484376741014,
+  "warning": "Feasibility is only hypothetical and assumes zero target, zero anchor correction, stationary initialization, a known valid lower bound on the block-chain pseudo-spectral gap, and all theorem conditions."
+}

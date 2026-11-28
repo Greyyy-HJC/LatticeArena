@@ -1,0 +1,82 @@
+{
+  "schema": "pion-bounded-block-risk-stress-v1",
+  "status": "SYNTHETIC_ANALYTIC_SENSITIVITY_ONLY",
+  "physical_score": null,
+  "source_sha256": "c75a66a5d018725b4381249ab94c5a76c4ec001c57d16fc4702a7264030a5bfe",
+  "data_access": "No physical scores, correlators, anchor, sealed split, GPU, or QUDA data were read.",
+  "strict_feasibility_rule": "required_valid_mean_boundary < 1; equality is ABSTAIN because the certification inequality is strict",
+  "grid": {
+    "blocks": [
+      20,
+      100,
+      400
+    ],
+    "chromatic_number_upper_bounds": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "alpha_total": 0.05,
+    "alpha_anchor": [
+      0.0,
+      0.01,
+      0.02
+    ],
+    "alpha_s": [
+      0.05,
+      0.04,
+      0.030000000000000002
+    ],
+    "relative_anchor_bound_B_over_R": [
+      0.0,
+      0.025,
+      0.05,
+      0.1
+    ],
+    "requested_failure_fraction": [
+      0.0,
+      0.05,
+      0.1,
+      0.25
+    ],
+    "normalized_threshold_delta_over_R2": [
+      0.0,
+      0.05,
+      0.1
+    ],
+    "family": 2
+  },
+  "scenario_count": 1728,
+  "status_counts": {
+    "CONDITIONALLY_FEASIBLE": 1132,
+    "ABSTAIN_UNATTAINABLE_MEAN": 596
+  },
+  "denominator_summary": [
+    {
+      "unit": "synthetic planning scenario",
+      "planned": 1728,
+      "valid": 1132,
+      "failed": 0,
+      "abstained": 596,
+      "interpretation": "Valid means the bound is mathematically attainable under stated assumptions; it is not an observed or certified physical result."
+    },
+    {
+      "unit": "hypothetical blocks summed over grid rows",
+      "planned": 299520,
+      "valid": 269568,
+      "failed": 29952,
+      "abstained": 0,
+      "interpretation": "Scenario-weighted hypothetical denominator; not a measurement sample and not a count of independent blocks."
+    }
+  ],
+  "files": [
+    "README.md",
+    "sensitivity_grid.csv",
+    "denominator_summary.csv",
+    "failure_dependence_anchor_surface.png",
+    "alpha_allocation_sensitivity.png",
+    "summary.json",
+    "artifact_hashes.json"
+  ]
+}

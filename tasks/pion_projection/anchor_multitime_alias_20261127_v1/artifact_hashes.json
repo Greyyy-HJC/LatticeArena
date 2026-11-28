@@ -1,0 +1,16 @@
+{
+  "artifacts": {
+    "README.md": "ba25aa6195610ea5a42a9a08a07d956e4bd47b3524acc98f8856e6bba208a05d",
+    "multitime_alias.png": "c30c5eec9301afe5b4ee6fa2fc0a307e0e4cea21dad3b4cbd7c88146304904e9",
+    "normalized_timeseries.csv": "f53685fc2db3d6fbe271b0131cdacd0f25bac05d18159b1d7768a7d17e4c4bee",
+    "protocol.json": "5dbda8b48d4b7ecbab6ca5878cd38a5dca21f4fd700944f3786141cb387df4fa",
+    "source_hashes.json": "ab61838866796dbf9ccfbdb5c6becda6cf027ffe921757c493465bd55291a5d6",
+    "source_snapshot/anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "source_snapshot/diagnostic": "4ca08eac2ce40b30bb174f541069e226148a78291421be1b76b79ec9c3b378b7",
+    "source_snapshot/multitime_separation_diagnostic": "fbbed0b3c8b8c3f974f489c5076f8d9d2e2a5194605839cbc3e7e852539c29b8",
+    "source_snapshot/scalar_collision_diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926",
+    "spectral_components.csv": "5196751d765ea0b5b8722279ce5dbf5a8397ebe15c75843d549a86b14a05777c",
+    "summary.json": "359e612dd0a1097875d928e0f35f9b770c1be5968031cb54e14909938a146e02"
+  },
+  "schema": "pion-anchor-multitime-alias-artifact-hashes-v1"
+}

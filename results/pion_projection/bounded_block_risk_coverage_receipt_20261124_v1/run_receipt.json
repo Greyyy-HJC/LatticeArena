@@ -1,0 +1,91 @@
+{
+  "artifact_hashes": {
+    "README.md": "e9b223b4e4ee8870e3530d71c5fe1e2c4e2ab611e549b76f2f560f05f5ca6e73",
+    "protocol.json": "8794555d338d9910a644313d21a01ede2f578565d1278c1d743e66b0b62332ba",
+    "snapshot_bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_coverage_receipt_wrapper.py": "74ff586c371c2b1252b759fee8b8e9a287faf72cb38ca4fa324dd8c2ce2148f9",
+    "snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+    "source_report/README.md": "489bfd9de61128fd47593d225f79adfdcf485f359973b3250fea7f5716c41a46",
+    "source_report/artifact_hashes.json": "9cf0deb20d197e935f2029afd74aa9775b18bd4fe70aeeb97b941bf92f18e3bf",
+    "source_report/cell_summary.csv": "7f1b25613f6fb925ef1c314d25db4fdc84eaeec74de3318200f4911192058b1d",
+    "source_report/coverage_by_dependence.png": "d5b0b466e279cdb82ca3d221f12319a61996f4e43129a368effe2a6c556e93a0",
+    "source_report/denominator_summary.csv": "d32af7b5c08756a47deccdb60891cc5765e044572a8b97827623b054cd00bed7",
+    "source_report/mc_replicate_summary.npz": "b0227c24d9eca2c230ff358182552a5954aa0b2d6a46d5fcfd1c879a1cdf94af",
+    "source_report/positive_certificate_rate.png": "3125cfb8715c46b34d9c8687d33edc2bcaa2651221e98548a70cba2195724e8d",
+    "source_report/protocol.json": "0964ed3d3ce5d7ce69da8d4202d4eef6750859bb00f8f263ecbcda2490716e05",
+    "source_report/snapshot_bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "source_report/snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+    "source_report/summary.json": "b8e6c4ceed29e530f933f3d0e98c3b0db6040344e6b3ec569a461b63b0eca49f",
+    "summary.json": "9b9b484b41e3bb312f19b2c6f6c614818a33e9d8335d1128bc8949a585a811f5"
+  },
+  "denominators": {
+    "candidate_family_block_score": {
+      "abstained": 0,
+      "failed": 3359986,
+      "not_run": 0,
+      "planned": 67200000,
+      "unit": "candidate-family block score",
+      "valid": 63840014
+    },
+    "monte_carlo_replicate": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 150000,
+      "unit": "Monte Carlo replicate",
+      "valid": 150000
+    },
+    "paired_planned_block_event": {
+      "abstained": 0,
+      "failed": 1679993,
+      "not_run": 0,
+      "planned": 33600000,
+      "unit": "paired planned block event",
+      "valid": 31920007
+    },
+    "scenario_cell": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 30,
+      "unit": "synthetic Monte Carlo cell",
+      "valid": 30
+    }
+  },
+  "reason_rows": [
+    {
+      "count": 1679993,
+      "reason": "Failures are hypothetical Bernoulli events, not observed measurement failures; all remain in N and are scored -1.",
+      "state": "failed",
+      "unit": "paired_planned_block_event"
+    },
+    {
+      "count": 3359986,
+      "reason": "F=2 scores share paired failure events; this denominator is not a physical block count.",
+      "state": "failed",
+      "unit": "candidate_family_block_score"
+    }
+  ],
+  "scenario": {
+    "assumptions": [
+      "the known graph and bounded score are true only by synthetic construction",
+      "failure events are hypothetical Bernoulli coding events, not measured failures",
+      "the source report contains no anchor term or project-specific dependence evidence"
+    ],
+    "description": "Receipt overlay for the verified 2026-11-23 synthetic report; no simulations rerun.",
+    "name": "pion-known-graph-coverage-saved-report",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "tasks/pion_projection/bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+      "tasks/pion_projection/bounded_block_risk_coverage_receipt.py": "74ff586c371c2b1252b759fee8b8e9a287faf72cb38ca4fa324dd8c2ce2148f9",
+      "tasks/pion_projection/dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af"
+    },
+    "unit": "scenario cell, Monte Carlo replicate, paired block event, and family score"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "verified saved synthetic coverage report -> separate existing analysis-unit denominators -> exact hypothetical-failure reasons -> hashed receipt overlay; no Monte Carlo rerun, and complete means accounting only, not scientific success"
+}

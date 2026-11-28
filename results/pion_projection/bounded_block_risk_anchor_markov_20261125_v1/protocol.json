@@ -1,0 +1,54 @@
+{
+  "alpha_anchor": 0.01,
+  "anchor_family": 1,
+  "anchor_is_shared_across_score_comparisons": true,
+  "anchor_method": "markov_pseudo_gap_bernstein",
+  "burn_in_anchor_units_candidate": 8,
+  "candidate_point": {
+    "abstained": 0,
+    "alpha_anchor": 0.01,
+    "anchor_tv_bound_assumed": 0.001,
+    "best_case_exceeds_0_05": true,
+    "best_case_lcb_assuming_score_mean_1": 0.18760507246068875,
+    "failed": 0,
+    "fixed_score_plan_radius_assumed": 0.3863156964822313,
+    "gamma_ps_anchor_assumed": 0.2,
+    "planned": 1,
+    "planned_anchor_units": 4000,
+    "random_radius_over_R": 0.20203961552853997,
+    "score_anchor_penalty_2B_over_R": 0.42407923105707995,
+    "stationary_alpha": 0.009000000000000001,
+    "status": "FORMULA_SCENARIO_ONLY",
+    "total_B_over_R": 0.21203961552853998,
+    "valid": 1
+  },
+  "certified": false,
+  "common_bias_C_over_R_candidate": 0.01,
+  "data_access": "none",
+  "gamma_ps_anchor_lower_bound_candidate": 0.2,
+  "physical_score": null,
+  "planned_anchor_units_candidate": 4000,
+  "post_burn_in_tv_candidate": 0.001,
+  "required_receipts": [
+    "bounded scalar map from each anchor-chain state to a_t m_pi units",
+    "proof/review that the stationary scalar expectation targets the selected m_star up to C",
+    "anchor-chain homogeneous Markov and state-space assumptions",
+    "anchor-chain gamma_ps lower-bound receipt (separate from score chain)",
+    "anchor post-burn-in TV receipt, if nonstationary start is used",
+    "support, common-bias C, and conditional-independence receipts"
+  ],
+  "schema": "pion-markov-anchor-coverage-plan-v1",
+  "score_chain_plan": {
+    "alpha_score": 0.04,
+    "blocks": 4000,
+    "family": 3,
+    "gamma_ps_assumed": 0.2,
+    "post_burn_in_tv_assumed": 0.001
+  },
+  "status": "CONDITIONAL_ANALYTIC_ONLY_NOT_READY",
+  "support_interval": [
+    0.1,
+    3.0
+  ],
+  "support_width_R": 2.9
+}

@@ -1,0 +1,146 @@
+{
+  "classification": "SYNTHETIC_HELPER_INTEGRATION_ONLY",
+  "physical_score": null,
+  "certified": false,
+  "data_access": "none",
+  "calibration": {
+    "score_scale_R": 2.0,
+    "gamma_ps_lower": 1.0,
+    "family": 2,
+    "alpha_score": 0.04,
+    "alpha_anchor": 0.01,
+    "alpha_total": 0.05,
+    "relative_anchor_bound_B_over_R": 0.03
+  },
+  "input_encoding": "JSON null in raw_differences denotes a failed block and is passed to the helper as NaN; the explicit valid_blocks mask controls failure coding.",
+  "cases": [
+    {
+      "name": "partially_failed_panel",
+      "raw_differences": [
+        8.0,
+        -8.0,
+        2.0,
+        null
+      ],
+      "valid_blocks": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "result": {
+        "estimand": "bounded_block_risk",
+        "dependence_method": "markov_pseudo_gap_bernstein",
+        "gamma_ps_lower_bound_assumed": 1.0,
+        "alpha_allocation": {
+          "score": 0.04,
+          "anchor": 0.01,
+          "total": 0.05
+        },
+        "certified": false,
+        "data_access": "none",
+        "physical_score": null,
+        "result_unit": "one planned candidate-reference comparison",
+        "denominators": {
+          "planned_blocks": 4,
+          "valid_blocks": 3,
+          "failed_blocks": 1,
+          "abstained_blocks": 0
+        },
+        "result_denominators": {
+          "planned": 1,
+          "valid": 1,
+          "failed": 0,
+          "abstained": 0
+        },
+        "normalized_block_scores": [
+          1.0,
+          -1.0,
+          0.5,
+          -1.0
+        ],
+        "planned_block_mean": -0.125,
+        "relative_anchor_bound_B_over_R": 0.03,
+        "anchor_penalty": 0.06,
+        "assumptions": [
+          "the predeclared block process is a stationary homogeneous Markov chain satisfying the theorem conditions",
+          "gamma_ps_lower is a valid auditable lower bound for that block chain",
+          "the theorem's range/variance bounds apply to all planned coded scores in [-1, 1]",
+          "the supplied anchor bound has coverage at least 1-alpha_anchor",
+          "|y_candidate-y_reference| <= score_scale_R for the squared-error correction"
+        ],
+        "status": "CONDITIONAL_MARKOV_PSEUDOGAP_BOUND_ONLY",
+        "valid_block_mean": 0.16666666666666666,
+        "concentration_penalty": 46.30035922792197,
+        "normalized_lower_bound": -46.485359227921975
+      }
+    },
+    {
+      "name": "all_failed_panel",
+      "raw_differences": [
+        null,
+        null
+      ],
+      "valid_blocks": [
+        false,
+        false
+      ],
+      "result": {
+        "estimand": "bounded_block_risk",
+        "dependence_method": "markov_pseudo_gap_bernstein",
+        "gamma_ps_lower_bound_assumed": 1.0,
+        "alpha_allocation": {
+          "score": 0.04,
+          "anchor": 0.01,
+          "total": 0.05
+        },
+        "certified": false,
+        "data_access": "none",
+        "physical_score": null,
+        "result_unit": "one planned candidate-reference comparison",
+        "denominators": {
+          "planned_blocks": 2,
+          "valid_blocks": 0,
+          "failed_blocks": 2,
+          "abstained_blocks": 0
+        },
+        "result_denominators": {
+          "planned": 1,
+          "valid": 0,
+          "failed": 0,
+          "abstained": 1
+        },
+        "normalized_block_scores": [
+          -1.0,
+          -1.0
+        ],
+        "planned_block_mean": -1.0,
+        "relative_anchor_bound_B_over_R": 0.03,
+        "anchor_penalty": 0.06,
+        "assumptions": [
+          "the predeclared block process is a stationary homogeneous Markov chain satisfying the theorem conditions",
+          "gamma_ps_lower is a valid auditable lower bound for that block chain",
+          "the theorem's range/variance bounds apply to all planned coded scores in [-1, 1]",
+          "the supplied anchor bound has coverage at least 1-alpha_anchor",
+          "|y_candidate-y_reference| <= score_scale_R for the squared-error correction"
+        ],
+        "status": "ABSTAIN_NO_VALID_BLOCKS",
+        "valid_block_mean": null,
+        "concentration_penalty": null,
+        "normalized_lower_bound": null
+      }
+    }
+  ],
+  "comparison_denominators": {
+    "planned": 2,
+    "valid": 1,
+    "failed": 0,
+    "abstained": 1
+  },
+  "block_denominators": {
+    "planned": 6,
+    "valid": 3,
+    "failed": 3,
+    "abstained": 0
+  }
+}

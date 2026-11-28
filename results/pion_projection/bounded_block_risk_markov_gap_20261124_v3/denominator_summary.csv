@@ -1,0 +1,6 @@
+unit,planned,valid,failed,abstained,interpretation
+analytic planning scenario,40,2,0,38,Valid means a zero-threshold LCB is mathematically reachable at the maximum possible sample mean under the illustrative inputs; not an observed or certified result.
+physical block-score outcome,0,0,0,0,No physical block score was sampled; these are not measurement denominators.
+synthetic Markov-LCB comparison fixtures,3,2,0,1,Three fixed software fixtures: two conditional helper results (stationary and initial-TV adjusted) and one all-failed abstention; no random experiment or physical sample.
+synthetic Markov-LCB planned block slots,10,6,4,0,"The three software fixtures contain ten hypothetical slots; six valid and four explicitly failed slots, with no block removed."
+initial-law TV sensitivity scenario,12,5,0,7,"A 12-cell deterministic what-if grid at N=20/500 and assumed per-comparison TV bounds; valid means zero-threshold reachability at the best possible mean, not an observed result."

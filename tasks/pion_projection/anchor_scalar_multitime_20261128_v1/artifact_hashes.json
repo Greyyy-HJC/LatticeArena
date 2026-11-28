@@ -1,0 +1,15 @@
+{
+  "artifacts": {
+    "README.md": "8e2df7d635f4106a11a37c63a488b7a0f3816dfe450eb7b30d6c07bed662cef3",
+    "feature_signatures.csv": "bd2bdabc0fa88fa6b38ad7fbc9809ca9de46522777d0444294213ca39ae9f60e",
+    "multitime_separation.png": "f853049775753151a35b50b809351576b9ccb3f455fd47355712d856336e6dbd",
+    "normalized_timeseries.csv": "ad654a65fe036ddf157c0f6110b8a1735d1f13cd345ec1fbe9e6a2c956567f62",
+    "protocol.json": "e2d7e80300a4132ff6a3988fe0a165c97da7a59dbf2ff79a63ec1e5cad0e6e05",
+    "source_hashes.json": "270df0e6a0a70ca5eaeb65ad3239b0fdc747761cc2b5bbbe213fabcd313461f2",
+    "source_snapshot/anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "source_snapshot/diagnostic": "fbbed0b3c8b8c3f974f489c5076f8d9d2e2a5194605839cbc3e7e852539c29b8",
+    "source_snapshot/scalar_collision_diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926",
+    "summary.json": "c50e89a684bfc3f37ac35b5e139ff51703a638f5153641dc9160dd4c39845963"
+  },
+  "schema": "pion-anchor-scalar-multitime-artifact-hashes-v1"
+}

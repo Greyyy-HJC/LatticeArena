@@ -1,0 +1,26 @@
+{
+  "schema": "pion-bounded-block-risk-contract-v1",
+  "status": "STRUCTURE_DIAGNOSTIC_ONLY",
+  "input_contract_sha256": "76dfed4ac87dab24ae5312c97027561da4a0565ad4095afaadfcdadca2b11314",
+  "data_access": "none",
+  "physical_score": null,
+  "certified": false,
+  "fixtures": [
+    "current_null_contract",
+    "synthetic_graph_color_complete",
+    "synthetic_markov_gap_complete",
+    "synthetic_markov_post_burn_in_tv_complete",
+    "synthetic_alpha_over_budget",
+    "synthetic_prediction_bound_over_R",
+    "synthetic_missing_anchor_coverage",
+    "synthetic_missing_initial_law_receipt",
+    "synthetic_initial_tv_spends_score_alpha",
+    "synthetic_time_varying_score_function"
+  ],
+  "synthetic_fixture_values_are_physical": false,
+  "markov_theorem_route": {
+    "stationary": "Paulin arXiv:1212.2015v5 Theorem 3.11 / Eq. (3.25), one fixed score function f",
+    "nonstationary": "Proposition 3.15 / Eq. (3.29), requires d_TV(q P^t0, pi) <= delta",
+    "time_varying_scores": "Eq. (3.26) is identified as a future route and is not implemented or accepted by this inspector"
+  }
+}

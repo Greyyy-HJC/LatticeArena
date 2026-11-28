@@ -1,0 +1,43 @@
+{
+  "denominators": {
+    "candidate_family_block_score": {
+      "abstained": 0,
+      "failed": 3359986,
+      "planned": 67200000,
+      "unit": "candidate-family block score",
+      "valid": 63840014
+    },
+    "monte_carlo_replicate": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 150000,
+      "unit": "Monte Carlo replicate",
+      "valid": 150000
+    },
+    "paired_planned_block_event": {
+      "abstained": 0,
+      "failed": 1679993,
+      "planned": 33600000,
+      "unit": "paired planned block event",
+      "valid": 31920007
+    },
+    "scenario_cell": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 30,
+      "unit": "synthetic Monte Carlo cell",
+      "valid": 30
+    }
+  },
+  "physical_score": null,
+  "schema": "pion-known-graph-coverage-receipt-summary-v1",
+  "simulation_rerun": false,
+  "source_report_manifest_sha256": "9cf0deb20d197e935f2029afd74aa9775b18bd4fe70aeeb97b941bf92f18e3bf",
+  "source_report_summary": {
+    "cells": 30,
+    "graph_coverage_min": 1.0,
+    "iid_coverage_min": 0.8362,
+    "replicates_per_cell": 5000
+  },
+  "status": "SAVED_SYNTHETIC_REPORT_RECEIPT_ONLY"
+}

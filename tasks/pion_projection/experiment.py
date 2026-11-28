@@ -6,9 +6,11 @@ import numpy as np
 from scipy.optimize import minimize
 
 from core.candidates import validate_weights
+from core.source_integrity import SourceByteSnapshot
 
 from .common import digest, fingerprint, load_data, protocol, write_json
 from .statistics import (ReferenceFit, blocks, bootstrap_indices, fold, inverse_covariance, risk)
+from .spec import bundle_for, task_spec_for
 
 
 def late_metric(data, weights, p):
@@ -44,12 +46,57 @@ def optimize_mixture(data, scales, m, mb, index, p):
     return fit, len(outcomes), evaluations
 
 
-def develop(output):
+def develop(output, *, source_snapshot=None, source_names=None):
     output = Path(output)
-    if (output / 'submission.json').exists() or (output / 'validation.npz').exists():
-        raise ValueError('Development is closed for this run; use a new run and disclose prior validation access')
-    p = protocol()
-    raw = load_data(output, 'development')
+    if source_snapshot is not None:
+        if not isinstance(source_snapshot, SourceByteSnapshot):
+            raise ValueError('source_snapshot must be a verified SourceByteSnapshot')
+        if (not isinstance(source_names, dict)
+                or set(source_names) != {
+                    'development_provenance', 'development_measurements'
+                }):
+            raise ValueError(
+                'source_names must map development_provenance and '
+                'development_measurements only'
+            )
+        if output.exists():
+            raise FileExistsError('snapshot development output must use a new directory')
+        output_abs, snapshot_root = output.resolve(), Path(source_snapshot.root).resolve()
+        if (output_abs == snapshot_root or output_abs in snapshot_root.parents
+                or snapshot_root in output_abs.parents):
+            raise ValueError('snapshot development output must be outside the source tree')
+        captured_provenance = json.loads(
+            source_snapshot.read_bytes(source_names['development_provenance'])
+        )
+        p = captured_provenance.get('protocol') if isinstance(captured_provenance, dict) else None
+        if not isinstance(p, dict) or p != protocol():
+            raise ValueError('captured development protocol differs from the checked-out protocol')
+        measurement_bundle = bundle_for(
+            source_snapshot=source_snapshot, source_names=source_names,
+        )
+        raw = measurement_bundle['arrays']['development']
+        development_sha = measurement_bundle['manifest']['source_files'][
+            'development_measurements'
+        ]['sha256']
+        source_hashes = {
+            role: entry['sha256']
+            for role, entry in measurement_bundle['manifest']['source_files'].items()
+        }
+        source_read_mode = 'immutable_snapshot'
+    else:
+        if source_names is not None:
+            raise ValueError('source_names is only valid with source_snapshot')
+        if (output / 'submission.json').exists() or (output / 'validation.npz').exists():
+            raise ValueError('Development is closed for this run; use a new run and disclose prior validation access')
+        p = protocol()
+        raw = load_data(output, 'development')
+        development_sha = digest(output / 'development.npz')
+        source_hashes = {'development_measurements': development_sha}
+        provenance = output / 'development_provenance.json'
+        if provenance.is_file():
+            source_hashes['development_provenance'] = digest(provenance)
+        source_read_mode = 'path'
+
     data = blocks(fold(raw), p['block_length'])
     index = bootstrap_indices(len(data), p['bootstrap_samples'], p['seed'])
     windows, masses = [], []
@@ -101,19 +148,252 @@ def develop(output):
     submissions = {'local': basis[0].tolist(), 'tuned_gaussian': basis[best].tolist(),
                    'agent_signed_mixture': weights.tolist()}
     metrics = {name: late_metric(data, w, p).tolist() for name, w in submissions.items()}
-    frozen = {'protocol_hash': fingerprint(p), 'development_sha256': digest(output/'development.npz'),
+    frozen = {'protocol_hash': fingerprint(p), 'development_sha256': development_sha,
+              'analysis_task_spec_sha256': fingerprint(task_spec_for(p)),
               'statistics_sha256': digest(Path(__file__).with_name('statistics.py')),
               'kernel_sha256': digest(Path(__file__).with_name('kernels.py')),
+              'development_source_read_mode': source_read_mode,
+              'development_source_hashes': source_hashes,
               'powers': p['powers'], 'alpha': p['alpha'], 'submissions': submissions,
               'normalized_mixture_weights': fit.x.tolist(), 'basis_amplitude_scales': scales.tolist(),
               'late_inverse_covariances': metrics, 'selected_gaussian_power': p['powers'][best],
               'optimizer': {'converged_starts': converged, 'objective': float(fit.fun),
                             'iterations': int(fit.nit), 'l1': float(abs(fit.x).sum())},
               'calibration': calibration}
+    if source_snapshot is not None:
+        output.mkdir(parents=True, exist_ok=False)
     write_json(output/'development_results.json', {'basis': baseline_results, 'agent': candidate_result})
     write_json(output/'submission.json', frozen)
     np.savez_compressed(output/'reference_bootstrap.npz', masses=mb, indices=index)
+    if source_snapshot is not None:
+        core_outputs = {
+            'development_results.json': output/'development_results.json',
+            'submission.json': output/'submission.json',
+            'reference_bootstrap.npz': output/'reference_bootstrap.npz',
+        }
+        output_records = {
+            name: {'sha256': digest(path), 'size_bytes': path.stat().st_size}
+            for name, path in core_outputs.items()
+        }
+        risk_rows = [*baseline_results, candidate_result]
+        valid_risks = sum(
+            isinstance(row, dict)
+            and isinstance(row.get('risk'), (int, float, np.number))
+            and bool(np.isfinite(row['risk']))
+            for row in risk_rows
+        )
+        denominators = {
+            'captured_development_source_file': {
+                'planned': 2, 'valid': len(source_hashes),
+                'failed': 0, 'abstained': 2-len(source_hashes),
+            },
+            'development_configuration': {
+                'planned': int(raw.shape[0]), 'valid': int(raw.shape[0]),
+                'failed': 0, 'abstained': 0,
+            },
+            'development_block': {
+                'planned': int(len(data)), 'valid': int(len(data)),
+                'failed': 0, 'abstained': 0,
+            },
+            'finite_development_risk_summary': {
+                'planned': len(risk_rows), 'valid': int(valid_risks),
+                'failed': len(risk_rows)-int(valid_risks), 'abstained': 0,
+            },
+        }
+        diagnostic = {
+            'schema': 'pion-development-snapshot-diagnostic-v1',
+            'classification': 'OPEN_DEVELOPMENT_DIAGNOSTIC_NOT_CONFIRMATION',
+            'source_read_mode': 'immutable_snapshot',
+            'protocol_sha256': fingerprint(p),
+            'analysis_task_spec_sha256': frozen['analysis_task_spec_sha256'],
+            'development_source_sha256': development_sha,
+            'development_array_sha256': measurement_bundle['manifest']['inputs']['development'],
+            'development_configuration_ids_sha256': measurement_bundle['manifest']['ids']['development'],
+            'source_files': measurement_bundle['manifest']['source_files'],
+            'development_configuration_count': int(raw.shape[0]),
+            'development_block_count': int(len(data)),
+            'reference': {
+                'passed': bool(not failures),
+                'nominal_window': reference['window'],
+                'mass': float(m),
+                'standard_error': float(reference['se']),
+                'fit_p_approx': float(reference['p_approx']),
+                'failure_reasons': failures,
+            },
+            'denominators': denominators,
+            'output_files': output_records,
+            'physical_score': None,
+            'certified': False,
+            'text_flow': [
+                'two captured development source files -> protocol, configuration-ID, shape, finite-value and NPZ-budget checks',
+                'captured correlators -> folded five-configuration blocks -> reference-window fits and paired bootstrap draws',
+                'same development blocks -> basis and signed-mixture risk summaries -> hash-bound outputs',
+                'diagnostic only; no validation, gap, anchor, confirmation or physical-score claim',
+            ],
+            'limitations': [
+                'the source digest binds bytes but does not establish authorization, provenance authority, or statistical independence',
+                'development outputs do not replace the independent reference, anchor, dependence, or common-bias evidence gates',
+            ],
+        }
+        readme = [
+            '# Pion development snapshot diagnostic',
+            '',
+            'Classification: `OPEN_DEVELOPMENT_DIAGNOSTIC_NOT_CONFIRMATION`.',
+            '',
+            'Text flow: captured provenance and development NPZ bytes are checked for protocol identity, configuration IDs, array shape, finite values, and decompression budget; the same captured correlators are folded into blocks, used for reference fits and risk summaries, and bound to the output hashes below.',
+            '',
+            f"- Captured development configurations: {raw.shape[0]}",
+            f"- Development blocks: {len(data)}",
+            f"- Nominal reference gate: {'pass' if not failures else 'fail'}",
+            f"- Planned/valid/failed/abstained source files: 2/{len(source_hashes)}/{2-len(source_hashes)}/0",
+            f"- Planned/valid/failed/abstained finite risk summaries: {len(risk_rows)}/{valid_risks}/{len(risk_rows)-valid_risks}/0",
+            '- `physical_score`: `null`; certified: `false`.',
+            '',
+            'This development-only receipt does not authenticate the data owner, prove independent sampling, or provide anchor/reference calibration. It includes no validation, gap, holdout, or confirmation inputs.',
+            '',
+            'See `development_diagnostic.json` for source hashes, derived counts, artifact hashes, denominators, and limitations.',
+        ]
+        readme_path = output/'README.md'
+        readme_path.write_text('\n'.join(readme)+'\n')
+        output_records['README.md'] = {
+            'sha256': digest(readme_path), 'size_bytes': readme_path.stat().st_size,
+        }
+        diagnostic['output_files'] = output_records
+        write_json(output/'development_diagnostic.json', diagnostic)
+        verify_snapshot_development_artifacts(
+            output, source_snapshot=source_snapshot, source_names=source_names,
+        )
     print('FROZEN_SUBMISSION', json.dumps(frozen), flush=True)
+
+
+def verify_snapshot_development_artifacts(
+    output, *, source_snapshot, source_names,
+):
+    """Check development-only input/output identity without reopening source paths."""
+    output = Path(output)
+    if not isinstance(source_snapshot, SourceByteSnapshot):
+        raise ValueError('source_snapshot must be a verified SourceByteSnapshot')
+    if (not isinstance(source_names, dict)
+            or set(source_names) != {
+                'development_provenance', 'development_measurements'
+            }):
+        raise ValueError('source_names must identify exactly the two development sources')
+    try:
+        diagnostic = json.loads((output/'development_diagnostic.json').read_text())
+        frozen = json.loads((output/'submission.json').read_text())
+        results = json.loads((output/'development_results.json').read_text())
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError) as exc:
+        raise ValueError('development diagnostic, submission, or risk summary is unreadable') from exc
+    if (not isinstance(diagnostic, dict)
+            or diagnostic.get('schema') != 'pion-development-snapshot-diagnostic-v1'
+            or diagnostic.get('classification') != 'OPEN_DEVELOPMENT_DIAGNOSTIC_NOT_CONFIRMATION'
+            or diagnostic.get('source_read_mode') != 'immutable_snapshot'
+            or diagnostic.get('certified') is not False
+            or diagnostic.get('physical_score', 'missing') is not None):
+        raise ValueError('development diagnostic is not explicitly development-only')
+
+    measurement_bundle = bundle_for(
+        source_snapshot=source_snapshot, source_names=source_names,
+    )
+    p = protocol()
+    source_files = measurement_bundle['manifest']['source_files']
+    source_hashes = {role: entry['sha256'] for role, entry in source_files.items()}
+    raw = measurement_bundle['arrays']['development']
+    data = blocks(fold(raw), p['block_length'])
+    expected_fields = {
+        'protocol_sha256': fingerprint(p),
+        'analysis_task_spec_sha256': fingerprint(task_spec_for(p)),
+        'development_source_sha256': source_hashes['development_measurements'],
+        'development_array_sha256': measurement_bundle['manifest']['inputs']['development'],
+        'development_configuration_ids_sha256': measurement_bundle['manifest']['ids']['development'],
+        'source_files': source_files,
+        'development_configuration_count': int(raw.shape[0]),
+        'development_block_count': int(len(data)),
+    }
+    for key, value in expected_fields.items():
+        if diagnostic.get(key) != value:
+            raise ValueError(f'development diagnostic {key} differs from the captured snapshot')
+    if (not isinstance(frozen, dict)
+            or frozen.get('development_source_read_mode') != 'immutable_snapshot'
+            or frozen.get('protocol_hash') != fingerprint(p)
+            or frozen.get('analysis_task_spec_sha256') != fingerprint(task_spec_for(p))
+            or frozen.get('development_sha256') != source_hashes['development_measurements']
+            or frozen.get('development_source_hashes') != source_hashes
+            or frozen.get('calibration', {}).get('n_development_blocks') != len(data)):
+        raise ValueError('frozen submission does not bind the captured development inputs')
+    expected_reference = frozen.get('calibration', {})
+    expected_reference = expected_reference.get('reference')
+    if not isinstance(expected_reference, dict):
+        raise ValueError('frozen submission has no development reference summary')
+    recorded_reference = diagnostic.get('reference')
+    if (not isinstance(recorded_reference, dict)
+            or recorded_reference.get('passed') is not frozen['calibration'].get('reference_passed')
+            or recorded_reference.get('nominal_window') != expected_reference.get('window')
+            or recorded_reference.get('mass') != expected_reference.get('mass')
+            or recorded_reference.get('standard_error') != expected_reference.get('se')
+            or recorded_reference.get('fit_p_approx') != expected_reference.get('p_approx')
+            or recorded_reference.get('failure_reasons') != frozen['calibration'].get('failure_reasons')):
+        raise ValueError('development reference diagnostic differs from the frozen submission')
+
+    if not isinstance(results, dict) or not isinstance(results.get('basis'), list):
+        raise ValueError('development risk summary has no basis result list')
+    risk_rows = results['basis'] + [results.get('agent')]
+    valid_risks = sum(
+        isinstance(row, dict)
+        and isinstance(row.get('risk'), (int, float, np.number))
+        and not isinstance(row.get('risk'), (bool, np.bool_))
+        and bool(np.isfinite(row['risk']))
+        for row in risk_rows
+    )
+    expected_denominators = {
+        'captured_development_source_file': {
+            'planned': 2, 'valid': 2, 'failed': 0, 'abstained': 0,
+        },
+        'development_configuration': {
+            'planned': int(raw.shape[0]), 'valid': int(raw.shape[0]),
+            'failed': 0, 'abstained': 0,
+        },
+        'development_block': {
+            'planned': int(len(data)), 'valid': int(len(data)),
+            'failed': 0, 'abstained': 0,
+        },
+        'finite_development_risk_summary': {
+            'planned': len(risk_rows), 'valid': int(valid_risks),
+            'failed': len(risk_rows)-int(valid_risks), 'abstained': 0,
+        },
+    }
+    if diagnostic.get('denominators') != expected_denominators:
+        raise ValueError('development diagnostic denominators differ from parsed outputs')
+    output_files = diagnostic.get('output_files')
+    required_outputs = {
+        'development_results.json', 'submission.json',
+        'reference_bootstrap.npz', 'README.md',
+    }
+    if not isinstance(output_files, dict) or set(output_files) != required_outputs:
+        raise ValueError('development diagnostic output hash map is incomplete or unexpected')
+    for name, record in output_files.items():
+        path = output/name
+        if (not path.is_file() or not isinstance(record, dict)
+                or digest(path) != record.get('sha256')
+                or path.stat().st_size != record.get('size_bytes')):
+            raise ValueError(f'development output hash mismatch: {name}')
+    readme = (output/'README.md').read_text()
+    if ('OPEN_DEVELOPMENT_DIAGNOSTIC_NOT_CONFIRMATION' not in readme
+            or 'physical_score`: `null`' not in readme):
+        raise ValueError('development README omits its non-certification boundary')
+    return {
+        'schema': 'pion-development-snapshot-artifact-verification-v1',
+        'status': 'SNAPSHOT_ARTIFACTS_VERIFIED_NOT_CERTIFIED',
+        'input_source_denominator': {
+            'planned': 2, 'valid': 2, 'failed': 0, 'abstained': 0,
+        },
+        'output_artifact_denominator': {
+            'planned': len(required_outputs), 'valid': len(required_outputs),
+            'failed': 0, 'abstained': 0,
+        },
+        'certified': False,
+        'physical_score': None,
+    }
 
 
 def nested_intervals(development, validation, frozen, p):
@@ -191,8 +471,16 @@ def evaluate(output):
     output = Path(output)
     p = protocol()
     frozen = json.loads((output/'submission.json').read_text())
+    if frozen.get('development_source_read_mode') == 'immutable_snapshot' and not (output/'development.npz').is_file():
+        raise ValueError(
+            'Snapshot-only development has no colocated NPZ for validation evaluation; '
+            'supply an explicitly authorized, hash-matching development/validation transaction'
+        )
     if frozen['protocol_hash'] != fingerprint(p) or frozen['development_sha256'] != digest(output/'development.npz'):
         raise ValueError('Frozen protocol or development data changed')
+    if (frozen.get('analysis_task_spec_sha256') is not None
+            and frozen['analysis_task_spec_sha256'] != fingerprint(task_spec_for(p))):
+        raise ValueError('Frozen analysis task/source dependency contract changed')
     if frozen['statistics_sha256'] != digest(Path(__file__).with_name('statistics.py')) or frozen['kernel_sha256'] != digest(Path(__file__).with_name('kernels.py')):
         raise ValueError('Frozen scoring/kernel implementation changed')
     dev = blocks(fold(load_data(output, 'development')), p['block_length'])

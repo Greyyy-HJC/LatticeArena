@@ -1,0 +1,12 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": "531dfcbdf9f8d1dd6a19a1cbb9e3d98ae9b42847e6e07c8b5742629e72f0094d",
+    "denominator_summary.csv": "cbeab5e316291cc5e0be4213ddd128e7eaadedfe00f6278b51ef7fb668807313",
+    "markov_gap_sensitivity.png": "5ec60f6780a864b0bd8773190fd0068e5d648b5b2e06c2bb68f921a74a2b02c4",
+    "protocol.json": "4675daed9a4f25a781735aa7c4e4d31cc0c57b38332d7aeb15e65f4041c155df",
+    "sensitivity_grid.csv": "c0d4ed4bd1791c4feef6dfe3fb9393af9b9400bb91b2aac40063b9991fbfd0d3",
+    "source_snapshot.py": "028a21eb19670f6302f094193da3de56427cc14811e4773ca2c079a9e2ed1ae9",
+    "summary.json": "45da229d95271560eae1c0ef6160d98e268a401f47d05a0d16eeb4dd08ab2186"
+  }
+}

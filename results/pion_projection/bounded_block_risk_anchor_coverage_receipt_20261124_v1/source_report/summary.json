@@ -1,0 +1,753 @@
+{
+  "schema": "pion-bounded-block-risk-anchor-coverage-mc-summary-v1",
+  "status": "SYNTHETIC_JOINT_DEPENDENCE_AND_ANCHOR_COVERAGE_DIAGNOSTIC",
+  "physical_score": null,
+  "data_access": "No physical correlator, anchor, ensemble, sealed split, GPU, or QUDA data accessed.",
+  "cells": 16,
+  "replicates_per_cell": 5000,
+  "planned_replicates": 80000,
+  "alpha_total": 0.05,
+  "alpha_score": 0.04,
+  "alpha_anchor": 0.01,
+  "graph_false_certificate_rate_max": 0.0,
+  "graph_false_certificate_mc95_upper_max": 0.0007677019450571244,
+  "iid_false_certificate_rate_max": 0.11,
+  "anchor_interval_coverage_min": 0.9892,
+  "anchor_interval_coverage_max": 0.9922,
+  "denominator_summary": [
+    {
+      "cell": "N128_m0_phi0.0_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA32",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA32",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1280000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA128",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA128",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1280000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.0_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA32",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 575631,
+      "failed": 64369,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA32",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1151262,
+      "failed": 128738,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA128",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 576046,
+      "failed": 63954,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA128",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1152092,
+      "failed": 127908,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m0_phi0.1_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA32",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA32",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1280000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA128",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA128",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1280000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.0_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA32",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 575999,
+      "failed": 64001,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA32",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1151998,
+      "failed": 128002,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA128",
+      "unit": "paired block event",
+      "planned": 640000,
+      "valid": 576273,
+      "failed": 63727,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA128",
+      "unit": "family block score",
+      "planned": 1280000,
+      "valid": 1152546,
+      "failed": 127454,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N128_m15_phi0.1_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA32",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2560000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA32",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 5120000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA128",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2560000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA128",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 5120000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.0_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA32",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2303612,
+      "failed": 256388,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA32",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 4607224,
+      "failed": 512776,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA128",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2304882,
+      "failed": 255118,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA128",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 4609764,
+      "failed": 510236,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m0_phi0.1_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA32",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2560000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA32",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 5120000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA128",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2560000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA128",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 5120000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.0_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA32",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA32",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2304404,
+      "failed": 255596,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA32",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 4608808,
+      "failed": 511192,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA32",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA32",
+      "unit": "anchor observation",
+      "planned": 160000,
+      "valid": 160000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA128",
+      "unit": "MC replicate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All-failed MC replicates abstain; failed block scores remain -1 in planned N."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA128",
+      "unit": "paired block event",
+      "planned": 2560000,
+      "valid": 2304287,
+      "failed": 255713,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA128",
+      "unit": "family block score",
+      "planned": 5120000,
+      "valid": 4608574,
+      "failed": 511426,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA128",
+      "unit": "anchor estimate",
+      "planned": 5000,
+      "valid": 5000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    },
+    {
+      "cell": "N512_m15_phi0.1_nA128",
+      "unit": "anchor observation",
+      "planned": 640000,
+      "valid": 640000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "Synthetic denominator; not a measured physical sample count."
+    }
+  ],
+  "files": [
+    "README.md",
+    "protocol.json",
+    "cell_summary.csv",
+    "denominator_summary.csv",
+    "replicate_summary.npz",
+    "coverage_and_utility.png",
+    "snapshot_anchor_coverage_mc.py",
+    "snapshot_bounded_block_risk_score.py",
+    "snapshot_bounded_block_risk_coverage_mc.py",
+    "snapshot_dependency_graph_bound.py",
+    "summary.json",
+    "artifact_hashes.json"
+  ]
+}

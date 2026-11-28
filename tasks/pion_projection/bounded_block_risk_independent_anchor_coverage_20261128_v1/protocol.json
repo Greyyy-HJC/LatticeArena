@@ -1,0 +1,109 @@
+{
+  "anchor": {
+    "alpha_anchor": 0.025,
+    "interval": "two-sided exact Clopper-Pearson",
+    "sample_size": 256,
+    "sampling": "independent iid Bernoulli draws from exact target mass p",
+    "target_probability": 0.4
+  },
+  "certified": false,
+  "classification": "SYNTHETIC_JOINT_COVERAGE_SCREEN_NOT_PHYSICAL_CALIBRATION",
+  "error_allocation": {
+    "alpha_anchor": 0.025,
+    "alpha_score": 0.025,
+    "alpha_total": 0.05,
+    "reason": "independent anchor set permits the score-chain simultaneous bound conditional on every realized set; union bound combines anchor and score failures",
+    "union_bound_joint_coverage_lower": 0.95
+  },
+  "estimand": {
+    "exact_stationary_mean": "(1-2p)*m - 1/4 + p",
+    "grid_mesh_step_R": 0.1,
+    "joint_success": "anchor interval contains p AND uniform setwise Markov LCB <= exact minimum expected score over that interval",
+    "prediction_domain": [
+      0.0,
+      1.0
+    ],
+    "score": "clip(((m-reference)^2-(m-candidate)^2)/R^2,-1,1)",
+    "score_scale_R": 1.0,
+    "target_set": "random anchor interval, common across planned score-chain blocks"
+  },
+  "generated_on": "2026-11-28",
+  "gpu_quda": false,
+  "no_tuning": true,
+  "physical_score": null,
+  "raw_input_archive": {
+    "arrays": {
+      "gamma_0.5": {
+        "anchor_samples": [
+          1000,
+          256
+        ],
+        "packing": "numpy.packbits(axis=1, bitorder='little')",
+        "score_chain_states": [
+          1000,
+          16384
+        ]
+      },
+      "gamma_0.75": {
+        "anchor_samples": [
+          1000,
+          256
+        ],
+        "packing": "numpy.packbits(axis=1, bitorder='little')",
+        "score_chain_states": [
+          1000,
+          16384
+        ]
+      },
+      "gamma_1": {
+        "anchor_samples": [
+          1000,
+          256
+        ],
+        "packing": "numpy.packbits(axis=1, bitorder='little')",
+        "score_chain_states": [
+          1000,
+          16384
+        ]
+      }
+    },
+    "bit_order": "little",
+    "file": "synthetic_inputs.npz"
+  },
+  "replicates_per_gap": 1000,
+  "runtime": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.1",
+    "python": "3.13.12",
+    "scipy": "1.18.0"
+  },
+  "schema": "pion-independent-anchor-setwise-markov-coverage-v1",
+  "score_chain": {
+    "candidate_prediction": 0.5,
+    "family": "two-state reversible Markov chains with stationary mass P(state=1)=p",
+    "initial_law": "exact stationary draw; initial TV=0",
+    "planned_blocks_per_chain": 16384,
+    "pseudo_spectral_gap_grid": [
+      0.5,
+      0.75,
+      1.0
+    ],
+    "reference_prediction": "score-chain state 0 or 1",
+    "second_eigenvalue_rule": "lambda=sqrt(1-gamma_ps); P01=(1-lambda)*p; P10=(1-lambda)*(1-p)"
+  },
+  "sealed_data_access": false,
+  "seed_rules": {
+    "anchor": "202611282300 + 10000*gap_index",
+    "indices": "gap_index is zero-based; separate NumPy Generator instances use disjoint seed ranges",
+    "score_chain": "202611287300 + 10000*gap_index"
+  },
+  "source_snapshot_sha256": {
+    "source_snapshot/core/numerics.py": "27631552db9e2fb0879e6dc1c91bfce553f516386bb3a26b405921f33824fe47",
+    "source_snapshot/tasks/pion_projection/bounded_block_risk_independent_anchor_coverage_screen.py": "db5e07e967900f848c3fd68f2c02d0aa188ab2881a084c823a8e3d7c6d7b2162",
+    "source_snapshot/tasks/pion_projection/bounded_block_risk_markov_coverage_screen.py": "6005e2b339b3733fae622fcea5da72ed226afea6e828303f5215a8d3cc73633f",
+    "source_snapshot/tasks/pion_projection/bounded_block_risk_markov_gap.py": "b14f9580c2d0ee4a38ea7cebe008bc26ce8482ca66686db9785294e33ac223b0",
+    "source_snapshot/tasks/pion_projection/bounded_block_risk_markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+    "source_snapshot/tasks/pion_projection/bounded_block_risk_setwise.py": "5c0298fff1cf6a37bb34489911ec7e29324ae471f6d969688f69140847a1aada",
+    "source_snapshot/tasks/pion_projection/bounded_block_risk_setwise_markov.py": "947816cbce995f2aa1853aec1c1d9713829dd687ab2cb12d0bbababe5a3044ef"
+  }
+}

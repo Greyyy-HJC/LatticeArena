@@ -1,0 +1,14 @@
+{
+  "README.md": "ca33c75d6de2b477768f7be555e6c0c8f7add480933f5e9e6410c6a36886fcb4",
+  "protocol.json": "4c8d02f07516e64d6aebb8fec2f6a701f65123db295c0a522b807cf3e72b1c5a",
+  "cell_summary.csv": "7dd0ccfe54b6bd4441521f801a69a9636aaa2e358fc87fd4f07f73c938f8c9dc",
+  "replicate_summary.npz": "d75d3ce2c49627b471a3c0453487480a70abda125a6d497adf30a7c49846d29c",
+  "empirical_bernstein_coverage.png": "118db55f2945f12cb370c92e130f731dfc9235fe12371f573c0f91486a854ad3",
+  "empirical_bernstein_utility.png": "c8f6b68aa175e6d53cc381ba196e2cf4070218e7cbd5324a7d7a0a414fedeb9e",
+  "empirical_bernstein_penalty.png": "ed0962e82c3d91ed146d7fed498e97fbefb3d9e998ab0b08f31058d05aa09da5",
+  "snapshot_empirical_bernstein.py": "fe62ee14bb5e02e2a860ecf5c3b925da8a8c7ec7c42e66ac69bf735d54c69d0c",
+  "snapshot_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+  "snapshot_dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af",
+  "snapshot_bounded_block_risk_empirical_bernstein_mc.py": "74e96d0d5ff60491f81fbda2f78b20bcbde881482e672b6bc838f6410afa854c",
+  "summary.json": "1b1954a359853222220ff126512bc4895ca9e8cb73d547e5798c19e2e01efd1b"
+}

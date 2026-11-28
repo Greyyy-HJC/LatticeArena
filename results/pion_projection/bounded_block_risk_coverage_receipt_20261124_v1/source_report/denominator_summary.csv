@@ -1,0 +1,5 @@
+unit,planned,valid,failed,abstained,interpretation
+synthetic Monte Carlo cell,30,30,0,0,All prespecified simulation cells completed.
+Monte Carlo replicate,150000,150000,0,0,An all-failure replicate is operationally abstained; its coded-score algebraic bound remains in replicate arrays.
+paired planned block event,33600000,31920007,1679993,0,"Failures are hypothetical Bernoulli events, not observed measurement failures; all remain in N and are scored -1."
+candidate-family block score,67200000,63840014,3359986,0,F=2 scores share paired failure events; this denominator is not a physical block count.

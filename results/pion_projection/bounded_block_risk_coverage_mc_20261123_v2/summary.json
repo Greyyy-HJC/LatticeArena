@@ -1,0 +1,63 @@
+{
+  "schema": "pion-bounded-block-risk-coverage-mc-summary-v1",
+  "status": "SYNTHETIC_M_DEPENDENT_COVERAGE_DIAGNOSTIC",
+  "physical_score": null,
+  "data_access": "No physical score, correlator, anchor, sealed split, GPU, or QUDA data were accessed.",
+  "cells": 30,
+  "replicates_per_cell": 5000,
+  "nominal_familywise_coverage": 0.95,
+  "graph_coverage_min": 1.0,
+  "iid_coverage_min": 0.8362,
+  "abstained_all_failure_replicates": 0,
+  "denominator_summary": [
+    {
+      "unit": "synthetic Monte Carlo cell",
+      "planned": 30,
+      "valid": 30,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "All prespecified simulation cells completed."
+    },
+    {
+      "unit": "Monte Carlo replicate",
+      "planned": 150000,
+      "valid": 150000,
+      "failed": 0,
+      "abstained": 0,
+      "interpretation": "An all-failure replicate is operationally abstained; its coded-score algebraic bound remains in replicate arrays."
+    },
+    {
+      "unit": "paired planned block event",
+      "planned": 33600000,
+      "valid": 31920007,
+      "failed": 1679993,
+      "abstained": 0,
+      "interpretation": "Failures are hypothetical Bernoulli events, not observed measurement failures; all remain in N and are scored -1."
+    },
+    {
+      "unit": "candidate-family block score",
+      "planned": 67200000,
+      "valid": 63840014,
+      "failed": 3359986,
+      "abstained": 0,
+      "interpretation": "F=2 scores share paired failure events; this denominator is not a physical block count."
+    }
+  ],
+  "source_sha256": {
+    "bounded_block_risk_coverage_mc.py": "7a9ef08d96e731e91a366109f239132dbf9e2a8584bc32c14409e2855d9c1193",
+    "dependency_graph_bound.py": "abf8cdcc3fc0653716c53d82b78c2ab8f72c0cc3107fa60f64bd02f8a0c4b3af"
+  },
+  "files": [
+    "README.md",
+    "protocol.json",
+    "cell_summary.csv",
+    "denominator_summary.csv",
+    "mc_replicate_summary.npz",
+    "coverage_by_dependence.png",
+    "positive_certificate_rate.png",
+    "snapshot_bounded_block_risk_coverage_mc.py",
+    "snapshot_dependency_graph_bound.py",
+    "summary.json",
+    "artifact_hashes.json"
+  ]
+}

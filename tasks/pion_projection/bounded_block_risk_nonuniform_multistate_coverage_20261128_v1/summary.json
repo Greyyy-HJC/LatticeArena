@@ -1,0 +1,152 @@
+{
+  "certified": false,
+  "classification": "SYNTHETIC_NONUNIFORM_MULTISTATE_DEPENDENCE_SCREEN_NOT_CALIBRATION",
+  "method_summary": {
+    "abstained_replicates": 0,
+    "anchor_coverage": {
+      "rate": 0.982,
+      "successes": 982,
+      "trials": 1000,
+      "wilson95_high": 0.9885842599904322,
+      "wilson95_low": 0.9717267448294926
+    },
+    "anchor_seed": 202611282901,
+    "burn_in_transitions": 24,
+    "candidate_prediction": 0.5,
+    "empirical_score_chain_occupancy": [
+      0.049725830078125,
+      0.14979766845703124,
+      0.2999369506835938,
+      0.50053955078125
+    ],
+    "failed_anchor_observations": 0,
+    "failed_replicates": 0,
+    "failed_score_blocks": 0,
+    "helper_equivalence": {
+      "all_match": true,
+      "max_abs_difference": 5.551115123125783e-17,
+      "planned": 8,
+      "receipt_hashes_are_synthetic_identifiers": true,
+      "tolerance": 2e-14,
+      "valid": 8
+    },
+    "initial_law_tv_exact": "3640043396230761873619/20000000000000000000000000",
+    "initial_law_tv_upper": 0.00018200216981153813,
+    "joint_coverage": {
+      "rate": 0.982,
+      "successes": 982,
+      "trials": 1000,
+      "wilson95_high": 0.9885842599904322,
+      "wilson95_low": 0.9717267448294926
+    },
+    "median_exact_interval_minimum_score": 0.18134387447244957,
+    "median_grid_points": 9.0,
+    "median_lcb_slack": 0.11554680697772383,
+    "median_target_interval_width": 0.1402321617371109,
+    "median_uniform_lcb": 0.06570935706901662,
+    "nominal_anchor_coverage": 0.975,
+    "nominal_score_coverage": 0.975,
+    "planned_anchor_observations": 256000,
+    "planned_burn_in_transitions": 24000,
+    "planned_replicates": 1000,
+    "planned_score_blocks": 16384000,
+    "positive_lcb_rate": 1.0,
+    "positive_lcb_replicates": 1000,
+    "pseudo_spectral_gap_exact": "51/100",
+    "pseudo_spectral_gap_lower": 0.5099999999999999,
+    "reference_by_state": [
+      0.0,
+      0.25,
+      0.75,
+      1.0
+    ],
+    "refresh_eigenvalue_exact": "7/10",
+    "score_chain_seed": 202611292901,
+    "score_uniform_coverage": {
+      "rate": 1.0,
+      "successes": 1000,
+      "trials": 1000,
+      "wilson95_high": 1.0,
+      "wilson95_low": 0.996173241514445
+    },
+    "stationary_law": [
+      0.05,
+      0.15,
+      0.3,
+      0.5
+    ],
+    "union_bound_joint_coverage_lower": 0.95,
+    "valid_anchor_observations": 256000,
+    "valid_replicates": 1000,
+    "valid_score_blocks": 16384000
+  },
+  "model_checks": {
+    "detailed_balance_max_abs_error": 0.0,
+    "eigenvalue_max_abs_error": 3.3306690738754696e-16,
+    "eigenvalues_sorted": [
+      0.7,
+      0.7,
+      0.7000000000000003,
+      0.9999999999999999
+    ],
+    "stationarity_max_abs_error": 5.551115123125783e-17,
+    "stationary_law": [
+      0.05,
+      0.15,
+      0.3,
+      0.5
+    ],
+    "transition_matrix": [
+      [
+        0.715,
+        0.045000000000000005,
+        0.09000000000000001,
+        0.15000000000000002
+      ],
+      [
+        0.015000000000000003,
+        0.745,
+        0.09000000000000001,
+        0.15000000000000002
+      ],
+      [
+        0.015000000000000003,
+        0.045000000000000005,
+        0.7899999999999999,
+        0.15000000000000002
+      ],
+      [
+        0.015000000000000003,
+        0.045000000000000005,
+        0.09000000000000001,
+        0.85
+      ]
+    ]
+  },
+  "physical_score": null,
+  "physical_status": "NOT_READY/UNCERTIFIED; physical_score=null; sealed data closed",
+  "runtime": {
+    "matplotlib": "3.11.1",
+    "numpy": "2.5.1",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "python": "3.13.12",
+    "rng": "numpy.random.default_rng (PCG64)",
+    "scipy": "1.18.0"
+  },
+  "schema": "pion-nonuniform-multistate-markov-coverage-summary-v1",
+  "scope_limits": [
+    "this known four-state refresh chain is synthetic and does not estimate any HMC pseudo-gap",
+    "the exact Clopper-Pearson interval is valid only for the independent Bernoulli anchor draw used here",
+    "the exact initial TV and pseudo-gap follow from the declared matrix and fixed initial state",
+    "the synthetic anchor target equals the score target by construction; no physical common-bias bridge is tested",
+    "no production inputs, sealed data, GPU or QUDA are read or used"
+  ],
+  "source_hashes": {
+    "independent_anchor_coverage_screen.py": "db5e07e967900f848c3fd68f2c02d0aa188ab2881a084c823a8e3d7c6d7b2162",
+    "markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+    "nonuniform_multistate_screen.py": "1b35aebf164e43027daa6e0dd2351874378dcd0022fb28d16f23d66ecc28804e",
+    "numerics.py": "27631552db9e2fb0879e6dc1c91bfce553f516386bb3a26b405921f33824fe47",
+    "setwise_markov.py": "947816cbce995f2aa1853aec1c1d9713829dd687ab2cb12d0bbababe5a3044ef",
+    "source_integrity.py": "45a941a63937c56dc365049617e393f4f23209dc9a432e38e4f2937a22ec26a6"
+  }
+}

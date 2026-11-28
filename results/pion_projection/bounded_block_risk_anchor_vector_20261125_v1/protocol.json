@@ -1,0 +1,28 @@
+{
+  "schema": "pion-vector-anchor-box-diagnostic-v1",
+  "status": "FORMULA_FIXTURE_ONLY",
+  "fixture_source": "deterministic trigonometric arithmetic fixture; not a Markov path or measurement",
+  "sample_count": 4000,
+  "feature_count": 3,
+  "support_bounds": [
+    [
+      0.0,
+      1.0
+    ],
+    [
+      -1.0,
+      1.0
+    ],
+    [
+      0.0,
+      1.0
+    ]
+  ],
+  "gamma_ps_lower_assumed": 0.2,
+  "alpha_anchor": 0.01,
+  "initial_law_tv_bound_assumed": 0.001,
+  "burn_in_units_assumed": 8,
+  "stationary_start": false,
+  "physical_score": null,
+  "data_access": "none"
+}

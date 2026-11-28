@@ -1,0 +1,287 @@
+{
+  "artifact_hashes": {
+    "README.md": "4d4230ecc0776468c7464f7171b0772ce8e22da104980e5c29c747f560a9d256",
+    "contract_diagnostics.json": "b9eb4d5eb33acf22de02c06c8020e5edb05bf456d7ed0f2c026ed1070522d734",
+    "contract_summary.csv": "f9fdcfd44097a22c5e9305517acb28ccca3d30a134b6a2bfa888c25ff4bb98db",
+    "protocol.json": "02c8273104d1e0cd1d3e201482d8554d5fc321d0382a0dddb376cece9b8a964a",
+    "snapshot_bounded_block_risk_anchor_markov.py": "7046cb667509a73366982d46f89ce70a454f0feb4b8e3f4ac95be41e412e842b",
+    "snapshot_bounded_block_risk_contract.py": "a7dc0649ef2970f3f2f6c2ead1b86acfd8241d2d06259cfb35ee5da9d8870278",
+    "snapshot_bounded_block_risk_contract_v1.json": "7394380e264690e6166294e68112dbbf118ec46423e35c16d2fe984ef7bf77f8",
+    "snapshot_bounded_block_risk_markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+    "snapshot_bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f",
+    "snapshot_core_receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+    "snapshot_core_state.py": "2c1fb331ddd6d1ff985d4b0c419e51d70330015b61fa4c161e5d12a37a6df356"
+  },
+  "denominators": {
+    "current_null_contract": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "physical_run_state_gates": {
+      "abstained": 5,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 5,
+      "unit": "one physical certification stage in core.RunState",
+      "valid": 0
+    },
+    "synthetic_alpha_over_budget": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_graph_color_complete": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 1
+    },
+    "synthetic_initial_tv_spends_score_alpha": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_markov_anchor_complete": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 1
+    },
+    "synthetic_markov_anchor_missing_scalar_map_receipt": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_markov_anchor_tv_spends_alpha": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_markov_gap_complete": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 1
+    },
+    "synthetic_markov_missing_gamma_receipt": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_markov_post_burn_in_tv_complete": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 1
+    },
+    "synthetic_markov_time_varying_complete": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 1
+    },
+    "synthetic_markov_time_varying_support_gap_complete": {
+      "abstained": 0,
+      "failed": 0,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 1
+    },
+    "synthetic_missing_anchor_coverage": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_missing_initial_law_receipt": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_prediction_bound_over_R": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_time_varying_anchor_shift_under_2B_over_R": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_time_varying_missing_schedule_receipt": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_time_varying_score_function": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    },
+    "synthetic_time_varying_zero_class_variance": {
+      "abstained": 0,
+      "failed": 1,
+      "not_run": 0,
+      "planned": 1,
+      "unit": "one contract fixture inspection",
+      "valid": 0
+    }
+  },
+  "reason_rows": [
+    {
+      "count": 1,
+      "reason": "estimand.target.observable: missing nonempty value; estimand.target.units: missing nonempty value; estimand.target.physical_interpretation: missing nonempty value; estimand.target.m_star: expected an explicit finite target value; estimand.score_scale_R: expected a finite positive value; estimand.scale_units: missing nonempty value; estimand.prediction_difference_abs_bound: expected a finite nonnegative value; estimand.prediction_difference_receipt_sha256: expected a SHA-256 receipt; estimand.clipping_interval: v1 helper requires [-1, 1]; human confirmation remains required; estimand.failure_policy: must preserve failed-block and all-failed rules; estimand.planned_blocks_N: expected a positive integer; estimand.block_plan_receipt_sha256: expected a SHA-256 receipt; estimand.delta_star: expected a positive finite predeclared effect; estimand.delta_star_units: missing nonempty value; estimand.candidate_family_ids: expected unique nonempty comparison IDs; estimand.reference_gate.method: missing nonempty value; estimand.reference_gate.pass_rule: missing nonempty value; estimand.reference_gate.failure_rule: missing nonempty value; estimand.reference_gate.data_source_receipt_sha256: expected a SHA-256 receipt; estimand.reference_gate.independent_review_receipt_sha256: expected a SHA-256 receipt; dependence.method: expected one of ['graph_color_hoeffding', 'markov_pseudo_gap_bernstein', 'markov_time_varying_bernstein', 'markov_time_varying_support_gap_bernstein']; dependence.score_specific_block_map: missing score-to-block definition; dependence.evidence_receipt_sha256: expected a SHA-256 receipt; anchor.estimate_receipt_sha256: expected a SHA-256 receipt; anchor.target_match_statement: missing target/anchor correspondence; anchor.units: missing nonempty value; anchor.total_error_bound_B: expected a finite nonnegative bound; anchor.common_bias_bound_C: expected a finite nonnegative bound; anchor.bound_combination_rule: state how random and common-bias terms form total B; anchor.coverage_method: expected one of ['bounded_iid_hoeffding', 'known_sigma_normal_interval', 'markov_pseudo_gap_bernstein']; anchor.coverage_parameters: expected method-specific assumptions; anchor.coverage_probability_lower_bound: expected a value in (0, 1]; anchor.coverage_receipt_sha256: expected a SHA-256 receipt; anchor.common_bias_coverage_receipt_sha256: expected a SHA-256 receipt; anchor.conditional_independence_receipt_sha256: expected a SHA-256 receipt; inference.comparison_family_ids: expected unique nonempty IDs; inference.F: expected a positive integer; inference.alpha_total: expected a value in (0, 1); inference.alpha_score: expected a value in (0, 1); inference.alpha_anchor: expected a value in [0, 1)",
+      "state": "failed",
+      "unit": "current_null_contract"
+    },
+    {
+      "count": 1,
+      "reason": "anchor.coverage_parameters.anchor_scalar_map_receipt_sha256: expected a SHA-256 receipt",
+      "state": "failed",
+      "unit": "synthetic_markov_anchor_missing_scalar_map_receipt"
+    },
+    {
+      "count": 1,
+      "reason": "anchor.coverage_parameters.initial_law_tv_bound: must be smaller than alpha_anchor",
+      "state": "failed",
+      "unit": "synthetic_markov_anchor_tv_spends_alpha"
+    },
+    {
+      "count": 1,
+      "reason": "inference.alpha_score + alpha_anchor: exceeds alpha_total",
+      "state": "failed",
+      "unit": "synthetic_alpha_over_budget"
+    },
+    {
+      "count": 1,
+      "reason": "estimand.prediction_difference_abs_bound: exceeds score_scale_R",
+      "state": "failed",
+      "unit": "synthetic_prediction_bound_over_R"
+    },
+    {
+      "count": 1,
+      "reason": "anchor.common_bias_coverage_receipt_sha256: expected a SHA-256 receipt",
+      "state": "failed",
+      "unit": "synthetic_missing_anchor_coverage"
+    },
+    {
+      "count": 1,
+      "reason": "dependence.initial_law_receipt_sha256: expected a SHA-256 receipt",
+      "state": "failed",
+      "unit": "synthetic_missing_initial_law_receipt"
+    },
+    {
+      "count": 1,
+      "reason": "dependence.initial_law_tv_bound: F * delta must be smaller than inference.alpha_score",
+      "state": "failed",
+      "unit": "synthetic_initial_tv_spends_score_alpha"
+    },
+    {
+      "count": 1,
+      "reason": "dependence.score_function_time_homogeneous: fixed-score route requires one fixed score function across blocks",
+      "state": "failed",
+      "unit": "synthetic_time_varying_score_function"
+    },
+    {
+      "count": 1,
+      "reason": "dependence.score_schedule_receipt_sha256: expected a SHA-256 receipt",
+      "state": "failed",
+      "unit": "synthetic_time_varying_missing_schedule_receipt"
+    },
+    {
+      "count": 1,
+      "reason": "dependence.variance_upper_by_residue: every bound must be finite and strictly positive",
+      "state": "failed",
+      "unit": "synthetic_time_varying_zero_class_variance"
+    },
+    {
+      "count": 1,
+      "reason": "anchor.time_varying_score_shift_bound: must cover the fixed paired-squared-error floor 2B/R",
+      "state": "failed",
+      "unit": "synthetic_time_varying_anchor_shift_under_2B_over_R"
+    },
+    {
+      "count": 1,
+      "reason": "dependence.gamma_ps_lower_receipt_sha256: expected a SHA-256 receipt",
+      "state": "failed",
+      "unit": "synthetic_markov_missing_gamma_receipt"
+    },
+    {
+      "count": 5,
+      "reason": "physical Pion scoring awaits independent reference, anchor and dependence receipts plus authorization",
+      "state": "abstained",
+      "unit": "physical_run_state_gates"
+    }
+  ],
+  "scenario": {
+    "assumptions": [
+      "contract completeness is metadata shape only and requires independent human review",
+      "fixtures are software checks and are not independent physical observations",
+      "receipt hashes do not authenticate dependence, anchor coverage or reference evidence"
+    ],
+    "description": "Null draft and synthetic schema fixtures only; no correlator, anchor or sealed inputs.",
+    "name": "pion-bounded-block-risk-contract-fixtures",
+    "schema": "latticearena-scenario-v1",
+    "seed": null,
+    "source_hashes": {
+      "core/receipts.py": "4d5214f11f54690660bb4b55f79a1cc7a1f07eaef3ebdf4926e682ecb8d57bd9",
+      "core/state.py": "2c1fb331ddd6d1ff985d4b0c419e51d70330015b61fa4c161e5d12a37a6df356",
+      "tasks/pion_projection/bounded_block_risk_anchor_markov.py": "7046cb667509a73366982d46f89ce70a454f0feb4b8e3f4ac95be41e412e842b",
+      "tasks/pion_projection/bounded_block_risk_contract.py": "a7dc0649ef2970f3f2f6c2ead1b86acfd8241d2d06259cfb35ee5da9d8870278",
+      "tasks/pion_projection/bounded_block_risk_contract_v1.json": "7394380e264690e6166294e68112dbbf118ec46423e35c16d2fe984ef7bf77f8",
+      "tasks/pion_projection/bounded_block_risk_markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+      "tasks/pion_projection/bounded_block_risk_score.py": "7f72b16f7bbfd9787568d2602ec19aee410a3374aaad708d73e7e271bd64f15f"
+    },
+    "unit": "one contract fixture inspection"
+  },
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "text_flow": "null v1 contract plus synthetic graph/Markov/anchor fixtures -> independent contract inspection per fixture -> explicit denominator plus five RunState abstentions -> hashed report; complete means accounting only, not scientific success; physical review and authorized data access remain later gates"
+}

@@ -1,0 +1,53 @@
+{
+  "evidence_class": "analytic_selected_contract_sensitivity_only",
+  "formula": "best_case_LCB=1-score_radius-2*TV-2*(anchor_random_radius/R+C/R)",
+  "formula_scenario_denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 101,
+    "unit": "one deterministic C/R value; not a measurement",
+    "valid": 101
+  },
+  "inputs": {
+    "C_over_R_max_for_any_best_case_pass": 0.22937217329304452,
+    "alpha_anchor": 0.01,
+    "alpha_score": 0.04,
+    "anchor_random_radius_over_R": 0.05146997846583985,
+    "best_case_lcb_before_C": 0.508744346586089,
+    "delta_star_over_R2": 0.05,
+    "family_F": 3,
+    "gamma_ps_lower_assumed": 0.2,
+    "n_anchor": 1000,
+    "planned_score_blocks": 4000,
+    "post_burn_in_tv_assumed": 0.001,
+    "score_radius": 0.3863156964822313,
+    "selected_C_over_R": 0.01,
+    "selected_C_units": 0.028999999999999998,
+    "support_interval": [
+      0.1,
+      3.0
+    ],
+    "support_width_R": 2.9,
+    "target": "lowest zero-momentum valence isovector pseudoscalar energy",
+    "trivial_range_only_C_over_R": 1.0,
+    "units": "a_t m_pi"
+  },
+  "physical_evidence_denominator": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "reason": "no anchor scalar-map, common-bias, independence, reference, or chain receipts",
+    "valid": 0
+  },
+  "physical_score": null,
+  "range_only_C_over_R_best_case_lcb": -1.491255653413911,
+  "schema": "pion-anchor-common-bias-feasibility-v1",
+  "selected_C_over_R_best_case_lcb": 0.488744346586089,
+  "source_hashes": {
+    "anchor_bias_feasibility_diagnostic.py": "f9ea4efb520914a8ffd9dbd0b433896e1582df899df7ceb5d34d8c7c76463d9b",
+    "bounded_block_risk_contract.py": "0744e40cc71c082fdfa941ddc6f91024d4f370f88cbc4dcc7cd6fba9af57214e",
+    "bounded_block_risk_contract_v1.json": "6aa6a230c21cd339f54dee014a0526ce01a1e81707f9979c876cfb003dd2af95",
+    "bounded_block_risk_markov_gap.py": "e8a6af0227eb685750208ad5f4278cf2307afb936c4ba6774ce30497cbcbf06e"
+  },
+  "status": "NOT_READY_UNCERTIFIED"
+}

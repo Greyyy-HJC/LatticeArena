@@ -93,6 +93,20 @@ def test_run_state_transitions_and_score_gating():
     assert state.validation_observed
 
 
+def test_run_state_abstention_is_terminal_and_never_scores():
+    from core.state import RunState
+
+    state = RunState().abstain('reference', 'independent reference receipt missing')
+    assert state.status['reference'] == 'abstained'
+    assert state.evidence['reference'] == ['independent reference receipt missing']
+    assert not state.physical_ready()
+    assert state.score_or_null() is None
+    with pytest.raises(ValueError, match='illegal transition'):
+        state.set('reference', 'draft')
+    with pytest.raises(ValueError, match='nonempty reason'):
+        RunState().set('statistical', 'abstained')
+
+
 def test_cost_ledger_phases_and_environment():
     from core.ledger import Ledger
     ledger = Ledger()

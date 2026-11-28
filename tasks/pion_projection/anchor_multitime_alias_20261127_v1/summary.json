@@ -1,0 +1,123 @@
+{
+  "classification": "POSITIVE_PERIODIC_SPECTRA_COLLIDE_ON_FOUR_TIME_FEATURE_AND_SCALAR",
+  "denominators": {
+    "feature_vectors": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    },
+    "physical_anchor_inputs": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 0,
+      "valid": 0
+    },
+    "physical_gate": {
+      "abstained": 1,
+      "failed": 0,
+      "planned": 1,
+      "valid": 0
+    },
+    "positive_spectra": {
+      "abstained": 0,
+      "failed": 0,
+      "planned": 2,
+      "valid": 2
+    }
+  },
+  "diagnostic": {
+    "amplitudes_strictly_positive": true,
+    "ground_mass_gap": 0.30000000000000004,
+    "l2_unique_feature_gap": 1.7774407109022855e-15,
+    "max_abs_unique_feature_gap": 1.7763568394002505e-15,
+    "reader_m_eff4_gap": 3.3306690738754696e-16,
+    "t4_weights_strictly_positive": true
+  },
+  "feature_definition": "C_fold(t)/C_fold(4), t in {2,3,5,6}",
+  "kernel": "K(m,t)=exp(-m*t)+exp(-m*(16-t))",
+  "models": [
+    {
+      "amplitudes": [
+        0.04201030369738817,
+        3.5350676505092524,
+        11.824601057450009,
+        39.28570755972243
+      ],
+      "feature_vector_four_time": [
+        6.620357517464544,
+        2.486769935549829,
+        0.4381269682814076,
+        0.21624521557581114
+      ],
+      "feature_vector_unique": [
+        6.620357517464544,
+        2.486769935549829,
+        0.4381269682814076,
+        0.21624521557581114
+      ],
+      "ground_mass": 0.15,
+      "masses": [
+        0.15,
+        0.6,
+        0.9,
+        1.2
+      ],
+      "model_id": "ground_mass_0p15",
+      "reader_m_eff4": 0.9280506385220498,
+      "weights_at_t4": [
+        0.03,
+        0.3233333333333333,
+        0.3233333333333333,
+        0.3233333333333333
+      ]
+    },
+    {
+      "amplitudes": [
+        1.274343041684227,
+        2.128471984425107,
+        29.351516112052256,
+        19.861269598899057,
+        2.5594497234675453
+      ],
+      "feature_vector_four_time": [
+        6.620357517464546,
+        2.486769935549829,
+        0.4381269682814077,
+        0.21624521557581117
+      ],
+      "feature_vector_unique": [
+        6.620357517464546,
+        2.486769935549829,
+        0.4381269682814077,
+        0.21624521557581117
+      ],
+      "ground_mass": 0.45,
+      "masses": [
+        0.45,
+        0.7,
+        1.0,
+        1.3,
+        1.5
+      ],
+      "model_id": "ground_mass_0p45",
+      "reader_m_eff4": 0.9280506385220502,
+      "weights_at_t4": [
+        0.21640316149973968,
+        0.12991113846864005,
+        0.5377721118930967,
+        0.10956930758504244,
+        0.006344280553480733
+      ]
+    }
+  ],
+  "physical_score": null,
+  "reflection_symmetry": "C_fold(t)=C_fold(16-t); the four listed times are distinct within t=0..8",
+  "schema": "pion-anchor-multitime-alias-summary-v1",
+  "source_hashes": {
+    "anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "diagnostic": "4ca08eac2ce40b30bb174f541069e226148a78291421be1b76b79ec9c3b378b7",
+    "multitime_separation_diagnostic": "fbbed0b3c8b8c3f974f489c5076f8d9d2e2a5194605839cbc3e7e852539c29b8",
+    "scalar_collision_diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926"
+  }
+}

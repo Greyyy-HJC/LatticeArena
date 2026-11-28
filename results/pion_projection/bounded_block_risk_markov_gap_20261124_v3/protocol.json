@@ -1,0 +1,52 @@
+{
+  "classification": "SYNTHETIC_ANALYTIC_SENSITIVITY_ONLY",
+  "inputs_read": [],
+  "data_access": "none; no physical or sealed inputs were opened",
+  "formula_source": {
+    "paper": "Paulin, arXiv:1212.2015v5 (2018), Theorem 3.11 / Eq. (3.25) and Proposition 3.15 / Eq. (3.29)",
+    "url": "https://arxiv.org/html/1212.2015v5",
+    "bound": "P(|S-E S|>=t) <= 2 exp(-t^2 gamma_ps / (8(N+1/gamma_ps)V_f + 20 t C))",
+    "version_note": "The author notes that an argument used for the general-state Bernstein proofs in previous versions, including the published version, was incomplete; this report follows the corrected arXiv v5 statement."
+  },
+  "block_chain_contract": [
+    "Predeclare non-overlapping score blocks and represent each block as one state of a homogeneous block Markov chain.",
+    "The reference block chain must be homogeneous, phi-irreducible, aperiodic, Polish, and have a unique stationary law as required by Assumption 3.1.",
+    "Theorem 3.11 / Eq. (3.25) uses one fixed score function f across all chain states; a time-varying score sequence requires the separate Eq. (3.26) route and is outside this helper.",
+    "For nonstationary starts, provide an audited post-burn-in total-variation bound delta per comparison; spend F*delta from alpha_score and subtract 2*delta from the normalized finite-plan mean bound.",
+    "Use an auditable lower confidence bound gamma_ps_lower > 0 for this block chain; trajectory spacing and empirical ESS are not such a bound.",
+    "For Z_i in [-1,1], use C=2 and V_f<=1; failures remain mapped to -1 and stay in planned N.",
+    "The score-family union bound uses log(2F/alpha_s), because the cited theorem is two-sided.",
+    "The score bound is conditional on a frozen anchor; if anchor and score share trajectory dependence, the Markov score bound must remain valid conditionally or a valid joint bound must be supplied.",
+    "Anchor coverage/bias and the target threshold remain separate from the Markov and initial-law corrections.",
+    "Synthetic fixtures exercise stationary, nonstationary-TV, and all-failed code paths; they are not project data or a coverage test."
+  ],
+  "grid": {
+    "planned_blocks": [
+      20,
+      50,
+      100,
+      200,
+      500
+    ],
+    "gamma_ps_lower_assumed": [
+      0.005,
+      0.01,
+      0.02,
+      0.05,
+      0.1,
+      0.2,
+      0.5,
+      1.0
+    ],
+    "family": 2,
+    "alpha_s": 0.05,
+    "variance_bound": 1.0,
+    "centered_abs_bound": 2.0,
+    "burn_in_blocks": 0,
+    "initial_law_tv_bound": 0.0,
+    "target_threshold": 0.0,
+    "anchor_correction": 0.0,
+    "failure_fraction": 0.0,
+    "warning": "All values are hypothetical, not frozen or estimated project inputs."
+  }
+}

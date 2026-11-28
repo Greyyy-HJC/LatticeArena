@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "scenario_grid.csv": "770b70ab9f8d106c4474d16bcb6a256d3e0f5aea9e0925f9b4c968d9352f290b",
+    "tv_sensitivity.csv": "20000e3200062dfd34b3c10b90fcc2a0d650e342d1878cb2de76d6bb76fe618f",
+    "fixtures.json": "18baf33d8e95644d4a45b7bf36d6324d950c883325929558e1ca4ed8c3fbdef5",
+    "protocol.json": "8615c40c8fb05dd415910a4e2ab4ad42a782e108b4bd9bb88d9a2771b5cf28c4",
+    "markov_varying_sensitivity.png": "5e0a9aae4320d7ad12764de840a2727f5e32ce813f819f73731dc70e8e8baff4",
+    "README.md": "c5c2a43d9fd051e901b43a8d5ba4c0e5787490403ba4aa7771a5636418d973c9",
+    "snapshot_markov_varying.py": "95d29ca1d4b6e34854ae6c4b1c7384cf7674aa975f54317a8a814e2c766720f3",
+    "snapshot_markov_varying_diagnostic.py": "7267640305820fee1a29668c70fdf0311b6c4c9c8e502d343cf34e432725b22a",
+    "snapshot_contract_inspector.py": "74b7f3bffe3afff3b676f850d5240bb9d7d638332046f22c8aaa73e28a94ae56",
+    "snapshot_contract_v1.json": "641f4f15c88546977545232b10e667bb92952c8c85be29afb98a0ee79b40d259"
+  }
+}

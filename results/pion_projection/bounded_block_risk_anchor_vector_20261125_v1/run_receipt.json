@@ -1,0 +1,45 @@
+{
+  "schema": "latticearena-run-receipt-v1",
+  "status": "complete",
+  "scenario": {
+    "schema": "latticearena-scenario-v1",
+    "name": "pion-vector-anchor-box-math-fixture",
+    "unit": "one deterministic vector-mean arithmetic fixture",
+    "description": "Conditional componentwise Markov concentration plus a union bound; no fit propagation.",
+    "assumptions": [
+      "feature support, gamma_ps and TV values are illustrative assumptions",
+      "the fixture is not a Markov chain or a physical measurement"
+    ],
+    "seed": null,
+    "source_hashes": {
+      "bounded_block_risk_anchor_vector_diagnostic.py": "90575d66933f7294bc10c328baaa6cef13c0b2fa1974d13a5a7fcbe07ce4066c",
+      "bounded_block_risk_anchor_vector.py": "8d50e35237a4b8ae684163e9453f52d3f457d6bb484378e1f0970462215cc191",
+      "bounded_block_risk_markov_gap.py": "e8a6af0227eb685750208ad5f4278cf2307afb936c4ba6774ce30497cbcbf06e"
+    }
+  },
+  "denominators": {
+    "vector_box": {
+      "unit": "one conditional arithmetic fixture",
+      "planned": 1,
+      "valid": 1,
+      "failed": 0,
+      "abstained": 0,
+      "not_run": 0
+    },
+    "feature_coordinates": {
+      "unit": "one coordinate in the synthetic feature vector",
+      "planned": 3,
+      "valid": 3,
+      "failed": 0,
+      "abstained": 0,
+      "not_run": 0
+    }
+  },
+  "reason_rows": [],
+  "artifact_hashes": {
+    "README.md": "dbe3713f13b846e0f94b9f4686d64f65c55dc94f100a7bbdd9f3d2069118f6d5",
+    "protocol.json": "67d419d943af71854662cd70ccf417f1c9e72f95061164239df2a7b10ef3910c",
+    "result.json": "86ea40fb33117d463281b200db441efc896a1b8966b30e66319bb9e082a235e8"
+  },
+  "text_flow": "fixed bounded feature vector on one anchor chain -> componentwise Markov Bernstein intervals with family=d -> joint mean box -> certified fit-range propagation still required -> otherwise ABSTAIN and keep physical_score=null"
+}

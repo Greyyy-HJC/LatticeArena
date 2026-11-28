@@ -1,0 +1,8 @@
+{
+  "sources": {
+    "anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "diagnostic": "4ca08eac2ce40b30bb174f541069e226148a78291421be1b76b79ec9c3b378b7",
+    "multitime_separation_diagnostic": "fbbed0b3c8b8c3f974f489c5076f8d9d2e2a5194605839cbc3e7e852539c29b8",
+    "scalar_collision_diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926"
+  }
+}

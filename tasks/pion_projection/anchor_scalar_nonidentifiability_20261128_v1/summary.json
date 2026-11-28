@@ -1,0 +1,83 @@
+{
+  "assumptions": {
+    "no_chain_or_physical_input_read": true,
+    "no_statistical_noise": true,
+    "temporal_extent": 16,
+    "truth_model": "positive two-state periodic PP cosh, A0=1 and A1>0",
+    "unknowns_not_restricted_by_current_map_contract": [
+      "ground mass",
+      "excited mass",
+      "excited overlap"
+    ]
+  },
+  "classification": "EXACT_NOISELESS_TWO_STATE_IDENTIFIABILITY_COUNTEREXAMPLE_NOT_PHYSICAL_DATA",
+  "denominator": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 2,
+    "unit": "exact analytic counterexample spectra",
+    "valid": 2
+  },
+  "examples": [
+    {
+      "A1_over_A0": 14.780683550375636,
+      "excited_fraction_at_t4": 0.14555556403678954,
+      "excited_mass": 1.2,
+      "ground_mass": 0.15,
+      "m_eff4": 0.5000000000000002,
+      "model_id": "spectrum_1",
+      "raw_abs_map_bias_over_R": 0.12068965517241387,
+      "raw_map_bias": 0.3500000000000002
+    },
+    {
+      "A1_over_A0": 0.744802048733928,
+      "excited_fraction_at_t4": 0.034840052788030686,
+      "excited_mass": 1.2,
+      "ground_mass": 0.45,
+      "m_eff4": 0.49999999999999944,
+      "model_id": "spectrum_2",
+      "raw_abs_map_bias_over_R": 0.017241379310344633,
+      "raw_map_bias": 0.049999999999999434
+    }
+  ],
+  "identifiability": {
+    "R": 2.9,
+    "any_single_output_minimax_abs_error_lower_bound": 0.15000000000000002,
+    "ground_mass_separation": 0.30000000000000004,
+    "minimax_C_over_R_lower_bound": 0.05172413793103449,
+    "proof": "same map input implies same scalar output for both spectra; triangle inequality makes worst-case error at least half the ground-mass separation",
+    "required_C_over_R": 0.01,
+    "required_abs_bias": 0.028999999999999998,
+    "required_bound_is_impossible_for_this_model_class": true,
+    "shared_map_value": 0.5
+  },
+  "map": {
+    "formula": "acosh((C_fold(3)+C_fold(5))/(2*C_fold(4)))",
+    "map_id": "pion-folded-pp-cosh-effective-mass-t4-v1",
+    "map_sha256": "83385e1410d2695c29bcd53f43ce564bb2020e6c3d2823f8ef1944215914c519",
+    "map_time": 4,
+    "support": [
+      0.1,
+      3.0
+    ]
+  },
+  "physical_anchor_input": {
+    "abstained": 0,
+    "failed": 0,
+    "planned": 0,
+    "valid": 0
+  },
+  "physical_score": null,
+  "reference_gate": {
+    "abstained": 1,
+    "failed": 0,
+    "planned": 1,
+    "valid": 0
+  },
+  "schema": "pion-anchor-scalar-nonidentifiability-summary-v1",
+  "source_hashes": {
+    "anchor_scalar_reader": "726441fb83a5b42d6a6c51273aa8afaf959fdafef2bff1631ddea08e9e3862de",
+    "bounded_risk_contract": "7394380e264690e6166294e68112dbbf118ec46423e35c16d2fe984ef7bf77f8",
+    "diagnostic": "fc576ce2e0e3a79ebbdbe0291bace86c8ca6a1cd8a0cacbeba019558dc969926"
+  }
+}

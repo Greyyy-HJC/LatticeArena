@@ -1,0 +1,302 @@
+{
+  "schema": "pion-bounded-anchor-robustness-protocol-v1",
+  "status": "SYNTHETIC_EXACT_ENUMERATION_ONLY",
+  "physical_score": null,
+  "data_access": "No physical anchor, correlator, ensemble, sealed split, GPU, or QUDA data accessed.",
+  "distributions": {
+    "symmetric_two_point": {
+      "rare_upper_point_probability": 0.5,
+      "mean": 0.0,
+      "variance": 0.0025000000000000005,
+      "support": [
+        -0.05,
+        0.05
+      ]
+    },
+    "moderate_skew_two_point": {
+      "rare_upper_point_probability": 0.1,
+      "mean": 0.0,
+      "variance": 0.0025000000000000005,
+      "support": [
+        -0.01666666666666667,
+        0.15000000000000002
+      ]
+    },
+    "rare_spike_two_point": {
+      "rare_upper_point_probability": 0.005,
+      "mean": 0.0,
+      "variance": 0.0025000000000000005,
+      "support": [
+        -0.00354440602504168,
+        0.7053367989832943
+      ]
+    }
+  },
+  "sample_sizes": [
+    16,
+    32,
+    128,
+    512
+  ],
+  "alpha_anchor": 0.01,
+  "sigma_oracle": 0.05,
+  "normal_comparator_radius": "z_(1-alpha_A/2)*sigma/sqrt(n)",
+  "hoeffding_radius": "(upper-lower)*sqrt(log(2/alpha_A)/(2*n))",
+  "coverage_method": "Enumerate all n+1 Binomial count states and sum exact probability mass.",
+  "assumptions": [
+    "iid anchor observations within each hypothetical sample",
+    "two-point synthetic support is exactly known for Hoeffding radius",
+    "oracle variance is exactly known for the Gaussian-z comparator"
+  ],
+  "limitations": [
+    "neither support nor distribution is inferred from project data",
+    "Hoeffding guarantee does not cover dependent observations without another bound",
+    "anchor-score independence and the physical reference gate remain unresolved"
+  ],
+  "denominator_summary": [
+    {
+      "cell": "symmetric_two_point_nA16",
+      "unit": "hypothetical anchor observation",
+      "planned": 16,
+      "valid": 16,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "symmetric_two_point_nA16",
+      "unit": "exact binomial count state",
+      "planned": 17,
+      "valid": 17,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "symmetric_two_point_nA32",
+      "unit": "hypothetical anchor observation",
+      "planned": 32,
+      "valid": 32,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "symmetric_two_point_nA32",
+      "unit": "exact binomial count state",
+      "planned": 33,
+      "valid": 33,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "symmetric_two_point_nA128",
+      "unit": "hypothetical anchor observation",
+      "planned": 128,
+      "valid": 128,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "symmetric_two_point_nA128",
+      "unit": "exact binomial count state",
+      "planned": 129,
+      "valid": 129,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "symmetric_two_point_nA512",
+      "unit": "hypothetical anchor observation",
+      "planned": 512,
+      "valid": 512,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "symmetric_two_point_nA512",
+      "unit": "exact binomial count state",
+      "planned": 513,
+      "valid": 513,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0000000000000002,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA16",
+      "unit": "hypothetical anchor observation",
+      "planned": 16,
+      "valid": 16,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA16",
+      "unit": "exact binomial count state",
+      "planned": 17,
+      "valid": 17,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA32",
+      "unit": "hypothetical anchor observation",
+      "planned": 32,
+      "valid": 32,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA32",
+      "unit": "exact binomial count state",
+      "planned": 33,
+      "valid": 33,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA128",
+      "unit": "hypothetical anchor observation",
+      "planned": 128,
+      "valid": 128,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA128",
+      "unit": "exact binomial count state",
+      "planned": 129,
+      "valid": 129,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA512",
+      "unit": "hypothetical anchor observation",
+      "planned": 512,
+      "valid": 512,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "moderate_skew_two_point_nA512",
+      "unit": "exact binomial count state",
+      "planned": 513,
+      "valid": 513,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 0.9999999999999999,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "rare_spike_two_point_nA16",
+      "unit": "hypothetical anchor observation",
+      "planned": 16,
+      "valid": 16,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "rare_spike_two_point_nA16",
+      "unit": "exact binomial count state",
+      "planned": 17,
+      "valid": 17,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "rare_spike_two_point_nA32",
+      "unit": "hypothetical anchor observation",
+      "planned": 32,
+      "valid": 32,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "rare_spike_two_point_nA32",
+      "unit": "exact binomial count state",
+      "planned": 33,
+      "valid": 33,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "rare_spike_two_point_nA128",
+      "unit": "hypothetical anchor observation",
+      "planned": 128,
+      "valid": 128,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "rare_spike_two_point_nA128",
+      "unit": "exact binomial count state",
+      "planned": 129,
+      "valid": 129,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0000000000000002,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    },
+    {
+      "cell": "rare_spike_two_point_nA512",
+      "unit": "hypothetical anchor observation",
+      "planned": 512,
+      "valid": 512,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": null,
+      "interpretation": "Hypothetical iid observations; not measured data."
+    },
+    {
+      "cell": "rare_spike_two_point_nA512",
+      "unit": "exact binomial count state",
+      "planned": 513,
+      "valid": 513,
+      "failed": 0,
+      "abstained": 0,
+      "probability_mass": 1.0,
+      "interpretation": "All n+1 count states are enumerated and probability weighted; not MC replicates."
+    }
+  ],
+  "environment": {
+    "python": "3.13.12",
+    "numpy": "2.5.1"
+  }
+}

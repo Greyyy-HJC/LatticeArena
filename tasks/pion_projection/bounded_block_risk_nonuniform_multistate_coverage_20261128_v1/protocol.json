@@ -1,0 +1,50 @@
+{
+  "anchor_alpha": 0.025,
+  "anchor_sample_size": 256,
+  "anchor_seed": 202611282901,
+  "anchor_target_probability": 0.4,
+  "burn_in_transitions": 24,
+  "candidate_prediction": 0.5,
+  "classification": "SYNTHETIC_NONUNIFORM_MULTISTATE_DEPENDENCE_SCREEN_NOT_CALIBRATION",
+  "gpu_quda": false,
+  "helper_equivalence": {
+    "all_match": true,
+    "max_abs_difference": 5.551115123125783e-17,
+    "planned": 8,
+    "receipt_hashes_are_synthetic_identifiers": true,
+    "tolerance": 2e-14,
+    "valid": 8
+  },
+  "initial_state": 0,
+  "initial_tv_exact": "3640043396230761873619/20000000000000000000000000",
+  "initial_tv_upper": 0.00018200216981153813,
+  "joint_alpha": 0.05,
+  "no_clobber": true,
+  "physical_score": null,
+  "pseudo_spectral_gap_exact": "51/100",
+  "reference_prediction_by_state": [
+    0.0,
+    0.25,
+    0.75,
+    1.0
+  ],
+  "refresh_eigenvalue_exact": "7/10",
+  "replicates": 1000,
+  "reproduction_command": "python tasks/pion_projection/bounded_block_risk_nonuniform_multistate_coverage_screen.py --output <new-empty-directory>",
+  "rng": "numpy.random.default_rng (PCG64); independent anchor and score seeds",
+  "schema": "pion-nonuniform-multistate-markov-coverage-protocol-v1",
+  "score_alpha": 0.025,
+  "score_chain_blocks": 16384,
+  "score_chain_generator": "independent refresh-or-stay transition draws; initial state fixed at 0",
+  "score_chain_seed": 202611292901,
+  "sealed_data_access": false,
+  "stationary_law_exact": [
+    "1/20",
+    "3/20",
+    "3/10",
+    "1/2"
+  ],
+  "target_mesh_step_R": 0.02,
+  "transition": "P=lambda*I+(1-lambda)*1*pi",
+  "tv_adjustment": "family*TV removed from score alpha; 2*TV lower-mean shift penalty per grid point"
+}
